@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>python3 nltk chapter 1 &mdash; cat ~/.zhiliao.history</title>
+  <meta name="author" content="zhiliao">
+
+  <link href="feeds/all.atom.xml" type="application/rss+xml" rel="alternate"
+        title="cat ~/.zhiliao.history RSS Feed" />
+
+
+
+
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="/favicon.png" rel="icon">
+
+  <link href="/theme/css/main.css" media="screen, projection"
+        rel="stylesheet" type="text/css">
+  <link href="/theme/css/pygment.css" rel="stylesheet" type="text/css">
+
+  <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+
+  <script src="/theme/js/modernizr-2.0.js"></script>
+  <script src="/theme/js/ender.js"></script>
+  <script src="/theme/js/octopress.js" type="text/javascript"></script>
+</head>
+
+<body >
+  <header role="banner"
+  >
+<hgroup>
+  <h1><a href="/">cat ~/.zhiliao.history</a></h1>
+    <h2>无聊就该多读书。</h2>
+</hgroup></header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="feeds/all.atom.xml" rel="subscribe-rss">RSS</a></li>
+</ul>
+
+
+<ul class="main-navigation">
+    <li><a href="/">Home</a></li>
+    <li><a href="/archives.html">Archive</a></li>
+    <li><a href="/pages/about.html">About</a></li>
+</ul></nav>
+  <div id="main">
+    <div id="content">
+<div>
+  <article class="hentry" role="article">
+<header>
+      <h1 class="entry-title">python3 nltk chapter 1</h1>
+    <p class="meta">
+<time datetime="2018-11-10T18:17:07+08:00" pubdate>2018-11-10 18:17:07</time>      
+    </p>
+</header>
+
+    <div class="entry-content"><h1>语言处理与Python</h1>
+<h3>1.语言计算：文本和单词</h3>
+<h5>1.2 NLTK 入门</h5>
+<div class="highlight-custom"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">()</span>
+</pre></div>
+
+
+<h5>1.3 搜索文本</h5>
+<div class="highlight-custom"><pre><span></span>text1.concordance(&quot;monstrous&quot;)  # 搜索文本
+
+text1.similar(&quot;monstrous&quot;)  # 查看相识上下文出现的单词
+
+text2.common_contexts([&quot;monstrous&quot;, &quot;very&quot;])  # 查找两个词的共同上下文
+
+text4.dispersion_plot([&quot;citizens&quot;, &quot;democracy&quot;, &quot;freedom&quot;, &quot;duties&quot;, &quot;America&quot;])  # 词汇分布图
+
+len(set(text3)) / len(text3)  # 文本词汇丰富度
+</pre></div>
+
+
+<h5>1.3 布朗语料库</h5>
+<div class="highlight-custom"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">brown</span>
+<span class="n">brown</span><span class="o">.</span><span class="n">categories</span><span class="p">()</span>
+<span class="n">brown</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="n">categories</span><span class="o">=</span><span class="s1">&#39;news&#39;</span><span class="p">)</span>
+<span class="n">brown</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="n">fileids</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;cg22&#39;</span><span class="p">])</span>
+<span class="n">brown</span><span class="o">.</span><span class="n">sents</span><span class="p">(</span><span class="n">categories</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;news&#39;</span><span class="p">,</span> <span class="s1">&#39;editorial&#39;</span><span class="p">,</span> <span class="s1">&#39;reviews&#39;</span><span class="p">])</span>
+</pre></div>
+
+
+<h5>1.4 路透社语料库</h5>
+<div class="highlight-custom"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">reuters</span>
+<span class="n">reuters</span><span class="o">.</span><span class="n">fileids</span><span class="p">()</span>
+<span class="n">reuters</span><span class="o">.</span><span class="n">categories</span><span class="p">()</span>
+<span class="n">reuters</span><span class="o">.</span><span class="n">categories</span><span class="p">(</span><span class="s1">&#39;training/9865&#39;</span><span class="p">)</span>
+<span class="n">reuters</span><span class="o">.</span><span class="n">categories</span><span class="p">([</span><span class="s1">&#39;training/9865&#39;</span><span class="p">,</span> <span class="s1">&#39;training/9880&#39;</span><span class="p">])</span>
+<span class="n">reuters</span><span class="o">.</span><span class="n">fileids</span><span class="p">(</span><span class="s1">&#39;barley&#39;</span><span class="p">)</span>
+<span class="n">reuters</span><span class="o">.</span><span class="n">fileids</span><span class="p">([</span><span class="s1">&#39;barley&#39;</span><span class="p">,</span> <span class="s1">&#39;corn&#39;</span><span class="p">])</span>
+</pre></div>
+
+
+<h5>1.5 就职演说语料库</h5>
+<div class="highlight-custom"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">inaugural</span>
+<span class="n">inaugural</span><span class="o">.</span><span class="n">fileids</span><span class="p">()</span>
+</pre></div>
+
+
+<h5>1.6 标注文本语料库</h5>
+<p>http://nltk.org/data
+http://nltk.org/howto</p>
+<h5>1.7 其他语言的语料库</h5>
+<p>nltk.corpus.udhr  # 超过300种语言的世界人权宣言</p>
+<h5>1.8 文本语料库的结构</h5>
+<h6>NLTK 中定义的基本语料库函数, 使用help(nltk.corpus.reader)可以找到更多的文档</h6>
+<div class="highlight-custom"><pre><span></span>示例                       描述                          
+fileids()                  语料库中的文件                
+fileids([categories])      这些分类对应的语料库中的文件  
+categories()               语料库中的分类                
+categories([fileids])      这些文件对应的语料库中的分类  
+raw()                      语料库的原始内容              
+raw(fileids=[f1,f2,f3])    指定文件的原始内容            
+raw(categories=[c1,c2])    指定分类的原始内容            
+words()                    整个语料库中的词汇            
+words(fileids=[f1,f2,f3])  指定文件中的词汇              
+words(categories=[c1,c2])  指定分类中的词汇              
+sents()                    整个语料库中的句子            
+sents(fileids=[f1,f2,f3])  指定文件中的句子              
+sents(categories=[c1,c2])  指定分类中的句子              
+abspath(fileid)            指定文件在磁盘上的位置        
+encoding(fileid)           文件的编码（如果知道的话）    
+open(fileid)               打开指定语料库文件的文件流    
+root                       本地安装的语料库根目录的路径  
+readme()                   语料库的README文件的内容
+</pre></div>
+
+
+<h5>1.9 加载你自己的语料库</h5>
+<div class="highlight-custom"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">PlaintextCorpusReader</span>
+<span class="n">corpus_root</span> <span class="o">=</span> <span class="s1">&#39;/usr/share/dict&#39;</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">wordlists</span> <span class="o">=</span> <span class="n">PlaintextCorpusReader</span><span class="p">(</span><span class="n">corpus_root</span><span class="p">,</span> <span class="s1">&#39;.*&#39;</span><span class="p">)</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">wordlists</span><span class="o">.</span><span class="n">fileids</span><span class="p">()</span>
+</pre></div>
+
+
+<div class="highlight-custom"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">BracketParseCorpusReader</span>
+<span class="n">corpus_root</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;C:\corpora\penntreebank\parsed\mrg\wsj&quot;</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">file_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;.*/wsj_.*\.mrg&quot;</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">ptb</span> <span class="o">=</span> <span class="n">BracketParseCorpusReader</span><span class="p">(</span><span class="n">corpus_root</span><span class="p">,</span> <span class="n">file_pattern</span><span class="p">)</span>
+<span class="n">ptb</span><span class="o">.</span><span class="n">fileids</span><span class="p">()</span>
+</pre></div>
+
+
+<h3>2 条件频率分布</h3>
+<h5>2.1 条件和事件</h5>
+<h5>2.2 按文体计数词汇</h5>
+<div class="highlight-custom"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">brown</span>
+<span class="n">cfd</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">ConditionalFreqDist</span><span class="p">(</span>
+          <span class="p">(</span><span class="n">genre</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span>
+          <span class="k">for</span> <span class="n">genre</span> <span class="ow">in</span> <span class="n">brown</span><span class="o">.</span><span class="n">categories</span><span class="p">()</span>
+          <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">brown</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="n">categories</span><span class="o">=</span><span class="n">genre</span><span class="p">))</span>
+
+<span class="n">cfd</span>  <span class="c1"># &lt;ConditionalFreqDist with 2 conditions&gt;</span>
+<span class="n">cfd</span><span class="o">.</span><span class="n">conditions</span><span class="p">()</span>  <span class="c1"># [&#39;news&#39;, &#39;romance&#39;]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">cfd</span><span class="p">[</span><span class="s1">&#39;news&#39;</span><span class="p">])</span>
+<span class="c1"># &lt;FreqDist with 14394 samples and 100554 outcomes&gt;</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">cfd</span><span class="p">[</span><span class="s1">&#39;romance&#39;</span><span class="p">])</span>
+<span class="o">&lt;</span><span class="n">FreqDist</span> <span class="k">with</span> <span class="mi">8452</span> <span class="n">samples</span> <span class="ow">and</span> <span class="mi">70022</span> <span class="n">outcomes</span><span class="o">&gt;</span>
+
+<span class="n">cfd</span><span class="p">[</span><span class="s1">&#39;romance&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="n">cfd</span><span class="p">[</span><span class="s1">&#39;romance&#39;</span><span class="p">][</span><span class="s1">&#39;could&#39;</span><span class="p">]</span>
+<span class="c1"># 193</span>
+</pre></div>
+
+
+<h5>2.3 绘制分布图和分布表</h5>
+<div class="highlight-custom"><pre><span></span>cfd.tabulate(conditions=[&#39;English&#39;, &#39;German_Deutsch&#39;],
+             samples=range(10), cumulative=True)
+
+cfd.plot(conditions=[&#39;English&#39;, &#39;German_Deutsch&#39;],
+         samples=range(10), cumulative=True)
+</pre></div>
+
+
+<h5>2.4 使用双连词生成随机文本</h5>
+<p>条件频率分布是一个对许多NLP 任务都有用的数据结构。2.1总结了它们常用的方法。</p>
+<div class="highlight-custom"><pre><span></span>示例                                 描述
+cfdist=ConditionalFreqDist(pairs)    从配对列表中创建条件频率分布                       
+cfdist.conditions()                  条件
+cfdist[condition]                    此条件下的频率分布
+cfdist[condition][sample]            此条件下给定样本的频率
+cfdist.tabulate()                    为条件频率分布制表
+cfdist.tabulate(samples,conditions)  指定样本和条件限制下制表
+cfdist.plot()                        为条件频率分布绘图
+cfdist.plot(samples,conditions)      指定样本和条件限制下绘图
+cfdist1&lt;cfdist2                      测试样本在cfdist1中出现次数是否小于在cfdist2中出现次数
+</pre></div>
+
+
+<h3>3 更多关于Python：代码重用</h3>
+<h3>4 词汇资源</h3></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">
+        zhiliao
+    </span>
+  </span>
+<time datetime="2018-11-10T18:17:07+08:00" pubdate>2018-11-10 18:17:07</time>  <span class="categories">
+    <a class='category' href='/category/nltk.html'>nltk</a>
+  </span>
+  <span class="categories">
+    <a class="category" href="/tag/python.html">python</a>,    <a class="category" href="/tag/nltk.html">nltk</a>  </span>
+</p><div class="sharing">
+</div>    </footer>
+  </article>
+
+</div>
+
+<aside class="sidebar">
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    <li class="post">
+        <a href="/posts/2020/04/24/inotify-tools.html">inotify-tools</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2020/01/08/linux-nc.html">通过nc命令查看服务器端口和客户端能不能正常连接</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2020/01/07/laptop-router.html">笔记本把无线网络连接分享给网线</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2020/01/05/linux-improving-performance.html">Linux性能优化</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2019/12/19/openSUSE-server-install-cinnamon.html">openSUSE Tumbleweed server 安装cinnamon桌面</a>
+    </li>
+  </ul>
+</section><section>
+  <h1>Categories</h1>
+    <ul id="recent_posts">
+      <li><a href="/category/android.html">android (2)</a></li>
+      <li><a href="/category/blog.html">blog (1)</a></li>
+      <li><a href="/category/editor.html">editor (1)</a></li>
+      <li><a href="/category/firefox.html">firefox (1)</a></li>
+      <li><a href="/category/git.html">git (2)</a></li>
+      <li><a href="/category/gu-piao.html">股票 (1)</a></li>
+      <li><a href="/category/linux.html">linux (20)</a></li>
+      <li><a href="/category/network.html">network (3)</a></li>
+      <li><a href="/category/nltk.html">nltk (2)</a></li>
+      <li><a href="/category/other.html">other (1)</a></li>
+      <li><a href="/category/python.html">python (1)</a></li>
+      <li><a href="/category/stock.html">stock (1)</a></li>
+      <li><a href="/category/web.html">web (1)</a></li>
+      <li><a href="/category/windows.html">windows (1)</a></li>
+  </ul>
+</section>
+<section>
+  <h1>Tags</h1>
+    <a href="/tag/linux.html">linux</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/linuix.html">linuix</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/git.html">git</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a></section>
+    <section>
+        <h1>Social</h1>
+        <ul>
+            <li><a href="https://github.com/zhangjiaxing" target="_blank">github</a></li>
+            <li><a href="http://wpa.qq.com/msgrd?v=3&uin=347820393&site=qq&menu=yes" target="_blank">qq</a></li>
+            <li><a href="http://www.writebug.cn" target="_blank">blog</a></li>
+            <li><a href="http://gallery.writebug.cn" target="_blank">gallery</a></li>
+        </ul>
+    </section>
+    <section>
+        <h1>Blogroll</h1>
+        <ul>
+            <li><a href="http://getpelican.com/" target="_blank">Pelican</a></li>
+        </ul>
+    </section>
+
+</aside>
+    </div>
+  </div>
+  <footer role="contentinfo">
+<p>
+    Copyright &copy;  2017&ndash;2020  zhiliao &mdash;
+  <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
+</p>  </footer>
+</body>
+</html>
