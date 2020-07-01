@@ -1,5 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - linux</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/linux.atom.xml" rel="self"></link><id>/</id><updated>2020-04-24T19:40:05+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>inotify-tools</title><link href="/posts/2020/04/24/inotify-tools.html" rel="alternate"></link><published>2020-04-24T19:40:05+08:00</published><updated>2020-04-24T19:40:05+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-04-24:/posts/2020/04/24/inotify-tools.html</id><summary type="html">&lt;p&gt;inotify-tools 可以用来监控文件系统的事件。inotify-tools提供两种工具，一是 inotifywait，它是用来监控文件或目录的变化，二是inotifywatch，它是用来统计文件系统访问的次数。&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - linux</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/linux.atom.xml" rel="self"></link><id>/</id><updated>2020-07-01T23:38:09+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>斐讯N1刷机过程记录</title><link href="/posts/2020/07/01/phicomm-N1.html" rel="alternate"></link><published>2020-07-01T23:38:09+08:00</published><updated>2020-07-01T23:38:09+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-07-01:/posts/2020/07/01/phicomm-N1.html</id><summary type="html">&lt;p&gt;去年买的N1盒子, 一直没时间折腾, 最近刚好需要作下载机用, 于是刷机, 顺便整理下步骤.&lt;/p&gt;
+&lt;p&gt;首先说下N1配置. 处理器Amlogic S905, 内存 2G, emmc 8G, 千兆网口, 2个USB 2.0, 1个HDMI接口, 双频WIFI(支持 802.11 ac), 支持蓝牙. &lt;/p&gt;
+&lt;p&gt;价格目前不到100元. 和raspberry 4 相比性能差不多, 重要的是能用Android系统, 便宜, 自带外壳.&lt;/p&gt;
+&lt;h4&gt;目前用的人多的N1系统, 大致为 (不分先后)&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Openwrt做主路由     &lt;/li&gt;
+&lt;li&gt;小钢炮做下载机Docker里做旁路由 (恩山无线论坛 荒野无灯 所开发的专注于下载的系统, 基于linux)&lt;/li&gt;
+&lt;li&gt;Armbian玩Docker&lt;/li&gt;
+&lt;li&gt;Android (电视盒子)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;刷机第一步系统降级&lt;/h2&gt;
+&lt;p&gt;不管是N1什么版本，首先必须要降级到能线刷的版本，并且能够使用，便于后期emmc能恢复。&lt;/p&gt;
+&lt;h6&gt;准备环境&lt;/h6&gt;
+&lt;ul&gt;
+&lt;li&gt;N1盒子&lt;/li&gt;
+&lt;li&gt;装有windows的电脑主机 …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;去年买的N1盒子, 一直没时间折腾, 最近刚好需要作下载机用, 于是刷机, 顺便整理下步骤.&lt;/p&gt;
+&lt;p&gt;首先说下N1配置. 处理器Amlogic S905, 内存 2G, emmc 8G, 千兆网口, 2个USB 2.0, 1个HDMI接口, 双频WIFI(支持 802.11 ac), 支持蓝牙. &lt;/p&gt;
+&lt;p&gt;价格目前不到100元. 和raspberry 4 相比性能差不多, 重要的是能用Android系统, 便宜, 自带外壳.&lt;/p&gt;
+&lt;h4&gt;目前用的人多的N1系统, 大致为 (不分先后)&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Openwrt做主路由     &lt;/li&gt;
+&lt;li&gt;小钢炮做下载机Docker里做旁路由 (恩山无线论坛 荒野无灯 所开发的专注于下载的系统, 基于linux)&lt;/li&gt;
+&lt;li&gt;Armbian玩Docker&lt;/li&gt;
+&lt;li&gt;Android (电视盒子)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;刷机第一步系统降级&lt;/h2&gt;
+&lt;p&gt;不管是N1什么版本，首先必须要降级到能线刷的版本，并且能够使用，便于后期emmc能恢复。&lt;/p&gt;
+&lt;h6&gt;准备环境&lt;/h6&gt;
+&lt;ul&gt;
+&lt;li&gt;N1盒子&lt;/li&gt;
+&lt;li&gt;装有windows的电脑主机&lt;/li&gt;
+&lt;li&gt;网线&lt;/li&gt;
+&lt;li&gt;HDMI线&lt;/li&gt;
+&lt;li&gt;支持HDMI的电视或者显示器&lt;/li&gt;
+&lt;li&gt;USB接口鼠标&lt;/li&gt;
+&lt;li&gt;USB2.0公对公数据线&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h6&gt;降级过程&lt;/h6&gt;
+&lt;p&gt;&lt;a href="https://www.right.com.cn/forum/thread-340279-1-1.html"&gt;WEBPAD大神降级教程&amp;gt;&amp;gt;&lt;/a&gt;
+&lt;a href="https://www.right.com.cn/forum/thread-413863-1-1.html"&gt;超快速恢复EMMC法&amp;gt;&amp;gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h6&gt;设置开启U盘引导, 设置以后, 只要不动bootloader, N1 就刷不死&lt;/h6&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;adb connect N1的IP
+adb shell reboot update
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;下面是刷armbian的方法&lt;/h2&gt;
+&lt;h6&gt;下载armbian系统&lt;/h6&gt;
+&lt;p&gt;&lt;a href="https://www.right.com.cn/forum/thread-927225-1-1.html"&gt;当前适配的armbian介绍,下载连接&lt;/a&gt;&lt;/p&gt;
+&lt;h6&gt;烧录进入U盘&lt;/h6&gt;
+&lt;p&gt;linux可以尝试用dd (每测试过)&lt;/p&gt;
+&lt;p&gt;windows用etcher (亲测可用)&lt;/p&gt;
+&lt;p&gt;按照上面的说明, 替换 btd文件&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[/boot/uEnv.ini] 第一行改为
+dtb_name=/dtb/meson-gxl-s905d-phicomm-n1.dtb
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h6&gt;然后关闭N1, 开始启动armbian&lt;/h6&gt;
+&lt;p&gt;插上U盘,N1通电, 开机就是U盘启动的armbian系统.&lt;/p&gt;
+&lt;p&gt;也可以通过home目录下面的 install.sh 安装进入emmc. (覆盖掉默认的android)&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;参考资料 &lt;code&gt;主要参考 恩山无线论坛 和 什么值得买&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.right.com.cn/forum/thread-415880-1-1.html"&gt;N1刷不死的玩法整理&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.right.com.cn/forum/thread-413863-1-1.html"&gt;N1刷完ARMBIAN想恢复EMMC超级简单线刷法&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.right.com.cn/forum/thread-421805-1-1.html"&gt;N1玩法总结整理&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://post.smzdm.com/p/akmg5dv4/"&gt;N1盒子不拆机救砖&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://post.smzdm.com/p/aekemx44/"&gt;N1改电视盒子&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://post.smzdm.com/p/a99vxp9e/"&gt;N1简明降级&amp;amp;刷机教程&lt;/a&gt;&lt;/p&gt;</content><category term="linux"></category><category term="phicomm"></category></entry><entry><title>inotify-tools</title><link href="/posts/2020/04/24/inotify-tools.html" rel="alternate"></link><published>2020-04-24T19:40:05+08:00</published><updated>2020-04-24T19:40:05+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-04-24:/posts/2020/04/24/inotify-tools.html</id><summary type="html">&lt;p&gt;inotify-tools 可以用来监控文件系统的事件。inotify-tools提供两种工具，一是 inotifywait，它是用来监控文件或目录的变化，二是inotifywatch，它是用来统计文件系统访问的次数。&lt;/p&gt;
 &lt;p&gt;常用&lt;code&gt;inotifywait -qcrm $dir&lt;/code&gt;&lt;/p&gt;
 &lt;h6&gt;inotifywait&lt;/h6&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;参数：
@@ -69,7 +137,7 @@
 设置超时时间
 -e , –event 
 只监听指定的事件。
-&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="kernel"></category></entry><entry><title>笔记本把无线网络连接分享给网线</title><link href="/posts/2020/01/07/laptop-router.html" rel="alternate"></link><published>2020-01-07T22:11:18+08:00</published><updated>2020-01-07T22:11:18+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-01-07:/posts/2020/01/07/laptop-router.html</id><summary type="html">&lt;p&gt;笔记本把无线网络连接分享给网线.&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="kernel"></category></entry><entry><title>笔记本把无线网络连接分享给网线</title><link href="/posts/2020/01/07/laptop-router.html" rel="alternate"></link><published>2020-01-07T22:11:18+08:00</published><updated>2020-01-07T22:11:18+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-01-07:/posts/2020/01/07/laptop-router.html</id><summary type="html">&lt;p&gt;笔记本把无线网络连接分享给网线.&lt;/p&gt;
 &lt;p&gt;首先如果笔记本开了NetworkManager服务, 建议在NetworkManager的配置中取消托管有线网络接口 eth0. (可选, 如果修改了配置, 要重启NetworkManager)&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;cat /etc/NetworkManager/NetworkManager.conf&lt;/code&gt;&lt;/p&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;[main]&lt;/span&gt;
@@ -113,11 +181,15 @@
 &lt;code&gt;iptables -t nat -A POSTROUTING -j MASQUERADE&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;需要上网的设备连接笔记本eth0即可&lt;/p&gt;
 &lt;p&gt;查看笔记本下面连接的设备ip
-&lt;code&gt;cat /var/lib/misc/dnsmasq.leases&lt;/code&gt; 或者 &lt;code&gt;cat /var/db/dnsmasq.leases&lt;/code&gt;&lt;/p&gt;</content><category term="linux"></category><category term="linuix"></category><category term="network"></category></entry><entry><title>Linux性能优化</title><link href="/posts/2020/01/05/linux-improving-performance.html" rel="alternate"></link><published>2020-01-05T22:05:19+08:00</published><updated>2020-01-05T22:05:19+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-01-05:/posts/2020/01/05/linux-improving-performance.html</id><content type="html">&lt;ol&gt;
+&lt;code&gt;cat /var/lib/misc/dnsmasq.leases&lt;/code&gt; 或者 &lt;code&gt;cat /var/db/dnsmasq.leases&lt;/code&gt;&lt;/p&gt;</content><category term="linuix"></category><category term="network"></category></entry><entry><title>Linux性能优化</title><link href="/posts/2020/01/05/linux-improving-performance.html" rel="alternate"></link><published>2020-01-05T22:05:19+08:00</published><updated>2020-01-05T22:05:19+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-01-05:/posts/2020/01/05/linux-improving-performance.html</id><summary type="html">&lt;ol&gt;
 &lt;li&gt;挂载选项添加noatime&lt;/li&gt;
 &lt;li&gt;mitigations=off&lt;/li&gt;
 &lt;li&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><category term="linux"></category><category term="linux"></category></entry><entry><title>openSUSE Tumbleweed server 安装cinnamon桌面</title><link href="/posts/2019/12/19/openSUSE-server-install-cinnamon.html" rel="alternate"></link><published>2019-12-19T11:11:01+08:00</published><updated>2019-12-19T11:11:01+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2019-12-19:/posts/2019/12/19/openSUSE-server-install-cinnamon.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;zypper refresh
+&lt;/ol&gt;</summary><content type="html">&lt;ol&gt;
+&lt;li&gt;挂载选项添加noatime&lt;/li&gt;
+&lt;li&gt;mitigations=off&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><category term="linux"></category></entry><entry><title>openSUSE Tumbleweed server 安装cinnamon桌面</title><link href="/posts/2019/12/19/openSUSE-server-install-cinnamon.html" rel="alternate"></link><published>2019-12-19T11:11:01+08:00</published><updated>2019-12-19T11:11:01+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2019-12-19:/posts/2019/12/19/openSUSE-server-install-cinnamon.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;zypper refresh
 zypper install cinnamon
 zypper install lightdm
 zypper install xorg-x11-server
@@ -146,7 +218,7 @@ zypper install wqy-microhei-fonts
 zypper install fcitx-libpinyin fcitx-config-gtk3
 
 reboot
-&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="openSUSE"></category><category term="linux"></category></entry><entry><title>openSUSE Leap &amp; Tumbleweed 添加软件源</title><link href="/posts/2019/12/16/openSUSE-addrepo.html" rel="alternate"></link><published>2019-12-16T14:55:38+08:00</published><updated>2019-12-16T14:55:38+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2019-12-16:/posts/2019/12/16/openSUSE-addrepo.html</id><summary type="html">&lt;p&gt;首先禁用全部仓库：
+&lt;/pre&gt;&lt;/div&gt;</content><category term="openSUSE"></category><category term="linux"></category></entry><entry><title>openSUSE Leap &amp; Tumbleweed 添加软件源</title><link href="/posts/2019/12/16/openSUSE-addrepo.html" rel="alternate"></link><published>2019-12-16T14:55:38+08:00</published><updated>2019-12-16T14:55:38+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2019-12-16:/posts/2019/12/16/openSUSE-addrepo.html</id><summary type="html">&lt;p&gt;首先禁用全部仓库：
 &lt;code&gt;sudo zypper mr -da&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;如果是Tumbleweed&lt;/p&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo zypper ar -fc http://mirrors.aliyun.com/opensuse/tumbleweed/repo/oss/      Tumbleweed-Oss-aliyun
@@ -180,7 +252,7 @@ sudo zypper ar -fc http://mirrors.aliyun.com/packman/openSUSE_Leap_15.1/        
 
 &lt;span class="c1"&gt;# 更新执行&lt;/span&gt;
 sudo zypper update
-&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="openSUSE"></category><category term="linux"></category></entry><entry><title>ext4断电丢失数据(零长文件)</title><link href="/posts/2019/11/29/ext4-data-lost.html" rel="alternate"></link><published>2019-11-29T21:10:42+08:00</published><updated>2019-11-29T21:10:42+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2019-11-29:/posts/2019/11/29/ext4-data-lost.html</id><summary type="html">&lt;p&gt;ext4断电丢失数据(零长文件).&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="openSUSE"></category><category term="linux"></category></entry><entry><title>ext4断电丢失数据(零长文件)</title><link href="/posts/2019/11/29/ext4-data-lost.html" rel="alternate"></link><published>2019-11-29T21:10:42+08:00</published><updated>2019-11-29T21:10:42+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2019-11-29:/posts/2019/11/29/ext4-data-lost.html</id><summary type="html">&lt;p&gt;ext4断电丢失数据(零长文件).&lt;/p&gt;
 &lt;p&gt;嵌入式设备, 经常拔掉电源, 以前/data分区有挂载选项 sync.&lt;/p&gt;
 &lt;p&gt;后来发现sync方式挂载写入数据速度太慢了(100KB/S), 正常为10MB/S.&lt;/p&gt;
 &lt;p&gt;去掉sync断电又会丢数据.&lt;/p&gt;
@@ -191,7 +263,7 @@ sudo zypper update
 &lt;p&gt;去掉sync断电又会丢数据.&lt;/p&gt;
 &lt;p&gt;ext4 man-pages 上说 &lt;code&gt;fd = open("foo", O_TRUNC)/write(fd,...)/close(fd)&lt;/code&gt; 或者好一点的 &lt;code&gt;fd = open("foo.new")/write(fd,...)/close(fd)/ rename("foo.new", "foo")&lt;/code&gt; 这种用法突然断电容易产生零长文件, 在close之前调用fsync好一点. 实际上 auto_da_alloc 挂载选项就是为了解决上面的一些情况的, man-pages上说auto_da_alloc 相对及时把数据写进硬盘. 但是自己测试断电依然会丢数据, 产生零长文件(&lt;code&gt;zero-length&lt;/code&gt;) .&lt;/p&gt;
 &lt;p&gt;尝试新的挂载选项为 defaults,noatime,nodelalloc,auto_da_alloc,commit=1,data=journal, 不带sync. 不知道管用不管用.&lt;/p&gt;
-&lt;p&gt;有人推荐xfs, 据说断电不容易丢数据, 但xfs用于读写密集的环境会有一些问题, 读写密集环境用ext4.&lt;/p&gt;</content><category term="linux"></category><category term="linux"></category><category term="ext4"></category></entry><entry><title>raspberry watchdog</title><link href="/posts/2019/11/22/raspberry-watchdog.html" rel="alternate"></link><published>2019-11-22T20:06:38+08:00</published><updated>2019-11-22T20:06:38+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2019-11-22:/posts/2019/11/22/raspberry-watchdog.html</id><content type="html">&lt;p&gt;raspberry 4b
+&lt;p&gt;有人推荐xfs, 据说断电不容易丢数据, 但xfs用于读写密集的环境会有一些问题, 读写密集环境用ext4.&lt;/p&gt;</content><category term="linux"></category><category term="ext4"></category></entry><entry><title>raspberry watchdog</title><link href="/posts/2019/11/22/raspberry-watchdog.html" rel="alternate"></link><published>2019-11-22T20:06:38+08:00</published><updated>2019-11-22T20:06:38+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2019-11-22:/posts/2019/11/22/raspberry-watchdog.html</id><summary type="html">&lt;p&gt;raspberry 4b
 Raspbian GNU/Linux 10 (buster)&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code&gt;ls /dev/watchdog*&lt;/code&gt;&lt;/p&gt;
@@ -205,7 +277,21 @@ ShutdownWatchdogSec=10min&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;systemctl daemon-reexec&lt;/p&gt;
 &lt;p&gt;:(){ :|:&amp;amp; };:&lt;/p&gt;
-&lt;/blockquote&gt;</content><category term="linux"></category><category term="linux"></category><category term="raspberry"></category></entry><entry><title>linux pptpd配置</title><link href="/posts/2019/11/14/linux-pptpd.html" rel="alternate"></link><published>2019-11-14T10:44:33+08:00</published><updated>2019-11-14T10:44:33+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2019-11-14:/posts/2019/11/14/linux-pptpd.html</id><content type="html">&lt;p&gt;yum install pptpd&lt;/p&gt;
+&lt;/blockquote&gt;</summary><content type="html">&lt;p&gt;raspberry 4b
+Raspbian GNU/Linux 10 (buster)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;ls /dev/watchdog*&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;/dev/watchdog  /dev/watchdog0&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;grep Watchdog /etc/systemd/system.conf&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;RuntimeWatchdogSec=10
+ShutdownWatchdogSec=10min&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;systemctl daemon-reexec&lt;/p&gt;
+&lt;p&gt;:(){ :|:&amp;amp; };:&lt;/p&gt;
+&lt;/blockquote&gt;</content><category term="linux"></category><category term="raspberry"></category></entry><entry><title>linux pptpd配置</title><link href="/posts/2019/11/14/linux-pptpd.html" rel="alternate"></link><published>2019-11-14T10:44:33+08:00</published><updated>2019-11-14T10:44:33+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2019-11-14:/posts/2019/11/14/linux-pptpd.html</id><summary type="html">&lt;p&gt;yum install pptpd&lt;/p&gt;
 &lt;p&gt;echo "user01  pptpd   123456  * " &amp;gt;&amp;gt;  chap-secrets &lt;/p&gt;
 &lt;p&gt;echo "net.ipv4.ip_forward=1" &amp;gt; /etc/sysctl.d/ip_forward.conf
 sysctl -p&lt;/p&gt;
@@ -215,7 +301,17 @@ remoteip        192.168.0.234-238,192.168.0.245
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;systemctl start pptpd.service&lt;/p&gt;</content><category term="linux"></category><category term="linux"></category><category term="server"></category></entry><entry><title>生成函数调用关系图</title><link href="/posts/2018/10/31/gprof2dot.html" rel="alternate"></link><published>2018-10-31T13:57:01+08:00</published><updated>2018-10-31T13:57:01+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2018-10-31:/posts/2018/10/31/gprof2dot.html</id><summary type="html">&lt;h4&gt;用gprof生成函数调用关系图&lt;/h4&gt;
+&lt;p&gt;systemctl start pptpd.service&lt;/p&gt;</summary><content type="html">&lt;p&gt;yum install pptpd&lt;/p&gt;
+&lt;p&gt;echo "user01  pptpd   123456  * " &amp;gt;&amp;gt;  chap-secrets &lt;/p&gt;
+&lt;p&gt;echo "net.ipv4.ip_forward=1" &amp;gt; /etc/sysctl.d/ip_forward.conf
+sysctl -p&lt;/p&gt;
+&lt;p&gt;vim /etc/pptpd.conf&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;localip 192.168.0.1
+remoteip        192.168.0.234-238,192.168.0.245
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;systemctl start pptpd.service&lt;/p&gt;</content><category term="linux"></category><category term="server"></category></entry><entry><title>生成函数调用关系图</title><link href="/posts/2018/10/31/gprof2dot.html" rel="alternate"></link><published>2018-10-31T13:57:01+08:00</published><updated>2018-10-31T13:57:01+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2018-10-31:/posts/2018/10/31/gprof2dot.html</id><summary type="html">&lt;h4&gt;用gprof生成函数调用关系图&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;CMakeLists.txt&lt;/li&gt;
 &lt;/ol&gt;
@@ -262,9 +358,11 @@ SET(CMAKE_C_FLAGS_RELEASE &amp;quot;$ENV{CXXFLAGS} -O3 -Wall&amp;quot;)
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;valgrind --tool=callgrind ./a.out
 执行完成后在目录下生成&amp;quot;callgrind.out.XXX&amp;quot;的文件这是分析文件
 gprof2dot.py -f callgrind callgrind.out.XXX &amp;gt; xxx.dot
-&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category></entry><entry><title>shellinabox</title><link href="/posts/2018/05/22/shellinabox.html" rel="alternate"></link><published>2018-05-22T19:37:34+08:00</published><updated>2018-05-22T19:37:34+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2018-05-22:/posts/2018/05/22/shellinabox.html</id><content type="html">&lt;p&gt;shellinabox 能够通过Web浏览器模拟一个远程系统的Shell. 它和SSH没有任何关系.&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category></entry><entry><title>shellinabox</title><link href="/posts/2018/05/22/shellinabox.html" rel="alternate"></link><published>2018-05-22T19:37:34+08:00</published><updated>2018-05-22T19:37:34+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2018-05-22:/posts/2018/05/22/shellinabox.html</id><summary type="html">&lt;p&gt;shellinabox 能够通过Web浏览器模拟一个远程系统的Shell. 它和SSH没有任何关系.&lt;/p&gt;
 &lt;p&gt;shellinaboxd -t  (开启一个login shell)&lt;/p&gt;
-&lt;p&gt;shellinaboxd -t -s '/:root:root:/:/bin/bash' --port=8080  (不需要输入密码,直接登陆)&lt;/p&gt;</content><category term="linux"></category><category term="shell"></category><category term="terminal"></category><category term="web"></category><category term="linux"></category></entry><entry><title>linux 使用network manager 开启wifi热点</title><link href="/posts/2018/04/13/networkmanager-wifi-ap.html" rel="alternate"></link><published>2018-04-13T19:42:58+08:00</published><updated>2018-04-13T19:42:58+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2018-04-13:/posts/2018/04/13/networkmanager-wifi-ap.html</id><content type="html">&lt;p&gt;linux 使用network manager 开启wifi热点&lt;/p&gt;
+&lt;p&gt;shellinaboxd -t -s '/:root:root:/:/bin/bash' --port=8080  (不需要输入密码,直接登陆)&lt;/p&gt;</summary><content type="html">&lt;p&gt;shellinabox 能够通过Web浏览器模拟一个远程系统的Shell. 它和SSH没有任何关系.&lt;/p&gt;
+&lt;p&gt;shellinaboxd -t  (开启一个login shell)&lt;/p&gt;
+&lt;p&gt;shellinaboxd -t -s '/:root:root:/:/bin/bash' --port=8080  (不需要输入密码,直接登陆)&lt;/p&gt;</content><category term="shell"></category><category term="terminal"></category><category term="web"></category><category term="linux"></category></entry><entry><title>linux 使用network manager 开启wifi热点</title><link href="/posts/2018/04/13/networkmanager-wifi-ap.html" rel="alternate"></link><published>2018-04-13T19:42:58+08:00</published><updated>2018-04-13T19:42:58+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2018-04-13:/posts/2018/04/13/networkmanager-wifi-ap.html</id><summary type="html">&lt;p&gt;linux 使用network manager 开启wifi热点&lt;/p&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;开启热点
 nmcli device wifi hotspot  ssid zhiliao-test  password 12345678
 或者
@@ -273,7 +371,16 @@ nmcli device wifi hotspot con-name zhiliao-test-5G ssid zhiliao-test-5G band a p
 删除热点配置
 nmcli connection show
 nmcli  connection delete zhiliao-test-5G
-&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="wireless"></category><category term="linux"></category></entry><entry><title>在浏览器中显示gtk+应用</title><link href="/posts/2017/12/29/gtk-broadway.html" rel="alternate"></link><published>2017-12-29T18:14:49+08:00</published><updated>2017-12-29T18:14:49+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-12-29:/posts/2017/12/29/gtk-broadway.html</id><summary type="html">&lt;h3&gt;在浏览器中显示gtk+应用&lt;/h3&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;linux 使用network manager 开启wifi热点&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;开启热点
+nmcli device wifi hotspot  ssid zhiliao-test  password 12345678
+或者
+nmcli device wifi hotspot con-name zhiliao-test-5G ssid zhiliao-test-5G band a password 12345678
+
+删除热点配置
+nmcli connection show
+nmcli  connection delete zhiliao-test-5G
+&lt;/pre&gt;&lt;/div&gt;</content><category term="wireless"></category><category term="linux"></category></entry><entry><title>在浏览器中显示gtk+应用</title><link href="/posts/2017/12/29/gtk-broadway.html" rel="alternate"></link><published>2017-12-29T18:14:49+08:00</published><updated>2017-12-29T18:14:49+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-12-29:/posts/2017/12/29/gtk-broadway.html</id><summary type="html">&lt;h3&gt;在浏览器中显示gtk+应用&lt;/h3&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;GDK_BACKEND&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;broadway &lt;span class="nv"&gt;BROADWAY_DISPLAY&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;:5 gtk3-demo
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -301,7 +408,7 @@ nmcli  connection delete zhiliao-test-5G
 &lt;li&gt;&lt;a href="https://blogs.gnome.org/alexl/2011/04/18/broadway-update-3/"&gt;https://blogs.gnome.org/alexl/2011/04/18/broadway-update-3&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/symbiose/symbiose/wiki/Broadway"&gt;https://github.com/symbiose/symbiose/wiki/Broadway&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.tarnyko.net/en/?q=node/8"&gt;Tutorial : using GTK+3 "Broadway" on Windows&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="linux"></category><category term="linux"></category><category term="gtk+"></category><category term="gnome"></category></entry><entry><title>SysRq</title><link href="/posts/2017/12/29/linux-sysrq.html" rel="alternate"></link><published>2017-12-29T14:20:16+08:00</published><updated>2017-12-29T14:20:16+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-12-29:/posts/2017/12/29/linux-sysrq.html</id><summary type="html">&lt;h2&gt;SysRq HELP&lt;/h2&gt;
+&lt;/ul&gt;</content><category term="linux"></category><category term="gtk+"></category><category term="gnome"></category></entry><entry><title>SysRq</title><link href="/posts/2017/12/29/linux-sysrq.html" rel="alternate"></link><published>2017-12-29T14:20:16+08:00</published><updated>2017-12-29T14:20:16+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-12-29:/posts/2017/12/29/linux-sysrq.html</id><summary type="html">&lt;h2&gt;SysRq HELP&lt;/h2&gt;
 &lt;h5&gt;开启这个功能&lt;/h5&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt; &amp;gt; /proc/sys/kernel/sysrq  &lt;span class="c1"&gt;# 或者在 /etc/sysctl.conf 中设置 kernel.sysrq=1&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -364,11 +471,15 @@ unmount(u)
 force-fb(V)
 show-blocked-tasks(w)
 dump-ftrace-buffer(z)
-&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category></entry><entry><title>daemonize</title><link href="/posts/2017/12/11/daemonize.html" rel="alternate"></link><published>2017-12-11T16:43:49+08:00</published><updated>2017-12-11T16:43:49+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-12-11:/posts/2017/12/11/daemonize.html</id><content type="html">&lt;p&gt;daemonize 能够把命令作为守护进程 (daemon) 运行.
+&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category></entry><entry><title>daemonize</title><link href="/posts/2017/12/11/daemonize.html" rel="alternate"></link><published>2017-12-11T16:43:49+08:00</published><updated>2017-12-11T16:43:49+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-12-11:/posts/2017/12/11/daemonize.html</id><summary type="html">&lt;p&gt;daemonize 能够把命令作为守护进程 (daemon) 运行.
 并且支持自动创建pid文件, 自动创建/检查文件锁.&lt;/p&gt;
 &lt;p&gt;顺便记录一下几个相关命令, &lt;code&gt;daemonize, nohup, setsid, &amp;amp;, disown&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;如何用bash实现daemon
-http://blog.n01se.net/blog-n01se-net-p-145.html&lt;/p&gt;</content><category term="linux"></category><category term="linux"></category><category term="bash"></category></entry><entry><title>cpio</title><link href="/posts/2017/08/20/linux-cpio.html" rel="alternate"></link><published>2017-08-20T12:31:36+08:00</published><updated>2017-08-20T12:31:36+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-08-20:/posts/2017/08/20/linux-cpio.html</id><content type="html">&lt;ul&gt;
+http://blog.n01se.net/blog-n01se-net-p-145.html&lt;/p&gt;</summary><content type="html">&lt;p&gt;daemonize 能够把命令作为守护进程 (daemon) 运行.
+并且支持自动创建pid文件, 自动创建/检查文件锁.&lt;/p&gt;
+&lt;p&gt;顺便记录一下几个相关命令, &lt;code&gt;daemonize, nohup, setsid, &amp;amp;, disown&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;如何用bash实现daemon
+http://blog.n01se.net/blog-n01se-net-p-145.html&lt;/p&gt;</content><category term="linux"></category><category term="bash"></category></entry><entry><title>cpio</title><link href="/posts/2017/08/20/linux-cpio.html" rel="alternate"></link><published>2017-08-20T12:31:36+08:00</published><updated>2017-08-20T12:31:36+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-08-20:/posts/2017/08/20/linux-cpio.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;建立 cpio文件 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;find ./files | cpio -o -H newc &amp;gt; filename.cpio
@@ -390,7 +501,29 @@ cpio -ivd  &amp;lt; filename.cpio
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;code&gt;* 如果find显示文件路径是绝对的， 那么解压后可能会覆盖已有文件。 最好使用相对路径压缩。&lt;/code&gt;&lt;/p&gt;</content><category term="linux"></category><category term="linux"></category><category term="command"></category></entry><entry><title>dd / 复制 文件显示进度</title><link href="/posts/2017/08/13/dd-status.html" rel="alternate"></link><published>2017-08-13T22:00:20+08:00</published><updated>2017-08-13T22:00:20+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-08-13:/posts/2017/08/13/dd-status.html</id><content type="html">&lt;h4&gt;dd&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;* 如果find显示文件路径是绝对的， 那么解压后可能会覆盖已有文件。 最好使用相对路径压缩。&lt;/code&gt;&lt;/p&gt;</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;建立 cpio文件 &lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;find ./files | cpio -o -H newc &amp;gt; filename.cpio
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;解开cpio文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cd  dir1
+cpio -ivd  &amp;lt; filename.cpio  
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;查看cpio文件中的内容&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cpio -ivt &amp;lt; filename.cpio
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;* 如果find显示文件路径是绝对的， 那么解压后可能会覆盖已有文件。 最好使用相对路径压缩。&lt;/code&gt;&lt;/p&gt;</content><category term="linux"></category><category term="command"></category></entry><entry><title>dd / 复制 文件显示进度</title><link href="/posts/2017/08/13/dd-status.html" rel="alternate"></link><published>2017-08-13T22:00:20+08:00</published><updated>2017-08-13T22:00:20+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-08-13:/posts/2017/08/13/dd-status.html</id><summary type="html">&lt;h4&gt;dd&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;dd 使用参数 &lt;code&gt;status=progress&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;killall / pkill -USR1 dd&lt;/code&gt;&lt;/li&gt;
@@ -400,7 +533,17 @@ cpio -ivd  &amp;lt; filename.cpio
 &lt;ol&gt;
 &lt;li&gt;rsync -a --progress src dest&lt;/li&gt;
 &lt;li&gt;scp -v #在不同机器上拷贝显示进度条&lt;/li&gt;
-&lt;/ol&gt;</content><category term="linux"></category><category term="linux"></category><category term="command"></category></entry><entry><title>linux开启键盘灯的方法</title><link href="/posts/2017/06/24/linux-keyboard-led.html" rel="alternate"></link><published>2017-06-24T00:13:44+08:00</published><updated>2017-06-24T00:13:44+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-24:/posts/2017/06/24/linux-keyboard-led.html</id><content type="html">&lt;p&gt;现在许多背光键盘的背光灯是通过 Scroll 这个键控制的. 
+&lt;/ol&gt;</summary><content type="html">&lt;h4&gt;dd&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;dd 使用参数 &lt;code&gt;status=progress&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;killall / pkill -USR1 dd&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;使用pv命令. &lt;code&gt;pv src &amp;gt; dest&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;复制文件&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;rsync -a --progress src dest&lt;/li&gt;
+&lt;li&gt;scp -v #在不同机器上拷贝显示进度条&lt;/li&gt;
+&lt;/ol&gt;</content><category term="linux"></category><category term="command"></category></entry><entry><title>linux开启键盘灯的方法</title><link href="/posts/2017/06/24/linux-keyboard-led.html" rel="alternate"></link><published>2017-06-24T00:13:44+08:00</published><updated>2017-06-24T00:13:44+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-24:/posts/2017/06/24/linux-keyboard-led.html</id><summary type="html">&lt;p&gt;现在许多背光键盘的背光灯是通过 Scroll 这个键控制的. 
 在windows下这没啥问题, 一按 scroll 这个键 ,背光灯就亮了,再按,就灭了.
 但是, 在Linux下, 按这个键 scroll 没反应.
 所以记录一下linux开启键盘灯的方法&lt;/p&gt;
@@ -409,7 +552,16 @@ xset led on
 
 # X 中关闭键盘灯
 xset led off
-&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="keyboard"></category><category term="command"></category></entry><entry><title>记录一下我常装的 Arch Linux package</title><link href="/posts/2017/06/16/archlinux-package.html" rel="alternate"></link><published>2017-06-16T16:52:14+08:00</published><updated>2017-06-16T16:52:14+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-16:/posts/2017/06/16/archlinux-package.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# dmidecode
+&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;现在许多背光键盘的背光灯是通过 Scroll 这个键控制的. 
+在windows下这没啥问题, 一按 scroll 这个键 ,背光灯就亮了,再按,就灭了.
+但是, 在Linux下, 按这个键 scroll 没反应.
+所以记录一下linux开启键盘灯的方法&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# X 中开启键盘灯
+xset led on
+
+# X 中关闭键盘灯
+xset led off
+&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="keyboard"></category><category term="command"></category></entry><entry><title>记录一下我常装的 Arch Linux package</title><link href="/posts/2017/06/16/archlinux-package.html" rel="alternate"></link><published>2017-06-16T16:52:14+08:00</published><updated>2017-06-16T16:52:14+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-16:/posts/2017/06/16/archlinux-package.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# dmidecode
 # onboard  # 屏幕键盘 
 # yay
 (xfce4) xfce4-datetime-plugin
@@ -568,9 +720,14 @@ simplescreenrecorder  # 录屏
 
 &lt;p&gt;桌面主题 &lt;code&gt;numix + (discreet flat)&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;未完待续...&lt;/p&gt;
-&lt;p&gt;本文不定期更新&lt;/p&gt;</content><category term="linux"></category><category term="linux"></category><category term="software"></category><category term="arch"></category></entry><entry><title>linux设置文件只读, 直到关机</title><link href="/posts/2017/06/14/set-file-readonly-until-reboot.html" rel="alternate"></link><published>2017-06-14T09:58:28+08:00</published><updated>2017-06-14T09:58:28+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-14:/posts/2017/06/14/set-file-readonly-until-reboot.html</id><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mount -o &lt;span class="nb"&gt;bind&lt;/span&gt; &lt;span class="nv"&gt;$file&lt;/span&gt; &lt;span class="nv"&gt;$file&lt;/span&gt;
+&lt;p&gt;本文不定期更新&lt;/p&gt;</content><category term="linux"></category><category term="software"></category><category term="arch"></category></entry><entry><title>linux设置文件只读, 直到关机</title><link href="/posts/2017/06/14/set-file-readonly-until-reboot.html" rel="alternate"></link><published>2017-06-14T09:58:28+08:00</published><updated>2017-06-14T09:58:28+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-14:/posts/2017/06/14/set-file-readonly-until-reboot.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mount -o &lt;span class="nb"&gt;bind&lt;/span&gt; &lt;span class="nv"&gt;$file&lt;/span&gt; &lt;span class="nv"&gt;$file&lt;/span&gt;
 mount -o remount,bind,ro &lt;span class="nv"&gt;$file&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="bash"></category><category term="command"></category></entry><entry><title>apt install 一直 size mismatch</title><link href="/posts/2017/06/03/apt-size-mismatch.html" rel="alternate"></link><published>2017-06-03T08:32:00+08:00</published><updated>2017-06-03T08:32:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-03:/posts/2017/06/03/apt-size-mismatch.html</id><content type="html">&lt;p&gt;raspberry pi 的 debian， apt安装软件是一直提示 size mismatch。
+&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mount -o &lt;span class="nb"&gt;bind&lt;/span&gt; &lt;span class="nv"&gt;$file&lt;/span&gt; &lt;span class="nv"&gt;$file&lt;/span&gt;
+mount -o remount,bind,ro &lt;span class="nv"&gt;$file&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="bash"></category><category term="command"></category></entry><entry><title>apt install 一直 size mismatch</title><link href="/posts/2017/06/03/apt-size-mismatch.html" rel="alternate"></link><published>2017-06-03T08:32:00+08:00</published><updated>2017-06-03T08:32:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-03:/posts/2017/06/03/apt-size-mismatch.html</id><summary type="html">&lt;p&gt;raspberry pi 的 debian， apt安装软件是一直提示 size mismatch。
 后来发现这是运营商(ISP)缓存的问题， 运营商有些时候是通过文件名作为缓存的， 导致服务器文件更新后，用户依然下载到旧的版本。
 解决方法是， apt source 使用https协议就好了。&lt;/p&gt;
-&lt;p&gt;后来发现有人和我遇到同样的问题：https://bbs.deepin.org/forum.php?mod=viewthread&amp;amp;tid=138536&lt;/p&gt;</content><category term="linux"></category><category term="debian"></category><category term="linux"></category></entry></feed>
+&lt;p&gt;后来发现有人和我遇到同样的问题：https://bbs.deepin.org/forum.php?mod=viewthread&amp;amp;tid=138536&lt;/p&gt;</summary><content type="html">&lt;p&gt;raspberry pi 的 debian， apt安装软件是一直提示 size mismatch。
+后来发现这是运营商(ISP)缓存的问题， 运营商有些时候是通过文件名作为缓存的， 导致服务器文件更新后，用户依然下载到旧的版本。
+解决方法是， apt source 使用https协议就好了。&lt;/p&gt;
+&lt;p&gt;后来发现有人和我遇到同样的问题：https://bbs.deepin.org/forum.php?mod=viewthread&amp;amp;tid=138536&lt;/p&gt;</content><category term="debian"></category><category term="linux"></category></entry></feed>

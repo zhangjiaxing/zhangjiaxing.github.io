@@ -4,11 +4,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: network &mdash; cat ~/.zhiliao.history</title>
+  <title>斐讯N1刷机过程记录 &mdash; cat ~/.zhiliao.history</title>
   <meta name="author" content="zhiliao">
 
   <link href="/feeds/all.atom.xml" type="application/rss+xml" rel="alternate"
         title="cat ~/.zhiliao.history RSS Feed" />
+
+
 
 
 
@@ -54,56 +56,84 @@
   <div id="main">
     <div id="content">
 <div>
-	<article role="article">
-    	<header>
-    		<h1 class="entry-title">Category: network</h1>
-    	</header>
+  <article class="hentry" role="article">
+<header>
+      <h1 class="entry-title">斐讯N1刷机过程记录</h1>
+    <p class="meta">
+<time datetime="2020-07-01T23:38:09+08:00" pubdate>2020-07-01 23:38:09</time>      
+    </p>
+</header>
 
-    	<div id="blog-archives">
-            <h2>2020</h2>
-                    <article>
-                        <h1><a href="/posts/2020/01/08/linux-nc.html">通过nc命令查看服务器端口和客户端能不能正常连接</a></h1>
-                        <time datetime="2020-01-08 09:57:04+08:00" pubdate>
-                            <span class="month">一月</span>
-                            <span class="day">08</span>
-                            <span class="year">2020</span>
-                        </time>
-                        <footer>
-                            <span class="categories">posted in
-                                <a class='category' href='/category/network.html'>network</a>
-                            </span>
-                        </footer>
-                    </article>
-            <h2>2019</h2>
-                    <article>
-                        <h1><a href="/posts/2019/07/12/dnsmasq.html">dnsmasq DHCP功能和DNS缓存</a></h1>
-                        <time datetime="2019-07-12 13:59:41+08:00" pubdate>
-                            <span class="month">七月</span>
-                            <span class="day">12</span>
-                            <span class="year">2019</span>
-                        </time>
-                        <footer>
-                            <span class="categories">posted in
-                                <a class='category' href='/category/network.html'>network</a>
-                            </span>
-                        </footer>
-                    </article>
-            <h2>2017</h2>
-                    <article>
-                        <h1><a href="/posts/2017/06/07/iperf3.html">iperf3测试带宽</a></h1>
-                        <time datetime="2017-06-07 00:00:00+08:00" pubdate>
-                            <span class="month">六月</span>
-                            <span class="day">07</span>
-                            <span class="year">2017</span>
-                        </time>
-                        <footer>
-                            <span class="categories">posted in
-                                <a class='category' href='/category/network.html'>network</a>
-                            </span>
-                        </footer>
-                    </article>
-	    </div>
-    </article>
+    <div class="entry-content"><p>去年买的N1盒子, 一直没时间折腾, 最近刚好需要作下载机用, 于是刷机, 顺便整理下步骤.</p>
+<p>首先说下N1配置. 处理器Amlogic S905, 内存 2G, emmc 8G, 千兆网口, 2个USB 2.0, 1个HDMI接口, 双频WIFI(支持 802.11 ac), 支持蓝牙. </p>
+<p>价格目前不到100元. 和raspberry 4 相比性能差不多, 重要的是能用Android系统, 便宜, 自带外壳.</p>
+<h4>目前用的人多的N1系统, 大致为 (不分先后)</h4>
+<ul>
+<li>Openwrt做主路由     </li>
+<li>小钢炮做下载机Docker里做旁路由 (恩山无线论坛 荒野无灯 所开发的专注于下载的系统, 基于linux)</li>
+<li>Armbian玩Docker</li>
+<li>Android (电视盒子)</li>
+</ul>
+<h2>刷机第一步系统降级</h2>
+<p>不管是N1什么版本，首先必须要降级到能线刷的版本，并且能够使用，便于后期emmc能恢复。</p>
+<h6>准备环境</h6>
+<ul>
+<li>N1盒子</li>
+<li>装有windows的电脑主机</li>
+<li>网线</li>
+<li>HDMI线</li>
+<li>支持HDMI的电视或者显示器</li>
+<li>USB接口鼠标</li>
+<li>USB2.0公对公数据线</li>
+</ul>
+<h6>降级过程</h6>
+<p><a href="https://www.right.com.cn/forum/thread-340279-1-1.html">WEBPAD大神降级教程&gt;&gt;</a>
+<a href="https://www.right.com.cn/forum/thread-413863-1-1.html">超快速恢复EMMC法&gt;&gt;</a></p>
+<h6>设置开启U盘引导, 设置以后, 只要不动bootloader, N1 就刷不死</h6>
+<div class="highlight-custom"><pre><span></span>adb connect N1的IP
+adb shell reboot update
+</pre></div>
+
+
+<h2>下面是刷armbian的方法</h2>
+<h6>下载armbian系统</h6>
+<p><a href="https://www.right.com.cn/forum/thread-927225-1-1.html">当前适配的armbian介绍,下载连接</a></p>
+<h6>烧录进入U盘</h6>
+<p>linux可以尝试用dd (每测试过)</p>
+<p>windows用etcher (亲测可用)</p>
+<p>按照上面的说明, 替换 btd文件</p>
+<div class="highlight-custom"><pre><span></span>[/boot/uEnv.ini] 第一行改为
+dtb_name=/dtb/meson-gxl-s905d-phicomm-n1.dtb
+</pre></div>
+
+
+<h6>然后关闭N1, 开始启动armbian</h6>
+<p>插上U盘,N1通电, 开机就是U盘启动的armbian系统.</p>
+<p>也可以通过home目录下面的 install.sh 安装进入emmc. (覆盖掉默认的android)</p>
+<hr>
+<p>参考资料 <code>主要参考 恩山无线论坛 和 什么值得买</code></p>
+<p><a href="https://www.right.com.cn/forum/thread-415880-1-1.html">N1刷不死的玩法整理</a></p>
+<p><a href="https://www.right.com.cn/forum/thread-413863-1-1.html">N1刷完ARMBIAN想恢复EMMC超级简单线刷法</a></p>
+<p><a href="https://www.right.com.cn/forum/thread-421805-1-1.html">N1玩法总结整理</a></p>
+<p><a href="https://post.smzdm.com/p/akmg5dv4/">N1盒子不拆机救砖</a></p>
+<p><a href="https://post.smzdm.com/p/aekemx44/">N1改电视盒子</a></p>
+<p><a href="https://post.smzdm.com/p/a99vxp9e/">N1简明降级&amp;刷机教程</a></p></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">
+        zhiliao
+    </span>
+  </span>
+<time datetime="2020-07-01T23:38:09+08:00" pubdate>2020-07-01 23:38:09</time>  <span class="categories">
+    <a class='category' href='/category/linux.html'>linux</a>
+  </span>
+  <span class="categories">
+    <a class="category" href="/tag/linux.html">linux</a>,    <a class="category" href="/tag/phicomm.html">phicomm</a>  </span>
+</p><div class="sharing">
+</div>    </footer>
+  </article>
+
 </div>
 
 <aside class="sidebar">
@@ -111,13 +141,19 @@
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     <li class="post">
+        <a href="/posts/2020/07/01/phicomm-N1.html">斐讯N1刷机过程记录</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2020/04/24/inotify-tools.html">inotify-tools</a>
+    </li>
+    <li class="post">
         <a href="/posts/2020/01/08/linux-nc.html">通过nc命令查看服务器端口和客户端能不能正常连接</a>
     </li>
     <li class="post">
-        <a href="/posts/2019/07/12/dnsmasq.html">dnsmasq DHCP功能和DNS缓存</a>
+        <a href="/posts/2020/01/07/laptop-router.html">笔记本把无线网络连接分享给网线</a>
     </li>
     <li class="post">
-        <a href="/posts/2017/06/07/iperf3.html">iperf3测试带宽</a>
+        <a href="/posts/2020/01/05/linux-improving-performance.html">Linux性能优化</a>
     </li>
   </ul>
 </section><section>
