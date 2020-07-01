@@ -8,13 +8,11 @@
 &lt;li&gt;小钢炮做下载机Docker里做旁路由 (恩山无线论坛 荒野无灯 所开发的专注于下载的系统, 基于linux)&lt;/li&gt;
 &lt;li&gt;Armbian玩Docker&lt;/li&gt;
 &lt;li&gt;Android (电视盒子)&lt;/li&gt;
+&lt;li&gt;游戏机 (EmuELEC)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;刷机第一步系统降级&lt;/h2&gt;
 &lt;p&gt;不管是N1什么版本，首先必须要降级到能线刷的版本，并且能够使用，便于后期emmc能恢复。&lt;/p&gt;
-&lt;h6&gt;准备环境&lt;/h6&gt;
-&lt;ul&gt;
-&lt;li&gt;N1盒子&lt;/li&gt;
-&lt;li&gt;装有windows的电脑主机 …&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Wed, 01 Jul 2020 23:38:09 +0800</pubDate><guid isPermaLink="false">tag:None,2020-07-01:/posts/2020/07/01/phicomm-N1.html</guid><category>linux</category><category>phicomm</category></item><item><title>inotify-tools</title><link>/posts/2020/04/24/inotify-tools.html</link><description>&lt;p&gt;inotify-tools 可以用来监控文件系统的事件。inotify-tools提供两种工具，一是 inotifywait，它是用来监控文件或目录的变化，二是inotifywatch，它是用来统计文件系统访问的次数。&lt;/p&gt;
+&lt;h6&gt;准备环境 …&lt;/h6&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Wed, 01 Jul 2020 23:38:09 +0800</pubDate><guid isPermaLink="false">tag:None,2020-07-01:/posts/2020/07/01/phicomm-N1.html</guid><category>linux</category><category>phicomm</category></item><item><title>inotify-tools</title><link>/posts/2020/04/24/inotify-tools.html</link><description>&lt;p&gt;inotify-tools 可以用来监控文件系统的事件。inotify-tools提供两种工具，一是 inotifywait，它是用来监控文件或目录的变化，二是inotifywatch，它是用来统计文件系统访问的次数。&lt;/p&gt;
 &lt;p&gt;常用&lt;code&gt;inotifywait -qcrm $dir&lt;/code&gt;&lt;/p&gt;
 &lt;h6&gt;inotifywait&lt;/h6&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;参数：

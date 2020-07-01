@@ -8,13 +8,11 @@
 &lt;li&gt;小钢炮做下载机Docker里做旁路由 (恩山无线论坛 荒野无灯 所开发的专注于下载的系统, 基于linux)&lt;/li&gt;
 &lt;li&gt;Armbian玩Docker&lt;/li&gt;
 &lt;li&gt;Android (电视盒子)&lt;/li&gt;
+&lt;li&gt;游戏机 (EmuELEC)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;刷机第一步系统降级&lt;/h2&gt;
 &lt;p&gt;不管是N1什么版本，首先必须要降级到能线刷的版本，并且能够使用，便于后期emmc能恢复。&lt;/p&gt;
-&lt;h6&gt;准备环境&lt;/h6&gt;
-&lt;ul&gt;
-&lt;li&gt;N1盒子&lt;/li&gt;
-&lt;li&gt;装有windows的电脑主机 …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;去年买的N1盒子, 一直没时间折腾, 最近刚好需要作下载机用, 于是刷机, 顺便整理下步骤.&lt;/p&gt;
+&lt;h6&gt;准备环境 …&lt;/h6&gt;</summary><content type="html">&lt;p&gt;去年买的N1盒子, 一直没时间折腾, 最近刚好需要作下载机用, 于是刷机, 顺便整理下步骤.&lt;/p&gt;
 &lt;p&gt;首先说下N1配置. 处理器Amlogic S905, 内存 2G, emmc 8G, 千兆网口, 2个USB 2.0, 1个HDMI接口, 双频WIFI(支持 802.11 ac), 支持蓝牙. &lt;/p&gt;
 &lt;p&gt;价格目前不到100元. 和raspberry 4 相比性能差不多, 重要的是能用Android系统, 便宜, 自带外壳.&lt;/p&gt;
 &lt;h4&gt;目前用的人多的N1系统, 大致为 (不分先后)&lt;/h4&gt;
@@ -23,6 +21,7 @@
 &lt;li&gt;小钢炮做下载机Docker里做旁路由 (恩山无线论坛 荒野无灯 所开发的专注于下载的系统, 基于linux)&lt;/li&gt;
 &lt;li&gt;Armbian玩Docker&lt;/li&gt;
 &lt;li&gt;Android (电视盒子)&lt;/li&gt;
+&lt;li&gt;游戏机 (EmuELEC)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;刷机第一步系统降级&lt;/h2&gt;
 &lt;p&gt;不管是N1什么版本，首先必须要降级到能线刷的版本，并且能够使用，便于后期emmc能恢复。&lt;/p&gt;
@@ -49,7 +48,7 @@ adb shell reboot update
 &lt;h6&gt;下载armbian系统&lt;/h6&gt;
 &lt;p&gt;&lt;a href="https://www.right.com.cn/forum/thread-927225-1-1.html"&gt;当前适配的armbian介绍,下载连接&lt;/a&gt;&lt;/p&gt;
 &lt;h6&gt;烧录进入U盘&lt;/h6&gt;
-&lt;p&gt;linux可以尝试用dd (每测试过)&lt;/p&gt;
+&lt;p&gt;linux可以尝试用dd (没测试过)&lt;/p&gt;
 &lt;p&gt;windows用etcher (亲测可用)&lt;/p&gt;
 &lt;p&gt;按照上面的说明, 替换 btd文件&lt;/p&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[/boot/uEnv.ini] 第一行改为
