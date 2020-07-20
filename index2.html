@@ -57,6 +57,43 @@
   		<article>
 <header>
       <h1 class="entry-title">
+        <a href="/posts/2018/10/31/gprof2dot.html">生成函数调用关系图</a>
+      </h1>
+    <p class="meta">
+<time datetime="2018-10-31T13:57:01+08:00" pubdate>2018-10-31 13:57:01</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><h4>用gprof生成函数调用关系图</h4>
+<ol>
+<li>CMakeLists.txt</li>
+</ol>
+<div class="highlight-custom"><pre><span></span>SET(CMAKE_BUILD_TYPE &quot;Debug&quot;)
+SET(CMAKE_C_FLAGS_DEBUG &quot;$ENV{CXXFLAGS} -O0 -Wall -g2 -pg -ggdb&quot;)  
+SET(CMAKE_C_FLAGS_RELEASE &quot;$ENV{CXXFLAGS} -O3 -Wall&quot;)
+</pre></div>
+
+
+<p>或</p>
+<div class="highlight-custom"><pre><span></span>gcc -pg -g source.c -o binary
+</pre></div>
+
+
+<ol>
+<li><code>./binary</code> 生成 gmon.out</li>
+<li><code>gprof ./binary&gt; gprof_output.txt</code></li>
+<li><code>graph2dot.py gprof_output.txt&gt; call_graph.dot</code></li>
+</ol>
+<hr>
+<h4>valgrind 生成函数调用图 (推荐)</h4>
+<div class="highlight-custom"><pre><span></span>valgrind --tool=callgrind ./a …</pre></div></div>
+            <footer>
+                <a rel="full-article" href="/posts/2018/10/31/gprof2dot.html">Read On &crarr;</a>
+            </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
         <a href="/posts/2018/10/25/python-nltk-chapter2.html">python3 nltk chapter 2</a>
       </h1>
     <p class="meta">
@@ -395,27 +432,6 @@ cpio -ivd  &lt; filename.cpio
 <li>scp -v #在不同机器上拷贝显示进度条</li>
 </ol></div>
   		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="/posts/2017/06/24/linux-keyboard-led.html">linux开启键盘灯的方法</a>
-      </h1>
-    <p class="meta">
-<time datetime="2017-06-24T00:13:44+08:00" pubdate>2017-06-24 00:13:44</time>      
-    </p>
-</header>
-
-        <div class="entry-content"><p>现在许多背光键盘的背光灯是通过 Scroll 这个键控制的. 
-在windows下这没啥问题, 一按 scroll 这个键 ,背光灯就亮了,再按,就灭了.
-但是, 在Linux下, 按这个键 scroll 没反应.
-所以记录一下linux开启键盘灯的方法</p>
-<div class="highlight-custom"><pre><span></span># X 中开启键盘灯
-xset led on
-
-# X 中关闭键盘灯
-xset led off
-</pre></div></div>
-  		</article>
 <div class="pagination">
     <a class="prev" href="/index3.html">&larr; Older</a>
 
@@ -428,6 +444,9 @@ xset led off
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     <li class="post">
+        <a href="/posts/2020/07/20/openSUSE-multimedia.html">openSUSE Leap & Tumbleweed 安装解码器</a>
+    </li>
+    <li class="post">
         <a href="/posts/2020/07/01/phicomm-N1.html">斐讯N1刷机过程记录</a>
     </li>
     <li class="post">
@@ -439,9 +458,6 @@ xset led off
     <li class="post">
         <a href="/posts/2020/01/07/laptop-router.html">笔记本把无线网络连接分享给网线</a>
     </li>
-    <li class="post">
-        <a href="/posts/2020/01/05/linux-improving-performance.html">Linux性能优化</a>
-    </li>
   </ul>
 </section><section>
   <h1>Categories</h1>
@@ -452,7 +468,7 @@ xset led off
       <li><a href="/category/firefox.html">firefox (1)</a></li>
       <li><a href="/category/git.html">git (2)</a></li>
       <li><a href="/category/gu-piao.html">股票 (1)</a></li>
-      <li><a href="/category/linux.html">linux (21)</a></li>
+      <li><a href="/category/linux.html">linux (22)</a></li>
       <li><a href="/category/network.html">network (3)</a></li>
       <li><a href="/category/nltk.html">nltk (2)</a></li>
       <li><a href="/category/other.html">other (1)</a></li>
@@ -464,7 +480,7 @@ xset led off
 </section>
 <section>
   <h1>Tags</h1>
-    <a href="/tag/linux.html">linux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/linuix.html">linuix</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/git.html">git</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a></section>
+    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/linux.html">linux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/linuix.html">linuix</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/git.html">git</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a></section>
     <section>
         <h1>Social</h1>
         <ul>

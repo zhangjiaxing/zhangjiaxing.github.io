@@ -4,11 +4,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Tag: firefox &mdash; cat ~/.zhiliao.history</title>
+  <title>openSUSE Leap & Tumbleweed 安装解码器 &mdash; cat ~/.zhiliao.history</title>
   <meta name="author" content="zhiliao">
 
   <link href="/feeds/all.atom.xml" type="application/rss+xml" rel="alternate"
         title="cat ~/.zhiliao.history RSS Feed" />
+
+
 
 
 
@@ -54,28 +56,47 @@
   <div id="main">
     <div id="content">
 <div>
-	<article role="article">
-    	<header>
-    		<h1 class="entry-title">Tag: firefox</h1>
-    	</header>
+  <article class="hentry" role="article">
+<header>
+      <h1 class="entry-title">openSUSE Leap & Tumbleweed 安装解码器</h1>
+    <p class="meta">
+<time datetime="2020-07-20T23:15:46+08:00" pubdate>2020-07-20 23:15:46</time>      
+    </p>
+</header>
 
-    	<div id="blog-archives">
-            <h2>2017</h2>
-                    <article>
-                        <h1><a href="/posts/2017/06/23/firefox-addons.html">记录一些 firefox 附加组件</a></h1>
-                        <time datetime="2017-06-23 18:22:59+08:00" pubdate>
-                            <span class="month">六月</span>
-                            <span class="day">23</span>
-                            <span class="year">2017</span>
-                        </time>
-                        <footer>
-                            <span class="categories">posted in
-                                <a class='category' href='/category/firefox.html'>firefox</a>
-                            </span>
-                        </footer>
-                    </article>
-	    </div>
-    </article>
+    <div class="entry-content"><p>添加全部packman仓库</p>
+<div class="highlight-custom"><pre><span></span>sudo zypper ar -fc http://mirrors.aliyun.com/packman/openSUSE_Leap_15.2/    packman-aliyun
+
+<span class="c1"># 将系统软件包切换到packman中的软件包(两者混用会导致各种问题)</span>
+zypper dup --from packman --allow-vendor-change
+</pre></div>
+
+
+<p>或者仅仅添加packman中的Essentials(解码器)仓库</p>
+<div class="highlight-custom"><pre><span></span>sudo zypper ar -fc http://mirrors.aliyun.com/packman/openSUSE_Leap_15.2/Essentials/   packman-essentials-aliyun
+
+<span class="c1"># 将系统软件包切换到packman中的软件包(两者混用会导致各种问题)</span>
+zypper dup --from packman-essentials --allow-vendor-change
+</pre></div>
+
+
+<p><a href="https://en.opensuse.org/Additional_package_repositories">openSUSE_Additional_package_repositories</a></p></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">
+        zhiliao
+    </span>
+  </span>
+<time datetime="2020-07-20T23:15:46+08:00" pubdate>2020-07-20 23:15:46</time>  <span class="categories">
+    <a class='category' href='/category/linux.html'>linux</a>
+  </span>
+  <span class="categories">
+    <a class="category" href="/tag/opensuse.html">openSUSE</a>,    <a class="category" href="/tag/linux.html">linux</a>  </span>
+</p><div class="sharing">
+</div>    </footer>
+  </article>
+
 </div>
 
 <aside class="sidebar">
@@ -83,7 +104,19 @@
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     <li class="post">
-        <a href="/posts/2017/06/23/firefox-addons.html">记录一些 firefox 附加组件</a>
+        <a href="/posts/2020/07/20/openSUSE-multimedia.html">openSUSE Leap & Tumbleweed 安装解码器</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2020/07/01/phicomm-N1.html">斐讯N1刷机过程记录</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2020/04/24/inotify-tools.html">inotify-tools</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2020/01/08/linux-nc.html">通过nc命令查看服务器端口和客户端能不能正常连接</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2020/01/07/laptop-router.html">笔记本把无线网络连接分享给网线</a>
     </li>
   </ul>
 </section><section>
@@ -129,7 +162,7 @@
   </div>
   <footer role="contentinfo">
 <p>
-    Copyright &copy;  2017  zhiliao &mdash;
+    Copyright &copy;  2017&ndash;2020  zhiliao &mdash;
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
 </p>  </footer>
 </body>

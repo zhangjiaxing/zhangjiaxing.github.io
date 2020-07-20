@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - stock</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/stock.atom.xml" rel="self"></link><id>/</id><updated>2019-06-24T00:53:33+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>2019-6-21名单</title><link href="/posts/2019/06/24/list-2019-6-21.html" rel="alternate"></link><published>2019-06-24T00:53:33+08:00</published><updated>2019-06-24T00:53:33+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2019-06-24:/posts/2019/06/24/list-2019-6-21.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;爱尔眼科
+<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - stock</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/stock.atom.xml" rel="self"></link><id>/</id><updated>2019-06-24T00:53:33+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>2019-6-21名单</title><link href="/posts/2019/06/24/list-2019-6-21.html" rel="alternate"></link><published>2019-06-24T00:53:33+08:00</published><updated>2019-06-24T00:53:33+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2019-06-24:/posts/2019/06/24/list-2019-6-21.html</id><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;爱尔眼科
 通策医疗
 海天味业
 中国国旅
@@ -36,41 +36,4 @@
 海大集团
 晨光文具
 精测电子
-&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;爱尔眼科
-通策医疗
-海天味业
-中国国旅
-片仔癀
-宋城演艺
-北方华创
-安图生物
-凯莱英
-珀莱雅
-正海生物
-艾德生物
-伊利股份
-东方财富
-中顺洁柔
-苏泊尔
-汤臣倍健
-万孚生物
-先导智能
-瑞恒医药
-华兰生物
-美亚光电
-智飞生物
-培凌榨菜
-欧普康视
-泰格医药
-贵州茅台
-中国平安
-视源股份
-迈瑞医疗 (黑名单)
-药明康德
-海康威视
-华测检测
-顺恒醋业
-海大集团
-晨光文具
-精测电子
-&lt;/pre&gt;&lt;/div&gt;</content><category term="stock"></category></entry></feed>
+&lt;/pre&gt;&lt;/div&gt;</content><category term="stock"></category><category term="stock"></category></entry></feed>

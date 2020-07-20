@@ -163,7 +163,7 @@ cfdist1&amp;lt;cfdist2                      测试样本在cfdist1中出现次�
 
 
 &lt;h3&gt;3 更多关于Python：代码重用&lt;/h3&gt;
-&lt;h3&gt;4 词汇资源&lt;/h3&gt;</content><category term="python"></category><category term="nltk"></category></entry><entry><title>python3 nltk chapter 2</title><link href="/posts/2018/10/25/python-nltk-chapter2.html" rel="alternate"></link><published>2018-10-25T22:03:03+08:00</published><updated>2018-10-25T22:03:03+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2018-10-25:/posts/2018/10/25/python-nltk-chapter2.html</id><summary type="html">&lt;h1&gt;获得文本语料和词汇资源&lt;/h1&gt;
+&lt;h3&gt;4 词汇资源&lt;/h3&gt;</content><category term="nltk"></category><category term="python"></category><category term="nltk"></category></entry><entry><title>python3 nltk chapter 2</title><link href="/posts/2018/10/25/python-nltk-chapter2.html" rel="alternate"></link><published>2018-10-25T22:03:03+08:00</published><updated>2018-10-25T22:03:03+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2018-10-25:/posts/2018/10/25/python-nltk-chapter2.html</id><summary type="html">&lt;h1&gt;获得文本语料和词汇资源&lt;/h1&gt;
 &lt;h3&gt;1.获取文本语料库&lt;/h3&gt;
 &lt;h5&gt;1.1 古腾堡语料库&lt;/h5&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;nltk&lt;/span&gt;
@@ -326,4 +326,4 @@ cfdist1&amp;lt;cfdist2                      测试样本在cfdist1中出现次�
 
 
 &lt;h3&gt;3 更多关于Python：代码重用&lt;/h3&gt;
-&lt;h3&gt;4 词汇资源&lt;/h3&gt;</content><category term="python"></category><category term="nltk"></category></entry></feed>
+&lt;h3&gt;4 词汇资源&lt;/h3&gt;</content><category term="nltk"></category><category term="python"></category><category term="nltk"></category></entry></feed>
