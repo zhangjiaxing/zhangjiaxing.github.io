@@ -1,5 +1,217 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - linux</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/linux.atom.xml" rel="self"></link><id>/</id><updated>2020-04-24T19:40:05+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>inotify-tools</title><link href="/posts/2020/04/24/inotify-tools.html" rel="alternate"></link><published>2020-04-24T19:40:05+08:00</published><updated>2020-04-24T19:40:05+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-04-24:/posts/2020/04/24/inotify-tools.html</id><summary type="html">&lt;p&gt;inotify-tools 可以用来监控文件系统的事件。inotify-tools提供两种工具，一是 inotifywait，它是用来监控文件或目录的变化，二是inotifywatch，它是用来统计文件系统访问的次数。&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - linux</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/linux.atom.xml" rel="self"></link><id>/</id><updated>2020-08-05T13:24:13+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>openSUSE zypper</title><link href="/posts/2020/08/05/openSUSE-zypper.html" rel="alternate"></link><published>2020-08-05T13:24:13+08:00</published><updated>2020-08-05T13:24:13+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-08-05:/posts/2020/08/05/openSUSE-zypper.html</id><content type="html">&lt;ol&gt;
+&lt;li&gt;zypper 安装软件时候版本选择&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;查看仓库中有firefox的哪些版本
+sudo zypper se -s firefox
+
+安装指定版本
+sudo zypper in --oldpackage MozillaFirefox=78.0.1-lp152.2.5.1
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol&gt;
+&lt;li&gt;zypper 和 其他包管理器 使用对比&lt;blockquote&gt;
+&lt;p&gt;&lt;a href="https://wiki.archlinux.org/index.php/Pacman/Rosetta"&gt;Pacman/Rosetta&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</content><category term="linux"></category><category term="openSUSE"></category><category term="linux"></category></entry><entry><title>在chromebook上安装archlinux</title><link href="/posts/2020/07/26/arch-linux-samsung-arm-chromebook.html" rel="alternate"></link><published>2020-07-26T22:56:00+08:00</published><updated>2020-07-26T22:56:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-07-26:/posts/2020/07/26/arch-linux-samsung-arm-chromebook.html</id><summary type="html">&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;把安装到U盘的教程中的 /dev/sda 替换成 mmcblk0 即可把archlinux安装进入系统盘.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;编辑 /etc/pacman.conf 文件, 添加 &lt;code&gt;IgnorePkg   = linux-armv7 linux-armv7-chromebook linux-firmware&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;参考https://calvin.me/arch-linux-samsung-arm-chromebook 修改亮度控制 绑定按键 取消静音 设置休眠&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;alsamixer
+
+Go across the page (arrow keys) and press M to unmute
+    Left Speaker Mixer Left DAC1
+    Left Speaker Mixer Mono DAC2
+    Left Speaker Mixer Mono …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;把安装到U盘的教程中的 /dev/sda 替换成 mmcblk0 即可把archlinux安装进入系统盘.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;编辑 /etc/pacman.conf 文件, 添加 &lt;code&gt;IgnorePkg   = linux-armv7 linux-armv7-chromebook linux-firmware&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;参考https://calvin.me/arch-linux-samsung-arm-chromebook 修改亮度控制 绑定按键 取消静音 设置休眠&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;alsamixer
+
+Go across the page (arrow keys) and press M to unmute
+    Left Speaker Mixer Left DAC1
+    Left Speaker Mixer Mono DAC2
+    Left Speaker Mixer Mono DAC3
+    Left Speaker Mixer Right DAC1
+    Right Speaker Mixer Left DAC1
+    Right Speaker Mixer Mono DAC2
+    Right Speaker Mixer Mono DAC3
+    Right Speaker Mixer Right DAC1
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cat /usr/local/bin/brightness
+
+#!/bin/bash
+cur_bri=$(/usr/bin/cat /sys/class/backlight/backlight.12/brightness)
+
+if [ $1 == &amp;quot;up&amp;quot; ] ; then
+    bri=$(($cur_bri+200))
+    `echo $bri &amp;gt; /sys/class/backlight/backlight.12/brightness`
+fi
+
+if [ $1 == &amp;quot;down&amp;quot; ] ; then
+    bri=$(($cur_bri-200))
+    `echo $bri &amp;gt; /sys/class/backlight/backlight.12/brightness`
+fi
+
+if [ $1 == &amp;quot;-s&amp;quot; ]; then
+    `echo $2 &amp;gt; /sys/class/backlight/backlight.12/brightness`
+fi
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Other Notes&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;* The trackpad sometimes doesn&amp;#39;t work on boot. A restart fixes it (press the power button)
+* Can&amp;#39;t seem to get PulseAudio working
+* Two finger clicks that are too wide apart don&amp;#39;t register as a right click. Two finger taps do though
+* Current RAM usage for me is 123M, A LOT better than Chrome OS which always sits around 1.5GB
+* Still can&amp;#39;t get 720p video to run smoothly. Chrome OS is a bit better here but even then it dies on a 720p60 video. Sticking to 480p seems to be the best thing to do
+* It is possible to get rid having to press CTRL + D on each boot, I did that once and totally forgot how to get it back. I eventually did but it was crazy stuff.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;参考
+&lt;a href="https://archlinuxarm.org/platforms/armv7/samsung/samsung-chromebook"&gt;archlinuxarm&lt;/a&gt;
+&lt;a href="https://calvin.me/arch-linux-samsung-arm-chromebook"&gt;Arch Linux on Samsung ARM Chromebook&lt;/a&gt;
+&lt;a href="https://www.cnblogs.com/ouyangsong/p/9348163.html"&gt;Chromebook安装ArchLinux&lt;/a&gt;&lt;/p&gt;</content><category term="linux"></category><category term="archlinux"></category><category term="linux"></category></entry><entry><title>openSUSE Leap 系统省级</title><link href="/posts/2020/07/20/openSUSE-upgrade.html" rel="alternate"></link><published>2020-07-20T23:38:50+08:00</published><updated>2020-07-20T23:38:50+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-07-20:/posts/2020/07/20/openSUSE-upgrade.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# 首先启用 repo-update 软件源&lt;/span&gt;
+zypper modifyrepo --enable repo-update
+
+&lt;span class="c1"&gt;# 然后更到最新&lt;/span&gt;
+zypper refresh
+zypper update
+
+&lt;span class="c1"&gt;# 下面的命令建议在tty中执行.  Ctrl + Alt + F2&lt;/span&gt;
+
+&lt;span class="c1"&gt;# 如果 /etc/zypp/repos.d/中定义的Leap 仓库已经使用$releasever变量时, 则使用:&lt;/span&gt;
+zypper --releasever&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;15&lt;/span&gt;.2 ref
+
+
+&lt;span class="c1"&gt;# 或者仓库地址使用特定的Leap版本号对它们进行硬编码，则需要首先对其进行修改:&lt;/span&gt;
+sudo sed -i &lt;span class="s1"&gt;&amp;#39;s/15.1/$releasever/g&amp;#39;&lt;/span&gt; /etc/zypp/repos.d/*.repo
+&lt;span class="c1"&gt;# 然后执行:&lt;/span&gt;
+zypper --releasever&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;15&lt;/span&gt;.2 …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# 首先启用 repo-update 软件源&lt;/span&gt;
+zypper modifyrepo --enable repo-update
+
+&lt;span class="c1"&gt;# 然后更到最新&lt;/span&gt;
+zypper refresh
+zypper update
+
+&lt;span class="c1"&gt;# 下面的命令建议在tty中执行.  Ctrl + Alt + F2&lt;/span&gt;
+
+&lt;span class="c1"&gt;# 如果 /etc/zypp/repos.d/中定义的Leap 仓库已经使用$releasever变量时, 则使用:&lt;/span&gt;
+zypper --releasever&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;15&lt;/span&gt;.2 ref
+
+
+&lt;span class="c1"&gt;# 或者仓库地址使用特定的Leap版本号对它们进行硬编码，则需要首先对其进行修改:&lt;/span&gt;
+sudo sed -i &lt;span class="s1"&gt;&amp;#39;s/15.1/$releasever/g&amp;#39;&lt;/span&gt; /etc/zypp/repos.d/*.repo
+&lt;span class="c1"&gt;# 然后执行:&lt;/span&gt;
+zypper --releasever&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;15&lt;/span&gt;.2 ref
+
+
+&lt;span class="c1"&gt;# 最后重新启动系统.&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="openSUSE"></category><category term="linux"></category></entry><entry><title>openSUSE Leap &amp; Tumbleweed 安装解码器</title><link href="/posts/2020/07/20/openSUSE-multimedia.html" rel="alternate"></link><published>2020-07-20T23:15:46+08:00</published><updated>2020-07-20T23:15:46+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-07-20:/posts/2020/07/20/openSUSE-multimedia.html</id><content type="html">&lt;p&gt;添加全部packman仓库&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo zypper ar -fc http://mirrors.aliyun.com/packman/openSUSE_Leap_15.2/    packman-aliyun
+
+&lt;span class="c1"&gt;# 将系统软件包切换到packman中的软件包(两者混用会导致各种问题)&lt;/span&gt;
+zypper dup --from packman --allow-vendor-change
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;或者仅仅添加packman中的Essentials(解码器)仓库&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo zypper ar -fc http://mirrors.aliyun.com/packman/openSUSE_Leap_15.2/Essentials/   packman-essentials-aliyun
+
+&lt;span class="c1"&gt;# 将系统软件包切换到packman中的软件包(两者混用会导致各种问题)&lt;/span&gt;
+zypper dup --from packman-essentials --allow-vendor-change
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href="https://en.opensuse.org/Additional_package_repositories"&gt;openSUSE_Additional_package_repositories&lt;/a&gt;&lt;/p&gt;</content><category term="linux"></category><category term="openSUSE"></category><category term="linux"></category></entry><entry><title>斐讯N1刷机过程记录</title><link href="/posts/2020/07/01/phicomm-N1.html" rel="alternate"></link><published>2020-07-01T23:38:09+08:00</published><updated>2020-07-01T23:38:09+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-07-01:/posts/2020/07/01/phicomm-N1.html</id><summary type="html">&lt;p&gt;&lt;img alt="刷机" src="/posts/2020/07/01/phicomm-N1-flash.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;去年买的N1盒子, 一直没时间折腾, 最近刚好需要作下载机用, 于是刷机, 顺便整理下步骤.&lt;/p&gt;
+&lt;p&gt;首先说下N1配置. 处理器Amlogic S905, 内存 2G, emmc 8G, 千兆网口, 2个USB 2.0, 1个HDMI接口, 双频WIFI(支持 802.11 ac), 支持蓝牙. &lt;/p&gt;
+&lt;p&gt;价格目前不到100元. 和raspberry 4 相比性能差不多, 重要的是能用Android系统, 便宜, 自带外壳.&lt;/p&gt;
+&lt;h4&gt;目前用的人多的N1系统, 大致为 (不分先后)&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Openwrt做主路由     &lt;/li&gt;
+&lt;li&gt;小钢炮做下载机Docker里做旁路由 (恩山无线论坛 荒野无灯 所开发的专注于下载的系统, 基于linux)&lt;/li&gt;
+&lt;li&gt;Armbian玩Docker&lt;/li&gt;
+&lt;li&gt;Android (电视盒子)&lt;/li&gt;
+&lt;li&gt;游戏机 (EmuELEC)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;刷机第一步系统降级&lt;/h2&gt;
+&lt;p&gt;不管是N1什么版本，首先必须要降级到能线刷的版本，并且能够使用，便于后期emmc能恢复。&lt;/p&gt;
+&lt;h6&gt;准备环境 …&lt;/h6&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="刷机" src="/posts/2020/07/01/phicomm-N1-flash.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;去年买的N1盒子, 一直没时间折腾, 最近刚好需要作下载机用, 于是刷机, 顺便整理下步骤.&lt;/p&gt;
+&lt;p&gt;首先说下N1配置. 处理器Amlogic S905, 内存 2G, emmc 8G, 千兆网口, 2个USB 2.0, 1个HDMI接口, 双频WIFI(支持 802.11 ac), 支持蓝牙. &lt;/p&gt;
+&lt;p&gt;价格目前不到100元. 和raspberry 4 相比性能差不多, 重要的是能用Android系统, 便宜, 自带外壳.&lt;/p&gt;
+&lt;h4&gt;目前用的人多的N1系统, 大致为 (不分先后)&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Openwrt做主路由     &lt;/li&gt;
+&lt;li&gt;小钢炮做下载机Docker里做旁路由 (恩山无线论坛 荒野无灯 所开发的专注于下载的系统, 基于linux)&lt;/li&gt;
+&lt;li&gt;Armbian玩Docker&lt;/li&gt;
+&lt;li&gt;Android (电视盒子)&lt;/li&gt;
+&lt;li&gt;游戏机 (EmuELEC)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;刷机第一步系统降级&lt;/h2&gt;
+&lt;p&gt;不管是N1什么版本，首先必须要降级到能线刷的版本，并且能够使用，便于后期emmc能恢复。&lt;/p&gt;
+&lt;h6&gt;准备环境&lt;/h6&gt;
+&lt;ul&gt;
+&lt;li&gt;N1盒子&lt;/li&gt;
+&lt;li&gt;装有windows的电脑主机&lt;/li&gt;
+&lt;li&gt;网线&lt;/li&gt;
+&lt;li&gt;HDMI线&lt;/li&gt;
+&lt;li&gt;支持HDMI的电视或者显示器&lt;/li&gt;
+&lt;li&gt;USB接口鼠标&lt;/li&gt;
+&lt;li&gt;USB2.0公对公数据线&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h6&gt;降级过程&lt;/h6&gt;
+&lt;p&gt;&lt;a href="https://www.right.com.cn/forum/thread-340279-1-1.html"&gt;WEBPAD大神降级教程&amp;gt;&amp;gt;&lt;/a&gt;
+&lt;a href="https://www.right.com.cn/forum/thread-413863-1-1.html"&gt;超快速恢复EMMC法&amp;gt;&amp;gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h6&gt;设置开启U盘引导, 设置以后, 只要不动bootloader, N1 就刷不死&lt;/h6&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;adb connect N1的IP
+adb shell reboot update
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;下面是刷armbian的方法&lt;/h2&gt;
+&lt;h6&gt;下载armbian系统&lt;/h6&gt;
+&lt;p&gt;&lt;a href="https://www.right.com.cn/forum/thread-927225-1-1.html"&gt;当前适配的armbian介绍,下载连接&lt;/a&gt;&lt;/p&gt;
+&lt;h6&gt;烧录进入U盘&lt;/h6&gt;
+&lt;p&gt;linux可以尝试用dd (没测试过)&lt;/p&gt;
+&lt;p&gt;windows用etcher (亲测可用)&lt;/p&gt;
+&lt;p&gt;按照上面的说明, 替换 btd文件&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[/boot/uEnv.ini] 第一行改为
+dtb_name=/dtb/meson-gxl-s905d-phicomm-n1.dtb
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h6&gt;然后关闭N1, 开始启动armbian&lt;/h6&gt;
+&lt;p&gt;插上U盘,N1通电, 开机就是U盘启动的armbian系统.&lt;/p&gt;
+&lt;p&gt;也可以通过home目录下面的 install.sh 安装进入emmc. (覆盖掉默认的android)&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;参考资料 &lt;code&gt;主要参考 恩山无线论坛 和 什么值得买&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.right.com.cn/forum/thread-415880-1-1.html"&gt;N1刷不死的玩法整理&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.right.com.cn/forum/thread-413863-1-1.html"&gt;N1刷完ARMBIAN想恢复EMMC超级简单线刷法&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.right.com.cn/forum/thread-421805-1-1.html"&gt;N1玩法总结整理&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://post.smzdm.com/p/akmg5dv4/"&gt;N1盒子不拆机救砖&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://post.smzdm.com/p/aekemx44/"&gt;N1改电视盒子&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://post.smzdm.com/p/a99vxp9e/"&gt;N1简明降级&amp;amp;刷机教程&lt;/a&gt;&lt;/p&gt;</content><category term="linux"></category><category term="linux"></category><category term="phicomm"></category></entry><entry><title>inotify-tools</title><link href="/posts/2020/04/24/inotify-tools.html" rel="alternate"></link><published>2020-04-24T19:40:05+08:00</published><updated>2020-04-24T19:40:05+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-04-24:/posts/2020/04/24/inotify-tools.html</id><summary type="html">&lt;p&gt;inotify-tools 可以用来监控文件系统的事件。inotify-tools提供两种工具，一是 inotifywait，它是用来监控文件或目录的变化，二是inotifywatch，它是用来统计文件系统访问的次数。&lt;/p&gt;
 &lt;p&gt;常用&lt;code&gt;inotifywait -qcrm $dir&lt;/code&gt;&lt;/p&gt;
 &lt;h6&gt;inotifywait&lt;/h6&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;参数：
@@ -172,11 +384,11 @@ sudo zypper dup
 
 
 &lt;p&gt;如果是Leap&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo zypper ar -fc http://mirrors.aliyun.com/opensuse/distribution/leap/15.1/repo/oss/      repo-oss-aliyun
-sudo zypper ar -fc http://mirrors.aliyun.com/opensuse/distribution/leap/15.1/repo/non-oss/  repo-non-oss-aliyun
-sudo zypper ar -fc http://mirrors.aliyun.com/opensuse/update/leap/15.1/oss/                 repo-update-oss-aliyun
-sudo zypper ar -fc http://mirrors.aliyun.com/opensuse/update/leap/15.1/non-oss/             repo-update-non-oss-aliyun
-sudo zypper ar -fc http://mirrors.aliyun.com/packman/openSUSE_Leap_15.1/                    repo-packman-aliyun
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo zypper ar -fc http://mirrors.aliyun.com/opensuse/distribution/leap/&lt;span class="nv"&gt;$releasever&lt;/span&gt;/repo/oss/      repo-oss-aliyun
+sudo zypper ar -fc http://mirrors.aliyun.com/opensuse/distribution/leap/&lt;span class="nv"&gt;$releasever&lt;/span&gt;/repo/non-oss/  repo-non-oss-aliyun
+sudo zypper ar -fc http://mirrors.aliyun.com/opensuse/update/leap/&lt;span class="nv"&gt;$releasever&lt;/span&gt;/oss/                 repo-update-oss-aliyun
+sudo zypper ar -fc http://mirrors.aliyun.com/opensuse/update/leap/&lt;span class="nv"&gt;$releasever&lt;/span&gt;/non-oss/             repo-update-non-oss-aliyun
+sudo zypper ar -fc http://mirrors.aliyun.com/packman/openSUSE_Leap_&lt;span class="nv"&gt;$releasever&lt;/span&gt;/                    repo-packman-aliyun
 
 &lt;span class="c1"&gt;# 更新执行&lt;/span&gt;
 sudo zypper update

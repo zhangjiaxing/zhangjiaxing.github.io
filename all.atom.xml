@@ -1,5 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>无聊就该多读书。</description><lastBuildDate>Fri, 24 Apr 2020 19:40:05 +0800</lastBuildDate><item><title>inotify-tools</title><link>/posts/2020/04/24/inotify-tools.html</link><description>&lt;p&gt;inotify-tools 可以用来监控文件系统的事件。inotify-tools提供两种工具，一是 inotifywait，它是用来监控文件或目录的变化，二是inotifywatch，它是用来统计文件系统访问的次数。&lt;/p&gt;
+<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>无聊就该多读书。</description><lastBuildDate>Wed, 05 Aug 2020 13:24:13 +0800</lastBuildDate><item><title>openSUSE zypper</title><link>/posts/2020/08/05/openSUSE-zypper.html</link><description>&lt;ol&gt;
+&lt;li&gt;zypper 安装软件时候版本选择&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;查看仓库中有firefox的哪些版本
+sudo zypper se -s firefox
+
+安装指定版本
+sudo zypper in --oldpackage MozillaFirefox=78.0.1-lp152.2.5.1
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol&gt;
+&lt;li&gt;zypper 和 其他包管理器 使用对比&lt;blockquote&gt;
+&lt;p&gt;&lt;a href="https://wiki.archlinux.org/index.php/Pacman/Rosetta"&gt;Pacman/Rosetta&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Wed, 05 Aug 2020 13:24:13 +0800</pubDate><guid isPermaLink="false">tag:None,2020-08-05:/posts/2020/08/05/openSUSE-zypper.html</guid><category>linux</category><category>openSUSE</category><category>linux</category></item><item><title>在chromebook上安装archlinux</title><link>/posts/2020/07/26/arch-linux-samsung-arm-chromebook.html</link><description>&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;把安装到U盘的教程中的 /dev/sda 替换成 mmcblk0 即可把archlinux安装进入系统盘.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;编辑 /etc/pacman.conf 文件, 添加 &lt;code&gt;IgnorePkg   = linux-armv7 linux-armv7-chromebook linux-firmware&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;参考https://calvin.me/arch-linux-samsung-arm-chromebook 修改亮度控制 绑定按键 取消静音 设置休眠&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;alsamixer
+
+Go across the page (arrow keys) and press M to unmute
+    Left Speaker Mixer Left DAC1
+    Left Speaker Mixer Mono DAC2
+    Left Speaker Mixer Mono …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Sun, 26 Jul 2020 22:56:00 +0800</pubDate><guid isPermaLink="false">tag:None,2020-07-26:/posts/2020/07/26/arch-linux-samsung-arm-chromebook.html</guid><category>linux</category><category>archlinux</category><category>linux</category></item><item><title>openSUSE Leap 系统省级</title><link>/posts/2020/07/20/openSUSE-upgrade.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# 首先启用 repo-update 软件源&lt;/span&gt;
+zypper modifyrepo --enable repo-update
+
+&lt;span class="c1"&gt;# 然后更到最新&lt;/span&gt;
+zypper refresh
+zypper update
+
+&lt;span class="c1"&gt;# 下面的命令建议在tty中执行.  Ctrl + Alt + F2&lt;/span&gt;
+
+&lt;span class="c1"&gt;# 如果 /etc/zypp/repos.d/中定义的Leap 仓库已经使用$releasever变量时, 则使用:&lt;/span&gt;
+zypper --releasever&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;15&lt;/span&gt;.2 ref
+
+
+&lt;span class="c1"&gt;# 或者仓库地址使用特定的Leap版本号对它们进行硬编码，则需要首先对其进行修改:&lt;/span&gt;
+sudo sed -i &lt;span class="s1"&gt;&amp;#39;s/15.1/$releasever/g&amp;#39;&lt;/span&gt; /etc/zypp/repos.d/*.repo
+&lt;span class="c1"&gt;# 然后执行:&lt;/span&gt;
+zypper --releasever&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;15&lt;/span&gt;.2 …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Mon, 20 Jul 2020 23:38:50 +0800</pubDate><guid isPermaLink="false">tag:None,2020-07-20:/posts/2020/07/20/openSUSE-upgrade.html</guid><category>linux</category><category>openSUSE</category><category>linux</category></item><item><title>openSUSE Leap &amp; Tumbleweed 安装解码器</title><link>/posts/2020/07/20/openSUSE-multimedia.html</link><description>&lt;p&gt;添加全部packman仓库&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo zypper ar -fc http://mirrors.aliyun.com/packman/openSUSE_Leap_15.2/    packman-aliyun
+
+&lt;span class="c1"&gt;# 将系统软件包切换到packman中的软件包(两者混用会导致各种问题)&lt;/span&gt;
+zypper dup --from packman --allow-vendor-change
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;或者仅仅添加packman中的Essentials(解码器)仓库&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo zypper ar -fc http://mirrors.aliyun.com/packman/openSUSE_Leap_15.2/Essentials/   packman-essentials-aliyun
+
+&lt;span class="c1"&gt;# 将系统软件包切换到packman中的软件包(两者混用会导致各种问题)&lt;/span&gt;
+zypper dup --from packman-essentials --allow-vendor-change
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href="https://en.opensuse.org/Additional_package_repositories"&gt;openSUSE_Additional_package_repositories&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Mon, 20 Jul 2020 23:15:46 +0800</pubDate><guid isPermaLink="false">tag:None,2020-07-20:/posts/2020/07/20/openSUSE-multimedia.html</guid><category>linux</category><category>openSUSE</category><category>linux</category></item><item><title>斐讯N1刷机过程记录</title><link>/posts/2020/07/01/phicomm-N1.html</link><description>&lt;p&gt;&lt;img alt="刷机" src="/posts/2020/07/01/phicomm-N1-flash.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;去年买的N1盒子, 一直没时间折腾, 最近刚好需要作下载机用, 于是刷机, 顺便整理下步骤.&lt;/p&gt;
+&lt;p&gt;首先说下N1配置. 处理器Amlogic S905, 内存 2G, emmc 8G, 千兆网口, 2个USB 2.0, 1个HDMI接口, 双频WIFI(支持 802.11 ac), 支持蓝牙. &lt;/p&gt;
+&lt;p&gt;价格目前不到100元. 和raspberry 4 相比性能差不多, 重要的是能用Android系统, 便宜, 自带外壳.&lt;/p&gt;
+&lt;h4&gt;目前用的人多的N1系统, 大致为 (不分先后)&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Openwrt做主路由     &lt;/li&gt;
+&lt;li&gt;小钢炮做下载机Docker里做旁路由 (恩山无线论坛 荒野无灯 所开发的专注于下载的系统, 基于linux)&lt;/li&gt;
+&lt;li&gt;Armbian玩Docker&lt;/li&gt;
+&lt;li&gt;Android (电视盒子)&lt;/li&gt;
+&lt;li&gt;游戏机 (EmuELEC)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;刷机第一步系统降级&lt;/h2&gt;
+&lt;p&gt;不管是N1什么版本，首先必须要降级到能线刷的版本，并且能够使用，便于后期emmc能恢复。&lt;/p&gt;
+&lt;h6&gt;准备环境 …&lt;/h6&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Wed, 01 Jul 2020 23:38:09 +0800</pubDate><guid isPermaLink="false">tag:None,2020-07-01:/posts/2020/07/01/phicomm-N1.html</guid><category>linux</category><category>linux</category><category>phicomm</category></item><item><title>inotify-tools</title><link>/posts/2020/04/24/inotify-tools.html</link><description>&lt;p&gt;inotify-tools 可以用来监控文件系统的事件。inotify-tools提供两种工具，一是 inotifywait，它是用来监控文件或目录的变化，二是inotifywatch，它是用来统计文件系统访问的次数。&lt;/p&gt;
 &lt;p&gt;常用&lt;code&gt;inotifywait -qcrm $dir&lt;/code&gt;&lt;/p&gt;
 &lt;h6&gt;inotifywait&lt;/h6&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;参数：

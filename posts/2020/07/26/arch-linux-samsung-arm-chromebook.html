@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>在chromebook上安装archlinux &mdash; cat ~/.zhiliao.history</title>
+  <meta name="author" content="zhiliao">
+
+  <link href="/feeds/all.atom.xml" type="application/rss+xml" rel="alternate"
+        title="cat ~/.zhiliao.history RSS Feed" />
+
+
+
+
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="/favicon.png" rel="icon">
+
+  <link href="/theme/css/main.css" media="screen, projection"
+        rel="stylesheet" type="text/css">
+  <link href="/theme/css/pygment.css" rel="stylesheet" type="text/css">
+
+  <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+
+  <script src="/theme/js/modernizr-2.0.js"></script>
+  <script src="/theme/js/ender.js"></script>
+  <script src="/theme/js/octopress.js" type="text/javascript"></script>
+</head>
+
+<body >
+  <header role="banner"
+  >
+<hgroup>
+  <h1><a href="/">cat ~/.zhiliao.history</a></h1>
+    <h2>无聊就该多读书。</h2>
+</hgroup></header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/feeds/all.atom.xml" rel="subscribe-rss">RSS</a></li>
+</ul>
+
+
+<ul class="main-navigation">
+    <li><a href="/">Home</a></li>
+    <li><a href="/archives.html">Archive</a></li>
+    <li><a href="/pages/about.html">About</a></li>
+</ul></nav>
+  <div id="main">
+    <div id="content">
+<div>
+  <article class="hentry" role="article">
+<header>
+      <h1 class="entry-title">在chromebook上安装archlinux</h1>
+    <p class="meta">
+<time datetime="2020-07-26T22:56:00+08:00" pubdate>2020-07-26 22:56:00</time>      
+    </p>
+</header>
+
+    <div class="entry-content"><ol>
+<li>
+<p>把安装到U盘的教程中的 /dev/sda 替换成 mmcblk0 即可把archlinux安装进入系统盘.</p>
+</li>
+<li>
+<p>编辑 /etc/pacman.conf 文件, 添加 <code>IgnorePkg   = linux-armv7 linux-armv7-chromebook linux-firmware</code></p>
+</li>
+<li>
+<p>参考https://calvin.me/arch-linux-samsung-arm-chromebook 修改亮度控制 绑定按键 取消静音 设置休眠</p>
+</li>
+</ol>
+<div class="highlight-custom"><pre><span></span>alsamixer
+
+Go across the page (arrow keys) and press M to unmute
+    Left Speaker Mixer Left DAC1
+    Left Speaker Mixer Mono DAC2
+    Left Speaker Mixer Mono DAC3
+    Left Speaker Mixer Right DAC1
+    Right Speaker Mixer Left DAC1
+    Right Speaker Mixer Mono DAC2
+    Right Speaker Mixer Mono DAC3
+    Right Speaker Mixer Right DAC1
+</pre></div>
+
+
+<div class="highlight-custom"><pre><span></span>cat /usr/local/bin/brightness
+
+#!/bin/bash
+cur_bri=$(/usr/bin/cat /sys/class/backlight/backlight.12/brightness)
+
+if [ $1 == &quot;up&quot; ] ; then
+    bri=$(($cur_bri+200))
+    `echo $bri &gt; /sys/class/backlight/backlight.12/brightness`
+fi
+
+if [ $1 == &quot;down&quot; ] ; then
+    bri=$(($cur_bri-200))
+    `echo $bri &gt; /sys/class/backlight/backlight.12/brightness`
+fi
+
+if [ $1 == &quot;-s&quot; ]; then
+    `echo $2 &gt; /sys/class/backlight/backlight.12/brightness`
+fi
+</pre></div>
+
+
+<p>Other Notes</p>
+<div class="highlight-custom"><pre><span></span>* The trackpad sometimes doesn&#39;t work on boot. A restart fixes it (press the power button)
+* Can&#39;t seem to get PulseAudio working
+* Two finger clicks that are too wide apart don&#39;t register as a right click. Two finger taps do though
+* Current RAM usage for me is 123M, A LOT better than Chrome OS which always sits around 1.5GB
+* Still can&#39;t get 720p video to run smoothly. Chrome OS is a bit better here but even then it dies on a 720p60 video. Sticking to 480p seems to be the best thing to do
+* It is possible to get rid having to press CTRL + D on each boot, I did that once and totally forgot how to get it back. I eventually did but it was crazy stuff.
+</pre></div>
+
+
+<p>参考
+<a href="https://archlinuxarm.org/platforms/armv7/samsung/samsung-chromebook">archlinuxarm</a>
+<a href="https://calvin.me/arch-linux-samsung-arm-chromebook">Arch Linux on Samsung ARM Chromebook</a>
+<a href="https://www.cnblogs.com/ouyangsong/p/9348163.html">Chromebook安装ArchLinux</a></p></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">
+        zhiliao
+    </span>
+  </span>
+<time datetime="2020-07-26T22:56:00+08:00" pubdate>2020-07-26 22:56:00</time>  <span class="categories">
+    <a class='category' href='/category/linux.html'>linux</a>
+  </span>
+  <span class="categories">
+    <a class="category" href="/tag/archlinux.html">archlinux</a>,    <a class="category" href="/tag/linux.html">linux</a>  </span>
+</p><div class="sharing">
+</div>    </footer>
+  </article>
+
+</div>
+
+<aside class="sidebar">
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    <li class="post">
+        <a href="/posts/2020/08/05/openSUSE-zypper.html">openSUSE zypper</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2020/07/26/arch-linux-samsung-arm-chromebook.html">在chromebook上安装archlinux</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2020/07/20/openSUSE-upgrade.html">openSUSE Leap 系统省级</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2020/07/20/openSUSE-multimedia.html">openSUSE Leap & Tumbleweed 安装解码器</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2020/07/01/phicomm-N1.html">斐讯N1刷机过程记录</a>
+    </li>
+  </ul>
+</section><section>
+  <h1>Categories</h1>
+    <ul id="recent_posts">
+      <li><a href="/category/android.html">android (2)</a></li>
+      <li><a href="/category/blog.html">blog (1)</a></li>
+      <li><a href="/category/editor.html">editor (1)</a></li>
+      <li><a href="/category/firefox.html">firefox (1)</a></li>
+      <li><a href="/category/git.html">git (2)</a></li>
+      <li><a href="/category/gu-piao.html">股票 (1)</a></li>
+      <li><a href="/category/linux.html">linux (25)</a></li>
+      <li><a href="/category/network.html">network (3)</a></li>
+      <li><a href="/category/nltk.html">nltk (2)</a></li>
+      <li><a href="/category/other.html">other (1)</a></li>
+      <li><a href="/category/python.html">python (1)</a></li>
+      <li><a href="/category/stock.html">stock (1)</a></li>
+      <li><a href="/category/web.html">web (1)</a></li>
+      <li><a href="/category/windows.html">windows (1)</a></li>
+  </ul>
+</section>
+<section>
+  <h1>Tags</h1>
+    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/linux.html">linux</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/linuix.html">linuix</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/git.html">git</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a></section>
+    <section>
+        <h1>Social</h1>
+        <ul>
+            <li><a href="https://github.com/zhangjiaxing" target="_blank">github</a></li>
+            <li><a href="http://wpa.qq.com/msgrd?v=3&uin=347820393&site=qq&menu=yes" target="_blank">qq</a></li>
+            <li><a href="http://www.writebug.cn" target="_blank">blog</a></li>
+            <li><a href="http://gallery.writebug.cn" target="_blank">gallery</a></li>
+        </ul>
+    </section>
+    <section>
+        <h1>Blogroll</h1>
+        <ul>
+            <li><a href="http://getpelican.com/" target="_blank">Pelican</a></li>
+        </ul>
+    </section>
+
+</aside>
+    </div>
+  </div>
+  <footer role="contentinfo">
+<p>
+    Copyright &copy;  2017&ndash;2020  zhiliao &mdash;
+  <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
+</p>  </footer>
+</body>
+</html>

@@ -57,6 +57,153 @@
   		<article>
 <header>
       <h1 class="entry-title">
+        <a href="/posts/2020/08/05/openSUSE-zypper.html">openSUSE zypper</a>
+      </h1>
+    <p class="meta">
+<time datetime="2020-08-05T13:24:13+08:00" pubdate>2020-08-05 13:24:13</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><ol>
+<li>zypper 安装软件时候版本选择</li>
+</ol>
+<div class="highlight-custom"><pre><span></span>查看仓库中有firefox的哪些版本
+sudo zypper se -s firefox
+
+安装指定版本
+sudo zypper in --oldpackage MozillaFirefox=78.0.1-lp152.2.5.1
+</pre></div>
+
+
+<ol>
+<li>zypper 和 其他包管理器 使用对比<blockquote>
+<p><a href="https://wiki.archlinux.org/index.php/Pacman/Rosetta">Pacman/Rosetta</a></p>
+</blockquote>
+</li>
+</ol></div>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="/posts/2020/07/26/arch-linux-samsung-arm-chromebook.html">在chromebook上安装archlinux</a>
+      </h1>
+    <p class="meta">
+<time datetime="2020-07-26T22:56:00+08:00" pubdate>2020-07-26 22:56:00</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><ol>
+<li>
+<p>把安装到U盘的教程中的 /dev/sda 替换成 mmcblk0 即可把archlinux安装进入系统盘.</p>
+</li>
+<li>
+<p>编辑 /etc/pacman.conf 文件, 添加 <code>IgnorePkg   = linux-armv7 linux-armv7-chromebook linux-firmware</code></p>
+</li>
+<li>
+<p>参考https://calvin.me/arch-linux-samsung-arm-chromebook 修改亮度控制 绑定按键 取消静音 设置休眠</p>
+</li>
+</ol>
+<div class="highlight-custom"><pre><span></span>alsamixer
+
+Go across the page (arrow keys) and press M to unmute
+    Left Speaker Mixer Left DAC1
+    Left Speaker Mixer Mono DAC2
+    Left Speaker Mixer Mono …</pre></div></div>
+            <footer>
+                <a rel="full-article" href="/posts/2020/07/26/arch-linux-samsung-arm-chromebook.html">Read On &crarr;</a>
+            </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="/posts/2020/07/20/openSUSE-upgrade.html">openSUSE Leap 系统省级</a>
+      </h1>
+    <p class="meta">
+<time datetime="2020-07-20T23:38:50+08:00" pubdate>2020-07-20 23:38:50</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><div class="highlight-custom"><pre><span></span><span class="c1"># 首先启用 repo-update 软件源</span>
+zypper modifyrepo --enable repo-update
+
+<span class="c1"># 然后更到最新</span>
+zypper refresh
+zypper update
+
+<span class="c1"># 下面的命令建议在tty中执行.  Ctrl + Alt + F2</span>
+
+<span class="c1"># 如果 /etc/zypp/repos.d/中定义的Leap 仓库已经使用$releasever变量时, 则使用:</span>
+zypper --releasever<span class="o">=</span><span class="m">15</span>.2 ref
+
+
+<span class="c1"># 或者仓库地址使用特定的Leap版本号对它们进行硬编码，则需要首先对其进行修改:</span>
+sudo sed -i <span class="s1">&#39;s/15.1/$releasever/g&#39;</span> /etc/zypp/repos.d/*.repo
+<span class="c1"># 然后执行:</span>
+zypper --releasever<span class="o">=</span><span class="m">15</span>.2 …</pre></div></div>
+            <footer>
+                <a rel="full-article" href="/posts/2020/07/20/openSUSE-upgrade.html">Read On &crarr;</a>
+            </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="/posts/2020/07/20/openSUSE-multimedia.html">openSUSE Leap & Tumbleweed 安装解码器</a>
+      </h1>
+    <p class="meta">
+<time datetime="2020-07-20T23:15:46+08:00" pubdate>2020-07-20 23:15:46</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><p>添加全部packman仓库</p>
+<div class="highlight-custom"><pre><span></span>sudo zypper ar -fc http://mirrors.aliyun.com/packman/openSUSE_Leap_15.2/    packman-aliyun
+
+<span class="c1"># 将系统软件包切换到packman中的软件包(两者混用会导致各种问题)</span>
+zypper dup --from packman --allow-vendor-change
+</pre></div>
+
+
+<p>或者仅仅添加packman中的Essentials(解码器)仓库</p>
+<div class="highlight-custom"><pre><span></span>sudo zypper ar -fc http://mirrors.aliyun.com/packman/openSUSE_Leap_15.2/Essentials/   packman-essentials-aliyun
+
+<span class="c1"># 将系统软件包切换到packman中的软件包(两者混用会导致各种问题)</span>
+zypper dup --from packman-essentials --allow-vendor-change
+</pre></div>
+
+
+<p><a href="https://en.opensuse.org/Additional_package_repositories">openSUSE_Additional_package_repositories</a></p></div>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="/posts/2020/07/01/phicomm-N1.html">斐讯N1刷机过程记录</a>
+      </h1>
+    <p class="meta">
+<time datetime="2020-07-01T23:38:09+08:00" pubdate>2020-07-01 23:38:09</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><p><img alt="刷机" src="/posts/2020/07/01/phicomm-N1-flash.jpg"></p>
+<p>去年买的N1盒子, 一直没时间折腾, 最近刚好需要作下载机用, 于是刷机, 顺便整理下步骤.</p>
+<p>首先说下N1配置. 处理器Amlogic S905, 内存 2G, emmc 8G, 千兆网口, 2个USB 2.0, 1个HDMI接口, 双频WIFI(支持 802.11 ac), 支持蓝牙. </p>
+<p>价格目前不到100元. 和raspberry 4 相比性能差不多, 重要的是能用Android系统, 便宜, 自带外壳.</p>
+<h4>目前用的人多的N1系统, 大致为 (不分先后)</h4>
+<ul>
+<li>Openwrt做主路由     </li>
+<li>小钢炮做下载机Docker里做旁路由 (恩山无线论坛 荒野无灯 所开发的专注于下载的系统, 基于linux)</li>
+<li>Armbian玩Docker</li>
+<li>Android (电视盒子)</li>
+<li>游戏机 (EmuELEC)</li>
+</ul>
+<h2>刷机第一步系统降级</h2>
+<p>不管是N1什么版本，首先必须要降级到能线刷的版本，并且能够使用，便于后期emmc能恢复。</p>
+<h6>准备环境 …</h6></div>
+            <footer>
+                <a rel="full-article" href="/posts/2020/07/01/phicomm-N1.html">Read On &crarr;</a>
+            </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
         <a href="/posts/2020/04/24/inotify-tools.html">inotify-tools</a>
       </h1>
     <p class="meta">
@@ -301,192 +448,6 @@ dnsmasq …</p></div>
                 <a rel="full-article" href="/posts/2019/07/12/dnsmasq.html">Read On &crarr;</a>
             </footer>
   		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="/posts/2019/06/24/list-2019-6-21.html">2019-6-21名单</a>
-      </h1>
-    <p class="meta">
-<time datetime="2019-06-24T00:53:33+08:00" pubdate>2019-06-24 00:53:33</time>      
-    </p>
-</header>
-
-        <div class="entry-content"><div class="highlight-custom"><pre><span></span>爱尔眼科
-通策医疗
-海天味业
-中国国旅
-片仔癀
-宋城演艺
-北方华创
-安图生物
-凯莱英
-珀莱雅
-正海生物
-艾德生物
-伊利股份
-东方财富
-中顺洁柔
-苏泊尔
-汤臣倍健
-万孚生物
-先导智能
-瑞恒医药
-华兰生物
-美亚光电
-智飞生物
-培凌榨菜
-欧普康视
-泰格医药
-贵州茅台
-中国平安
-视源股份
-迈瑞医疗 (黑名单)
-药明康德
-海康威视
-华测检测
-顺恒醋业
-海大集团
-晨光文具
-精测电子
-</pre></div></div>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="/posts/2019/06/01/stock-book.html">股票大佬推荐的书</a>
-      </h1>
-    <p class="meta">
-<time datetime="2019-06-01T18:40:12+08:00" pubdate>2019-06-01 18:40:12</time>      
-    </p>
-</header>
-
-        <div class="entry-content"><ol>
-<li>价值投资实战手册</li>
-<li>周期</li>
-<li>穿过迷雾</li>
-<li>奥马哈之雾</li>
-<li>投资中最简单的事</li>
-<li>投资中不简单的事</li>
-<li>投资最重要的事</li>
-<li>股票魔法师 一二卷</li>
-<li>笑傲股市</li>
-<li>以交易为生</li>
-<li>伟大的博弈</li>
-<li>戴维斯王朝</li>
-<li>k线入门 (大跌保命)</li>
-<li>macd入门 (同上)</li>
-<li>中央帝国的财政密码</li>
-<li>中央帝国的哲学密码</li>
-<li>全球通史 上下卷 (非股票类)</li>
-<li>万历十五年</li>
-</ol></div>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="/posts/2018/11/10/python-nltk-chapter1.html">python3 nltk chapter 1</a>
-      </h1>
-    <p class="meta">
-<time datetime="2018-11-10T18:17:07+08:00" pubdate>2018-11-10 18:17:07</time>      
-    </p>
-</header>
-
-        <div class="entry-content"><h1>语言处理与Python</h1>
-<h3>1.语言计算：文本和单词</h3>
-<h5>1.2 NLTK 入门</h5>
-<div class="highlight-custom"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
-<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">()</span>
-</pre></div>
-
-
-<h5>1.3 搜索文本</h5>
-<div class="highlight-custom"><pre><span></span>text1.concordance(&quot;monstrous&quot;)  # 搜索文本
-
-text1.similar(&quot;monstrous&quot;)  # 查看相识上下文出现的单词
-
-text2.common_contexts([&quot;monstrous&quot;, &quot;very&quot;])  # 查找两个词的共同上下文
-
-text4.dispersion_plot([&quot;citizens&quot;, &quot;democracy&quot;, &quot;freedom&quot;, &quot;duties&quot;, &quot;America&quot;])  # 词汇分布图
-
-len(set(text3)) / len(text3)  # 文本词汇丰富度
-</pre></div>
-
-
-<h5>1.3 布朗语料库</h5>
-<div class="highlight-custom"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">brown …</span></pre></div></div>
-            <footer>
-                <a rel="full-article" href="/posts/2018/11/10/python-nltk-chapter1.html">Read On &crarr;</a>
-            </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="/posts/2018/10/31/gprof2dot.html">生成函数调用关系图</a>
-      </h1>
-    <p class="meta">
-<time datetime="2018-10-31T13:57:01+08:00" pubdate>2018-10-31 13:57:01</time>      
-    </p>
-</header>
-
-        <div class="entry-content"><h4>用gprof生成函数调用关系图</h4>
-<ol>
-<li>CMakeLists.txt</li>
-</ol>
-<div class="highlight-custom"><pre><span></span>SET(CMAKE_BUILD_TYPE &quot;Debug&quot;)
-SET(CMAKE_C_FLAGS_DEBUG &quot;$ENV{CXXFLAGS} -O0 -Wall -g2 -pg -ggdb&quot;)  
-SET(CMAKE_C_FLAGS_RELEASE &quot;$ENV{CXXFLAGS} -O3 -Wall&quot;)
-</pre></div>
-
-
-<p>或</p>
-<div class="highlight-custom"><pre><span></span>gcc -pg -g source.c -o binary
-</pre></div>
-
-
-<ol>
-<li><code>./binary</code> 生成 gmon.out</li>
-<li><code>gprof ./binary&gt; gprof_output.txt</code></li>
-<li><code>graph2dot.py gprof_output.txt&gt; call_graph.dot</code></li>
-</ol>
-<hr>
-<h4>valgrind 生成函数调用图 (推荐)</h4>
-<div class="highlight-custom"><pre><span></span>valgrind --tool=callgrind ./a …</pre></div></div>
-            <footer>
-                <a rel="full-article" href="/posts/2018/10/31/gprof2dot.html">Read On &crarr;</a>
-            </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="/posts/2018/10/25/python-nltk-chapter2.html">python3 nltk chapter 2</a>
-      </h1>
-    <p class="meta">
-<time datetime="2018-10-25T22:03:03+08:00" pubdate>2018-10-25 22:03:03</time>      
-    </p>
-</header>
-
-        <div class="entry-content"><h1>获得文本语料和词汇资源</h1>
-<h3>1.获取文本语料库</h3>
-<h5>1.1 古腾堡语料库</h5>
-<div class="highlight-custom"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
-<span class="n">nltk</span><span class="o">.</span><span class="n">corpus</span><span class="o">.</span><span class="n">gutenberg</span><span class="o">.</span><span class="n">fileids</span><span class="p">()</span>
-
-<span class="n">nltk</span><span class="o">.</span><span class="n">corpus</span><span class="o">.</span><span class="n">gutenberg</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;austen-emma.txt&#39;</span><span class="p">)</span>
-
-<span class="n">emma</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">nltk</span><span class="o">.</span><span class="n">corpus</span><span class="o">.</span><span class="n">gutenberg</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;austen-emma.txt&#39;</span><span class="p">))</span>
-<span class="n">emma</span><span class="o">.</span><span class="n">concordance</span><span class="p">(</span><span class="s2">&quot;surprize&quot;</span><span class="p">)</span>
-
-<span class="n">nltk</span><span class="o">.</span><span class="n">corpus</span><span class="o">.</span><span class="n">gutenberg</span><span class="o">.</span><span class="n">raw</span><span class="p">(</span><span class="s1">&#39;austen-emma.txt&#39;</span><span class="p">)</span>
-<span class="n">nltk</span><span class="o">.</span><span class="n">corpus</span><span class="o">.</span><span class="n">gutenberg</span><span class="o">.</span><span class="n">cents</span><span class="p">(</span><span class="s1">&#39;austen-emma.txt&#39;</span><span class="p">)</span>
-</pre></div>
-
-
-<h5>1.2 网络和聊天文本</h5>
-<div class="highlight-custom"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">webtext …</span></pre></div></div>
-            <footer>
-                <a rel="full-article" href="/posts/2018/10/25/python-nltk-chapter2.html">Read On &crarr;</a>
-            </footer>
-  		</article>
 <div class="pagination">
     <a class="prev" href="/index2.html">&larr; Older</a>
 
@@ -498,19 +459,19 @@ SET(CMAKE_C_FLAGS_RELEASE &quot;$ENV{CXXFLAGS} -O3 -Wall&quot;)
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     <li class="post">
-        <a href="/posts/2020/04/24/inotify-tools.html">inotify-tools</a>
+        <a href="/posts/2020/08/05/openSUSE-zypper.html">openSUSE zypper</a>
     </li>
     <li class="post">
-        <a href="/posts/2020/01/08/linux-nc.html">通过nc命令查看服务器端口和客户端能不能正常连接</a>
+        <a href="/posts/2020/07/26/arch-linux-samsung-arm-chromebook.html">在chromebook上安装archlinux</a>
     </li>
     <li class="post">
-        <a href="/posts/2020/01/07/laptop-router.html">笔记本把无线网络连接分享给网线</a>
+        <a href="/posts/2020/07/20/openSUSE-upgrade.html">openSUSE Leap 系统省级</a>
     </li>
     <li class="post">
-        <a href="/posts/2020/01/05/linux-improving-performance.html">Linux性能优化</a>
+        <a href="/posts/2020/07/20/openSUSE-multimedia.html">openSUSE Leap & Tumbleweed 安装解码器</a>
     </li>
     <li class="post">
-        <a href="/posts/2019/12/19/openSUSE-server-install-cinnamon.html">openSUSE Tumbleweed server 安装cinnamon桌面</a>
+        <a href="/posts/2020/07/01/phicomm-N1.html">斐讯N1刷机过程记录</a>
     </li>
   </ul>
 </section><section>
@@ -522,7 +483,7 @@ SET(CMAKE_C_FLAGS_RELEASE &quot;$ENV{CXXFLAGS} -O3 -Wall&quot;)
       <li><a href="/category/firefox.html">firefox (1)</a></li>
       <li><a href="/category/git.html">git (2)</a></li>
       <li><a href="/category/gu-piao.html">股票 (1)</a></li>
-      <li><a href="/category/linux.html">linux (20)</a></li>
+      <li><a href="/category/linux.html">linux (25)</a></li>
       <li><a href="/category/network.html">network (3)</a></li>
       <li><a href="/category/nltk.html">nltk (2)</a></li>
       <li><a href="/category/other.html">other (1)</a></li>
@@ -534,7 +495,7 @@ SET(CMAKE_C_FLAGS_RELEASE &quot;$ENV{CXXFLAGS} -O3 -Wall&quot;)
 </section>
 <section>
   <h1>Tags</h1>
-    <a href="/tag/linux.html">linux</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/linuix.html">linuix</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/git.html">git</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a></section>
+    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/linux.html">linux</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/linuix.html">linuix</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/git.html">git</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a></section>
     <section>
         <h1>Social</h1>
         <ul>
