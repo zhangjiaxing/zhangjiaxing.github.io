@@ -31,7 +31,7 @@ sudo zypper in --oldpackage MozillaFirefox=78.0.1-lp152.2.5.1
 Go across the page (arrow keys) and press M to unmute
     Left Speaker Mixer Left DAC1
     Left Speaker Mixer Mono DAC2
-    Left Speaker Mixer Mono …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Sun, 26 Jul 2020 22:56:00 +0800</pubDate><guid isPermaLink="false">tag:None,2020-07-26:/posts/2020/07/26/arch-linux-samsung-arm-chromebook.html</guid><category>linux</category><category>archlinux</category><category>linux</category></item><item><title>openSUSE Leap 系统省级</title><link>/posts/2020/07/20/openSUSE-upgrade.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# 首先启用 repo-update 软件源&lt;/span&gt;
+    Left Speaker Mixer Mono …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Sun, 26 Jul 2020 22:56:00 +0800</pubDate><guid isPermaLink="false">tag:None,2020-07-26:/posts/2020/07/26/arch-linux-samsung-arm-chromebook.html</guid><category>linux</category><category>archlinux</category><category>linux</category></item><item><title>openSUSE Leap 系统升级</title><link>/posts/2020/07/20/openSUSE-upgrade.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# 首先启用 repo-update 软件源&lt;/span&gt;
 zypper modifyrepo --enable repo-update
 
 &lt;span class="c1"&gt;# 然后更到最新&lt;/span&gt;

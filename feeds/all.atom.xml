@@ -90,7 +90,7 @@ fi
 &lt;p&gt;参考
 &lt;a href="https://archlinuxarm.org/platforms/armv7/samsung/samsung-chromebook"&gt;archlinuxarm&lt;/a&gt;
 &lt;a href="https://calvin.me/arch-linux-samsung-arm-chromebook"&gt;Arch Linux on Samsung ARM Chromebook&lt;/a&gt;
-&lt;a href="https://www.cnblogs.com/ouyangsong/p/9348163.html"&gt;Chromebook安装ArchLinux&lt;/a&gt;&lt;/p&gt;</content><category term="linux"></category><category term="archlinux"></category><category term="linux"></category></entry><entry><title>openSUSE Leap 系统省级</title><link href="/posts/2020/07/20/openSUSE-upgrade.html" rel="alternate"></link><published>2020-07-20T23:38:50+08:00</published><updated>2020-07-20T23:38:50+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-07-20:/posts/2020/07/20/openSUSE-upgrade.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# 首先启用 repo-update 软件源&lt;/span&gt;
+&lt;a href="https://www.cnblogs.com/ouyangsong/p/9348163.html"&gt;Chromebook安装ArchLinux&lt;/a&gt;&lt;/p&gt;</content><category term="linux"></category><category term="archlinux"></category><category term="linux"></category></entry><entry><title>openSUSE Leap 系统升级</title><link href="/posts/2020/07/20/openSUSE-upgrade.html" rel="alternate"></link><published>2020-07-20T23:38:50+08:00</published><updated>2020-07-20T23:38:50+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-07-20:/posts/2020/07/20/openSUSE-upgrade.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# 首先启用 repo-update 软件源&lt;/span&gt;
 zypper modifyrepo --enable repo-update
 
 &lt;span class="c1"&gt;# 然后更到最新&lt;/span&gt;
@@ -1211,6 +1211,7 @@ filezilla
 firefox &amp;amp; firefox-i18n-zh-cn
 firejail
 fish
+flameshot  # 赞
 flashplugin
 fontconfig-infinality  # (aur) 美化字体 
 gedit
