@@ -57,6 +57,24 @@
   		<article>
 <header>
       <h1 class="entry-title">
+        <a href="/posts/2019/07/12/dnsmasq.html">dnsmasq DHCP功能和DNS缓存</a>
+      </h1>
+    <p class="meta">
+<time datetime="2019-07-12T13:59:41+08:00" pubdate>2019-07-12 13:59:41</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><p>NetworkManager 热点默认配置:
+dnsmasq --conf-file=/dev/null --no-hosts --keep-in-foreground --bind-interfaces --except-interface=lo --clear-on-reload --strict-order --listen-address=10.42.0.1 --dhcp-range=10.42.0.10,10.42.0.254,60m --dhcp-lease-max=50 --dhcp-leasefile=/var/lib/NetworkManager/dnsmasq-wlp8s0.leases --pid-file=/var/run/nm-dnsmasq-wlp8s0.pid --conf-dir=/etc/NetworkManager/dnsmasq-shared.d</p>
+<p>dnsmasq HDCP+DNS缓存:
+dnsmasq …</p></div>
+            <footer>
+                <a rel="full-article" href="/posts/2019/07/12/dnsmasq.html">Read On &crarr;</a>
+            </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
         <a href="/posts/2019/06/24/list-2019-6-21.html">2019-6-21名单</a>
       </h1>
     <p class="meta">
@@ -463,22 +481,6 @@ show-backtrace-all-active-cpus(l …</pre></div></div>
                 <a rel="full-article" href="/posts/2017/12/29/linux-sysrq.html">Read On &crarr;</a>
             </footer>
   		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="/posts/2017/12/11/daemonize.html">daemonize</a>
-      </h1>
-    <p class="meta">
-<time datetime="2017-12-11T16:43:49+08:00" pubdate>2017-12-11 16:43:49</time>      
-    </p>
-</header>
-
-        <div class="entry-content"><p>daemonize 能够把命令作为守护进程 (daemon) 运行.
-并且支持自动创建pid文件, 自动创建/检查文件锁.</p>
-<p>顺便记录一下几个相关命令, <code>daemonize, nohup, setsid, &amp;, disown</code></p>
-<p>如何用bash实现daemon
-http://blog.n01se.net/blog-n01se-net-p-145.html</p></div>
-  		</article>
 <div class="pagination">
     <a class="prev" href="/index3.html">&larr; Older</a>
 
@@ -491,6 +493,9 @@ http://blog.n01se.net/blog-n01se-net-p-145.html</p></div>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     <li class="post">
+        <a href="/posts/2020/08/14/dpkg-disable-dialog.html">dpkg安装软件包禁用dialog对话框</a>
+    </li>
+    <li class="post">
         <a href="/posts/2020/08/05/openSUSE-zypper.html">openSUSE zypper</a>
     </li>
     <li class="post">
@@ -502,9 +507,6 @@ http://blog.n01se.net/blog-n01se-net-p-145.html</p></div>
     <li class="post">
         <a href="/posts/2020/07/20/openSUSE-multimedia.html">openSUSE Leap & Tumbleweed 安装解码器</a>
     </li>
-    <li class="post">
-        <a href="/posts/2020/07/01/phicomm-N1.html">斐讯N1刷机过程记录</a>
-    </li>
   </ul>
 </section><section>
   <h1>Categories</h1>
@@ -515,7 +517,7 @@ http://blog.n01se.net/blog-n01se-net-p-145.html</p></div>
       <li><a href="/category/firefox.html">firefox (1)</a></li>
       <li><a href="/category/git.html">git (2)</a></li>
       <li><a href="/category/gu-piao.html">股票 (1)</a></li>
-      <li><a href="/category/linux.html">linux (25)</a></li>
+      <li><a href="/category/linux.html">linux (26)</a></li>
       <li><a href="/category/network.html">network (3)</a></li>
       <li><a href="/category/nltk.html">nltk (2)</a></li>
       <li><a href="/category/other.html">other (1)</a></li>
@@ -527,7 +529,7 @@ http://blog.n01se.net/blog-n01se-net-p-145.html</p></div>
 </section>
 <section>
   <h1>Tags</h1>
-    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/linux.html">linux</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/linuix.html">linuix</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/git.html">git</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a></section>
+    <a href="/tag/linux.html">linux</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/linuix.html">linuix</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/git.html">git</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a></section>
     <section>
         <h1>Social</h1>
         <ul>

@@ -4,11 +4,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Tag: shell &mdash; cat ~/.zhiliao.history</title>
+  <title>dpkg安装软件包禁用dialog对话框 &mdash; cat ~/.zhiliao.history</title>
   <meta name="author" content="zhiliao">
 
   <link href="/feeds/all.atom.xml" type="application/rss+xml" rel="alternate"
         title="cat ~/.zhiliao.history RSS Feed" />
+
+
 
 
 
@@ -54,28 +56,38 @@
   <div id="main">
     <div id="content">
 <div>
-	<article role="article">
-    	<header>
-    		<h1 class="entry-title">Tag: shell</h1>
-    	</header>
+  <article class="hentry" role="article">
+<header>
+      <h1 class="entry-title">dpkg安装软件包禁用dialog对话框</h1>
+    <p class="meta">
+<time datetime="2020-08-14T17:38:05+08:00" pubdate>2020-08-14 17:38:05</time>      
+    </p>
+</header>
 
-    	<div id="blog-archives">
-            <h2>2018</h2>
-                    <article>
-                        <h1><a href="/posts/2018/05/22/shellinabox.html">shellinabox</a></h1>
-                        <time datetime="2018-05-22 19:37:34+08:00" pubdate>
-                            <span class="month">五月</span>
-                            <span class="day">22</span>
-                            <span class="year">2018</span>
-                        </time>
-                        <footer>
-                            <span class="categories">posted in
-                                <a class='category' href='/category/linux.html'>linux</a>
-                            </span>
-                        </footer>
-                    </article>
-	    </div>
-    </article>
+    <div class="entry-content"><p>之前写了个脚本, 在后台自动安装某些dpkg软件包.  但是安装过程会卡住 (即使crontab运行的后台程序也会卡住). 分析原因发现是因为后台出了dialog的对话框, 没有被选择导致一直卡住.</p>
+<p>于是想到在非tty下面, dialog应该不会出现了. </p>
+<p>首先测试 <code>yes | dpkg -i *</code> 对话框还是会出现. (<code>yes | dpkg -i</code> 印象里面看别人这么写过.  <code>yes | tty</code> 显示 <code>not a tty</code>)</p>
+<p>于是测试 ssh -T 链接本机, 安装果然没有对话框. 能够成功安装,但是有一行报错 <code>debconf: unable to initialize frontend: Dialog</code></p>
+<p>顺着这个报错, 终于搜到了 如何dpkg安装软件不出现dialog对话框.</p>
+<div class="highlight-custom"><pre><span></span>设置环境变量, 然后在 dpkg安装就可以
+DEBIAN_FRONTEND=noninteractive dpkg -i *
+</pre></div></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">
+        zhiliao
+    </span>
+  </span>
+<time datetime="2020-08-14T17:38:05+08:00" pubdate>2020-08-14 17:38:05</time>  <span class="categories">
+    <a class='category' href='/category/linux.html'>linux</a>
+  </span>
+  <span class="categories">
+    <a class="category" href="/tag/linux.html">linux</a>,    <a class="category" href="/tag/debian.html">debian</a>  </span>
+</p><div class="sharing">
+</div>    </footer>
+  </article>
+
 </div>
 
 <aside class="sidebar">
@@ -83,7 +95,19 @@
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     <li class="post">
-        <a href="/posts/2018/05/22/shellinabox.html">shellinabox</a>
+        <a href="/posts/2020/08/14/dpkg-disable-dialog.html">dpkg安装软件包禁用dialog对话框</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2020/08/05/openSUSE-zypper.html">openSUSE zypper</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2020/07/26/arch-linux-samsung-arm-chromebook.html">在chromebook上安装archlinux</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2020/07/20/openSUSE-upgrade.html">openSUSE Leap 系统升级</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2020/07/20/openSUSE-multimedia.html">openSUSE Leap & Tumbleweed 安装解码器</a>
     </li>
   </ul>
 </section><section>
@@ -129,7 +153,7 @@
   </div>
   <footer role="contentinfo">
 <p>
-    Copyright &copy;  2018  zhiliao &mdash;
+    Copyright &copy;  2017&ndash;2020  zhiliao &mdash;
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
 </p>  </footer>
 </body>
