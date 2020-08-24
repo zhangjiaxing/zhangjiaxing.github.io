@@ -65,14 +65,18 @@
 </header>
 
     <div class="entry-content"><p>openSUSE Leap 15.2 默认是不开启coredump的.</p>
-<p>开启方法:
-1. 查看<code>ulimit -H -a</code> 和 <code>ulimit -S -a</code> core files是否均显示unlimited. 如果不是则修改.
-2. sudo zypper in systemd-coredump
-3. reboot</p>
-<p>使用方法:
-1. sudo coredumpctl list 列出当前corefile 文件.
-2. /var/lib/systemd/coredump/ 这是corefile 默认保存位置.
-3. man systemd-coredump; man core 查看手册</p></div>
+<h6>开启方法</h6>
+<ol>
+<li>查看<code>ulimit -H -a</code> 和 <code>ulimit -S -a</code> core files是否均显示unlimited. 如果不是则修改</li>
+<li>sudo zypper in systemd-coredump</li>
+<li>reboot</li>
+</ol>
+<h6>使用方法</h6>
+<ol>
+<li>sudo coredumpctl list 列出当前corefile 文件</li>
+<li>/var/lib/systemd/coredump/ 这是corefile 默认保存位置</li>
+<li>man systemd-coredump; man core 查看手册</li>
+</ol></div>
     <footer>
 <p class="meta">
   <span class="byline author vcard">

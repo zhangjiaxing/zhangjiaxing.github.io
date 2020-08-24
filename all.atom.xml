@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>无聊就该多读书。</description><lastBuildDate>Mon, 24 Aug 2020 12:40:41 +0800</lastBuildDate><item><title>openSUSE coredump文件</title><link>/posts/2020/08/24/openSUSE-coredump.html</link><description>&lt;p&gt;openSUSE Leap 15.2 默认是不开启coredump的.&lt;/p&gt;
-&lt;p&gt;开启方法:
-1. 查看&lt;code&gt;ulimit -H -a&lt;/code&gt; 和 &lt;code&gt;ulimit -S -a&lt;/code&gt; core files是否均显示unlimited. 如果不是则修改.
-2. sudo zypper in systemd-coredump
-3. reboot&lt;/p&gt;
-&lt;p&gt;使用方法:
-1. sudo coredumpctl list 列出当前corefile 文件.
-2. /var/lib/systemd/coredump/ 这是corefile 默认保存位置.
-3. man systemd-coredump; man core 查看手册&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Mon, 24 Aug 2020 12:40:41 +0800</pubDate><guid isPermaLink="false">tag:None,2020-08-24:/posts/2020/08/24/openSUSE-coredump.html</guid><category>linux</category><category>openSUSE</category><category>gdb</category></item><item><title>dpkg安装软件包禁用dialog对话框</title><link>/posts/2020/08/14/dpkg-disable-dialog.html</link><description>&lt;p&gt;之前写了个脚本, 在后台自动安装某些dpkg软件包.  但是安装过程会卡住 (即使crontab运行的后台程序也会卡住). 分析原因发现是因为后台出了dialog的对话框, 没有被选择导致一直卡住.&lt;/p&gt;
+&lt;h6&gt;开启方法&lt;/h6&gt;
+&lt;ol&gt;
+&lt;li&gt;查看&lt;code&gt;ulimit -H -a&lt;/code&gt; 和 &lt;code&gt;ulimit -S -a&lt;/code&gt; core files是否均显示unlimited. 如果不是则修改&lt;/li&gt;
+&lt;li&gt;sudo zypper in systemd-coredump&lt;/li&gt;
+&lt;li&gt;reboot&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h6&gt;使用方法&lt;/h6&gt;
+&lt;ol&gt;
+&lt;li&gt;sudo coredumpctl list 列出当前corefile 文件&lt;/li&gt;
+&lt;li&gt;/var/lib/systemd/coredump/ 这是corefile 默认保存位置&lt;/li&gt;
+&lt;li&gt;man systemd-coredump; man core 查看手册&lt;/li&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Mon, 24 Aug 2020 12:40:41 +0800</pubDate><guid isPermaLink="false">tag:None,2020-08-24:/posts/2020/08/24/openSUSE-coredump.html</guid><category>linux</category><category>openSUSE</category><category>gdb</category></item><item><title>dpkg安装软件包禁用dialog对话框</title><link>/posts/2020/08/14/dpkg-disable-dialog.html</link><description>&lt;p&gt;之前写了个脚本, 在后台自动安装某些dpkg软件包.  但是安装过程会卡住 (即使crontab运行的后台程序也会卡住). 分析原因发现是因为后台出了dialog的对话框, 没有被选择导致一直卡住.&lt;/p&gt;
 &lt;p&gt;于是想到在非tty下面, dialog应该不会出现了. &lt;/p&gt;
 &lt;p&gt;首先测试 &lt;code&gt;yes | dpkg -i *&lt;/code&gt; 对话框还是会出现. (&lt;code&gt;yes | dpkg -i&lt;/code&gt; 印象里面看别人这么写过.  &lt;code&gt;yes | tty&lt;/code&gt; 显示 &lt;code&gt;not a tty&lt;/code&gt;)&lt;/p&gt;
 &lt;p&gt;于是测试 ssh -T 链接本机, 安装果然没有对话框. 能够成功安装,但是有一行报错 &lt;code&gt;debconf: unable to initialize frontend: Dialog&lt;/code&gt;&lt;/p&gt;
