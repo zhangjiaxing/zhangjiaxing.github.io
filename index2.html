@@ -57,6 +57,28 @@
   		<article>
 <header>
       <h1 class="entry-title">
+        <a href="/posts/2019/11/14/linux-pptpd.html">linux pptpd配置</a>
+      </h1>
+    <p class="meta">
+<time datetime="2019-11-14T10:44:33+08:00" pubdate>2019-11-14 10:44:33</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><p>yum install pptpd</p>
+<p>echo "user01  pptpd   123456  * " &gt;&gt;  chap-secrets </p>
+<p>echo "net.ipv4.ip_forward=1" &gt; /etc/sysctl.d/ip_forward.conf
+sysctl -p</p>
+<p>vim /etc/pptpd.conf</p>
+<div class="highlight-custom"><pre><span></span>localip 192.168.0.1
+remoteip        192.168.0.234-238,192.168.0.245
+</pre></div>
+
+
+<p>systemctl start pptpd.service</p></div>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
         <a href="/posts/2019/07/12/dnsmasq.html">dnsmasq DHCP功能和DNS缓存</a>
       </h1>
     <p class="meta">
@@ -441,46 +463,6 @@ X浏览器
                 <a rel="full-article" href="/posts/2017/12/29/gtk-broadway.html">Read On &crarr;</a>
             </footer>
   		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="/posts/2017/12/29/linux-sysrq.html">SysRq</a>
-      </h1>
-    <p class="meta">
-<time datetime="2017-12-29T14:20:16+08:00" pubdate>2017-12-29 14:20:16</time>      
-    </p>
-</header>
-
-        <div class="entry-content"><h2>SysRq HELP</h2>
-<h5>开启这个功能</h5>
-<div class="highlight-custom"><pre><span></span><span class="nb">echo</span> <span class="m">1</span> &gt; /proc/sys/kernel/sysrq  <span class="c1"># 或者在 /etc/sysctl.conf 中设置 kernel.sysrq=1</span>
-</pre></div>
-
-
-<h5>用法1:</h5>
-<div class="highlight-custom"><pre><span></span><span class="nb">echo</span> b &gt; /proc/sysrq-trigger
-</pre></div>
-
-
-<h5>用法2:</h5>
-<div class="highlight-custom"><pre><span></span>Alt + SysRq + b  <span class="c1"># SysRq 键在x86上一般为 [print screen] 键</span>
-</pre></div>
-
-
-<h5>命令介绍</h5>
-<div class="highlight-custom"><pre><span></span>loglevel(0-9)
-reboot(b)
-crash(c)
-terminate-all-tasks(e)
-memory-full-oom-kill(f)
-kill-all-tasks(i)
-thaw-filesystems(j)
-sak(k)
-show-backtrace-all-active-cpus(l …</pre></div></div>
-            <footer>
-                <a rel="full-article" href="/posts/2017/12/29/linux-sysrq.html">Read On &crarr;</a>
-            </footer>
-  		</article>
 <div class="pagination">
     <a class="prev" href="/index3.html">&larr; Older</a>
 
@@ -493,6 +475,9 @@ show-backtrace-all-active-cpus(l …</pre></div></div>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     <li class="post">
+        <a href="/posts/2020/08/24/openSUSE-coredump.html">openSUSE coredump文件</a>
+    </li>
+    <li class="post">
         <a href="/posts/2020/08/14/dpkg-disable-dialog.html">dpkg安装软件包禁用dialog对话框</a>
     </li>
     <li class="post">
@@ -504,9 +489,6 @@ show-backtrace-all-active-cpus(l …</pre></div></div>
     <li class="post">
         <a href="/posts/2020/07/20/openSUSE-upgrade.html">openSUSE Leap 系统升级</a>
     </li>
-    <li class="post">
-        <a href="/posts/2020/07/20/openSUSE-multimedia.html">openSUSE Leap & Tumbleweed 安装解码器</a>
-    </li>
   </ul>
 </section><section>
   <h1>Categories</h1>
@@ -517,7 +499,7 @@ show-backtrace-all-active-cpus(l …</pre></div></div>
       <li><a href="/category/firefox.html">firefox (1)</a></li>
       <li><a href="/category/git.html">git (2)</a></li>
       <li><a href="/category/gu-piao.html">股票 (1)</a></li>
-      <li><a href="/category/linux.html">linux (26)</a></li>
+      <li><a href="/category/linux.html">linux (27)</a></li>
       <li><a href="/category/network.html">network (3)</a></li>
       <li><a href="/category/nltk.html">nltk (2)</a></li>
       <li><a href="/category/other.html">other (1)</a></li>
@@ -529,7 +511,7 @@ show-backtrace-all-active-cpus(l …</pre></div></div>
 </section>
 <section>
   <h1>Tags</h1>
-    <a href="/tag/linux.html">linux</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/linuix.html">linuix</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/git.html">git</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a></section>
+    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/linux.html">linux</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/linuix.html">linuix</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/git.html">git</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a></section>
     <section>
         <h1>Social</h1>
         <ul>

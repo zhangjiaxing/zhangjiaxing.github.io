@@ -4,11 +4,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: stock &mdash; cat ~/.zhiliao.history</title>
+  <title>openSUSE coredump文件 &mdash; cat ~/.zhiliao.history</title>
   <meta name="author" content="zhiliao">
 
   <link href="/feeds/all.atom.xml" type="application/rss+xml" rel="alternate"
         title="cat ~/.zhiliao.history RSS Feed" />
+
+
 
 
 
@@ -54,28 +56,39 @@
   <div id="main">
     <div id="content">
 <div>
-	<article role="article">
-    	<header>
-    		<h1 class="entry-title">Category: stock</h1>
-    	</header>
+  <article class="hentry" role="article">
+<header>
+      <h1 class="entry-title">openSUSE coredump文件</h1>
+    <p class="meta">
+<time datetime="2020-08-24T12:40:41+08:00" pubdate>2020-08-24 12:40:41</time>      
+    </p>
+</header>
 
-    	<div id="blog-archives">
-            <h2>2019</h2>
-                    <article>
-                        <h1><a href="/posts/2019/06/24/list-2019-6-21.html">2019-6-21名单</a></h1>
-                        <time datetime="2019-06-24 00:53:33+08:00" pubdate>
-                            <span class="month">六月</span>
-                            <span class="day">24</span>
-                            <span class="year">2019</span>
-                        </time>
-                        <footer>
-                            <span class="categories">posted in
-                                <a class='category' href='/category/stock.html'>stock</a>
-                            </span>
-                        </footer>
-                    </article>
-	    </div>
-    </article>
+    <div class="entry-content"><p>openSUSE Leap 15.2 默认是不开启coredump的.</p>
+<p>开启方法:
+1. 查看<code>ulimit -H -a</code> 和 <code>ulimit -S -a</code> core files是否均显示unlimited. 如果不是则修改.
+2. sudo zypper in systemd-coredump
+3. reboot</p>
+<p>使用方法:
+1. sudo coredumpctl list 列出当前corefile 文件.
+2. /var/lib/systemd/coredump/ 这是corefile 默认保存位置.
+3. man systemd-coredump; man core 查看手册</p></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">
+        zhiliao
+    </span>
+  </span>
+<time datetime="2020-08-24T12:40:41+08:00" pubdate>2020-08-24 12:40:41</time>  <span class="categories">
+    <a class='category' href='/category/linux.html'>linux</a>
+  </span>
+  <span class="categories">
+    <a class="category" href="/tag/opensuse.html">openSUSE</a>,    <a class="category" href="/tag/gdb.html">gdb</a>  </span>
+</p><div class="sharing">
+</div>    </footer>
+  </article>
+
 </div>
 
 <aside class="sidebar">
@@ -83,7 +96,19 @@
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     <li class="post">
-        <a href="/posts/2019/06/24/list-2019-6-21.html">2019-6-21名单</a>
+        <a href="/posts/2020/08/24/openSUSE-coredump.html">openSUSE coredump文件</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2020/08/14/dpkg-disable-dialog.html">dpkg安装软件包禁用dialog对话框</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2020/08/05/openSUSE-zypper.html">openSUSE zypper</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2020/07/26/arch-linux-samsung-arm-chromebook.html">在chromebook上安装archlinux</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2020/07/20/openSUSE-upgrade.html">openSUSE Leap 系统升级</a>
     </li>
   </ul>
 </section><section>
@@ -129,7 +154,7 @@
   </div>
   <footer role="contentinfo">
 <p>
-    Copyright &copy;  2019  zhiliao &mdash;
+    Copyright &copy;  2017&ndash;2020  zhiliao &mdash;
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
 </p>  </footer>
 </body>

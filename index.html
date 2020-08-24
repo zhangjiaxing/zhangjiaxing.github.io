@@ -57,6 +57,26 @@
   		<article>
 <header>
       <h1 class="entry-title">
+        <a href="/posts/2020/08/24/openSUSE-coredump.html">openSUSE coredump文件</a>
+      </h1>
+    <p class="meta">
+<time datetime="2020-08-24T12:40:41+08:00" pubdate>2020-08-24 12:40:41</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><p>openSUSE Leap 15.2 默认是不开启coredump的.</p>
+<p>开启方法:
+1. 查看<code>ulimit -H -a</code> 和 <code>ulimit -S -a</code> core files是否均显示unlimited. 如果不是则修改.
+2. sudo zypper in systemd-coredump
+3. reboot</p>
+<p>使用方法:
+1. sudo coredumpctl list 列出当前corefile 文件.
+2. /var/lib/systemd/coredump/ 这是corefile 默认保存位置.
+3. man systemd-coredump; man core 查看手册</p></div>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
         <a href="/posts/2020/08/14/dpkg-disable-dialog.html">dpkg安装软件包禁用dialog对话框</a>
       </h1>
     <p class="meta">
@@ -427,28 +447,6 @@ ShutdownWatchdogSec=10min</p>
 <p>:(){ :|:&amp; };:</p>
 </blockquote></div>
   		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="/posts/2019/11/14/linux-pptpd.html">linux pptpd配置</a>
-      </h1>
-    <p class="meta">
-<time datetime="2019-11-14T10:44:33+08:00" pubdate>2019-11-14 10:44:33</time>      
-    </p>
-</header>
-
-        <div class="entry-content"><p>yum install pptpd</p>
-<p>echo "user01  pptpd   123456  * " &gt;&gt;  chap-secrets </p>
-<p>echo "net.ipv4.ip_forward=1" &gt; /etc/sysctl.d/ip_forward.conf
-sysctl -p</p>
-<p>vim /etc/pptpd.conf</p>
-<div class="highlight-custom"><pre><span></span>localip 192.168.0.1
-remoteip        192.168.0.234-238,192.168.0.245
-</pre></div>
-
-
-<p>systemctl start pptpd.service</p></div>
-  		</article>
 <div class="pagination">
     <a class="prev" href="/index2.html">&larr; Older</a>
 
@@ -459,6 +457,9 @@ remoteip        192.168.0.234-238,192.168.0.245
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    <li class="post">
+        <a href="/posts/2020/08/24/openSUSE-coredump.html">openSUSE coredump文件</a>
+    </li>
     <li class="post">
         <a href="/posts/2020/08/14/dpkg-disable-dialog.html">dpkg安装软件包禁用dialog对话框</a>
     </li>
@@ -471,9 +472,6 @@ remoteip        192.168.0.234-238,192.168.0.245
     <li class="post">
         <a href="/posts/2020/07/20/openSUSE-upgrade.html">openSUSE Leap 系统升级</a>
     </li>
-    <li class="post">
-        <a href="/posts/2020/07/20/openSUSE-multimedia.html">openSUSE Leap & Tumbleweed 安装解码器</a>
-    </li>
   </ul>
 </section><section>
   <h1>Categories</h1>
@@ -484,7 +482,7 @@ remoteip        192.168.0.234-238,192.168.0.245
       <li><a href="/category/firefox.html">firefox (1)</a></li>
       <li><a href="/category/git.html">git (2)</a></li>
       <li><a href="/category/gu-piao.html">股票 (1)</a></li>
-      <li><a href="/category/linux.html">linux (26)</a></li>
+      <li><a href="/category/linux.html">linux (27)</a></li>
       <li><a href="/category/network.html">network (3)</a></li>
       <li><a href="/category/nltk.html">nltk (2)</a></li>
       <li><a href="/category/other.html">other (1)</a></li>
@@ -496,7 +494,7 @@ remoteip        192.168.0.234-238,192.168.0.245
 </section>
 <section>
   <h1>Tags</h1>
-    <a href="/tag/linux.html">linux</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/linuix.html">linuix</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/git.html">git</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a></section>
+    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/linux.html">linux</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/linuix.html">linuix</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/git.html">git</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a></section>
     <section>
         <h1>Social</h1>
         <ul>
