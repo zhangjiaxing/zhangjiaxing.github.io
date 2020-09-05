@@ -145,8 +145,8 @@ zypper --releasever&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;15&
 
 
 &lt;span class="c1"&gt;# 最后重新启动系统.&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="openSUSE"></category><category term="linux"></category></entry><entry><title>openSUSE Leap &amp; Tumbleweed 安装解码器</title><link href="/posts/2020/07/20/openSUSE-multimedia.html" rel="alternate"></link><published>2020-07-20T23:15:46+08:00</published><updated>2020-07-20T23:15:46+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-07-20:/posts/2020/07/20/openSUSE-multimedia.html</id><content type="html">&lt;p&gt;添加全部packman仓库&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo zypper ar -fc http://mirrors.aliyun.com/packman/openSUSE_Leap_15.2/    packman-aliyun
+&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="openSUSE"></category><category term="linux"></category></entry><entry><title>openSUSE Leap &amp; Tumbleweed 安装解码器</title><link href="/posts/2020/07/20/openSUSE-multimedia.html" rel="alternate"></link><published>2020-07-20T23:15:46+08:00</published><updated>2020-07-20T23:15:46+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-07-20:/posts/2020/07/20/openSUSE-multimedia.html</id><summary type="html">&lt;p&gt;添加全部packman仓库&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo zypper ar -fc &lt;span class="s1"&gt;&amp;#39;https://mirrors.tuna.tsinghua.edu.cn/packman/suse/openSUSE_Leap_$releasever&amp;#39;&lt;/span&gt;            packman
 
 &lt;span class="c1"&gt;# 将系统软件包切换到packman中的软件包(两者混用会导致各种问题)&lt;/span&gt;
 zypper dup --from packman --allow-vendor-change
@@ -154,7 +154,23 @@ zypper dup --from packman --allow-vendor-change
 
 
 &lt;p&gt;或者仅仅添加packman中的Essentials(解码器)仓库&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo zypper ar -fc http://mirrors.aliyun.com/packman/openSUSE_Leap_15.2/Essentials/   packman-essentials-aliyun
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo zypper ar -fc &lt;span class="s1"&gt;&amp;#39;https://mirrors.tuna.tsinghua.edu.cn/packman/suse/openSUSE_Leap_$releasever/Essentials&amp;#39;&lt;/span&gt; packman-essentials
+
+&lt;span class="c1"&gt;# 将系统软件包切换到packman中的软件包(两者混用会导致各种问题)&lt;/span&gt;
+zypper dup --from packman-essentials --allow-vendor-change
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href="https://en.opensuse.org/Additional_package_repositories"&gt;openSUSE_Additional_package_repositories …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;添加全部packman仓库&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo zypper ar -fc &lt;span class="s1"&gt;&amp;#39;https://mirrors.tuna.tsinghua.edu.cn/packman/suse/openSUSE_Leap_$releasever&amp;#39;&lt;/span&gt;            packman
+
+&lt;span class="c1"&gt;# 将系统软件包切换到packman中的软件包(两者混用会导致各种问题)&lt;/span&gt;
+zypper dup --from packman --allow-vendor-change
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;或者仅仅添加packman中的Essentials(解码器)仓库&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo zypper ar -fc &lt;span class="s1"&gt;&amp;#39;https://mirrors.tuna.tsinghua.edu.cn/packman/suse/openSUSE_Leap_$releasever/Essentials&amp;#39;&lt;/span&gt; packman-essentials
 
 &lt;span class="c1"&gt;# 将系统软件包切换到packman中的软件包(两者混用会导致各种问题)&lt;/span&gt;
 zypper dup --from packman-essentials --allow-vendor-change
@@ -386,12 +402,21 @@ zypper install wqy-microhei-fonts
 zypper install fcitx-libpinyin fcitx-config-gtk3
 
 reboot
-&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="openSUSE"></category><category term="linux"></category></entry><entry><title>openSUSE Leap &amp; Tumbleweed 添加软件源</title><link href="/posts/2019/12/16/openSUSE-addrepo.html" rel="alternate"></link><published>2019-12-16T14:55:38+08:00</published><updated>2019-12-16T14:55:38+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2019-12-16:/posts/2019/12/16/openSUSE-addrepo.html</id><summary type="html">&lt;p&gt;首先禁用全部仓库：
+&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="openSUSE"></category><category term="linux"></category></entry><entry><title>openSUSE Leap &amp; Tumbleweed 添加软件源</title><link href="/posts/2019/12/16/openSUSE-addrepo.html" rel="alternate"></link><published>2019-12-16T14:55:38+08:00</published><updated>2019-12-16T14:55:38+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2019-12-16:/posts/2019/12/16/openSUSE-addrepo.html</id><summary type="html">&lt;p&gt;经测试, aliyun的软件源并不稳定, 更新慢. 经常只更新一部分, 不和官方完全同步.
+tsinghuau源, 稳定, 好用.&lt;/p&gt;
+&lt;p&gt;首先禁用全部仓库：
 &lt;code&gt;sudo zypper mr -da&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;如果是Tumbleweed&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo zypper ar -fc http://mirrors.aliyun.com/opensuse/tumbleweed/repo/oss/      Tumbleweed-Oss-aliyun
-sudo zypper ar -fc http://mirrors.aliyun.com/opensuse/tumbleweed/repo/non-oss/  Tumbleweed-Non-Oss-aliyun
-sudo zypper ar -fc http://mirrors.aliyun.com/packman/openSUSE_Tumbleweed/       Tumbleweed-Packman-aliyun
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo zypper ar -fc https://mirrors.tuna.tsinghua.edu.cn/opensuse/tumbleweed/repo/oss        Tumbleweed-Oss-tuna
+sudo zypper ar -fc https://mirrors.tuna.tsinghua.edu.cn/opensuse/tumbleweed/repo/non-oss    Tumbleweed-Non-Oss-tuna
+sudo zypper ar -fc https://mirrors …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;经测试, aliyun的软件源并不稳定, 更新慢. 经常只更新一部分, 不和官方完全同步.
+tsinghuau源, 稳定, 好用.&lt;/p&gt;
+&lt;p&gt;首先禁用全部仓库：
+&lt;code&gt;sudo zypper mr -da&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;如果是Tumbleweed&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo zypper ar -fc https://mirrors.tuna.tsinghua.edu.cn/opensuse/tumbleweed/repo/oss        Tumbleweed-Oss-tuna
+sudo zypper ar -fc https://mirrors.tuna.tsinghua.edu.cn/opensuse/tumbleweed/repo/non-oss    Tumbleweed-Non-Oss-tuna
+sudo zypper ar -fc https://mirrors.tuna.tsinghua.edu.cn/packman/suse/openSUSE_Tumbleweed    Tumbleweed-Packman-tuna
 
 &lt;span class="c1"&gt;# 更新执行&lt;/span&gt;
 sudo zypper dup
@@ -399,25 +424,11 @@ sudo zypper dup
 
 
 &lt;p&gt;如果是Leap&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo zypper …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;首先禁用全部仓库：
-&lt;code&gt;sudo zypper mr -da&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;如果是Tumbleweed&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo zypper ar -fc http://mirrors.aliyun.com/opensuse/tumbleweed/repo/oss/      Tumbleweed-Oss-aliyun
-sudo zypper ar -fc http://mirrors.aliyun.com/opensuse/tumbleweed/repo/non-oss/  Tumbleweed-Non-Oss-aliyun
-sudo zypper ar -fc http://mirrors.aliyun.com/packman/openSUSE_Tumbleweed/       Tumbleweed-Packman-aliyun
-
-&lt;span class="c1"&gt;# 更新执行&lt;/span&gt;
-sudo zypper dup
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;如果是Leap&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo zypper ar -fc http://mirrors.aliyun.com/opensuse/distribution/leap/&lt;span class="nv"&gt;$releasever&lt;/span&gt;/repo/oss/      repo-oss-aliyun
-sudo zypper ar -fc http://mirrors.aliyun.com/opensuse/distribution/leap/&lt;span class="nv"&gt;$releasever&lt;/span&gt;/repo/non-oss/  repo-non-oss-aliyun
-sudo zypper ar -fc http://mirrors.aliyun.com/opensuse/update/leap/&lt;span class="nv"&gt;$releasever&lt;/span&gt;/oss/                 repo-update-oss-aliyun
-sudo zypper ar -fc http://mirrors.aliyun.com/opensuse/update/leap/&lt;span class="nv"&gt;$releasever&lt;/span&gt;/non-oss/             repo-update-non-oss-aliyun
-sudo zypper ar -fc http://mirrors.aliyun.com/packman/openSUSE_Leap_&lt;span class="nv"&gt;$releasever&lt;/span&gt;/                    repo-packman-aliyun
-
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo zypper ar -fc &lt;span class="s1"&gt;&amp;#39;https://mirrors.tuna.tsinghua.edu.cn/opensuse/distribution/leap/$releasever/repo/oss/&amp;#39;&lt;/span&gt;      repo-oss-tuna
+sudo zypper ar -fc &lt;span class="s1"&gt;&amp;#39;https://mirrors.tuna.tsinghua.edu.cn/opensuse/distribution/leap/$releasever/repo/non-oss&amp;#39;&lt;/span&gt;   repo-non-oss-tuna
+sudo zypper ar -fc &lt;span class="s1"&gt;&amp;#39;https://mirrors.tuna.tsinghua.edu.cn/opensuse/update/leap/$releasever/oss&amp;#39;&lt;/span&gt;                  repo-update-oss-tuna
+sudo zypper ar -fc &lt;span class="s1"&gt;&amp;#39;https://mirrors.tuna.tsinghua.edu.cn/opensuse/update/leap/$releasever/non-oss&amp;#39;&lt;/span&gt;              repo-update-non-oss-tuna
+sudo zypper ar -fc &lt;span class="s1"&gt;&amp;#39;https://mirrors.tuna.tsinghua.edu.cn/packman/suse/openSUSE_Leap_$releasever&amp;#39;&lt;/span&gt;                repo-packman-tuna
 &lt;span class="c1"&gt;# 更新执行&lt;/span&gt;
 sudo zypper update
 &lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="openSUSE"></category><category term="linux"></category></entry><entry><title>ext4断电丢失数据(零长文件)</title><link href="/posts/2019/11/29/ext4-data-lost.html" rel="alternate"></link><published>2019-11-29T21:10:42+08:00</published><updated>2019-11-29T21:10:42+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2019-11-29:/posts/2019/11/29/ext4-data-lost.html</id><summary type="html">&lt;p&gt;ext4断电丢失数据(零长文件).&lt;/p&gt;

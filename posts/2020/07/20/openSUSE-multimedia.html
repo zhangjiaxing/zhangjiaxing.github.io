@@ -65,7 +65,7 @@
 </header>
 
     <div class="entry-content"><p>添加全部packman仓库</p>
-<div class="highlight-custom"><pre><span></span>sudo zypper ar -fc http://mirrors.aliyun.com/packman/openSUSE_Leap_15.2/    packman-aliyun
+<div class="highlight-custom"><pre><span></span>sudo zypper ar -fc <span class="s1">&#39;https://mirrors.tuna.tsinghua.edu.cn/packman/suse/openSUSE_Leap_$releasever&#39;</span>            packman
 
 <span class="c1"># 将系统软件包切换到packman中的软件包(两者混用会导致各种问题)</span>
 zypper dup --from packman --allow-vendor-change
@@ -73,7 +73,7 @@ zypper dup --from packman --allow-vendor-change
 
 
 <p>或者仅仅添加packman中的Essentials(解码器)仓库</p>
-<div class="highlight-custom"><pre><span></span>sudo zypper ar -fc http://mirrors.aliyun.com/packman/openSUSE_Leap_15.2/Essentials/   packman-essentials-aliyun
+<div class="highlight-custom"><pre><span></span>sudo zypper ar -fc <span class="s1">&#39;https://mirrors.tuna.tsinghua.edu.cn/packman/suse/openSUSE_Leap_$releasever/Essentials&#39;</span> packman-essentials
 
 <span class="c1"># 将系统软件包切换到packman中的软件包(两者混用会导致各种问题)</span>
 zypper dup --from packman-essentials --allow-vendor-change

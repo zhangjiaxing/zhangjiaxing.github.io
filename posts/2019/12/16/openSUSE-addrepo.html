@@ -64,12 +64,14 @@
     </p>
 </header>
 
-    <div class="entry-content"><p>首先禁用全部仓库：
+    <div class="entry-content"><p>经测试, aliyun的软件源并不稳定, 更新慢. 经常只更新一部分, 不和官方完全同步.
+tsinghuau源, 稳定, 好用.</p>
+<p>首先禁用全部仓库：
 <code>sudo zypper mr -da</code></p>
 <p>如果是Tumbleweed</p>
-<div class="highlight-custom"><pre><span></span>sudo zypper ar -fc http://mirrors.aliyun.com/opensuse/tumbleweed/repo/oss/      Tumbleweed-Oss-aliyun
-sudo zypper ar -fc http://mirrors.aliyun.com/opensuse/tumbleweed/repo/non-oss/  Tumbleweed-Non-Oss-aliyun
-sudo zypper ar -fc http://mirrors.aliyun.com/packman/openSUSE_Tumbleweed/       Tumbleweed-Packman-aliyun
+<div class="highlight-custom"><pre><span></span>sudo zypper ar -fc https://mirrors.tuna.tsinghua.edu.cn/opensuse/tumbleweed/repo/oss        Tumbleweed-Oss-tuna
+sudo zypper ar -fc https://mirrors.tuna.tsinghua.edu.cn/opensuse/tumbleweed/repo/non-oss    Tumbleweed-Non-Oss-tuna
+sudo zypper ar -fc https://mirrors.tuna.tsinghua.edu.cn/packman/suse/openSUSE_Tumbleweed    Tumbleweed-Packman-tuna
 
 <span class="c1"># 更新执行</span>
 sudo zypper dup
@@ -77,12 +79,11 @@ sudo zypper dup
 
 
 <p>如果是Leap</p>
-<div class="highlight-custom"><pre><span></span>sudo zypper ar -fc http://mirrors.aliyun.com/opensuse/distribution/leap/<span class="nv">$releasever</span>/repo/oss/      repo-oss-aliyun
-sudo zypper ar -fc http://mirrors.aliyun.com/opensuse/distribution/leap/<span class="nv">$releasever</span>/repo/non-oss/  repo-non-oss-aliyun
-sudo zypper ar -fc http://mirrors.aliyun.com/opensuse/update/leap/<span class="nv">$releasever</span>/oss/                 repo-update-oss-aliyun
-sudo zypper ar -fc http://mirrors.aliyun.com/opensuse/update/leap/<span class="nv">$releasever</span>/non-oss/             repo-update-non-oss-aliyun
-sudo zypper ar -fc http://mirrors.aliyun.com/packman/openSUSE_Leap_<span class="nv">$releasever</span>/                    repo-packman-aliyun
-
+<div class="highlight-custom"><pre><span></span>sudo zypper ar -fc <span class="s1">&#39;https://mirrors.tuna.tsinghua.edu.cn/opensuse/distribution/leap/$releasever/repo/oss/&#39;</span>      repo-oss-tuna
+sudo zypper ar -fc <span class="s1">&#39;https://mirrors.tuna.tsinghua.edu.cn/opensuse/distribution/leap/$releasever/repo/non-oss&#39;</span>   repo-non-oss-tuna
+sudo zypper ar -fc <span class="s1">&#39;https://mirrors.tuna.tsinghua.edu.cn/opensuse/update/leap/$releasever/oss&#39;</span>                  repo-update-oss-tuna
+sudo zypper ar -fc <span class="s1">&#39;https://mirrors.tuna.tsinghua.edu.cn/opensuse/update/leap/$releasever/non-oss&#39;</span>              repo-update-non-oss-tuna
+sudo zypper ar -fc <span class="s1">&#39;https://mirrors.tuna.tsinghua.edu.cn/packman/suse/openSUSE_Leap_$releasever&#39;</span>                repo-packman-tuna
 <span class="c1"># 更新执行</span>
 sudo zypper update
 </pre></div></div>

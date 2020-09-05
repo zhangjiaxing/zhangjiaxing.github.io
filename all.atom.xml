@@ -67,7 +67,7 @@ zypper --releasever&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;15&
 sudo sed -i &lt;span class="s1"&gt;&amp;#39;s/15.1/$releasever/g&amp;#39;&lt;/span&gt; /etc/zypp/repos.d/*.repo
 &lt;span class="c1"&gt;# 然后执行:&lt;/span&gt;
 zypper --releasever&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;15&lt;/span&gt;.2 …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Mon, 20 Jul 2020 23:38:50 +0800</pubDate><guid isPermaLink="false">tag:None,2020-07-20:/posts/2020/07/20/openSUSE-upgrade.html</guid><category>linux</category><category>openSUSE</category><category>linux</category></item><item><title>openSUSE Leap &amp; Tumbleweed 安装解码器</title><link>/posts/2020/07/20/openSUSE-multimedia.html</link><description>&lt;p&gt;添加全部packman仓库&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo zypper ar -fc http://mirrors.aliyun.com/packman/openSUSE_Leap_15.2/    packman-aliyun
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo zypper ar -fc &lt;span class="s1"&gt;&amp;#39;https://mirrors.tuna.tsinghua.edu.cn/packman/suse/openSUSE_Leap_$releasever&amp;#39;&lt;/span&gt;            packman
 
 &lt;span class="c1"&gt;# 将系统软件包切换到packman中的软件包(两者混用会导致各种问题)&lt;/span&gt;
 zypper dup --from packman --allow-vendor-change
@@ -75,14 +75,14 @@ zypper dup --from packman --allow-vendor-change
 
 
 &lt;p&gt;或者仅仅添加packman中的Essentials(解码器)仓库&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo zypper ar -fc http://mirrors.aliyun.com/packman/openSUSE_Leap_15.2/Essentials/   packman-essentials-aliyun
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo zypper ar -fc &lt;span class="s1"&gt;&amp;#39;https://mirrors.tuna.tsinghua.edu.cn/packman/suse/openSUSE_Leap_$releasever/Essentials&amp;#39;&lt;/span&gt; packman-essentials
 
 &lt;span class="c1"&gt;# 将系统软件包切换到packman中的软件包(两者混用会导致各种问题)&lt;/span&gt;
 zypper dup --from packman-essentials --allow-vendor-change
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;a href="https://en.opensuse.org/Additional_package_repositories"&gt;openSUSE_Additional_package_repositories&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Mon, 20 Jul 2020 23:15:46 +0800</pubDate><guid isPermaLink="false">tag:None,2020-07-20:/posts/2020/07/20/openSUSE-multimedia.html</guid><category>linux</category><category>openSUSE</category><category>linux</category></item><item><title>斐讯N1刷机过程记录</title><link>/posts/2020/07/01/phicomm-N1.html</link><description>&lt;p&gt;&lt;img alt="刷机" src="/posts/2020/07/01/phicomm-N1-flash.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://en.opensuse.org/Additional_package_repositories"&gt;openSUSE_Additional_package_repositories …&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Mon, 20 Jul 2020 23:15:46 +0800</pubDate><guid isPermaLink="false">tag:None,2020-07-20:/posts/2020/07/20/openSUSE-multimedia.html</guid><category>linux</category><category>openSUSE</category><category>linux</category></item><item><title>斐讯N1刷机过程记录</title><link>/posts/2020/07/01/phicomm-N1.html</link><description>&lt;p&gt;&lt;img alt="刷机" src="/posts/2020/07/01/phicomm-N1-flash.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;去年买的N1盒子, 一直没时间折腾, 最近刚好需要作下载机用, 于是刷机, 顺便整理下步骤.&lt;/p&gt;
 &lt;p&gt;首先说下N1配置. 处理器Amlogic S905, 内存 2G, emmc 8G, 千兆网口, 2个USB 2.0, 1个HDMI接口, 双频WIFI(支持 802.11 ac), 支持蓝牙. &lt;/p&gt;
 &lt;p&gt;价格目前不到100元. 和raspberry 4 相比性能差不多, 重要的是能用Android系统, 便宜, 自带外壳.&lt;/p&gt;
@@ -160,20 +160,14 @@ ln -s /usr/lib/systemd/system/graphical.target /etc/systemd/system/default.targe
 zypper install wqy-microhei-fonts
 
 &lt;span class="c1"&gt;# 然后安装输入法&lt;/span&gt;
-zypper install …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Thu, 19 Dec 2019 11:11:01 +0800</pubDate><guid isPermaLink="false">tag:None,2019-12-19:/posts/2019/12/19/openSUSE-server-install-cinnamon.html</guid><category>linux</category><category>openSUSE</category><category>linux</category></item><item><title>openSUSE Leap &amp; Tumbleweed 添加软件源</title><link>/posts/2019/12/16/openSUSE-addrepo.html</link><description>&lt;p&gt;首先禁用全部仓库：
+zypper install …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Thu, 19 Dec 2019 11:11:01 +0800</pubDate><guid isPermaLink="false">tag:None,2019-12-19:/posts/2019/12/19/openSUSE-server-install-cinnamon.html</guid><category>linux</category><category>openSUSE</category><category>linux</category></item><item><title>openSUSE Leap &amp; Tumbleweed 添加软件源</title><link>/posts/2019/12/16/openSUSE-addrepo.html</link><description>&lt;p&gt;经测试, aliyun的软件源并不稳定, 更新慢. 经常只更新一部分, 不和官方完全同步.
+tsinghuau源, 稳定, 好用.&lt;/p&gt;
+&lt;p&gt;首先禁用全部仓库：
 &lt;code&gt;sudo zypper mr -da&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;如果是Tumbleweed&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo zypper ar -fc http://mirrors.aliyun.com/opensuse/tumbleweed/repo/oss/      Tumbleweed-Oss-aliyun
-sudo zypper ar -fc http://mirrors.aliyun.com/opensuse/tumbleweed/repo/non-oss/  Tumbleweed-Non-Oss-aliyun
-sudo zypper ar -fc http://mirrors.aliyun.com/packman/openSUSE_Tumbleweed/       Tumbleweed-Packman-aliyun
-
-&lt;span class="c1"&gt;# 更新执行&lt;/span&gt;
-sudo zypper dup
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;如果是Leap&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo zypper …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Mon, 16 Dec 2019 14:55:38 +0800</pubDate><guid isPermaLink="false">tag:None,2019-12-16:/posts/2019/12/16/openSUSE-addrepo.html</guid><category>linux</category><category>openSUSE</category><category>linux</category></item><item><title>ext4断电丢失数据(零长文件)</title><link>/posts/2019/11/29/ext4-data-lost.html</link><description>&lt;p&gt;ext4断电丢失数据(零长文件).&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo zypper ar -fc https://mirrors.tuna.tsinghua.edu.cn/opensuse/tumbleweed/repo/oss        Tumbleweed-Oss-tuna
+sudo zypper ar -fc https://mirrors.tuna.tsinghua.edu.cn/opensuse/tumbleweed/repo/non-oss    Tumbleweed-Non-Oss-tuna
+sudo zypper ar -fc https://mirrors …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Mon, 16 Dec 2019 14:55:38 +0800</pubDate><guid isPermaLink="false">tag:None,2019-12-16:/posts/2019/12/16/openSUSE-addrepo.html</guid><category>linux</category><category>openSUSE</category><category>linux</category></item><item><title>ext4断电丢失数据(零长文件)</title><link>/posts/2019/11/29/ext4-data-lost.html</link><description>&lt;p&gt;ext4断电丢失数据(零长文件).&lt;/p&gt;
 &lt;p&gt;嵌入式设备, 经常拔掉电源, 以前/data分区有挂载选项 sync.&lt;/p&gt;
 &lt;p&gt;后来发现sync方式挂载写入数据速度太慢了(100KB/S), 正常为10MB/S.&lt;/p&gt;
 &lt;p&gt;去掉sync断电又会丢数据.&lt;/p&gt;
