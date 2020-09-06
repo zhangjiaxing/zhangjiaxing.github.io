@@ -4,13 +4,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>git hooks post-receive 中 git pull 失败 &mdash; cat ~/.zhiliao.history</title>
+  <title>cat ~/.zhiliao.history</title>
   <meta name="author" content="zhiliao">
 
   <link href="/feeds/all.atom.xml" type="application/rss+xml" rel="alternate"
         title="cat ~/.zhiliao.history RSS Feed" />
-
-
 
 
 
@@ -55,35 +53,42 @@
 </ul></nav>
   <div id="main">
     <div id="content">
-<div>
-  <article class="hentry" role="article">
+<div class="blog-index">
+  		<article>
 <header>
-      <h1 class="entry-title">git hooks post-receive 中 git pull 失败</h1>
+      <h1 class="entry-title">
+        <a href="/posts/2017/06/03/pelican.html">pelican博客搭建总结</a>
+      </h1>
     <p class="meta">
-<time datetime="2017-12-11T15:35:51+08:00" pubdate>2017-12-11 15:35:51</time>      
+<time datetime="2017-06-03T06:56:00+08:00" pubdate>2017-06-03 06:56:00</time>      
     </p>
 </header>
 
-    <div class="entry-content"><p>git 在运行时会用 $GIT_DIR 这个环境变量</p>
-<p>解决方法是在hooks脚本里面加上 <code>unset $(git rev-parse --local-env-vars)</code></p>
-<p>或者使用 env -i git pull</p></div>
-    <footer>
-<p class="meta">
-  <span class="byline author vcard">
-    Posted by <span class="fn">
-        zhiliao
-    </span>
-  </span>
-<time datetime="2017-12-11T15:35:51+08:00" pubdate>2017-12-11 15:35:51</time>  <span class="categories">
-    <a class='category' href='/category/git.html'>git</a>
-  </span>
-  <span class="categories">
-    <a class="category" href="/tag/git.html">git</a>  </span>
-</p><div class="sharing">
-</div>    </footer>
-  </article>
+        <div class="entry-content"><h4>pelican介绍</h4>
+<p><a href="https://getpelican.com/" title="pelican">Pelican</a> 是用Python实现的一个静态网站生成器. 支持以下功能：</p>
+<ul>
+<li>使用 Markdown 或 reStructuredText 或 AsciiDoc 来编写内容</li>
+<li>生成静态网页</li>
+<li>支持许多主题与插件</li>
+<li>语法高亮</li>
+<li>支持从很多地方导入</li>
+</ul>
+<h4>使用方法</h4>
+<p>参考 https://getpelican.com/ 和 http://docs.getpelican.com/en/stable/</p>
+<h4>windows遇到的一些坑</h4>
+<ul>
+<li>windows 平台下 <code>ValueError: embedded null byte</code> 的报错
+解决方法：
+在 <code>.\lib\site-packages\pelican\utils.py</code> 文件中， 找到函数 <code>strftime</code> ，在第一行添加 <code>locale.setlocale(locale.LC_ALL …</code></li></ul></div>
+            <footer>
+                <a rel="full-article" href="/posts/2017/06/03/pelican.html">Read On &crarr;</a>
+            </footer>
+  		</article>
+<div class="pagination">
 
-</div>
+    <a class="next" href="/index3.html">Newer &rarr;</a>
+  <br />
+</div></div>
 
 <aside class="sidebar">
 <section>

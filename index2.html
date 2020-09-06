@@ -57,6 +57,32 @@
   		<article>
 <header>
       <h1 class="entry-title">
+        <a href="/posts/2019/11/22/raspberry-watchdog.html">raspberry watchdog</a>
+      </h1>
+    <p class="meta">
+<time datetime="2019-11-22T20:06:38+08:00" pubdate>2019-11-22 20:06:38</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><p>raspberry 4b
+Raspbian GNU/Linux 10 (buster)</p>
+<blockquote>
+<p><code>ls /dev/watchdog*</code></p>
+<blockquote>
+<p>/dev/watchdog  /dev/watchdog0</p>
+</blockquote>
+<p>grep Watchdog /etc/systemd/system.conf</p>
+<blockquote>
+<p>RuntimeWatchdogSec=10
+ShutdownWatchdogSec=10min</p>
+</blockquote>
+<p>systemctl daemon-reexec</p>
+<p>:(){ :|:&amp; };:</p>
+</blockquote></div>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
         <a href="/posts/2019/11/14/linux-pptpd.html">linux pptpd配置</a>
       </h1>
     <p class="meta">
@@ -435,34 +461,6 @@ X浏览器
 
 <h4>未完待续...</h4></div>
   		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="/posts/2017/12/29/gtk-broadway.html">在浏览器中显示gtk+应用</a>
-      </h1>
-    <p class="meta">
-<time datetime="2017-12-29T18:14:49+08:00" pubdate>2017-12-29 18:14:49</time>      
-    </p>
-</header>
-
-        <div class="entry-content"><h3>在浏览器中显示gtk+应用</h3>
-<div class="highlight-custom"><pre><span></span><span class="nv">GDK_BACKEND</span><span class="o">=</span>broadway <span class="nv">BROADWAY_DISPLAY</span><span class="o">=</span>:5 gtk3-demo
-</pre></div>
-
-
-<p>BROADWAY_DISPLAY是可选的, 默认是0</p>
-<p>port = 8080 + display</p>
-<p>所以在浏览器中的访问地址是 <code>http://127.0.0.1:8085</code></p>
-<h4>参考连接</h4>
-<ul>
-<li><a href="https://developer.gnome.org/gtk3/stable/gtk-broadway.html">https://developer.gnome.org/gtk3/stable/gtk-broadway.html</a></li>
-<li><a href="https://developer.gnome.org/gtk3/unstable/gtk-building.html">https://developer.gnome.org/gtk3/unstable/gtk-building.html</a></li>
-<li><a href="https://blogs.gnome.org/alexl/2011/04/18/broadway-update-3/">https://blogs.gnome.org/alexl/2011/04/18/broadway-update-3</a></li>
-<li><a href="https://github.com/symbiose/symbiose/wiki/Broadway">https://github.com/symbiose/symbiose …</a></li></ul></div>
-            <footer>
-                <a rel="full-article" href="/posts/2017/12/29/gtk-broadway.html">Read On &crarr;</a>
-            </footer>
-  		</article>
 <div class="pagination">
     <a class="prev" href="/index3.html">&larr; Older</a>
 
@@ -475,6 +473,9 @@ X浏览器
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     <li class="post">
+        <a href="/posts/2020/09/07/windows-vm.html">微软提供的windows系统虚拟机文件下载</a>
+    </li>
+    <li class="post">
         <a href="/posts/2020/08/24/openSUSE-coredump.html">openSUSE coredump文件</a>
     </li>
     <li class="post">
@@ -485,9 +486,6 @@ X浏览器
     </li>
     <li class="post">
         <a href="/posts/2020/07/26/arch-linux-samsung-arm-chromebook.html">在chromebook上安装archlinux</a>
-    </li>
-    <li class="post">
-        <a href="/posts/2020/07/20/openSUSE-upgrade.html">openSUSE Leap 系统升级</a>
     </li>
   </ul>
 </section><section>
@@ -505,13 +503,14 @@ X浏览器
       <li><a href="/category/other.html">other (1)</a></li>
       <li><a href="/category/python.html">python (1)</a></li>
       <li><a href="/category/stock.html">stock (1)</a></li>
+      <li><a href="/category/vm.html">vm (1)</a></li>
       <li><a href="/category/web.html">web (1)</a></li>
       <li><a href="/category/windows.html">windows (1)</a></li>
   </ul>
 </section>
 <section>
   <h1>Tags</h1>
-    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/linux.html">linux</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/linuix.html">linuix</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/git.html">git</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a></section>
+    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/linux.html">linux</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/linuix.html">linuix</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/git.html">git</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a></section>
     <section>
         <h1>Social</h1>
         <ul>

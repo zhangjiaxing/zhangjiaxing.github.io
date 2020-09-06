@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>无聊就该多读书。</description><lastBuildDate>Mon, 24 Aug 2020 12:40:41 +0800</lastBuildDate><item><title>openSUSE coredump文件</title><link>/posts/2020/08/24/openSUSE-coredump.html</link><description>&lt;p&gt;openSUSE Leap 15.2 默认是不开启coredump的.&lt;/p&gt;
+<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>无聊就该多读书。</description><lastBuildDate>Mon, 07 Sep 2020 00:12:35 +0800</lastBuildDate><item><title>微软提供的windows系统虚拟机文件下载</title><link>/posts/2020/09/07/windows-vm.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;据说在虚拟机中使用这个, 流畅度比安装的版本快很多
+可以免费使用
+https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/
+
+
+下面这个是有win10开发环境的虚拟机, 比较大20G
+https://developer.microsoft.com/en-us/windows/downloads/virtual-machines/
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Mon, 07 Sep 2020 00:12:35 +0800</pubDate><guid isPermaLink="false">tag:None,2020-09-07:/posts/2020/09/07/windows-vm.html</guid><category>vm</category><category>vm</category><category>windows</category></item><item><title>openSUSE coredump文件</title><link>/posts/2020/08/24/openSUSE-coredump.html</link><description>&lt;p&gt;openSUSE Leap 15.2 默认是不开启coredump的.&lt;/p&gt;
 &lt;h6&gt;开启方法&lt;/h6&gt;
 &lt;ol&gt;
 &lt;li&gt;查看&lt;code&gt;ulimit -H -a&lt;/code&gt; 和 &lt;code&gt;ulimit -S -a&lt;/code&gt; core files是否均显示unlimited. 如果不是则修改&lt;/li&gt;
