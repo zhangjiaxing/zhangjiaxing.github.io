@@ -92,8 +92,8 @@
 <p><a href="https://www.right.com.cn/forum/thread-340279-1-1.html">WEBPAD大神降级教程&gt;&gt;</a>
 <a href="https://www.right.com.cn/forum/thread-413863-1-1.html">超快速恢复EMMC法&gt;&gt;</a></p>
 <h6>设置开启U盘引导, 设置以后, 只要不动bootloader, N1 就刷不死</h6>
-<div class="highlight-custom"><pre><span></span>adb connect N1的IP
-adb shell reboot update
+<div class="highlight-custom"><pre><span></span><span class="err">adb connect N1的IP</span>
+<span class="err">adb shell reboot update</span>
 </pre></div>
 
 
@@ -104,8 +104,8 @@ adb shell reboot update
 <p>linux可以尝试用dd (没测试过)</p>
 <p>windows用etcher (亲测可用)</p>
 <p>按照上面的说明, 替换 btd文件</p>
-<div class="highlight-custom"><pre><span></span>[/boot/uEnv.ini] 第一行改为
-dtb_name=/dtb/meson-gxl-s905d-phicomm-n1.dtb
+<div class="highlight-custom"><pre><span></span><span class="err">[/boot/uEnv.ini] 第一行改为</span>
+<span class="err">dtb_name=/dtb/meson-gxl-s905d-phicomm-n1.dtb</span>
 </pre></div>
 
 

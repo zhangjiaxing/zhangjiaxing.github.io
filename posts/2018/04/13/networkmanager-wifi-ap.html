@@ -65,14 +65,14 @@
 </header>
 
     <div class="entry-content"><p>linux 使用network manager 开启wifi热点</p>
-<div class="highlight-custom"><pre><span></span>开启热点
-nmcli device wifi hotspot  ssid zhiliao-test  password 12345678
-或者
-nmcli device wifi hotspot con-name zhiliao-test-5G ssid zhiliao-test-5G band a password 12345678
+<div class="highlight-custom"><pre><span></span><span class="err">开启热点</span>
+<span class="n">nmcli</span> <span class="n">device</span> <span class="n">wifi</span> <span class="n">hotspot</span>  <span class="n">ssid</span> <span class="n">zhiliao</span><span class="o">-</span><span class="n">test</span>  <span class="n">password</span> <span class="mi">12345678</span>
+<span class="err">或者</span>
+<span class="n">nmcli</span> <span class="n">device</span> <span class="n">wifi</span> <span class="n">hotspot</span> <span class="n">con</span><span class="o">-</span><span class="n">name</span> <span class="n">zhiliao</span><span class="o">-</span><span class="n">test</span><span class="o">-</span><span class="mi">5</span><span class="k">G</span> <span class="n">ssid</span> <span class="n">zhiliao</span><span class="o">-</span><span class="n">test</span><span class="o">-</span><span class="mi">5</span><span class="k">G</span> <span class="n">band</span> <span class="n">a</span> <span class="n">password</span> <span class="mi">12345678</span>
 
-删除热点配置
-nmcli connection show
-nmcli  connection delete zhiliao-test-5G
+<span class="err">删除热点配置</span>
+<span class="n">nmcli</span> <span class="k">connection</span> <span class="k">show</span>
+<span class="n">nmcli</span>  <span class="k">connection</span> <span class="k">delete</span> <span class="n">zhiliao</span><span class="o">-</span><span class="n">test</span><span class="o">-</span><span class="mi">5</span><span class="k">G</span>
 </pre></div></div>
     <footer>
 <p class="meta">

@@ -109,15 +109,15 @@
 
 
 <h5>命令介绍</h5>
-<div class="highlight-custom"><pre><span></span>loglevel(0-9)
-reboot(b)
-crash(c)
-terminate-all-tasks(e)
-memory-full-oom-kill(f)
-kill-all-tasks(i)
-thaw-filesystems(j)
-sak(k)
-show-backtrace-all-active-cpus(l …</pre></div></div>
+<div class="highlight-custom"><pre><span></span><span class="err">loglevel(0-9)</span>
+<span class="err">reboot(b)</span>
+<span class="err">crash(c)</span>
+<span class="err">terminate-all-tasks(e)</span>
+<span class="err">memory-full-oom-kill(f)</span>
+<span class="err">kill-all-tasks(i)</span>
+<span class="err">thaw-filesystems(j)</span>
+<span class="err">sak(k)</span>
+<span class="err">show-backtrace-all-active-cpus(l …</span></pre></div></div>
             <footer>
                 <a rel="full-article" href="/posts/2017/12/29/linux-sysrq.html">Read On &crarr;</a>
             </footer>
@@ -165,22 +165,22 @@ http://blog.n01se.net/blog-n01se-net-p-145.html</p></div>
         <div class="entry-content"><ul>
 <li>建立 cpio文件 </li>
 </ul>
-<div class="highlight-custom"><pre><span></span>find ./files | cpio -o -H newc &gt; filename.cpio
+<div class="highlight-custom"><pre><span></span><span class="err">find ./files | cpio -o -H newc &gt; filename.cpio</span>
 </pre></div>
 
 
 <ul>
 <li>解开cpio文件</li>
 </ul>
-<div class="highlight-custom"><pre><span></span>cd  dir1
-cpio -ivd  &lt; filename.cpio  
+<div class="highlight-custom"><pre><span></span><span class="err">cd  dir1</span>
+<span class="err">cpio -ivd  &lt; filename.cpio  </span>
 </pre></div>
 
 
 <ul>
 <li>查看cpio文件中的内容</li>
 </ul>
-<div class="highlight-custom"><pre><span></span>cpio -ivt &lt; filename.cpio
+<div class="highlight-custom"><pre><span></span><span class="err">cpio -ivt &lt; filename.cpio</span>
 </pre></div>
 
 
@@ -222,11 +222,11 @@ cpio -ivd  &lt; filename.cpio
 在windows下这没啥问题, 一按 scroll 这个键 ,背光灯就亮了,再按,就灭了.
 但是, 在Linux下, 按这个键 scroll 没反应.
 所以记录一下linux开启键盘灯的方法</p>
-<div class="highlight-custom"><pre><span></span># X 中开启键盘灯
-xset led on
+<div class="highlight-custom"><pre><span></span><span class="o">#</span> <span class="n">X</span> <span class="err">中开启键盘灯</span>
+<span class="n">xset</span> <span class="n">led</span> <span class="k">on</span>
 
-# X 中关闭键盘灯
-xset led off
+<span class="o">#</span> <span class="n">X</span> <span class="err">中关闭键盘灯</span>
+<span class="n">xset</span> <span class="n">led</span> <span class="k">off</span>
 </pre></div></div>
   		</article>
   		<article>
@@ -240,31 +240,31 @@ xset led off
 </header>
 
         <div class="entry-content"><h3>记录一些 firefox 附加组件</h3>
-<div class="highlight-custom"><pre><span></span># Adblock plus
-# Stylish
-# iMacros for Firefox
-Awesome Screenshot
-DownThemAll
-EPUBReader
-FoxyProxy Standard
-Ghostery
-Greasemonkey
-LastPass
-MarkDown Here
-PDF Mage
-QR Code Generator
-SimilarWeb
-Tree Style Tab
-User-Agent Switcher
-uBlock Origin
-新同文堂
-百度广告屏蔽
+<div class="highlight-custom"><pre><span></span><span class="err"># Adblock plus</span>
+<span class="err"># Stylish</span>
+<span class="err"># iMacros for Firefox</span>
+<span class="err">Awesome Screenshot</span>
+<span class="err">DownThemAll</span>
+<span class="err">EPUBReader</span>
+<span class="err">FoxyProxy Standard</span>
+<span class="err">Ghostery</span>
+<span class="err">Greasemonkey</span>
+<span class="err">LastPass</span>
+<span class="err">MarkDown Here</span>
+<span class="err">PDF Mage</span>
+<span class="err">QR Code Generator</span>
+<span class="err">SimilarWeb</span>
+<span class="err">Tree Style Tab</span>
+<span class="err">User-Agent Switcher</span>
+<span class="err">uBlock Origin</span>
+<span class="err">新同文堂</span>
+<span class="err">百度广告屏蔽</span>
 </pre></div>
 
 
 <h3>下面是一些 userscripts</h3>
-<div class="highlight-custom"><pre><span></span>Crack Url Wait Code Login
-My163MusicHelper
+<div class="highlight-custom"><pre><span></span><span class="err">Crack Url Wait Code Login</span>
+<span class="err">My163MusicHelper</span>
 </pre></div>
 
 
@@ -284,34 +284,34 @@ My163MusicHelper
     </p>
 </header>
 
-        <div class="entry-content"><div class="highlight-custom"><pre><span></span># dmidecode
-# onboard  # 屏幕键盘 
-# yay
-(xfce4) xfce4-datetime-plugin
-(xfce4) xfce4-notes-plugin
-(xfce4) xfce4-pulseaudio-plugin
-(xfce4) xfce4-screenshooter
-(xfce4) xfce4-sensors-plugin
-(xfce4) xfce4-terminal
-(xfce4) xfce4-weather-plugin
-(xfce4) xfce4-whiskermenu-plugin
-alsa-utils
-avahi
-base
-base-devel
-bash-completion
-calibre
-cinnamon or xfce4
-code  # (vscode)
-dconf-editor
-deepin-screenshot
-deepin.com.qq.im (aur)
-devhelp
-dnsmasq
-dosfstools &amp; mtools # for fat32
-electron-netease-cloud-music  # (archlinuxcn)
-electronic-wechat
-eog or gthumb …</pre></div></div>
+        <div class="entry-content"><div class="highlight-custom"><pre><span></span><span class="err"># dmidecode</span>
+<span class="err"># onboard  # 屏幕键盘 </span>
+<span class="err"># yay</span>
+<span class="err">(xfce4) xfce4-datetime-plugin</span>
+<span class="err">(xfce4) xfce4-notes-plugin</span>
+<span class="err">(xfce4) xfce4-pulseaudio-plugin</span>
+<span class="err">(xfce4) xfce4-screenshooter</span>
+<span class="err">(xfce4) xfce4-sensors-plugin</span>
+<span class="err">(xfce4) xfce4-terminal</span>
+<span class="err">(xfce4) xfce4-weather-plugin</span>
+<span class="err">(xfce4) xfce4-whiskermenu-plugin</span>
+<span class="err">alsa-utils</span>
+<span class="err">avahi</span>
+<span class="err">base</span>
+<span class="err">base-devel</span>
+<span class="err">bash-completion</span>
+<span class="err">calibre</span>
+<span class="err">cinnamon or xfce4</span>
+<span class="err">code  # (vscode)</span>
+<span class="err">dconf-editor</span>
+<span class="err">deepin-screenshot</span>
+<span class="err">deepin.com.qq.im (aur)</span>
+<span class="err">devhelp</span>
+<span class="err">dnsmasq</span>
+<span class="err">dosfstools &amp; mtools # for fat32</span>
+<span class="err">electron-netease-cloud-music  # (archlinuxcn)</span>
+<span class="err">electronic-wechat</span>
+<span class="err">eog or gthumb …</span></pre></div></div>
             <footer>
                 <a rel="full-article" href="/posts/2017/06/16/archlinux-package.html">Read On &crarr;</a>
             </footer>
@@ -328,7 +328,7 @@ eog or gthumb …</pre></div></div>
 
         <div class="entry-content"><div class="highlight-custom"><pre><span></span><span class="k">def</span> <span class="nf">fun</span><span class="p">(</span><span class="n">arg</span><span class="o">=</span><span class="p">[]):</span>
     <span class="n">arg</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
 
 
 <span class="n">fun</span><span class="p">()</span>
@@ -374,32 +374,32 @@ mount -o remount,bind,ro <span class="nv">$file</span>
     </p>
 </header>
 
-        <div class="entry-content"><div class="highlight-custom"><pre><span></span>ADSafe
-Adobe Acrobat Reader DC
-LibreOffice
-SMPlayer
-SumatraPDF
-UltraISO
-VLC
-VMware Workstation
-Visual Studio Code
-VitrualBox
-Xshell
-bootice
-chrome
-firefox
-foobar2000
-gimp
-git-bash
-google拼音输入法
-grub4dos
-haozip
-listary
-putty
-swish
-分区助手
-有道词典
-网易云音乐
+        <div class="entry-content"><div class="highlight-custom"><pre><span></span><span class="err">ADSafe</span>
+<span class="err">Adobe Acrobat Reader DC</span>
+<span class="err">LibreOffice</span>
+<span class="err">SMPlayer</span>
+<span class="err">SumatraPDF</span>
+<span class="err">UltraISO</span>
+<span class="err">VLC</span>
+<span class="err">VMware Workstation</span>
+<span class="err">Visual Studio Code</span>
+<span class="err">VitrualBox</span>
+<span class="err">Xshell</span>
+<span class="err">bootice</span>
+<span class="err">chrome</span>
+<span class="err">firefox</span>
+<span class="err">foobar2000</span>
+<span class="err">gimp</span>
+<span class="err">git-bash</span>
+<span class="err">google拼音输入法</span>
+<span class="err">grub4dos</span>
+<span class="err">haozip</span>
+<span class="err">listary</span>
+<span class="err">putty</span>
+<span class="err">swish</span>
+<span class="err">分区助手</span>
+<span class="err">有道词典</span>
+<span class="err">网易云音乐</span>
 </pre></div>
 
 

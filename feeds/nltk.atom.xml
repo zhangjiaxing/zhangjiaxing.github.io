@@ -8,15 +8,15 @@
 
 
 &lt;h5&gt;1.3 搜索文本&lt;/h5&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;text1.concordance(&amp;quot;monstrous&amp;quot;)  # 搜索文本
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;text1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;concordance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;monstrous&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;搜索文本&lt;/span&gt;
 
-text1.similar(&amp;quot;monstrous&amp;quot;)  # 查看相识上下文出现的单词
+&lt;span class="n"&gt;text1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;similar&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;monstrous&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;查看相识上下文出现的单词&lt;/span&gt;
 
-text2.common_contexts([&amp;quot;monstrous&amp;quot;, &amp;quot;very&amp;quot;])  # 查找两个词的共同上下文
+&lt;span class="n"&gt;text2&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;common_contexts&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;monstrous&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;very&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;  &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;查找两个词的共同上下文&lt;/span&gt;
 
-text4.dispersion_plot([&amp;quot;citizens&amp;quot;, &amp;quot;democracy&amp;quot;, &amp;quot;freedom&amp;quot;, &amp;quot;duties&amp;quot;, &amp;quot;America&amp;quot;])  # 词汇分布图
+&lt;span class="n"&gt;text4&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dispersion_plot&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;citizens&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;democracy&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;freedom&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;duties&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;America&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;  &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;词汇分布图&lt;/span&gt;
 
-len(set(text3)) / len(text3)  # 文本词汇丰富度
+&lt;span class="n"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;text3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;text3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;文本词汇丰富度&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -30,15 +30,15 @@ len(set(text3)) / len(text3)  # 文本词汇丰富度
 
 
 &lt;h5&gt;1.3 搜索文本&lt;/h5&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;text1.concordance(&amp;quot;monstrous&amp;quot;)  # 搜索文本
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;text1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;concordance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;monstrous&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;搜索文本&lt;/span&gt;
 
-text1.similar(&amp;quot;monstrous&amp;quot;)  # 查看相识上下文出现的单词
+&lt;span class="n"&gt;text1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;similar&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;monstrous&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;查看相识上下文出现的单词&lt;/span&gt;
 
-text2.common_contexts([&amp;quot;monstrous&amp;quot;, &amp;quot;very&amp;quot;])  # 查找两个词的共同上下文
+&lt;span class="n"&gt;text2&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;common_contexts&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;monstrous&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;very&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;  &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;查找两个词的共同上下文&lt;/span&gt;
 
-text4.dispersion_plot([&amp;quot;citizens&amp;quot;, &amp;quot;democracy&amp;quot;, &amp;quot;freedom&amp;quot;, &amp;quot;duties&amp;quot;, &amp;quot;America&amp;quot;])  # 词汇分布图
+&lt;span class="n"&gt;text4&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dispersion_plot&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;citizens&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;democracy&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;freedom&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;duties&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;America&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;  &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;词汇分布图&lt;/span&gt;
 
-len(set(text3)) / len(text3)  # 文本词汇丰富度
+&lt;span class="n"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;text3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;text3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;文本词汇丰富度&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -75,25 +75,25 @@ http://nltk.org/howto&lt;/p&gt;
 &lt;p&gt;nltk.corpus.udhr  # 超过300种语言的世界人权宣言&lt;/p&gt;
 &lt;h5&gt;1.8 文本语料库的结构&lt;/h5&gt;
 &lt;h6&gt;NLTK 中定义的基本语料库函数, 使用help(nltk.corpus.reader)可以找到更多的文档&lt;/h6&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;示例                       描述                          
-fileids()                  语料库中的文件                
-fileids([categories])      这些分类对应的语料库中的文件  
-categories()               语料库中的分类                
-categories([fileids])      这些文件对应的语料库中的分类  
-raw()                      语料库的原始内容              
-raw(fileids=[f1,f2,f3])    指定文件的原始内容            
-raw(categories=[c1,c2])    指定分类的原始内容            
-words()                    整个语料库中的词汇            
-words(fileids=[f1,f2,f3])  指定文件中的词汇              
-words(categories=[c1,c2])  指定分类中的词汇              
-sents()                    整个语料库中的句子            
-sents(fileids=[f1,f2,f3])  指定文件中的句子              
-sents(categories=[c1,c2])  指定分类中的句子              
-abspath(fileid)            指定文件在磁盘上的位置        
-encoding(fileid)           文件的编码（如果知道的话）    
-open(fileid)               打开指定语料库文件的文件流    
-root                       本地安装的语料库根目录的路径  
-readme()                   语料库的README文件的内容
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;示例&lt;/span&gt;&lt;span class="w"&gt;                       &lt;/span&gt;&lt;span class="n"&gt;描述&lt;/span&gt;&lt;span class="w"&gt;                          &lt;/span&gt;
+&lt;span class="n"&gt;fileids&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt;                  &lt;/span&gt;&lt;span class="n"&gt;语料库中的文件&lt;/span&gt;&lt;span class="w"&gt;                &lt;/span&gt;
+&lt;span class="n"&gt;fileids&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="n"&gt;这些分类对应的语料库中的文件&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
+&lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt;               &lt;/span&gt;&lt;span class="n"&gt;语料库中的分类&lt;/span&gt;&lt;span class="w"&gt;                &lt;/span&gt;
+&lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;fileids&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="n"&gt;这些文件对应的语料库中的分类&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
+&lt;span class="n"&gt;raw&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt;                      &lt;/span&gt;&lt;span class="n"&gt;语料库的原始内容&lt;/span&gt;&lt;span class="w"&gt;              &lt;/span&gt;
+&lt;span class="n"&gt;raw&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fileids&lt;/span&gt;&lt;span class="o"&gt;=[&lt;/span&gt;&lt;span class="n"&gt;f1,f2,f3&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;指定文件的原始内容&lt;/span&gt;&lt;span class="w"&gt;            &lt;/span&gt;
+&lt;span class="n"&gt;raw&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="o"&gt;=[&lt;/span&gt;&lt;span class="n"&gt;c1,c2&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;指定分类的原始内容&lt;/span&gt;&lt;span class="w"&gt;            &lt;/span&gt;
+&lt;span class="n"&gt;words&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt;                    &lt;/span&gt;&lt;span class="n"&gt;整个语料库中的词汇&lt;/span&gt;&lt;span class="w"&gt;            &lt;/span&gt;
+&lt;span class="n"&gt;words&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fileids&lt;/span&gt;&lt;span class="o"&gt;=[&lt;/span&gt;&lt;span class="n"&gt;f1,f2,f3&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;指定文件中的词汇&lt;/span&gt;&lt;span class="w"&gt;              &lt;/span&gt;
+&lt;span class="n"&gt;words&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="o"&gt;=[&lt;/span&gt;&lt;span class="n"&gt;c1,c2&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;指定分类中的词汇&lt;/span&gt;&lt;span class="w"&gt;              &lt;/span&gt;
+&lt;span class="n"&gt;sents&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt;                    &lt;/span&gt;&lt;span class="n"&gt;整个语料库中的句子&lt;/span&gt;&lt;span class="w"&gt;            &lt;/span&gt;
+&lt;span class="n"&gt;sents&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fileids&lt;/span&gt;&lt;span class="o"&gt;=[&lt;/span&gt;&lt;span class="n"&gt;f1,f2,f3&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;指定文件中的句子&lt;/span&gt;&lt;span class="w"&gt;              &lt;/span&gt;
+&lt;span class="n"&gt;sents&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="o"&gt;=[&lt;/span&gt;&lt;span class="n"&gt;c1,c2&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;指定分类中的句子&lt;/span&gt;&lt;span class="w"&gt;              &lt;/span&gt;
+&lt;span class="n"&gt;abspath&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fileid&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="n"&gt;指定文件在磁盘上的位置&lt;/span&gt;&lt;span class="w"&gt;        &lt;/span&gt;
+&lt;span class="n"&gt;encoding&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fileid&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;           &lt;/span&gt;&lt;span class="n"&gt;文件的编码&lt;/span&gt;&lt;span class="err"&gt;（&lt;/span&gt;&lt;span class="n"&gt;如果知道的话&lt;/span&gt;&lt;span class="err"&gt;）&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;
+&lt;span class="k"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fileid&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;               &lt;/span&gt;&lt;span class="n"&gt;打开指定语料库文件的文件流&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;
+&lt;span class="n"&gt;root&lt;/span&gt;&lt;span class="w"&gt;                       &lt;/span&gt;&lt;span class="n"&gt;本地安装的语料库根目录的路径&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
+&lt;span class="n"&gt;readme&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt;                   &lt;/span&gt;&lt;span class="n"&gt;语料库的README文件的内容&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -139,26 +139,26 @@ readme()                   语料库的README文件的内容
 
 
 &lt;h5&gt;2.3 绘制分布图和分布表&lt;/h5&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cfd.tabulate(conditions=[&amp;#39;English&amp;#39;, &amp;#39;German_Deutsch&amp;#39;],
-             samples=range(10), cumulative=True)
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;cfd&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tabulate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;conditions&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;English&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;German_Deutsch&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+             &lt;span class="n"&gt;samples&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;cumulative&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
-cfd.plot(conditions=[&amp;#39;English&amp;#39;, &amp;#39;German_Deutsch&amp;#39;],
-         samples=range(10), cumulative=True)
+&lt;span class="n"&gt;cfd&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;conditions&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;English&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;German_Deutsch&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+         &lt;span class="n"&gt;samples&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;cumulative&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h5&gt;2.4 使用双连词生成随机文本&lt;/h5&gt;
 &lt;p&gt;条件频率分布是一个对许多NLP 任务都有用的数据结构。2.1总结了它们常用的方法。&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;示例                                 描述
-cfdist=ConditionalFreqDist(pairs)    从配对列表中创建条件频率分布                       
-cfdist.conditions()                  条件
-cfdist[condition]                    此条件下的频率分布
-cfdist[condition][sample]            此条件下给定样本的频率
-cfdist.tabulate()                    为条件频率分布制表
-cfdist.tabulate(samples,conditions)  指定样本和条件限制下制表
-cfdist.plot()                        为条件频率分布绘图
-cfdist.plot(samples,conditions)      指定样本和条件限制下绘图
-cfdist1&amp;lt;cfdist2                      测试样本在cfdist1中出现次数是否小于在cfdist2中出现次数
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;示例&lt;/span&gt;&lt;span class="w"&gt;                                 &lt;/span&gt;&lt;span class="n"&gt;描述&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;cfdist&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;ConditionalFreqDist&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pairs&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;从配对列表中创建条件频率分布&lt;/span&gt;&lt;span class="w"&gt;                       &lt;/span&gt;
+&lt;span class="n"&gt;cfdist&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;conditions&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt;                  &lt;/span&gt;&lt;span class="n"&gt;条件&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;cfdist&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;condition&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt;                    &lt;/span&gt;&lt;span class="n"&gt;此条件下的频率分布&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;cfdist&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;condition&lt;/span&gt;&lt;span class="o"&gt;][&lt;/span&gt;&lt;span class="n"&gt;sample&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="n"&gt;此条件下给定样本的频率&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;cfdist&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tabulate&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt;                    &lt;/span&gt;&lt;span class="n"&gt;为条件频率分布制表&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;cfdist&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tabulate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;samples&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;conditions&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;指定样本和条件限制下制表&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;cfdist&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt;                        &lt;/span&gt;&lt;span class="n"&gt;为条件频率分布绘图&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;cfdist&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;samples&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;conditions&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="n"&gt;指定样本和条件限制下绘图&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;cfdist1&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;cfdist2&lt;/span&gt;&lt;span class="w"&gt;                      &lt;/span&gt;&lt;span class="n"&gt;测试样本在cfdist1中出现次数是否小于在cfdist2中出现次数&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -238,25 +238,25 @@ http://nltk.org/howto&lt;/p&gt;
 &lt;p&gt;nltk.corpus.udhr  # 超过300种语言的世界人权宣言&lt;/p&gt;
 &lt;h5&gt;1.8 文本语料库的结构&lt;/h5&gt;
 &lt;h6&gt;NLTK 中定义的基本语料库函数, 使用help(nltk.corpus.reader)可以找到更多的文档&lt;/h6&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;示例                       描述                          
-fileids()                  语料库中的文件                
-fileids([categories])      这些分类对应的语料库中的文件  
-categories()               语料库中的分类                
-categories([fileids])      这些文件对应的语料库中的分类  
-raw()                      语料库的原始内容              
-raw(fileids=[f1,f2,f3])    指定文件的原始内容            
-raw(categories=[c1,c2])    指定分类的原始内容            
-words()                    整个语料库中的词汇            
-words(fileids=[f1,f2,f3])  指定文件中的词汇              
-words(categories=[c1,c2])  指定分类中的词汇              
-sents()                    整个语料库中的句子            
-sents(fileids=[f1,f2,f3])  指定文件中的句子              
-sents(categories=[c1,c2])  指定分类中的句子              
-abspath(fileid)            指定文件在磁盘上的位置        
-encoding(fileid)           文件的编码（如果知道的话）    
-open(fileid)               打开指定语料库文件的文件流    
-root                       本地安装的语料库根目录的路径  
-readme()                   语料库的README文件的内容
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;示例&lt;/span&gt;&lt;span class="w"&gt;                       &lt;/span&gt;&lt;span class="n"&gt;描述&lt;/span&gt;&lt;span class="w"&gt;                          &lt;/span&gt;
+&lt;span class="n"&gt;fileids&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt;                  &lt;/span&gt;&lt;span class="n"&gt;语料库中的文件&lt;/span&gt;&lt;span class="w"&gt;                &lt;/span&gt;
+&lt;span class="n"&gt;fileids&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="n"&gt;这些分类对应的语料库中的文件&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
+&lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt;               &lt;/span&gt;&lt;span class="n"&gt;语料库中的分类&lt;/span&gt;&lt;span class="w"&gt;                &lt;/span&gt;
+&lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;fileids&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="n"&gt;这些文件对应的语料库中的分类&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
+&lt;span class="n"&gt;raw&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt;                      &lt;/span&gt;&lt;span class="n"&gt;语料库的原始内容&lt;/span&gt;&lt;span class="w"&gt;              &lt;/span&gt;
+&lt;span class="n"&gt;raw&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fileids&lt;/span&gt;&lt;span class="o"&gt;=[&lt;/span&gt;&lt;span class="n"&gt;f1,f2,f3&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;指定文件的原始内容&lt;/span&gt;&lt;span class="w"&gt;            &lt;/span&gt;
+&lt;span class="n"&gt;raw&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="o"&gt;=[&lt;/span&gt;&lt;span class="n"&gt;c1,c2&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;指定分类的原始内容&lt;/span&gt;&lt;span class="w"&gt;            &lt;/span&gt;
+&lt;span class="n"&gt;words&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt;                    &lt;/span&gt;&lt;span class="n"&gt;整个语料库中的词汇&lt;/span&gt;&lt;span class="w"&gt;            &lt;/span&gt;
+&lt;span class="n"&gt;words&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fileids&lt;/span&gt;&lt;span class="o"&gt;=[&lt;/span&gt;&lt;span class="n"&gt;f1,f2,f3&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;指定文件中的词汇&lt;/span&gt;&lt;span class="w"&gt;              &lt;/span&gt;
+&lt;span class="n"&gt;words&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="o"&gt;=[&lt;/span&gt;&lt;span class="n"&gt;c1,c2&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;指定分类中的词汇&lt;/span&gt;&lt;span class="w"&gt;              &lt;/span&gt;
+&lt;span class="n"&gt;sents&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt;                    &lt;/span&gt;&lt;span class="n"&gt;整个语料库中的句子&lt;/span&gt;&lt;span class="w"&gt;            &lt;/span&gt;
+&lt;span class="n"&gt;sents&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fileids&lt;/span&gt;&lt;span class="o"&gt;=[&lt;/span&gt;&lt;span class="n"&gt;f1,f2,f3&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;指定文件中的句子&lt;/span&gt;&lt;span class="w"&gt;              &lt;/span&gt;
+&lt;span class="n"&gt;sents&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="o"&gt;=[&lt;/span&gt;&lt;span class="n"&gt;c1,c2&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;指定分类中的句子&lt;/span&gt;&lt;span class="w"&gt;              &lt;/span&gt;
+&lt;span class="n"&gt;abspath&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fileid&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="n"&gt;指定文件在磁盘上的位置&lt;/span&gt;&lt;span class="w"&gt;        &lt;/span&gt;
+&lt;span class="n"&gt;encoding&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fileid&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;           &lt;/span&gt;&lt;span class="n"&gt;文件的编码&lt;/span&gt;&lt;span class="err"&gt;（&lt;/span&gt;&lt;span class="n"&gt;如果知道的话&lt;/span&gt;&lt;span class="err"&gt;）&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;
+&lt;span class="k"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fileid&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;               &lt;/span&gt;&lt;span class="n"&gt;打开指定语料库文件的文件流&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;
+&lt;span class="n"&gt;root&lt;/span&gt;&lt;span class="w"&gt;                       &lt;/span&gt;&lt;span class="n"&gt;本地安装的语料库根目录的路径&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
+&lt;span class="n"&gt;readme&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt;                   &lt;/span&gt;&lt;span class="n"&gt;语料库的README文件的内容&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -302,26 +302,26 @@ readme()                   语料库的README文件的内容
 
 
 &lt;h5&gt;2.3 绘制分布图和分布表&lt;/h5&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cfd.tabulate(conditions=[&amp;#39;English&amp;#39;, &amp;#39;German_Deutsch&amp;#39;],
-             samples=range(10), cumulative=True)
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;cfd&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tabulate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;conditions&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;English&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;German_Deutsch&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+             &lt;span class="n"&gt;samples&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;cumulative&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
-cfd.plot(conditions=[&amp;#39;English&amp;#39;, &amp;#39;German_Deutsch&amp;#39;],
-         samples=range(10), cumulative=True)
+&lt;span class="n"&gt;cfd&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;conditions&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;English&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;German_Deutsch&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+         &lt;span class="n"&gt;samples&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;cumulative&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h5&gt;2.4 使用双连词生成随机文本&lt;/h5&gt;
 &lt;p&gt;条件频率分布是一个对许多NLP 任务都有用的数据结构。2.1总结了它们常用的方法。&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;示例                                 描述
-cfdist=ConditionalFreqDist(pairs)    从配对列表中创建条件频率分布                       
-cfdist.conditions()                  条件
-cfdist[condition]                    此条件下的频率分布
-cfdist[condition][sample]            此条件下给定样本的频率
-cfdist.tabulate()                    为条件频率分布制表
-cfdist.tabulate(samples,conditions)  指定样本和条件限制下制表
-cfdist.plot()                        为条件频率分布绘图
-cfdist.plot(samples,conditions)      指定样本和条件限制下绘图
-cfdist1&amp;lt;cfdist2                      测试样本在cfdist1中出现次数是否小于在cfdist2中出现次数
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;示例&lt;/span&gt;&lt;span class="w"&gt;                                 &lt;/span&gt;&lt;span class="n"&gt;描述&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;cfdist&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;ConditionalFreqDist&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pairs&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;从配对列表中创建条件频率分布&lt;/span&gt;&lt;span class="w"&gt;                       &lt;/span&gt;
+&lt;span class="n"&gt;cfdist&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;conditions&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt;                  &lt;/span&gt;&lt;span class="n"&gt;条件&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;cfdist&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;condition&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt;                    &lt;/span&gt;&lt;span class="n"&gt;此条件下的频率分布&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;cfdist&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;condition&lt;/span&gt;&lt;span class="o"&gt;][&lt;/span&gt;&lt;span class="n"&gt;sample&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="n"&gt;此条件下给定样本的频率&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;cfdist&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tabulate&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt;                    &lt;/span&gt;&lt;span class="n"&gt;为条件频率分布制表&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;cfdist&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tabulate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;samples&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;conditions&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;指定样本和条件限制下制表&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;cfdist&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt;                        &lt;/span&gt;&lt;span class="n"&gt;为条件频率分布绘图&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;cfdist&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;samples&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;conditions&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="n"&gt;指定样本和条件限制下绘图&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;cfdist1&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;cfdist2&lt;/span&gt;&lt;span class="w"&gt;                      &lt;/span&gt;&lt;span class="n"&gt;测试样本在cfdist1中出现次数是否小于在cfdist2中出现次数&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 

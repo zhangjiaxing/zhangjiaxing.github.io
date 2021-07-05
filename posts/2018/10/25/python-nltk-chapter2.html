@@ -122,25 +122,25 @@ http://nltk.org/howto</p>
 <p>nltk.corpus.udhr  # 超过300种语言的世界人权宣言</p>
 <h5>1.8 文本语料库的结构</h5>
 <h6>NLTK 中定义的基本语料库函数, 使用help(nltk.corpus.reader)可以找到更多的文档</h6>
-<div class="highlight-custom"><pre><span></span>示例                       描述                          
-fileids()                  语料库中的文件                
-fileids([categories])      这些分类对应的语料库中的文件  
-categories()               语料库中的分类                
-categories([fileids])      这些文件对应的语料库中的分类  
-raw()                      语料库的原始内容              
-raw(fileids=[f1,f2,f3])    指定文件的原始内容            
-raw(categories=[c1,c2])    指定分类的原始内容            
-words()                    整个语料库中的词汇            
-words(fileids=[f1,f2,f3])  指定文件中的词汇              
-words(categories=[c1,c2])  指定分类中的词汇              
-sents()                    整个语料库中的句子            
-sents(fileids=[f1,f2,f3])  指定文件中的句子              
-sents(categories=[c1,c2])  指定分类中的句子              
-abspath(fileid)            指定文件在磁盘上的位置        
-encoding(fileid)           文件的编码（如果知道的话）    
-open(fileid)               打开指定语料库文件的文件流    
-root                       本地安装的语料库根目录的路径  
-readme()                   语料库的README文件的内容
+<div class="highlight-custom"><pre><span></span><span class="n">示例</span><span class="w">                       </span><span class="n">描述</span><span class="w">                          </span>
+<span class="n">fileids</span><span class="p">()</span><span class="w">                  </span><span class="n">语料库中的文件</span><span class="w">                </span>
+<span class="n">fileids</span><span class="p">(</span><span class="o">[</span><span class="n">categories</span><span class="o">]</span><span class="p">)</span><span class="w">      </span><span class="n">这些分类对应的语料库中的文件</span><span class="w">  </span>
+<span class="n">categories</span><span class="p">()</span><span class="w">               </span><span class="n">语料库中的分类</span><span class="w">                </span>
+<span class="n">categories</span><span class="p">(</span><span class="o">[</span><span class="n">fileids</span><span class="o">]</span><span class="p">)</span><span class="w">      </span><span class="n">这些文件对应的语料库中的分类</span><span class="w">  </span>
+<span class="n">raw</span><span class="p">()</span><span class="w">                      </span><span class="n">语料库的原始内容</span><span class="w">              </span>
+<span class="n">raw</span><span class="p">(</span><span class="n">fileids</span><span class="o">=[</span><span class="n">f1,f2,f3</span><span class="o">]</span><span class="p">)</span><span class="w">    </span><span class="n">指定文件的原始内容</span><span class="w">            </span>
+<span class="n">raw</span><span class="p">(</span><span class="n">categories</span><span class="o">=[</span><span class="n">c1,c2</span><span class="o">]</span><span class="p">)</span><span class="w">    </span><span class="n">指定分类的原始内容</span><span class="w">            </span>
+<span class="n">words</span><span class="p">()</span><span class="w">                    </span><span class="n">整个语料库中的词汇</span><span class="w">            </span>
+<span class="n">words</span><span class="p">(</span><span class="n">fileids</span><span class="o">=[</span><span class="n">f1,f2,f3</span><span class="o">]</span><span class="p">)</span><span class="w">  </span><span class="n">指定文件中的词汇</span><span class="w">              </span>
+<span class="n">words</span><span class="p">(</span><span class="n">categories</span><span class="o">=[</span><span class="n">c1,c2</span><span class="o">]</span><span class="p">)</span><span class="w">  </span><span class="n">指定分类中的词汇</span><span class="w">              </span>
+<span class="n">sents</span><span class="p">()</span><span class="w">                    </span><span class="n">整个语料库中的句子</span><span class="w">            </span>
+<span class="n">sents</span><span class="p">(</span><span class="n">fileids</span><span class="o">=[</span><span class="n">f1,f2,f3</span><span class="o">]</span><span class="p">)</span><span class="w">  </span><span class="n">指定文件中的句子</span><span class="w">              </span>
+<span class="n">sents</span><span class="p">(</span><span class="n">categories</span><span class="o">=[</span><span class="n">c1,c2</span><span class="o">]</span><span class="p">)</span><span class="w">  </span><span class="n">指定分类中的句子</span><span class="w">              </span>
+<span class="n">abspath</span><span class="p">(</span><span class="n">fileid</span><span class="p">)</span><span class="w">            </span><span class="n">指定文件在磁盘上的位置</span><span class="w">        </span>
+<span class="n">encoding</span><span class="p">(</span><span class="n">fileid</span><span class="p">)</span><span class="w">           </span><span class="n">文件的编码</span><span class="err">（</span><span class="n">如果知道的话</span><span class="err">）</span><span class="w">    </span>
+<span class="k">open</span><span class="p">(</span><span class="n">fileid</span><span class="p">)</span><span class="w">               </span><span class="n">打开指定语料库文件的文件流</span><span class="w">    </span>
+<span class="n">root</span><span class="w">                       </span><span class="n">本地安装的语料库根目录的路径</span><span class="w">  </span>
+<span class="n">readme</span><span class="p">()</span><span class="w">                   </span><span class="n">语料库的README文件的内容</span><span class="w"></span>
 </pre></div>
 
 
@@ -186,26 +186,26 @@ readme()                   语料库的README文件的内容
 
 
 <h5>2.3 绘制分布图和分布表</h5>
-<div class="highlight-custom"><pre><span></span>cfd.tabulate(conditions=[&#39;English&#39;, &#39;German_Deutsch&#39;],
-             samples=range(10), cumulative=True)
+<div class="highlight-custom"><pre><span></span><span class="n">cfd</span><span class="p">.</span><span class="n">tabulate</span><span class="p">(</span><span class="n">conditions</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;English&#39;</span><span class="p">,</span> <span class="s1">&#39;German_Deutsch&#39;</span><span class="p">],</span>
+             <span class="n">samples</span><span class="o">=</span><span class="n">range</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">cumulative</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
 
-cfd.plot(conditions=[&#39;English&#39;, &#39;German_Deutsch&#39;],
-         samples=range(10), cumulative=True)
+<span class="n">cfd</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">conditions</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;English&#39;</span><span class="p">,</span> <span class="s1">&#39;German_Deutsch&#39;</span><span class="p">],</span>
+         <span class="n">samples</span><span class="o">=</span><span class="n">range</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">cumulative</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
 </pre></div>
 
 
 <h5>2.4 使用双连词生成随机文本</h5>
 <p>条件频率分布是一个对许多NLP 任务都有用的数据结构。2.1总结了它们常用的方法。</p>
-<div class="highlight-custom"><pre><span></span>示例                                 描述
-cfdist=ConditionalFreqDist(pairs)    从配对列表中创建条件频率分布                       
-cfdist.conditions()                  条件
-cfdist[condition]                    此条件下的频率分布
-cfdist[condition][sample]            此条件下给定样本的频率
-cfdist.tabulate()                    为条件频率分布制表
-cfdist.tabulate(samples,conditions)  指定样本和条件限制下制表
-cfdist.plot()                        为条件频率分布绘图
-cfdist.plot(samples,conditions)      指定样本和条件限制下绘图
-cfdist1&lt;cfdist2                      测试样本在cfdist1中出现次数是否小于在cfdist2中出现次数
+<div class="highlight-custom"><pre><span></span><span class="n">示例</span><span class="w">                                 </span><span class="n">描述</span><span class="w"></span>
+<span class="n">cfdist</span><span class="o">=</span><span class="n">ConditionalFreqDist</span><span class="p">(</span><span class="n">pairs</span><span class="p">)</span><span class="w">    </span><span class="n">从配对列表中创建条件频率分布</span><span class="w">                       </span>
+<span class="n">cfdist</span><span class="p">.</span><span class="n">conditions</span><span class="p">()</span><span class="w">                  </span><span class="n">条件</span><span class="w"></span>
+<span class="n">cfdist</span><span class="o">[</span><span class="n">condition</span><span class="o">]</span><span class="w">                    </span><span class="n">此条件下的频率分布</span><span class="w"></span>
+<span class="n">cfdist</span><span class="o">[</span><span class="n">condition</span><span class="o">][</span><span class="n">sample</span><span class="o">]</span><span class="w">            </span><span class="n">此条件下给定样本的频率</span><span class="w"></span>
+<span class="n">cfdist</span><span class="p">.</span><span class="n">tabulate</span><span class="p">()</span><span class="w">                    </span><span class="n">为条件频率分布制表</span><span class="w"></span>
+<span class="n">cfdist</span><span class="p">.</span><span class="n">tabulate</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span><span class="n">conditions</span><span class="p">)</span><span class="w">  </span><span class="n">指定样本和条件限制下制表</span><span class="w"></span>
+<span class="n">cfdist</span><span class="p">.</span><span class="n">plot</span><span class="p">()</span><span class="w">                        </span><span class="n">为条件频率分布绘图</span><span class="w"></span>
+<span class="n">cfdist</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span><span class="n">conditions</span><span class="p">)</span><span class="w">      </span><span class="n">指定样本和条件限制下绘图</span><span class="w"></span>
+<span class="n">cfdist1</span><span class="o">&lt;</span><span class="n">cfdist2</span><span class="w">                      </span><span class="n">测试样本在cfdist1中出现次数是否小于在cfdist2中出现次数</span><span class="w"></span>
 </pre></div>
 
 

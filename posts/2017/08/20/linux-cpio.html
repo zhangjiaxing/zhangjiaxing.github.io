@@ -67,22 +67,22 @@
     <div class="entry-content"><ul>
 <li>建立 cpio文件 </li>
 </ul>
-<div class="highlight-custom"><pre><span></span>find ./files | cpio -o -H newc &gt; filename.cpio
+<div class="highlight-custom"><pre><span></span><span class="err">find ./files | cpio -o -H newc &gt; filename.cpio</span>
 </pre></div>
 
 
 <ul>
 <li>解开cpio文件</li>
 </ul>
-<div class="highlight-custom"><pre><span></span>cd  dir1
-cpio -ivd  &lt; filename.cpio  
+<div class="highlight-custom"><pre><span></span><span class="err">cd  dir1</span>
+<span class="err">cpio -ivd  &lt; filename.cpio  </span>
 </pre></div>
 
 
 <ul>
 <li>查看cpio文件中的内容</li>
 </ul>
-<div class="highlight-custom"><pre><span></span>cpio -ivt &lt; filename.cpio
+<div class="highlight-custom"><pre><span></span><span class="err">cpio -ivt &lt; filename.cpio</span>
 </pre></div>
 
 

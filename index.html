@@ -64,13 +64,13 @@
     </p>
 </header>
 
-        <div class="entry-content"><div class="highlight-custom"><pre><span></span>据说在虚拟机中使用这个, 流畅度比安装的版本快很多
-可以免费使用
-https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/
+        <div class="entry-content"><div class="highlight-custom"><pre><span></span><span class="err">据说在虚拟机中使用这个</span><span class="p">,</span> <span class="err">流畅度比安装的版本快很多</span>
+<span class="err">可以免费使用</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">developer</span><span class="p">.</span><span class="n">microsoft</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">en</span><span class="o">-</span><span class="n">us</span><span class="o">/</span><span class="n">microsoft</span><span class="o">-</span><span class="n">edge</span><span class="o">/</span><span class="n">tools</span><span class="o">/</span><span class="n">vms</span><span class="o">/</span>
 
 
-下面这个是有win10开发环境的虚拟机, 比较大20G
-https://developer.microsoft.com/en-us/windows/downloads/virtual-machines/
+<span class="err">下面这个是有</span><span class="n">win10开发环境的虚拟机</span><span class="p">,</span> <span class="err">比较大</span><span class="mi">20</span><span class="k">G</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">developer</span><span class="p">.</span><span class="n">microsoft</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">en</span><span class="o">-</span><span class="n">us</span><span class="o">/</span><span class="n">windows</span><span class="o">/</span><span class="n">downloads</span><span class="o">/</span><span class="n">virtual</span><span class="o">-</span><span class="n">machines</span><span class="o">/</span>
 </pre></div></div>
   		</article>
   		<article>
@@ -112,8 +112,8 @@ https://developer.microsoft.com/en-us/windows/downloads/virtual-machines/
 <p>首先测试 <code>yes | dpkg -i *</code> 对话框还是会出现. (<code>yes | dpkg -i</code> 印象里面看别人这么写过.  <code>yes | tty</code> 显示 <code>not a tty</code>)</p>
 <p>于是测试 ssh -T 链接本机, 安装果然没有对话框. 能够成功安装,但是有一行报错 <code>debconf: unable to initialize frontend: Dialog</code></p>
 <p>顺着这个报错, 终于搜到了 如何dpkg安装软件不出现dialog对话框.</p>
-<div class="highlight-custom"><pre><span></span>设置环境变量, 然后在 dpkg安装就可以
-DEBIAN_FRONTEND=noninteractive dpkg -i *
+<div class="highlight-custom"><pre><span></span><span class="err">设置环境变量, 然后在 dpkg安装就可以</span>
+<span class="err">DEBIAN_FRONTEND=noninteractive dpkg -i *</span>
 </pre></div></div>
   		</article>
   		<article>
@@ -129,11 +129,11 @@ DEBIAN_FRONTEND=noninteractive dpkg -i *
         <div class="entry-content"><ol>
 <li>zypper 安装软件时候版本选择</li>
 </ol>
-<div class="highlight-custom"><pre><span></span>查看仓库中有firefox的哪些版本
-sudo zypper se -s firefox
+<div class="highlight-custom"><pre><span></span><span class="err">查看仓库中有</span><span class="n">firefox的哪些版本</span>
+<span class="n">sudo</span> <span class="n">zypper</span> <span class="n">se</span> <span class="o">-</span><span class="n">s</span> <span class="n">firefox</span>
 
-安装指定版本
-sudo zypper in --oldpackage MozillaFirefox=78.0.1-lp152.2.5.1
+<span class="err">安装指定版本</span>
+<span class="n">sudo</span> <span class="n">zypper</span> <span class="k">in</span> <span class="c1">--oldpackage MozillaFirefox=78.0.1-lp152.2.5.1</span>
 </pre></div>
 
 
@@ -165,12 +165,12 @@ sudo zypper in --oldpackage MozillaFirefox=78.0.1-lp152.2.5.1
 <p>参考https://calvin.me/arch-linux-samsung-arm-chromebook 修改亮度控制 绑定按键 取消静音 设置休眠</p>
 </li>
 </ol>
-<div class="highlight-custom"><pre><span></span>alsamixer
+<div class="highlight-custom"><pre><span></span><span class="n">alsamixer</span><span class="w"></span>
 
-Go across the page (arrow keys) and press M to unmute
-    Left Speaker Mixer Left DAC1
-    Left Speaker Mixer Mono DAC2
-    Left Speaker Mixer Mono …</pre></div></div>
+<span class="k">Go</span><span class="w"> </span><span class="n">across</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="p">(</span><span class="n">arrow</span><span class="w"> </span><span class="n">keys</span><span class="p">)</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">press</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">unmute</span><span class="w"></span>
+<span class="w">    </span><span class="nf">Left</span><span class="w"> </span><span class="n">Speaker</span><span class="w"> </span><span class="n">Mixer</span><span class="w"> </span><span class="nf">Left</span><span class="w"> </span><span class="n">DAC1</span><span class="w"></span>
+<span class="w">    </span><span class="nf">Left</span><span class="w"> </span><span class="n">Speaker</span><span class="w"> </span><span class="n">Mixer</span><span class="w"> </span><span class="n">Mono</span><span class="w"> </span><span class="n">DAC2</span><span class="w"></span>
+<span class="w">    </span><span class="nf">Left</span><span class="w"> </span><span class="n">Speaker</span><span class="w"> </span><span class="n">Mixer</span><span class="w"> </span><span class="n">Mono …</span></pre></div></div>
             <footer>
                 <a rel="full-article" href="/posts/2020/07/26/arch-linux-samsung-arm-chromebook.html">Read On &crarr;</a>
             </footer>
@@ -311,11 +311,11 @@ zypper dup --from packman-essentials --allow-vendor-change
 </header>
 
         <div class="entry-content"><p>tcp</p>
-<div class="highlight-custom"><pre><span></span>服务器
-nc bind地址 监听端口
+<div class="highlight-custom"><pre><span></span><span class="err">服务器</span>
+<span class="n">nc</span> <span class="n">bind地址</span> <span class="err">监听端口</span>
 
-客户端
-nc 服务器地址 服务器端口
+<span class="err">客户端</span>
+<span class="n">nc</span> <span class="err">服务器地址</span> <span class="err">服务器端口</span>
 </pre></div>
 
 
