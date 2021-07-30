@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2020-09-07T00:12:35+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>微软提供的windows系统虚拟机文件下载</title><link href="/posts/2020/09/07/windows-vm.html" rel="alternate"></link><published>2020-09-07T00:12:35+08:00</published><updated>2020-09-07T00:12:35+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-09-07:/posts/2020/09/07/windows-vm.html</id><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;据说在虚拟机中使用这个&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;流畅度比安装的版本快很多&lt;/span&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2021-07-31T01:54:28+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>linux 设置网络接口发送队列长度</title><link href="/posts/2021/07/31/txqueuelen.html" rel="alternate"></link><published>2021-07-31T01:54:28+08:00</published><updated>2021-07-31T01:54:28+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2021-07-31:/posts/2021/07/31/txqueuelen.html</id><summary type="html">&lt;p&gt;UDP发送频率过高可能会导致丢包，设置发送队列长度可以解决这类问题。
+&lt;code&gt;https://www.cnblogs.com/liaokang/p/6003334.html&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;查询发送队列长度
+&lt;code&gt;ip link show eth0 查看qlen后面的数字&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;设置发送队列长度&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# 修改udev配置文件 &amp;quot;/etc/udev/rules.d/70-persistent-net.rules&amp;quot;:&lt;/span&gt;
+  &lt;span class="nv"&gt;SUBSYSTEM&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;net&amp;quot;&lt;/span&gt;, &lt;span class="nv"&gt;ACTION&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;add&amp;quot;&lt;/span&gt;, &lt;span class="nv"&gt;DRIVERS&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;?*&amp;quot;&lt;/span&gt;, ATTR&lt;span class="o"&gt;{&lt;/span&gt;address&lt;span class="o"&gt;}==&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;00:0C:29:35:79:97&amp;quot;&lt;/span&gt;, &lt;span class="nv"&gt;KERNEL&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;eth*&amp;quot;&lt;/span&gt;, &lt;span class="nv"&gt;NAME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;eth0&amp;quot;&lt;/span&gt;, ATTR&lt;span class="o"&gt;{&lt;/span&gt;tx_queue_len&lt;span class="o"&gt;}=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;10000&amp;quot;&lt;/span&gt;
+&lt;span class="c1"&gt;# 或者&lt;/span&gt;
+ifconfig eth0 txqueuelen &lt;span class="m"&gt;10000&lt;/span&gt;
+ip …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;UDP发送频率过高可能会导致丢包，设置发送队列长度可以解决这类问题。
+&lt;code&gt;https://www.cnblogs.com/liaokang/p/6003334.html&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;查询发送队列长度
+&lt;code&gt;ip link show eth0 查看qlen后面的数字&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;设置发送队列长度&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# 修改udev配置文件 &amp;quot;/etc/udev/rules.d/70-persistent-net.rules&amp;quot;:&lt;/span&gt;
+  &lt;span class="nv"&gt;SUBSYSTEM&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;net&amp;quot;&lt;/span&gt;, &lt;span class="nv"&gt;ACTION&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;add&amp;quot;&lt;/span&gt;, &lt;span class="nv"&gt;DRIVERS&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;?*&amp;quot;&lt;/span&gt;, ATTR&lt;span class="o"&gt;{&lt;/span&gt;address&lt;span class="o"&gt;}==&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;00:0C:29:35:79:97&amp;quot;&lt;/span&gt;, &lt;span class="nv"&gt;KERNEL&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;eth*&amp;quot;&lt;/span&gt;, &lt;span class="nv"&gt;NAME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;eth0&amp;quot;&lt;/span&gt;, ATTR&lt;span class="o"&gt;{&lt;/span&gt;tx_queue_len&lt;span class="o"&gt;}=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;10000&amp;quot;&lt;/span&gt;
+&lt;span class="c1"&gt;# 或者&lt;/span&gt;
+ifconfig eth0 txqueuelen &lt;span class="m"&gt;10000&lt;/span&gt;
+ip link &lt;span class="nb"&gt;set&lt;/span&gt; dev eth0 txqueuelen &lt;span class="m"&gt;10000&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;相关API&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;man 7 netdevice&lt;/span&gt;
+&lt;span class="err"&gt;IOCTLS&lt;/span&gt;
+&lt;span class="err"&gt;SIOCGIFTXQLEN SIOCSIFTXQLEN&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="network"></category><category term="linux"></category><category term="network"></category></entry><entry><title>微软提供的windows系统虚拟机文件下载</title><link href="/posts/2020/09/07/windows-vm.html" rel="alternate"></link><published>2020-09-07T00:12:35+08:00</published><updated>2020-09-07T00:12:35+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-09-07:/posts/2020/09/07/windows-vm.html</id><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;据说在虚拟机中使用这个&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;流畅度比安装的版本快很多&lt;/span&gt;
 &lt;span class="err"&gt;可以免费使用&lt;/span&gt;
 &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;developer&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;microsoft&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;en&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;us&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;microsoft&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;edge&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;tools&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;vms&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;
 
@@ -1184,7 +1210,12 @@ http://blog.n01se.net/blog-n01se-net-p-145.html&lt;/p&gt;</content><category ter
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Baidu&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;NieR&lt;/span&gt;
 &lt;span class="n"&gt;NieR&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;Google&lt;/span&gt;
 &lt;span class="n"&gt;Taobao&lt;/span&gt; &lt;span class="n"&gt;XX&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="firefox"></category><category term="firefox"></category><category term="software"></category></entry><entry><title>记录一下我常装的 Arch Linux package</title><link href="/posts/2017/06/16/archlinux-package.html" rel="alternate"></link><published>2017-06-16T16:52:14+08:00</published><updated>2017-06-16T16:52:14+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-16:/posts/2017/06/16/archlinux-package.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;# dmidecode&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="firefox"></category><category term="firefox"></category><category term="software"></category></entry><entry><title>记录一下我常装的 Arch Linux package</title><link href="/posts/2017/06/16/archlinux-package.html" rel="alternate"></link><published>2017-06-16T16:52:14+08:00</published><updated>2017-06-16T16:52:14+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-16:/posts/2017/06/16/archlinux-package.html</id><summary type="html">&lt;p&gt;Gnome主题 
+1. numix (gnome)
+2. discreet flat (cinnamon)
+3. Orchis-dark-compact (gnome)
+4. ePapirus 图标&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;# dmidecode&lt;/span&gt;
 &lt;span class="err"&gt;# onboard  # 屏幕键盘 &lt;/span&gt;
 &lt;span class="err"&gt;# yay&lt;/span&gt;
 &lt;span class="err"&gt;(xfce4) xfce4-datetime-plugin&lt;/span&gt;
@@ -1205,13 +1236,12 @@ http://blog.n01se.net/blog-n01se-net-p-145.html&lt;/p&gt;</content><category ter
 &lt;span class="err"&gt;code  # (vscode)&lt;/span&gt;
 &lt;span class="err"&gt;dconf-editor&lt;/span&gt;
 &lt;span class="err"&gt;deepin-screenshot&lt;/span&gt;
-&lt;span class="err"&gt;deepin.com.qq.im (aur)&lt;/span&gt;
-&lt;span class="err"&gt;devhelp&lt;/span&gt;
-&lt;span class="err"&gt;dnsmasq&lt;/span&gt;
-&lt;span class="err"&gt;dosfstools &amp;amp; mtools # for fat32&lt;/span&gt;
-&lt;span class="err"&gt;electron-netease-cloud-music  # (archlinuxcn)&lt;/span&gt;
-&lt;span class="err"&gt;electronic-wechat&lt;/span&gt;
-&lt;span class="err"&gt;eog or gthumb …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;# dmidecode&lt;/span&gt;
+&lt;span class="err"&gt;deepin.com.qq …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Gnome主题 
+1. numix (gnome)
+2. discreet flat (cinnamon)
+3. Orchis-dark-compact (gnome)
+4. ePapirus 图标&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;# dmidecode&lt;/span&gt;
 &lt;span class="err"&gt;# onboard  # 屏幕键盘 &lt;/span&gt;
 &lt;span class="err"&gt;# yay&lt;/span&gt;
 &lt;span class="err"&gt;(xfce4) xfce4-datetime-plugin&lt;/span&gt;
@@ -1342,7 +1372,60 @@ http://blog.n01se.net/blog-n01se-net-p-145.html&lt;/p&gt;</content><category ter
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;桌面主题 &lt;code&gt;numix + (discreet flat)&lt;/code&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;# flatpak 软件&lt;/span&gt;
+&lt;span class="err"&gt;com.anydesk.Anydesk&lt;/span&gt;
+&lt;span class="err"&gt;com.belmoussaoui.ReadItLater&lt;/span&gt;
+&lt;span class="err"&gt;com.calibre_ebook.calibre&lt;/span&gt;
+&lt;span class="err"&gt;com.github.alainm23.planner&lt;/span&gt;
+&lt;span class="err"&gt;com.github.artemanufrij.playmyvideos&lt;/span&gt;
+&lt;span class="err"&gt;com.github.babluboy.bookworm&lt;/span&gt;
+&lt;span class="err"&gt;org.gnome.Builder&lt;/span&gt;
+&lt;span class="err"&gt;com.github.calo001.fondo&lt;/span&gt;
+&lt;span class="err"&gt;com.github.iwalton3.jellyfin-media-player&lt;/span&gt;
+&lt;span class="err"&gt;com.github.iwalton3.jellyfin-mpv-shim&lt;/span&gt;
+&lt;span class="err"&gt;com.github.johnfactotum.Foliate&lt;/span&gt;
+&lt;span class="err"&gt;com.giuspen.cherrytree&lt;/span&gt;
+&lt;span class="err"&gt;com.jetbrains.PyCharm-Community&lt;/span&gt;
+&lt;span class="err"&gt;com.jgraph.drawio.desktop&lt;/span&gt;
+&lt;span class="err"&gt;com.netease.CloudMusic&lt;/span&gt;
+&lt;span class="err"&gt;com.qq.QQmusic&lt;/span&gt;
+&lt;span class="err"&gt;com.sublimetext.three&lt;/span&gt;
+&lt;span class="err"&gt;com.todoist.Todoist&lt;/span&gt;
+&lt;span class="err"&gt;com.valvesoftware.Steam&lt;/span&gt;
+&lt;span class="err"&gt;com.visualstudio.code&lt;/span&gt;
+&lt;span class="err"&gt;com.wps.Office&lt;/span&gt;
+&lt;span class="err"&gt;com.xnview.XnViewMP&lt;/span&gt;
+&lt;span class="err"&gt;io.typora.Typora&lt;/span&gt;
+&lt;span class="err"&gt;net.cozic.joplin_desktop&lt;/span&gt;
+&lt;span class="err"&gt;nl.hjdskes.gcolor3&lt;/span&gt;
+&lt;span class="err"&gt;org.inkscape.Inkscape&lt;/span&gt;
+&lt;span class="err"&gt;org.jamovi.jamovi&lt;/span&gt;
+&lt;span class="err"&gt;org.kde.krita&lt;/span&gt;
+&lt;span class="err"&gt;org.telegram.desktop&lt;/span&gt;
+&lt;span class="err"&gt;org.videolan.VLC&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;Gnome 扩展&lt;/span&gt;
+&lt;span class="err"&gt;Applications menu&lt;/span&gt;
+&lt;span class="err"&gt;Gsconnect&lt;/span&gt;
+&lt;span class="err"&gt;Gtk title bar&lt;/span&gt;
+&lt;span class="err"&gt;Launch new instance&lt;/span&gt;
+&lt;span class="err"&gt;Netspeed&lt;/span&gt;
+&lt;span class="err"&gt;Openweather&lt;/span&gt;
+&lt;span class="err"&gt;Places status indicator&lt;/span&gt;
+&lt;span class="err"&gt;Refresh wifi connections&lt;/span&gt;
+&lt;span class="err"&gt;Topicons plus&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;# 其他&lt;/span&gt;
+&lt;span class="err"&gt;linux QQ&lt;/span&gt;
+&lt;span class="err"&gt;Pidgin&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;未完待续...&lt;/p&gt;
 &lt;p&gt;本文不定期更新&lt;/p&gt;</content><category term="linux"></category><category term="linux"></category><category term="software"></category><category term="arch"></category></entry><entry><title>遇到的一个python的坑</title><link href="/posts/2017/06/14/python.html" rel="alternate"></link><published>2017-06-14T16:23:03+08:00</published><updated>2017-06-14T16:23:03+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-14:/posts/2017/06/14/python.html</id><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;fun&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;arg&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[]):&lt;/span&gt;
     &lt;span class="n"&gt;arg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;A&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;

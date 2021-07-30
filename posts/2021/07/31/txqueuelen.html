@@ -4,11 +4,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: web &mdash; cat ~/.zhiliao.history</title>
+  <title>linux 设置网络接口发送队列长度 &mdash; cat ~/.zhiliao.history</title>
   <meta name="author" content="zhiliao">
 
   <link href="/feeds/all.atom.xml" type="application/rss+xml" rel="alternate"
         title="cat ~/.zhiliao.history RSS Feed" />
+
+
 
 
 
@@ -54,28 +56,48 @@
   <div id="main">
     <div id="content">
 <div>
-	<article role="article">
-    	<header>
-    		<h1 class="entry-title">Category: web</h1>
-    	</header>
+  <article class="hentry" role="article">
+<header>
+      <h1 class="entry-title">linux 设置网络接口发送队列长度</h1>
+    <p class="meta">
+<time datetime="2021-07-31T01:54:28+08:00" pubdate>2021-07-31 01:54:28</time>      
+    </p>
+</header>
 
-    	<div id="blog-archives">
-            <h2>2018</h2>
-                    <article>
-                        <h1><a href="/posts/2018/05/22/websocketd.html">websocketd</a></h1>
-                        <time datetime="2018-05-22 19:43:51+08:00" pubdate>
-                            <span class="month">五月</span>
-                            <span class="day">22</span>
-                            <span class="year">2018</span>
-                        </time>
-                        <footer>
-                            <span class="categories">posted in
-                                <a class='category' href='/category/web.html'>web</a>
-                            </span>
-                        </footer>
-                    </article>
-	    </div>
-    </article>
+    <div class="entry-content"><p>UDP发送频率过高可能会导致丢包，设置发送队列长度可以解决这类问题。
+<code>https://www.cnblogs.com/liaokang/p/6003334.html</code></p>
+<p>查询发送队列长度
+<code>ip link show eth0 查看qlen后面的数字</code></p>
+<p>设置发送队列长度</p>
+<div class="highlight-custom"><pre><span></span><span class="c1"># 修改udev配置文件 &quot;/etc/udev/rules.d/70-persistent-net.rules&quot;:</span>
+  <span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">&quot;net&quot;</span>, <span class="nv">ACTION</span><span class="o">==</span><span class="s2">&quot;add&quot;</span>, <span class="nv">DRIVERS</span><span class="o">==</span><span class="s2">&quot;?*&quot;</span>, ATTR<span class="o">{</span>address<span class="o">}==</span><span class="s2">&quot;00:0C:29:35:79:97&quot;</span>, <span class="nv">KERNEL</span><span class="o">==</span><span class="s2">&quot;eth*&quot;</span>, <span class="nv">NAME</span><span class="o">=</span><span class="s2">&quot;eth0&quot;</span>, ATTR<span class="o">{</span>tx_queue_len<span class="o">}=</span><span class="s2">&quot;10000&quot;</span>
+<span class="c1"># 或者</span>
+ifconfig eth0 txqueuelen <span class="m">10000</span>
+ip link <span class="nb">set</span> dev eth0 txqueuelen <span class="m">10000</span>
+</pre></div>
+
+
+<p>相关API</p>
+<div class="highlight-custom"><pre><span></span><span class="err">man 7 netdevice</span>
+<span class="err">IOCTLS</span>
+<span class="err">SIOCGIFTXQLEN SIOCSIFTXQLEN</span>
+</pre></div></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">
+        zhiliao
+    </span>
+  </span>
+<time datetime="2021-07-31T01:54:28+08:00" pubdate>2021-07-31 01:54:28</time>  <span class="categories">
+    <a class='category' href='/category/network.html'>network</a>
+  </span>
+  <span class="categories">
+    <a class="category" href="/tag/linux.html">linux</a>,    <a class="category" href="/tag/network.html">network</a>  </span>
+</p><div class="sharing">
+</div>    </footer>
+  </article>
+
 </div>
 
 <aside class="sidebar">
@@ -83,7 +105,19 @@
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     <li class="post">
-        <a href="/posts/2018/05/22/websocketd.html">websocketd</a>
+        <a href="/posts/2021/07/31/txqueuelen.html">linux 设置网络接口发送队列长度</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2020/09/07/windows-vm.html">微软提供的windows系统虚拟机文件下载</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2020/08/24/openSUSE-coredump.html">openSUSE coredump文件</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2020/08/14/dpkg-disable-dialog.html">dpkg安装软件包禁用dialog对话框</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2020/08/05/openSUSE-zypper.html">openSUSE zypper</a>
     </li>
   </ul>
 </section><section>
@@ -130,7 +164,7 @@
   </div>
   <footer role="contentinfo">
 <p>
-    Copyright &copy;  2018  zhiliao &mdash;
+    Copyright &copy;  2017&ndash;2021  zhiliao &mdash;
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
 </p>  </footer>
 </body>

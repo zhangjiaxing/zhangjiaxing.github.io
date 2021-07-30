@@ -57,6 +57,30 @@
   		<article>
 <header>
       <h1 class="entry-title">
+        <a href="/posts/2021/07/31/txqueuelen.html">linux 设置网络接口发送队列长度</a>
+      </h1>
+    <p class="meta">
+<time datetime="2021-07-31T01:54:28+08:00" pubdate>2021-07-31 01:54:28</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><p>UDP发送频率过高可能会导致丢包，设置发送队列长度可以解决这类问题。
+<code>https://www.cnblogs.com/liaokang/p/6003334.html</code></p>
+<p>查询发送队列长度
+<code>ip link show eth0 查看qlen后面的数字</code></p>
+<p>设置发送队列长度</p>
+<div class="highlight-custom"><pre><span></span><span class="c1"># 修改udev配置文件 &quot;/etc/udev/rules.d/70-persistent-net.rules&quot;:</span>
+  <span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">&quot;net&quot;</span>, <span class="nv">ACTION</span><span class="o">==</span><span class="s2">&quot;add&quot;</span>, <span class="nv">DRIVERS</span><span class="o">==</span><span class="s2">&quot;?*&quot;</span>, ATTR<span class="o">{</span>address<span class="o">}==</span><span class="s2">&quot;00:0C:29:35:79:97&quot;</span>, <span class="nv">KERNEL</span><span class="o">==</span><span class="s2">&quot;eth*&quot;</span>, <span class="nv">NAME</span><span class="o">=</span><span class="s2">&quot;eth0&quot;</span>, ATTR<span class="o">{</span>tx_queue_len<span class="o">}=</span><span class="s2">&quot;10000&quot;</span>
+<span class="c1"># 或者</span>
+ifconfig eth0 txqueuelen <span class="m">10000</span>
+ip …</pre></div></div>
+            <footer>
+                <a rel="full-article" href="/posts/2021/07/31/txqueuelen.html">Read On &crarr;</a>
+            </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
         <a href="/posts/2020/09/07/windows-vm.html">微软提供的windows系统虚拟机文件下载</a>
       </h1>
     <p class="meta">
@@ -421,26 +445,6 @@ sudo zypper ar -fc https://mirrors …</pre></div></div>
                 <a rel="full-article" href="/posts/2019/12/16/openSUSE-addrepo.html">Read On &crarr;</a>
             </footer>
   		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="/posts/2019/11/29/ext4-data-lost.html">ext4断电丢失数据(零长文件)</a>
-      </h1>
-    <p class="meta">
-<time datetime="2019-11-29T21:10:42+08:00" pubdate>2019-11-29 21:10:42</time>      
-    </p>
-</header>
-
-        <div class="entry-content"><p>ext4断电丢失数据(零长文件).</p>
-<p>嵌入式设备, 经常拔掉电源, 以前/data分区有挂载选项 sync.</p>
-<p>后来发现sync方式挂载写入数据速度太慢了(100KB/S), 正常为10MB/S.</p>
-<p>去掉sync断电又会丢数据.</p>
-<p>ext4 man-pages 上说 <code>fd = open("foo", O_TRUNC)/write(fd,...)/close(fd)</code> 或者好一点的 <code>fd = open("foo.new")/write(fd,...)/close(fd)/ rename("foo.new", "foo")</code> 这种用法突然断电容易产生零长文件, 在close之前调用fsync好一点. 实际上 auto_da_alloc 挂载选项就是为了解决上面的一些情况的, man-pages上说auto_da_alloc 相对及时把数据写进硬盘. 但是自己测试断电依然会丢数据, 产生零长文件(<code>zero-length</code>) .</p>
-<p>尝试新的挂载选项为 defaults,noatime …</p></div>
-            <footer>
-                <a rel="full-article" href="/posts/2019/11/29/ext4-data-lost.html">Read On &crarr;</a>
-            </footer>
-  		</article>
 <div class="pagination">
     <a class="prev" href="/index2.html">&larr; Older</a>
 
@@ -451,6 +455,9 @@ sudo zypper ar -fc https://mirrors …</pre></div></div>
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    <li class="post">
+        <a href="/posts/2021/07/31/txqueuelen.html">linux 设置网络接口发送队列长度</a>
+    </li>
     <li class="post">
         <a href="/posts/2020/09/07/windows-vm.html">微软提供的windows系统虚拟机文件下载</a>
     </li>
@@ -463,9 +470,6 @@ sudo zypper ar -fc https://mirrors …</pre></div></div>
     <li class="post">
         <a href="/posts/2020/08/05/openSUSE-zypper.html">openSUSE zypper</a>
     </li>
-    <li class="post">
-        <a href="/posts/2020/07/26/arch-linux-samsung-arm-chromebook.html">在chromebook上安装archlinux</a>
-    </li>
   </ul>
 </section><section>
   <h1>Categories</h1>
@@ -477,7 +481,7 @@ sudo zypper ar -fc https://mirrors …</pre></div></div>
       <li><a href="/category/git.html">git (2)</a></li>
       <li><a href="/category/gu-piao.html">股票 (1)</a></li>
       <li><a href="/category/linux.html">linux (27)</a></li>
-      <li><a href="/category/network.html">network (3)</a></li>
+      <li><a href="/category/network.html">network (4)</a></li>
       <li><a href="/category/nltk.html">nltk (2)</a></li>
       <li><a href="/category/other.html">other (1)</a></li>
       <li><a href="/category/python.html">python (1)</a></li>
@@ -489,7 +493,7 @@ sudo zypper ar -fc https://mirrors …</pre></div></div>
 </section>
 <section>
   <h1>Tags</h1>
-    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/linux.html">linux</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/linuix.html">linuix</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/git.html">git</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a></section>
+    <a href="/tag/linux.html">linux</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/linuix.html">linuix</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/git.html">git</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a></section>
     <section>
         <h1>Social</h1>
         <ul>
@@ -511,7 +515,7 @@ sudo zypper ar -fc https://mirrors …</pre></div></div>
   </div>
   <footer role="contentinfo">
 <p>
-    Copyright &copy;  2017&ndash;2020  zhiliao &mdash;
+    Copyright &copy;  2017&ndash;2021  zhiliao &mdash;
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
 </p>  </footer>
 </body>

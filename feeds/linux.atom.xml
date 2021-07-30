@@ -652,7 +652,12 @@ http://blog.n01se.net/blog-n01se-net-p-145.html&lt;/p&gt;</content><category ter
 
 &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="err"&gt;中关闭键盘灯&lt;/span&gt;
 &lt;span class="n"&gt;xset&lt;/span&gt; &lt;span class="n"&gt;led&lt;/span&gt; &lt;span class="k"&gt;off&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="keyboard"></category><category term="command"></category></entry><entry><title>记录一下我常装的 Arch Linux package</title><link href="/posts/2017/06/16/archlinux-package.html" rel="alternate"></link><published>2017-06-16T16:52:14+08:00</published><updated>2017-06-16T16:52:14+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-16:/posts/2017/06/16/archlinux-package.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;# dmidecode&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="keyboard"></category><category term="command"></category></entry><entry><title>记录一下我常装的 Arch Linux package</title><link href="/posts/2017/06/16/archlinux-package.html" rel="alternate"></link><published>2017-06-16T16:52:14+08:00</published><updated>2017-06-16T16:52:14+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-16:/posts/2017/06/16/archlinux-package.html</id><summary type="html">&lt;p&gt;Gnome主题 
+1. numix (gnome)
+2. discreet flat (cinnamon)
+3. Orchis-dark-compact (gnome)
+4. ePapirus 图标&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;# dmidecode&lt;/span&gt;
 &lt;span class="err"&gt;# onboard  # 屏幕键盘 &lt;/span&gt;
 &lt;span class="err"&gt;# yay&lt;/span&gt;
 &lt;span class="err"&gt;(xfce4) xfce4-datetime-plugin&lt;/span&gt;
@@ -673,13 +678,12 @@ http://blog.n01se.net/blog-n01se-net-p-145.html&lt;/p&gt;</content><category ter
 &lt;span class="err"&gt;code  # (vscode)&lt;/span&gt;
 &lt;span class="err"&gt;dconf-editor&lt;/span&gt;
 &lt;span class="err"&gt;deepin-screenshot&lt;/span&gt;
-&lt;span class="err"&gt;deepin.com.qq.im (aur)&lt;/span&gt;
-&lt;span class="err"&gt;devhelp&lt;/span&gt;
-&lt;span class="err"&gt;dnsmasq&lt;/span&gt;
-&lt;span class="err"&gt;dosfstools &amp;amp; mtools # for fat32&lt;/span&gt;
-&lt;span class="err"&gt;electron-netease-cloud-music  # (archlinuxcn)&lt;/span&gt;
-&lt;span class="err"&gt;electronic-wechat&lt;/span&gt;
-&lt;span class="err"&gt;eog or gthumb …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;# dmidecode&lt;/span&gt;
+&lt;span class="err"&gt;deepin.com.qq …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Gnome主题 
+1. numix (gnome)
+2. discreet flat (cinnamon)
+3. Orchis-dark-compact (gnome)
+4. ePapirus 图标&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;# dmidecode&lt;/span&gt;
 &lt;span class="err"&gt;# onboard  # 屏幕键盘 &lt;/span&gt;
 &lt;span class="err"&gt;# yay&lt;/span&gt;
 &lt;span class="err"&gt;(xfce4) xfce4-datetime-plugin&lt;/span&gt;
@@ -810,7 +814,60 @@ http://blog.n01se.net/blog-n01se-net-p-145.html&lt;/p&gt;</content><category ter
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;桌面主题 &lt;code&gt;numix + (discreet flat)&lt;/code&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;# flatpak 软件&lt;/span&gt;
+&lt;span class="err"&gt;com.anydesk.Anydesk&lt;/span&gt;
+&lt;span class="err"&gt;com.belmoussaoui.ReadItLater&lt;/span&gt;
+&lt;span class="err"&gt;com.calibre_ebook.calibre&lt;/span&gt;
+&lt;span class="err"&gt;com.github.alainm23.planner&lt;/span&gt;
+&lt;span class="err"&gt;com.github.artemanufrij.playmyvideos&lt;/span&gt;
+&lt;span class="err"&gt;com.github.babluboy.bookworm&lt;/span&gt;
+&lt;span class="err"&gt;org.gnome.Builder&lt;/span&gt;
+&lt;span class="err"&gt;com.github.calo001.fondo&lt;/span&gt;
+&lt;span class="err"&gt;com.github.iwalton3.jellyfin-media-player&lt;/span&gt;
+&lt;span class="err"&gt;com.github.iwalton3.jellyfin-mpv-shim&lt;/span&gt;
+&lt;span class="err"&gt;com.github.johnfactotum.Foliate&lt;/span&gt;
+&lt;span class="err"&gt;com.giuspen.cherrytree&lt;/span&gt;
+&lt;span class="err"&gt;com.jetbrains.PyCharm-Community&lt;/span&gt;
+&lt;span class="err"&gt;com.jgraph.drawio.desktop&lt;/span&gt;
+&lt;span class="err"&gt;com.netease.CloudMusic&lt;/span&gt;
+&lt;span class="err"&gt;com.qq.QQmusic&lt;/span&gt;
+&lt;span class="err"&gt;com.sublimetext.three&lt;/span&gt;
+&lt;span class="err"&gt;com.todoist.Todoist&lt;/span&gt;
+&lt;span class="err"&gt;com.valvesoftware.Steam&lt;/span&gt;
+&lt;span class="err"&gt;com.visualstudio.code&lt;/span&gt;
+&lt;span class="err"&gt;com.wps.Office&lt;/span&gt;
+&lt;span class="err"&gt;com.xnview.XnViewMP&lt;/span&gt;
+&lt;span class="err"&gt;io.typora.Typora&lt;/span&gt;
+&lt;span class="err"&gt;net.cozic.joplin_desktop&lt;/span&gt;
+&lt;span class="err"&gt;nl.hjdskes.gcolor3&lt;/span&gt;
+&lt;span class="err"&gt;org.inkscape.Inkscape&lt;/span&gt;
+&lt;span class="err"&gt;org.jamovi.jamovi&lt;/span&gt;
+&lt;span class="err"&gt;org.kde.krita&lt;/span&gt;
+&lt;span class="err"&gt;org.telegram.desktop&lt;/span&gt;
+&lt;span class="err"&gt;org.videolan.VLC&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;Gnome 扩展&lt;/span&gt;
+&lt;span class="err"&gt;Applications menu&lt;/span&gt;
+&lt;span class="err"&gt;Gsconnect&lt;/span&gt;
+&lt;span class="err"&gt;Gtk title bar&lt;/span&gt;
+&lt;span class="err"&gt;Launch new instance&lt;/span&gt;
+&lt;span class="err"&gt;Netspeed&lt;/span&gt;
+&lt;span class="err"&gt;Openweather&lt;/span&gt;
+&lt;span class="err"&gt;Places status indicator&lt;/span&gt;
+&lt;span class="err"&gt;Refresh wifi connections&lt;/span&gt;
+&lt;span class="err"&gt;Topicons plus&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;# 其他&lt;/span&gt;
+&lt;span class="err"&gt;linux QQ&lt;/span&gt;
+&lt;span class="err"&gt;Pidgin&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;未完待续...&lt;/p&gt;
 &lt;p&gt;本文不定期更新&lt;/p&gt;</content><category term="linux"></category><category term="linux"></category><category term="software"></category><category term="arch"></category></entry><entry><title>linux设置文件只读, 直到关机</title><link href="/posts/2017/06/14/set-file-readonly-until-reboot.html" rel="alternate"></link><published>2017-06-14T09:58:28+08:00</published><updated>2017-06-14T09:58:28+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-14:/posts/2017/06/14/set-file-readonly-until-reboot.html</id><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mount -o &lt;span class="nb"&gt;bind&lt;/span&gt; &lt;span class="nv"&gt;$file&lt;/span&gt; &lt;span class="nv"&gt;$file&lt;/span&gt;
 mount -o remount,bind,ro &lt;span class="nv"&gt;$file&lt;/span&gt;
