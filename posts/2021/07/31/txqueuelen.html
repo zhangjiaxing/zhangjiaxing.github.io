@@ -64,13 +64,14 @@
     </p>
 </header>
 
-    <div class="entry-content"><p>UDP发送频率过高可能会导致丢包，设置发送队列长度可以解决这类问题。
+    <div class="entry-content"><h4>发送队列长度</h4>
+<p>UDP发送频率过高可能会导致丢包，设置发送队列长度可以解决这类问题。
 <code>https://www.cnblogs.com/liaokang/p/6003334.html</code></p>
 <p>查询发送队列长度
 <code>ip link show eth0 查看qlen后面的数字</code></p>
 <p>设置发送队列长度</p>
 <div class="highlight-custom"><pre><span></span><span class="c1"># 修改udev配置文件 &quot;/etc/udev/rules.d/70-persistent-net.rules&quot;:</span>
-  <span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">&quot;net&quot;</span>, <span class="nv">ACTION</span><span class="o">==</span><span class="s2">&quot;add&quot;</span>, <span class="nv">DRIVERS</span><span class="o">==</span><span class="s2">&quot;?*&quot;</span>, ATTR<span class="o">{</span>address<span class="o">}==</span><span class="s2">&quot;00:0C:29:35:79:97&quot;</span>, <span class="nv">KERNEL</span><span class="o">==</span><span class="s2">&quot;eth*&quot;</span>, <span class="nv">NAME</span><span class="o">=</span><span class="s2">&quot;eth0&quot;</span>, ATTR<span class="o">{</span>tx_queue_len<span class="o">}=</span><span class="s2">&quot;10000&quot;</span>
+<span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">&quot;net&quot;</span>, <span class="nv">ACTION</span><span class="o">==</span><span class="s2">&quot;add&quot;</span>, <span class="nv">DRIVERS</span><span class="o">==</span><span class="s2">&quot;?*&quot;</span>, ATTR<span class="o">{</span>address<span class="o">}==</span><span class="s2">&quot;00:0C:29:35:79:97&quot;</span>, <span class="nv">KERNEL</span><span class="o">==</span><span class="s2">&quot;eth*&quot;</span>, <span class="nv">NAME</span><span class="o">=</span><span class="s2">&quot;eth0&quot;</span>, ATTR<span class="o">{</span>tx_queue_len<span class="o">}=</span><span class="s2">&quot;10000&quot;</span>
 <span class="c1"># 或者</span>
 ifconfig eth0 txqueuelen <span class="m">10000</span>
 ip link <span class="nb">set</span> dev eth0 txqueuelen <span class="m">10000</span>
@@ -81,7 +82,16 @@ ip link <span class="nb">set</span> dev eth0 txqueuelen <span class="m">10000</s
 <div class="highlight-custom"><pre><span></span><span class="err">man 7 netdevice</span>
 <span class="err">IOCTLS</span>
 <span class="err">SIOCGIFTXQLEN SIOCSIFTXQLEN</span>
-</pre></div></div>
+</pre></div>
+
+
+<hr>
+<h4>多队列网卡</h4>
+<p>多队列网卡是一种技术，最初是用来解决网络IO QoS （quality of service）问题的，后来随着网络IO的带宽的不断提升，单核CPU不能完全处满足网卡的需求，通过多队列网卡驱动的支持，将各个队列通过中断绑定到不同的核上，以满足网卡的需求。</p>
+<p>查询网卡多队列支持情况
+<code>ethtool -l eth0 | grep combined</code></p>
+<p>设置网卡队列数
+<code>ethtool -L eth0 combined 2</code></p></div>
     <footer>
 <p class="meta">
   <span class="byline author vcard">

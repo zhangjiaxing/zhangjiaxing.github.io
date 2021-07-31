@@ -64,16 +64,16 @@
     </p>
 </header>
 
-        <div class="entry-content"><p>UDP发送频率过高可能会导致丢包，设置发送队列长度可以解决这类问题。
+        <div class="entry-content"><h4>发送队列长度</h4>
+<p>UDP发送频率过高可能会导致丢包，设置发送队列长度可以解决这类问题。
 <code>https://www.cnblogs.com/liaokang/p/6003334.html</code></p>
 <p>查询发送队列长度
 <code>ip link show eth0 查看qlen后面的数字</code></p>
 <p>设置发送队列长度</p>
 <div class="highlight-custom"><pre><span></span><span class="c1"># 修改udev配置文件 &quot;/etc/udev/rules.d/70-persistent-net.rules&quot;:</span>
-  <span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">&quot;net&quot;</span>, <span class="nv">ACTION</span><span class="o">==</span><span class="s2">&quot;add&quot;</span>, <span class="nv">DRIVERS</span><span class="o">==</span><span class="s2">&quot;?*&quot;</span>, ATTR<span class="o">{</span>address<span class="o">}==</span><span class="s2">&quot;00:0C:29:35:79:97&quot;</span>, <span class="nv">KERNEL</span><span class="o">==</span><span class="s2">&quot;eth*&quot;</span>, <span class="nv">NAME</span><span class="o">=</span><span class="s2">&quot;eth0&quot;</span>, ATTR<span class="o">{</span>tx_queue_len<span class="o">}=</span><span class="s2">&quot;10000&quot;</span>
+<span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">&quot;net&quot;</span>, <span class="nv">ACTION</span><span class="o">==</span><span class="s2">&quot;add&quot;</span>, <span class="nv">DRIVERS</span><span class="o">==</span><span class="s2">&quot;?*&quot;</span>, ATTR<span class="o">{</span>address<span class="o">}==</span><span class="s2">&quot;00:0C:29:35:79:97&quot;</span>, <span class="nv">KERNEL</span><span class="o">==</span><span class="s2">&quot;eth*&quot;</span>, <span class="nv">NAME</span><span class="o">=</span><span class="s2">&quot;eth0&quot;</span>, ATTR<span class="o">{</span>tx_queue_len<span class="o">}=</span><span class="s2">&quot;10000&quot;</span>
 <span class="c1"># 或者</span>
-ifconfig eth0 txqueuelen <span class="m">10000</span>
-ip …</pre></div></div>
+ifconfig eth0 txqueuelen <span class="m">10000 …</span></pre></div></div>
             <footer>
                 <a rel="full-article" href="/posts/2021/07/31/txqueuelen.html">Read On &crarr;</a>
             </footer>
