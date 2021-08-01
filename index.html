@@ -57,6 +57,23 @@
   		<article>
 <header>
       <h1 class="entry-title">
+        <a href="/posts/2021/08/01/capture.html">linux平台下的抓包方案</a>
+      </h1>
+    <p class="meta">
+<time datetime="2021-08-01T14:47:08+08:00" pubdate>2021-08-01 14:47:08</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><h4>linux平台下的抓包方案</h4>
+<ul>
+<li>libpcap <code>wireshark tcpdump均基于此。</code></li>
+<li>PF_RING <code>性能更好。 支持PF_RING ZC模式。</code></li>
+<li>DPDK    <code>性能最好，对硬件有要求。</code></li>
+</ul></div>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
         <a href="/posts/2021/07/31/txqueuelen.html">linux 设置网络接口发送队列长度</a>
       </h1>
     <p class="meta">
@@ -423,28 +440,6 @@ zypper install …</pre></div></div>
                 <a rel="full-article" href="/posts/2019/12/19/openSUSE-server-install-cinnamon.html">Read On &crarr;</a>
             </footer>
   		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="/posts/2019/12/16/openSUSE-addrepo.html">openSUSE Leap & Tumbleweed 添加软件源</a>
-      </h1>
-    <p class="meta">
-<time datetime="2019-12-16T14:55:38+08:00" pubdate>2019-12-16 14:55:38</time>      
-    </p>
-</header>
-
-        <div class="entry-content"><p>经测试, aliyun的软件源并不稳定, 更新慢. 经常只更新一部分, 不和官方完全同步.
-tsinghuau源, 稳定, 好用.</p>
-<p>首先禁用全部仓库：
-<code>sudo zypper mr -da</code></p>
-<p>如果是Tumbleweed</p>
-<div class="highlight-custom"><pre><span></span>sudo zypper ar -fc https://mirrors.tuna.tsinghua.edu.cn/opensuse/tumbleweed/repo/oss        Tumbleweed-Oss-tuna
-sudo zypper ar -fc https://mirrors.tuna.tsinghua.edu.cn/opensuse/tumbleweed/repo/non-oss    Tumbleweed-Non-Oss-tuna
-sudo zypper ar -fc https://mirrors …</pre></div></div>
-            <footer>
-                <a rel="full-article" href="/posts/2019/12/16/openSUSE-addrepo.html">Read On &crarr;</a>
-            </footer>
-  		</article>
 <div class="pagination">
     <a class="prev" href="/index2.html">&larr; Older</a>
 
@@ -455,6 +450,9 @@ sudo zypper ar -fc https://mirrors …</pre></div></div>
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    <li class="post">
+        <a href="/posts/2021/08/01/capture.html">linux平台下的抓包方案</a>
+    </li>
     <li class="post">
         <a href="/posts/2021/07/31/txqueuelen.html">linux 设置网络接口发送队列长度</a>
     </li>
@@ -467,9 +465,6 @@ sudo zypper ar -fc https://mirrors …</pre></div></div>
     <li class="post">
         <a href="/posts/2020/08/14/dpkg-disable-dialog.html">dpkg安装软件包禁用dialog对话框</a>
     </li>
-    <li class="post">
-        <a href="/posts/2020/08/05/openSUSE-zypper.html">openSUSE zypper</a>
-    </li>
   </ul>
 </section><section>
   <h1>Categories</h1>
@@ -480,8 +475,8 @@ sudo zypper ar -fc https://mirrors …</pre></div></div>
       <li><a href="/category/firefox.html">firefox (1)</a></li>
       <li><a href="/category/git.html">git (2)</a></li>
       <li><a href="/category/gu-piao.html">股票 (1)</a></li>
-      <li><a href="/category/linux.html">linux (27)</a></li>
-      <li><a href="/category/network.html">network (4)</a></li>
+      <li><a href="/category/linux.html">linux (28)</a></li>
+      <li><a href="/category/network.html">network (5)</a></li>
       <li><a href="/category/nltk.html">nltk (2)</a></li>
       <li><a href="/category/other.html">other (1)</a></li>
       <li><a href="/category/python.html">python (1)</a></li>

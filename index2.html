@@ -57,6 +57,28 @@
   		<article>
 <header>
       <h1 class="entry-title">
+        <a href="/posts/2019/12/16/openSUSE-addrepo.html">openSUSE Leap & Tumbleweed 添加软件源</a>
+      </h1>
+    <p class="meta">
+<time datetime="2019-12-16T14:55:38+08:00" pubdate>2019-12-16 14:55:38</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><p>经测试, aliyun的软件源并不稳定, 更新慢. 经常只更新一部分, 不和官方完全同步.
+tsinghuau源, 稳定, 好用.</p>
+<p>首先禁用全部仓库：
+<code>sudo zypper mr -da</code></p>
+<p>如果是Tumbleweed</p>
+<div class="highlight-custom"><pre><span></span>sudo zypper ar -fc https://mirrors.tuna.tsinghua.edu.cn/opensuse/tumbleweed/repo/oss        Tumbleweed-Oss-tuna
+sudo zypper ar -fc https://mirrors.tuna.tsinghua.edu.cn/opensuse/tumbleweed/repo/non-oss    Tumbleweed-Non-Oss-tuna
+sudo zypper ar -fc https://mirrors …</pre></div></div>
+            <footer>
+                <a rel="full-article" href="/posts/2019/12/16/openSUSE-addrepo.html">Read On &crarr;</a>
+            </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
         <a href="/posts/2019/11/29/ext4-data-lost.html">ext4断电丢失数据(零长文件)</a>
       </h1>
     <p class="meta">
@@ -404,27 +426,6 @@ dnsmasq …</p></div>
 <span class="n">nmcli</span>  <span class="k">connection</span> <span class="k">delete</span> <span class="n">zhiliao</span><span class="o">-</span><span class="n">test</span><span class="o">-</span><span class="mi">5</span><span class="k">G</span>
 </pre></div></div>
   		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="/posts/2018/01/03/google-play-app.html">通过浏览器下载 google play app 的方法</a>
-      </h1>
-    <p class="meta">
-<time datetime="2018-01-03T10:39:56+08:00" pubdate>2018-01-03 10:39:56</time>      
-    </p>
-</header>
-
-        <div class="entry-content"><h4>通过网站</h4>
-<div class="highlight-custom"><pre><span></span><span class="c">https://apkpure.com/cn</span>
-<span class="c">https://www.apkmirror.com</span>
-</pre></div>
-
-
-<h4>通过firefox扩展</h4>
-<div class="highlight-custom"><pre><span></span><span class="err">APK Downloader</span>
-<span class="err">Toolbox for Google Play Store</span>
-</pre></div></div>
-  		</article>
 <div class="pagination">
     <a class="prev" href="/index3.html">&larr; Older</a>
 
@@ -437,6 +438,9 @@ dnsmasq …</p></div>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     <li class="post">
+        <a href="/posts/2021/08/01/capture.html">linux平台下的抓包方案</a>
+    </li>
+    <li class="post">
         <a href="/posts/2021/07/31/txqueuelen.html">linux 设置网络接口发送队列长度</a>
     </li>
     <li class="post">
@@ -448,9 +452,6 @@ dnsmasq …</p></div>
     <li class="post">
         <a href="/posts/2020/08/14/dpkg-disable-dialog.html">dpkg安装软件包禁用dialog对话框</a>
     </li>
-    <li class="post">
-        <a href="/posts/2020/08/05/openSUSE-zypper.html">openSUSE zypper</a>
-    </li>
   </ul>
 </section><section>
   <h1>Categories</h1>
@@ -461,8 +462,8 @@ dnsmasq …</p></div>
       <li><a href="/category/firefox.html">firefox (1)</a></li>
       <li><a href="/category/git.html">git (2)</a></li>
       <li><a href="/category/gu-piao.html">股票 (1)</a></li>
-      <li><a href="/category/linux.html">linux (27)</a></li>
-      <li><a href="/category/network.html">network (4)</a></li>
+      <li><a href="/category/linux.html">linux (28)</a></li>
+      <li><a href="/category/network.html">network (5)</a></li>
       <li><a href="/category/nltk.html">nltk (2)</a></li>
       <li><a href="/category/other.html">other (1)</a></li>
       <li><a href="/category/python.html">python (1)</a></li>

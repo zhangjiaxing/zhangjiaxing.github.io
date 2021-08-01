@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - network</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/network.atom.xml" rel="self"></link><id>/</id><updated>2021-07-31T01:54:28+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>linux 设置网络接口发送队列长度</title><link href="/posts/2021/07/31/txqueuelen.html" rel="alternate"></link><published>2021-07-31T01:54:28+08:00</published><updated>2021-07-31T01:54:28+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2021-07-31:/posts/2021/07/31/txqueuelen.html</id><summary type="html">&lt;h4&gt;发送队列长度&lt;/h4&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - network</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/network.atom.xml" rel="self"></link><id>/</id><updated>2021-08-01T14:47:08+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>linux平台下的抓包方案</title><link href="/posts/2021/08/01/capture.html" rel="alternate"></link><published>2021-08-01T14:47:08+08:00</published><updated>2021-08-01T14:47:08+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2021-08-01:/posts/2021/08/01/capture.html</id><content type="html">&lt;h4&gt;linux平台下的抓包方案&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;libpcap &lt;code&gt;wireshark tcpdump均基于此。&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;PF_RING &lt;code&gt;性能更好。 支持PF_RING ZC模式。&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;DPDK    &lt;code&gt;性能最好，对硬件有要求。&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="network"></category><category term="linux"></category><category term="network"></category></entry><entry><title>linux 设置网络接口发送队列长度</title><link href="/posts/2021/07/31/txqueuelen.html" rel="alternate"></link><published>2021-07-31T01:54:28+08:00</published><updated>2021-07-31T01:54:28+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2021-07-31:/posts/2021/07/31/txqueuelen.html</id><summary type="html">&lt;h4&gt;发送队列长度&lt;/h4&gt;
 &lt;p&gt;UDP发送频率过高可能会导致丢包，设置发送队列长度可以解决这类问题。
 &lt;code&gt;https://www.cnblogs.com/liaokang/p/6003334.html&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;查询发送队列长度

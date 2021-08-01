@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>微软提供的windows系统虚拟机文件下载 &mdash; cat ~/.zhiliao.history</title>
+  <title>树莓派中开机时检测案件是否按下 &mdash; cat ~/.zhiliao.history</title>
   <meta name="author" content="zhiliao">
 
   <link href="/feeds/all.atom.xml" type="application/rss+xml" rel="alternate"
@@ -58,19 +58,16 @@
 <div>
   <article class="hentry" role="article">
 <header>
-      <h1 class="entry-title">微软提供的windows系统虚拟机文件下载</h1>
+      <h1 class="entry-title">树莓派中开机时检测案件是否按下</h1>
     <p class="meta">
-<time datetime="2020-09-07T00:12:35+08:00" pubdate>2020-09-07 00:12:35</time>      
+<time datetime="2017-06-07T00:00:00+08:00" pubdate>2017-06-07 00:00:00</time>      
     </p>
 </header>
 
-    <div class="entry-content"><div class="highlight-custom"><pre><span></span><span class="err">据说在虚拟机中使用这个</span><span class="p">,</span> <span class="err">流畅度比安装的版本快很多</span>
-<span class="err">可以免费使用</span>
-<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">developer</span><span class="p">.</span><span class="n">microsoft</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">en</span><span class="o">-</span><span class="n">us</span><span class="o">/</span><span class="n">microsoft</span><span class="o">-</span><span class="n">edge</span><span class="o">/</span><span class="n">tools</span><span class="o">/</span><span class="n">vms</span><span class="o">/</span>
-
-
-<span class="err">下面这个是有</span><span class="n">win10开发环境的虚拟机</span><span class="p">,</span> <span class="err">比较大</span><span class="mi">20</span><span class="k">G</span>
-<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">developer</span><span class="p">.</span><span class="n">microsoft</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">en</span><span class="o">-</span><span class="n">us</span><span class="o">/</span><span class="n">windows</span><span class="o">/</span><span class="n">downloads</span><span class="o">/</span><span class="n">virtual</span><span class="o">-</span><span class="n">machines</span><span class="o">/</span>
+    <div class="entry-content"><div class="highlight-custom"><pre><span></span><span class="c1"># 记录一下此用法。 thd来自 debian 软件包 triggerhappy</span>
+<span class="k">if</span> <span class="o">[</span> -x /usr/sbin/thd <span class="o">]</span> <span class="o">&amp;&amp;</span> timeout <span class="m">1</span> thd --dump /dev/input/event* <span class="p">|</span> grep -q <span class="s2">&quot;LEFTSHIFT\|RIGHTSHIFT&quot;</span><span class="p">;</span> <span class="k">then</span>
+      <span class="nb">printf</span> <span class="s2">&quot; Yes. Not enabling ondemand scaling governor&quot;</span>
+<span class="k">fi</span>
 </pre></div></div>
     <footer>
 <p class="meta">
@@ -79,11 +76,11 @@
         zhiliao
     </span>
   </span>
-<time datetime="2020-09-07T00:12:35+08:00" pubdate>2020-09-07 00:12:35</time>  <span class="categories">
-    <a class='category' href='/category/vm.html'>vm</a>
+<time datetime="2017-06-07T00:00:00+08:00" pubdate>2017-06-07 00:00:00</time>  <span class="categories">
+    <a class='category' href='/category/linux.html'>linux</a>
   </span>
   <span class="categories">
-    <a class="category" href="/tag/vm.html">vm</a>,    <a class="category" href="/tag/windows.html">windows</a>  </span>
+    <a class="category" href="/tag/linux.html">linux</a>,    <a class="category" href="/tag/raspberry.html">raspberry</a>  </span>
 </p><div class="sharing">
 </div>    </footer>
   </article>
