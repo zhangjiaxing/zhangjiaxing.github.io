@@ -57,6 +57,27 @@
   		<article>
 <header>
       <h1 class="entry-title">
+        <a href="/posts/2018/04/13/networkmanager-wifi-ap.html">linux 使用network manager 开启wifi热点</a>
+      </h1>
+    <p class="meta">
+<time datetime="2018-04-13T19:42:58+08:00" pubdate>2018-04-13 19:42:58</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><p>linux 使用network manager 开启wifi热点</p>
+<div class="highlight-custom"><pre><span></span><span class="err">开启热点</span>
+<span class="n">nmcli</span> <span class="n">device</span> <span class="n">wifi</span> <span class="n">hotspot</span>  <span class="n">ssid</span> <span class="n">zhiliao</span><span class="o">-</span><span class="n">test</span>  <span class="n">password</span> <span class="mi">12345678</span>
+<span class="err">或者</span>
+<span class="n">nmcli</span> <span class="n">device</span> <span class="n">wifi</span> <span class="n">hotspot</span> <span class="n">con</span><span class="o">-</span><span class="n">name</span> <span class="n">zhiliao</span><span class="o">-</span><span class="n">test</span><span class="o">-</span><span class="mi">5</span><span class="k">G</span> <span class="n">ssid</span> <span class="n">zhiliao</span><span class="o">-</span><span class="n">test</span><span class="o">-</span><span class="mi">5</span><span class="k">G</span> <span class="n">band</span> <span class="n">a</span> <span class="n">password</span> <span class="mi">12345678</span>
+
+<span class="err">删除热点配置</span>
+<span class="n">nmcli</span> <span class="k">connection</span> <span class="k">show</span>
+<span class="n">nmcli</span>  <span class="k">connection</span> <span class="k">delete</span> <span class="n">zhiliao</span><span class="o">-</span><span class="n">test</span><span class="o">-</span><span class="mi">5</span><span class="k">G</span>
+</pre></div></div>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
         <a href="/posts/2018/01/03/google-play-app.html">通过浏览器下载 google play app 的方法</a>
       </h1>
     <p class="meta">
@@ -481,25 +502,6 @@ mount -o remount,bind,ro <span class="nv">$file</span>
 
 <h4>未完待续...</h4></div>
   		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="/posts/2017/06/07/iperf3.html">iperf3测试带宽</a>
-      </h1>
-    <p class="meta">
-<time datetime="2017-06-07T00:00:00+08:00" pubdate>2017-06-07 00:00:00</time>      
-    </p>
-</header>
-
-        <div class="entry-content"><h1>TCP</h1>
-<p>服务端<code>iperf3 -s -p 12345</code></p>
-<p>客户端测试上传到服务器<code>iperf3 -c server_host -p 12345</code></p>
-<p>客户端测试从服务器下载<code>iperf3 -c server_host -p 12345 -R</code></p>
-<h1>UDP</h1>
-<p>客户端添加 -u 参数即可</p>
-<h1>传输多个流测试(必加参数)</h1>
-<p>加上参数 -P 10 (10个流同步测试)</p></div>
-  		</article>
 <div class="pagination">
     <a class="prev" href="/index4.html">&larr; Older</a>
 
@@ -512,6 +514,9 @@ mount -o remount,bind,ro <span class="nv">$file</span>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     <li class="post">
+        <a href="/posts/2021/08/01/thd.html">树莓派中开机时检测案件是否按下</a>
+    </li>
+    <li class="post">
         <a href="/posts/2021/08/01/capture.html">linux平台下的抓包方案</a>
     </li>
     <li class="post">
@@ -522,9 +527,6 @@ mount -o remount,bind,ro <span class="nv">$file</span>
     </li>
     <li class="post">
         <a href="/posts/2020/08/24/openSUSE-coredump.html">openSUSE coredump文件</a>
-    </li>
-    <li class="post">
-        <a href="/posts/2020/08/14/dpkg-disable-dialog.html">dpkg安装软件包禁用dialog对话框</a>
     </li>
   </ul>
 </section><section>
@@ -549,7 +551,7 @@ mount -o remount,bind,ro <span class="nv">$file</span>
 </section>
 <section>
   <h1>Tags</h1>
-    <a href="/tag/linux.html">linux</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/linuix.html">linuix</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/git.html">git</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a></section>
+    <a href="/tag/linux.html">linux</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/linuix.html">linuix</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/git.html">git</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a></section>
     <section>
         <h1>Social</h1>
         <ul>
