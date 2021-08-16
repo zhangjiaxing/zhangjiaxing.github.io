@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>无聊就该多读书。</description><lastBuildDate>Sun, 01 Aug 2021 15:16:55 +0800</lastBuildDate><item><title>树莓派中开机时检测案件是否按下</title><link>/posts/2021/08/01/thd.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# 记录一下此用法。 thd来自 debian 软件包 triggerhappy&lt;/span&gt;
+<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>无聊就该多读书。</description><lastBuildDate>Mon, 16 Aug 2021 00:00:00 +0800</lastBuildDate><item><title>iproute2</title><link>/posts/2021/08/16/iproute2.html</link><description>&lt;h2&gt;macvlan&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;ip link add link eth0 name macvlan0 type macvlan mode bridge&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ip link delete macvlan0&lt;/code&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;实测必须在eth0 up的情况下， macvlan才工作&lt;/li&gt;
+&lt;li&gt;实测debian 10 (buster)，macvlan下 dhcpcd 8.1.2不能正常工作， isc-dhclient-4.4.1 可以正常工作。 &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;4种mode&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;根据&lt;/span&gt; &lt;span class="n"&gt;macvlan&lt;/span&gt; &lt;span class="err"&gt;子接口之间的通信模式，&lt;/span&gt;&lt;span class="n"&gt;macvlan&lt;/span&gt; &lt;span class="err"&gt;有四种网络模式：&lt;/span&gt;
+    &lt;span class="n"&gt;private&lt;/span&gt; &lt;span class="err"&gt;模式&lt;/span&gt;
+    &lt;span class="n"&gt;vepa&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;virtual&lt;/span&gt; &lt;span class="n"&gt;ethernet&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt; &lt;span class="n"&gt;aggregator&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="err"&gt;模式&lt;/span&gt;
+    &lt;span class="n"&gt;bridge&lt;/span&gt; &lt;span class="err"&gt;模式&lt;/span&gt;
+    &lt;span class="n"&gt;passthru&lt;/span&gt; &lt;span class="err"&gt;模式&lt;/span&gt;
+&lt;span class="err"&gt;默认使用的是 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Mon, 16 Aug 2021 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:None,2021-08-16:/posts/2021/08/16/iproute2.html</guid><category>network</category><category>linux</category><category>network</category></item><item><title>树莓派中开机时检测案件是否按下</title><link>/posts/2021/08/01/thd.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# 记录一下此用法。 thd来自 debian 软件包 triggerhappy&lt;/span&gt;
 &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; -x /usr/sbin/thd &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; timeout &lt;span class="m"&gt;1&lt;/span&gt; thd --dump /dev/input/event* &lt;span class="p"&gt;|&lt;/span&gt; grep -q &lt;span class="s2"&gt;&amp;quot;LEFTSHIFT\|RIGHTSHIFT&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
       &lt;span class="nb"&gt;printf&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot; Yes. Not enabling ondemand scaling governor&amp;quot;&lt;/span&gt;
 &lt;span class="k"&gt;fi&lt;/span&gt;
