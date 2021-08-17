@@ -57,6 +57,21 @@
   		<article>
 <header>
       <h1 class="entry-title">
+        <a href="/posts/2021/08/17/uart-stty.html">uart串口登录修改tty大小</a>
+      </h1>
+    <p class="meta">
+<time datetime="2021-08-17T18:25:03+08:00" pubdate>2021-08-17 18:25:03</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><p>使用minicom登录的时候，远程终端窗口大小和本地窗口不一致。 远程窗口小不好用。</p>
+<p>经测试可以用 <code>sudo screen /dev/ttyUSB0 115200</code> 来登录， 登录后使用<code>stty</code>修改tty大小。可根据本机终端模拟器默认设置修改。</p>
+<p><code>stty size</code> 查看当前tty大小</p>
+<p><code>stty rows 52 cols 191</code> 修改tty大小</p></div>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
         <a href="/posts/2021/08/16/iproute2.html">iproute2</a>
       </h1>
     <p class="meta">
@@ -406,40 +421,6 @@ zypper dup --from packman-essentials --allow-vendor-change
 
 <p>udp <code>nc</code> 加上 <code>-u</code> 参数即可</p></div>
   		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="/posts/2020/01/07/laptop-router.html">笔记本把无线网络连接分享给网线</a>
-      </h1>
-    <p class="meta">
-<time datetime="2020-01-07T22:11:18+08:00" pubdate>2020-01-07 22:11:18</time>      
-    </p>
-</header>
-
-        <div class="entry-content"><p>笔记本把无线网络连接分享给网线.</p>
-<p>首先如果笔记本开了NetworkManager服务, 建议在NetworkManager的配置中取消托管有线网络接口 eth0. (可选, 如果修改了配置, 要重启NetworkManager)</p>
-<p><code>cat /etc/NetworkManager/NetworkManager.conf</code></p>
-<div class="highlight-custom"><pre><span></span><span class="k">[main]</span>
-<span class="na">plugins</span><span class="o">=</span><span class="s">ifupdown,keyfile</span>
-
-<span class="k">[ifupdown]</span>
-<span class="na">managed</span><span class="o">=</span><span class="s">true</span>
-
-<span class="k">[keyfile]</span>
-<span class="na">unmanaged-devices</span><span class="o">=</span><span class="s">interface-name:eth0</span>
-</pre></div>
-
-
-<p>确定笔记本已经连接好了WIFI</p>
-<p>然后在笔记本上面设置 eth0 ip
-<code>sudo ifconfig eth0 192.168.9.1</code></p>
-<p>开启DHCP
-<code>sudo dnsmasq --dhcp-range=192.168.9.10,192.168.9.20,999m --interface=eth0</code></p>
-<p>开启转发 …</p></div>
-            <footer>
-                <a rel="full-article" href="/posts/2020/01/07/laptop-router.html">Read On &crarr;</a>
-            </footer>
-  		</article>
 <div class="pagination">
     <a class="prev" href="/index2.html">&larr; Older</a>
 
@@ -450,6 +431,9 @@ zypper dup --from packman-essentials --allow-vendor-change
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    <li class="post">
+        <a href="/posts/2021/08/17/uart-stty.html">uart串口登录修改tty大小</a>
+    </li>
     <li class="post">
         <a href="/posts/2021/08/16/iproute2.html">iproute2</a>
     </li>
@@ -462,9 +446,6 @@ zypper dup --from packman-essentials --allow-vendor-change
     <li class="post">
         <a href="/posts/2021/07/31/txqueuelen.html">linux 设置网络接口发送队列长度</a>
     </li>
-    <li class="post">
-        <a href="/posts/2020/09/07/windows-vm.html">微软提供的windows系统虚拟机文件下载</a>
-    </li>
   </ul>
 </section><section>
   <h1>Categories</h1>
@@ -475,7 +456,7 @@ zypper dup --from packman-essentials --allow-vendor-change
       <li><a href="/category/firefox.html">firefox (1)</a></li>
       <li><a href="/category/git.html">git (2)</a></li>
       <li><a href="/category/gu-piao.html">股票 (1)</a></li>
-      <li><a href="/category/linux.html">linux (28)</a></li>
+      <li><a href="/category/linux.html">linux (29)</a></li>
       <li><a href="/category/network.html">network (6)</a></li>
       <li><a href="/category/nltk.html">nltk (2)</a></li>
       <li><a href="/category/other.html">other (1)</a></li>

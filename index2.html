@@ -57,6 +57,40 @@
   		<article>
 <header>
       <h1 class="entry-title">
+        <a href="/posts/2020/01/07/laptop-router.html">笔记本把无线网络连接分享给网线</a>
+      </h1>
+    <p class="meta">
+<time datetime="2020-01-07T22:11:18+08:00" pubdate>2020-01-07 22:11:18</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><p>笔记本把无线网络连接分享给网线.</p>
+<p>首先如果笔记本开了NetworkManager服务, 建议在NetworkManager的配置中取消托管有线网络接口 eth0. (可选, 如果修改了配置, 要重启NetworkManager)</p>
+<p><code>cat /etc/NetworkManager/NetworkManager.conf</code></p>
+<div class="highlight-custom"><pre><span></span><span class="k">[main]</span>
+<span class="na">plugins</span><span class="o">=</span><span class="s">ifupdown,keyfile</span>
+
+<span class="k">[ifupdown]</span>
+<span class="na">managed</span><span class="o">=</span><span class="s">true</span>
+
+<span class="k">[keyfile]</span>
+<span class="na">unmanaged-devices</span><span class="o">=</span><span class="s">interface-name:eth0</span>
+</pre></div>
+
+
+<p>确定笔记本已经连接好了WIFI</p>
+<p>然后在笔记本上面设置 eth0 ip
+<code>sudo ifconfig eth0 192.168.9.1</code></p>
+<p>开启DHCP
+<code>sudo dnsmasq --dhcp-range=192.168.9.10,192.168.9.20,999m --interface=eth0</code></p>
+<p>开启转发 …</p></div>
+            <footer>
+                <a rel="full-article" href="/posts/2020/01/07/laptop-router.html">Read On &crarr;</a>
+            </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
         <a href="/posts/2020/01/05/linux-improving-performance.html">Linux性能优化</a>
       </h1>
     <p class="meta">
@@ -416,20 +450,6 @@ dnsmasq …</p></div>
 
         <div class="entry-content"><p>websocketd是一个简单的websocket代理服务。标准输入（stdin）就是 WebSocket 的输入，标准输出（stdout）就是 WebSocket 的输出。</p></div>
   		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="/posts/2018/05/22/shellinabox.html">shellinabox</a>
-      </h1>
-    <p class="meta">
-<time datetime="2018-05-22T19:37:34+08:00" pubdate>2018-05-22 19:37:34</time>      
-    </p>
-</header>
-
-        <div class="entry-content"><p>shellinabox 能够通过Web浏览器模拟一个远程系统的Shell. 它和SSH没有任何关系.</p>
-<p>shellinaboxd -t  (开启一个login shell)</p>
-<p>shellinaboxd -t -s '/:root:root:/:/bin/bash' --port=8080  (不需要输入密码,直接登陆)</p></div>
-  		</article>
 <div class="pagination">
     <a class="prev" href="/index3.html">&larr; Older</a>
 
@@ -442,6 +462,9 @@ dnsmasq …</p></div>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     <li class="post">
+        <a href="/posts/2021/08/17/uart-stty.html">uart串口登录修改tty大小</a>
+    </li>
+    <li class="post">
         <a href="/posts/2021/08/16/iproute2.html">iproute2</a>
     </li>
     <li class="post">
@@ -453,9 +476,6 @@ dnsmasq …</p></div>
     <li class="post">
         <a href="/posts/2021/07/31/txqueuelen.html">linux 设置网络接口发送队列长度</a>
     </li>
-    <li class="post">
-        <a href="/posts/2020/09/07/windows-vm.html">微软提供的windows系统虚拟机文件下载</a>
-    </li>
   </ul>
 </section><section>
   <h1>Categories</h1>
@@ -466,7 +486,7 @@ dnsmasq …</p></div>
       <li><a href="/category/firefox.html">firefox (1)</a></li>
       <li><a href="/category/git.html">git (2)</a></li>
       <li><a href="/category/gu-piao.html">股票 (1)</a></li>
-      <li><a href="/category/linux.html">linux (28)</a></li>
+      <li><a href="/category/linux.html">linux (29)</a></li>
       <li><a href="/category/network.html">network (6)</a></li>
       <li><a href="/category/nltk.html">nltk (2)</a></li>
       <li><a href="/category/other.html">other (1)</a></li>

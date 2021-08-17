@@ -4,11 +4,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Tag: 书 &mdash; cat ~/.zhiliao.history</title>
+  <title>uart串口登录修改tty大小 &mdash; cat ~/.zhiliao.history</title>
   <meta name="author" content="zhiliao">
 
   <link href="/feeds/all.atom.xml" type="application/rss+xml" rel="alternate"
         title="cat ~/.zhiliao.history RSS Feed" />
+
+
 
 
 
@@ -54,28 +56,34 @@
   <div id="main">
     <div id="content">
 <div>
-	<article role="article">
-    	<header>
-    		<h1 class="entry-title">Tag: 书</h1>
-    	</header>
+  <article class="hentry" role="article">
+<header>
+      <h1 class="entry-title">uart串口登录修改tty大小</h1>
+    <p class="meta">
+<time datetime="2021-08-17T18:25:03+08:00" pubdate>2021-08-17 18:25:03</time>      
+    </p>
+</header>
 
-    	<div id="blog-archives">
-            <h2>2019</h2>
-                    <article>
-                        <h1><a href="/posts/2019/06/01/stock-book.html">股票大佬推荐的书</a></h1>
-                        <time datetime="2019-06-01 18:40:12+08:00" pubdate>
-                            <span class="month">六月</span>
-                            <span class="day">01</span>
-                            <span class="year">2019</span>
-                        </time>
-                        <footer>
-                            <span class="categories">posted in
-                                <a class='category' href='/category/gu-piao.html'>股票</a>
-                            </span>
-                        </footer>
-                    </article>
-	    </div>
-    </article>
+    <div class="entry-content"><p>使用minicom登录的时候，远程终端窗口大小和本地窗口不一致。 远程窗口小不好用。</p>
+<p>经测试可以用 <code>sudo screen /dev/ttyUSB0 115200</code> 来登录， 登录后使用<code>stty</code>修改tty大小。可根据本机终端模拟器默认设置修改。</p>
+<p><code>stty size</code> 查看当前tty大小</p>
+<p><code>stty rows 52 cols 191</code> 修改tty大小</p></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">
+        zhiliao
+    </span>
+  </span>
+<time datetime="2021-08-17T18:25:03+08:00" pubdate>2021-08-17 18:25:03</time>  <span class="categories">
+    <a class='category' href='/category/linux.html'>linux</a>
+  </span>
+  <span class="categories">
+    <a class="category" href="/tag/linux.html">linux</a>  </span>
+</p><div class="sharing">
+</div>    </footer>
+  </article>
+
 </div>
 
 <aside class="sidebar">
@@ -83,7 +91,19 @@
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     <li class="post">
-        <a href="/posts/2019/06/01/stock-book.html">股票大佬推荐的书</a>
+        <a href="/posts/2021/08/17/uart-stty.html">uart串口登录修改tty大小</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2021/08/16/iproute2.html">iproute2</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2021/08/01/thd.html">树莓派中开机时检测案件是否按下</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2021/08/01/capture.html">linux平台下的抓包方案</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2021/07/31/txqueuelen.html">linux 设置网络接口发送队列长度</a>
     </li>
   </ul>
 </section><section>
@@ -130,7 +150,7 @@
   </div>
   <footer role="contentinfo">
 <p>
-    Copyright &copy;  2019  zhiliao &mdash;
+    Copyright &copy;  2017&ndash;2021  zhiliao &mdash;
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
 </p>  </footer>
 </body>
