@@ -67,7 +67,16 @@
         <div class="entry-content"><p>使用minicom登录的时候，远程终端窗口大小和本地窗口不一致。 远程窗口小不好用。</p>
 <p>经测试可以用 <code>sudo screen /dev/ttyUSB0 115200</code> 来登录， 登录后使用<code>stty</code>修改tty大小。可根据本机终端模拟器默认设置修改。</p>
 <p><code>stty size</code> 查看当前tty大小</p>
-<p><code>stty rows 52 cols 191</code> 修改tty大小</p></div>
+<p><code>stty rows 52 cols 191</code> 修改tty大小</p>
+<hr>
+<h4>显示颜色</h4>
+<p>由于minicom不支持带颜色的终端类型， 所以可以用screen登录 <code>sudo screen /dev/ttyUSB0 115200 -T linux</code></p>
+<p>在树莓派上执行：</p>
+<div class="highlight-custom"><pre><span></span>cat <span class="s">&lt;&lt;EOF &gt; /root/.profile</span>
+<span class="s">[[ &quot;$(tty)&quot; == /dev/ttyS0 ]] &amp;&amp; stty rows 55 cols 190 &amp;&amp; TERM=linux bash &amp;&amp; exit …</span></pre></div></div>
+            <footer>
+                <a rel="full-article" href="/posts/2021/08/17/uart-stty.html">Read On &crarr;</a>
+            </footer>
   		</article>
   		<article>
 <header>
