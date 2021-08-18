@@ -7,8 +7,8 @@
 &lt;h4&gt;显示颜色&lt;/h4&gt;
 &lt;p&gt;由于minicom不支持带颜色的终端类型， 所以可以用screen登录 &lt;code&gt;sudo screen /dev/ttyUSB0 115200 -T linux&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;在树莓派上执行：&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cat &lt;span class="s"&gt;&amp;lt;&amp;lt;EOF &amp;gt; /root/.profile&lt;/span&gt;
-&lt;span class="s"&gt;[[ &amp;quot;$(tty)&amp;quot; == /dev/ttyS0 ]] &amp;amp;&amp;amp; stty rows 55 cols 190 &amp;amp;&amp;amp; TERM=linux bash &amp;amp;&amp;amp; exit …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Tue, 17 Aug 2021 18:25:03 +0800</pubDate><guid isPermaLink="false">tag:None,2021-08-17:/posts/2021/08/17/uart-tty.html</guid><category>linux</category><category>linux</category></item><item><title>iproute2</title><link>/posts/2021/08/16/iproute2.html</link><description>&lt;h2&gt;macvlan&lt;/h2&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &amp;gt;&amp;gt; /root/.profile
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;[[ &amp;quot;$(tty)&amp;quot; == /dev/ttyS0 ]] &amp;amp;&amp;amp; stty rows 55 cols 190 &amp;amp;&amp;amp; TERM=linux bash &amp;amp;&amp;amp; exit …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Tue, 17 Aug 2021 18:25:03 +0800</pubDate><guid isPermaLink="false">tag:None,2021-08-17:/posts/2021/08/17/uart-tty.html</guid><category>linux</category><category>linux</category></item><item><title>iproute2</title><link>/posts/2021/08/16/iproute2.html</link><description>&lt;h2&gt;macvlan&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;ip link add link eth0 name macvlan0 type macvlan mode bridge&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;ip link delete macvlan0&lt;/code&gt;&lt;/p&gt;
 &lt;ol&gt;

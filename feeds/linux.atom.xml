@@ -7,8 +7,8 @@
 &lt;h4&gt;显示颜色&lt;/h4&gt;
 &lt;p&gt;由于minicom不支持带颜色的终端类型， 所以可以用screen登录 &lt;code&gt;sudo screen /dev/ttyUSB0 115200 -T linux&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;在树莓派上执行：&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cat &lt;span class="s"&gt;&amp;lt;&amp;lt;EOF &amp;gt; /root/.profile&lt;/span&gt;
-&lt;span class="s"&gt;[[ &amp;quot;$(tty)&amp;quot; == /dev/ttyS0 ]] &amp;amp;&amp;amp; stty rows 55 cols 190 &amp;amp;&amp;amp; TERM=linux bash &amp;amp;&amp;amp; exit …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;使用minicom登录的时候，远程终端窗口大小和本地窗口不一致。 远程窗口小不好用。&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &amp;gt;&amp;gt; /root/.profile
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;[[ &amp;quot;$(tty)&amp;quot; == /dev/ttyS0 ]] &amp;amp;&amp;amp; stty rows 55 cols 190 &amp;amp;&amp;amp; TERM=linux bash &amp;amp;&amp;amp; exit …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;使用minicom登录的时候，远程终端窗口大小和本地窗口不一致。 远程窗口小不好用。&lt;/p&gt;
 &lt;p&gt;经测试可以用 &lt;code&gt;sudo screen /dev/ttyUSB0 115200&lt;/code&gt; 来登录， 登录后使用&lt;code&gt;stty&lt;/code&gt;修改tty大小。可根据本机终端模拟器默认设置修改。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;stty size&lt;/code&gt; 查看当前tty大小&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;stty rows 52 cols 191&lt;/code&gt; 修改tty大小&lt;/p&gt;
@@ -16,9 +16,8 @@
 &lt;h4&gt;显示颜色&lt;/h4&gt;
 &lt;p&gt;由于minicom不支持带颜色的终端类型， 所以可以用screen登录 &lt;code&gt;sudo screen /dev/ttyUSB0 115200 -T linux&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;在树莓派上执行：&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cat &lt;span class="s"&gt;&amp;lt;&amp;lt;EOF &amp;gt; /root/.profile&lt;/span&gt;
-&lt;span class="s"&gt;[[ &amp;quot;$(tty)&amp;quot; == /dev/ttyS0 ]] &amp;amp;&amp;amp; stty rows 55 cols 190 &amp;amp;&amp;amp; TERM=linux bash &amp;amp;&amp;amp; exit&lt;/span&gt;
-&lt;span class="s"&gt;EOF&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &amp;gt;&amp;gt; /root/.profile
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;[[ &amp;quot;$(tty)&amp;quot; == /dev/ttyS0 ]] &amp;amp;&amp;amp; stty rows 55 cols 190 &amp;amp;&amp;amp; TERM=linux bash &amp;amp;&amp;amp; exit&amp;#39;&lt;/span&gt;  &amp;gt;&amp;gt; /root/.profile
 &lt;/pre&gt;&lt;/div&gt;
 
 

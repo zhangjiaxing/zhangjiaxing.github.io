@@ -72,9 +72,8 @@
 <h4>显示颜色</h4>
 <p>由于minicom不支持带颜色的终端类型， 所以可以用screen登录 <code>sudo screen /dev/ttyUSB0 115200 -T linux</code></p>
 <p>在树莓派上执行：</p>
-<div class="highlight-custom"><pre><span></span>cat <span class="s">&lt;&lt;EOF &gt; /root/.profile</span>
-<span class="s">[[ &quot;$(tty)&quot; == /dev/ttyS0 ]] &amp;&amp; stty rows 55 cols 190 &amp;&amp; TERM=linux bash &amp;&amp; exit</span>
-<span class="s">EOF</span>
+<div class="highlight-custom"><pre><span></span><span class="nb">echo</span> &gt;&gt; /root/.profile
+<span class="nb">echo</span> <span class="s1">&#39;[[ &quot;$(tty)&quot; == /dev/ttyS0 ]] &amp;&amp; stty rows 55 cols 190 &amp;&amp; TERM=linux bash &amp;&amp; exit&#39;</span>  &gt;&gt; /root/.profile
 </pre></div>
 
 
