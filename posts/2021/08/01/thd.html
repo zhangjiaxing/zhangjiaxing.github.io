@@ -4,11 +4,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Tag: linuix &mdash; cat ~/.zhiliao.history</title>
+  <title>树莓派中开机时检测案件是否按下 &mdash; cat ~/.zhiliao.history</title>
   <meta name="author" content="zhiliao">
 
   <link href="/feeds/all.atom.xml" type="application/rss+xml" rel="alternate"
         title="cat ~/.zhiliao.history RSS Feed" />
+
+
 
 
 
@@ -54,28 +56,35 @@
   <div id="main">
     <div id="content">
 <div>
-	<article role="article">
-    	<header>
-    		<h1 class="entry-title">Tag: linuix</h1>
-    	</header>
+  <article class="hentry" role="article">
+<header>
+      <h1 class="entry-title">树莓派中开机时检测案件是否按下</h1>
+    <p class="meta">
+<time datetime="2021-08-01T15:16:55+08:00" pubdate>2021-08-01 15:16:55</time>      
+    </p>
+</header>
 
-    	<div id="blog-archives">
-            <h2>2020</h2>
-                    <article>
-                        <h1><a href="/posts/2020/01/07/laptop-router.html">笔记本把无线网络连接分享给网线</a></h1>
-                        <time datetime="2020-01-07 22:11:18+08:00" pubdate>
-                            <span class="month">一月</span>
-                            <span class="day">07</span>
-                            <span class="year">2020</span>
-                        </time>
-                        <footer>
-                            <span class="categories">posted in
-                                <a class='category' href='/category/linux.html'>linux</a>
-                            </span>
-                        </footer>
-                    </article>
-	    </div>
-    </article>
+    <div class="entry-content"><div class="highlight-custom"><pre><span></span><span class="c1"># 记录一下此用法。 thd来自 debian 软件包 triggerhappy</span>
+<span class="k">if</span> <span class="o">[</span> -x /usr/sbin/thd <span class="o">]</span> <span class="o">&amp;&amp;</span> timeout <span class="m">1</span> thd --dump /dev/input/event* <span class="p">|</span> grep -q <span class="s2">&quot;LEFTSHIFT\|RIGHTSHIFT&quot;</span><span class="p">;</span> <span class="k">then</span>
+      <span class="nb">printf</span> <span class="s2">&quot;xxxxxxxx&quot;</span> 
+<span class="k">fi</span>
+</pre></div></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">
+        zhiliao
+    </span>
+  </span>
+<time datetime="2021-08-01T15:16:55+08:00" pubdate>2021-08-01 15:16:55</time>  <span class="categories">
+    <a class='category' href='/category/linux.html'>linux</a>
+  </span>
+  <span class="categories">
+    <a class="category" href="/tag/linux.html">linux</a>,    <a class="category" href="/tag/raspberry.html">raspberry</a>  </span>
+</p><div class="sharing">
+</div>    </footer>
+  </article>
+
 </div>
 
 <aside class="sidebar">
@@ -83,7 +92,19 @@
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     <li class="post">
-        <a href="/posts/2020/01/07/laptop-router.html">笔记本把无线网络连接分享给网线</a>
+        <a href="/posts/2021/08/17/uart-tty.html">uart登录显示颜色支持分屏</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2021/08/16/iproute2.html">iproute2</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2021/08/01/thd.html">树莓派中开机时检测案件是否按下</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2021/08/01/capture.html">linux平台下的抓包方案</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2021/07/31/txqueuelen.html">linux 设置网络接口发送队列长度</a>
     </li>
   </ul>
 </section><section>
@@ -108,7 +129,7 @@
 </section>
 <section>
   <h1>Tags</h1>
-    <a href="/tag/linux.html">linux</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/linuix.html">linuix</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/git.html">git</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a></section>
+    <a href="/tag/linux.html">linux</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/git.html">git</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a></section>
     <section>
         <h1>Social</h1>
         <ul>
@@ -130,7 +151,7 @@
   </div>
   <footer role="contentinfo">
 <p>
-    Copyright &copy;  2020  zhiliao &mdash;
+    Copyright &copy;  2017&ndash;2021  zhiliao &mdash;
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
 </p>  </footer>
 </body>

@@ -23,7 +23,7 @@
 
 &lt;p&gt;同时解决uart登录显示颜色和终端大小问题, 这样就可以用tmux分屏了&lt;/p&gt;</content><category term="linux"></category><category term="linux"></category></entry><entry><title>树莓派中开机时检测案件是否按下</title><link href="/posts/2021/08/01/thd.html" rel="alternate"></link><published>2021-08-01T15:16:55+08:00</published><updated>2021-08-01T15:16:55+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2021-08-01:/posts/2021/08/01/thd.html</id><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# 记录一下此用法。 thd来自 debian 软件包 triggerhappy&lt;/span&gt;
 &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; -x /usr/sbin/thd &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; timeout &lt;span class="m"&gt;1&lt;/span&gt; thd --dump /dev/input/event* &lt;span class="p"&gt;|&lt;/span&gt; grep -q &lt;span class="s2"&gt;&amp;quot;LEFTSHIFT\|RIGHTSHIFT&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
-      &lt;span class="nb"&gt;printf&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot; Yes. Not enabling ondemand scaling governor&amp;quot;&lt;/span&gt;
+      &lt;span class="nb"&gt;printf&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;xxxxxxxx&amp;quot;&lt;/span&gt; 
 &lt;span class="k"&gt;fi&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="raspberry"></category></entry><entry><title>openSUSE coredump文件</title><link href="/posts/2020/08/24/openSUSE-coredump.html" rel="alternate"></link><published>2020-08-24T12:40:41+08:00</published><updated>2020-08-24T12:40:41+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-08-24:/posts/2020/08/24/openSUSE-coredump.html</id><content type="html">&lt;p&gt;openSUSE Leap 15.2 默认是不开启coredump的.&lt;/p&gt;
 &lt;h6&gt;开启方法&lt;/h6&gt;
@@ -387,7 +387,7 @@ zypper dup --from packman-essentials --allow-vendor-change
 &lt;code&gt;iptables -t nat -A POSTROUTING -j MASQUERADE&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;需要上网的设备连接笔记本eth0即可&lt;/p&gt;
 &lt;p&gt;查看笔记本下面连接的设备ip
-&lt;code&gt;cat /var/lib/misc/dnsmasq.leases&lt;/code&gt; 或者 &lt;code&gt;cat /var/db/dnsmasq.leases&lt;/code&gt;&lt;/p&gt;</content><category term="linux"></category><category term="linuix"></category><category term="network"></category></entry><entry><title>Linux性能优化</title><link href="/posts/2020/01/05/linux-improving-performance.html" rel="alternate"></link><published>2020-01-05T22:05:19+08:00</published><updated>2020-01-05T22:05:19+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-01-05:/posts/2020/01/05/linux-improving-performance.html</id><content type="html">&lt;ol&gt;
+&lt;code&gt;cat /var/lib/misc/dnsmasq.leases&lt;/code&gt; 或者 &lt;code&gt;cat /var/db/dnsmasq.leases&lt;/code&gt;&lt;/p&gt;</content><category term="linux"></category><category term="linux"></category><category term="network"></category></entry><entry><title>Linux性能优化</title><link href="/posts/2020/01/05/linux-improving-performance.html" rel="alternate"></link><published>2020-01-05T22:05:19+08:00</published><updated>2020-01-05T22:05:19+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-01-05:/posts/2020/01/05/linux-improving-performance.html</id><content type="html">&lt;ol&gt;
 &lt;li&gt;挂载选项添加noatime&lt;/li&gt;
 &lt;li&gt;mitigations=off&lt;/li&gt;
 &lt;li&gt;&lt;/li&gt;

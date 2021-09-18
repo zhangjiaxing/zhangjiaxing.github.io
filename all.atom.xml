@@ -23,7 +23,7 @@
     &lt;span class="n"&gt;passthru&lt;/span&gt; &lt;span class="err"&gt;模式&lt;/span&gt;
 &lt;span class="err"&gt;默认使用的是 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Mon, 16 Aug 2021 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:None,2021-08-16:/posts/2021/08/16/iproute2.html</guid><category>network</category><category>linux</category><category>network</category></item><item><title>树莓派中开机时检测案件是否按下</title><link>/posts/2021/08/01/thd.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# 记录一下此用法。 thd来自 debian 软件包 triggerhappy&lt;/span&gt;
 &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; -x /usr/sbin/thd &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; timeout &lt;span class="m"&gt;1&lt;/span&gt; thd --dump /dev/input/event* &lt;span class="p"&gt;|&lt;/span&gt; grep -q &lt;span class="s2"&gt;&amp;quot;LEFTSHIFT\|RIGHTSHIFT&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
-      &lt;span class="nb"&gt;printf&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot; Yes. Not enabling ondemand scaling governor&amp;quot;&lt;/span&gt;
+      &lt;span class="nb"&gt;printf&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;xxxxxxxx&amp;quot;&lt;/span&gt; 
 &lt;span class="k"&gt;fi&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Sun, 01 Aug 2021 15:16:55 +0800</pubDate><guid isPermaLink="false">tag:None,2021-08-01:/posts/2021/08/01/thd.html</guid><category>linux</category><category>linux</category><category>raspberry</category></item><item><title>linux平台下的抓包方案</title><link>/posts/2021/08/01/capture.html</link><description>&lt;h4&gt;linux平台下的抓包方案&lt;/h4&gt;
 &lt;ul&gt;
@@ -190,7 +190,7 @@ zypper dup --from packman-essentials --allow-vendor-change
 &lt;code&gt;sudo ifconfig eth0 192.168.9.1&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;开启DHCP
 &lt;code&gt;sudo dnsmasq --dhcp-range=192.168.9.10,192.168.9.20,999m --interface=eth0&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;开启转发 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Tue, 07 Jan 2020 22:11:18 +0800</pubDate><guid isPermaLink="false">tag:None,2020-01-07:/posts/2020/01/07/laptop-router.html</guid><category>linux</category><category>linuix</category><category>network</category></item><item><title>Linux性能优化</title><link>/posts/2020/01/05/linux-improving-performance.html</link><description>&lt;ol&gt;
+&lt;p&gt;开启转发 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Tue, 07 Jan 2020 22:11:18 +0800</pubDate><guid isPermaLink="false">tag:None,2020-01-07:/posts/2020/01/07/laptop-router.html</guid><category>linux</category><category>linux</category><category>network</category></item><item><title>Linux性能优化</title><link>/posts/2020/01/05/linux-improving-performance.html</link><description>&lt;ol&gt;
 &lt;li&gt;挂载选项添加noatime&lt;/li&gt;
 &lt;li&gt;mitigations=off&lt;/li&gt;
 &lt;li&gt;&lt;/li&gt;
