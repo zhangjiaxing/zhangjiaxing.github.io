@@ -57,6 +57,23 @@
   		<article>
 <header>
       <h1 class="entry-title">
+        <a href="/posts/2022/01/04/linux-dns.html">Linux DNS缓存</a>
+      </h1>
+    <p class="meta">
+<time datetime="2022-01-04T00:34:54+08:00" pubdate>2022-01-04 00:34:54</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><ol>
+<li>nscd (为glibc提供缓存, 支持glibc 的 getaddrinfo(3), gethostbyname(3) 等相关API)</li>
+<li>systemd-resolved (1. 通过D-Bus服务提供dns缓存 2. 为glibc提供缓存 3. 在本地回环网口 127.0.0.53 上提供的本地DNS服务器[不推荐])</li>
+<li>dnsmasq (localhost:53)</li>
+<li>bind服务 named (localhost:53, 通过查看/etc/resolv.conf nameserver是不是本机地址确认)</li>
+</ol></div>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
         <a href="/posts/2021/08/17/uart-tty.html">uart登录显示颜色支持分屏</a>
       </h1>
     <p class="meta">
@@ -409,27 +426,6 @@ zypper dup --from packman-essentials --allow-vendor-change
                 <a rel="full-article" href="/posts/2020/04/24/inotify-tools.html">Read On &crarr;</a>
             </footer>
   		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="/posts/2020/01/08/linux-nc.html">通过nc命令查看服务器端口和客户端能不能正常连接</a>
-      </h1>
-    <p class="meta">
-<time datetime="2020-01-08T09:57:04+08:00" pubdate>2020-01-08 09:57:04</time>      
-    </p>
-</header>
-
-        <div class="entry-content"><p>tcp</p>
-<div class="highlight-custom"><pre><span></span><span class="err">服务器</span>
-<span class="n">nc</span> <span class="n">bind地址</span> <span class="err">监听端口</span>
-
-<span class="err">客户端</span>
-<span class="n">nc</span> <span class="err">服务器地址</span> <span class="err">服务器端口</span>
-</pre></div>
-
-
-<p>udp <code>nc</code> 加上 <code>-u</code> 参数即可</p></div>
-  		</article>
 <div class="pagination">
     <a class="prev" href="/index2.html">&larr; Older</a>
 
@@ -440,6 +436,9 @@ zypper dup --from packman-essentials --allow-vendor-change
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    <li class="post">
+        <a href="/posts/2022/01/04/linux-dns.html">Linux DNS缓存</a>
+    </li>
     <li class="post">
         <a href="/posts/2021/08/17/uart-tty.html">uart登录显示颜色支持分屏</a>
     </li>
@@ -452,9 +451,6 @@ zypper dup --from packman-essentials --allow-vendor-change
     <li class="post">
         <a href="/posts/2021/08/01/capture.html">linux平台下的抓包方案</a>
     </li>
-    <li class="post">
-        <a href="/posts/2021/07/31/txqueuelen.html">linux 设置网络接口发送队列长度</a>
-    </li>
   </ul>
 </section><section>
   <h1>Categories</h1>
@@ -466,7 +462,7 @@ zypper dup --from packman-essentials --allow-vendor-change
       <li><a href="/category/git.html">git (2)</a></li>
       <li><a href="/category/gu-piao.html">股票 (1)</a></li>
       <li><a href="/category/linux.html">linux (29)</a></li>
-      <li><a href="/category/network.html">network (6)</a></li>
+      <li><a href="/category/network.html">network (7)</a></li>
       <li><a href="/category/nltk.html">nltk (2)</a></li>
       <li><a href="/category/other.html">other (1)</a></li>
       <li><a href="/category/python.html">python (1)</a></li>
@@ -500,7 +496,7 @@ zypper dup --from packman-essentials --allow-vendor-change
   </div>
   <footer role="contentinfo">
 <p>
-    Copyright &copy;  2017&ndash;2021  zhiliao &mdash;
+    Copyright &copy;  2017&ndash;2022  zhiliao &mdash;
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
 </p>  </footer>
 </body>

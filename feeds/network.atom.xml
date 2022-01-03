@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - network</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/network.atom.xml" rel="self"></link><id>/</id><updated>2021-08-16T00:00:00+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>iproute2</title><link href="/posts/2021/08/16/iproute2.html" rel="alternate"></link><published>2021-08-16T00:00:00+08:00</published><updated>2021-08-16T00:00:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2021-08-16:/posts/2021/08/16/iproute2.html</id><summary type="html">&lt;h2&gt;macvlan&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - network</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/network.atom.xml" rel="self"></link><id>/</id><updated>2022-01-04T00:34:54+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>Linux DNS缓存</title><link href="/posts/2022/01/04/linux-dns.html" rel="alternate"></link><published>2022-01-04T00:34:54+08:00</published><updated>2022-01-04T00:34:54+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-01-04:/posts/2022/01/04/linux-dns.html</id><content type="html">&lt;ol&gt;
+&lt;li&gt;nscd (为glibc提供缓存, 支持glibc 的 getaddrinfo(3), gethostbyname(3) 等相关API)&lt;/li&gt;
+&lt;li&gt;systemd-resolved (1. 通过D-Bus服务提供dns缓存 2. 为glibc提供缓存 3. 在本地回环网口 127.0.0.53 上提供的本地DNS服务器[不推荐])&lt;/li&gt;
+&lt;li&gt;dnsmasq (localhost:53)&lt;/li&gt;
+&lt;li&gt;bind服务 named (localhost:53, 通过查看/etc/resolv.conf nameserver是不是本机地址确认)&lt;/li&gt;
+&lt;/ol&gt;</content><category term="network"></category><category term="linux"></category><category term="network"></category></entry><entry><title>iproute2</title><link href="/posts/2021/08/16/iproute2.html" rel="alternate"></link><published>2021-08-16T00:00:00+08:00</published><updated>2021-08-16T00:00:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2021-08-16:/posts/2021/08/16/iproute2.html</id><summary type="html">&lt;h2&gt;macvlan&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;ip link add link eth0 name macvlan0 type macvlan mode bridge&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;ip link delete macvlan0&lt;/code&gt;&lt;/p&gt;
 &lt;ol&gt;

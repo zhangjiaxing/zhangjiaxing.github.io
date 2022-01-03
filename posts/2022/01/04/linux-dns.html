@@ -4,11 +4,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: git &mdash; cat ~/.zhiliao.history</title>
+  <title>Linux DNS缓存 &mdash; cat ~/.zhiliao.history</title>
   <meta name="author" content="zhiliao">
 
   <link href="/feeds/all.atom.xml" type="application/rss+xml" rel="alternate"
         title="cat ~/.zhiliao.history RSS Feed" />
+
+
 
 
 
@@ -54,42 +56,36 @@
   <div id="main">
     <div id="content">
 <div>
-	<article role="article">
-    	<header>
-    		<h1 class="entry-title">Category: git</h1>
-    	</header>
+  <article class="hentry" role="article">
+<header>
+      <h1 class="entry-title">Linux DNS缓存</h1>
+    <p class="meta">
+<time datetime="2022-01-04T00:34:54+08:00" pubdate>2022-01-04 00:34:54</time>      
+    </p>
+</header>
 
-    	<div id="blog-archives">
-            <h2>2018</h2>
-                    <article>
-                        <h1><a href="/posts/2018/08/03/git-delete-file.html">git如何永久删除文件</a></h1>
-                        <time datetime="2018-08-03 17:01:42+08:00" pubdate>
-                            <span class="month">八月</span>
-                            <span class="day">03</span>
-                            <span class="year">2018</span>
-                        </time>
-                        <footer>
-                            <span class="categories">posted in
-                                <a class='category' href='/category/git.html'>git</a>
-                            </span>
-                        </footer>
-                    </article>
-            <h2>2017</h2>
-                    <article>
-                        <h1><a href="/posts/2017/12/11/git-hooks-post-receive.html">git hooks post-receive 中 git pull 失败</a></h1>
-                        <time datetime="2017-12-11 15:35:51+08:00" pubdate>
-                            <span class="month">十二月</span>
-                            <span class="day">11</span>
-                            <span class="year">2017</span>
-                        </time>
-                        <footer>
-                            <span class="categories">posted in
-                                <a class='category' href='/category/git.html'>git</a>
-                            </span>
-                        </footer>
-                    </article>
-	    </div>
-    </article>
+    <div class="entry-content"><ol>
+<li>nscd (为glibc提供缓存, 支持glibc 的 getaddrinfo(3), gethostbyname(3) 等相关API)</li>
+<li>systemd-resolved (1. 通过D-Bus服务提供dns缓存 2. 为glibc提供缓存 3. 在本地回环网口 127.0.0.53 上提供的本地DNS服务器[不推荐])</li>
+<li>dnsmasq (localhost:53)</li>
+<li>bind服务 named (localhost:53, 通过查看/etc/resolv.conf nameserver是不是本机地址确认)</li>
+</ol></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">
+        zhiliao
+    </span>
+  </span>
+<time datetime="2022-01-04T00:34:54+08:00" pubdate>2022-01-04 00:34:54</time>  <span class="categories">
+    <a class='category' href='/category/network.html'>network</a>
+  </span>
+  <span class="categories">
+    <a class="category" href="/tag/linux.html">linux</a>,    <a class="category" href="/tag/network.html">network</a>  </span>
+</p><div class="sharing">
+</div>    </footer>
+  </article>
+
 </div>
 
 <aside class="sidebar">
@@ -97,10 +93,19 @@
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     <li class="post">
-        <a href="/posts/2018/08/03/git-delete-file.html">git如何永久删除文件</a>
+        <a href="/posts/2022/01/04/linux-dns.html">Linux DNS缓存</a>
     </li>
     <li class="post">
-        <a href="/posts/2017/12/11/git-hooks-post-receive.html">git hooks post-receive 中 git pull 失败</a>
+        <a href="/posts/2021/08/17/uart-tty.html">uart登录显示颜色支持分屏</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2021/08/16/iproute2.html">iproute2</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2021/08/01/thd.html">树莓派中开机时检测案件是否按下</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2021/08/01/capture.html">linux平台下的抓包方案</a>
     </li>
   </ul>
 </section><section>
@@ -147,7 +152,7 @@
   </div>
   <footer role="contentinfo">
 <p>
-    Copyright &copy;  2017&ndash;2018  zhiliao &mdash;
+    Copyright &copy;  2017&ndash;2022  zhiliao &mdash;
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
 </p>  </footer>
 </body>

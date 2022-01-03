@@ -57,6 +57,40 @@
   		<article>
 <header>
       <h1 class="entry-title">
+        <a href="/posts/2017/06/14/python.html">遇到的一个python的坑</a>
+      </h1>
+    <p class="meta">
+<time datetime="2017-06-14T16:23:03+08:00" pubdate>2017-06-14 16:23:03</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><div class="highlight-custom"><pre><span></span><span class="k">def</span> <span class="nf">fun</span><span class="p">(</span><span class="n">arg</span><span class="o">=</span><span class="p">[]):</span>
+    <span class="n">arg</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+
+
+<span class="n">fun</span><span class="p">()</span>
+<span class="c1"># [&#39;A&#39;]</span>
+
+<span class="n">fun</span><span class="p">()</span>
+<span class="c1"># [&#39;A&#39;, &#39;A&#39;]</span>
+</pre></div>
+
+
+<p>第二个</p>
+<div class="highlight-custom"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">7</span><span class="p">}</span>
+
+<span class="n">a</span> <span class="o">+=</span> <span class="n">b</span>
+
+<span class="n">a</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">]</span>
+</pre></div></div>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
         <a href="/posts/2017/06/14/set-file-readonly-until-reboot.html">linux设置文件只读, 直到关机</a>
       </h1>
     <p class="meta">
@@ -196,6 +230,9 @@ mount -o remount,bind,ro <span class="nv">$file</span>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     <li class="post">
+        <a href="/posts/2022/01/04/linux-dns.html">Linux DNS缓存</a>
+    </li>
+    <li class="post">
         <a href="/posts/2021/08/17/uart-tty.html">uart登录显示颜色支持分屏</a>
     </li>
     <li class="post">
@@ -206,9 +243,6 @@ mount -o remount,bind,ro <span class="nv">$file</span>
     </li>
     <li class="post">
         <a href="/posts/2021/08/01/capture.html">linux平台下的抓包方案</a>
-    </li>
-    <li class="post">
-        <a href="/posts/2021/07/31/txqueuelen.html">linux 设置网络接口发送队列长度</a>
     </li>
   </ul>
 </section><section>
@@ -221,7 +255,7 @@ mount -o remount,bind,ro <span class="nv">$file</span>
       <li><a href="/category/git.html">git (2)</a></li>
       <li><a href="/category/gu-piao.html">股票 (1)</a></li>
       <li><a href="/category/linux.html">linux (29)</a></li>
-      <li><a href="/category/network.html">network (6)</a></li>
+      <li><a href="/category/network.html">network (7)</a></li>
       <li><a href="/category/nltk.html">nltk (2)</a></li>
       <li><a href="/category/other.html">other (1)</a></li>
       <li><a href="/category/python.html">python (1)</a></li>
@@ -255,7 +289,7 @@ mount -o remount,bind,ro <span class="nv">$file</span>
   </div>
   <footer role="contentinfo">
 <p>
-    Copyright &copy;  2017&ndash;2021  zhiliao &mdash;
+    Copyright &copy;  2017&ndash;2022  zhiliao &mdash;
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
 </p>  </footer>
 </body>

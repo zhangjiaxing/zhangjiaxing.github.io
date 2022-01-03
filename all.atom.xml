@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>无聊就该多读书。</description><lastBuildDate>Tue, 17 Aug 2021 18:25:03 +0800</lastBuildDate><item><title>uart登录显示颜色支持分屏</title><link>/posts/2021/08/17/uart-tty.html</link><description>&lt;p&gt;使用minicom登录的时候，远程终端窗口大小和本地窗口不一致。 远程窗口小不好用。&lt;/p&gt;
+<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>无聊就该多读书。</description><lastBuildDate>Tue, 04 Jan 2022 00:34:54 +0800</lastBuildDate><item><title>Linux DNS缓存</title><link>/posts/2022/01/04/linux-dns.html</link><description>&lt;ol&gt;
+&lt;li&gt;nscd (为glibc提供缓存, 支持glibc 的 getaddrinfo(3), gethostbyname(3) 等相关API)&lt;/li&gt;
+&lt;li&gt;systemd-resolved (1. 通过D-Bus服务提供dns缓存 2. 为glibc提供缓存 3. 在本地回环网口 127.0.0.53 上提供的本地DNS服务器[不推荐])&lt;/li&gt;
+&lt;li&gt;dnsmasq (localhost:53)&lt;/li&gt;
+&lt;li&gt;bind服务 named (localhost:53, 通过查看/etc/resolv.conf nameserver是不是本机地址确认)&lt;/li&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Tue, 04 Jan 2022 00:34:54 +0800</pubDate><guid isPermaLink="false">tag:None,2022-01-04:/posts/2022/01/04/linux-dns.html</guid><category>network</category><category>linux</category><category>network</category></item><item><title>uart登录显示颜色支持分屏</title><link>/posts/2021/08/17/uart-tty.html</link><description>&lt;p&gt;使用minicom登录的时候，远程终端窗口大小和本地窗口不一致。 远程窗口小不好用。&lt;/p&gt;
 &lt;p&gt;经测试可以用 &lt;code&gt;sudo screen /dev/ttyUSB0 115200&lt;/code&gt; 来登录， 登录后使用&lt;code&gt;stty&lt;/code&gt;修改tty大小。可根据本机终端模拟器默认设置修改。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;stty size&lt;/code&gt; 查看当前tty大小&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;stty rows 52 cols 191&lt;/code&gt; 修改tty大小&lt;/p&gt;

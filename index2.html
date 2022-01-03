@@ -57,6 +57,27 @@
   		<article>
 <header>
       <h1 class="entry-title">
+        <a href="/posts/2020/01/08/linux-nc.html">通过nc命令查看服务器端口和客户端能不能正常连接</a>
+      </h1>
+    <p class="meta">
+<time datetime="2020-01-08T09:57:04+08:00" pubdate>2020-01-08 09:57:04</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><p>tcp</p>
+<div class="highlight-custom"><pre><span></span><span class="err">服务器</span>
+<span class="n">nc</span> <span class="n">bind地址</span> <span class="err">监听端口</span>
+
+<span class="err">客户端</span>
+<span class="n">nc</span> <span class="err">服务器地址</span> <span class="err">服务器端口</span>
+</pre></div>
+
+
+<p>udp <code>nc</code> 加上 <code>-u</code> 参数即可</p></div>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
         <a href="/posts/2020/01/07/laptop-router.html">笔记本把无线网络连接分享给网线</a>
       </h1>
     <p class="meta">
@@ -438,18 +459,6 @@ dnsmasq …</p></div>
 
         <div class="entry-content"><p><a href="/git/pdfs/git-delete-file.pdf">git如何永久删除文件.pdf</a></p></div>
   		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="/posts/2018/05/22/websocketd.html">websocketd</a>
-      </h1>
-    <p class="meta">
-<time datetime="2018-05-22T19:43:51+08:00" pubdate>2018-05-22 19:43:51</time>      
-    </p>
-</header>
-
-        <div class="entry-content"><p>websocketd是一个简单的websocket代理服务。标准输入（stdin）就是 WebSocket 的输入，标准输出（stdout）就是 WebSocket 的输出。</p></div>
-  		</article>
 <div class="pagination">
     <a class="prev" href="/index3.html">&larr; Older</a>
 
@@ -462,6 +471,9 @@ dnsmasq …</p></div>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     <li class="post">
+        <a href="/posts/2022/01/04/linux-dns.html">Linux DNS缓存</a>
+    </li>
+    <li class="post">
         <a href="/posts/2021/08/17/uart-tty.html">uart登录显示颜色支持分屏</a>
     </li>
     <li class="post">
@@ -472,9 +484,6 @@ dnsmasq …</p></div>
     </li>
     <li class="post">
         <a href="/posts/2021/08/01/capture.html">linux平台下的抓包方案</a>
-    </li>
-    <li class="post">
-        <a href="/posts/2021/07/31/txqueuelen.html">linux 设置网络接口发送队列长度</a>
     </li>
   </ul>
 </section><section>
@@ -487,7 +496,7 @@ dnsmasq …</p></div>
       <li><a href="/category/git.html">git (2)</a></li>
       <li><a href="/category/gu-piao.html">股票 (1)</a></li>
       <li><a href="/category/linux.html">linux (29)</a></li>
-      <li><a href="/category/network.html">network (6)</a></li>
+      <li><a href="/category/network.html">network (7)</a></li>
       <li><a href="/category/nltk.html">nltk (2)</a></li>
       <li><a href="/category/other.html">other (1)</a></li>
       <li><a href="/category/python.html">python (1)</a></li>
@@ -521,7 +530,7 @@ dnsmasq …</p></div>
   </div>
   <footer role="contentinfo">
 <p>
-    Copyright &copy;  2017&ndash;2021  zhiliao &mdash;
+    Copyright &copy;  2017&ndash;2022  zhiliao &mdash;
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
 </p>  </footer>
 </body>
