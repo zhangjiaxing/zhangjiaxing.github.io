@@ -92,10 +92,9 @@
 <p><a href="https://www.right.com.cn/forum/thread-340279-1-1.html">WEBPAD大神降级教程&gt;&gt;</a>
 <a href="https://www.right.com.cn/forum/thread-413863-1-1.html">超快速恢复EMMC法&gt;&gt;</a></p>
 <h6>设置开启U盘引导, 设置以后, 只要不动bootloader, N1 就刷不死</h6>
-<div class="highlight-custom"><pre><span></span><span class="err">adb connect N1的IP</span>
-<span class="err">adb shell reboot update</span>
-</pre></div>
-
+<div class="highlight-custom"><pre><span></span><code><span class="nv">adb</span> <span class="k">connect</span> <span class="nv">N1</span>的<span class="nv">IP</span>
+<span class="nv">adb</span> <span class="nv">shell</span> <span class="nv">reboot</span> <span class="nv">update</span>
+</code></pre></div>
 
 <h2>下面是刷armbian的方法</h2>
 <h6>下载armbian系统</h6>
@@ -104,10 +103,9 @@
 <p>linux可以尝试用dd (没测试过)</p>
 <p>windows用etcher (亲测可用)</p>
 <p>按照上面的说明, 替换 btd文件</p>
-<div class="highlight-custom"><pre><span></span><span class="err">[/boot/uEnv.ini] 第一行改为</span>
-<span class="err">dtb_name=/dtb/meson-gxl-s905d-phicomm-n1.dtb</span>
-</pre></div>
-
+<div class="highlight-custom"><pre><span></span><code>[/boot/uEnv.ini] 第一行改为
+dtb_name=/dtb/meson-gxl-s905d-phicomm-n1.dtb
+</code></pre></div>
 
 <h6>然后关闭N1, 开始启动armbian</h6>
 <p>插上U盘,N1通电, 开机就是U盘启动的armbian系统.</p>
@@ -143,6 +141,9 @@
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     <li class="post">
+        <a href="/posts/2022/02/24/xdg-user-dirs.html">xdg-user-dirs使用英文名称</a>
+    </li>
+    <li class="post">
         <a href="/posts/2022/01/04/linux-dns.html">Linux DNS缓存</a>
     </li>
     <li class="post">
@@ -154,9 +155,6 @@
     <li class="post">
         <a href="/posts/2021/08/01/thd.html">树莓派中开机时检测案件是否按下</a>
     </li>
-    <li class="post">
-        <a href="/posts/2021/08/01/capture.html">linux平台下的抓包方案</a>
-    </li>
   </ul>
 </section><section>
   <h1>Categories</h1>
@@ -167,7 +165,7 @@
       <li><a href="/category/firefox.html">firefox (1)</a></li>
       <li><a href="/category/git.html">git (2)</a></li>
       <li><a href="/category/gu-piao.html">股票 (1)</a></li>
-      <li><a href="/category/linux.html">linux (29)</a></li>
+      <li><a href="/category/linux.html">linux (30)</a></li>
       <li><a href="/category/network.html">network (7)</a></li>
       <li><a href="/category/nltk.html">nltk (2)</a></li>
       <li><a href="/category/other.html">other (1)</a></li>
@@ -180,7 +178,7 @@
 </section>
 <section>
   <h1>Tags</h1>
-    <a href="/tag/linux.html">linux</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/git.html">git</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a></section>
+    <a href="/tag/linux.html">linux</a>,    <a href="/tag/xdg.html">xdg</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/git.html">git</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a></section>
     <section>
         <h1>Social</h1>
         <ul>

@@ -65,20 +65,18 @@
 </header>
 
     <div class="entry-content"><p>添加全部packman仓库</p>
-<div class="highlight-custom"><pre><span></span>sudo zypper ar -fc <span class="s1">&#39;https://mirrors.tuna.tsinghua.edu.cn/packman/suse/openSUSE_Leap_$releasever&#39;</span>            packman
+<div class="highlight-custom"><pre><span></span><code>sudo zypper ar -fc <span class="s1">&#39;https://mirrors.tuna.tsinghua.edu.cn/packman/suse/openSUSE_Leap_$releasever&#39;</span>            packman
 
 <span class="c1"># 将系统软件包切换到packman中的软件包(两者混用会导致各种问题)</span>
 zypper dup --from packman --allow-vendor-change
-</pre></div>
-
+</code></pre></div>
 
 <p>或者仅仅添加packman中的Essentials(解码器)仓库</p>
-<div class="highlight-custom"><pre><span></span>sudo zypper ar -fc <span class="s1">&#39;https://mirrors.tuna.tsinghua.edu.cn/packman/suse/openSUSE_Leap_$releasever/Essentials&#39;</span> packman-essentials
+<div class="highlight-custom"><pre><span></span><code>sudo zypper ar -fc <span class="s1">&#39;https://mirrors.tuna.tsinghua.edu.cn/packman/suse/openSUSE_Leap_$releasever/Essentials&#39;</span> packman-essentials
 
 <span class="c1"># 将系统软件包切换到packman中的软件包(两者混用会导致各种问题)</span>
 zypper dup --from packman-essentials --allow-vendor-change
-</pre></div>
-
+</code></pre></div>
 
 <p><a href="https://en.opensuse.org/Additional_package_repositories">openSUSE_Additional_package_repositories</a></p></div>
     <footer>
@@ -104,6 +102,9 @@ zypper dup --from packman-essentials --allow-vendor-change
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     <li class="post">
+        <a href="/posts/2022/02/24/xdg-user-dirs.html">xdg-user-dirs使用英文名称</a>
+    </li>
+    <li class="post">
         <a href="/posts/2022/01/04/linux-dns.html">Linux DNS缓存</a>
     </li>
     <li class="post">
@@ -115,9 +116,6 @@ zypper dup --from packman-essentials --allow-vendor-change
     <li class="post">
         <a href="/posts/2021/08/01/thd.html">树莓派中开机时检测案件是否按下</a>
     </li>
-    <li class="post">
-        <a href="/posts/2021/08/01/capture.html">linux平台下的抓包方案</a>
-    </li>
   </ul>
 </section><section>
   <h1>Categories</h1>
@@ -128,7 +126,7 @@ zypper dup --from packman-essentials --allow-vendor-change
       <li><a href="/category/firefox.html">firefox (1)</a></li>
       <li><a href="/category/git.html">git (2)</a></li>
       <li><a href="/category/gu-piao.html">股票 (1)</a></li>
-      <li><a href="/category/linux.html">linux (29)</a></li>
+      <li><a href="/category/linux.html">linux (30)</a></li>
       <li><a href="/category/network.html">network (7)</a></li>
       <li><a href="/category/nltk.html">nltk (2)</a></li>
       <li><a href="/category/other.html">other (1)</a></li>
@@ -141,7 +139,7 @@ zypper dup --from packman-essentials --allow-vendor-change
 </section>
 <section>
   <h1>Tags</h1>
-    <a href="/tag/linux.html">linux</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/git.html">git</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a></section>
+    <a href="/tag/linux.html">linux</a>,    <a href="/tag/xdg.html">xdg</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/git.html">git</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a></section>
     <section>
         <h1>Social</h1>
         <ul>

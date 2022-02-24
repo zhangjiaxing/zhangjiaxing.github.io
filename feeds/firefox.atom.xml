@@ -1,65 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - firefox</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/firefox.atom.xml" rel="self"></link><id>/</id><updated>2017-06-23T18:22:59+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>记录一些 firefox 附加组件</title><link href="/posts/2017/06/23/firefox-addons.html" rel="alternate"></link><published>2017-06-23T18:22:59+08:00</published><updated>2017-06-23T18:22:59+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-23:/posts/2017/06/23/firefox-addons.html</id><summary type="html">&lt;h3&gt;记录一些 firefox 附加组件&lt;/h3&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;# Adblock plus&lt;/span&gt;
-&lt;span class="err"&gt;# Stylish&lt;/span&gt;
-&lt;span class="err"&gt;# iMacros for Firefox&lt;/span&gt;
-&lt;span class="err"&gt;Awesome Screenshot&lt;/span&gt;
-&lt;span class="err"&gt;DownThemAll&lt;/span&gt;
-&lt;span class="err"&gt;EPUBReader&lt;/span&gt;
-&lt;span class="err"&gt;FoxyProxy Standard&lt;/span&gt;
-&lt;span class="err"&gt;Ghostery&lt;/span&gt;
-&lt;span class="err"&gt;Greasemonkey&lt;/span&gt;
-&lt;span class="err"&gt;LastPass&lt;/span&gt;
-&lt;span class="err"&gt;MarkDown Here&lt;/span&gt;
-&lt;span class="err"&gt;PDF Mage&lt;/span&gt;
-&lt;span class="err"&gt;QR Code Generator&lt;/span&gt;
-&lt;span class="err"&gt;SimilarWeb&lt;/span&gt;
-&lt;span class="err"&gt;Tree Style Tab&lt;/span&gt;
-&lt;span class="err"&gt;User-Agent Switcher&lt;/span&gt;
-&lt;span class="err"&gt;uBlock Origin&lt;/span&gt;
-&lt;span class="err"&gt;新同文堂&lt;/span&gt;
-&lt;span class="err"&gt;百度广告屏蔽&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3&gt;下面是一些 userscripts&lt;/h3&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;Crack Url Wait Code Login&lt;/span&gt;
-&lt;span class="err"&gt;My163MusicHelper&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3&gt;下面是一些 Stylish userstyles (https://userstyles.org)&lt;/h3&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Baidu …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h3&gt;记录一些 firefox 附加组件&lt;/h3&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;# Adblock plus&lt;/span&gt;
-&lt;span class="err"&gt;# Stylish&lt;/span&gt;
-&lt;span class="err"&gt;# iMacros for Firefox&lt;/span&gt;
-&lt;span class="err"&gt;Awesome Screenshot&lt;/span&gt;
-&lt;span class="err"&gt;DownThemAll&lt;/span&gt;
-&lt;span class="err"&gt;EPUBReader&lt;/span&gt;
-&lt;span class="err"&gt;FoxyProxy Standard&lt;/span&gt;
-&lt;span class="err"&gt;Ghostery&lt;/span&gt;
-&lt;span class="err"&gt;Greasemonkey&lt;/span&gt;
-&lt;span class="err"&gt;LastPass&lt;/span&gt;
-&lt;span class="err"&gt;MarkDown Here&lt;/span&gt;
-&lt;span class="err"&gt;PDF Mage&lt;/span&gt;
-&lt;span class="err"&gt;QR Code Generator&lt;/span&gt;
-&lt;span class="err"&gt;SimilarWeb&lt;/span&gt;
-&lt;span class="err"&gt;Tree Style Tab&lt;/span&gt;
-&lt;span class="err"&gt;User-Agent Switcher&lt;/span&gt;
-&lt;span class="err"&gt;uBlock Origin&lt;/span&gt;
-&lt;span class="err"&gt;新同文堂&lt;/span&gt;
-&lt;span class="err"&gt;百度广告屏蔽&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - firefox</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/firefox.atom.xml" rel="self"></link><id>/</id><updated>2022-02-10T13:02:44+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>记录一些 firefox 附加组件</title><link href="/posts/2017/06/23/firefox-addons.html" rel="alternate"></link><published>2017-06-23T18:22:59+08:00</published><updated>2022-02-10T13:02:44+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-23:/posts/2017/06/23/firefox-addons.html</id><summary type="html">&lt;h3&gt;记录一些 firefox 附加组件&lt;/h3&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;# &lt;span class="nv"&gt;Adblock&lt;/span&gt; &lt;span class="nv"&gt;plus&lt;/span&gt;
+# &lt;span class="nv"&gt;Stylish&lt;/span&gt;
+# &lt;span class="nv"&gt;iMacros&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nv"&gt;Firefox&lt;/span&gt;
+&lt;span class="nv"&gt;Awesome&lt;/span&gt; &lt;span class="nv"&gt;Screenshot&lt;/span&gt;
+&lt;span class="nv"&gt;DownThemAll&lt;/span&gt;
+&lt;span class="nv"&gt;EPUBReader&lt;/span&gt;
+&lt;span class="nv"&gt;FoxyProxy&lt;/span&gt; &lt;span class="nv"&gt;Standard&lt;/span&gt;
+&lt;span class="nv"&gt;Ghostery&lt;/span&gt;
+&lt;span class="nv"&gt;Greasemonkey&lt;/span&gt;
+&lt;span class="nv"&gt;LastPass&lt;/span&gt;
+&lt;span class="nv"&gt;MarkDown&lt;/span&gt; &lt;span class="nv"&gt;Here&lt;/span&gt;
+&lt;span class="nv"&gt;PDF&lt;/span&gt; &lt;span class="nv"&gt;Mage&lt;/span&gt;
+&lt;span class="nv"&gt;QR&lt;/span&gt; &lt;span class="nv"&gt;Code&lt;/span&gt; &lt;span class="nv"&gt;Generator&lt;/span&gt;
+&lt;span class="nv"&gt;SimilarWeb&lt;/span&gt;
+&lt;span class="nv"&gt;Tree&lt;/span&gt; &lt;span class="nv"&gt;Style&lt;/span&gt; &lt;span class="nv"&gt;Tab&lt;/span&gt;
+&lt;span class="nv"&gt;User&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;Agent&lt;/span&gt; &lt;span class="nv"&gt;Switcher&lt;/span&gt;
+&lt;span class="nv"&gt;uBlock&lt;/span&gt; &lt;span class="nv"&gt;Origin&lt;/span&gt;
+新同文堂
+百度广告屏蔽
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3&gt;下面是一些 userscripts&lt;/h3&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;Crack Url Wait Code Login&lt;/span&gt;
-&lt;span class="err"&gt;My163MusicHelper&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;Crack&lt;/span&gt; &lt;span class="nv"&gt;Url&lt;/span&gt; &lt;span class="k"&gt;Wait&lt;/span&gt; &lt;span class="nv"&gt;Code&lt;/span&gt; &lt;span class="nv"&gt;Login&lt;/span&gt;
+&lt;span class="nv"&gt;My163MusicHelper&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
+&lt;h3&gt;下面是一些 Stylish userstyles (https://userstyles.org …&lt;/h3&gt;</summary><content type="html">&lt;h3&gt;记录一些 firefox 附加组件&lt;/h3&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;# &lt;span class="nv"&gt;Adblock&lt;/span&gt; &lt;span class="nv"&gt;plus&lt;/span&gt;
+# &lt;span class="nv"&gt;Stylish&lt;/span&gt;
+# &lt;span class="nv"&gt;iMacros&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nv"&gt;Firefox&lt;/span&gt;
+&lt;span class="nv"&gt;Awesome&lt;/span&gt; &lt;span class="nv"&gt;Screenshot&lt;/span&gt;
+&lt;span class="nv"&gt;DownThemAll&lt;/span&gt;
+&lt;span class="nv"&gt;EPUBReader&lt;/span&gt;
+&lt;span class="nv"&gt;FoxyProxy&lt;/span&gt; &lt;span class="nv"&gt;Standard&lt;/span&gt;
+&lt;span class="nv"&gt;Ghostery&lt;/span&gt;
+&lt;span class="nv"&gt;Greasemonkey&lt;/span&gt;
+&lt;span class="nv"&gt;LastPass&lt;/span&gt;
+&lt;span class="nv"&gt;MarkDown&lt;/span&gt; &lt;span class="nv"&gt;Here&lt;/span&gt;
+&lt;span class="nv"&gt;PDF&lt;/span&gt; &lt;span class="nv"&gt;Mage&lt;/span&gt;
+&lt;span class="nv"&gt;QR&lt;/span&gt; &lt;span class="nv"&gt;Code&lt;/span&gt; &lt;span class="nv"&gt;Generator&lt;/span&gt;
+&lt;span class="nv"&gt;SimilarWeb&lt;/span&gt;
+&lt;span class="nv"&gt;Tree&lt;/span&gt; &lt;span class="nv"&gt;Style&lt;/span&gt; &lt;span class="nv"&gt;Tab&lt;/span&gt;
+&lt;span class="nv"&gt;User&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;Agent&lt;/span&gt; &lt;span class="nv"&gt;Switcher&lt;/span&gt;
+&lt;span class="nv"&gt;uBlock&lt;/span&gt; &lt;span class="nv"&gt;Origin&lt;/span&gt;
+新同文堂
+百度广告屏蔽
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;下面是一些 userscripts&lt;/h3&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;Crack&lt;/span&gt; &lt;span class="nv"&gt;Url&lt;/span&gt; &lt;span class="k"&gt;Wait&lt;/span&gt; &lt;span class="nv"&gt;Code&lt;/span&gt; &lt;span class="nv"&gt;Login&lt;/span&gt;
+&lt;span class="nv"&gt;My163MusicHelper&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3&gt;下面是一些 Stylish userstyles (https://userstyles.org)&lt;/h3&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Baidu&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;NieR&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;Baidu&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;NieR&lt;/span&gt;
 &lt;span class="n"&gt;NieR&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;Google&lt;/span&gt;
 &lt;span class="n"&gt;Taobao&lt;/span&gt; &lt;span class="n"&gt;XX&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="firefox"></category><category term="firefox"></category><category term="software"></category></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="firefox"></category><category term="firefox"></category><category term="software"></category></entry></feed>
