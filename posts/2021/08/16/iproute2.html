@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>iproute2 &mdash; cat ~/.zhiliao.history</title>
+  <meta name="author" content="zhiliao">
+
+  <link href="/feeds/all.atom.xml" type="application/rss+xml" rel="alternate"
+        title="cat ~/.zhiliao.history RSS Feed" />
+
+
+
+
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="/favicon.png" rel="icon">
+
+  <link href="/theme/css/main.css" media="screen, projection"
+        rel="stylesheet" type="text/css">
+  <link href="/theme/css/pygment.css" rel="stylesheet" type="text/css">
+
+  <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+
+  <script src="/theme/js/modernizr-2.0.js"></script>
+  <script src="/theme/js/ender.js"></script>
+  <script src="/theme/js/octopress.js" type="text/javascript"></script>
+</head>
+
+<body >
+  <header role="banner"
+  >
+<hgroup>
+  <h1><a href="/">cat ~/.zhiliao.history</a></h1>
+    <h2>无聊就该多读书。</h2>
+</hgroup></header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/feeds/all.atom.xml" rel="subscribe-rss">RSS</a></li>
+</ul>
+
+
+<ul class="main-navigation">
+    <li><a href="/">Home</a></li>
+    <li><a href="/archives.html">Archive</a></li>
+    <li><a href="/pages/about.html">About</a></li>
+</ul></nav>
+  <div id="main">
+    <div id="content">
+<div>
+  <article class="hentry" role="article">
+<header>
+      <h1 class="entry-title">iproute2</h1>
+    <p class="meta">
+<time datetime="2021-08-16T00:00:00+08:00" pubdate>2021-08-16 00:00:00</time>      
+    </p>
+</header>
+
+    <div class="entry-content"><h2>macvlan</h2>
+<p><code>ip link add link eth0 name macvlan0 type macvlan mode bridge</code></p>
+<p><code>ip link delete macvlan0</code></p>
+<ol>
+<li>实测必须在eth0 up的情况下， macvlan才工作</li>
+<li>实测debian 10 (buster)，macvlan下 dhcpcd 8.1.2不能正常工作， isc-dhclient-4.4.1 可以正常工作。 </li>
+</ol>
+<p>4种mode</p>
+<div class="highlight-custom"><pre><span></span><span class="err">根据</span> <span class="n">macvlan</span> <span class="err">子接口之间的通信模式，</span><span class="n">macvlan</span> <span class="err">有四种网络模式：</span>
+    <span class="n">private</span> <span class="err">模式</span>
+    <span class="n">vepa</span><span class="p">(</span><span class="n">virtual</span> <span class="n">ethernet</span> <span class="n">port</span> <span class="n">aggregator</span><span class="p">)</span> <span class="err">模式</span>
+    <span class="n">bridge</span> <span class="err">模式</span>
+    <span class="n">passthru</span> <span class="err">模式</span>
+<span class="err">默认使用的是</span> <span class="n">vepa</span> <span class="err">模式。</span>
+
+<span class="n">private</span>
+<span class="err">这种模式下，同一主接口下的子接口之间彼此隔离，不能通信。即使从外部的物理交换机导流，也会被无情地丢掉。</span>
+
+<span class="n">vepa</span>
+<span class="err">这种模式下，子接口之间的通信流量需要导到外部支持</span> <span class="mi">802</span><span class="p">.</span><span class="mi">1</span><span class="n">Qbg</span><span class="o">/</span><span class="n">VPEA</span> <span class="err">功能的交换机上（可以是物理的或者虚拟的），经由外部交换机转发，再绕回来。</span>
+
+<span class="err">注：</span><span class="mi">802</span><span class="p">.</span><span class="mi">1</span><span class="n">Qbg</span><span class="o">/</span><span class="n">VPEA</span> <span class="err">功能简单说就是交换机要支持</span> <span class="err">发夹（</span><span class="n">hairpin</span><span class="err">）</span> <span class="err">功能，也就是数据包从一个接口上收上来之后还能再扔回去。</span>
+
+<span class="n">bridge</span>
+<span class="err">这种模式下，模拟的是</span> <span class="n">Linux</span> <span class="n">bridge</span> <span class="err">的功能，但比</span> <span class="n">bridge</span> <span class="err">要好的一点是每个接口的</span> <span class="n">MAC</span> <span class="err">地址是已知的，不用学习。所以，这种模式下，子接口之间就是直接可以通信的。</span>
+
+<span class="n">passthru</span>
+<span class="err">这种模式，只允许单个子接口连接主接口，且必须设置成混杂模式，一般用于子接口桥接和创建</span> <span class="n">VLAN</span> <span class="err">子接口的场景。</span>
+</pre></div>
+
+
+<h2>network namespace</h2>
+<div class="highlight-custom"><pre><span></span>ip netns list  <span class="c1">#  显示所有network ns</span>
+ip netns add NAME  <span class="c1"># 添加network ns</span>
+ip netns delete NAME  <span class="c1"># 删除network ns</span>
+ip link <span class="nb">set</span> eth0 netns <span class="o">{</span> PID <span class="p">|</span> NAME <span class="o">}</span>  <span class="c1"># 将eth0添加进制定的ns</span>
+ip netns <span class="nb">exec</span> <span class="o">[</span>NAME<span class="o">]</span> cmd ...  <span class="c1">#在ns中执行命令</span>
+</pre></div>
+
+
+<div class="highlight-custom"><pre><span></span><span class="c1"># 例, 将macvlan0 添加进userns0, 并且查看ip：</span>
+ip ns add userns0
+ip link <span class="nb">set</span> macvlan0 netns userns0
+ip netns <span class="nb">exec</span> ip addr show macvlan0
+ip link <span class="nb">set</span> macvlan0 netns <span class="m">1</span>  <span class="c1"># 移回根命名空间</span>
+</pre></div>
+
+
+<h2>bridge</h2>
+<div class="highlight-custom"><pre><span></span>ip link add name br0 <span class="nb">type</span> bridge  <span class="c1"># 新建网桥</span>
+ip link <span class="nb">set</span> dev br0 up
+ip link <span class="nb">set</span> dev eth0 master br0
+ip link <span class="nb">set</span> dev eth1 master br0  <span class="c1"># 添加至网桥</span>
+
+bridge link  <span class="c1"># 查看网桥中设备</span>
+
+ip link <span class="nb">set</span> dev eth0 nomaster  <span class="c1"># 从网桥中删除</span>
+ip link del br0  <span class="c1"># 删除网桥</span>
+</pre></div></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">
+        zhiliao
+    </span>
+  </span>
+<time datetime="2021-08-16T00:00:00+08:00" pubdate>2021-08-16 00:00:00</time>  <span class="categories">
+    <a class='category' href='/category/network.html'>network</a>
+  </span>
+  <span class="categories">
+    <a class="category" href="/tag/linux.html">linux</a>,    <a class="category" href="/tag/network.html">network</a>  </span>
+</p><div class="sharing">
+</div>    </footer>
+  </article>
+
+</div>
+
+<aside class="sidebar">
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    <li class="post">
+        <a href="/posts/2022/03/21/man-pages-to-pdf.html">将man page输出到pdf和HTML</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2022/03/08/go-callvis.html">go生成函数调用关系图</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2022/02/24/xdg-user-dirs.html">xdg-user-dirs使用英文名称</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2022/01/04/linux-dns.html">Linux DNS缓存</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2021/08/17/uart-tty.html">uart登录显示颜色支持分屏</a>
+    </li>
+  </ul>
+</section><section>
+  <h1>Categories</h1>
+    <ul id="recent_posts">
+      <li><a href="/category/android.html">android (2)</a></li>
+      <li><a href="/category/blog.html">blog (1)</a></li>
+      <li><a href="/category/editor.html">editor (1)</a></li>
+      <li><a href="/category/firefox.html">firefox (1)</a></li>
+      <li><a href="/category/git.html">git (2)</a></li>
+      <li><a href="/category/golang.html">golang (1)</a></li>
+      <li><a href="/category/gu-piao.html">股票 (1)</a></li>
+      <li><a href="/category/linux.html">linux (31)</a></li>
+      <li><a href="/category/network.html">network (7)</a></li>
+      <li><a href="/category/nltk.html">nltk (2)</a></li>
+      <li><a href="/category/other.html">other (1)</a></li>
+      <li><a href="/category/python.html">python (1)</a></li>
+      <li><a href="/category/stock.html">stock (1)</a></li>
+      <li><a href="/category/vm.html">vm (1)</a></li>
+      <li><a href="/category/web.html">web (1)</a></li>
+      <li><a href="/category/windows.html">windows (1)</a></li>
+  </ul>
+</section>
+<section>
+  <h1>Tags</h1>
+    <a href="/tag/linux.html">linux</a>,    <a href="/tag/glang.html">glang</a>,    <a href="/tag/xdg.html">xdg</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/git.html">git</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a></section>
+    <section>
+        <h1>Social</h1>
+        <ul>
+            <li><a href="https://github.com/zhangjiaxing" target="_blank">github</a></li>
+            <li><a href="http://wpa.qq.com/msgrd?v=3&uin=347820393&site=qq&menu=yes" target="_blank">qq</a></li>
+            <li><a href="http://www.writebug.cn" target="_blank">blog</a></li>
+            <li><a href="http://gallery.writebug.cn" target="_blank">gallery</a></li>
+        </ul>
+    </section>
+    <section>
+        <h1>Blogroll</h1>
+        <ul>
+            <li><a href="http://getpelican.com/" target="_blank">Pelican</a></li>
+        </ul>
+    </section>
+
+</aside>
+    </div>
+  </div>
+  <footer role="contentinfo">
+<p>
+    Copyright &copy;  2017&ndash;2022  zhiliao &mdash;
+  <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
+</p>  </footer>
+</body>
+</html>

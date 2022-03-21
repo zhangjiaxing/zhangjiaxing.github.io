@@ -54,14 +54,390 @@
   <div id="main">
     <div id="content">
 <div class="blog-index">
-</div>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="/posts/2022/03/21/man-pages-to-pdf.html">将man page输出到pdf和HTML</a>
+      </h1>
+    <p class="meta">
+<time datetime="2022-03-21T15:45:56+08:00" pubdate>2022-03-21 15:45:56</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><div class="highlight-custom"><pre><span></span><span class="c1"># 方法1：直接浏览器查看html</span>
+man -Hfirefox memfd_create
+
+
+<span class="c1"># Date: 2015-01-20 16:37</span>
+<span class="c1"># 方法2：查询手册页文件位置</span>
+man -w timerfd_create  <span class="c1"># 或 man -w 2 timerfd_create</span>
+<span class="c1"># 然后转换为html</span>
+zcat /usr/share/man/man2/timerfd_create.2.gz <span class="p">|</span> roff2html &gt; timerfd_create.html
+
+
+<span class="c1"># 方法3：转换为pdf</span>
+man -t eventfd <span class="p">|</span> ps2pdf - &gt; eventfd.pdf
+</pre></div></div>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="/posts/2022/03/08/go-callvis.html">go生成函数调用关系图</a>
+      </h1>
+    <p class="meta">
+<time datetime="2022-03-08T11:46:01+08:00" pubdate>2022-03-08 11:46:01</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><p>go生成函数调用关系图</p>
+<div class="highlight-custom"><pre><span></span>~/go/bin/go-callvis -nostd  -group pkg,type .
+<span class="c1"># 会自动打开浏览器localhost:7878</span>
+</pre></div></div>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="/posts/2022/02/24/xdg-user-dirs.html">xdg-user-dirs使用英文名称</a>
+      </h1>
+    <p class="meta">
+<time datetime="2022-02-24T11:44:53+08:00" pubdate>2022-02-24 11:44:53</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><div class="highlight-custom"><pre><span></span><span class="err"># 中文语言环境下，xdg-user-dirs使用英文名称</span>
+<span class="err">LANG=C xdg-user-dirs-gtk-update # 同意更新</span>
+<span class="err">xdg-user-dirs-gtk-update # 保留且不再询问</span>
+</pre></div></div>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="/posts/2022/01/04/linux-dns.html">Linux DNS缓存</a>
+      </h1>
+    <p class="meta">
+<time datetime="2022-01-04T00:34:54+08:00" pubdate>2022-01-04 00:34:54</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><ol>
+<li>nscd (为glibc提供缓存, 支持glibc 的 getaddrinfo(3), gethostbyname(3) 等相关API)</li>
+<li>systemd-resolved (1. 通过D-Bus服务提供dns缓存 2. 为glibc提供缓存 3. 在本地回环网口 127.0.0.53 上提供的本地DNS服务器[不推荐])</li>
+<li>dnsmasq (localhost:53)</li>
+<li>bind服务 named (localhost:53, 通过查看/etc/resolv.conf nameserver是不是本机地址确认)</li>
+</ol></div>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="/posts/2021/08/17/uart-tty.html">uart登录显示颜色支持分屏</a>
+      </h1>
+    <p class="meta">
+<time datetime="2021-08-17T18:25:03+08:00" pubdate>2021-08-17 18:25:03</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><p>使用minicom登录的时候，远程终端窗口大小和本地窗口不一致。 远程窗口小不好用。</p>
+<p>经测试可以用 <code>sudo screen /dev/ttyUSB0 115200</code> 来登录， 登录后使用<code>stty</code>修改tty大小。可根据本机终端模拟器默认设置修改。</p>
+<p><code>stty size</code> 查看当前tty大小</p>
+<p><code>stty rows 52 cols 191</code> 修改tty大小</p>
+<hr>
+<h4>显示颜色</h4>
+<p>由于minicom不支持带颜色的终端类型， 所以可以用screen登录 <code>sudo screen /dev/ttyUSB0 115200 -T linux</code></p>
+<p>在树莓派上执行：</p>
+<div class="highlight-custom"><pre><span></span><span class="nb">echo</span> &gt;&gt; /root/.profile
+<span class="nb">echo</span> <span class="s1">&#39;[[ &quot;$(tty)&quot; == /dev/ttyS0 ]] &amp;&amp; stty rows 55 cols 190 &amp;&amp; TERM=linux bash &amp;&amp; exit …</span></pre></div></div>
+            <footer>
+                <a rel="full-article" href="/posts/2021/08/17/uart-tty.html">Read On &crarr;</a>
+            </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="/posts/2021/08/16/iproute2.html">iproute2</a>
+      </h1>
+    <p class="meta">
+<time datetime="2021-08-16T00:00:00+08:00" pubdate>2021-08-16 00:00:00</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><h2>macvlan</h2>
+<p><code>ip link add link eth0 name macvlan0 type macvlan mode bridge</code></p>
+<p><code>ip link delete macvlan0</code></p>
+<ol>
+<li>实测必须在eth0 up的情况下， macvlan才工作</li>
+<li>实测debian 10 (buster)，macvlan下 dhcpcd 8.1.2不能正常工作， isc-dhclient-4.4.1 可以正常工作。 </li>
+</ol>
+<p>4种mode</p>
+<div class="highlight-custom"><pre><span></span><span class="err">根据</span> <span class="n">macvlan</span> <span class="err">子接口之间的通信模式，</span><span class="n">macvlan</span> <span class="err">有四种网络模式：</span>
+    <span class="n">private</span> <span class="err">模式</span>
+    <span class="n">vepa</span><span class="p">(</span><span class="n">virtual</span> <span class="n">ethernet</span> <span class="n">port</span> <span class="n">aggregator</span><span class="p">)</span> <span class="err">模式</span>
+    <span class="n">bridge</span> <span class="err">模式</span>
+    <span class="n">passthru</span> <span class="err">模式</span>
+<span class="err">默认使用的是 …</span></pre></div></div>
+            <footer>
+                <a rel="full-article" href="/posts/2021/08/16/iproute2.html">Read On &crarr;</a>
+            </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="/posts/2021/08/01/thd.html">树莓派中开机时检测案件是否按下</a>
+      </h1>
+    <p class="meta">
+<time datetime="2021-08-01T15:16:55+08:00" pubdate>2021-08-01 15:16:55</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><div class="highlight-custom"><pre><span></span><span class="c1"># 记录一下此用法。 thd来自 debian 软件包 triggerhappy</span>
+<span class="k">if</span> <span class="o">[</span> -x /usr/sbin/thd <span class="o">]</span> <span class="o">&amp;&amp;</span> timeout <span class="m">1</span> thd --dump /dev/input/event* <span class="p">|</span> grep -q <span class="s2">&quot;LEFTSHIFT\|RIGHTSHIFT&quot;</span><span class="p">;</span> <span class="k">then</span>
+      <span class="nb">printf</span> <span class="s2">&quot;xxxxxxxx&quot;</span> 
+<span class="k">fi</span>
+</pre></div></div>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="/posts/2021/08/01/capture.html">linux平台下的抓包方案</a>
+      </h1>
+    <p class="meta">
+<time datetime="2021-08-01T14:47:08+08:00" pubdate>2021-08-01 14:47:08</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><h4>linux平台下的抓包方案</h4>
+<ul>
+<li>libpcap <code>wireshark tcpdump均基于此。</code></li>
+<li>PF_RING <code>性能更好。 支持PF_RING ZC模式。</code></li>
+<li>DPDK    <code>性能最好，对硬件有要求。</code></li>
+</ul></div>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="/posts/2021/07/31/txqueuelen.html">linux 设置网络接口发送队列长度</a>
+      </h1>
+    <p class="meta">
+<time datetime="2021-07-31T01:54:28+08:00" pubdate>2021-07-31 01:54:28</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><h4>发送队列长度</h4>
+<p>UDP发送频率过高可能会导致丢包，设置发送队列长度可以解决这类问题。
+<code>https://www.cnblogs.com/liaokang/p/6003334.html</code></p>
+<p>查询发送队列长度
+<code>ip link show eth0 查看qlen后面的数字</code></p>
+<p>设置发送队列长度</p>
+<div class="highlight-custom"><pre><span></span><span class="c1"># 修改udev配置文件 &quot;/etc/udev/rules.d/70-persistent-net.rules&quot;:</span>
+<span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">&quot;net&quot;</span>, <span class="nv">ACTION</span><span class="o">==</span><span class="s2">&quot;add&quot;</span>, <span class="nv">DRIVERS</span><span class="o">==</span><span class="s2">&quot;?*&quot;</span>, ATTR<span class="o">{</span>address<span class="o">}==</span><span class="s2">&quot;00:0C:29:35:79:97&quot;</span>, <span class="nv">KERNEL</span><span class="o">==</span><span class="s2">&quot;eth*&quot;</span>, <span class="nv">NAME</span><span class="o">=</span><span class="s2">&quot;eth0&quot;</span>, ATTR<span class="o">{</span>tx_queue_len<span class="o">}=</span><span class="s2">&quot;10000&quot;</span>
+<span class="c1"># 或者</span>
+ifconfig eth0 txqueuelen <span class="m">10000 …</span></pre></div></div>
+            <footer>
+                <a rel="full-article" href="/posts/2021/07/31/txqueuelen.html">Read On &crarr;</a>
+            </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="/posts/2020/09/07/windows-vm.html">微软提供的windows系统虚拟机文件下载</a>
+      </h1>
+    <p class="meta">
+<time datetime="2020-09-07T00:12:35+08:00" pubdate>2020-09-07 00:12:35</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><div class="highlight-custom"><pre><span></span><span class="err">据说在虚拟机中使用这个</span><span class="p">,</span> <span class="err">流畅度比安装的版本快很多</span>
+<span class="err">可以免费使用</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">developer</span><span class="p">.</span><span class="n">microsoft</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">en</span><span class="o">-</span><span class="n">us</span><span class="o">/</span><span class="n">microsoft</span><span class="o">-</span><span class="n">edge</span><span class="o">/</span><span class="n">tools</span><span class="o">/</span><span class="n">vms</span><span class="o">/</span>
+
+
+<span class="err">下面这个是有</span><span class="n">win10开发环境的虚拟机</span><span class="p">,</span> <span class="err">比较大</span><span class="mi">20</span><span class="k">G</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">developer</span><span class="p">.</span><span class="n">microsoft</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">en</span><span class="o">-</span><span class="n">us</span><span class="o">/</span><span class="n">windows</span><span class="o">/</span><span class="n">downloads</span><span class="o">/</span><span class="n">virtual</span><span class="o">-</span><span class="n">machines</span><span class="o">/</span>
+</pre></div></div>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="/posts/2020/08/24/openSUSE-coredump.html">openSUSE coredump文件</a>
+      </h1>
+    <p class="meta">
+<time datetime="2020-08-24T12:40:41+08:00" pubdate>2020-08-24 12:40:41</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><p>openSUSE Leap 15.2 默认是不开启coredump的.</p>
+<h6>开启方法</h6>
+<ol>
+<li>查看<code>ulimit -H -a</code> 和 <code>ulimit -S -a</code> core files是否均显示unlimited. 如果不是则修改</li>
+<li>sudo zypper in systemd-coredump</li>
+<li>reboot</li>
+</ol>
+<h6>使用方法</h6>
+<ol>
+<li>sudo coredumpctl list 列出当前corefile 文件</li>
+<li>/var/lib/systemd/coredump/ 这是corefile 默认保存位置</li>
+<li>man systemd-coredump; man core 查看手册</li>
+</ol></div>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="/posts/2020/08/14/dpkg-disable-dialog.html">dpkg安装软件包禁用dialog对话框</a>
+      </h1>
+    <p class="meta">
+<time datetime="2020-08-14T17:38:05+08:00" pubdate>2020-08-14 17:38:05</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><p>之前写了个脚本, 在后台自动安装某些dpkg软件包.  但是安装过程会卡住 (即使crontab运行的后台程序也会卡住). 分析原因发现是因为后台出了dialog的对话框, 没有被选择导致一直卡住.</p>
+<p>于是想到在非tty下面, dialog应该不会出现了. </p>
+<p>首先测试 <code>yes | dpkg -i *</code> 对话框还是会出现. (<code>yes | dpkg -i</code> 印象里面看别人这么写过.  <code>yes | tty</code> 显示 <code>not a tty</code>)</p>
+<p>于是测试 ssh -T 链接本机, 安装果然没有对话框. 能够成功安装,但是有一行报错 <code>debconf: unable to initialize frontend: Dialog</code></p>
+<p>顺着这个报错, 终于搜到了 如何dpkg安装软件不出现dialog对话框.</p>
+<div class="highlight-custom"><pre><span></span><span class="err">设置环境变量, 然后在 dpkg安装就可以</span>
+<span class="err">DEBIAN_FRONTEND=noninteractive dpkg -i *</span>
+</pre></div></div>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="/posts/2020/08/05/openSUSE-zypper.html">openSUSE zypper</a>
+      </h1>
+    <p class="meta">
+<time datetime="2020-08-05T13:24:13+08:00" pubdate>2020-08-05 13:24:13</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><ol>
+<li>zypper 安装软件时候版本选择</li>
+</ol>
+<div class="highlight-custom"><pre><span></span><span class="err">查看仓库中有</span><span class="n">firefox的哪些版本</span>
+<span class="n">sudo</span> <span class="n">zypper</span> <span class="n">se</span> <span class="o">-</span><span class="n">s</span> <span class="n">firefox</span>
+
+<span class="err">安装指定版本</span>
+<span class="n">sudo</span> <span class="n">zypper</span> <span class="k">in</span> <span class="c1">--oldpackage MozillaFirefox=78.0.1-lp152.2.5.1</span>
+</pre></div>
+
+
+<ol>
+<li>zypper 和 其他包管理器 使用对比<blockquote>
+<p><a href="https://wiki.archlinux.org/index.php/Pacman/Rosetta">Pacman/Rosetta</a></p>
+</blockquote>
+</li>
+</ol></div>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="/posts/2020/07/26/arch-linux-samsung-arm-chromebook.html">在chromebook上安装archlinux</a>
+      </h1>
+    <p class="meta">
+<time datetime="2020-07-26T22:56:00+08:00" pubdate>2020-07-26 22:56:00</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><ol>
+<li>
+<p>把安装到U盘的教程中的 /dev/sda 替换成 mmcblk0 即可把archlinux安装进入系统盘.</p>
+</li>
+<li>
+<p>编辑 /etc/pacman.conf 文件, 添加 <code>IgnorePkg   = linux-armv7 linux-armv7-chromebook linux-firmware</code></p>
+</li>
+<li>
+<p>参考https://calvin.me/arch-linux-samsung-arm-chromebook 修改亮度控制 绑定按键 取消静音 设置休眠</p>
+</li>
+</ol>
+<div class="highlight-custom"><pre><span></span><span class="n">alsamixer</span><span class="w"></span>
+
+<span class="k">Go</span><span class="w"> </span><span class="n">across</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="p">(</span><span class="n">arrow</span><span class="w"> </span><span class="n">keys</span><span class="p">)</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">press</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">unmute</span><span class="w"></span>
+<span class="w">    </span><span class="nf">Left</span><span class="w"> </span><span class="n">Speaker</span><span class="w"> </span><span class="n">Mixer</span><span class="w"> </span><span class="nf">Left</span><span class="w"> </span><span class="n">DAC1</span><span class="w"></span>
+<span class="w">    </span><span class="nf">Left</span><span class="w"> </span><span class="n">Speaker</span><span class="w"> </span><span class="n">Mixer</span><span class="w"> </span><span class="n">Mono</span><span class="w"> </span><span class="n">DAC2</span><span class="w"></span>
+<span class="w">    </span><span class="nf">Left</span><span class="w"> </span><span class="n">Speaker</span><span class="w"> </span><span class="n">Mixer</span><span class="w"> </span><span class="n">Mono …</span></pre></div></div>
+            <footer>
+                <a rel="full-article" href="/posts/2020/07/26/arch-linux-samsung-arm-chromebook.html">Read On &crarr;</a>
+            </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="/posts/2020/07/20/openSUSE-upgrade.html">openSUSE Leap 系统升级</a>
+      </h1>
+    <p class="meta">
+<time datetime="2020-07-20T23:38:50+08:00" pubdate>2020-07-20 23:38:50</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><div class="highlight-custom"><pre><span></span><span class="c1"># 首先启用 repo-update 软件源</span>
+zypper modifyrepo --enable repo-update
+
+<span class="c1"># 然后更到最新</span>
+zypper refresh
+zypper update
+
+<span class="c1"># 下面的命令建议在tty中执行.  Ctrl + Alt + F2</span>
+
+<span class="c1"># 如果 /etc/zypp/repos.d/中定义的Leap 仓库已经使用$releasever变量时, 则使用:</span>
+zypper --releasever<span class="o">=</span><span class="m">15</span>.2 ref
+
+
+<span class="c1"># 或者仓库地址使用特定的Leap版本号对它们进行硬编码，则需要首先对其进行修改:</span>
+sudo sed -i <span class="s1">&#39;s/15.1/$releasever/g&#39;</span> /etc/zypp/repos.d/*.repo
+<span class="c1"># 然后执行:</span>
+zypper --releasever<span class="o">=</span><span class="m">15</span>.2 …</pre></div></div>
+            <footer>
+                <a rel="full-article" href="/posts/2020/07/20/openSUSE-upgrade.html">Read On &crarr;</a>
+            </footer>
+  		</article>
+<div class="pagination">
+    <a class="prev" href="/index2.html">&larr; Older</a>
+
+  <br />
+</div></div>
 
 <aside class="sidebar">
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    <li class="post">
+        <a href="/posts/2022/03/21/man-pages-to-pdf.html">将man page输出到pdf和HTML</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2022/03/08/go-callvis.html">go生成函数调用关系图</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2022/02/24/xdg-user-dirs.html">xdg-user-dirs使用英文名称</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2022/01/04/linux-dns.html">Linux DNS缓存</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2021/08/17/uart-tty.html">uart登录显示颜色支持分屏</a>
+    </li>
   </ul>
-</section>    <section>
+</section><section>
+  <h1>Categories</h1>
+    <ul id="recent_posts">
+      <li><a href="/category/android.html">android (2)</a></li>
+      <li><a href="/category/blog.html">blog (1)</a></li>
+      <li><a href="/category/editor.html">editor (1)</a></li>
+      <li><a href="/category/firefox.html">firefox (1)</a></li>
+      <li><a href="/category/git.html">git (2)</a></li>
+      <li><a href="/category/golang.html">golang (1)</a></li>
+      <li><a href="/category/gu-piao.html">股票 (1)</a></li>
+      <li><a href="/category/linux.html">linux (31)</a></li>
+      <li><a href="/category/network.html">network (7)</a></li>
+      <li><a href="/category/nltk.html">nltk (2)</a></li>
+      <li><a href="/category/other.html">other (1)</a></li>
+      <li><a href="/category/python.html">python (1)</a></li>
+      <li><a href="/category/stock.html">stock (1)</a></li>
+      <li><a href="/category/vm.html">vm (1)</a></li>
+      <li><a href="/category/web.html">web (1)</a></li>
+      <li><a href="/category/windows.html">windows (1)</a></li>
+  </ul>
+</section>
+<section>
+  <h1>Tags</h1>
+    <a href="/tag/linux.html">linux</a>,    <a href="/tag/glang.html">glang</a>,    <a href="/tag/xdg.html">xdg</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/git.html">git</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a></section>
+    <section>
         <h1>Social</h1>
         <ul>
             <li><a href="https://github.com/zhangjiaxing" target="_blank">github</a></li>
@@ -82,7 +458,7 @@
   </div>
   <footer role="contentinfo">
 <p>
-    Copyright &copy;  2014  zhiliao &mdash;
+    Copyright &copy;  2017&ndash;2022  zhiliao &mdash;
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
 </p>  </footer>
 </body>
