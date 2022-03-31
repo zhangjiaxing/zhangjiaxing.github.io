@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2022-03-21T15:45:56+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>将man page输出到pdf和HTML</title><link href="/posts/2022/03/21/man-pages-to-pdf.html" rel="alternate"></link><published>2022-03-21T15:45:56+08:00</published><updated>2022-03-21T15:45:56+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-03-21:/posts/2022/03/21/man-pages-to-pdf.html</id><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# 方法1：直接浏览器查看html&lt;/span&gt;
-man -Hfirefox memfd_create
-
-
-&lt;span class="c1"&gt;# Date: 2015-01-20 16:37&lt;/span&gt;
-&lt;span class="c1"&gt;# 方法2：查询手册页文件位置&lt;/span&gt;
-man -w timerfd_create  &lt;span class="c1"&gt;# 或 man -w 2 timerfd_create&lt;/span&gt;
-&lt;span class="c1"&gt;# 然后转换为html&lt;/span&gt;
-zcat /usr/share/man/man2/timerfd_create.2.gz &lt;span class="p"&gt;|&lt;/span&gt; roff2html &amp;gt; timerfd_create.html
-
-
-&lt;span class="c1"&gt;# 方法3：转换为pdf&lt;/span&gt;
-man -t eventfd &lt;span class="p"&gt;|&lt;/span&gt; ps2pdf - &amp;gt; eventfd.pdf
-&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category></entry><entry><title>go生成函数调用关系图</title><link href="/posts/2022/03/08/go-callvis.html" rel="alternate"></link><published>2022-03-08T11:46:01+08:00</published><updated>2022-03-08T11:46:01+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-03-08:/posts/2022/03/08/go-callvis.html</id><content type="html">&lt;p&gt;go生成函数调用关系图&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2022-03-31T10:06:16+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>vscode 使用代理安装扩展</title><link href="/posts/2022/03/31/vscode-proxy.html" rel="alternate"></link><published>2022-03-31T10:06:16+08:00</published><updated>2022-03-31T10:06:16+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-03-31:/posts/2022/03/31/vscode-proxy.html</id><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;code --proxy-server&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;127&lt;/span&gt;.0.0.1:1080
+&lt;/pre&gt;&lt;/div&gt;</content><category term="IDE"></category><category term="IDE"></category></entry><entry><title>go生成函数调用关系图</title><link href="/posts/2022/03/08/go-callvis.html" rel="alternate"></link><published>2022-03-08T11:46:01+08:00</published><updated>2022-03-08T11:46:01+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-03-08:/posts/2022/03/08/go-callvis.html</id><content type="html">&lt;p&gt;go生成函数调用关系图&lt;/p&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;~/go/bin/go-callvis -nostd  -group pkg,type .
 &lt;span class="c1"&gt;# 会自动打开浏览器localhost:7878&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;</content><category term="golang"></category><category term="glang"></category></entry><entry><title>xdg-user-dirs使用英文名称</title><link href="/posts/2022/02/24/xdg-user-dirs.html" rel="alternate"></link><published>2022-02-24T11:44:53+08:00</published><updated>2022-02-24T11:44:53+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-02-24:/posts/2022/02/24/xdg-user-dirs.html</id><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;# 中文语言环境下，xdg-user-dirs使用英文名称&lt;/span&gt;
@@ -1667,4 +1655,16 @@ mount -o remount,bind,ro &lt;span class="nv"&gt;$file&lt;/span&gt;
 &lt;li&gt;&lt;a href="http://docs.getpelican.com/en/stable/" title="pelican文档"&gt;pelican文档&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://stackoverflow.com/questions/34434190/value-error-embedded-null-byte-when-using-pelican-content-command-to-generate-m" title="stackoverflow"&gt;stackoverflow: How to fix Pelican error&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://xingjian.me/how-to-fix-value-error-embedded-null-byte-error.html" title="How to fix Python error: ValueError: embedded null byte"&gt;Chinese version: How to fix Pelican error&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="blog"></category><category term="pelican"></category><category term="python"></category><category term="blog"></category></entry></feed>
+&lt;/ul&gt;</content><category term="blog"></category><category term="pelican"></category><category term="python"></category><category term="blog"></category></entry><entry><title>将man page输出到pdf和HTML</title><link href="/posts/2015/01/20/man-pages-to-pdf.html" rel="alternate"></link><published>2015-01-20T16:37:00+08:00</published><updated>2015-01-20T16:37:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2015-01-20:/posts/2015/01/20/man-pages-to-pdf.html</id><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# 方法1：直接浏览器查看html&lt;/span&gt;
+man -Hfirefox memfd_create
+
+
+&lt;span class="c1"&gt;# 方法2：查询手册页文件位置&lt;/span&gt;
+man -w timerfd_create  &lt;span class="c1"&gt;# 或 man -w 2 timerfd_create&lt;/span&gt;
+&lt;span class="c1"&gt;# 然后转换为html&lt;/span&gt;
+zcat /usr/share/man/man2/timerfd_create.2.gz &lt;span class="p"&gt;|&lt;/span&gt; roff2html &amp;gt; timerfd_create.html
+
+
+&lt;span class="c1"&gt;# 方法3：转换为pdf&lt;/span&gt;
+man -t eventfd &lt;span class="p"&gt;|&lt;/span&gt; ps2pdf - &amp;gt; eventfd.pdf
+&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category></entry></feed>

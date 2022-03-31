@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>无聊就该多读书。</description><lastBuildDate>Mon, 21 Mar 2022 15:45:56 +0800</lastBuildDate><item><title>将man page输出到pdf和HTML</title><link>/posts/2022/03/21/man-pages-to-pdf.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# 方法1：直接浏览器查看html&lt;/span&gt;
-man -Hfirefox memfd_create
-
-
-&lt;span class="c1"&gt;# Date: 2015-01-20 16:37&lt;/span&gt;
-&lt;span class="c1"&gt;# 方法2：查询手册页文件位置&lt;/span&gt;
-man -w timerfd_create  &lt;span class="c1"&gt;# 或 man -w 2 timerfd_create&lt;/span&gt;
-&lt;span class="c1"&gt;# 然后转换为html&lt;/span&gt;
-zcat /usr/share/man/man2/timerfd_create.2.gz &lt;span class="p"&gt;|&lt;/span&gt; roff2html &amp;gt; timerfd_create.html
-
-
-&lt;span class="c1"&gt;# 方法3：转换为pdf&lt;/span&gt;
-man -t eventfd &lt;span class="p"&gt;|&lt;/span&gt; ps2pdf - &amp;gt; eventfd.pdf
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Mon, 21 Mar 2022 15:45:56 +0800</pubDate><guid isPermaLink="false">tag:None,2022-03-21:/posts/2022/03/21/man-pages-to-pdf.html</guid><category>linux</category><category>linux</category></item><item><title>go生成函数调用关系图</title><link>/posts/2022/03/08/go-callvis.html</link><description>&lt;p&gt;go生成函数调用关系图&lt;/p&gt;
+<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>无聊就该多读书。</description><lastBuildDate>Thu, 31 Mar 2022 10:06:16 +0800</lastBuildDate><item><title>vscode 使用代理安装扩展</title><link>/posts/2022/03/31/vscode-proxy.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;code --proxy-server&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;127&lt;/span&gt;.0.0.1:1080
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Thu, 31 Mar 2022 10:06:16 +0800</pubDate><guid isPermaLink="false">tag:None,2022-03-31:/posts/2022/03/31/vscode-proxy.html</guid><category>IDE</category><category>IDE</category></item><item><title>go生成函数调用关系图</title><link>/posts/2022/03/08/go-callvis.html</link><description>&lt;p&gt;go生成函数调用关系图&lt;/p&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;~/go/bin/go-callvis -nostd  -group pkg,type .
 &lt;span class="c1"&gt;# 会自动打开浏览器localhost:7878&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Tue, 08 Mar 2022 11:46:01 +0800</pubDate><guid isPermaLink="false">tag:None,2022-03-08:/posts/2022/03/08/go-callvis.html</guid><category>golang</category><category>glang</category></item><item><title>xdg-user-dirs使用英文名称</title><link>/posts/2022/02/24/xdg-user-dirs.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;# 中文语言环境下，xdg-user-dirs使用英文名称&lt;/span&gt;
@@ -677,4 +665,16 @@ mount -o remount,bind,ro &lt;span class="nv"&gt;$file&lt;/span&gt;
 &lt;ul&gt;
 &lt;li&gt;windows 平台下 &lt;code&gt;ValueError: embedded null byte&lt;/code&gt; 的报错
 解决方法：
-在 &lt;code&gt;.\lib\site-packages\pelican\utils.py&lt;/code&gt; 文件中， 找到函数 &lt;code&gt;strftime&lt;/code&gt; ，在第一行添加 &lt;code&gt;locale.setlocale(locale.LC_ALL …&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Sat, 03 Jun 2017 06:56:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-06-03:/posts/2017/06/03/pelican.html</guid><category>blog</category><category>pelican</category><category>python</category><category>blog</category></item></channel></rss>
+在 &lt;code&gt;.\lib\site-packages\pelican\utils.py&lt;/code&gt; 文件中， 找到函数 &lt;code&gt;strftime&lt;/code&gt; ，在第一行添加 &lt;code&gt;locale.setlocale(locale.LC_ALL …&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Sat, 03 Jun 2017 06:56:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-06-03:/posts/2017/06/03/pelican.html</guid><category>blog</category><category>pelican</category><category>python</category><category>blog</category></item><item><title>将man page输出到pdf和HTML</title><link>/posts/2015/01/20/man-pages-to-pdf.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# 方法1：直接浏览器查看html&lt;/span&gt;
+man -Hfirefox memfd_create
+
+
+&lt;span class="c1"&gt;# 方法2：查询手册页文件位置&lt;/span&gt;
+man -w timerfd_create  &lt;span class="c1"&gt;# 或 man -w 2 timerfd_create&lt;/span&gt;
+&lt;span class="c1"&gt;# 然后转换为html&lt;/span&gt;
+zcat /usr/share/man/man2/timerfd_create.2.gz &lt;span class="p"&gt;|&lt;/span&gt; roff2html &amp;gt; timerfd_create.html
+
+
+&lt;span class="c1"&gt;# 方法3：转换为pdf&lt;/span&gt;
+man -t eventfd &lt;span class="p"&gt;|&lt;/span&gt; ps2pdf - &amp;gt; eventfd.pdf
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Tue, 20 Jan 2015 16:37:00 +0800</pubDate><guid isPermaLink="false">tag:None,2015-01-20:/posts/2015/01/20/man-pages-to-pdf.html</guid><category>linux</category><category>linux</category></item></channel></rss>

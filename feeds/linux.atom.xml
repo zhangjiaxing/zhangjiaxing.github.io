@@ -1,18 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - linux</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/linux.atom.xml" rel="self"></link><id>/</id><updated>2022-03-21T15:45:56+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>将man page输出到pdf和HTML</title><link href="/posts/2022/03/21/man-pages-to-pdf.html" rel="alternate"></link><published>2022-03-21T15:45:56+08:00</published><updated>2022-03-21T15:45:56+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-03-21:/posts/2022/03/21/man-pages-to-pdf.html</id><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# 方法1：直接浏览器查看html&lt;/span&gt;
-man -Hfirefox memfd_create
-
-
-&lt;span class="c1"&gt;# Date: 2015-01-20 16:37&lt;/span&gt;
-&lt;span class="c1"&gt;# 方法2：查询手册页文件位置&lt;/span&gt;
-man -w timerfd_create  &lt;span class="c1"&gt;# 或 man -w 2 timerfd_create&lt;/span&gt;
-&lt;span class="c1"&gt;# 然后转换为html&lt;/span&gt;
-zcat /usr/share/man/man2/timerfd_create.2.gz &lt;span class="p"&gt;|&lt;/span&gt; roff2html &amp;gt; timerfd_create.html
-
-
-&lt;span class="c1"&gt;# 方法3：转换为pdf&lt;/span&gt;
-man -t eventfd &lt;span class="p"&gt;|&lt;/span&gt; ps2pdf - &amp;gt; eventfd.pdf
-&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category></entry><entry><title>xdg-user-dirs使用英文名称</title><link href="/posts/2022/02/24/xdg-user-dirs.html" rel="alternate"></link><published>2022-02-24T11:44:53+08:00</published><updated>2022-02-24T11:44:53+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-02-24:/posts/2022/02/24/xdg-user-dirs.html</id><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;# 中文语言环境下，xdg-user-dirs使用英文名称&lt;/span&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - linux</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/linux.atom.xml" rel="self"></link><id>/</id><updated>2022-02-24T11:44:53+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>xdg-user-dirs使用英文名称</title><link href="/posts/2022/02/24/xdg-user-dirs.html" rel="alternate"></link><published>2022-02-24T11:44:53+08:00</published><updated>2022-02-24T11:44:53+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-02-24:/posts/2022/02/24/xdg-user-dirs.html</id><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;# 中文语言环境下，xdg-user-dirs使用英文名称&lt;/span&gt;
 &lt;span class="err"&gt;LANG=C xdg-user-dirs-gtk-update # 同意更新&lt;/span&gt;
 &lt;span class="err"&gt;xdg-user-dirs-gtk-update # 保留且不再询问&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="xdg"></category></entry><entry><title>uart登录显示颜色支持分屏</title><link href="/posts/2021/08/17/uart-tty.html" rel="alternate"></link><published>2021-08-17T18:25:03+08:00</published><updated>2021-08-17T18:25:03+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2021-08-17:/posts/2021/08/17/uart-tty.html</id><summary type="html">&lt;p&gt;使用minicom登录的时候，远程终端窗口大小和本地窗口不一致。 远程窗口小不好用。&lt;/p&gt;
@@ -917,4 +904,16 @@ mount -o remount,bind,ro &lt;span class="nv"&gt;$file&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="bash"></category><category term="command"></category></entry><entry><title>apt install 一直 size mismatch</title><link href="/posts/2017/06/03/apt-size-mismatch.html" rel="alternate"></link><published>2017-06-03T08:32:00+08:00</published><updated>2017-06-03T08:32:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-03:/posts/2017/06/03/apt-size-mismatch.html</id><content type="html">&lt;p&gt;raspberry pi 的 debian， apt安装软件是一直提示 size mismatch。
 后来发现这是运营商(ISP)缓存的问题， 运营商有些时候是通过文件名作为缓存的， 导致服务器文件更新后，用户依然下载到旧的版本。
 解决方法是， apt source 使用https协议就好了。&lt;/p&gt;
-&lt;p&gt;后来发现有人和我遇到同样的问题：https://bbs.deepin.org/forum.php?mod=viewthread&amp;amp;tid=138536&lt;/p&gt;</content><category term="linux"></category><category term="debian"></category><category term="linux"></category></entry></feed>
+&lt;p&gt;后来发现有人和我遇到同样的问题：https://bbs.deepin.org/forum.php?mod=viewthread&amp;amp;tid=138536&lt;/p&gt;</content><category term="linux"></category><category term="debian"></category><category term="linux"></category></entry><entry><title>将man page输出到pdf和HTML</title><link href="/posts/2015/01/20/man-pages-to-pdf.html" rel="alternate"></link><published>2015-01-20T16:37:00+08:00</published><updated>2015-01-20T16:37:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2015-01-20:/posts/2015/01/20/man-pages-to-pdf.html</id><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# 方法1：直接浏览器查看html&lt;/span&gt;
+man -Hfirefox memfd_create
+
+
+&lt;span class="c1"&gt;# 方法2：查询手册页文件位置&lt;/span&gt;
+man -w timerfd_create  &lt;span class="c1"&gt;# 或 man -w 2 timerfd_create&lt;/span&gt;
+&lt;span class="c1"&gt;# 然后转换为html&lt;/span&gt;
+zcat /usr/share/man/man2/timerfd_create.2.gz &lt;span class="p"&gt;|&lt;/span&gt; roff2html &amp;gt; timerfd_create.html
+
+
+&lt;span class="c1"&gt;# 方法3：转换为pdf&lt;/span&gt;
+man -t eventfd &lt;span class="p"&gt;|&lt;/span&gt; ps2pdf - &amp;gt; eventfd.pdf
+&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category></entry></feed>
