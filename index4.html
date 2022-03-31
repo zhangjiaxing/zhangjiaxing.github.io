@@ -253,6 +253,26 @@ mount -o remount,bind,ro <span class="nv">$file</span>
   		<article>
 <header>
       <h1 class="entry-title">
+        <a href="/posts/2017/06/07/bash-string-template.html">bash的字符串模板</a>
+      </h1>
+    <p class="meta">
+<time datetime="2017-06-07T00:00:00+08:00" pubdate>2017-06-07 00:00:00</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><p>在一个项目中，我想用一个配置模板文件自动生成配置文件，即为从<code>nginx.conf.template</code> 自动生成一个特定的<code>nginx.conf</code>。</p>
+<p>如果使用bash来填充展开模板，则需要eval，或者source之类的操作，因为bash不支持对字符串（真正意义上的字符串，而不是双引号引起来的）的变量替换。</p>
+<p>解决方案是用 <code>envsubst</code>。 这个命令支持使用环境变量展开字符串模板。</p>
+<div class="highlight-custom"><pre><span></span><span class="c1">#一般用法</span>
+envsubst &lt; nginx.conf.template &gt; nanjing.conf
+
+<span class="c1">#指定特定待替换的环境变量</span>
+envsubst <span class="s1">&#39;${VAR_NAME}&#39;</span> &lt; nginx.conf.template &gt; nanjing.conf
+</pre></div></div>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
         <a href="/posts/2017/06/07/iperf3.html">iperf3测试带宽</a>
       </h1>
     <p class="meta">
@@ -387,7 +407,7 @@ man -t eventfd <span class="p">|</span> ps2pdf - &gt; eventfd.pdf
       <li><a href="/category/golang.html">golang (1)</a></li>
       <li><a href="/category/gu-piao.html">股票 (1)</a></li>
       <li><a href="/category/ide.html">IDE (1)</a></li>
-      <li><a href="/category/linux.html">linux (31)</a></li>
+      <li><a href="/category/linux.html">linux (32)</a></li>
       <li><a href="/category/network.html">network (7)</a></li>
       <li><a href="/category/nltk.html">nltk (2)</a></li>
       <li><a href="/category/other.html">other (1)</a></li>

@@ -1605,7 +1605,15 @@ mount -o remount,bind,ro &lt;span class="nv"&gt;$file&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h4&gt;未完待续...&lt;/h4&gt;</content><category term="windows"></category><category term="windows"></category><category term="software"></category></entry><entry><title>iperf3测试带宽</title><link href="/posts/2017/06/07/iperf3.html" rel="alternate"></link><published>2017-06-07T00:00:00+08:00</published><updated>2017-06-07T00:00:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-07:/posts/2017/06/07/iperf3.html</id><content type="html">&lt;h1&gt;TCP&lt;/h1&gt;
+&lt;h4&gt;未完待续...&lt;/h4&gt;</content><category term="windows"></category><category term="windows"></category><category term="software"></category></entry><entry><title>bash的字符串模板</title><link href="/posts/2017/06/07/bash-string-template.html" rel="alternate"></link><published>2017-06-07T00:00:00+08:00</published><updated>2017-06-07T00:00:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-07:/posts/2017/06/07/bash-string-template.html</id><content type="html">&lt;p&gt;在一个项目中，我想用一个配置模板文件自动生成配置文件，即为从&lt;code&gt;nginx.conf.template&lt;/code&gt; 自动生成一个特定的&lt;code&gt;nginx.conf&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;如果使用bash来填充展开模板，则需要eval，或者source之类的操作，因为bash不支持对字符串（真正意义上的字符串，而不是双引号引起来的）的变量替换。&lt;/p&gt;
+&lt;p&gt;解决方案是用 &lt;code&gt;envsubst&lt;/code&gt;。 这个命令支持使用环境变量展开字符串模板。&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;#一般用法&lt;/span&gt;
+envsubst &amp;lt; nginx.conf.template &amp;gt; nanjing.conf
+
+&lt;span class="c1"&gt;#指定特定待替换的环境变量&lt;/span&gt;
+envsubst &lt;span class="s1"&gt;&amp;#39;${VAR_NAME}&amp;#39;&lt;/span&gt; &amp;lt; nginx.conf.template &amp;gt; nanjing.conf
+&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="bash"></category></entry><entry><title>iperf3测试带宽</title><link href="/posts/2017/06/07/iperf3.html" rel="alternate"></link><published>2017-06-07T00:00:00+08:00</published><updated>2017-06-07T00:00:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-07:/posts/2017/06/07/iperf3.html</id><content type="html">&lt;h1&gt;TCP&lt;/h1&gt;
 &lt;p&gt;服务端&lt;code&gt;iperf3 -s -p 12345&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;客户端测试上传到服务器&lt;code&gt;iperf3 -c server_host -p 12345&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;客户端测试从服务器下载&lt;code&gt;iperf3 -c server_host -p 12345 -R&lt;/code&gt;&lt;/p&gt;

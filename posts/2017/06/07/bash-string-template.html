@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>openSUSE Leap 系统升级 &mdash; cat ~/.zhiliao.history</title>
+  <title>bash的字符串模板 &mdash; cat ~/.zhiliao.history</title>
   <meta name="author" content="zhiliao">
 
   <link href="/feeds/all.atom.xml" type="application/rss+xml" rel="alternate"
@@ -58,33 +58,20 @@
 <div>
   <article class="hentry" role="article">
 <header>
-      <h1 class="entry-title">openSUSE Leap 系统升级</h1>
+      <h1 class="entry-title">bash的字符串模板</h1>
     <p class="meta">
-<time datetime="2020-07-20T23:38:50+08:00" pubdate>2020-07-20 23:38:50</time>      
+<time datetime="2017-06-07T00:00:00+08:00" pubdate>2017-06-07 00:00:00</time>      
     </p>
 </header>
 
-    <div class="entry-content"><div class="highlight-custom"><pre><span></span><span class="c1"># 首先启用 repo-update 软件源</span>
-zypper modifyrepo --enable repo-update
+    <div class="entry-content"><p>在一个项目中，我想用一个配置模板文件自动生成配置文件，即为从<code>nginx.conf.template</code> 自动生成一个特定的<code>nginx.conf</code>。</p>
+<p>如果使用bash来填充展开模板，则需要eval，或者source之类的操作，因为bash不支持对字符串（真正意义上的字符串，而不是双引号引起来的）的变量替换。</p>
+<p>解决方案是用 <code>envsubst</code>。 这个命令支持使用环境变量展开字符串模板。</p>
+<div class="highlight-custom"><pre><span></span><span class="c1">#一般用法</span>
+envsubst &lt; nginx.conf.template &gt; nanjing.conf
 
-<span class="c1"># 然后更到最新</span>
-zypper refresh
-zypper update
-
-<span class="c1"># 下面的命令建议在tty中执行.  Ctrl + Alt + F2</span>
-
-<span class="c1"># 如果 /etc/zypp/repos.d/中定义的Leap 仓库已经使用$releasever变量时, 则使用:</span>
-zypper --releasever<span class="o">=</span><span class="m">15</span>.2 ref
-
-
-<span class="c1"># 或者仓库地址使用特定的Leap版本号对它们进行硬编码，则需要首先对其进行修改:</span>
-sudo sed -i <span class="s1">&#39;s/15.1/$releasever/g&#39;</span> /etc/zypp/repos.d/*.repo
-<span class="c1"># 然后执行:</span>
-zypper --releasever<span class="o">=</span><span class="m">15</span>.2 ref
-zypper --releasever<span class="o">=</span><span class="m">15</span>.2 dup
-
-
-<span class="c1"># 最后重新启动系统.</span>
+<span class="c1">#指定特定待替换的环境变量</span>
+envsubst <span class="s1">&#39;${VAR_NAME}&#39;</span> &lt; nginx.conf.template &gt; nanjing.conf
 </pre></div></div>
     <footer>
 <p class="meta">
@@ -93,11 +80,11 @@ zypper --releasever<span class="o">=</span><span class="m">15</span>.2 dup
         zhiliao
     </span>
   </span>
-<time datetime="2020-07-20T23:38:50+08:00" pubdate>2020-07-20 23:38:50</time>  <span class="categories">
+<time datetime="2017-06-07T00:00:00+08:00" pubdate>2017-06-07 00:00:00</time>  <span class="categories">
     <a class='category' href='/category/linux.html'>linux</a>
   </span>
   <span class="categories">
-    <a class="category" href="/tag/opensuse.html">openSUSE</a>,    <a class="category" href="/tag/linux.html">linux</a>  </span>
+    <a class="category" href="/tag/linux.html">linux</a>,    <a class="category" href="/tag/bash.html">bash</a>  </span>
 </p><div class="sharing">
 </div>    </footer>
   </article>
