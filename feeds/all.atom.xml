@@ -1504,11 +1504,11 @@ http://blog.n01se.net/blog-n01se-net-p-145.html&lt;/p&gt;</content><category ter
 &lt;span class="err"&gt;com.github.alainm23.planner&lt;/span&gt;
 &lt;span class="err"&gt;com.github.artemanufrij.playmyvideos&lt;/span&gt;
 &lt;span class="err"&gt;com.github.babluboy.bookworm&lt;/span&gt;
-&lt;span class="err"&gt;org.gnome.Builder&lt;/span&gt;
 &lt;span class="err"&gt;com.github.calo001.fondo&lt;/span&gt;
 &lt;span class="err"&gt;com.github.iwalton3.jellyfin-media-player&lt;/span&gt;
 &lt;span class="err"&gt;com.github.iwalton3.jellyfin-mpv-shim&lt;/span&gt;
 &lt;span class="err"&gt;com.github.johnfactotum.Foliate&lt;/span&gt;
+&lt;span class="err"&gt;com.github.marktext.marktext&lt;/span&gt;
 &lt;span class="err"&gt;com.giuspen.cherrytree&lt;/span&gt;
 &lt;span class="err"&gt;com.jetbrains.PyCharm-Community&lt;/span&gt;
 &lt;span class="err"&gt;com.jgraph.drawio.desktop&lt;/span&gt;
@@ -1520,9 +1520,14 @@ http://blog.n01se.net/blog-n01se-net-p-145.html&lt;/p&gt;</content><category ter
 &lt;span class="err"&gt;com.visualstudio.code&lt;/span&gt;
 &lt;span class="err"&gt;com.wps.Office&lt;/span&gt;
 &lt;span class="err"&gt;com.xnview.XnViewMP&lt;/span&gt;
+&lt;span class="err"&gt;com.xunlei.Thunder&lt;/span&gt;
+&lt;span class="err"&gt;io.mpv.Mpv&lt;/span&gt;
 &lt;span class="err"&gt;io.typora.Typora&lt;/span&gt;
+&lt;span class="err"&gt;md.obsidian.Obsidian&lt;/span&gt;
+&lt;span class="err"&gt;media.emby.EmbyServer&lt;/span&gt;
 &lt;span class="err"&gt;net.cozic.joplin_desktop&lt;/span&gt;
 &lt;span class="err"&gt;nl.hjdskes.gcolor3&lt;/span&gt;
+&lt;span class="err"&gt;org.gnome.Builder&lt;/span&gt;
 &lt;span class="err"&gt;org.inkscape.Inkscape&lt;/span&gt;
 &lt;span class="err"&gt;org.jamovi.jamovi&lt;/span&gt;
 &lt;span class="err"&gt;org.kde.krita&lt;/span&gt;
