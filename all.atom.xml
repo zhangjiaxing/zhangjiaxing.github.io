@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>无聊就该多读书。</description><lastBuildDate>Fri, 22 Apr 2022 15:46:38 +0800</lastBuildDate><item><title>Xwindow utility</title><link>/posts/2022/04/22/Xwindow-utility.html</link><description>&lt;p&gt;xwininfo 根据窗口id查询窗口信息
-xprop  通过鼠标选择窗口查询窗口信息&lt;/p&gt;
+<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>无聊就该多读书。</description><lastBuildDate>Fri, 22 Apr 2022 15:46:38 +0800</lastBuildDate><item><title>Xwindow utility</title><link>/posts/2022/04/22/Xwindow-utility.html</link><description>&lt;p&gt;xwininfo 
+xprop &lt;/p&gt;
 &lt;p&gt;Xwininfo is a utility for displaying information about windows.
 The xprop utility is for displaying window and font properties in an X server. &lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Fri, 22 Apr 2022 15:46:38 +0800</pubDate><guid isPermaLink="false">tag:None,2022-04-22:/posts/2022/04/22/Xwindow-utility.html</guid><category>xwindow</category><category>xwindow</category></item><item><title>关于Qt</title><link>/posts/2022/04/11/about-qt.html</link><description>&lt;p&gt;QString转char*的正确方法&lt;/p&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;QString().toLocal8Bit().constData()&lt;/span&gt;
