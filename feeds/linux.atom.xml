@@ -929,4 +929,67 @@ zcat /usr/share/man/man2/timerfd_create.2.gz &lt;span class="p"&gt;|&lt;/span&gt
 
 &lt;span class="c1"&gt;# 方法3：转换为pdf&lt;/span&gt;
 man -t eventfd &lt;span class="p"&gt;|&lt;/span&gt; ps2pdf - &amp;gt; eventfd.pdf
+&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category></entry><entry><title>linux-man-pages</title><link href="/posts/2015/01/20/linux-man-pages.html" rel="alternate"></link><published>2015-01-20T11:41:06+08:00</published><updated>2015-01-20T11:41:06+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2015-01-20:/posts/2015/01/20/linux-man-pages.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="err"&gt;关键字&lt;/span&gt;  &lt;span class="err"&gt;从&lt;/span&gt;&lt;span class="n"&gt;man手册页描述内容中搜索&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;K&lt;/span&gt; &lt;span class="err"&gt;全文暴力搜索，&lt;/span&gt; &lt;span class="err"&gt;速度比较慢&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="err"&gt;显示手册中包含的所有可用的手册页&lt;/span&gt;
+&lt;span class="n"&gt;whatis&lt;/span&gt;
+&lt;span class="n"&gt;which&lt;/span&gt;
+
+&lt;span class="n"&gt;manpages里面还有一些有趣而且实用的资料&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="n"&gt;intro&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;一篇对从未接触过&lt;/span&gt;&lt;span class="n"&gt;Linux的用户的简明教程&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="n"&gt;syscalls&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;内核系统请求的列表，按内核版本注释分类，系统编程必备。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="n"&gt;select_tut&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;关于&lt;/span&gt;&lt;span class="k"&gt;select&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="err"&gt;系统请求的教程。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="n"&gt;string&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;在头文件内的所有函数。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="n"&gt;stdio&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;关于头文件的使用，标准输入&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="err"&gt;输出库的说明。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="n"&gt;errno&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;所有&lt;/span&gt;&lt;span class="n"&gt;errorno的取值及说明&lt;/span&gt;&lt;span class="err"&gt;。（&lt;/span&gt;&lt;span class="n"&gt;C语言内类似其他语言的异常告知机制&lt;/span&gt;&lt;span class="err"&gt;）&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;4 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="err"&gt;关键字&lt;/span&gt;  &lt;span class="err"&gt;从&lt;/span&gt;&lt;span class="n"&gt;man手册页描述内容中搜索&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;K&lt;/span&gt; &lt;span class="err"&gt;全文暴力搜索，&lt;/span&gt; &lt;span class="err"&gt;速度比较慢&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="err"&gt;显示手册中包含的所有可用的手册页&lt;/span&gt;
+&lt;span class="n"&gt;whatis&lt;/span&gt;
+&lt;span class="n"&gt;which&lt;/span&gt;
+
+&lt;span class="n"&gt;manpages里面还有一些有趣而且实用的资料&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="n"&gt;intro&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;一篇对从未接触过&lt;/span&gt;&lt;span class="n"&gt;Linux的用户的简明教程&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="n"&gt;syscalls&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;内核系统请求的列表，按内核版本注释分类，系统编程必备。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="n"&gt;select_tut&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;关于&lt;/span&gt;&lt;span class="k"&gt;select&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="err"&gt;系统请求的教程。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="n"&gt;string&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;在头文件内的所有函数。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="n"&gt;stdio&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;关于头文件的使用，标准输入&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="err"&gt;输出库的说明。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="n"&gt;errno&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;所有&lt;/span&gt;&lt;span class="n"&gt;errorno的取值及说明&lt;/span&gt;&lt;span class="err"&gt;。（&lt;/span&gt;&lt;span class="n"&gt;C语言内类似其他语言的异常告知机制&lt;/span&gt;&lt;span class="err"&gt;）&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt; &lt;span class="n"&gt;console_codes&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="n"&gt;Linux的终端控制码及其使用解释&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt; &lt;span class="k"&gt;full&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;介绍&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;full这个总是处于&lt;/span&gt;&lt;span class="err"&gt;“满”状态的磁盘。（对应&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;null这个总是空的设备&lt;/span&gt;&lt;span class="err"&gt;）&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="n"&gt;proc&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;介绍&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;proc下的文件系统&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="n"&gt;filesystems&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;各种&lt;/span&gt;&lt;span class="n"&gt;Linux文件系统&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
+
+&lt;span class="err"&gt;第&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="err"&gt;区里面的资料通常最酷：&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="n"&gt;bootparam&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;详细解释内核启动参数。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="n"&gt;charsets&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;解释各种语言的编码集。（&lt;/span&gt;&lt;span class="n"&gt;gbk&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;gb2312等&lt;/span&gt;&lt;span class="err"&gt;）&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="n"&gt;glob&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;解释&lt;/span&gt;&lt;span class="n"&gt;glob文件名管理机制的工作过程&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="n"&gt;hier&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;解释&lt;/span&gt;&lt;span class="n"&gt;Linux文件系统结构各个部分的作用&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="k"&gt;operator&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="n"&gt;C语言的运算符的列表&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="n"&gt;regex&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;介绍正则表达式。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="n"&gt;suffixes&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;常见文件后缀名的列表跟解释。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="k"&gt;time&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="n"&gt;Linux的时钟机制解释&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="n"&gt;units&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;数值单位及其数值的解释。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="n"&gt;utf8&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;描述&lt;/span&gt;&lt;span class="n"&gt;UTF&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="err"&gt;编码。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;解释&lt;/span&gt;&lt;span class="n"&gt;URL&lt;/span&gt;&lt;span class="err"&gt;、&lt;/span&gt;&lt;span class="n"&gt;URI&lt;/span&gt;&lt;span class="err"&gt;、&lt;/span&gt;&lt;span class="n"&gt;URN等的标准&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="n"&gt;ascii&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category></entry><entry><title>linux错误执行chmod 777 / 的处理方法</title><link href="/posts/2014/06/11/chmod777.html" rel="alternate"></link><published>2014-06-11T20:50:00+08:00</published><updated>2014-06-11T20:50:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2014-06-11:/posts/2014/06/11/chmod777.html</id><content type="html">&lt;h4&gt;setfacl&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;getfacl -R / &amp;gt;systemP.bak&lt;/code&gt;  将这个系统中的 / ，以及 / 底下所有的文件及目录权限导出到一个文件中&lt;/li&gt;
+&lt;li&gt;将systemP.bak文件想办法拷贝到被破坏的机器上   并执行
+&lt;code&gt;setfacl --restore=systemP.bak&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;进行手动恢复命令权限&lt;/h4&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;chmod u+s `which passwd`&lt;/span&gt;
+&lt;span class="err"&gt;chmod u+s `which su`&lt;/span&gt;
+&lt;span class="err"&gt;chmod u+s `which sudo`&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="command"></category></entry><entry><title>linux 查看info文档</title><link href="/posts/2013/09/27/linux-info.html" rel="alternate"></link><published>2013-09-27T17:59:00+08:00</published><updated>2013-09-27T17:59:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2013-09-27:/posts/2013/09/27/linux-info.html</id><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;info &amp;lt;command&amp;gt;&lt;/span&gt;
+&lt;span class="err"&gt;info 比man 更详细&lt;/span&gt;
+&lt;span class="err"&gt;info 中 按tab 跳到下一个 连接 （有*的，可以连接到其他info）&lt;/span&gt;
+&lt;span class="err"&gt;按enter跳转&lt;/span&gt;
+&lt;span class="err"&gt;n按键跳到下一个小节&lt;/span&gt;
+&lt;span class="err"&gt;p跳到上一个小节&lt;/span&gt;
+&lt;span class="err"&gt;u跳到上一层&lt;/span&gt;
+&lt;span class="err"&gt;s查找关键字&lt;/span&gt;
+&lt;span class="err"&gt;q离开&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category></entry></feed>
