@@ -72,7 +72,7 @@
 <li>实测debian 10 (buster)，macvlan下 dhcpcd 8.1.2不能正常工作， isc-dhclient-4.4.1 可以正常工作。 </li>
 </ol>
 <p>4种mode</p>
-<div class="highlight-custom"><pre><span></span><span class="err">根据</span> <span class="n">macvlan</span> <span class="err">子接口之间的通信模式，</span><span class="n">macvlan</span> <span class="err">有四种网络模式：</span>
+<div class="highlight-custom"><pre><span></span><code><span class="err">根据</span> <span class="n">macvlan</span> <span class="err">子接口之间的通信模式，</span><span class="n">macvlan</span> <span class="err">有四种网络模式：</span>
     <span class="n">private</span> <span class="err">模式</span>
     <span class="n">vepa</span><span class="p">(</span><span class="n">virtual</span> <span class="n">ethernet</span> <span class="n">port</span> <span class="n">aggregator</span><span class="p">)</span> <span class="err">模式</span>
     <span class="n">bridge</span> <span class="err">模式</span>
@@ -92,28 +92,25 @@
 
 <span class="n">passthru</span>
 <span class="err">这种模式，只允许单个子接口连接主接口，且必须设置成混杂模式，一般用于子接口桥接和创建</span> <span class="n">VLAN</span> <span class="err">子接口的场景。</span>
-</pre></div>
-
+</code></pre></div>
 
 <h2>network namespace</h2>
-<div class="highlight-custom"><pre><span></span>ip netns list  <span class="c1">#  显示所有network ns</span>
+<div class="highlight-custom"><pre><span></span><code>ip netns list  <span class="c1">#  显示所有network ns</span>
 ip netns add NAME  <span class="c1"># 添加network ns</span>
 ip netns delete NAME  <span class="c1"># 删除network ns</span>
 ip link <span class="nb">set</span> eth0 netns <span class="o">{</span> PID <span class="p">|</span> NAME <span class="o">}</span>  <span class="c1"># 将eth0添加进制定的ns</span>
 ip netns <span class="nb">exec</span> <span class="o">[</span>NAME<span class="o">]</span> cmd ...  <span class="c1">#在ns中执行命令</span>
-</pre></div>
+</code></pre></div>
 
-
-<div class="highlight-custom"><pre><span></span><span class="c1"># 例, 将macvlan0 添加进userns0, 并且查看ip：</span>
+<div class="highlight-custom"><pre><span></span><code><span class="c1"># 例, 将macvlan0 添加进userns0, 并且查看ip：</span>
 ip ns add userns0
 ip link <span class="nb">set</span> macvlan0 netns userns0
 ip netns <span class="nb">exec</span> ip addr show macvlan0
 ip link <span class="nb">set</span> macvlan0 netns <span class="m">1</span>  <span class="c1"># 移回根命名空间</span>
-</pre></div>
-
+</code></pre></div>
 
 <h2>bridge</h2>
-<div class="highlight-custom"><pre><span></span>ip link add name br0 <span class="nb">type</span> bridge  <span class="c1"># 新建网桥</span>
+<div class="highlight-custom"><pre><span></span><code>ip link add name br0 <span class="nb">type</span> bridge  <span class="c1"># 新建网桥</span>
 ip link <span class="nb">set</span> dev br0 up
 ip link <span class="nb">set</span> dev eth0 master br0
 ip link <span class="nb">set</span> dev eth1 master br0  <span class="c1"># 添加至网桥</span>
@@ -122,7 +119,7 @@ bridge link  <span class="c1"># 查看网桥中设备</span>
 
 ip link <span class="nb">set</span> dev eth0 nomaster  <span class="c1"># 从网桥中删除</span>
 ip link del br0  <span class="c1"># 删除网桥</span>
-</pre></div></div>
+</code></pre></div></div>
     <footer>
 <p class="meta">
   <span class="byline author vcard">
@@ -146,6 +143,9 @@ ip link del br0  <span class="c1"># 删除网桥</span>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     <li class="post">
+        <a href="/posts/2022/06/27/snapper.html">snapper文件系统快照工具</a>
+    </li>
+    <li class="post">
         <a href="/posts/2022/04/22/Xwindow-utility.html">Xwindow utility</a>
     </li>
     <li class="post">
@@ -156,9 +156,6 @@ ip link del br0  <span class="c1"># 删除网桥</span>
     </li>
     <li class="post">
         <a href="/posts/2022/03/08/go-callvis.html">go生成函数调用关系图</a>
-    </li>
-    <li class="post">
-        <a href="/posts/2022/02/24/xdg-user-dirs.html">xdg-user-dirs使用英文名称</a>
     </li>
   </ul>
 </section><section>
@@ -172,7 +169,7 @@ ip link del br0  <span class="c1"># 删除网桥</span>
       <li><a href="/category/golang.html">golang (1)</a></li>
       <li><a href="/category/gu-piao.html">股票 (1)</a></li>
       <li><a href="/category/ide.html">IDE (1)</a></li>
-      <li><a href="/category/linux.html">linux (35)</a></li>
+      <li><a href="/category/linux.html">linux (36)</a></li>
       <li><a href="/category/network.html">network (7)</a></li>
       <li><a href="/category/nltk.html">nltk (2)</a></li>
       <li><a href="/category/other.html">other (1)</a></li>
@@ -187,7 +184,7 @@ ip link del br0  <span class="c1"># 删除网桥</span>
 </section>
 <section>
   <h1>Tags</h1>
-    <a href="/tag/xwindow.html">xwindow</a>,    <a href="/tag/programming.html">programming</a>,    <a href="/tag/ide.html">IDE</a>,    <a href="/tag/glang.html">glang</a>,    <a href="/tag/linux.html">linux</a>,    <a href="/tag/xdg.html">xdg</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/git.html">git</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a></section>
+    <a href="/tag/linux.html">linux</a>,    <a href="/tag/filesystem.html">filesystem</a>,    <a href="/tag/xwindow.html">xwindow</a>,    <a href="/tag/programming.html">programming</a>,    <a href="/tag/ide.html">IDE</a>,    <a href="/tag/glang.html">glang</a>,    <a href="/tag/xdg.html">xdg</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/git.html">git</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a></section>
     <section>
         <h1>Social</h1>
         <ul>

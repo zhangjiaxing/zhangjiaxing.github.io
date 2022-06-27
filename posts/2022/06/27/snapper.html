@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>斐讯N1刷机过程记录 &mdash; cat ~/.zhiliao.history</title>
+  <title>snapper文件系统快照工具 &mdash; cat ~/.zhiliao.history</title>
   <meta name="author" content="zhiliao">
 
   <link href="/feeds/all.atom.xml" type="application/rss+xml" rel="alternate"
@@ -58,66 +58,36 @@
 <div>
   <article class="hentry" role="article">
 <header>
-      <h1 class="entry-title">斐讯N1刷机过程记录</h1>
+      <h1 class="entry-title">snapper文件系统快照工具</h1>
     <p class="meta">
-<time datetime="2020-07-01T23:38:09+08:00" pubdate>2020-07-01 23:38:09</time>      
+<time datetime="2022-06-27T19:26:08+08:00" pubdate>2022-06-27 19:26:08</time>      
     </p>
 </header>
 
-    <div class="entry-content"><p><img alt="刷机" src="/posts/2020/07/01/phicomm-N1-flash.jpg"></p>
-<p>去年买的N1盒子, 一直没时间折腾, 最近刚好需要作下载机用, 于是刷机, 顺便整理下步骤.</p>
-<p>首先说下N1配置. 处理器Amlogic S905, 内存 2G, emmc 8G, 千兆网口, 2个USB 2.0, 1个HDMI接口, 双频WIFI(支持 802.11 ac), 支持蓝牙. </p>
-<p>价格目前不到100元. 和raspberry 4 相比性能差不多, 重要的是能用Android系统, 便宜, 自带外壳.</p>
-<h4>目前用的人多的N1系统, 大致为 (不分先后)</h4>
-<ul>
-<li>Openwrt做主路由     </li>
-<li>小钢炮做下载机Docker里做旁路由 (恩山无线论坛 荒野无灯 所开发的专注于下载的系统, 基于linux)</li>
-<li>Armbian玩Docker</li>
-<li>Android (电视盒子)</li>
-<li>游戏机 (EmuELEC)</li>
-</ul>
-<h2>刷机第一步系统降级</h2>
-<p>不管是N1什么版本，首先必须要降级到能线刷的版本，并且能够使用，便于后期emmc能恢复。</p>
-<h6>准备环境</h6>
-<ul>
-<li>N1盒子</li>
-<li>装有windows的电脑主机</li>
-<li>网线</li>
-<li>HDMI线</li>
-<li>支持HDMI的电视或者显示器</li>
-<li>USB接口鼠标</li>
-<li>USB2.0公对公数据线</li>
-</ul>
-<h6>降级过程</h6>
-<p><a href="https://www.right.com.cn/forum/thread-340279-1-1.html">WEBPAD大神降级教程&gt;&gt;</a>
-<a href="https://www.right.com.cn/forum/thread-413863-1-1.html">超快速恢复EMMC法&gt;&gt;</a></p>
-<h6>设置开启U盘引导, 设置以后, 只要不动bootloader, N1 就刷不死</h6>
-<div class="highlight-custom"><pre><span></span><code><span class="err">adb connect N1的IP</span>
-<span class="err">adb shell reboot update</span>
+    <div class="entry-content"><h5>snapper 支持的文件系统</h5>
+<ol>
+<li>btrfs</li>
+<li>XFS、Ext4 或 Ext3 格式的精简 LVM 卷</li>
+</ol>
+<p>命令参考</p>
+<div class="highlight-custom"><pre><span></span><code>snapper list <span class="c1"># 查看快照</span>
+snapper statu  PRE..POST <span class="c1">#命令以获取快照对的已更改文件列表。文件内容发生了更改会以 c 标记、添加了文件会以 + 标记、删除了文件会以 - 标记。 </span>
+snapper diff PRE..POST 文件名 <span class="c1"># 显示某份文件的差异。如果没有指定文件名，则会显示所有文件的差异。</span>
+snapper -v undochange &lt;修改前的快照编号&gt;..&lt;修改后的快照编号&gt; 文件名 <span class="c1"># 撤销修改， </span>
+snapper -v undochange SNAPSHOT_ID..0 FILENAME1 FILENAME2 <span class="c1"># 把SNAPSHOT_ID中的文件恢复到当前文件系统</span>
+snapper create --description <span class="s2">&quot;Apache 配置清理之前&quot;</span> --userdata <span class="s2">&quot;important=yes&quot;</span> <span class="c1"># 创建快照</span>
+snapper delete SNAPSHOT_ID <span class="c1"># 删除快照</span>
+snapper delete number1-number2 <span class="c1"># 批量删除快照</span>
 </code></pre></div>
 
-<h2>下面是刷armbian的方法</h2>
-<h6>下载armbian系统</h6>
-<p><a href="https://www.right.com.cn/forum/thread-927225-1-1.html">当前适配的armbian介绍,下载连接</a></p>
-<h6>烧录进入U盘</h6>
-<p>linux可以尝试用dd (没测试过)</p>
-<p>windows用etcher (亲测可用)</p>
-<p>按照上面的说明, 替换 btd文件</p>
-<div class="highlight-custom"><pre><span></span><code><span class="err">[/boot/uEnv.ini] 第一行改为</span>
-<span class="err">dtb_name=/dtb/meson-gxl-s905d-phicomm-n1.dtb</span>
-</code></pre></div>
+<h4>rollback回滚</h4>
+<div class="highlight-custom"><pre><span></span><code><span class="o">#</span> <span class="err">一般使用</span><span class="n">undochange回滚会简单一些</span><span class="err">，</span> <span class="err">也可以使用</span><span class="n">rollback回滚</span>
+<span class="n">snapper</span> <span class="k">rollback</span> <span class="err">要回滚的快照编号</span> <span class="o">#</span> <span class="err">该命令将创建当前系统状态的只读快照</span> <span class="n">A</span> <span class="err">及指定编号快照的可读写快照</span> <span class="n">B</span><span class="err">，并使用快照</span> <span class="n">B</span> <span class="err">替换根分区的默认子卷，重新启动系统后即可实现回滚。</span>
 
-<h6>然后关闭N1, 开始启动armbian</h6>
-<p>插上U盘,N1通电, 开机就是U盘启动的armbian系统.</p>
-<p>也可以通过home目录下面的 install.sh 安装进入emmc. (覆盖掉默认的android)</p>
-<hr>
-<p>参考资料 <code>主要参考 恩山无线论坛 和 什么值得买</code></p>
-<p><a href="https://www.right.com.cn/forum/thread-415880-1-1.html">N1刷不死的玩法整理</a></p>
-<p><a href="https://www.right.com.cn/forum/thread-413863-1-1.html">N1刷完ARMBIAN想恢复EMMC超级简单线刷法</a></p>
-<p><a href="https://www.right.com.cn/forum/thread-421805-1-1.html">N1玩法总结整理</a></p>
-<p><a href="https://post.smzdm.com/p/akmg5dv4/">N1盒子不拆机救砖</a></p>
-<p><a href="https://post.smzdm.com/p/aekemx44/">N1改电视盒子</a></p>
-<p><a href="https://post.smzdm.com/p/a99vxp9e/">N1简明降级&amp;刷机教程</a></p></div>
+<span class="o">#</span> <span class="err">你还可以在引导系统时选择“可引导快照”，以引导想要回滚的快照，在检查无误后在引导的快照中执行：</span>
+<span class="n">snapper</span> <span class="k">rollback</span>
+<span class="o">#</span> <span class="err">不指定快照编号时，将创建根分区默认子卷（即原系统）的只读快照</span> <span class="n">A</span> <span class="err">和当前系统（即目前引导的快照）的可读写快照</span> <span class="n">B</span><span class="err">，并使用快照</span> <span class="n">B</span> <span class="err">替换根分区的默认子卷，重新启动系统后选择默认引导项即可实现回滚。</span> 
+</code></pre></div></div>
     <footer>
 <p class="meta">
   <span class="byline author vcard">
@@ -125,11 +95,11 @@
         zhiliao
     </span>
   </span>
-<time datetime="2020-07-01T23:38:09+08:00" pubdate>2020-07-01 23:38:09</time>  <span class="categories">
+<time datetime="2022-06-27T19:26:08+08:00" pubdate>2022-06-27 19:26:08</time>  <span class="categories">
     <a class='category' href='/category/linux.html'>linux</a>
   </span>
   <span class="categories">
-    <a class="category" href="/tag/linux.html">linux</a>,    <a class="category" href="/tag/phicomm.html">phicomm</a>  </span>
+    <a class="category" href="/tag/linux.html">linux</a>,    <a class="category" href="/tag/filesystem.html">filesystem</a>  </span>
 </p><div class="sharing">
 </div>    </footer>
   </article>

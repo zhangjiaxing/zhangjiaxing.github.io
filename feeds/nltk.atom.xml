@@ -2,13 +2,12 @@
 <feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - nltk</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/nltk.atom.xml" rel="self"></link><id>/</id><updated>2018-11-10T18:17:07+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>python3 nltk chapter 1</title><link href="/posts/2018/11/10/python-nltk-chapter1.html" rel="alternate"></link><published>2018-11-10T18:17:07+08:00</published><updated>2018-11-10T18:17:07+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2018-11-10:/posts/2018/11/10/python-nltk-chapter1.html</id><summary type="html">&lt;h1&gt;语言处理与Python&lt;/h1&gt;
 &lt;h3&gt;1.语言计算：文本和单词&lt;/h3&gt;
 &lt;h5&gt;1.2 NLTK 入门&lt;/h5&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;nltk&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;nltk&lt;/span&gt;
 &lt;span class="n"&gt;nltk&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;download&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h5&gt;1.3 搜索文本&lt;/h5&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;text1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;concordance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;monstrous&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;搜索文本&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;text1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;concordance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;monstrous&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;搜索文本&lt;/span&gt;
 
 &lt;span class="n"&gt;text1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;similar&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;monstrous&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;查看相识上下文出现的单词&lt;/span&gt;
 
@@ -17,20 +16,18 @@
 &lt;span class="n"&gt;text4&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dispersion_plot&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;citizens&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;democracy&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;freedom&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;duties&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;America&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;  &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;词汇分布图&lt;/span&gt;
 
 &lt;span class="n"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;text3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;text3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;文本词汇丰富度&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h5&gt;1.3 布朗语料库&lt;/h5&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.corpus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;brown …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h1&gt;语言处理与Python&lt;/h1&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.corpus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;brown …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h1&gt;语言处理与Python&lt;/h1&gt;
 &lt;h3&gt;1.语言计算：文本和单词&lt;/h3&gt;
 &lt;h5&gt;1.2 NLTK 入门&lt;/h5&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;nltk&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;nltk&lt;/span&gt;
 &lt;span class="n"&gt;nltk&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;download&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h5&gt;1.3 搜索文本&lt;/h5&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;text1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;concordance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;monstrous&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;搜索文本&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;text1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;concordance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;monstrous&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;搜索文本&lt;/span&gt;
 
 &lt;span class="n"&gt;text1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;similar&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;monstrous&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;查看相识上下文出现的单词&lt;/span&gt;
 
@@ -39,34 +36,30 @@
 &lt;span class="n"&gt;text4&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dispersion_plot&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;citizens&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;democracy&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;freedom&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;duties&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;America&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;  &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;词汇分布图&lt;/span&gt;
 
 &lt;span class="n"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;text3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;text3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;文本词汇丰富度&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h5&gt;1.3 布朗语料库&lt;/h5&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.corpus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;brown&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.corpus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;brown&lt;/span&gt;
 &lt;span class="n"&gt;brown&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="n"&gt;brown&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;words&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;news&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;brown&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;words&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fileids&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;cg22&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
 &lt;span class="n"&gt;brown&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sents&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;news&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;editorial&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;reviews&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h5&gt;1.4 路透社语料库&lt;/h5&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.corpus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;reuters&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.corpus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;reuters&lt;/span&gt;
 &lt;span class="n"&gt;reuters&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fileids&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="n"&gt;reuters&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="n"&gt;reuters&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;training/9865&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;reuters&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;training/9865&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;training/9880&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
 &lt;span class="n"&gt;reuters&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fileids&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;barley&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;reuters&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fileids&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;barley&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;corn&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h5&gt;1.5 就职演说语料库&lt;/h5&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.corpus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;inaugural&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.corpus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;inaugural&lt;/span&gt;
 &lt;span class="n"&gt;inaugural&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fileids&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h5&gt;1.6 标注文本语料库&lt;/h5&gt;
 &lt;p&gt;http://nltk.org/data
@@ -75,7 +68,7 @@ http://nltk.org/howto&lt;/p&gt;
 &lt;p&gt;nltk.corpus.udhr  # 超过300种语言的世界人权宣言&lt;/p&gt;
 &lt;h5&gt;1.8 文本语料库的结构&lt;/h5&gt;
 &lt;h6&gt;NLTK 中定义的基本语料库函数, 使用help(nltk.corpus.reader)可以找到更多的文档&lt;/h6&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;示例&lt;/span&gt;&lt;span class="w"&gt;                       &lt;/span&gt;&lt;span class="n"&gt;描述&lt;/span&gt;&lt;span class="w"&gt;                          &lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;示例&lt;/span&gt;&lt;span class="w"&gt;                       &lt;/span&gt;&lt;span class="n"&gt;描述&lt;/span&gt;&lt;span class="w"&gt;                          &lt;/span&gt;
 &lt;span class="n"&gt;fileids&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt;                  &lt;/span&gt;&lt;span class="n"&gt;语料库中的文件&lt;/span&gt;&lt;span class="w"&gt;                &lt;/span&gt;
 &lt;span class="n"&gt;fileids&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="n"&gt;这些分类对应的语料库中的文件&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt;               &lt;/span&gt;&lt;span class="n"&gt;语料库中的分类&lt;/span&gt;&lt;span class="w"&gt;                &lt;/span&gt;
@@ -94,29 +87,26 @@ http://nltk.org/howto&lt;/p&gt;
 &lt;span class="k"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fileid&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;               &lt;/span&gt;&lt;span class="n"&gt;打开指定语料库文件的文件流&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;
 &lt;span class="n"&gt;root&lt;/span&gt;&lt;span class="w"&gt;                       &lt;/span&gt;&lt;span class="n"&gt;本地安装的语料库根目录的路径&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="n"&gt;readme&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt;                   &lt;/span&gt;&lt;span class="n"&gt;语料库的README文件的内容&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h5&gt;1.9 加载你自己的语料库&lt;/h5&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.corpus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;PlaintextCorpusReader&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.corpus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;PlaintextCorpusReader&lt;/span&gt;
 &lt;span class="n"&gt;corpus_root&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;/usr/share/dict&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="n"&gt;wordlists&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;PlaintextCorpusReader&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;corpus_root&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;.*&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="n"&gt;wordlists&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fileids&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.corpus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;BracketParseCorpusReader&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.corpus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;BracketParseCorpusReader&lt;/span&gt;
 &lt;span class="n"&gt;corpus_root&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="sa"&gt;r&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;C:\corpora\penntreebank\parsed\mrg\wsj&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="n"&gt;file_pattern&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="sa"&gt;r&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;.*/wsj_.*\.mrg&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="n"&gt;ptb&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;BracketParseCorpusReader&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;corpus_root&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;file_pattern&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;ptb&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fileids&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3&gt;2 条件频率分布&lt;/h3&gt;
 &lt;h5&gt;2.1 条件和事件&lt;/h5&gt;
 &lt;h5&gt;2.2 按文体计数词汇&lt;/h5&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.corpus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;brown&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.corpus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;brown&lt;/span&gt;
 &lt;span class="n"&gt;cfd&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;nltk&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ConditionalFreqDist&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
           &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;genre&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;word&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
           &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;genre&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;brown&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
@@ -135,21 +125,19 @@ http://nltk.org/howto&lt;/p&gt;
 
 &lt;span class="n"&gt;cfd&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;romance&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;could&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="c1"&gt;# 193&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h5&gt;2.3 绘制分布图和分布表&lt;/h5&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;cfd&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tabulate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;conditions&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;English&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;German_Deutsch&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;cfd&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tabulate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;conditions&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;English&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;German_Deutsch&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
              &lt;span class="n"&gt;samples&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;cumulative&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 &lt;span class="n"&gt;cfd&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;conditions&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;English&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;German_Deutsch&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
          &lt;span class="n"&gt;samples&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;cumulative&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h5&gt;2.4 使用双连词生成随机文本&lt;/h5&gt;
 &lt;p&gt;条件频率分布是一个对许多NLP 任务都有用的数据结构。2.1总结了它们常用的方法。&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;示例&lt;/span&gt;&lt;span class="w"&gt;                                 &lt;/span&gt;&lt;span class="n"&gt;描述&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;示例&lt;/span&gt;&lt;span class="w"&gt;                                 &lt;/span&gt;&lt;span class="n"&gt;描述&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="n"&gt;cfdist&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;ConditionalFreqDist&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pairs&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;从配对列表中创建条件频率分布&lt;/span&gt;&lt;span class="w"&gt;                       &lt;/span&gt;
 &lt;span class="n"&gt;cfdist&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;conditions&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt;                  &lt;/span&gt;&lt;span class="n"&gt;条件&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="n"&gt;cfdist&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;condition&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt;                    &lt;/span&gt;&lt;span class="n"&gt;此条件下的频率分布&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
@@ -159,14 +147,13 @@ http://nltk.org/howto&lt;/p&gt;
 &lt;span class="n"&gt;cfdist&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt;                        &lt;/span&gt;&lt;span class="n"&gt;为条件频率分布绘图&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="n"&gt;cfdist&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;samples&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;conditions&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="n"&gt;指定样本和条件限制下绘图&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="n"&gt;cfdist1&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;cfdist2&lt;/span&gt;&lt;span class="w"&gt;                      &lt;/span&gt;&lt;span class="n"&gt;测试样本在cfdist1中出现次数是否小于在cfdist2中出现次数&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3&gt;3 更多关于Python：代码重用&lt;/h3&gt;
 &lt;h3&gt;4 词汇资源&lt;/h3&gt;</content><category term="nltk"></category><category term="python"></category><category term="nltk"></category></entry><entry><title>python3 nltk chapter 2</title><link href="/posts/2018/10/25/python-nltk-chapter2.html" rel="alternate"></link><published>2018-10-25T22:03:03+08:00</published><updated>2018-10-25T22:03:03+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2018-10-25:/posts/2018/10/25/python-nltk-chapter2.html</id><summary type="html">&lt;h1&gt;获得文本语料和词汇资源&lt;/h1&gt;
 &lt;h3&gt;1.获取文本语料库&lt;/h3&gt;
 &lt;h5&gt;1.1 古腾堡语料库&lt;/h5&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;nltk&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;nltk&lt;/span&gt;
 &lt;span class="n"&gt;nltk&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;corpus&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gutenberg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fileids&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 
 &lt;span class="n"&gt;nltk&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;corpus&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gutenberg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;words&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;austen-emma.txt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -176,14 +163,13 @@ http://nltk.org/howto&lt;/p&gt;
 
 &lt;span class="n"&gt;nltk&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;corpus&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gutenberg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;raw&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;austen-emma.txt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;nltk&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;corpus&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gutenberg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cents&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;austen-emma.txt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h5&gt;1.2 网络和聊天文本&lt;/h5&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.corpus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;webtext …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h1&gt;获得文本语料和词汇资源&lt;/h1&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.corpus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;webtext …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h1&gt;获得文本语料和词汇资源&lt;/h1&gt;
 &lt;h3&gt;1.获取文本语料库&lt;/h3&gt;
 &lt;h5&gt;1.1 古腾堡语料库&lt;/h5&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;nltk&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;nltk&lt;/span&gt;
 &lt;span class="n"&gt;nltk&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;corpus&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gutenberg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fileids&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 
 &lt;span class="n"&gt;nltk&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;corpus&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gutenberg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;words&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;austen-emma.txt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -193,43 +179,38 @@ http://nltk.org/howto&lt;/p&gt;
 
 &lt;span class="n"&gt;nltk&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;corpus&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gutenberg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;raw&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;austen-emma.txt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;nltk&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;corpus&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gutenberg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cents&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;austen-emma.txt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h5&gt;1.2 网络和聊天文本&lt;/h5&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.corpus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;webtext&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.corpus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;webtext&lt;/span&gt;
 &lt;span class="n"&gt;webtext&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fileids&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.corpus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;nps_chat&lt;/span&gt;
 &lt;span class="n"&gt;nps_chat&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;postsi&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;10-19-20s_706posts.xml&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h5&gt;1.3 布朗语料库&lt;/h5&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.corpus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;brown&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.corpus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;brown&lt;/span&gt;
 &lt;span class="n"&gt;brown&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="n"&gt;brown&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;words&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;news&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;brown&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;words&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fileids&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;cg22&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
 &lt;span class="n"&gt;brown&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sents&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;news&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;editorial&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;reviews&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h5&gt;1.4 路透社语料库&lt;/h5&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.corpus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;reuters&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.corpus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;reuters&lt;/span&gt;
 &lt;span class="n"&gt;reuters&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fileids&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="n"&gt;reuters&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="n"&gt;reuters&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;training/9865&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;reuters&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;training/9865&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;training/9880&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
 &lt;span class="n"&gt;reuters&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fileids&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;barley&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;reuters&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fileids&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;barley&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;corn&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h5&gt;1.5 就职演说语料库&lt;/h5&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.corpus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;inaugural&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.corpus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;inaugural&lt;/span&gt;
 &lt;span class="n"&gt;inaugural&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fileids&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h5&gt;1.6 标注文本语料库&lt;/h5&gt;
 &lt;p&gt;http://nltk.org/data
@@ -238,7 +219,7 @@ http://nltk.org/howto&lt;/p&gt;
 &lt;p&gt;nltk.corpus.udhr  # 超过300种语言的世界人权宣言&lt;/p&gt;
 &lt;h5&gt;1.8 文本语料库的结构&lt;/h5&gt;
 &lt;h6&gt;NLTK 中定义的基本语料库函数, 使用help(nltk.corpus.reader)可以找到更多的文档&lt;/h6&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;示例&lt;/span&gt;&lt;span class="w"&gt;                       &lt;/span&gt;&lt;span class="n"&gt;描述&lt;/span&gt;&lt;span class="w"&gt;                          &lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;示例&lt;/span&gt;&lt;span class="w"&gt;                       &lt;/span&gt;&lt;span class="n"&gt;描述&lt;/span&gt;&lt;span class="w"&gt;                          &lt;/span&gt;
 &lt;span class="n"&gt;fileids&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt;                  &lt;/span&gt;&lt;span class="n"&gt;语料库中的文件&lt;/span&gt;&lt;span class="w"&gt;                &lt;/span&gt;
 &lt;span class="n"&gt;fileids&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="n"&gt;这些分类对应的语料库中的文件&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt;               &lt;/span&gt;&lt;span class="n"&gt;语料库中的分类&lt;/span&gt;&lt;span class="w"&gt;                &lt;/span&gt;
@@ -257,29 +238,26 @@ http://nltk.org/howto&lt;/p&gt;
 &lt;span class="k"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fileid&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;               &lt;/span&gt;&lt;span class="n"&gt;打开指定语料库文件的文件流&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;
 &lt;span class="n"&gt;root&lt;/span&gt;&lt;span class="w"&gt;                       &lt;/span&gt;&lt;span class="n"&gt;本地安装的语料库根目录的路径&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="n"&gt;readme&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt;                   &lt;/span&gt;&lt;span class="n"&gt;语料库的README文件的内容&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h5&gt;1.9 加载你自己的语料库&lt;/h5&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.corpus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;PlaintextCorpusReader&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.corpus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;PlaintextCorpusReader&lt;/span&gt;
 &lt;span class="n"&gt;corpus_root&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;/usr/share/dict&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="n"&gt;wordlists&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;PlaintextCorpusReader&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;corpus_root&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;.*&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="n"&gt;wordlists&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fileids&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.corpus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;BracketParseCorpusReader&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.corpus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;BracketParseCorpusReader&lt;/span&gt;
 &lt;span class="n"&gt;corpus_root&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="sa"&gt;r&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;C:\corpora\penntreebank\parsed\mrg\wsj&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="n"&gt;file_pattern&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="sa"&gt;r&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;.*/wsj_.*\.mrg&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="n"&gt;ptb&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;BracketParseCorpusReader&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;corpus_root&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;file_pattern&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;ptb&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fileids&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3&gt;2 条件频率分布&lt;/h3&gt;
 &lt;h5&gt;2.1 条件和事件&lt;/h5&gt;
 &lt;h5&gt;2.2 按文体计数词汇&lt;/h5&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.corpus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;brown&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.corpus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;brown&lt;/span&gt;
 &lt;span class="n"&gt;cfd&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;nltk&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ConditionalFreqDist&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
           &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;genre&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;word&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
           &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;genre&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;brown&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
@@ -298,21 +276,19 @@ http://nltk.org/howto&lt;/p&gt;
 
 &lt;span class="n"&gt;cfd&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;romance&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;could&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="c1"&gt;# 193&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h5&gt;2.3 绘制分布图和分布表&lt;/h5&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;cfd&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tabulate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;conditions&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;English&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;German_Deutsch&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;cfd&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tabulate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;conditions&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;English&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;German_Deutsch&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
              &lt;span class="n"&gt;samples&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;cumulative&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 &lt;span class="n"&gt;cfd&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;conditions&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;English&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;German_Deutsch&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
          &lt;span class="n"&gt;samples&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;cumulative&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h5&gt;2.4 使用双连词生成随机文本&lt;/h5&gt;
 &lt;p&gt;条件频率分布是一个对许多NLP 任务都有用的数据结构。2.1总结了它们常用的方法。&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;示例&lt;/span&gt;&lt;span class="w"&gt;                                 &lt;/span&gt;&lt;span class="n"&gt;描述&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;示例&lt;/span&gt;&lt;span class="w"&gt;                                 &lt;/span&gt;&lt;span class="n"&gt;描述&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="n"&gt;cfdist&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;ConditionalFreqDist&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pairs&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;从配对列表中创建条件频率分布&lt;/span&gt;&lt;span class="w"&gt;                       &lt;/span&gt;
 &lt;span class="n"&gt;cfdist&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;conditions&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt;                  &lt;/span&gt;&lt;span class="n"&gt;条件&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="n"&gt;cfdist&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;condition&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt;                    &lt;/span&gt;&lt;span class="n"&gt;此条件下的频率分布&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
@@ -322,8 +298,7 @@ http://nltk.org/howto&lt;/p&gt;
 &lt;span class="n"&gt;cfdist&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt;                        &lt;/span&gt;&lt;span class="n"&gt;为条件频率分布绘图&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="n"&gt;cfdist&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;samples&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;conditions&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="n"&gt;指定样本和条件限制下绘图&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="n"&gt;cfdist1&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;cfdist2&lt;/span&gt;&lt;span class="w"&gt;                      &lt;/span&gt;&lt;span class="n"&gt;测试样本在cfdist1中出现次数是否小于在cfdist2中出现次数&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3&gt;3 更多关于Python：代码重用&lt;/h3&gt;
 &lt;h3&gt;4 词汇资源&lt;/h3&gt;</content><category term="nltk"></category><category term="python"></category><category term="nltk"></category></entry></feed>

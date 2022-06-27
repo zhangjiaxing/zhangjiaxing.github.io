@@ -57,6 +57,32 @@
   		<article>
 <header>
       <h1 class="entry-title">
+        <a href="/posts/2022/06/27/snapper.html">snapper文件系统快照工具</a>
+      </h1>
+    <p class="meta">
+<time datetime="2022-06-27T19:26:08+08:00" pubdate>2022-06-27 19:26:08</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><h5>snapper 支持的文件系统</h5>
+<ol>
+<li>btrfs</li>
+<li>XFS、Ext4 或 Ext3 格式的精简 LVM 卷</li>
+</ol>
+<p>命令参考</p>
+<div class="highlight-custom"><pre><span></span><code>snapper list <span class="c1"># 查看快照</span>
+snapper statu  PRE..POST <span class="c1">#命令以获取快照对的已更改文件列表。文件内容发生了更改会以 c 标记、添加了文件会以 + 标记、删除了文件会以 - 标记。 </span>
+snapper diff PRE..POST 文件名 <span class="c1"># 显示某份文件的差异。如果没有指定文件名，则会显示所有文件的差异。</span>
+snapper -v undochange &lt;修改前的快照编号&gt;..&lt;修改后的快照编号&gt; 文件名 <span class="c1"># 撤销修改， </span>
+snapper -v undochange SNAPSHOT_ID..0 FILENAME1 FILENAME2 <span class="c1"># 把SNAPSHOT_ID中的文件恢复到当前文件系统</span>
+snapper …</code></pre></div></div>
+            <footer>
+                <a rel="full-article" href="/posts/2022/06/27/snapper.html">Read On &crarr;</a>
+            </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
         <a href="/posts/2022/04/22/Xwindow-utility.html">Xwindow utility</a>
       </h1>
     <p class="meta">
@@ -80,9 +106,9 @@ The xprop utility is for displaying window and font properties in an X server. <
 </header>
 
         <div class="entry-content"><p>QString转char*的正确方法</p>
-<div class="highlight-custom"><pre><span></span><span class="err">QString().toLocal8Bit().constData()</span>
+<div class="highlight-custom"><pre><span></span><code><span class="err">QString().toLocal8Bit().constData()</span>
 <span class="err">QString().toUtf8().constData()</span>
-</pre></div></div>
+</code></pre></div></div>
   		</article>
   		<article>
 <header>
@@ -94,8 +120,8 @@ The xprop utility is for displaying window and font properties in an X server. <
     </p>
 </header>
 
-        <div class="entry-content"><div class="highlight-custom"><pre><span></span>code --proxy-server<span class="o">=</span><span class="m">127</span>.0.0.1:1080
-</pre></div></div>
+        <div class="entry-content"><div class="highlight-custom"><pre><span></span><code>code --proxy-server<span class="o">=</span><span class="m">127</span>.0.0.1:1080
+</code></pre></div></div>
   		</article>
   		<article>
 <header>
@@ -108,9 +134,9 @@ The xprop utility is for displaying window and font properties in an X server. <
 </header>
 
         <div class="entry-content"><p>go生成函数调用关系图</p>
-<div class="highlight-custom"><pre><span></span>~/go/bin/go-callvis -nostd  -group pkg,type .
+<div class="highlight-custom"><pre><span></span><code>~/go/bin/go-callvis -nostd  -group pkg,type .
 <span class="c1"># 会自动打开浏览器localhost:7878</span>
-</pre></div></div>
+</code></pre></div></div>
   		</article>
   		<article>
 <header>
@@ -122,10 +148,10 @@ The xprop utility is for displaying window and font properties in an X server. <
     </p>
 </header>
 
-        <div class="entry-content"><div class="highlight-custom"><pre><span></span><span class="err"># 中文语言环境下，xdg-user-dirs使用英文名称</span>
+        <div class="entry-content"><div class="highlight-custom"><pre><span></span><code><span class="err"># 中文语言环境下，xdg-user-dirs使用英文名称</span>
 <span class="err">LANG=C xdg-user-dirs-gtk-update # 同意更新</span>
 <span class="err">xdg-user-dirs-gtk-update # 保留且不再询问</span>
-</pre></div></div>
+</code></pre></div></div>
   		</article>
   		<article>
 <header>
@@ -162,8 +188,8 @@ The xprop utility is for displaying window and font properties in an X server. <
 <h4>显示颜色</h4>
 <p>由于minicom不支持带颜色的终端类型， 所以可以用screen登录 <code>sudo screen /dev/ttyUSB0 115200 -T linux</code></p>
 <p>在树莓派上执行：</p>
-<div class="highlight-custom"><pre><span></span><span class="nb">echo</span> &gt;&gt; /root/.profile
-<span class="nb">echo</span> <span class="s1">&#39;[[ &quot;$(tty)&quot; == /dev/ttyS0 ]] &amp;&amp; stty rows 55 cols 190 &amp;&amp; TERM=linux bash &amp;&amp; exit …</span></pre></div></div>
+<div class="highlight-custom"><pre><span></span><code><span class="nb">echo</span> &gt;&gt; /root/.profile
+<span class="nb">echo</span> <span class="s1">&#39;[[ &quot;$(tty)&quot; == /dev/ttyS0 ]] &amp;&amp; stty rows 55 cols 190 &amp;&amp; TERM=linux bash &amp;&amp; exit …</span></code></pre></div></div>
             <footer>
                 <a rel="full-article" href="/posts/2021/08/17/uart-tty.html">Read On &crarr;</a>
             </footer>
@@ -186,12 +212,12 @@ The xprop utility is for displaying window and font properties in an X server. <
 <li>实测debian 10 (buster)，macvlan下 dhcpcd 8.1.2不能正常工作， isc-dhclient-4.4.1 可以正常工作。 </li>
 </ol>
 <p>4种mode</p>
-<div class="highlight-custom"><pre><span></span><span class="err">根据</span> <span class="n">macvlan</span> <span class="err">子接口之间的通信模式，</span><span class="n">macvlan</span> <span class="err">有四种网络模式：</span>
+<div class="highlight-custom"><pre><span></span><code><span class="err">根据</span> <span class="n">macvlan</span> <span class="err">子接口之间的通信模式，</span><span class="n">macvlan</span> <span class="err">有四种网络模式：</span>
     <span class="n">private</span> <span class="err">模式</span>
     <span class="n">vepa</span><span class="p">(</span><span class="n">virtual</span> <span class="n">ethernet</span> <span class="n">port</span> <span class="n">aggregator</span><span class="p">)</span> <span class="err">模式</span>
     <span class="n">bridge</span> <span class="err">模式</span>
     <span class="n">passthru</span> <span class="err">模式</span>
-<span class="err">默认使用的是 …</span></pre></div></div>
+<span class="err">默认使用的是 …</span></code></pre></div></div>
             <footer>
                 <a rel="full-article" href="/posts/2021/08/16/iproute2.html">Read On &crarr;</a>
             </footer>
@@ -206,11 +232,11 @@ The xprop utility is for displaying window and font properties in an X server. <
     </p>
 </header>
 
-        <div class="entry-content"><div class="highlight-custom"><pre><span></span><span class="c1"># 记录一下此用法。 thd来自 debian 软件包 triggerhappy</span>
+        <div class="entry-content"><div class="highlight-custom"><pre><span></span><code><span class="c1"># 记录一下此用法。 thd来自 debian 软件包 triggerhappy</span>
 <span class="k">if</span> <span class="o">[</span> -x /usr/sbin/thd <span class="o">]</span> <span class="o">&amp;&amp;</span> timeout <span class="m">1</span> thd --dump /dev/input/event* <span class="p">|</span> grep -q <span class="s2">&quot;LEFTSHIFT\|RIGHTSHIFT&quot;</span><span class="p">;</span> <span class="k">then</span>
       <span class="nb">printf</span> <span class="s2">&quot;xxxxxxxx&quot;</span> 
 <span class="k">fi</span>
-</pre></div></div>
+</code></pre></div></div>
   		</article>
   		<article>
 <header>
@@ -245,10 +271,10 @@ The xprop utility is for displaying window and font properties in an X server. <
 <p>查询发送队列长度
 <code>ip link show eth0 查看qlen后面的数字</code></p>
 <p>设置发送队列长度</p>
-<div class="highlight-custom"><pre><span></span><span class="c1"># 修改udev配置文件 &quot;/etc/udev/rules.d/70-persistent-net.rules&quot;:</span>
+<div class="highlight-custom"><pre><span></span><code><span class="c1"># 修改udev配置文件 &quot;/etc/udev/rules.d/70-persistent-net.rules&quot;:</span>
 <span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">&quot;net&quot;</span>, <span class="nv">ACTION</span><span class="o">==</span><span class="s2">&quot;add&quot;</span>, <span class="nv">DRIVERS</span><span class="o">==</span><span class="s2">&quot;?*&quot;</span>, ATTR<span class="o">{</span>address<span class="o">}==</span><span class="s2">&quot;00:0C:29:35:79:97&quot;</span>, <span class="nv">KERNEL</span><span class="o">==</span><span class="s2">&quot;eth*&quot;</span>, <span class="nv">NAME</span><span class="o">=</span><span class="s2">&quot;eth0&quot;</span>, ATTR<span class="o">{</span>tx_queue_len<span class="o">}=</span><span class="s2">&quot;10000&quot;</span>
 <span class="c1"># 或者</span>
-ifconfig eth0 txqueuelen <span class="m">10000 …</span></pre></div></div>
+ifconfig eth0 txqueuelen <span class="m">10000 …</span></code></pre></div></div>
             <footer>
                 <a rel="full-article" href="/posts/2021/07/31/txqueuelen.html">Read On &crarr;</a>
             </footer>
@@ -263,14 +289,14 @@ ifconfig eth0 txqueuelen <span class="m">10000 …</span></pre></div></div>
     </p>
 </header>
 
-        <div class="entry-content"><div class="highlight-custom"><pre><span></span><span class="err">据说在虚拟机中使用这个</span><span class="p">,</span> <span class="err">流畅度比安装的版本快很多</span>
+        <div class="entry-content"><div class="highlight-custom"><pre><span></span><code><span class="err">据说在虚拟机中使用这个</span><span class="p">,</span> <span class="err">流畅度比安装的版本快很多</span>
 <span class="err">可以免费使用</span>
 <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">developer</span><span class="p">.</span><span class="n">microsoft</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">en</span><span class="o">-</span><span class="n">us</span><span class="o">/</span><span class="n">microsoft</span><span class="o">-</span><span class="n">edge</span><span class="o">/</span><span class="n">tools</span><span class="o">/</span><span class="n">vms</span><span class="o">/</span>
 
 
 <span class="err">下面这个是有</span><span class="n">win10开发环境的虚拟机</span><span class="p">,</span> <span class="err">比较大</span><span class="mi">20</span><span class="k">G</span>
 <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">developer</span><span class="p">.</span><span class="n">microsoft</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">en</span><span class="o">-</span><span class="n">us</span><span class="o">/</span><span class="n">windows</span><span class="o">/</span><span class="n">downloads</span><span class="o">/</span><span class="n">virtual</span><span class="o">-</span><span class="n">machines</span><span class="o">/</span>
-</pre></div></div>
+</code></pre></div></div>
   		</article>
   		<article>
 <header>
@@ -311,37 +337,9 @@ ifconfig eth0 txqueuelen <span class="m">10000 …</span></pre></div></div>
 <p>首先测试 <code>yes | dpkg -i *</code> 对话框还是会出现. (<code>yes | dpkg -i</code> 印象里面看别人这么写过.  <code>yes | tty</code> 显示 <code>not a tty</code>)</p>
 <p>于是测试 ssh -T 链接本机, 安装果然没有对话框. 能够成功安装,但是有一行报错 <code>debconf: unable to initialize frontend: Dialog</code></p>
 <p>顺着这个报错, 终于搜到了 如何dpkg安装软件不出现dialog对话框.</p>
-<div class="highlight-custom"><pre><span></span><span class="err">设置环境变量, 然后在 dpkg安装就可以</span>
+<div class="highlight-custom"><pre><span></span><code><span class="err">设置环境变量, 然后在 dpkg安装就可以</span>
 <span class="err">DEBIAN_FRONTEND=noninteractive dpkg -i *</span>
-</pre></div></div>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="/posts/2020/08/05/openSUSE-zypper.html">openSUSE zypper</a>
-      </h1>
-    <p class="meta">
-<time datetime="2020-08-05T13:24:13+08:00" pubdate>2020-08-05 13:24:13</time>      
-    </p>
-</header>
-
-        <div class="entry-content"><ol>
-<li>zypper 安装软件时候版本选择</li>
-</ol>
-<div class="highlight-custom"><pre><span></span><span class="err">查看仓库中有</span><span class="n">firefox的哪些版本</span>
-<span class="n">sudo</span> <span class="n">zypper</span> <span class="n">se</span> <span class="o">-</span><span class="n">s</span> <span class="n">firefox</span>
-
-<span class="err">安装指定版本</span>
-<span class="n">sudo</span> <span class="n">zypper</span> <span class="k">in</span> <span class="c1">--oldpackage MozillaFirefox=78.0.1-lp152.2.5.1</span>
-</pre></div>
-
-
-<ol>
-<li>zypper 和 其他包管理器 使用对比<blockquote>
-<p><a href="https://wiki.archlinux.org/index.php/Pacman/Rosetta">Pacman/Rosetta</a></p>
-</blockquote>
-</li>
-</ol></div>
+</code></pre></div></div>
   		</article>
 <div class="pagination">
     <a class="prev" href="/index2.html">&larr; Older</a>
@@ -354,6 +352,9 @@ ifconfig eth0 txqueuelen <span class="m">10000 …</span></pre></div></div>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     <li class="post">
+        <a href="/posts/2022/06/27/snapper.html">snapper文件系统快照工具</a>
+    </li>
+    <li class="post">
         <a href="/posts/2022/04/22/Xwindow-utility.html">Xwindow utility</a>
     </li>
     <li class="post">
@@ -364,9 +365,6 @@ ifconfig eth0 txqueuelen <span class="m">10000 …</span></pre></div></div>
     </li>
     <li class="post">
         <a href="/posts/2022/03/08/go-callvis.html">go生成函数调用关系图</a>
-    </li>
-    <li class="post">
-        <a href="/posts/2022/02/24/xdg-user-dirs.html">xdg-user-dirs使用英文名称</a>
     </li>
   </ul>
 </section><section>
@@ -380,7 +378,7 @@ ifconfig eth0 txqueuelen <span class="m">10000 …</span></pre></div></div>
       <li><a href="/category/golang.html">golang (1)</a></li>
       <li><a href="/category/gu-piao.html">股票 (1)</a></li>
       <li><a href="/category/ide.html">IDE (1)</a></li>
-      <li><a href="/category/linux.html">linux (35)</a></li>
+      <li><a href="/category/linux.html">linux (36)</a></li>
       <li><a href="/category/network.html">network (7)</a></li>
       <li><a href="/category/nltk.html">nltk (2)</a></li>
       <li><a href="/category/other.html">other (1)</a></li>
@@ -395,7 +393,7 @@ ifconfig eth0 txqueuelen <span class="m">10000 …</span></pre></div></div>
 </section>
 <section>
   <h1>Tags</h1>
-    <a href="/tag/xwindow.html">xwindow</a>,    <a href="/tag/programming.html">programming</a>,    <a href="/tag/ide.html">IDE</a>,    <a href="/tag/glang.html">glang</a>,    <a href="/tag/linux.html">linux</a>,    <a href="/tag/xdg.html">xdg</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/git.html">git</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a></section>
+    <a href="/tag/linux.html">linux</a>,    <a href="/tag/filesystem.html">filesystem</a>,    <a href="/tag/xwindow.html">xwindow</a>,    <a href="/tag/programming.html">programming</a>,    <a href="/tag/ide.html">IDE</a>,    <a href="/tag/glang.html">glang</a>,    <a href="/tag/xdg.html">xdg</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/git.html">git</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a></section>
     <section>
         <h1>Social</h1>
         <ul>

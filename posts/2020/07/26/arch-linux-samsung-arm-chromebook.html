@@ -75,7 +75,7 @@
 <p>参考https://calvin.me/arch-linux-samsung-arm-chromebook 修改亮度控制 绑定按键 取消静音 设置休眠</p>
 </li>
 </ol>
-<div class="highlight-custom"><pre><span></span><span class="n">alsamixer</span><span class="w"></span>
+<div class="highlight-custom"><pre><span></span><code><span class="n">alsamixer</span><span class="w"></span>
 
 <span class="k">Go</span><span class="w"> </span><span class="n">across</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="p">(</span><span class="n">arrow</span><span class="w"> </span><span class="n">keys</span><span class="p">)</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">press</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">unmute</span><span class="w"></span>
 <span class="w">    </span><span class="nf">Left</span><span class="w"> </span><span class="n">Speaker</span><span class="w"> </span><span class="n">Mixer</span><span class="w"> </span><span class="nf">Left</span><span class="w"> </span><span class="n">DAC1</span><span class="w"></span>
@@ -86,10 +86,9 @@
 <span class="w">    </span><span class="nf">Right</span><span class="w"> </span><span class="n">Speaker</span><span class="w"> </span><span class="n">Mixer</span><span class="w"> </span><span class="n">Mono</span><span class="w"> </span><span class="n">DAC2</span><span class="w"></span>
 <span class="w">    </span><span class="nf">Right</span><span class="w"> </span><span class="n">Speaker</span><span class="w"> </span><span class="n">Mixer</span><span class="w"> </span><span class="n">Mono</span><span class="w"> </span><span class="n">DAC3</span><span class="w"></span>
 <span class="w">    </span><span class="nf">Right</span><span class="w"> </span><span class="n">Speaker</span><span class="w"> </span><span class="n">Mixer</span><span class="w"> </span><span class="nf">Right</span><span class="w"> </span><span class="n">DAC1</span><span class="w"></span>
-</pre></div>
+</code></pre></div>
 
-
-<div class="highlight-custom"><pre><span></span><span class="n">cat</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="k">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">brightness</span>
+<div class="highlight-custom"><pre><span></span><code><span class="n">cat</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="k">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">brightness</span>
 
 <span class="o">#!/</span><span class="n">bin</span><span class="o">/</span><span class="n">bash</span>
 <span class="n">cur_bri</span><span class="o">=</span><span class="err">$</span><span class="p">(</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">cat</span> <span class="o">/</span><span class="n">sys</span><span class="o">/</span><span class="k">class</span><span class="o">/</span><span class="n">backlight</span><span class="o">/</span><span class="n">backlight</span><span class="p">.</span><span class="mi">12</span><span class="o">/</span><span class="n">brightness</span><span class="p">)</span>
@@ -107,18 +106,16 @@
 <span class="k">if</span> <span class="p">[</span> <span class="err">$</span><span class="mi">1</span> <span class="o">==</span> <span class="ss">&quot;-s&quot;</span> <span class="p">];</span> <span class="k">then</span>
     <span class="o">`</span><span class="n">echo</span> <span class="err">$</span><span class="mi">2</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">sys</span><span class="o">/</span><span class="k">class</span><span class="o">/</span><span class="n">backlight</span><span class="o">/</span><span class="n">backlight</span><span class="p">.</span><span class="mi">12</span><span class="o">/</span><span class="n">brightness</span><span class="o">`</span>
 <span class="n">fi</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>Other Notes</p>
-<div class="highlight-custom"><pre><span></span><span class="err">* The trackpad sometimes doesn&#39;t work on boot. A restart fixes it (press the power button)</span>
+<div class="highlight-custom"><pre><span></span><code><span class="err">* The trackpad sometimes doesn&#39;t work on boot. A restart fixes it (press the power button)</span>
 <span class="err">* Can&#39;t seem to get PulseAudio working</span>
 <span class="err">* Two finger clicks that are too wide apart don&#39;t register as a right click. Two finger taps do though</span>
 <span class="err">* Current RAM usage for me is 123M, A LOT better than Chrome OS which always sits around 1.5GB</span>
 <span class="err">* Still can&#39;t get 720p video to run smoothly. Chrome OS is a bit better here but even then it dies on a 720p60 video. Sticking to 480p seems to be the best thing to do</span>
 <span class="err">* It is possible to get rid having to press CTRL + D on each boot, I did that once and totally forgot how to get it back. I eventually did but it was crazy stuff.</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>参考
 <a href="https://archlinuxarm.org/platforms/armv7/samsung/samsung-chromebook">archlinuxarm</a>
@@ -147,6 +144,9 @@
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     <li class="post">
+        <a href="/posts/2022/06/27/snapper.html">snapper文件系统快照工具</a>
+    </li>
+    <li class="post">
         <a href="/posts/2022/04/22/Xwindow-utility.html">Xwindow utility</a>
     </li>
     <li class="post">
@@ -157,9 +157,6 @@
     </li>
     <li class="post">
         <a href="/posts/2022/03/08/go-callvis.html">go生成函数调用关系图</a>
-    </li>
-    <li class="post">
-        <a href="/posts/2022/02/24/xdg-user-dirs.html">xdg-user-dirs使用英文名称</a>
     </li>
   </ul>
 </section><section>
@@ -173,7 +170,7 @@
       <li><a href="/category/golang.html">golang (1)</a></li>
       <li><a href="/category/gu-piao.html">股票 (1)</a></li>
       <li><a href="/category/ide.html">IDE (1)</a></li>
-      <li><a href="/category/linux.html">linux (35)</a></li>
+      <li><a href="/category/linux.html">linux (36)</a></li>
       <li><a href="/category/network.html">network (7)</a></li>
       <li><a href="/category/nltk.html">nltk (2)</a></li>
       <li><a href="/category/other.html">other (1)</a></li>
@@ -188,7 +185,7 @@
 </section>
 <section>
   <h1>Tags</h1>
-    <a href="/tag/xwindow.html">xwindow</a>,    <a href="/tag/programming.html">programming</a>,    <a href="/tag/ide.html">IDE</a>,    <a href="/tag/glang.html">glang</a>,    <a href="/tag/linux.html">linux</a>,    <a href="/tag/xdg.html">xdg</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/git.html">git</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a></section>
+    <a href="/tag/linux.html">linux</a>,    <a href="/tag/filesystem.html">filesystem</a>,    <a href="/tag/xwindow.html">xwindow</a>,    <a href="/tag/programming.html">programming</a>,    <a href="/tag/ide.html">IDE</a>,    <a href="/tag/glang.html">glang</a>,    <a href="/tag/xdg.html">xdg</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/git.html">git</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a></section>
     <section>
         <h1>Social</h1>
         <ul>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - other</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/other.atom.xml" rel="self"></link><id>/</id><updated>2018-04-30T13:27:17+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>日历并不是连续的</title><link href="/posts/2018/04/30/cal-9-1752.html" rel="alternate"></link><published>2018-04-30T13:27:17+08:00</published><updated>2018-04-30T13:27:17+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2018-04-30:/posts/2018/04/30/cal-9-1752.html</id><content type="html">&lt;p&gt;一个小知识, 日历并不是连续的&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;zhiliao@zhiliao ~&amp;gt; cal 9 1752&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;zhiliao@zhiliao ~&amp;gt; cal 9 1752&lt;/span&gt;
 &lt;span class="err"&gt;      九月 1752     &lt;/span&gt;
 &lt;span class="err"&gt;日 一 二 三 四 五 六&lt;/span&gt;
 &lt;span class="err"&gt;       1  2 14 15 16&lt;/span&gt;
 &lt;span class="err"&gt;17 18 19 20 21 22 23&lt;/span&gt;
 &lt;span class="err"&gt;24 25 26 27 28 29 30&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="other"></category><category term="other"></category></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="other"></category><category term="other"></category></entry></feed>

@@ -1,18 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>无聊就该多读书。</description><lastBuildDate>Fri, 22 Apr 2022 15:46:38 +0800</lastBuildDate><item><title>Xwindow utility</title><link>/posts/2022/04/22/Xwindow-utility.html</link><description>&lt;p&gt;xwininfo 
+<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>无聊就该多读书。</description><lastBuildDate>Mon, 27 Jun 2022 19:26:08 +0800</lastBuildDate><item><title>snapper文件系统快照工具</title><link>/posts/2022/06/27/snapper.html</link><description>&lt;h5&gt;snapper 支持的文件系统&lt;/h5&gt;
+&lt;ol&gt;
+&lt;li&gt;btrfs&lt;/li&gt;
+&lt;li&gt;XFS、Ext4 或 Ext3 格式的精简 LVM 卷&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;命令参考&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;snapper list &lt;span class="c1"&gt;# 查看快照&lt;/span&gt;
+snapper statu  PRE..POST &lt;span class="c1"&gt;#命令以获取快照对的已更改文件列表。文件内容发生了更改会以 c 标记、添加了文件会以 + 标记、删除了文件会以 - 标记。 &lt;/span&gt;
+snapper diff PRE..POST 文件名 &lt;span class="c1"&gt;# 显示某份文件的差异。如果没有指定文件名，则会显示所有文件的差异。&lt;/span&gt;
+snapper -v undochange &amp;lt;修改前的快照编号&amp;gt;..&amp;lt;修改后的快照编号&amp;gt; 文件名 &lt;span class="c1"&gt;# 撤销修改， &lt;/span&gt;
+snapper -v undochange SNAPSHOT_ID..0 FILENAME1 FILENAME2 &lt;span class="c1"&gt;# 把SNAPSHOT_ID中的文件恢复到当前文件系统&lt;/span&gt;
+snapper …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Mon, 27 Jun 2022 19:26:08 +0800</pubDate><guid isPermaLink="false">tag:None,2022-06-27:/posts/2022/06/27/snapper.html</guid><category>linux</category><category>linux</category><category>filesystem</category></item><item><title>Xwindow utility</title><link>/posts/2022/04/22/Xwindow-utility.html</link><description>&lt;p&gt;xwininfo 
 xprop &lt;/p&gt;
 &lt;p&gt;Xwininfo is a utility for displaying information about windows.
 The xprop utility is for displaying window and font properties in an X server. &lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Fri, 22 Apr 2022 15:46:38 +0800</pubDate><guid isPermaLink="false">tag:None,2022-04-22:/posts/2022/04/22/Xwindow-utility.html</guid><category>xwindow</category><category>xwindow</category></item><item><title>关于Qt</title><link>/posts/2022/04/11/about-qt.html</link><description>&lt;p&gt;QString转char*的正确方法&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;QString().toLocal8Bit().constData()&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;QString().toLocal8Bit().constData()&lt;/span&gt;
 &lt;span class="err"&gt;QString().toUtf8().constData()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Mon, 11 Apr 2022 14:48:07 +0800</pubDate><guid isPermaLink="false">tag:None,2022-04-11:/posts/2022/04/11/about-qt.html</guid><category>programming</category><category>programming</category></item><item><title>vscode 使用代理安装扩展</title><link>/posts/2022/03/31/vscode-proxy.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;code --proxy-server&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;127&lt;/span&gt;.0.0.1:1080
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Thu, 31 Mar 2022 10:06:16 +0800</pubDate><guid isPermaLink="false">tag:None,2022-03-31:/posts/2022/03/31/vscode-proxy.html</guid><category>IDE</category><category>IDE</category></item><item><title>go生成函数调用关系图</title><link>/posts/2022/03/08/go-callvis.html</link><description>&lt;p&gt;go生成函数调用关系图&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;~/go/bin/go-callvis -nostd  -group pkg,type .
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Mon, 11 Apr 2022 14:48:07 +0800</pubDate><guid isPermaLink="false">tag:None,2022-04-11:/posts/2022/04/11/about-qt.html</guid><category>programming</category><category>programming</category></item><item><title>vscode 使用代理安装扩展</title><link>/posts/2022/03/31/vscode-proxy.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;code --proxy-server&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;127&lt;/span&gt;.0.0.1:1080
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Thu, 31 Mar 2022 10:06:16 +0800</pubDate><guid isPermaLink="false">tag:None,2022-03-31:/posts/2022/03/31/vscode-proxy.html</guid><category>IDE</category><category>IDE</category></item><item><title>go生成函数调用关系图</title><link>/posts/2022/03/08/go-callvis.html</link><description>&lt;p&gt;go生成函数调用关系图&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;~/go/bin/go-callvis -nostd  -group pkg,type .
 &lt;span class="c1"&gt;# 会自动打开浏览器localhost:7878&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Tue, 08 Mar 2022 11:46:01 +0800</pubDate><guid isPermaLink="false">tag:None,2022-03-08:/posts/2022/03/08/go-callvis.html</guid><category>golang</category><category>glang</category></item><item><title>xdg-user-dirs使用英文名称</title><link>/posts/2022/02/24/xdg-user-dirs.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;# 中文语言环境下，xdg-user-dirs使用英文名称&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Tue, 08 Mar 2022 11:46:01 +0800</pubDate><guid isPermaLink="false">tag:None,2022-03-08:/posts/2022/03/08/go-callvis.html</guid><category>golang</category><category>glang</category></item><item><title>xdg-user-dirs使用英文名称</title><link>/posts/2022/02/24/xdg-user-dirs.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;# 中文语言环境下，xdg-user-dirs使用英文名称&lt;/span&gt;
 &lt;span class="err"&gt;LANG=C xdg-user-dirs-gtk-update # 同意更新&lt;/span&gt;
 &lt;span class="err"&gt;xdg-user-dirs-gtk-update # 保留且不再询问&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Thu, 24 Feb 2022 11:44:53 +0800</pubDate><guid isPermaLink="false">tag:None,2022-02-24:/posts/2022/02/24/xdg-user-dirs.html</guid><category>linux</category><category>linux</category><category>xdg</category></item><item><title>Linux DNS缓存</title><link>/posts/2022/01/04/linux-dns.html</link><description>&lt;ol&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Thu, 24 Feb 2022 11:44:53 +0800</pubDate><guid isPermaLink="false">tag:None,2022-02-24:/posts/2022/02/24/xdg-user-dirs.html</guid><category>linux</category><category>linux</category><category>xdg</category></item><item><title>Linux DNS缓存</title><link>/posts/2022/01/04/linux-dns.html</link><description>&lt;ol&gt;
 &lt;li&gt;nscd (为glibc提供缓存, 支持glibc 的 getaddrinfo(3), gethostbyname(3) 等相关API)&lt;/li&gt;
 &lt;li&gt;systemd-resolved (1. 通过D-Bus服务提供dns缓存 2. 为glibc提供缓存 3. 在本地回环网口 127.0.0.53 上提供的本地DNS服务器[不推荐])&lt;/li&gt;
 &lt;li&gt;dnsmasq (localhost:53)&lt;/li&gt;
@@ -25,8 +36,8 @@ The xprop utility is for displaying window and font properties in an X server. &
 &lt;h4&gt;显示颜色&lt;/h4&gt;
 &lt;p&gt;由于minicom不支持带颜色的终端类型， 所以可以用screen登录 &lt;code&gt;sudo screen /dev/ttyUSB0 115200 -T linux&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;在树莓派上执行：&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &amp;gt;&amp;gt; /root/.profile
-&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;[[ &amp;quot;$(tty)&amp;quot; == /dev/ttyS0 ]] &amp;amp;&amp;amp; stty rows 55 cols 190 &amp;amp;&amp;amp; TERM=linux bash &amp;amp;&amp;amp; exit …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Tue, 17 Aug 2021 18:25:03 +0800</pubDate><guid isPermaLink="false">tag:None,2021-08-17:/posts/2021/08/17/uart-tty.html</guid><category>linux</category><category>linux</category></item><item><title>iproute2</title><link>/posts/2021/08/16/iproute2.html</link><description>&lt;h2&gt;macvlan&lt;/h2&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &amp;gt;&amp;gt; /root/.profile
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;[[ &amp;quot;$(tty)&amp;quot; == /dev/ttyS0 ]] &amp;amp;&amp;amp; stty rows 55 cols 190 &amp;amp;&amp;amp; TERM=linux bash &amp;amp;&amp;amp; exit …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Tue, 17 Aug 2021 18:25:03 +0800</pubDate><guid isPermaLink="false">tag:None,2021-08-17:/posts/2021/08/17/uart-tty.html</guid><category>linux</category><category>linux</category></item><item><title>iproute2</title><link>/posts/2021/08/16/iproute2.html</link><description>&lt;h2&gt;macvlan&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;ip link add link eth0 name macvlan0 type macvlan mode bridge&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;ip link delete macvlan0&lt;/code&gt;&lt;/p&gt;
 &lt;ol&gt;
@@ -34,16 +45,16 @@ The xprop utility is for displaying window and font properties in an X server. &
 &lt;li&gt;实测debian 10 (buster)，macvlan下 dhcpcd 8.1.2不能正常工作， isc-dhclient-4.4.1 可以正常工作。 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;4种mode&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;根据&lt;/span&gt; &lt;span class="n"&gt;macvlan&lt;/span&gt; &lt;span class="err"&gt;子接口之间的通信模式，&lt;/span&gt;&lt;span class="n"&gt;macvlan&lt;/span&gt; &lt;span class="err"&gt;有四种网络模式：&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;根据&lt;/span&gt; &lt;span class="n"&gt;macvlan&lt;/span&gt; &lt;span class="err"&gt;子接口之间的通信模式，&lt;/span&gt;&lt;span class="n"&gt;macvlan&lt;/span&gt; &lt;span class="err"&gt;有四种网络模式：&lt;/span&gt;
     &lt;span class="n"&gt;private&lt;/span&gt; &lt;span class="err"&gt;模式&lt;/span&gt;
     &lt;span class="n"&gt;vepa&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;virtual&lt;/span&gt; &lt;span class="n"&gt;ethernet&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt; &lt;span class="n"&gt;aggregator&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="err"&gt;模式&lt;/span&gt;
     &lt;span class="n"&gt;bridge&lt;/span&gt; &lt;span class="err"&gt;模式&lt;/span&gt;
     &lt;span class="n"&gt;passthru&lt;/span&gt; &lt;span class="err"&gt;模式&lt;/span&gt;
-&lt;span class="err"&gt;默认使用的是 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Mon, 16 Aug 2021 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:None,2021-08-16:/posts/2021/08/16/iproute2.html</guid><category>network</category><category>linux</category><category>network</category></item><item><title>树莓派中开机时检测案件是否按下</title><link>/posts/2021/08/01/thd.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# 记录一下此用法。 thd来自 debian 软件包 triggerhappy&lt;/span&gt;
+&lt;span class="err"&gt;默认使用的是 …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Mon, 16 Aug 2021 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:None,2021-08-16:/posts/2021/08/16/iproute2.html</guid><category>network</category><category>linux</category><category>network</category></item><item><title>树莓派中开机时检测案件是否按下</title><link>/posts/2021/08/01/thd.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 记录一下此用法。 thd来自 debian 软件包 triggerhappy&lt;/span&gt;
 &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; -x /usr/sbin/thd &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; timeout &lt;span class="m"&gt;1&lt;/span&gt; thd --dump /dev/input/event* &lt;span class="p"&gt;|&lt;/span&gt; grep -q &lt;span class="s2"&gt;&amp;quot;LEFTSHIFT\|RIGHTSHIFT&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
       &lt;span class="nb"&gt;printf&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;xxxxxxxx&amp;quot;&lt;/span&gt; 
 &lt;span class="k"&gt;fi&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Sun, 01 Aug 2021 15:16:55 +0800</pubDate><guid isPermaLink="false">tag:None,2021-08-01:/posts/2021/08/01/thd.html</guid><category>linux</category><category>linux</category><category>raspberry</category></item><item><title>linux平台下的抓包方案</title><link>/posts/2021/08/01/capture.html</link><description>&lt;h4&gt;linux平台下的抓包方案&lt;/h4&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Sun, 01 Aug 2021 15:16:55 +0800</pubDate><guid isPermaLink="false">tag:None,2021-08-01:/posts/2021/08/01/thd.html</guid><category>linux</category><category>linux</category><category>raspberry</category></item><item><title>linux平台下的抓包方案</title><link>/posts/2021/08/01/capture.html</link><description>&lt;h4&gt;linux平台下的抓包方案&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;libpcap &lt;code&gt;wireshark tcpdump均基于此。&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;PF_RING &lt;code&gt;性能更好。 支持PF_RING ZC模式。&lt;/code&gt;&lt;/li&gt;
@@ -54,17 +65,17 @@ The xprop utility is for displaying window and font properties in an X server. &
 &lt;p&gt;查询发送队列长度
 &lt;code&gt;ip link show eth0 查看qlen后面的数字&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;设置发送队列长度&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# 修改udev配置文件 &amp;quot;/etc/udev/rules.d/70-persistent-net.rules&amp;quot;:&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 修改udev配置文件 &amp;quot;/etc/udev/rules.d/70-persistent-net.rules&amp;quot;:&lt;/span&gt;
 &lt;span class="nv"&gt;SUBSYSTEM&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;net&amp;quot;&lt;/span&gt;, &lt;span class="nv"&gt;ACTION&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;add&amp;quot;&lt;/span&gt;, &lt;span class="nv"&gt;DRIVERS&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;?*&amp;quot;&lt;/span&gt;, ATTR&lt;span class="o"&gt;{&lt;/span&gt;address&lt;span class="o"&gt;}==&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;00:0C:29:35:79:97&amp;quot;&lt;/span&gt;, &lt;span class="nv"&gt;KERNEL&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;eth*&amp;quot;&lt;/span&gt;, &lt;span class="nv"&gt;NAME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;eth0&amp;quot;&lt;/span&gt;, ATTR&lt;span class="o"&gt;{&lt;/span&gt;tx_queue_len&lt;span class="o"&gt;}=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;10000&amp;quot;&lt;/span&gt;
 &lt;span class="c1"&gt;# 或者&lt;/span&gt;
-ifconfig eth0 txqueuelen &lt;span class="m"&gt;10000 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Sat, 31 Jul 2021 01:54:28 +0800</pubDate><guid isPermaLink="false">tag:None,2021-07-31:/posts/2021/07/31/txqueuelen.html</guid><category>network</category><category>linux</category><category>network</category></item><item><title>微软提供的windows系统虚拟机文件下载</title><link>/posts/2020/09/07/windows-vm.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;据说在虚拟机中使用这个&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;流畅度比安装的版本快很多&lt;/span&gt;
+ifconfig eth0 txqueuelen &lt;span class="m"&gt;10000 …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Sat, 31 Jul 2021 01:54:28 +0800</pubDate><guid isPermaLink="false">tag:None,2021-07-31:/posts/2021/07/31/txqueuelen.html</guid><category>network</category><category>linux</category><category>network</category></item><item><title>微软提供的windows系统虚拟机文件下载</title><link>/posts/2020/09/07/windows-vm.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;据说在虚拟机中使用这个&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;流畅度比安装的版本快很多&lt;/span&gt;
 &lt;span class="err"&gt;可以免费使用&lt;/span&gt;
 &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;developer&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;microsoft&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;en&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;us&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;microsoft&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;edge&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;tools&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;vms&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;
 
 
 &lt;span class="err"&gt;下面这个是有&lt;/span&gt;&lt;span class="n"&gt;win10开发环境的虚拟机&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;比较大&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="k"&gt;G&lt;/span&gt;
 &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;developer&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;microsoft&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;en&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;us&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;windows&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;downloads&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;virtual&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;machines&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Mon, 07 Sep 2020 00:12:35 +0800</pubDate><guid isPermaLink="false">tag:None,2020-09-07:/posts/2020/09/07/windows-vm.html</guid><category>vm</category><category>vm</category><category>windows</category></item><item><title>openSUSE coredump文件</title><link>/posts/2020/08/24/openSUSE-coredump.html</link><description>&lt;p&gt;openSUSE Leap 15.2 默认是不开启coredump的.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Mon, 07 Sep 2020 00:12:35 +0800</pubDate><guid isPermaLink="false">tag:None,2020-09-07:/posts/2020/09/07/windows-vm.html</guid><category>vm</category><category>vm</category><category>windows</category></item><item><title>openSUSE coredump文件</title><link>/posts/2020/08/24/openSUSE-coredump.html</link><description>&lt;p&gt;openSUSE Leap 15.2 默认是不开启coredump的.&lt;/p&gt;
 &lt;h6&gt;开启方法&lt;/h6&gt;
 &lt;ol&gt;
 &lt;li&gt;查看&lt;code&gt;ulimit -H -a&lt;/code&gt; 和 &lt;code&gt;ulimit -S -a&lt;/code&gt; core files是否均显示unlimited. 如果不是则修改&lt;/li&gt;
@@ -81,18 +92,17 @@ ifconfig eth0 txqueuelen &lt;span class="m"&gt;10000 …&lt;/span&gt;&lt;/pre&gt
 &lt;p&gt;首先测试 &lt;code&gt;yes | dpkg -i *&lt;/code&gt; 对话框还是会出现. (&lt;code&gt;yes | dpkg -i&lt;/code&gt; 印象里面看别人这么写过.  &lt;code&gt;yes | tty&lt;/code&gt; 显示 &lt;code&gt;not a tty&lt;/code&gt;)&lt;/p&gt;
 &lt;p&gt;于是测试 ssh -T 链接本机, 安装果然没有对话框. 能够成功安装,但是有一行报错 &lt;code&gt;debconf: unable to initialize frontend: Dialog&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;顺着这个报错, 终于搜到了 如何dpkg安装软件不出现dialog对话框.&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;设置环境变量, 然后在 dpkg安装就可以&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;设置环境变量, 然后在 dpkg安装就可以&lt;/span&gt;
 &lt;span class="err"&gt;DEBIAN_FRONTEND=noninteractive dpkg -i *&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Fri, 14 Aug 2020 17:38:05 +0800</pubDate><guid isPermaLink="false">tag:None,2020-08-14:/posts/2020/08/14/dpkg-disable-dialog.html</guid><category>linux</category><category>linux</category><category>debian</category></item><item><title>openSUSE zypper</title><link>/posts/2020/08/05/openSUSE-zypper.html</link><description>&lt;ol&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Fri, 14 Aug 2020 17:38:05 +0800</pubDate><guid isPermaLink="false">tag:None,2020-08-14:/posts/2020/08/14/dpkg-disable-dialog.html</guid><category>linux</category><category>linux</category><category>debian</category></item><item><title>openSUSE zypper</title><link>/posts/2020/08/05/openSUSE-zypper.html</link><description>&lt;ol&gt;
 &lt;li&gt;zypper 安装软件时候版本选择&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;查看仓库中有&lt;/span&gt;&lt;span class="n"&gt;firefox的哪些版本&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;查看仓库中有&lt;/span&gt;&lt;span class="n"&gt;firefox的哪些版本&lt;/span&gt;
 &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;zypper&lt;/span&gt; &lt;span class="n"&gt;se&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="n"&gt;firefox&lt;/span&gt;
 
 &lt;span class="err"&gt;安装指定版本&lt;/span&gt;
 &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;zypper&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="c1"&gt;--oldpackage MozillaFirefox=78.0.1-lp152.2.5.1&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ol&gt;
 &lt;li&gt;zypper 和 其他包管理器 使用对比&lt;blockquote&gt;
@@ -110,12 +120,12 @@ ifconfig eth0 txqueuelen &lt;span class="m"&gt;10000 …&lt;/span&gt;&lt;/pre&gt
 &lt;p&gt;参考https://calvin.me/arch-linux-samsung-arm-chromebook 修改亮度控制 绑定按键 取消静音 设置休眠&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;alsamixer&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;alsamixer&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 
 &lt;span class="k"&gt;Go&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;across&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;page&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;arrow&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;keys&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;and&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;press&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;M&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;to&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;unmute&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nf"&gt;Left&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Speaker&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Mixer&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;Left&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;DAC1&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nf"&gt;Left&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Speaker&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Mixer&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Mono&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;DAC2&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nf"&gt;Left&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Speaker&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Mixer&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Mono …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Sun, 26 Jul 2020 22:56:00 +0800</pubDate><guid isPermaLink="false">tag:None,2020-07-26:/posts/2020/07/26/arch-linux-samsung-arm-chromebook.html</guid><category>linux</category><category>archlinux</category><category>linux</category></item><item><title>openSUSE Leap 系统升级</title><link>/posts/2020/07/20/openSUSE-upgrade.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# 首先启用 repo-update 软件源&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nf"&gt;Left&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Speaker&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Mixer&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Mono …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Sun, 26 Jul 2020 22:56:00 +0800</pubDate><guid isPermaLink="false">tag:None,2020-07-26:/posts/2020/07/26/arch-linux-samsung-arm-chromebook.html</guid><category>linux</category><category>archlinux</category><category>linux</category></item><item><title>openSUSE Leap 系统升级</title><link>/posts/2020/07/20/openSUSE-upgrade.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 首先启用 repo-update 软件源&lt;/span&gt;
 zypper modifyrepo --enable repo-update
 
 &lt;span class="c1"&gt;# 然后更到最新&lt;/span&gt;
@@ -131,21 +141,19 @@ zypper --releasever&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;15&
 &lt;span class="c1"&gt;# 或者仓库地址使用特定的Leap版本号对它们进行硬编码，则需要首先对其进行修改:&lt;/span&gt;
 sudo sed -i &lt;span class="s1"&gt;&amp;#39;s/15.1/$releasever/g&amp;#39;&lt;/span&gt; /etc/zypp/repos.d/*.repo
 &lt;span class="c1"&gt;# 然后执行:&lt;/span&gt;
-zypper --releasever&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;15&lt;/span&gt;.2 …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Mon, 20 Jul 2020 23:38:50 +0800</pubDate><guid isPermaLink="false">tag:None,2020-07-20:/posts/2020/07/20/openSUSE-upgrade.html</guid><category>linux</category><category>openSUSE</category><category>linux</category></item><item><title>openSUSE Leap &amp; Tumbleweed 安装解码器</title><link>/posts/2020/07/20/openSUSE-multimedia.html</link><description>&lt;p&gt;添加全部packman仓库&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo zypper ar -fc &lt;span class="s1"&gt;&amp;#39;https://mirrors.tuna.tsinghua.edu.cn/packman/suse/openSUSE_Leap_$releasever&amp;#39;&lt;/span&gt;            packman
+zypper --releasever&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;15&lt;/span&gt;.2 …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Mon, 20 Jul 2020 23:38:50 +0800</pubDate><guid isPermaLink="false">tag:None,2020-07-20:/posts/2020/07/20/openSUSE-upgrade.html</guid><category>linux</category><category>openSUSE</category><category>linux</category></item><item><title>openSUSE Leap &amp; Tumbleweed 安装解码器</title><link>/posts/2020/07/20/openSUSE-multimedia.html</link><description>&lt;p&gt;添加全部packman仓库&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo zypper ar -fc &lt;span class="s1"&gt;&amp;#39;https://mirrors.tuna.tsinghua.edu.cn/packman/suse/openSUSE_Leap_$releasever&amp;#39;&lt;/span&gt;            packman
 
 &lt;span class="c1"&gt;# 将系统软件包切换到packman中的软件包(两者混用会导致各种问题)&lt;/span&gt;
 zypper dup --from packman --allow-vendor-change
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;或者仅仅添加packman中的Essentials(解码器)仓库&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo zypper ar -fc &lt;span class="s1"&gt;&amp;#39;https://mirrors.tuna.tsinghua.edu.cn/packman/suse/openSUSE_Leap_$releasever/Essentials&amp;#39;&lt;/span&gt; packman-essentials
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo zypper ar -fc &lt;span class="s1"&gt;&amp;#39;https://mirrors.tuna.tsinghua.edu.cn/packman/suse/openSUSE_Leap_$releasever/Essentials&amp;#39;&lt;/span&gt; packman-essentials
 
 &lt;span class="c1"&gt;# 将系统软件包切换到packman中的软件包(两者混用会导致各种问题)&lt;/span&gt;
 zypper dup --from packman-essentials --allow-vendor-change
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;a href="https://en.opensuse.org/Additional_package_repositories"&gt;openSUSE_Additional_package_repositories …&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Mon, 20 Jul 2020 23:15:46 +0800</pubDate><guid isPermaLink="false">tag:None,2020-07-20:/posts/2020/07/20/openSUSE-multimedia.html</guid><category>linux</category><category>openSUSE</category><category>linux</category></item><item><title>斐讯N1刷机过程记录</title><link>/posts/2020/07/01/phicomm-N1.html</link><description>&lt;p&gt;&lt;img alt="刷机" src="/posts/2020/07/01/phicomm-N1-flash.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;去年买的N1盒子, 一直没时间折腾, 最近刚好需要作下载机用, 于是刷机, 顺便整理下步骤.&lt;/p&gt;
@@ -164,7 +172,7 @@ zypper dup --from packman-essentials --allow-vendor-change
 &lt;h6&gt;准备环境 …&lt;/h6&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Wed, 01 Jul 2020 23:38:09 +0800</pubDate><guid isPermaLink="false">tag:None,2020-07-01:/posts/2020/07/01/phicomm-N1.html</guid><category>linux</category><category>linux</category><category>phicomm</category></item><item><title>inotify-tools</title><link>/posts/2020/04/24/inotify-tools.html</link><description>&lt;p&gt;inotify-tools 可以用来监控文件系统的事件。inotify-tools提供两种工具，一是 inotifywait，它是用来监控文件或目录的变化，二是inotifywatch，它是用来统计文件系统访问的次数。&lt;/p&gt;
 &lt;p&gt;常用&lt;code&gt;inotifywait -qcrm $dir&lt;/code&gt;&lt;/p&gt;
 &lt;h6&gt;inotifywait&lt;/h6&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;参数：
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;参数：
 @
 排除不需要监视的文件，可以是相对路径，也可以是绝对路径。
 –fromfile 
@@ -180,19 +188,18 @@ zypper dup --from packman-essentials --allow-vendor-change
 -r, –recursive
 监视一个目录下的所有子目录。
 -q, –quiet
-指定一次，不会输出详细信息，指定二次 …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Fri, 24 Apr 2020 19:40:05 +0800</pubDate><guid isPermaLink="false">tag:None,2020-04-24:/posts/2020/04/24/inotify-tools.html</guid><category>linux</category><category>linux</category><category>kernel</category></item><item><title>通过nc命令查看服务器端口和客户端能不能正常连接</title><link>/posts/2020/01/08/linux-nc.html</link><description>&lt;p&gt;tcp&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;服务器&lt;/span&gt;
+指定一次，不会输出详细信息，指定二次 …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Fri, 24 Apr 2020 19:40:05 +0800</pubDate><guid isPermaLink="false">tag:None,2020-04-24:/posts/2020/04/24/inotify-tools.html</guid><category>linux</category><category>linux</category><category>kernel</category></item><item><title>通过nc命令查看服务器端口和客户端能不能正常连接</title><link>/posts/2020/01/08/linux-nc.html</link><description>&lt;p&gt;tcp&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;服务器&lt;/span&gt;
 &lt;span class="n"&gt;nc&lt;/span&gt; &lt;span class="n"&gt;bind地址&lt;/span&gt; &lt;span class="err"&gt;监听端口&lt;/span&gt;
 
 &lt;span class="err"&gt;客户端&lt;/span&gt;
 &lt;span class="n"&gt;nc&lt;/span&gt; &lt;span class="err"&gt;服务器地址&lt;/span&gt; &lt;span class="err"&gt;服务器端口&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;udp &lt;code&gt;nc&lt;/code&gt; 加上 &lt;code&gt;-u&lt;/code&gt; 参数即可&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Wed, 08 Jan 2020 09:57:04 +0800</pubDate><guid isPermaLink="false">tag:None,2020-01-08:/posts/2020/01/08/linux-nc.html</guid><category>network</category><category>linux</category><category>network</category></item><item><title>笔记本把无线网络连接分享给网线</title><link>/posts/2020/01/07/laptop-router.html</link><description>&lt;p&gt;笔记本把无线网络连接分享给网线.&lt;/p&gt;
 &lt;p&gt;首先如果笔记本开了NetworkManager服务, 建议在NetworkManager的配置中取消托管有线网络接口 eth0. (可选, 如果修改了配置, 要重启NetworkManager)&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;cat /etc/NetworkManager/NetworkManager.conf&lt;/code&gt;&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;[main]&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[main]&lt;/span&gt;
 &lt;span class="na"&gt;plugins&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;ifupdown,keyfile&lt;/span&gt;
 
 &lt;span class="k"&gt;[ifupdown]&lt;/span&gt;
@@ -200,8 +207,7 @@ zypper dup --from packman-essentials --allow-vendor-change
 
 &lt;span class="k"&gt;[keyfile]&lt;/span&gt;
 &lt;span class="na"&gt;unmanaged-devices&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;interface-name:eth0&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;确定笔记本已经连接好了WIFI&lt;/p&gt;
 &lt;p&gt;然后在笔记本上面设置 eth0 ip
@@ -212,7 +218,7 @@ zypper dup --from packman-essentials --allow-vendor-change
 &lt;li&gt;挂载选项添加noatime&lt;/li&gt;
 &lt;li&gt;mitigations=off&lt;/li&gt;
 &lt;li&gt;&lt;/li&gt;
-&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Sun, 05 Jan 2020 22:05:19 +0800</pubDate><guid isPermaLink="false">tag:None,2020-01-05:/posts/2020/01/05/linux-improving-performance.html</guid><category>linux</category><category>linux</category></item><item><title>openSUSE Tumbleweed server 安装cinnamon桌面</title><link>/posts/2019/12/19/openSUSE-server-install-cinnamon.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;zypper refresh
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Sun, 05 Jan 2020 22:05:19 +0800</pubDate><guid isPermaLink="false">tag:None,2020-01-05:/posts/2020/01/05/linux-improving-performance.html</guid><category>linux</category><category>linux</category></item><item><title>openSUSE Tumbleweed server 安装cinnamon桌面</title><link>/posts/2019/12/19/openSUSE-server-install-cinnamon.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;zypper refresh
 zypper install cinnamon
 zypper install lightdm
 zypper install xorg-x11-server
@@ -225,14 +231,14 @@ ln -s /usr/lib/systemd/system/graphical.target /etc/systemd/system/default.targe
 zypper install wqy-microhei-fonts
 
 &lt;span class="c1"&gt;# 然后安装输入法&lt;/span&gt;
-zypper install …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Thu, 19 Dec 2019 11:11:01 +0800</pubDate><guid isPermaLink="false">tag:None,2019-12-19:/posts/2019/12/19/openSUSE-server-install-cinnamon.html</guid><category>linux</category><category>openSUSE</category><category>linux</category></item><item><title>openSUSE Leap &amp; Tumbleweed 添加软件源</title><link>/posts/2019/12/16/openSUSE-addrepo.html</link><description>&lt;p&gt;经测试, aliyun的软件源并不稳定, 更新慢. 经常只更新一部分, 不和官方完全同步.
+zypper install …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Thu, 19 Dec 2019 11:11:01 +0800</pubDate><guid isPermaLink="false">tag:None,2019-12-19:/posts/2019/12/19/openSUSE-server-install-cinnamon.html</guid><category>linux</category><category>openSUSE</category><category>linux</category></item><item><title>openSUSE Leap &amp; Tumbleweed 添加软件源</title><link>/posts/2019/12/16/openSUSE-addrepo.html</link><description>&lt;p&gt;经测试, aliyun的软件源并不稳定, 更新慢. 经常只更新一部分, 不和官方完全同步.
 tsinghuau源, 稳定, 好用.&lt;/p&gt;
 &lt;p&gt;首先禁用全部仓库：
 &lt;code&gt;sudo zypper mr -da&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;如果是Tumbleweed&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo zypper ar -fc https://mirrors.tuna.tsinghua.edu.cn/opensuse/tumbleweed/repo/oss        Tumbleweed-Oss-tuna
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo zypper ar -fc https://mirrors.tuna.tsinghua.edu.cn/opensuse/tumbleweed/repo/oss        Tumbleweed-Oss-tuna
 sudo zypper ar -fc https://mirrors.tuna.tsinghua.edu.cn/opensuse/tumbleweed/repo/non-oss    Tumbleweed-Non-Oss-tuna
-sudo zypper ar -fc https://mirrors …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Mon, 16 Dec 2019 14:55:38 +0800</pubDate><guid isPermaLink="false">tag:None,2019-12-16:/posts/2019/12/16/openSUSE-addrepo.html</guid><category>linux</category><category>openSUSE</category><category>linux</category></item><item><title>ext4断电丢失数据(零长文件)</title><link>/posts/2019/11/29/ext4-data-lost.html</link><description>&lt;p&gt;ext4断电丢失数据(零长文件).&lt;/p&gt;
+sudo zypper ar -fc https://mirrors …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Mon, 16 Dec 2019 14:55:38 +0800</pubDate><guid isPermaLink="false">tag:None,2019-12-16:/posts/2019/12/16/openSUSE-addrepo.html</guid><category>linux</category><category>openSUSE</category><category>linux</category></item><item><title>ext4断电丢失数据(零长文件)</title><link>/posts/2019/11/29/ext4-data-lost.html</link><description>&lt;p&gt;ext4断电丢失数据(零长文件).&lt;/p&gt;
 &lt;p&gt;嵌入式设备, 经常拔掉电源, 以前/data分区有挂载选项 sync.&lt;/p&gt;
 &lt;p&gt;后来发现sync方式挂载写入数据速度太慢了(100KB/S), 正常为10MB/S.&lt;/p&gt;
 &lt;p&gt;去掉sync断电又会丢数据.&lt;/p&gt;
@@ -256,15 +262,14 @@ ShutdownWatchdogSec=10min&lt;/p&gt;
 &lt;p&gt;echo "net.ipv4.ip_forward=1" &amp;gt; /etc/sysctl.d/ip_forward.conf
 sysctl -p&lt;/p&gt;
 &lt;p&gt;vim /etc/pptpd.conf&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;localip 192.168.0.1&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;localip 192.168.0.1&lt;/span&gt;
 &lt;span class="err"&gt;remoteip        192.168.0.234-238,192.168.0.245&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;systemctl start pptpd.service&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Thu, 14 Nov 2019 10:44:33 +0800</pubDate><guid isPermaLink="false">tag:None,2019-11-14:/posts/2019/11/14/linux-pptpd.html</guid><category>linux</category><category>linux</category><category>server</category></item><item><title>dnsmasq DHCP功能和DNS缓存</title><link>/posts/2019/07/12/dnsmasq.html</link><description>&lt;p&gt;NetworkManager 热点默认配置:
 dnsmasq --conf-file=/dev/null --no-hosts --keep-in-foreground --bind-interfaces --except-interface=lo --clear-on-reload --strict-order --listen-address=10.42.0.1 --dhcp-range=10.42.0.10,10.42.0.254,60m --dhcp-lease-max=50 --dhcp-leasefile=/var/lib/NetworkManager/dnsmasq-wlp8s0.leases --pid-file=/var/run/nm-dnsmasq-wlp8s0.pid --conf-dir=/etc/NetworkManager/dnsmasq-shared.d&lt;/p&gt;
 &lt;p&gt;dnsmasq HDCP+DNS缓存:
-dnsmasq …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Fri, 12 Jul 2019 13:59:41 +0800</pubDate><guid isPermaLink="false">tag:None,2019-07-12:/posts/2019/07/12/dnsmasq.html</guid><category>network</category><category>linux</category><category>network</category></item><item><title>2019-6-21名单</title><link>/posts/2019/06/24/list-2019-6-21.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;爱尔眼科&lt;/span&gt;
+dnsmasq …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Fri, 12 Jul 2019 13:59:41 +0800</pubDate><guid isPermaLink="false">tag:None,2019-07-12:/posts/2019/07/12/dnsmasq.html</guid><category>network</category><category>linux</category><category>network</category></item><item><title>2019-6-21名单</title><link>/posts/2019/06/24/list-2019-6-21.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;爱尔眼科&lt;/span&gt;
 &lt;span class="err"&gt;通策医疗&lt;/span&gt;
 &lt;span class="err"&gt;海天味业&lt;/span&gt;
 &lt;span class="err"&gt;中国国旅&lt;/span&gt;
@@ -301,7 +306,7 @@ dnsmasq …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elem
 &lt;span class="err"&gt;海大集团&lt;/span&gt;
 &lt;span class="err"&gt;晨光文具&lt;/span&gt;
 &lt;span class="err"&gt;精测电子&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Mon, 24 Jun 2019 00:53:33 +0800</pubDate><guid isPermaLink="false">tag:None,2019-06-24:/posts/2019/06/24/list-2019-6-21.html</guid><category>stock</category><category>stock</category></item><item><title>股票大佬推荐的书</title><link>/posts/2019/06/01/stock-book.html</link><description>&lt;ol&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Mon, 24 Jun 2019 00:53:33 +0800</pubDate><guid isPermaLink="false">tag:None,2019-06-24:/posts/2019/06/24/list-2019-6-21.html</guid><category>stock</category><category>stock</category></item><item><title>股票大佬推荐的书</title><link>/posts/2019/06/01/stock-book.html</link><description>&lt;ol&gt;
 &lt;li&gt;价值投资实战手册&lt;/li&gt;
 &lt;li&gt;周期&lt;/li&gt;
 &lt;li&gt;穿过迷雾&lt;/li&gt;
@@ -323,13 +328,12 @@ dnsmasq …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elem
 &lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Sat, 01 Jun 2019 18:40:12 +0800</pubDate><guid isPermaLink="false">tag:None,2019-06-01:/posts/2019/06/01/stock-book.html</guid><category>股票</category><category>书</category><category>股票</category></item><item><title>python3 nltk chapter 1</title><link>/posts/2018/11/10/python-nltk-chapter1.html</link><description>&lt;h1&gt;语言处理与Python&lt;/h1&gt;
 &lt;h3&gt;1.语言计算：文本和单词&lt;/h3&gt;
 &lt;h5&gt;1.2 NLTK 入门&lt;/h5&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;nltk&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;nltk&lt;/span&gt;
 &lt;span class="n"&gt;nltk&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;download&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h5&gt;1.3 搜索文本&lt;/h5&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;text1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;concordance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;monstrous&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;搜索文本&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;text1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;concordance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;monstrous&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;搜索文本&lt;/span&gt;
 
 &lt;span class="n"&gt;text1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;similar&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;monstrous&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;查看相识上下文出现的单词&lt;/span&gt;
 
@@ -338,24 +342,21 @@ dnsmasq …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elem
 &lt;span class="n"&gt;text4&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dispersion_plot&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;citizens&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;democracy&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;freedom&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;duties&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;America&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;  &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;词汇分布图&lt;/span&gt;
 
 &lt;span class="n"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;text3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;text3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;文本词汇丰富度&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h5&gt;1.3 布朗语料库&lt;/h5&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.corpus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;brown …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Sat, 10 Nov 2018 18:17:07 +0800</pubDate><guid isPermaLink="false">tag:None,2018-11-10:/posts/2018/11/10/python-nltk-chapter1.html</guid><category>nltk</category><category>python</category><category>nltk</category></item><item><title>生成函数调用关系图</title><link>/posts/2018/10/31/gprof2dot.html</link><description>&lt;h4&gt;用gprof生成函数调用关系图&lt;/h4&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.corpus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;brown …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Sat, 10 Nov 2018 18:17:07 +0800</pubDate><guid isPermaLink="false">tag:None,2018-11-10:/posts/2018/11/10/python-nltk-chapter1.html</guid><category>nltk</category><category>python</category><category>nltk</category></item><item><title>生成函数调用关系图</title><link>/posts/2018/10/31/gprof2dot.html</link><description>&lt;h4&gt;用gprof生成函数调用关系图&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;CMakeLists.txt&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;SET(CMAKE_BUILD_TYPE &amp;quot;Debug&amp;quot;)&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;SET(CMAKE_BUILD_TYPE &amp;quot;Debug&amp;quot;)&lt;/span&gt;
 &lt;span class="err"&gt;SET(CMAKE_C_FLAGS_DEBUG &amp;quot;$ENV{CXXFLAGS} -O0 -Wall -g2 -pg -ggdb&amp;quot;)  &lt;/span&gt;
 &lt;span class="err"&gt;SET(CMAKE_C_FLAGS_RELEASE &amp;quot;$ENV{CXXFLAGS} -O3 -Wall&amp;quot;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;或&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;gcc -pg -g source.c -o binary&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;gcc -pg -g source.c -o binary&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;./binary&lt;/code&gt; 生成 gmon.out&lt;/li&gt;
@@ -364,10 +365,10 @@ dnsmasq …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elem
 &lt;/ol&gt;
 &lt;hr&gt;
 &lt;h4&gt;valgrind 生成函数调用图 (推荐)&lt;/h4&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;valgrind --tool=callgrind ./a …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Wed, 31 Oct 2018 13:57:01 +0800</pubDate><guid isPermaLink="false">tag:None,2018-10-31:/posts/2018/10/31/gprof2dot.html</guid><category>linux</category><category>linux</category></item><item><title>python3 nltk chapter 2</title><link>/posts/2018/10/25/python-nltk-chapter2.html</link><description>&lt;h1&gt;获得文本语料和词汇资源&lt;/h1&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;valgrind --tool=callgrind ./a …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Wed, 31 Oct 2018 13:57:01 +0800</pubDate><guid isPermaLink="false">tag:None,2018-10-31:/posts/2018/10/31/gprof2dot.html</guid><category>linux</category><category>linux</category></item><item><title>python3 nltk chapter 2</title><link>/posts/2018/10/25/python-nltk-chapter2.html</link><description>&lt;h1&gt;获得文本语料和词汇资源&lt;/h1&gt;
 &lt;h3&gt;1.获取文本语料库&lt;/h3&gt;
 &lt;h5&gt;1.1 古腾堡语料库&lt;/h5&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;nltk&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;nltk&lt;/span&gt;
 &lt;span class="n"&gt;nltk&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;corpus&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gutenberg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fileids&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 
 &lt;span class="n"&gt;nltk&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;corpus&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gutenberg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;words&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;austen-emma.txt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -377,21 +378,20 @@ dnsmasq …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elem
 
 &lt;span class="n"&gt;nltk&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;corpus&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gutenberg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;raw&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;austen-emma.txt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;nltk&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;corpus&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gutenberg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cents&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;austen-emma.txt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h5&gt;1.2 网络和聊天文本&lt;/h5&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.corpus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;webtext …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Thu, 25 Oct 2018 22:03:03 +0800</pubDate><guid isPermaLink="false">tag:None,2018-10-25:/posts/2018/10/25/python-nltk-chapter2.html</guid><category>nltk</category><category>python</category><category>nltk</category></item><item><title>git如何永久删除文件</title><link>/posts/2018/08/03/git-delete-file.html</link><description>&lt;p&gt;&lt;a href="/git/pdfs/git-delete-file.pdf"&gt;git如何永久删除文件.pdf&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Fri, 03 Aug 2018 17:01:42 +0800</pubDate><guid isPermaLink="false">tag:None,2018-08-03:/posts/2018/08/03/git-delete-file.html</guid><category>git</category><category>git</category></item><item><title>websocketd</title><link>/posts/2018/05/22/websocketd.html</link><description>&lt;p&gt;websocketd是一个简单的websocket代理服务。标准输入（stdin）就是 WebSocket 的输入，标准输出（stdout）就是 WebSocket 的输出。&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Tue, 22 May 2018 19:43:51 +0800</pubDate><guid isPermaLink="false">tag:None,2018-05-22:/posts/2018/05/22/websocketd.html</guid><category>web</category><category>web</category><category>command</category></item><item><title>shellinabox</title><link>/posts/2018/05/22/shellinabox.html</link><description>&lt;p&gt;shellinabox 能够通过Web浏览器模拟一个远程系统的Shell. 它和SSH没有任何关系.&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.corpus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;webtext …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Thu, 25 Oct 2018 22:03:03 +0800</pubDate><guid isPermaLink="false">tag:None,2018-10-25:/posts/2018/10/25/python-nltk-chapter2.html</guid><category>nltk</category><category>python</category><category>nltk</category></item><item><title>git如何永久删除文件</title><link>/posts/2018/08/03/git-delete-file.html</link><description>&lt;p&gt;&lt;a href="/git/pdfs/git-delete-file.pdf"&gt;git如何永久删除文件.pdf&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Fri, 03 Aug 2018 17:01:42 +0800</pubDate><guid isPermaLink="false">tag:None,2018-08-03:/posts/2018/08/03/git-delete-file.html</guid><category>git</category><category>git</category></item><item><title>websocketd</title><link>/posts/2018/05/22/websocketd.html</link><description>&lt;p&gt;websocketd是一个简单的websocket代理服务。标准输入（stdin）就是 WebSocket 的输入，标准输出（stdout）就是 WebSocket 的输出。&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Tue, 22 May 2018 19:43:51 +0800</pubDate><guid isPermaLink="false">tag:None,2018-05-22:/posts/2018/05/22/websocketd.html</guid><category>web</category><category>web</category><category>command</category></item><item><title>shellinabox</title><link>/posts/2018/05/22/shellinabox.html</link><description>&lt;p&gt;shellinabox 能够通过Web浏览器模拟一个远程系统的Shell. 它和SSH没有任何关系.&lt;/p&gt;
 &lt;p&gt;shellinaboxd -t  (开启一个login shell)&lt;/p&gt;
 &lt;p&gt;shellinaboxd -t -s '/:root:root:/:/bin/bash' --port=8080  (不需要输入密码,直接登陆)&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Tue, 22 May 2018 19:37:34 +0800</pubDate><guid isPermaLink="false">tag:None,2018-05-22:/posts/2018/05/22/shellinabox.html</guid><category>linux</category><category>shell</category><category>terminal</category><category>web</category><category>linux</category></item><item><title>日历并不是连续的</title><link>/posts/2018/04/30/cal-9-1752.html</link><description>&lt;p&gt;一个小知识, 日历并不是连续的&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;zhiliao@zhiliao ~&amp;gt; cal 9 1752&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;zhiliao@zhiliao ~&amp;gt; cal 9 1752&lt;/span&gt;
 &lt;span class="err"&gt;      九月 1752     &lt;/span&gt;
 &lt;span class="err"&gt;日 一 二 三 四 五 六&lt;/span&gt;
 &lt;span class="err"&gt;       1  2 14 15 16&lt;/span&gt;
 &lt;span class="err"&gt;17 18 19 20 21 22 23&lt;/span&gt;
 &lt;span class="err"&gt;24 25 26 27 28 29 30&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Mon, 30 Apr 2018 13:27:17 +0800</pubDate><guid isPermaLink="false">tag:None,2018-04-30:/posts/2018/04/30/cal-9-1752.html</guid><category>other</category><category>other</category></item><item><title>linux 使用network manager 开启wifi热点</title><link>/posts/2018/04/13/networkmanager-wifi-ap.html</link><description>&lt;p&gt;linux 使用network manager 开启wifi热点&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;开启热点&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Mon, 30 Apr 2018 13:27:17 +0800</pubDate><guid isPermaLink="false">tag:None,2018-04-30:/posts/2018/04/30/cal-9-1752.html</guid><category>other</category><category>other</category></item><item><title>linux 使用network manager 开启wifi热点</title><link>/posts/2018/04/13/networkmanager-wifi-ap.html</link><description>&lt;p&gt;linux 使用network manager 开启wifi热点&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;开启热点&lt;/span&gt;
 &lt;span class="n"&gt;nmcli&lt;/span&gt; &lt;span class="n"&gt;device&lt;/span&gt; &lt;span class="n"&gt;wifi&lt;/span&gt; &lt;span class="n"&gt;hotspot&lt;/span&gt;  &lt;span class="n"&gt;ssid&lt;/span&gt; &lt;span class="n"&gt;zhiliao&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;test&lt;/span&gt;  &lt;span class="n"&gt;password&lt;/span&gt; &lt;span class="mi"&gt;12345678&lt;/span&gt;
 &lt;span class="err"&gt;或者&lt;/span&gt;
 &lt;span class="n"&gt;nmcli&lt;/span&gt; &lt;span class="n"&gt;device&lt;/span&gt; &lt;span class="n"&gt;wifi&lt;/span&gt; &lt;span class="n"&gt;hotspot&lt;/span&gt; &lt;span class="n"&gt;con&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="n"&gt;zhiliao&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="k"&gt;G&lt;/span&gt; &lt;span class="n"&gt;ssid&lt;/span&gt; &lt;span class="n"&gt;zhiliao&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="k"&gt;G&lt;/span&gt; &lt;span class="n"&gt;band&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;password&lt;/span&gt; &lt;span class="mi"&gt;12345678&lt;/span&gt;
@@ -399,17 +399,16 @@ dnsmasq …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elem
 &lt;span class="err"&gt;删除热点配置&lt;/span&gt;
 &lt;span class="n"&gt;nmcli&lt;/span&gt; &lt;span class="k"&gt;connection&lt;/span&gt; &lt;span class="k"&gt;show&lt;/span&gt;
 &lt;span class="n"&gt;nmcli&lt;/span&gt;  &lt;span class="k"&gt;connection&lt;/span&gt; &lt;span class="k"&gt;delete&lt;/span&gt; &lt;span class="n"&gt;zhiliao&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="k"&gt;G&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Fri, 13 Apr 2018 19:42:58 +0800</pubDate><guid isPermaLink="false">tag:None,2018-04-13:/posts/2018/04/13/networkmanager-wifi-ap.html</guid><category>linux</category><category>wireless</category><category>linux</category></item><item><title>通过浏览器下载 google play app 的方法</title><link>/posts/2018/01/03/google-play-app.html</link><description>&lt;h4&gt;通过网站&lt;/h4&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;https://apkpure.com/cn&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Fri, 13 Apr 2018 19:42:58 +0800</pubDate><guid isPermaLink="false">tag:None,2018-04-13:/posts/2018/04/13/networkmanager-wifi-ap.html</guid><category>linux</category><category>wireless</category><category>linux</category></item><item><title>通过浏览器下载 google play app 的方法</title><link>/posts/2018/01/03/google-play-app.html</link><description>&lt;h4&gt;通过网站&lt;/h4&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c"&gt;https://apkpure.com/cn&lt;/span&gt;
 &lt;span class="c"&gt;https://www.apkmirror.com&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h4&gt;通过firefox扩展&lt;/h4&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;APK Downloader&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;APK Downloader&lt;/span&gt;
 &lt;span class="err"&gt;Toolbox for Google Play Store&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Wed, 03 Jan 2018 10:39:56 +0800</pubDate><guid isPermaLink="false">tag:None,2018-01-03:/posts/2018/01/03/google-play-app.html</guid><category>android</category><category>android</category></item><item><title>记录一下我在Android上常用的APP</title><link>/posts/2018/01/03/android-app.html</link><description>&lt;p&gt;一个常用软件列表&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;Adobe Acrobat&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Wed, 03 Jan 2018 10:39:56 +0800</pubDate><guid isPermaLink="false">tag:None,2018-01-03:/posts/2018/01/03/google-play-app.html</guid><category>android</category><category>android</category></item><item><title>记录一下我在Android上常用的APP</title><link>/posts/2018/01/03/android-app.html</link><description>&lt;p&gt;一个常用软件列表&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;Adobe Acrobat&lt;/span&gt;
 &lt;span class="err"&gt;AirDroid&lt;/span&gt;
 &lt;span class="err"&gt;Chrome&lt;/span&gt;
 &lt;span class="err"&gt;JuiceSSH&lt;/span&gt;
@@ -429,11 +428,10 @@ dnsmasq …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elem
 &lt;span class="err"&gt;网易云音乐&lt;/span&gt;
 &lt;span class="err"&gt;网易有道词典&lt;/span&gt;
 &lt;span class="err"&gt;高德地图&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;一个不太常用软件列表&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;Cortana&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;Cortana&lt;/span&gt;
 &lt;span class="err"&gt;ES文件浏览器&lt;/span&gt;
 &lt;span class="err"&gt;Microsoft Remote Desktop&lt;/span&gt;
 &lt;span class="err"&gt;QQ邮箱&lt;/span&gt;
@@ -449,13 +447,11 @@ dnsmasq …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elem
 &lt;span class="err"&gt;有道云笔记&lt;/span&gt;
 &lt;span class="err"&gt;百词斩&lt;/span&gt;
 &lt;span class="err"&gt;简书&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h4&gt;未完待续...&lt;/h4&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Wed, 03 Jan 2018 10:20:33 +0800</pubDate><guid isPermaLink="false">tag:None,2018-01-03:/posts/2018/01/03/android-app.html</guid><category>android</category><category>software</category></item><item><title>在浏览器中显示gtk+应用</title><link>/posts/2017/12/29/gtk-broadway.html</link><description>&lt;h3&gt;在浏览器中显示gtk+应用&lt;/h3&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;GDK_BACKEND&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;broadway &lt;span class="nv"&gt;BROADWAY_DISPLAY&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;:5 gtk3-demo
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;GDK_BACKEND&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;broadway &lt;span class="nv"&gt;BROADWAY_DISPLAY&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;:5 gtk3-demo
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;BROADWAY_DISPLAY是可选的, 默认是0&lt;/p&gt;
 &lt;p&gt;port = 8080 + display&lt;/p&gt;
@@ -467,22 +463,19 @@ dnsmasq …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elem
 &lt;li&gt;&lt;a href="https://blogs.gnome.org/alexl/2011/04/18/broadway-update-3/"&gt;https://blogs.gnome.org/alexl/2011/04/18/broadway-update-3&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/symbiose/symbiose/wiki/Broadway"&gt;https://github.com/symbiose/symbiose …&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Fri, 29 Dec 2017 18:14:49 +0800</pubDate><guid isPermaLink="false">tag:None,2017-12-29:/posts/2017/12/29/gtk-broadway.html</guid><category>linux</category><category>linux</category><category>gtk+</category><category>gnome</category></item><item><title>SysRq</title><link>/posts/2017/12/29/linux-sysrq.html</link><description>&lt;h2&gt;SysRq HELP&lt;/h2&gt;
 &lt;h5&gt;开启这个功能&lt;/h5&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt; &amp;gt; /proc/sys/kernel/sysrq  &lt;span class="c1"&gt;# 或者在 /etc/sysctl.conf 中设置 kernel.sysrq=1&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt; &amp;gt; /proc/sys/kernel/sysrq  &lt;span class="c1"&gt;# 或者在 /etc/sysctl.conf 中设置 kernel.sysrq=1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h5&gt;用法1:&lt;/h5&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; b &amp;gt; /proc/sysrq-trigger
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; b &amp;gt; /proc/sysrq-trigger
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h5&gt;用法2:&lt;/h5&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Alt + SysRq + b  &lt;span class="c1"&gt;# SysRq 键在x86上一般为 [print screen] 键&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Alt + SysRq + b  &lt;span class="c1"&gt;# SysRq 键在x86上一般为 [print screen] 键&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h5&gt;命令介绍&lt;/h5&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;loglevel(0-9)&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;loglevel(0-9)&lt;/span&gt;
 &lt;span class="err"&gt;reboot(b)&lt;/span&gt;
 &lt;span class="err"&gt;crash(c)&lt;/span&gt;
 &lt;span class="err"&gt;terminate-all-tasks(e)&lt;/span&gt;
@@ -490,7 +483,7 @@ dnsmasq …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elem
 &lt;span class="err"&gt;kill-all-tasks(i)&lt;/span&gt;
 &lt;span class="err"&gt;thaw-filesystems(j)&lt;/span&gt;
 &lt;span class="err"&gt;sak(k)&lt;/span&gt;
-&lt;span class="err"&gt;show-backtrace-all-active-cpus(l …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Fri, 29 Dec 2017 14:20:16 +0800</pubDate><guid isPermaLink="false">tag:None,2017-12-29:/posts/2017/12/29/linux-sysrq.html</guid><category>linux</category><category>linux</category></item><item><title>daemonize</title><link>/posts/2017/12/11/daemonize.html</link><description>&lt;p&gt;daemonize 能够把命令作为守护进程 (daemon) 运行.
+&lt;span class="err"&gt;show-backtrace-all-active-cpus(l …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Fri, 29 Dec 2017 14:20:16 +0800</pubDate><guid isPermaLink="false">tag:None,2017-12-29:/posts/2017/12/29/linux-sysrq.html</guid><category>linux</category><category>linux</category></item><item><title>daemonize</title><link>/posts/2017/12/11/daemonize.html</link><description>&lt;p&gt;daemonize 能够把命令作为守护进程 (daemon) 运行.
 并且支持自动创建pid文件, 自动创建/检查文件锁.&lt;/p&gt;
 &lt;p&gt;顺便记录一下几个相关命令, &lt;code&gt;daemonize, nohup, setsid, &amp;amp;, disown&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;如何用bash实现daemon
@@ -499,24 +492,21 @@ http://blog.n01se.net/blog-n01se-net-p-145.html&lt;/p&gt;</description><dc:creat
 &lt;p&gt;或者使用 env -i git pull&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Mon, 11 Dec 2017 15:35:51 +0800</pubDate><guid isPermaLink="false">tag:None,2017-12-11:/posts/2017/12/11/git-hooks-post-receive.html</guid><category>git</category><category>git</category></item><item><title>cpio</title><link>/posts/2017/08/20/linux-cpio.html</link><description>&lt;ul&gt;
 &lt;li&gt;建立 cpio文件 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;find ./files | cpio -o -H newc &amp;gt; filename.cpio&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;find ./files | cpio -o -H newc &amp;gt; filename.cpio&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
 &lt;li&gt;解开cpio文件&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;cd  dir1&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;cd  dir1&lt;/span&gt;
 &lt;span class="err"&gt;cpio -ivd  &amp;lt; filename.cpio  &lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
 &lt;li&gt;查看cpio文件中的内容&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;cpio -ivt &amp;lt; filename.cpio&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;cpio -ivt &amp;lt; filename.cpio&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;code&gt;* 如果find显示文件路径是绝对的， 那么解压后可能会覆盖已有文件。 最好使用相对路径压缩。&lt;/code&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Sun, 20 Aug 2017 12:31:36 +0800</pubDate><guid isPermaLink="false">tag:None,2017-08-20:/posts/2017/08/20/linux-cpio.html</guid><category>linux</category><category>linux</category><category>command</category></item><item><title>dd / 复制 文件显示进度</title><link>/posts/2017/08/13/dd-status.html</link><description>&lt;h4&gt;dd&lt;/h4&gt;
 &lt;ol&gt;
@@ -532,13 +522,13 @@ http://blog.n01se.net/blog-n01se-net-p-145.html&lt;/p&gt;</description><dc:creat
 在windows下这没啥问题, 一按 scroll 这个键 ,背光灯就亮了,再按,就灭了.
 但是, 在Linux下, 按这个键 scroll 没反应.
 所以记录一下linux开启键盘灯的方法&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="err"&gt;中开启键盘灯&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="err"&gt;中开启键盘灯&lt;/span&gt;
 &lt;span class="n"&gt;xset&lt;/span&gt; &lt;span class="n"&gt;led&lt;/span&gt; &lt;span class="k"&gt;on&lt;/span&gt;
 
 &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="err"&gt;中关闭键盘灯&lt;/span&gt;
 &lt;span class="n"&gt;xset&lt;/span&gt; &lt;span class="n"&gt;led&lt;/span&gt; &lt;span class="k"&gt;off&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Sat, 24 Jun 2017 00:13:44 +0800</pubDate><guid isPermaLink="false">tag:None,2017-06-24:/posts/2017/06/24/linux-keyboard-led.html</guid><category>linux</category><category>linux</category><category>keyboard</category><category>command</category></item><item><title>记录一些 firefox 附加组件</title><link>/posts/2017/06/23/firefox-addons.html</link><description>&lt;h3&gt;记录一些 firefox 附加组件&lt;/h3&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;# Adblock plus&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Sat, 24 Jun 2017 00:13:44 +0800</pubDate><guid isPermaLink="false">tag:None,2017-06-24:/posts/2017/06/24/linux-keyboard-led.html</guid><category>linux</category><category>linux</category><category>keyboard</category><category>command</category></item><item><title>记录一些 firefox 附加组件</title><link>/posts/2017/06/23/firefox-addons.html</link><description>&lt;h3&gt;记录一些 firefox 附加组件&lt;/h3&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;# Adblock plus&lt;/span&gt;
 &lt;span class="err"&gt;# Stylish&lt;/span&gt;
 &lt;span class="err"&gt;# iMacros for Firefox&lt;/span&gt;
 &lt;span class="err"&gt;Awesome Screenshot&lt;/span&gt;
@@ -557,22 +547,20 @@ http://blog.n01se.net/blog-n01se-net-p-145.html&lt;/p&gt;</description><dc:creat
 &lt;span class="err"&gt;uBlock Origin&lt;/span&gt;
 &lt;span class="err"&gt;新同文堂&lt;/span&gt;
 &lt;span class="err"&gt;百度广告屏蔽&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3&gt;下面是一些 userscripts&lt;/h3&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;Crack Url Wait Code Login&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;Crack Url Wait Code Login&lt;/span&gt;
 &lt;span class="err"&gt;My163MusicHelper&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3&gt;下面是一些 Stylish userstyles (https://userstyles.org)&lt;/h3&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Baidu …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Fri, 23 Jun 2017 18:22:59 +0800</pubDate><guid isPermaLink="false">tag:None,2017-06-23:/posts/2017/06/23/firefox-addons.html</guid><category>firefox</category><category>firefox</category><category>software</category></item><item><title>记录一下我常装的 Arch Linux package</title><link>/posts/2017/06/16/archlinux-package.html</link><description>&lt;p&gt;Gnome主题 
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;Baidu …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Fri, 23 Jun 2017 18:22:59 +0800</pubDate><guid isPermaLink="false">tag:None,2017-06-23:/posts/2017/06/23/firefox-addons.html</guid><category>firefox</category><category>firefox</category><category>software</category></item><item><title>记录一下我常装的 Arch Linux package</title><link>/posts/2017/06/16/archlinux-package.html</link><description>&lt;p&gt;Gnome主题 
 1. numix (gnome)
 2. discreet flat (cinnamon)
 3. Orchis-dark-compact (gnome)
 4. ePapirus 图标&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;# dmidecode&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;# dmidecode&lt;/span&gt;
 &lt;span class="err"&gt;# onboard  # 屏幕键盘 &lt;/span&gt;
 &lt;span class="err"&gt;# yay&lt;/span&gt;
 &lt;span class="err"&gt;(xfce4) xfce4-datetime-plugin&lt;/span&gt;
@@ -593,31 +581,33 @@ http://blog.n01se.net/blog-n01se-net-p-145.html&lt;/p&gt;</description><dc:creat
 &lt;span class="err"&gt;code  # (vscode)&lt;/span&gt;
 &lt;span class="err"&gt;dconf-editor&lt;/span&gt;
 &lt;span class="err"&gt;deepin-screenshot&lt;/span&gt;
-&lt;span class="err"&gt;deepin.com.qq …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Fri, 16 Jun 2017 16:52:14 +0800</pubDate><guid isPermaLink="false">tag:None,2017-06-16:/posts/2017/06/16/archlinux-package.html</guid><category>linux</category><category>linux</category><category>software</category><category>arch</category></item><item><title>遇到的一个python的坑</title><link>/posts/2017/06/14/python.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;fun&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;arg&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[]):&lt;/span&gt;
-    &lt;span class="n"&gt;arg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;A&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;arg&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="err"&gt;deepin.com.qq …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Fri, 16 Jun 2017 16:52:14 +0800</pubDate><guid isPermaLink="false">tag:None,2017-06-16:/posts/2017/06/16/archlinux-package.html</guid><category>linux</category><category>linux</category><category>software</category><category>arch</category></item><item><title>遇到的一个python的坑</title><link>/posts/2017/06/14/python.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;:::&lt;/span&gt;&lt;span class="n"&gt;python&lt;/span&gt;
+&lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;fun&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;arg&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[]):&lt;/span&gt;
+    &lt;span class="n"&gt;arg&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;A&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;arg&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 
 &lt;span class="n"&gt;fun&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="c1"&gt;# [&amp;#39;A&amp;#39;]&lt;/span&gt;
+&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;A&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 
 &lt;span class="n"&gt;fun&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="c1"&gt;# [&amp;#39;A&amp;#39;, &amp;#39;A&amp;#39;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;A&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;A&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;第二个&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;:::&lt;/span&gt;&lt;span class="n"&gt;python&lt;/span&gt;
+&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 
-&lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;a&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;{&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;a&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="err"&gt;}&lt;/span&gt;
 
 &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;
 
 &lt;span class="n"&gt;a&lt;/span&gt;
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;a&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Wed, 14 Jun 2017 16:23:03 +0800</pubDate><guid isPermaLink="false">tag:None,2017-06-14:/posts/2017/06/14/python.html</guid><category>python</category><category>python</category></item><item><title>linux设置文件只读, 直到关机</title><link>/posts/2017/06/14/set-file-readonly-until-reboot.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mount -o &lt;span class="nb"&gt;bind&lt;/span&gt; &lt;span class="nv"&gt;$file&lt;/span&gt; &lt;span class="nv"&gt;$file&lt;/span&gt;
-mount -o remount,bind,ro &lt;span class="nv"&gt;$file&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Wed, 14 Jun 2017 09:58:28 +0800</pubDate><guid isPermaLink="false">tag:None,2017-06-14:/posts/2017/06/14/set-file-readonly-until-reboot.html</guid><category>linux</category><category>linux</category><category>bash</category><category>command</category></item><item><title>记录一下我在windows平台常用的软件</title><link>/posts/2017/06/07/windows-software.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;ADSafe&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Wed, 14 Jun 2017 16:23:03 +0800</pubDate><guid isPermaLink="false">tag:None,2017-06-14:/posts/2017/06/14/python.html</guid><category>python</category><category>python</category></item><item><title>linux设置文件只读, 直到关机</title><link>/posts/2017/06/14/set-file-readonly-until-reboot.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;:::bash&lt;/span&gt;
+&lt;span class="err"&gt;mount -o bind $file $file&lt;/span&gt;
+&lt;span class="err"&gt;mount -o remount,bind,ro $file&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Wed, 14 Jun 2017 09:58:28 +0800</pubDate><guid isPermaLink="false">tag:None,2017-06-14:/posts/2017/06/14/set-file-readonly-until-reboot.html</guid><category>linux</category><category>linux</category><category>bash</category><category>command</category></item><item><title>记录一下我在windows平台常用的软件</title><link>/posts/2017/06/07/windows-software.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;ADSafe&lt;/span&gt;
 &lt;span class="err"&gt;Adobe Acrobat Reader DC&lt;/span&gt;
 &lt;span class="err"&gt;LibreOffice&lt;/span&gt;
 &lt;span class="err"&gt;SMPlayer&lt;/span&gt;
@@ -643,18 +633,17 @@ mount -o remount,bind,ro &lt;span class="nv"&gt;$file&lt;/span&gt;
 &lt;span class="err"&gt;分区助手&lt;/span&gt;
 &lt;span class="err"&gt;有道词典&lt;/span&gt;
 &lt;span class="err"&gt;网易云音乐&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h4&gt;未完待续...&lt;/h4&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Wed, 07 Jun 2017 22:45:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-06-07:/posts/2017/06/07/windows-software.html</guid><category>windows</category><category>windows</category><category>software</category></item><item><title>bash的字符串模板</title><link>/posts/2017/06/07/bash-string-template.html</link><description>&lt;p&gt;在一个项目中，我想用一个配置模板文件自动生成配置文件，即为从&lt;code&gt;nginx.conf.template&lt;/code&gt; 自动生成一个特定的&lt;code&gt;nginx.conf&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;如果使用bash来填充展开模板，则需要eval，或者source之类的操作，因为bash不支持对字符串（真正意义上的字符串，而不是双引号引起来的）的变量替换。&lt;/p&gt;
 &lt;p&gt;解决方案是用 &lt;code&gt;envsubst&lt;/code&gt;。 这个命令支持使用环境变量展开字符串模板。&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;#一般用法&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;#一般用法&lt;/span&gt;
 envsubst &amp;lt; nginx.conf.template &amp;gt; nanjing.conf
 
 &lt;span class="c1"&gt;#指定特定待替换的环境变量&lt;/span&gt;
 envsubst &lt;span class="s1"&gt;&amp;#39;${VAR_NAME}&amp;#39;&lt;/span&gt; &amp;lt; nginx.conf.template &amp;gt; nanjing.conf
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Wed, 07 Jun 2017 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-06-07:/posts/2017/06/07/bash-string-template.html</guid><category>linux</category><category>linux</category><category>bash</category></item><item><title>iperf3测试带宽</title><link>/posts/2017/06/07/iperf3.html</link><description>&lt;h1&gt;TCP&lt;/h1&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Wed, 07 Jun 2017 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-06-07:/posts/2017/06/07/bash-string-template.html</guid><category>linux</category><category>linux</category><category>bash</category></item><item><title>iperf3测试带宽</title><link>/posts/2017/06/07/iperf3.html</link><description>&lt;h1&gt;TCP&lt;/h1&gt;
 &lt;p&gt;服务端&lt;code&gt;iperf3 -s -p 12345&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;客户端测试上传到服务器&lt;code&gt;iperf3 -c server_host -p 12345&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;客户端测试从服务器下载&lt;code&gt;iperf3 -c server_host -p 12345 -R&lt;/code&gt;&lt;/p&gt;
@@ -679,7 +668,7 @@ envsubst &lt;span class="s1"&gt;&amp;#39;${VAR_NAME}&amp;#39;&lt;/span&gt; &amp;
 &lt;ul&gt;
 &lt;li&gt;windows 平台下 &lt;code&gt;ValueError: embedded null byte&lt;/code&gt; 的报错
 解决方法：
-在 &lt;code&gt;.\lib\site-packages\pelican\utils.py&lt;/code&gt; 文件中， 找到函数 &lt;code&gt;strftime&lt;/code&gt; ，在第一行添加 &lt;code&gt;locale.setlocale(locale.LC_ALL …&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Sat, 03 Jun 2017 06:56:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-06-03:/posts/2017/06/03/pelican.html</guid><category>blog</category><category>pelican</category><category>python</category><category>blog</category></item><item><title>将man page输出到pdf和HTML</title><link>/posts/2015/01/20/man-pages-to-pdf.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# 方法1：直接浏览器查看html&lt;/span&gt;
+在 &lt;code&gt;.\lib\site-packages\pelican\utils.py&lt;/code&gt; 文件中， 找到函数 &lt;code&gt;strftime&lt;/code&gt; ，在第一行添加 &lt;code&gt;locale.setlocale(locale.LC_ALL …&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Sat, 03 Jun 2017 06:56:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-06-03:/posts/2017/06/03/pelican.html</guid><category>blog</category><category>pelican</category><category>python</category><category>blog</category></item><item><title>将man page输出到pdf和HTML</title><link>/posts/2015/01/20/man-pages-to-pdf.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 方法1：直接浏览器查看html&lt;/span&gt;
 man -Hfirefox memfd_create
 
 
@@ -691,7 +680,7 @@ zcat /usr/share/man/man2/timerfd_create.2.gz &lt;span class="p"&gt;|&lt;/span&gt
 
 &lt;span class="c1"&gt;# 方法3：转换为pdf&lt;/span&gt;
 man -t eventfd &lt;span class="p"&gt;|&lt;/span&gt; ps2pdf - &amp;gt; eventfd.pdf
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Tue, 20 Jan 2015 16:37:00 +0800</pubDate><guid isPermaLink="false">tag:None,2015-01-20:/posts/2015/01/20/man-pages-to-pdf.html</guid><category>linux</category><category>linux</category></item><item><title>linux-man-pages</title><link>/posts/2015/01/20/linux-man-pages.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="err"&gt;关键字&lt;/span&gt;  &lt;span class="err"&gt;从&lt;/span&gt;&lt;span class="n"&gt;man手册页描述内容中搜索&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Tue, 20 Jan 2015 16:37:00 +0800</pubDate><guid isPermaLink="false">tag:None,2015-01-20:/posts/2015/01/20/man-pages-to-pdf.html</guid><category>linux</category><category>linux</category></item><item><title>linux-man-pages</title><link>/posts/2015/01/20/linux-man-pages.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="err"&gt;关键字&lt;/span&gt;  &lt;span class="err"&gt;从&lt;/span&gt;&lt;span class="n"&gt;man手册页描述内容中搜索&lt;/span&gt;
 &lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;K&lt;/span&gt; &lt;span class="err"&gt;全文暴力搜索，&lt;/span&gt; &lt;span class="err"&gt;速度比较慢&lt;/span&gt;
 &lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="err"&gt;显示手册中包含的所有可用的手册页&lt;/span&gt;
 &lt;span class="n"&gt;whatis&lt;/span&gt;
@@ -704,17 +693,17 @@ man -t eventfd &lt;span class="p"&gt;|&lt;/span&gt; ps2pdf - &amp;gt; eventfd.pd
 &lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="n"&gt;string&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;在头文件内的所有函数。&lt;/span&gt;
 &lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="n"&gt;stdio&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;关于头文件的使用，标准输入&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="err"&gt;输出库的说明。&lt;/span&gt;
 &lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="n"&gt;errno&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;所有&lt;/span&gt;&lt;span class="n"&gt;errorno的取值及说明&lt;/span&gt;&lt;span class="err"&gt;。（&lt;/span&gt;&lt;span class="n"&gt;C语言内类似其他语言的异常告知机制&lt;/span&gt;&lt;span class="err"&gt;）&lt;/span&gt;
-&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;4 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Tue, 20 Jan 2015 11:41:06 +0800</pubDate><guid isPermaLink="false">tag:None,2015-01-20:/posts/2015/01/20/linux-man-pages.html</guid><category>linux</category><category>linux</category></item><item><title>linux错误执行chmod 777 / 的处理方法</title><link>/posts/2014/06/11/chmod777.html</link><description>&lt;h4&gt;setfacl&lt;/h4&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;4 …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Tue, 20 Jan 2015 11:41:06 +0800</pubDate><guid isPermaLink="false">tag:None,2015-01-20:/posts/2015/01/20/linux-man-pages.html</guid><category>linux</category><category>linux</category></item><item><title>linux错误执行chmod 777 / 的处理方法</title><link>/posts/2014/06/11/chmod777.html</link><description>&lt;h4&gt;setfacl&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;getfacl -R / &amp;gt;systemP.bak&lt;/code&gt;  将这个系统中的 / ，以及 / 底下所有的文件及目录权限导出到一个文件中&lt;/li&gt;
 &lt;li&gt;将systemP.bak文件想办法拷贝到被破坏的机器上   并执行
 &lt;code&gt;setfacl --restore=systemP.bak&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4&gt;进行手动恢复命令权限&lt;/h4&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;chmod u+s `which passwd`&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;chmod u+s `which passwd`&lt;/span&gt;
 &lt;span class="err"&gt;chmod u+s `which su`&lt;/span&gt;
 &lt;span class="err"&gt;chmod u+s `which sudo`&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Wed, 11 Jun 2014 20:50:00 +0800</pubDate><guid isPermaLink="false">tag:None,2014-06-11:/posts/2014/06/11/chmod777.html</guid><category>linux</category><category>linux</category><category>command</category></item><item><title>linux 查看info文档</title><link>/posts/2013/09/27/linux-info.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;info &amp;lt;command&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Wed, 11 Jun 2014 20:50:00 +0800</pubDate><guid isPermaLink="false">tag:None,2014-06-11:/posts/2014/06/11/chmod777.html</guid><category>linux</category><category>linux</category><category>command</category></item><item><title>linux 查看info文档</title><link>/posts/2013/09/27/linux-info.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;info &amp;lt;command&amp;gt;&lt;/span&gt;
 &lt;span class="err"&gt;info 比man 更详细&lt;/span&gt;
 &lt;span class="err"&gt;info 中 按tab 跳到下一个 连接 （有*的，可以连接到其他info）&lt;/span&gt;
 &lt;span class="err"&gt;按enter跳转&lt;/span&gt;
@@ -723,4 +712,4 @@ man -t eventfd &lt;span class="p"&gt;|&lt;/span&gt; ps2pdf - &amp;gt; eventfd.pd
 &lt;span class="err"&gt;u跳到上一层&lt;/span&gt;
 &lt;span class="err"&gt;s查找关键字&lt;/span&gt;
 &lt;span class="err"&gt;q离开&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Fri, 27 Sep 2013 17:59:00 +0800</pubDate><guid isPermaLink="false">tag:None,2013-09-27:/posts/2013/09/27/linux-info.html</guid><category>linux</category><category>linux</category></item></channel></rss>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Fri, 27 Sep 2013 17:59:00 +0800</pubDate><guid isPermaLink="false">tag:None,2013-09-27:/posts/2013/09/27/linux-info.html</guid><category>linux</category><category>linux</category></item></channel></rss>
