@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2022-06-27T19:26:08+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>snapper文件系统快照工具</title><link href="/posts/2022/06/27/snapper.html" rel="alternate"></link><published>2022-06-27T19:26:08+08:00</published><updated>2022-06-27T19:26:08+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-06-27:/posts/2022/06/27/snapper.html</id><summary type="html">&lt;h5&gt;snapper 支持的文件系统&lt;/h5&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2022-06-29T17:17:17+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>统计代码行数cloc (count lines of code)</title><link href="/posts/2022/06/29/cloc.html" rel="alternate"></link><published>2022-06-29T17:17:17+08:00</published><updated>2022-06-29T17:17:17+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-06-29:/posts/2022/06/29/cloc.html</id><content type="html">&lt;p&gt;统计代码行数可以使用cloc，gocloc&lt;/p&gt;
+&lt;h4&gt;使用cloc&lt;/h4&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt install cloc
+cloc .
+cloc xxx-source.tar.gz
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4&gt;使用gocloc&lt;/h4&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# https://github.com/hhatto/gocloc&lt;/span&gt;
+gocloc .
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="programming"></category><category term="programming"></category></entry><entry><title>snapper文件系统快照工具</title><link href="/posts/2022/06/27/snapper.html" rel="alternate"></link><published>2022-06-27T19:26:08+08:00</published><updated>2022-06-27T19:26:08+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-06-27:/posts/2022/06/27/snapper.html</id><summary type="html">&lt;h5&gt;snapper 支持的文件系统&lt;/h5&gt;
 &lt;ol&gt;
 &lt;li&gt;btrfs&lt;/li&gt;
 &lt;li&gt;XFS、Ext4 或 Ext3 格式的精简 LVM 卷&lt;/li&gt;
