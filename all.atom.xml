@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>无聊就该多读书。</description><lastBuildDate>Wed, 29 Jun 2022 17:17:17 +0800</lastBuildDate><item><title>统计代码行数cloc (count lines of code)</title><link>/posts/2022/06/29/cloc.html</link><description>&lt;p&gt;统计代码行数可以使用cloc，gocloc&lt;/p&gt;
+<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>无聊就该多读书。</description><lastBuildDate>Sat, 02 Jul 2022 18:29:06 +0800</lastBuildDate><item><title>openSUSE系统报告无法打开动态库</title><link>/posts/2022/07/02/cannot-open-shared-libraries.html</link><description>&lt;p&gt;更新openSUSE 15.4, 发现 qtcreator 挂了。&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;~&amp;gt; qtcreator 
+qtcreator: error &lt;span class="k"&gt;while&lt;/span&gt; loading shared libraries: libExtensionSystem.so.6: cannot open shared object file: No such file or directory
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;最终还是在系统里找到了这个文件&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;~&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;zypper&lt;/span&gt; &lt;span class="k"&gt;search&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt; &lt;span class="n"&gt;libExtensionSystem&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;so&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;
+&lt;span class="err"&gt;显示文件在&lt;/span&gt;&lt;span class="n"&gt;qt5&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;creator&lt;/span&gt;&lt;span class="err"&gt;（已安装）包中。&lt;/span&gt;
+
+&lt;span class="o"&gt;~&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;rpm&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ql&lt;/span&gt; &lt;span class="n"&gt;qt5&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;creator&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;grep&lt;/span&gt; &lt;span class="n"&gt;libExtensionSystem&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;so&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;
+&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;lib64&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;qtcreator&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;libExtensionSystem …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Sat, 02 Jul 2022 18:29:06 +0800</pubDate><guid isPermaLink="false">tag:None,2022-07-02:/posts/2022/07/02/cannot-open-shared-libraries.html</guid><category>linux</category><category>linux</category><category>openSUSE</category></item><item><title>自己用的三方软件仓库</title><link>/posts/2022/07/02/thirdparty-repos.html</link><description>&lt;ol&gt;
+&lt;li&gt;openSUSE, packman&lt;/li&gt;
+&lt;li&gt;fedora, rpmfusion&lt;/li&gt;
+&lt;li&gt;centos, EPEL, ius, ELRepo(不常用)，&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="rpmfusion"&gt;https://rpmfusion.org/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="EPEL"&gt;https://fedoraproject.org/wiki/EPEL/zh-cn&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="ius"&gt;https://ius.io/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="RLRepo硬件相关软件包"&gt;http://elrepo.org/tiki/HomePage&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Sat, 02 Jul 2022 14:30:25 +0800</pubDate><guid isPermaLink="false">tag:None,2022-07-02:/posts/2022/07/02/thirdparty-repos.html</guid><category>linux</category><category>linux</category></item><item><title>统计代码行数cloc (count lines of code)</title><link>/posts/2022/06/29/cloc.html</link><description>&lt;p&gt;统计代码行数可以使用cloc，gocloc&lt;/p&gt;
 &lt;h4&gt;使用cloc&lt;/h4&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt install cloc
 cloc .

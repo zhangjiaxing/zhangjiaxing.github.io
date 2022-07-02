@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>生成函数调用关系图 &mdash; cat ~/.zhiliao.history</title>
+  <title>自己用的三方软件仓库 &mdash; cat ~/.zhiliao.history</title>
   <meta name="author" content="zhiliao">
 
   <link href="/feeds/all.atom.xml" type="application/rss+xml" rel="alternate"
@@ -58,36 +58,21 @@
 <div>
   <article class="hentry" role="article">
 <header>
-      <h1 class="entry-title">生成函数调用关系图</h1>
+      <h1 class="entry-title">自己用的三方软件仓库</h1>
     <p class="meta">
-<time datetime="2018-10-31T13:57:01+08:00" pubdate>2018-10-31 13:57:01</time>      
+<time datetime="2022-07-02T14:30:25+08:00" pubdate>2022-07-02 14:30:25</time>      
     </p>
 </header>
 
-    <div class="entry-content"><h4>用gprof生成函数调用关系图</h4>
-<ol>
-<li>CMakeLists.txt</li>
+    <div class="entry-content"><ol>
+<li>openSUSE, packman</li>
+<li>fedora, rpmfusion</li>
+<li>centos, EPEL, ius, ELRepo(不常用)，</li>
 </ol>
-<div class="highlight-custom"><pre><span></span><code><span class="err">SET(CMAKE_BUILD_TYPE &quot;Debug&quot;)</span>
-<span class="err">SET(CMAKE_C_FLAGS_DEBUG &quot;$ENV{CXXFLAGS} -O0 -Wall -g2 -pg -ggdb&quot;)  </span>
-<span class="err">SET(CMAKE_C_FLAGS_RELEASE &quot;$ENV{CXXFLAGS} -O3 -Wall&quot;)</span>
-</code></pre></div>
-
-<p>或</p>
-<div class="highlight-custom"><pre><span></span><code><span class="err">gcc -pg -g source.c -o binary</span>
-</code></pre></div>
-
-<ol>
-<li><code>./binary</code> 生成 gmon.out</li>
-<li><code>gprof ./binary&gt; gprof_output.txt</code></li>
-<li><code>graph2dot.py gprof_output.txt&gt; call_graph.dot</code></li>
-</ol>
-<hr>
-<h4>valgrind 生成函数调用图 (推荐)</h4>
-<div class="highlight-custom"><pre><span></span><code><span class="err">valgrind --tool=callgrind ./a.out</span>
-<span class="err">执行完成后在目录下生成&quot;callgrind.out.XXX&quot;的文件这是分析文件</span>
-<span class="err">gprof2dot.py -f callgrind callgrind.out.XXX &gt; xxx.dot</span>
-</code></pre></div></div>
+<p><a href="rpmfusion">https://rpmfusion.org/</a></p>
+<p><a href="EPEL">https://fedoraproject.org/wiki/EPEL/zh-cn</a></p>
+<p><a href="ius">https://ius.io/</a></p>
+<p><a href="RLRepo硬件相关软件包">http://elrepo.org/tiki/HomePage</a></p></div>
     <footer>
 <p class="meta">
   <span class="byline author vcard">
@@ -95,7 +80,7 @@
         zhiliao
     </span>
   </span>
-<time datetime="2018-10-31T13:57:01+08:00" pubdate>2018-10-31 13:57:01</time>  <span class="categories">
+<time datetime="2022-07-02T14:30:25+08:00" pubdate>2022-07-02 14:30:25</time>  <span class="categories">
     <a class='category' href='/category/linux.html'>linux</a>
   </span>
   <span class="categories">

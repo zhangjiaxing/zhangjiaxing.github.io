@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>生成函数调用关系图 &mdash; cat ~/.zhiliao.history</title>
+  <title>openSUSE系统报告无法打开动态库 &mdash; cat ~/.zhiliao.history</title>
   <meta name="author" content="zhiliao">
 
   <link href="/feeds/all.atom.xml" type="application/rss+xml" rel="alternate"
@@ -58,35 +58,37 @@
 <div>
   <article class="hentry" role="article">
 <header>
-      <h1 class="entry-title">生成函数调用关系图</h1>
+      <h1 class="entry-title">openSUSE系统报告无法打开动态库</h1>
     <p class="meta">
-<time datetime="2018-10-31T13:57:01+08:00" pubdate>2018-10-31 13:57:01</time>      
+<time datetime="2022-07-02T18:29:06+08:00" pubdate>2022-07-02 18:29:06</time>      
     </p>
 </header>
 
-    <div class="entry-content"><h4>用gprof生成函数调用关系图</h4>
-<ol>
-<li>CMakeLists.txt</li>
-</ol>
-<div class="highlight-custom"><pre><span></span><code><span class="err">SET(CMAKE_BUILD_TYPE &quot;Debug&quot;)</span>
-<span class="err">SET(CMAKE_C_FLAGS_DEBUG &quot;$ENV{CXXFLAGS} -O0 -Wall -g2 -pg -ggdb&quot;)  </span>
-<span class="err">SET(CMAKE_C_FLAGS_RELEASE &quot;$ENV{CXXFLAGS} -O3 -Wall&quot;)</span>
+    <div class="entry-content"><p>更新openSUSE 15.4, 发现 qtcreator 挂了。</p>
+<div class="highlight-custom"><pre><span></span><code>~&gt; qtcreator 
+qtcreator: error <span class="k">while</span> loading shared libraries: libExtensionSystem.so.6: cannot open shared object file: No such file or directory
 </code></pre></div>
 
-<p>或</p>
-<div class="highlight-custom"><pre><span></span><code><span class="err">gcc -pg -g source.c -o binary</span>
+<p>最终还是在系统里找到了这个文件</p>
+<div class="highlight-custom"><pre><span></span><code><span class="o">~&gt;</span> <span class="n">zypper</span> <span class="k">search</span> <span class="o">-</span><span class="n">f</span> <span class="n">libExtensionSystem</span><span class="p">.</span><span class="n">so</span><span class="p">.</span><span class="mi">6</span>
+<span class="err">显示文件在</span><span class="n">qt5</span><span class="o">-</span><span class="n">creator</span><span class="err">（已安装）包中。</span>
+
+<span class="o">~&gt;</span> <span class="n">rpm</span> <span class="o">-</span><span class="n">ql</span> <span class="n">qt5</span><span class="o">-</span><span class="n">creator</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">libExtensionSystem</span><span class="p">.</span><span class="n">so</span><span class="p">.</span><span class="mi">6</span>
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib64</span><span class="o">/</span><span class="n">qtcreator</span><span class="o">/</span><span class="n">libExtensionSystem</span><span class="p">.</span><span class="n">so</span><span class="p">.</span><span class="mi">6</span>
 </code></pre></div>
 
-<ol>
-<li><code>./binary</code> 生成 gmon.out</li>
-<li><code>gprof ./binary&gt; gprof_output.txt</code></li>
-<li><code>graph2dot.py gprof_output.txt&gt; call_graph.dot</code></li>
-</ol>
-<hr>
-<h4>valgrind 生成函数调用图 (推荐)</h4>
-<div class="highlight-custom"><pre><span></span><code><span class="err">valgrind --tool=callgrind ./a.out</span>
-<span class="err">执行完成后在目录下生成&quot;callgrind.out.XXX&quot;的文件这是分析文件</span>
-<span class="err">gprof2dot.py -f callgrind callgrind.out.XXX &gt; xxx.dot</span>
+<p>手动帮助加载动态库（临时方案）</p>
+<div class="highlight-custom"><pre><span></span><code><span class="err">~&gt; export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib64/qtcreator</span>
+<span class="err">~&gt; qtcreator</span>
+<span class="err">qtcreator启动成功</span>
+</code></pre></div>
+
+<p>我在另外一台系统上也出现了 qt creator 挂了的问题， 重启无效。
+彻底解决方案是：</p>
+<p>root 用户下执行：</p>
+<div class="highlight-custom"><pre><span></span><code><span class="n">echo</span> <span class="ss">&quot;/usr/lib64/qtcreator&quot;</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ld</span><span class="p">.</span><span class="n">so</span><span class="p">.</span><span class="n">conf</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">qtcreator</span><span class="p">.</span><span class="n">conf</span> 
+
+<span class="n">ldconfig</span> <span class="o">-</span><span class="n">v</span>
 </code></pre></div></div>
     <footer>
 <p class="meta">
@@ -95,11 +97,11 @@
         zhiliao
     </span>
   </span>
-<time datetime="2018-10-31T13:57:01+08:00" pubdate>2018-10-31 13:57:01</time>  <span class="categories">
+<time datetime="2022-07-02T18:29:06+08:00" pubdate>2022-07-02 18:29:06</time>  <span class="categories">
     <a class='category' href='/category/linux.html'>linux</a>
   </span>
   <span class="categories">
-    <a class="category" href="/tag/linux.html">linux</a>  </span>
+    <a class="category" href="/tag/linux.html">linux</a>,    <a class="category" href="/tag/opensuse.html">openSUSE</a>  </span>
 </p><div class="sharing">
 </div>    </footer>
   </article>
