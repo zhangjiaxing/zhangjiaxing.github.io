@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>iperf3测试带宽 &mdash; cat ~/.zhiliao.history</title>
+  <title>pkexec &mdash; cat ~/.zhiliao.history</title>
   <meta name="author" content="zhiliao">
 
   <link href="/feeds/all.atom.xml" type="application/rss+xml" rel="alternate"
@@ -58,20 +58,14 @@
 <div>
   <article class="hentry" role="article">
 <header>
-      <h1 class="entry-title">iperf3测试带宽</h1>
+      <h1 class="entry-title">pkexec</h1>
     <p class="meta">
-<time datetime="2017-06-07T00:00:00+08:00" pubdate>2017-06-07 00:00:00</time>      
+<time datetime="2022-07-05T13:26:03+08:00" pubdate>2022-07-05 13:26:03</time>      
     </p>
 </header>
 
-    <div class="entry-content"><h1>TCP</h1>
-<p>服务端<code>iperf3 -s -p 12345</code></p>
-<p>客户端测试上传到服务器<code>iperf3 -c server_host -p 12345</code></p>
-<p>客户端测试从服务器下载<code>iperf3 -c server_host -p 12345 -R</code></p>
-<h1>UDP</h1>
-<p>客户端添加 -u 参数即可</p>
-<h1>传输多个流测试(必加参数)</h1>
-<p>加上参数 -P 10 (10个流同步测试)</p></div>
+    <div class="entry-content"><p>可以使用pkexec代替gksu 和 sudo
+pkexec bash</p></div>
     <footer>
 <p class="meta">
   <span class="byline author vcard">
@@ -79,11 +73,11 @@
         zhiliao
     </span>
   </span>
-<time datetime="2017-06-07T00:00:00+08:00" pubdate>2017-06-07 00:00:00</time>  <span class="categories">
-    <a class='category' href='/category/network.html'>network</a>
+<time datetime="2022-07-05T13:26:03+08:00" pubdate>2022-07-05 13:26:03</time>  <span class="categories">
+    <a class='category' href='/category/linux.html'>linux</a>
   </span>
   <span class="categories">
-    <a class="category" href="/tag/linux.html">linux</a>,    <a class="category" href="/tag/network.html">network</a>  </span>
+    <a class="category" href="/tag/linux.html">linux</a>  </span>
 </p><div class="sharing">
 </div>    </footer>
   </article>
