@@ -4,11 +4,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: vm &mdash; cat ~/.zhiliao.history</title>
+  <title>面试中我经常问的问题 &mdash; cat ~/.zhiliao.history</title>
   <meta name="author" content="zhiliao">
 
   <link href="/feeds/all.atom.xml" type="application/rss+xml" rel="alternate"
         title="cat ~/.zhiliao.history RSS Feed" />
+
+
 
 
 
@@ -54,28 +56,111 @@
   <div id="main">
     <div id="content">
 <div>
-	<article role="article">
-    	<header>
-    		<h1 class="entry-title">Category: vm</h1>
-    	</header>
+  <article class="hentry" role="article">
+<header>
+      <h1 class="entry-title">面试中我经常问的问题</h1>
+    <p class="meta">
+<time datetime="2017-06-07T00:00:00+08:00" pubdate>2017-06-07 00:00:00</time>      
+    </p>
+</header>
 
-    	<div id="blog-archives">
-            <h2>2020</h2>
-                    <article>
-                        <h1><a href="/posts/2020/09/07/windows-vm.html">微软提供的windows系统虚拟机文件下载</a></h1>
-                        <time datetime="2020-09-07 00:12:35+08:00" pubdate>
-                            <span class="month">九月</span>
-                            <span class="day">07</span>
-                            <span class="year">2020</span>
-                        </time>
-                        <footer>
-                            <span class="categories">posted in
-                                <a class='category' href='/category/vm.html'>vm</a>
-                            </span>
-                        </footer>
-                    </article>
-	    </div>
-    </article>
+    <div class="entry-content"><h3>C++</h3>
+<ol>
+<li>说说C++的类型转换和使用场景。</li>
+<li>什么是抽象类。怎么定义。</li>
+<li>说说C++的新特性。</li>
+<li>C 和 C++ struct区别？</li>
+<li>volatile作用， 是否具有原子性？</li>
+<li>如何禁止一个类被实例化？</li>
+<li>说说编译过程又源代码到可执行文件经过了哪些步骤？</li>
+</ol>
+<h3>Qt</h3>
+<ol>
+<li>创建对象传递的parent指针是什么作用？</li>
+<li>QWidget 和Qt Quick （qml）区别，底层是否一样？</li>
+<li>Qt moc的作用？</li>
+<li>Qt 是否支持反射，是如何实现的？</li>
+</ol>
+<h3>数据结构</h3>
+<ol>
+<li>你知道哪些数据结构？什么数据结构适合什么场景？你用过哪些？</li>
+<li>单链表和双链表有什么区别，头节点是什么作用？如果想要快速从结尾添加删除元素，使用什么链表？</li>
+<li>排序大量数据，可以选择什么排序算法？</li>
+<li>外排序是怎样做的？</li>
+<li>有大量数据，求最大的10%如何实现？</li>
+</ol>
+<h3>操作系统编程接口</h3>
+<ol>
+<li>进程间通信方式有哪几种</li>
+<li>说说线程同步的方式</li>
+<li>信号和信号量有什么区别</li>
+<li>条件变量是干什么用的</li>
+</ol>
+<h3>linux</h3>
+<ol>
+<li>文件权限有哪些？除了读写可执行，还有其他权限吗？</li>
+<li>读写执行权限对于目录的意义是什么？</li>
+<li>你知道哪些文件系统？每个文件系统特点是什么？</li>
+<li>统计目录大小， 统计磁盘使用/剩余空间？</li>
+<li>说说系统启动过程，从机器上电开始。</li>
+<li>你最常用的是什么系统，如果安装三方软件之后报错缺少动态库 xxx.so, 你是怎么解决的。</li>
+<li>服务器上的某个服务异常，考虑怎么排查？</li>
+</ol>
+<h3>网络</h3>
+<ol>
+<li>ping命令所使用的协议是什么？</li>
+<li>路由跟踪工作原理是什么？</li>
+<li>交换机和路由器区别是什么， 工作原理分别是什么？</li>
+<li>什么是ARP协议，DHCP协议，DNS协议？</li>
+<li>DNS递归查询和迭代查询分别是什么？除了A记录还见过哪些记录？ CNAME是干什么的？</li>
+<li>使用UDP传输数据时候，为了更好的传输性能，一般UDP包最大发送多少字节合适，为什么？</li>
+</ol>
+<h3>编程题</h3>
+<ol>
+<li>给一个字符串，统计单词个数。</li>
+<li>求斐波那契数列第N项。</li>
+<li>单链表逆序。</li>
+<li>给定一个正整数n作为边长，请按照下图画出正方形，正方形的边按照<code>A-Za-z0-9</code>排列。</li>
+</ol>
+<div class="highlight-custom"><pre><span></span><code><span class="n">n</span><span class="o">=</span><span class="mi">1</span>
+
+ <span class="n">A</span>
+<span class="c1">----------</span>
+<span class="n">n</span><span class="o">=</span><span class="mi">2</span>
+
+ <span class="n">A</span> <span class="n">B</span>
+ <span class="n">D</span> <span class="k">C</span>
+<span class="c1">---------</span>
+<span class="n">n</span><span class="o">=</span><span class="mi">3</span>
+
+ <span class="n">A</span> <span class="n">B</span> <span class="k">C</span>
+ <span class="n">H</span>   <span class="n">D</span>
+ <span class="k">G</span> <span class="n">F</span> <span class="n">E</span>
+<span class="c1">--------</span>
+<span class="n">n</span><span class="o">=</span><span class="mi">4</span>
+
+ <span class="n">A</span> <span class="n">B</span> <span class="k">C</span> <span class="n">D</span>
+ <span class="n">L</span>     <span class="n">E</span>
+ <span class="n">K</span>     <span class="n">F</span>
+ <span class="n">J</span> <span class="n">I</span> <span class="n">H</span> <span class="k">G</span>
+<span class="c1">--------</span>
+</code></pre></div></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">
+        zhiliao
+    </span>
+  </span>
+<time datetime="2017-06-07T00:00:00+08:00" pubdate>2017-06-07 00:00:00</time>  <span class="categories">
+    <a class='category' href='/category/interview.html'>interview</a>
+  </span>
+  <span class="categories">
+    <a class="category" href="/tag/interview.html">interview</a>,    <a class="category" href="/tag/programing.html">programing</a>  </span>
+</p><div class="sharing">
+</div>    </footer>
+  </article>
+
 </div>
 
 <aside class="sidebar">
@@ -83,7 +168,19 @@
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     <li class="post">
-        <a href="/posts/2020/09/07/windows-vm.html">微软提供的windows系统虚拟机文件下载</a>
+        <a href="/posts/2022/07/05/pkexec.html">pkexec</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2022/07/04/qt-creator-qDebug.html">解决linux下Qt creator不显示qDebug输出</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2022/07/02/cannot-open-shared-libraries.html">openSUSE系统报告无法打开动态库</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2022/07/02/thirdparty-repos.html">自己用的三方软件仓库</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2022/06/29/cloc.html">统计代码行数cloc (count lines of code)</a>
     </li>
   </ul>
 </section><section>
@@ -135,7 +232,7 @@
   </div>
   <footer role="contentinfo">
 <p>
-    Copyright &copy;  2020  zhiliao &mdash;
+    Copyright &copy;  2013&ndash;2022  zhiliao &mdash;
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
 </p>  </footer>
 </body>
