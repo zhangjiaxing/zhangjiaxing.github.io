@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>无聊就该多读书。</description><lastBuildDate>Tue, 05 Jul 2022 13:26:03 +0800</lastBuildDate><item><title>pkexec</title><link>/posts/2022/07/05/pkexec.html</link><description>&lt;p&gt;可以使用pkexec代替gksu 和 sudo
-pkexec bash&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Tue, 05 Jul 2022 13:26:03 +0800</pubDate><guid isPermaLink="false">tag:None,2022-07-05:/posts/2022/07/05/pkexec.html</guid><category>linux</category><category>linux</category></item><item><title>解决linux下Qt creator不显示qDebug输出</title><link>/posts/2022/07/04/qt-creator-qDebug.html</link><description>&lt;p&gt;linux下Qt creator 不显示qDebug输出， 可以在qtcreator的.desktop文件添加环境变量。
+<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>无聊就该多读书。</description><lastBuildDate>Tue, 05 Jul 2022 13:26:03 +0800</lastBuildDate><item><title>pkexec</title><link>/posts/2022/07/05/pkexec.html</link><description>&lt;p&gt;可以使用pkexec代替gksu 和 sudo&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;pkexec bash&lt;/p&gt;
+&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Tue, 05 Jul 2022 13:26:03 +0800</pubDate><guid isPermaLink="false">tag:None,2022-07-05:/posts/2022/07/05/pkexec.html</guid><category>linux</category><category>linux</category></item><item><title>解决linux下Qt creator不显示qDebug输出</title><link>/posts/2022/07/04/qt-creator-qDebug.html</link><description>&lt;p&gt;linux下Qt creator 不显示qDebug输出， 可以在qtcreator的.desktop文件添加环境变量。
 &lt;code&gt;env QT_ASSUME_STDERR_HAS_CONSOLE=1 qtcreator&lt;/code&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Mon, 04 Jul 2022 18:50:55 +0800</pubDate><guid isPermaLink="false">tag:None,2022-07-04:/posts/2022/07/04/qt-creator-qDebug.html</guid><category>programming</category><category>programming</category><category>Qt</category></item><item><title>openSUSE系统报告无法打开动态库</title><link>/posts/2022/07/02/cannot-open-shared-libraries.html</link><description>&lt;p&gt;更新openSUSE 15.4, 发现 qtcreator 挂了。&lt;/p&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;~&amp;gt; qtcreator 
 qtcreator: error &lt;span class="k"&gt;while&lt;/span&gt; loading shared libraries: libExtensionSystem.so.6: cannot open shared object file: No such file or directory
@@ -707,7 +709,7 @@ envsubst &lt;span class="s1"&gt;&amp;#39;${VAR_NAME}&amp;#39;&lt;/span&gt; &amp;
 &lt;/ol&gt;
 &lt;h3&gt;linux&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;文件权限有哪些？除了读写可执行 …&lt;/li&gt;&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Wed, 07 Jun 2017 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-06-07:/posts/2017/06/07/interview-questions.html</guid><category>interview</category><category>interview</category><category>programing</category></item><item><title>iperf3测试带宽</title><link>/posts/2017/06/07/iperf3.html</link><description>&lt;h1&gt;TCP&lt;/h1&gt;
+&lt;li&gt;文件权限有哪些？除了读写可执行 …&lt;/li&gt;&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Wed, 07 Jun 2017 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-06-07:/posts/2017/06/07/interview-questions.html</guid><category>interview</category><category>interview</category><category>programming</category></item><item><title>iperf3测试带宽</title><link>/posts/2017/06/07/iperf3.html</link><description>&lt;h1&gt;TCP&lt;/h1&gt;
 &lt;p&gt;服务端&lt;code&gt;iperf3 -s -p 12345&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;客户端测试上传到服务器&lt;code&gt;iperf3 -c server_host -p 12345&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;客户端测试从服务器下载&lt;code&gt;iperf3 -c server_host -p 12345 -R&lt;/code&gt;&lt;/p&gt;
