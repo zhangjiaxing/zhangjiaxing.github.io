@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>无聊就该多读书。</description><lastBuildDate>Sat, 09 Jul 2022 01:12:10 +0800</lastBuildDate><item><title>面试中我经常问的问题</title><link>/posts/2022/07/09/interview-questions.html</link><description>&lt;h3&gt;C++&lt;/h3&gt;
+<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>无聊就该多读书。</description><lastBuildDate>Sat, 03 Sep 2022 12:59:46 +0800</lastBuildDate><item><title>Flatpak vs Snap</title><link>/posts/2022/09/03/Flatpak-vs-Snap.html</link><description>&lt;h2&gt;Flatpak vs. Snap&lt;/h2&gt;
+&lt;p&gt;Flatpak may have been in works since 2007 as glick, it’s not the only player in the Linux world. Canonical is the one that created waves with the announcement of Click, that later evolved into Snap.&lt;/p&gt;
+&lt;p&gt;There is a healthy competition between the two projects and …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Sat, 03 Sep 2022 12:59:46 +0800</pubDate><guid isPermaLink="false">tag:None,2022-09-03:/posts/2022/09/03/Flatpak-vs-Snap.html</guid><category>container</category><category>linux</category><category>docker</category><category>flatpak</category></item><item><title>面试中我经常问的问题</title><link>/posts/2022/07/09/interview-questions.html</link><description>&lt;h3&gt;C++&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;说说C++的类型转换和使用场景。&lt;/li&gt;
 &lt;li&gt;什么是抽象类。怎么定义。&lt;/li&gt;
