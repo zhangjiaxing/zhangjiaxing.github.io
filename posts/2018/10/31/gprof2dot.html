@@ -68,13 +68,13 @@
 <ol>
 <li>CMakeLists.txt</li>
 </ol>
-<div class="highlight-custom"><pre><span></span><code>SET(CMAKE_BUILD_TYPE &quot;Debug&quot;)
-SET(CMAKE_C_FLAGS_DEBUG &quot;$ENV{CXXFLAGS} -O0 -Wall -g2 -pg -ggdb&quot;)  
-SET(CMAKE_C_FLAGS_RELEASE &quot;$ENV{CXXFLAGS} -O3 -Wall&quot;)
+<div class="highlight-custom"><pre><span></span><code><span class="err">SET(CMAKE_BUILD_TYPE &quot;Debug&quot;)</span>
+<span class="err">SET(CMAKE_C_FLAGS_DEBUG &quot;$ENV{CXXFLAGS} -O0 -Wall -g2 -pg -ggdb&quot;)  </span>
+<span class="err">SET(CMAKE_C_FLAGS_RELEASE &quot;$ENV{CXXFLAGS} -O3 -Wall&quot;)</span>
 </code></pre></div>
 
 <p>或</p>
-<div class="highlight-custom"><pre><span></span><code>gcc -pg -g source.c -o binary
+<div class="highlight-custom"><pre><span></span><code><span class="err">gcc -pg -g source.c -o binary</span>
 </code></pre></div>
 
 <ol>
@@ -84,9 +84,9 @@ SET(CMAKE_C_FLAGS_RELEASE &quot;$ENV{CXXFLAGS} -O3 -Wall&quot;)
 </ol>
 <hr>
 <h4>valgrind 生成函数调用图 (推荐)</h4>
-<div class="highlight-custom"><pre><span></span><code><span class="n">valgrind</span> <span class="o">--</span><span class="k">tool</span><span class="o">=</span><span class="n">callgrind</span> <span class="o">./</span><span class="n">a</span><span class="o">.</span><span class="n">out</span>
-<span class="err">执行完成后在目录下生成</span><span class="s2">&quot;callgrind.out.XXX&quot;</span><span class="err">的文件这是分析文件</span>
-<span class="n">gprof2dot</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">f</span> <span class="n">callgrind</span> <span class="n">callgrind</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">XXX</span> <span class="o">&gt;</span> <span class="n">xxx</span><span class="o">.</span><span class="n">dot</span>
+<div class="highlight-custom"><pre><span></span><code><span class="err">valgrind --tool=callgrind ./a.out</span>
+<span class="err">执行完成后在目录下生成&quot;callgrind.out.XXX&quot;的文件这是分析文件</span>
+<span class="err">gprof2dot.py -f callgrind callgrind.out.XXX &gt; xxx.dot</span>
 </code></pre></div></div>
     <footer>
 <p class="meta">

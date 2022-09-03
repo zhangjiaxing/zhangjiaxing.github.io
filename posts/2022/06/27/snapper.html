@@ -81,12 +81,12 @@ snapper delete number1-number2 <span class="c1"># 批量删除快照</span>
 </code></pre></div>
 
 <h4>rollback回滚</h4>
-<div class="highlight-custom"><pre><span></span><code># 一般使用undochange回滚会简单一些， 也可以使用rollback回滚
-snapper rollback 要回滚的快照编号 # 该命令将创建当前系统状态的只读快照 A 及指定编号快照的可读写快照 B，并使用快照 B 替换根分区的默认子卷，重新启动系统后即可实现回滚。
+<div class="highlight-custom"><pre><span></span><code><span class="o">#</span> <span class="err">一般使用</span><span class="n">undochange回滚会简单一些</span><span class="err">，</span> <span class="err">也可以使用</span><span class="n">rollback回滚</span>
+<span class="n">snapper</span> <span class="k">rollback</span> <span class="err">要回滚的快照编号</span> <span class="o">#</span> <span class="err">该命令将创建当前系统状态的只读快照</span> <span class="n">A</span> <span class="err">及指定编号快照的可读写快照</span> <span class="n">B</span><span class="err">，并使用快照</span> <span class="n">B</span> <span class="err">替换根分区的默认子卷，重新启动系统后即可实现回滚。</span>
 
-# 你还可以在引导系统时选择“可引导快照”，以引导想要回滚的快照，在检查无误后在引导的快照中执行：
-snapper rollback
-# 不指定快照编号时，将创建根分区默认子卷（即原系统）的只读快照 A 和当前系统（即目前引导的快照）的可读写快照 B，并使用快照 B 替换根分区的默认子卷，重新启动系统后选择默认引导项即可实现回滚。 
+<span class="o">#</span> <span class="err">你还可以在引导系统时选择“可引导快照”，以引导想要回滚的快照，在检查无误后在引导的快照中执行：</span>
+<span class="n">snapper</span> <span class="k">rollback</span>
+<span class="o">#</span> <span class="err">不指定快照编号时，将创建根分区默认子卷（即原系统）的只读快照</span> <span class="n">A</span> <span class="err">和当前系统（即目前引导的快照）的可读写快照</span> <span class="n">B</span><span class="err">，并使用快照</span> <span class="n">B</span> <span class="err">替换根分区的默认子卷，重新启动系统后选择默认引导项即可实现回滚。</span> 
 </code></pre></div></div>
     <footer>
 <p class="meta">

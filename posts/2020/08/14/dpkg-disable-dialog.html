@@ -69,8 +69,8 @@
 <p>首先测试 <code>yes | dpkg -i *</code> 对话框还是会出现. (<code>yes | dpkg -i</code> 印象里面看别人这么写过.  <code>yes | tty</code> 显示 <code>not a tty</code>)</p>
 <p>于是测试 ssh -T 链接本机, 安装果然没有对话框. 能够成功安装,但是有一行报错 <code>debconf: unable to initialize frontend: Dialog</code></p>
 <p>顺着这个报错, 终于搜到了 如何dpkg安装软件不出现dialog对话框.</p>
-<div class="highlight-custom"><pre><span></span><code><span class="err">设置环境变量</span><span class="p">,</span> <span class="err">然后在</span> <span class="n">dpkg安装就可以</span>
-<span class="n">DEBIAN_FRONTEND</span><span class="o">=</span><span class="n">noninteractive</span> <span class="n">dpkg</span> <span class="o">-</span><span class="n">i</span> <span class="o">*</span>
+<div class="highlight-custom"><pre><span></span><code><span class="err">设置环境变量, 然后在 dpkg安装就可以</span>
+<span class="err">DEBIAN_FRONTEND=noninteractive dpkg -i *</span>
 </code></pre></div></div>
     <footer>
 <p class="meta">

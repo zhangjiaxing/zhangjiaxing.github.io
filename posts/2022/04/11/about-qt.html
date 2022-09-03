@@ -65,8 +65,8 @@
 </header>
 
     <div class="entry-content"><p>QString转char*的正确方法</p>
-<div class="highlight-custom"><pre><span></span><code><span class="n">QString</span><span class="p">()</span><span class="o">.</span><span class="n">toLocal8Bit</span><span class="p">()</span><span class="o">.</span><span class="n">constData</span><span class="p">()</span>
-<span class="n">QString</span><span class="p">()</span><span class="o">.</span><span class="n">toUtf8</span><span class="p">()</span><span class="o">.</span><span class="n">constData</span><span class="p">()</span>
+<div class="highlight-custom"><pre><span></span><code><span class="err">QString().toLocal8Bit().constData()</span>
+<span class="err">QString().toUtf8().constData()</span>
 </code></pre></div></div>
     <footer>
 <p class="meta">

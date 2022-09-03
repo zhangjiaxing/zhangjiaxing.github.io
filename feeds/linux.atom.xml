@@ -1,46 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - linux</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/linux.atom.xml" rel="self"></link><id>/</id><updated>2022-07-26T18:17:52+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>pkexec</title><link href="/posts/2022/07/05/pkexec.html" rel="alternate"></link><published>2022-07-05T13:26:03+08:00</published><updated>2022-07-26T18:17:52+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-07-05:/posts/2022/07/05/pkexec.html</id><content type="html">&lt;p&gt;可以使用pkexec代替gksu 和 sudo&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - linux</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/linux.atom.xml" rel="self"></link><id>/</id><updated>2022-07-05T13:26:03+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>pkexec</title><link href="/posts/2022/07/05/pkexec.html" rel="alternate"></link><published>2022-07-05T13:26:03+08:00</published><updated>2022-07-05T13:26:03+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-07-05:/posts/2022/07/05/pkexec.html</id><content type="html">&lt;p&gt;可以使用pkexec代替gksu 和 sudo&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;pkexec bash&lt;/p&gt;
-&lt;/blockquote&gt;</content><category term="linux"></category><category term="linux"></category></entry><entry><title>openSUSE系统报告无法打开动态库</title><link href="/posts/2022/07/02/cannot-open-shared-libraries.html" rel="alternate"></link><published>2022-07-02T18:29:06+08:00</published><updated>2022-07-26T18:17:52+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-07-02:/posts/2022/07/02/cannot-open-shared-libraries.html</id><summary type="html">&lt;p&gt;更新openSUSE 15.4, 发现 qtcreator 挂了。&lt;/p&gt;
+&lt;/blockquote&gt;</content><category term="linux"></category><category term="linux"></category></entry><entry><title>openSUSE系统报告无法打开动态库</title><link href="/posts/2022/07/02/cannot-open-shared-libraries.html" rel="alternate"></link><published>2022-07-02T18:29:06+08:00</published><updated>2022-07-02T18:29:06+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-07-02:/posts/2022/07/02/cannot-open-shared-libraries.html</id><summary type="html">&lt;p&gt;更新openSUSE 15.4, 发现 qtcreator 挂了。&lt;/p&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;~&amp;gt; qtcreator 
 qtcreator: error &lt;span class="k"&gt;while&lt;/span&gt; loading shared libraries: libExtensionSystem.so.6: cannot open shared object file: No such file or directory
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;最终还是在系统里找到了这个文件&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;~&amp;gt; zypper search -f libExtensionSystem.so.6
-显示文件在qt5-creator（已安装）包中。
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;~&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;zypper&lt;/span&gt; &lt;span class="k"&gt;search&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt; &lt;span class="n"&gt;libExtensionSystem&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;so&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;
+&lt;span class="err"&gt;显示文件在&lt;/span&gt;&lt;span class="n"&gt;qt5&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;creator&lt;/span&gt;&lt;span class="err"&gt;（已安装）包中。&lt;/span&gt;
 
-~&amp;gt; rpm -ql qt5-creator | grep libExtensionSystem.so.6
-/usr/lib64/qtcreator/libExtensionSystem.so.6
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;手动帮助加载动态库 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;更新openSUSE 15.4, 发现 qtcreator 挂了。&lt;/p&gt;
+&lt;span class="o"&gt;~&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;rpm&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ql&lt;/span&gt; &lt;span class="n"&gt;qt5&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;creator&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;grep&lt;/span&gt; &lt;span class="n"&gt;libExtensionSystem&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;so&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;
+&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;lib64&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;qtcreator&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;libExtensionSystem …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;更新openSUSE 15.4, 发现 qtcreator 挂了。&lt;/p&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;~&amp;gt; qtcreator 
 qtcreator: error &lt;span class="k"&gt;while&lt;/span&gt; loading shared libraries: libExtensionSystem.so.6: cannot open shared object file: No such file or directory
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;最终还是在系统里找到了这个文件&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;~&amp;gt; zypper search -f libExtensionSystem.so.6
-显示文件在qt5-creator（已安装）包中。
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;~&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;zypper&lt;/span&gt; &lt;span class="k"&gt;search&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt; &lt;span class="n"&gt;libExtensionSystem&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;so&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;
+&lt;span class="err"&gt;显示文件在&lt;/span&gt;&lt;span class="n"&gt;qt5&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;creator&lt;/span&gt;&lt;span class="err"&gt;（已安装）包中。&lt;/span&gt;
 
-~&amp;gt; rpm -ql qt5-creator | grep libExtensionSystem.so.6
-/usr/lib64/qtcreator/libExtensionSystem.so.6
+&lt;span class="o"&gt;~&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;rpm&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ql&lt;/span&gt; &lt;span class="n"&gt;qt5&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;creator&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;grep&lt;/span&gt; &lt;span class="n"&gt;libExtensionSystem&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;so&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;
+&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;lib64&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;qtcreator&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;libExtensionSystem&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;so&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;手动帮助加载动态库（临时方案）&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;~&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;export&lt;/span&gt; &lt;span class="n"&gt;LD_LIBRARY_PATH&lt;/span&gt;&lt;span class="o"&gt;=$&lt;/span&gt;&lt;span class="n"&gt;LD_LIBRARY_PATH&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;lib64&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;qtcreator&lt;/span&gt;
-&lt;span class="o"&gt;~&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;qtcreator&lt;/span&gt;
-&lt;span class="n"&gt;qtcreator启动成功&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;~&amp;gt; export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib64/qtcreator&lt;/span&gt;
+&lt;span class="err"&gt;~&amp;gt; qtcreator&lt;/span&gt;
+&lt;span class="err"&gt;qtcreator启动成功&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;我在另外一台系统上也出现了 qt creator 挂了的问题， 重启无效。
 彻底解决方案是：&lt;/p&gt;
 &lt;p&gt;root 用户下执行：&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;echo &amp;quot;/usr/lib64/qtcreator&amp;quot; &amp;gt; /etc/ld.so.conf.d/qtcreator.conf 
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;/usr/lib64/qtcreator&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;etc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ld&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;so&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;conf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;qtcreator&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;conf&lt;/span&gt; 
 
-ldconfig -v
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="openSUSE"></category></entry><entry><title>自己用的三方软件仓库</title><link href="/posts/2022/07/02/thirdparty-repos.html" rel="alternate"></link><published>2022-07-02T14:30:25+08:00</published><updated>2022-07-26T18:17:52+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-07-02:/posts/2022/07/02/thirdparty-repos.html</id><content type="html">&lt;ol&gt;
+&lt;span class="n"&gt;ldconfig&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="openSUSE"></category></entry><entry><title>自己用的三方软件仓库</title><link href="/posts/2022/07/02/thirdparty-repos.html" rel="alternate"></link><published>2022-07-02T14:30:25+08:00</published><updated>2022-07-02T14:30:25+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-07-02:/posts/2022/07/02/thirdparty-repos.html</id><content type="html">&lt;ol&gt;
 &lt;li&gt;openSUSE, packman&lt;/li&gt;
 &lt;li&gt;fedora, rpmfusion&lt;/li&gt;
 &lt;li&gt;centos, EPEL, ius, ELRepo(不常用)，&lt;/li&gt;
@@ -48,7 +45,7 @@ ldconfig -v
 &lt;p&gt;&lt;a href="rpmfusion"&gt;https://rpmfusion.org/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="EPEL"&gt;https://fedoraproject.org/wiki/EPEL/zh-cn&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="ius"&gt;https://ius.io/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="RLRepo硬件相关软件包"&gt;http://elrepo.org/tiki/HomePage&lt;/a&gt;&lt;/p&gt;</content><category term="linux"></category><category term="linux"></category></entry><entry><title>snapper文件系统快照工具</title><link href="/posts/2022/06/27/snapper.html" rel="alternate"></link><published>2022-06-27T19:26:08+08:00</published><updated>2022-07-26T18:17:52+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-06-27:/posts/2022/06/27/snapper.html</id><summary type="html">&lt;h5&gt;snapper 支持的文件系统&lt;/h5&gt;
+&lt;p&gt;&lt;a href="RLRepo硬件相关软件包"&gt;http://elrepo.org/tiki/HomePage&lt;/a&gt;&lt;/p&gt;</content><category term="linux"></category><category term="linux"></category></entry><entry><title>snapper文件系统快照工具</title><link href="/posts/2022/06/27/snapper.html" rel="alternate"></link><published>2022-06-27T19:26:08+08:00</published><updated>2022-06-27T19:26:08+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-06-27:/posts/2022/06/27/snapper.html</id><summary type="html">&lt;h5&gt;snapper 支持的文件系统&lt;/h5&gt;
 &lt;ol&gt;
 &lt;li&gt;btrfs&lt;/li&gt;
 &lt;li&gt;XFS、Ext4 或 Ext3 格式的精简 LVM 卷&lt;/li&gt;
@@ -76,16 +73,16 @@ snapper delete number1-number2 &lt;span class="c1"&gt;# 批量删除快照&lt;/s
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h4&gt;rollback回滚&lt;/h4&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;# 一般使用undochange回滚会简单一些， 也可以使用rollback回滚
-snapper rollback 要回滚的快照编号 # 该命令将创建当前系统状态的只读快照 A 及指定编号快照的可读写快照 B，并使用快照 B 替换根分区的默认子卷，重新启动系统后即可实现回滚。
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;一般使用&lt;/span&gt;&lt;span class="n"&gt;undochange回滚会简单一些&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt; &lt;span class="err"&gt;也可以使用&lt;/span&gt;&lt;span class="n"&gt;rollback回滚&lt;/span&gt;
+&lt;span class="n"&gt;snapper&lt;/span&gt; &lt;span class="k"&gt;rollback&lt;/span&gt; &lt;span class="err"&gt;要回滚的快照编号&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;该命令将创建当前系统状态的只读快照&lt;/span&gt; &lt;span class="n"&gt;A&lt;/span&gt; &lt;span class="err"&gt;及指定编号快照的可读写快照&lt;/span&gt; &lt;span class="n"&gt;B&lt;/span&gt;&lt;span class="err"&gt;，并使用快照&lt;/span&gt; &lt;span class="n"&gt;B&lt;/span&gt; &lt;span class="err"&gt;替换根分区的默认子卷，重新启动系统后即可实现回滚。&lt;/span&gt;
 
-# 你还可以在引导系统时选择“可引导快照”，以引导想要回滚的快照，在检查无误后在引导的快照中执行：
-snapper rollback
-# 不指定快照编号时，将创建根分区默认子卷（即原系统）的只读快照 A 和当前系统（即目前引导的快照）的可读写快照 B，并使用快照 B 替换根分区的默认子卷，重新启动系统后选择默认引导项即可实现回滚。 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="filesystem"></category></entry><entry><title>xdg-user-dirs使用英文名称</title><link href="/posts/2022/02/24/xdg-user-dirs.html" rel="alternate"></link><published>2022-02-24T11:44:53+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-02-24:/posts/2022/02/24/xdg-user-dirs.html</id><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;# 中文语言环境下，xdg-user-dirs使用英文名称
-LANG=C xdg-user-dirs-gtk-update # 同意更新
-xdg-user-dirs-gtk-update # 保留且不再询问
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="xdg"></category></entry><entry><title>uart登录显示颜色支持分屏</title><link href="/posts/2021/08/17/uart-tty.html" rel="alternate"></link><published>2021-08-17T18:25:03+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2021-08-17:/posts/2021/08/17/uart-tty.html</id><summary type="html">&lt;p&gt;使用minicom登录的时候，远程终端窗口大小和本地窗口不一致。 远程窗口小不好用。&lt;/p&gt;
+&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;你还可以在引导系统时选择“可引导快照”，以引导想要回滚的快照，在检查无误后在引导的快照中执行：&lt;/span&gt;
+&lt;span class="n"&gt;snapper&lt;/span&gt; &lt;span class="k"&gt;rollback&lt;/span&gt;
+&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;不指定快照编号时，将创建根分区默认子卷（即原系统）的只读快照&lt;/span&gt; &lt;span class="n"&gt;A&lt;/span&gt; &lt;span class="err"&gt;和当前系统（即目前引导的快照）的可读写快照&lt;/span&gt; &lt;span class="n"&gt;B&lt;/span&gt;&lt;span class="err"&gt;，并使用快照&lt;/span&gt; &lt;span class="n"&gt;B&lt;/span&gt; &lt;span class="err"&gt;替换根分区的默认子卷，重新启动系统后选择默认引导项即可实现回滚。&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="filesystem"></category></entry><entry><title>xdg-user-dirs使用英文名称</title><link href="/posts/2022/02/24/xdg-user-dirs.html" rel="alternate"></link><published>2022-02-24T11:44:53+08:00</published><updated>2022-02-24T11:44:53+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-02-24:/posts/2022/02/24/xdg-user-dirs.html</id><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;# 中文语言环境下，xdg-user-dirs使用英文名称&lt;/span&gt;
+&lt;span class="err"&gt;LANG=C xdg-user-dirs-gtk-update # 同意更新&lt;/span&gt;
+&lt;span class="err"&gt;xdg-user-dirs-gtk-update # 保留且不再询问&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="xdg"></category></entry><entry><title>uart登录显示颜色支持分屏</title><link href="/posts/2021/08/17/uart-tty.html" rel="alternate"></link><published>2021-08-17T18:25:03+08:00</published><updated>2021-08-17T18:25:03+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2021-08-17:/posts/2021/08/17/uart-tty.html</id><summary type="html">&lt;p&gt;使用minicom登录的时候，远程终端窗口大小和本地窗口不一致。 远程窗口小不好用。&lt;/p&gt;
 &lt;p&gt;经测试可以用 &lt;code&gt;sudo screen /dev/ttyUSB0 115200&lt;/code&gt; 来登录， 登录后使用&lt;code&gt;stty&lt;/code&gt;修改tty大小。可根据本机终端模拟器默认设置修改。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;stty size&lt;/code&gt; 查看当前tty大小&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;stty rows 52 cols 191&lt;/code&gt; 修改tty大小&lt;/p&gt;
@@ -106,11 +103,11 @@ xdg-user-dirs-gtk-update # 保留且不再询问
 &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;[[ &amp;quot;$(tty)&amp;quot; == /dev/ttyS0 ]] &amp;amp;&amp;amp; stty rows 55 cols 190 &amp;amp;&amp;amp; TERM=linux bash &amp;amp;&amp;amp; exit&amp;#39;&lt;/span&gt;  &amp;gt;&amp;gt; /root/.profile
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;同时解决uart登录显示颜色和终端大小问题, 这样就可以用tmux分屏了&lt;/p&gt;</content><category term="linux"></category><category term="linux"></category></entry><entry><title>树莓派中开机时检测案件是否按下</title><link href="/posts/2021/08/01/thd.html" rel="alternate"></link><published>2021-08-01T15:16:55+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2021-08-01:/posts/2021/08/01/thd.html</id><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 记录一下此用法。 thd来自 debian 软件包 triggerhappy&lt;/span&gt;
+&lt;p&gt;同时解决uart登录显示颜色和终端大小问题, 这样就可以用tmux分屏了&lt;/p&gt;</content><category term="linux"></category><category term="linux"></category></entry><entry><title>树莓派中开机时检测案件是否按下</title><link href="/posts/2021/08/01/thd.html" rel="alternate"></link><published>2021-08-01T15:16:55+08:00</published><updated>2021-08-01T15:16:55+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2021-08-01:/posts/2021/08/01/thd.html</id><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 记录一下此用法。 thd来自 debian 软件包 triggerhappy&lt;/span&gt;
 &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; -x /usr/sbin/thd &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; timeout &lt;span class="m"&gt;1&lt;/span&gt; thd --dump /dev/input/event* &lt;span class="p"&gt;|&lt;/span&gt; grep -q &lt;span class="s2"&gt;&amp;quot;LEFTSHIFT\|RIGHTSHIFT&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
       &lt;span class="nb"&gt;printf&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;xxxxxxxx&amp;quot;&lt;/span&gt; 
 &lt;span class="k"&gt;fi&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="raspberry"></category></entry><entry><title>openSUSE coredump文件</title><link href="/posts/2020/08/24/openSUSE-coredump.html" rel="alternate"></link><published>2020-08-24T12:40:41+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-08-24:/posts/2020/08/24/openSUSE-coredump.html</id><content type="html">&lt;p&gt;openSUSE Leap 15.2 默认是不开启coredump的.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="raspberry"></category></entry><entry><title>openSUSE coredump文件</title><link href="/posts/2020/08/24/openSUSE-coredump.html" rel="alternate"></link><published>2020-08-24T12:40:41+08:00</published><updated>2020-08-24T12:40:41+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-08-24:/posts/2020/08/24/openSUSE-coredump.html</id><content type="html">&lt;p&gt;openSUSE Leap 15.2 默认是不开启coredump的.&lt;/p&gt;
 &lt;h6&gt;开启方法&lt;/h6&gt;
 &lt;ol&gt;
 &lt;li&gt;查看&lt;code&gt;ulimit -H -a&lt;/code&gt; 和 &lt;code&gt;ulimit -S -a&lt;/code&gt; core files是否均显示unlimited. 如果不是则修改&lt;/li&gt;
@@ -122,21 +119,21 @@ xdg-user-dirs-gtk-update # 保留且不再询问
 &lt;li&gt;sudo coredumpctl list 列出当前corefile 文件&lt;/li&gt;
 &lt;li&gt;/var/lib/systemd/coredump/ 这是corefile 默认保存位置&lt;/li&gt;
 &lt;li&gt;man systemd-coredump; man core 查看手册&lt;/li&gt;
-&lt;/ol&gt;</content><category term="linux"></category><category term="openSUSE"></category><category term="gdb"></category></entry><entry><title>dpkg安装软件包禁用dialog对话框</title><link href="/posts/2020/08/14/dpkg-disable-dialog.html" rel="alternate"></link><published>2020-08-14T17:38:05+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-08-14:/posts/2020/08/14/dpkg-disable-dialog.html</id><content type="html">&lt;p&gt;之前写了个脚本, 在后台自动安装某些dpkg软件包.  但是安装过程会卡住 (即使crontab运行的后台程序也会卡住). 分析原因发现是因为后台出了dialog的对话框, 没有被选择导致一直卡住.&lt;/p&gt;
+&lt;/ol&gt;</content><category term="linux"></category><category term="openSUSE"></category><category term="gdb"></category></entry><entry><title>dpkg安装软件包禁用dialog对话框</title><link href="/posts/2020/08/14/dpkg-disable-dialog.html" rel="alternate"></link><published>2020-08-14T17:38:05+08:00</published><updated>2020-08-14T17:38:05+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-08-14:/posts/2020/08/14/dpkg-disable-dialog.html</id><content type="html">&lt;p&gt;之前写了个脚本, 在后台自动安装某些dpkg软件包.  但是安装过程会卡住 (即使crontab运行的后台程序也会卡住). 分析原因发现是因为后台出了dialog的对话框, 没有被选择导致一直卡住.&lt;/p&gt;
 &lt;p&gt;于是想到在非tty下面, dialog应该不会出现了. &lt;/p&gt;
 &lt;p&gt;首先测试 &lt;code&gt;yes | dpkg -i *&lt;/code&gt; 对话框还是会出现. (&lt;code&gt;yes | dpkg -i&lt;/code&gt; 印象里面看别人这么写过.  &lt;code&gt;yes | tty&lt;/code&gt; 显示 &lt;code&gt;not a tty&lt;/code&gt;)&lt;/p&gt;
 &lt;p&gt;于是测试 ssh -T 链接本机, 安装果然没有对话框. 能够成功安装,但是有一行报错 &lt;code&gt;debconf: unable to initialize frontend: Dialog&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;顺着这个报错, 终于搜到了 如何dpkg安装软件不出现dialog对话框.&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;设置环境变量&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;然后在&lt;/span&gt; &lt;span class="n"&gt;dpkg安装就可以&lt;/span&gt;
-&lt;span class="n"&gt;DEBIAN_FRONTEND&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;noninteractive&lt;/span&gt; &lt;span class="n"&gt;dpkg&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="debian"></category></entry><entry><title>openSUSE zypper</title><link href="/posts/2020/08/05/openSUSE-zypper.html" rel="alternate"></link><published>2020-08-05T13:24:13+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-08-05:/posts/2020/08/05/openSUSE-zypper.html</id><content type="html">&lt;ol&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;设置环境变量, 然后在 dpkg安装就可以&lt;/span&gt;
+&lt;span class="err"&gt;DEBIAN_FRONTEND=noninteractive dpkg -i *&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="debian"></category></entry><entry><title>openSUSE zypper</title><link href="/posts/2020/08/05/openSUSE-zypper.html" rel="alternate"></link><published>2020-08-05T13:24:13+08:00</published><updated>2020-08-05T13:24:13+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-08-05:/posts/2020/08/05/openSUSE-zypper.html</id><content type="html">&lt;ol&gt;
 &lt;li&gt;zypper 安装软件时候版本选择&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;查看仓库中有firefox的哪些版本
-sudo zypper se -s firefox
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;查看仓库中有&lt;/span&gt;&lt;span class="n"&gt;firefox的哪些版本&lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;zypper&lt;/span&gt; &lt;span class="n"&gt;se&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="n"&gt;firefox&lt;/span&gt;
 
-安装指定版本
-sudo zypper in --oldpackage MozillaFirefox=78.0.1-lp152.2.5.1
+&lt;span class="err"&gt;安装指定版本&lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;zypper&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="c1"&gt;--oldpackage MozillaFirefox=78.0.1-lp152.2.5.1&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ol&gt;
@@ -144,7 +141,7 @@ sudo zypper in --oldpackage MozillaFirefox=78.0.1-lp152.2.5.1
 &lt;p&gt;&lt;a href="https://wiki.archlinux.org/index.php/Pacman/Rosetta"&gt;Pacman/Rosetta&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/li&gt;
-&lt;/ol&gt;</content><category term="linux"></category><category term="openSUSE"></category><category term="linux"></category></entry><entry><title>在chromebook上安装archlinux</title><link href="/posts/2020/07/26/arch-linux-samsung-arm-chromebook.html" rel="alternate"></link><published>2020-07-26T22:56:00+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-07-26:/posts/2020/07/26/arch-linux-samsung-arm-chromebook.html</id><summary type="html">&lt;ol&gt;
+&lt;/ol&gt;</content><category term="linux"></category><category term="openSUSE"></category><category term="linux"></category></entry><entry><title>在chromebook上安装archlinux</title><link href="/posts/2020/07/26/arch-linux-samsung-arm-chromebook.html" rel="alternate"></link><published>2020-07-26T22:56:00+08:00</published><updated>2020-07-26T22:56:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-07-26:/posts/2020/07/26/arch-linux-samsung-arm-chromebook.html</id><summary type="html">&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;把安装到U盘的教程中的 /dev/sda 替换成 mmcblk0 即可把archlinux安装进入系统盘.&lt;/p&gt;
 &lt;/li&gt;
@@ -184,39 +181,39 @@ sudo zypper in --oldpackage MozillaFirefox=78.0.1-lp152.2.5.1
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nf"&gt;Right&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Speaker&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Mixer&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;Right&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;DAC1&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;cat&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;local&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;brightness&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;cat&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;local&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;brightness&lt;/span&gt;
 
-#&lt;span class="o"&gt;!/&lt;/span&gt;&lt;span class="nv"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;bash&lt;/span&gt;
-&lt;span class="nv"&gt;cur_bri&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;$&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;cat&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;class&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;backlight&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;backlight&lt;/span&gt;.&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;brightness&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;#!/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bash&lt;/span&gt;
+&lt;span class="n"&gt;cur_bri&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;cat&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;backlight&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;backlight&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;brightness&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
-&lt;span class="k"&gt;if&lt;/span&gt; [ &lt;span class="mh"&gt;$1&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;up&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; ] &lt;span class="c1"&gt;; then&lt;/span&gt;
-    &lt;span class="nv"&gt;bri&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;$&lt;span class="ss"&gt;((&lt;/span&gt;&lt;span class="mh"&gt;$c&lt;/span&gt;&lt;span class="nv"&gt;ur_bri&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="ss"&gt;))&lt;/span&gt;
-    `&lt;span class="nv"&gt;echo&lt;/span&gt; &lt;span class="mh"&gt;$b&lt;/span&gt;&lt;span class="nv"&gt;ri&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;class&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;backlight&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;backlight&lt;/span&gt;.&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;brightness&lt;/span&gt;`
-&lt;span class="nv"&gt;fi&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;up&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+    &lt;span class="n"&gt;bri&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;cur_bri&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="o"&gt;`&lt;/span&gt;&lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;bri&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;backlight&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;backlight&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;brightness&lt;/span&gt;&lt;span class="o"&gt;`&lt;/span&gt;
+&lt;span class="n"&gt;fi&lt;/span&gt;
 
-&lt;span class="k"&gt;if&lt;/span&gt; [ &lt;span class="mh"&gt;$1&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;down&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; ] &lt;span class="c1"&gt;; then&lt;/span&gt;
-    &lt;span class="nv"&gt;bri&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;$&lt;span class="ss"&gt;((&lt;/span&gt;&lt;span class="mh"&gt;$c&lt;/span&gt;&lt;span class="nv"&gt;ur_bri&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="ss"&gt;))&lt;/span&gt;
-    `&lt;span class="nv"&gt;echo&lt;/span&gt; &lt;span class="mh"&gt;$b&lt;/span&gt;&lt;span class="nv"&gt;ri&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;class&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;backlight&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;backlight&lt;/span&gt;.&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;brightness&lt;/span&gt;`
-&lt;span class="nv"&gt;fi&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;down&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+    &lt;span class="n"&gt;bri&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;cur_bri&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="o"&gt;`&lt;/span&gt;&lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;bri&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;backlight&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;backlight&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;brightness&lt;/span&gt;&lt;span class="o"&gt;`&lt;/span&gt;
+&lt;span class="n"&gt;fi&lt;/span&gt;
 
-&lt;span class="k"&gt;if&lt;/span&gt; [ &lt;span class="mh"&gt;$1&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;-s&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; ]&lt;span class="c1"&gt;; then&lt;/span&gt;
-    `&lt;span class="nv"&gt;echo&lt;/span&gt; &lt;span class="mh"&gt;$2&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;class&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;backlight&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;backlight&lt;/span&gt;.&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;brightness&lt;/span&gt;`
-&lt;span class="nv"&gt;fi&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;-s&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;];&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+    &lt;span class="o"&gt;`&lt;/span&gt;&lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;backlight&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;backlight&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;brightness&lt;/span&gt;&lt;span class="o"&gt;`&lt;/span&gt;
+&lt;span class="n"&gt;fi&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Other Notes&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;The&lt;/span&gt; &lt;span class="n"&gt;trackpad&lt;/span&gt; &lt;span class="n"&gt;sometimes&lt;/span&gt; &lt;span class="n"&gt;doesn&lt;/span&gt;&lt;span class="p"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="n"&gt;work&lt;/span&gt; &lt;span class="n"&gt;on&lt;/span&gt; &lt;span class="n"&gt;boot&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="n"&gt;A&lt;/span&gt; &lt;span class="n"&gt;restart&lt;/span&gt; &lt;span class="n"&gt;fixes&lt;/span&gt; &lt;span class="n"&gt;it&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;press&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;power&lt;/span&gt; &lt;span class="n"&gt;button&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;Can&lt;/span&gt;&lt;span class="p"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="n"&gt;seem&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;PulseAudio&lt;/span&gt; &lt;span class="n"&gt;working&lt;/span&gt;
-&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;Two&lt;/span&gt; &lt;span class="n"&gt;finger&lt;/span&gt; &lt;span class="n"&gt;clicks&lt;/span&gt; &lt;span class="n"&gt;that&lt;/span&gt; &lt;span class="n"&gt;are&lt;/span&gt; &lt;span class="n"&gt;too&lt;/span&gt; &lt;span class="n"&gt;wide&lt;/span&gt; &lt;span class="n"&gt;apart&lt;/span&gt; &lt;span class="n"&gt;don&lt;/span&gt;&lt;span class="p"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="n"&gt;register&lt;/span&gt; &lt;span class="n"&gt;as&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;right&lt;/span&gt; &lt;span class="n"&gt;click&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="n"&gt;Two&lt;/span&gt; &lt;span class="n"&gt;finger&lt;/span&gt; &lt;span class="n"&gt;taps&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="n"&gt;though&lt;/span&gt;
-&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;Current&lt;/span&gt; &lt;span class="n"&gt;RAM&lt;/span&gt; &lt;span class="n"&gt;usage&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;me&lt;/span&gt; &lt;span class="n"&gt;is&lt;/span&gt; &lt;span class="mh"&gt;123&lt;/span&gt;&lt;span class="n"&gt;M&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;A&lt;/span&gt; &lt;span class="n"&gt;LOT&lt;/span&gt; &lt;span class="n"&gt;better&lt;/span&gt; &lt;span class="n"&gt;than&lt;/span&gt; &lt;span class="n"&gt;Chrome&lt;/span&gt; &lt;span class="n"&gt;OS&lt;/span&gt; &lt;span class="n"&gt;which&lt;/span&gt; &lt;span class="k"&gt;always&lt;/span&gt; &lt;span class="n"&gt;sits&lt;/span&gt; &lt;span class="n"&gt;around&lt;/span&gt; &lt;span class="mf"&gt;1.5&lt;/span&gt;&lt;span class="n"&gt;GB&lt;/span&gt;
-&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;Still&lt;/span&gt; &lt;span class="n"&gt;can&lt;/span&gt;&lt;span class="p"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="mh"&gt;720&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="n"&gt;video&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;run&lt;/span&gt; &lt;span class="n"&gt;smoothly&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="n"&gt;Chrome&lt;/span&gt; &lt;span class="n"&gt;OS&lt;/span&gt; &lt;span class="n"&gt;is&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="kt"&gt;bit&lt;/span&gt; &lt;span class="n"&gt;better&lt;/span&gt; &lt;span class="n"&gt;here&lt;/span&gt; &lt;span class="n"&gt;but&lt;/span&gt; &lt;span class="n"&gt;even&lt;/span&gt; &lt;span class="n"&gt;then&lt;/span&gt; &lt;span class="n"&gt;it&lt;/span&gt; &lt;span class="n"&gt;dies&lt;/span&gt; &lt;span class="n"&gt;on&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="mh"&gt;720&lt;/span&gt;&lt;span class="n"&gt;p60&lt;/span&gt; &lt;span class="n"&gt;video&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="n"&gt;Sticking&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="mh"&gt;480&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="n"&gt;seems&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;be&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;best&lt;/span&gt; &lt;span class="n"&gt;thing&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
-&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;It&lt;/span&gt; &lt;span class="n"&gt;is&lt;/span&gt; &lt;span class="n"&gt;possible&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;rid&lt;/span&gt; &lt;span class="n"&gt;having&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;press&lt;/span&gt; &lt;span class="n"&gt;CTRL&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;D&lt;/span&gt; &lt;span class="n"&gt;on&lt;/span&gt; &lt;span class="n"&gt;each&lt;/span&gt; &lt;span class="n"&gt;boot&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;I&lt;/span&gt; &lt;span class="n"&gt;did&lt;/span&gt; &lt;span class="n"&gt;that&lt;/span&gt; &lt;span class="n"&gt;once&lt;/span&gt; &lt;span class="k"&gt;and&lt;/span&gt; &lt;span class="n"&gt;totally&lt;/span&gt; &lt;span class="n"&gt;forgot&lt;/span&gt; &lt;span class="n"&gt;how&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;it&lt;/span&gt; &lt;span class="n"&gt;back&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="n"&gt;I&lt;/span&gt; &lt;span class="n"&gt;eventually&lt;/span&gt; &lt;span class="n"&gt;did&lt;/span&gt; &lt;span class="n"&gt;but&lt;/span&gt; &lt;span class="n"&gt;it&lt;/span&gt; &lt;span class="n"&gt;was&lt;/span&gt; &lt;span class="n"&gt;crazy&lt;/span&gt; &lt;span class="n"&gt;stuff&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;* The trackpad sometimes doesn&amp;#39;t work on boot. A restart fixes it (press the power button)&lt;/span&gt;
+&lt;span class="err"&gt;* Can&amp;#39;t seem to get PulseAudio working&lt;/span&gt;
+&lt;span class="err"&gt;* Two finger clicks that are too wide apart don&amp;#39;t register as a right click. Two finger taps do though&lt;/span&gt;
+&lt;span class="err"&gt;* Current RAM usage for me is 123M, A LOT better than Chrome OS which always sits around 1.5GB&lt;/span&gt;
+&lt;span class="err"&gt;* Still can&amp;#39;t get 720p video to run smoothly. Chrome OS is a bit better here but even then it dies on a 720p60 video. Sticking to 480p seems to be the best thing to do&lt;/span&gt;
+&lt;span class="err"&gt;* It is possible to get rid having to press CTRL + D on each boot, I did that once and totally forgot how to get it back. I eventually did but it was crazy stuff.&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;参考
 &lt;a href="https://archlinuxarm.org/platforms/armv7/samsung/samsung-chromebook"&gt;archlinuxarm&lt;/a&gt;
 &lt;a href="https://calvin.me/arch-linux-samsung-arm-chromebook"&gt;Arch Linux on Samsung ARM Chromebook&lt;/a&gt;
-&lt;a href="https://www.cnblogs.com/ouyangsong/p/9348163.html"&gt;Chromebook安装ArchLinux&lt;/a&gt;&lt;/p&gt;</content><category term="linux"></category><category term="archlinux"></category><category term="linux"></category></entry><entry><title>openSUSE Leap 系统升级</title><link href="/posts/2020/07/20/openSUSE-upgrade.html" rel="alternate"></link><published>2020-07-20T23:38:50+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-07-20:/posts/2020/07/20/openSUSE-upgrade.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 首先启用 repo-update 软件源&lt;/span&gt;
+&lt;a href="https://www.cnblogs.com/ouyangsong/p/9348163.html"&gt;Chromebook安装ArchLinux&lt;/a&gt;&lt;/p&gt;</content><category term="linux"></category><category term="archlinux"></category><category term="linux"></category></entry><entry><title>openSUSE Leap 系统升级</title><link href="/posts/2020/07/20/openSUSE-upgrade.html" rel="alternate"></link><published>2020-07-20T23:38:50+08:00</published><updated>2020-07-20T23:38:50+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-07-20:/posts/2020/07/20/openSUSE-upgrade.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 首先启用 repo-update 软件源&lt;/span&gt;
 zypper modifyrepo --enable repo-update
 
 &lt;span class="c1"&gt;# 然后更到最新&lt;/span&gt;
@@ -253,7 +250,7 @@ zypper --releasever&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;15&
 
 
 &lt;span class="c1"&gt;# 最后重新启动系统.&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="openSUSE"></category><category term="linux"></category></entry><entry><title>openSUSE Leap &amp; Tumbleweed 安装解码器</title><link href="/posts/2020/07/20/openSUSE-multimedia.html" rel="alternate"></link><published>2020-07-20T23:15:46+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-07-20:/posts/2020/07/20/openSUSE-multimedia.html</id><summary type="html">&lt;p&gt;添加全部packman仓库&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="openSUSE"></category><category term="linux"></category></entry><entry><title>openSUSE Leap &amp; Tumbleweed 安装解码器</title><link href="/posts/2020/07/20/openSUSE-multimedia.html" rel="alternate"></link><published>2020-07-20T23:15:46+08:00</published><updated>2020-07-20T23:15:46+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-07-20:/posts/2020/07/20/openSUSE-multimedia.html</id><summary type="html">&lt;p&gt;添加全部packman仓库&lt;/p&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo zypper ar -fc &lt;span class="s1"&gt;&amp;#39;https://mirrors.tuna.tsinghua.edu.cn/packman/suse/openSUSE_Leap_$releasever&amp;#39;&lt;/span&gt;            packman
 
 &lt;span class="c1"&gt;# 将系统软件包切换到packman中的软件包(两者混用会导致各种问题)&lt;/span&gt;
@@ -281,7 +278,7 @@ zypper dup --from packman --allow-vendor-change
 zypper dup --from packman-essentials --allow-vendor-change
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;a href="https://en.opensuse.org/Additional_package_repositories"&gt;openSUSE_Additional_package_repositories&lt;/a&gt;&lt;/p&gt;</content><category term="linux"></category><category term="openSUSE"></category><category term="linux"></category></entry><entry><title>斐讯N1刷机过程记录</title><link href="/posts/2020/07/01/phicomm-N1.html" rel="alternate"></link><published>2020-07-01T23:38:09+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-07-01:/posts/2020/07/01/phicomm-N1.html</id><summary type="html">&lt;p&gt;&lt;img alt="刷机" src="/posts/2020/07/01/phicomm-N1-flash.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://en.opensuse.org/Additional_package_repositories"&gt;openSUSE_Additional_package_repositories&lt;/a&gt;&lt;/p&gt;</content><category term="linux"></category><category term="openSUSE"></category><category term="linux"></category></entry><entry><title>斐讯N1刷机过程记录</title><link href="/posts/2020/07/01/phicomm-N1.html" rel="alternate"></link><published>2020-07-01T23:38:09+08:00</published><updated>2020-07-01T23:38:09+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-07-01:/posts/2020/07/01/phicomm-N1.html</id><summary type="html">&lt;p&gt;&lt;img alt="刷机" src="/posts/2020/07/01/phicomm-N1-flash.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;去年买的N1盒子, 一直没时间折腾, 最近刚好需要作下载机用, 于是刷机, 顺便整理下步骤.&lt;/p&gt;
 &lt;p&gt;首先说下N1配置. 处理器Amlogic S905, 内存 2G, emmc 8G, 千兆网口, 2个USB 2.0, 1个HDMI接口, 双频WIFI(支持 802.11 ac), 支持蓝牙. &lt;/p&gt;
 &lt;p&gt;价格目前不到100元. 和raspberry 4 相比性能差不多, 重要的是能用Android系统, 便宜, 自带外壳.&lt;/p&gt;
@@ -323,8 +320,8 @@ zypper dup --from packman-essentials --allow-vendor-change
 &lt;p&gt;&lt;a href="https://www.right.com.cn/forum/thread-340279-1-1.html"&gt;WEBPAD大神降级教程&amp;gt;&amp;gt;&lt;/a&gt;
 &lt;a href="https://www.right.com.cn/forum/thread-413863-1-1.html"&gt;超快速恢复EMMC法&amp;gt;&amp;gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h6&gt;设置开启U盘引导, 设置以后, 只要不动bootloader, N1 就刷不死&lt;/h6&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;adb&lt;/span&gt; &lt;span class="k"&gt;connect&lt;/span&gt; &lt;span class="nv"&gt;N1&lt;/span&gt;的&lt;span class="nv"&gt;IP&lt;/span&gt;
-&lt;span class="nv"&gt;adb&lt;/span&gt; &lt;span class="nv"&gt;shell&lt;/span&gt; &lt;span class="nv"&gt;reboot&lt;/span&gt; &lt;span class="nv"&gt;update&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;adb connect N1的IP&lt;/span&gt;
+&lt;span class="err"&gt;adb shell reboot update&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h2&gt;下面是刷armbian的方法&lt;/h2&gt;
@@ -334,8 +331,8 @@ zypper dup --from packman-essentials --allow-vendor-change
 &lt;p&gt;linux可以尝试用dd (没测试过)&lt;/p&gt;
 &lt;p&gt;windows用etcher (亲测可用)&lt;/p&gt;
 &lt;p&gt;按照上面的说明, 替换 btd文件&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;[/boot/uEnv.ini] 第一行改为
-dtb_name=/dtb/meson-gxl-s905d-phicomm-n1.dtb
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;[/boot/uEnv.ini] 第一行改为&lt;/span&gt;
+&lt;span class="err"&gt;dtb_name=/dtb/meson-gxl-s905d-phicomm-n1.dtb&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h6&gt;然后关闭N1, 开始启动armbian&lt;/h6&gt;
@@ -348,7 +345,7 @@ dtb_name=/dtb/meson-gxl-s905d-phicomm-n1.dtb
 &lt;p&gt;&lt;a href="https://www.right.com.cn/forum/thread-421805-1-1.html"&gt;N1玩法总结整理&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://post.smzdm.com/p/akmg5dv4/"&gt;N1盒子不拆机救砖&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://post.smzdm.com/p/aekemx44/"&gt;N1改电视盒子&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://post.smzdm.com/p/a99vxp9e/"&gt;N1简明降级&amp;amp;刷机教程&lt;/a&gt;&lt;/p&gt;</content><category term="linux"></category><category term="linux"></category><category term="phicomm"></category></entry><entry><title>inotify-tools</title><link href="/posts/2020/04/24/inotify-tools.html" rel="alternate"></link><published>2020-04-24T19:40:05+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-04-24:/posts/2020/04/24/inotify-tools.html</id><summary type="html">&lt;p&gt;inotify-tools 可以用来监控文件系统的事件。inotify-tools提供两种工具，一是 inotifywait，它是用来监控文件或目录的变化，二是inotifywatch，它是用来统计文件系统访问的次数。&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://post.smzdm.com/p/a99vxp9e/"&gt;N1简明降级&amp;amp;刷机教程&lt;/a&gt;&lt;/p&gt;</content><category term="linux"></category><category term="linux"></category><category term="phicomm"></category></entry><entry><title>inotify-tools</title><link href="/posts/2020/04/24/inotify-tools.html" rel="alternate"></link><published>2020-04-24T19:40:05+08:00</published><updated>2020-04-24T19:40:05+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-04-24:/posts/2020/04/24/inotify-tools.html</id><summary type="html">&lt;p&gt;inotify-tools 可以用来监控文件系统的事件。inotify-tools提供两种工具，一是 inotifywait，它是用来监控文件或目录的变化，二是inotifywatch，它是用来统计文件系统访问的次数。&lt;/p&gt;
 &lt;p&gt;常用&lt;code&gt;inotifywait -qcrm $dir&lt;/code&gt;&lt;/p&gt;
 &lt;h6&gt;inotifywait&lt;/h6&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;参数：
@@ -417,7 +414,7 @@ dtb_name=/dtb/meson-gxl-s905d-phicomm-n1.dtb
 设置超时时间
 -e , –event 
 只监听指定的事件。
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="kernel"></category></entry><entry><title>笔记本把无线网络连接分享给网线</title><link href="/posts/2020/01/07/laptop-router.html" rel="alternate"></link><published>2020-01-07T22:11:18+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-01-07:/posts/2020/01/07/laptop-router.html</id><summary type="html">&lt;p&gt;笔记本把无线网络连接分享给网线.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="kernel"></category></entry><entry><title>笔记本把无线网络连接分享给网线</title><link href="/posts/2020/01/07/laptop-router.html" rel="alternate"></link><published>2020-01-07T22:11:18+08:00</published><updated>2020-01-07T22:11:18+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-01-07:/posts/2020/01/07/laptop-router.html</id><summary type="html">&lt;p&gt;笔记本把无线网络连接分享给网线.&lt;/p&gt;
 &lt;p&gt;首先如果笔记本开了NetworkManager服务, 建议在NetworkManager的配置中取消托管有线网络接口 eth0. (可选, 如果修改了配置, 要重启NetworkManager)&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;cat /etc/NetworkManager/NetworkManager.conf&lt;/code&gt;&lt;/p&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[main]&lt;/span&gt;
@@ -459,11 +456,11 @@ dtb_name=/dtb/meson-gxl-s905d-phicomm-n1.dtb
 &lt;code&gt;iptables -t nat -A POSTROUTING -j MASQUERADE&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;需要上网的设备连接笔记本eth0即可&lt;/p&gt;
 &lt;p&gt;查看笔记本下面连接的设备ip
-&lt;code&gt;cat /var/lib/misc/dnsmasq.leases&lt;/code&gt; 或者 &lt;code&gt;cat /var/db/dnsmasq.leases&lt;/code&gt;&lt;/p&gt;</content><category term="linux"></category><category term="linux"></category><category term="network"></category></entry><entry><title>Linux性能优化</title><link href="/posts/2020/01/05/linux-improving-performance.html" rel="alternate"></link><published>2020-01-05T22:05:19+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-01-05:/posts/2020/01/05/linux-improving-performance.html</id><content type="html">&lt;ol&gt;
+&lt;code&gt;cat /var/lib/misc/dnsmasq.leases&lt;/code&gt; 或者 &lt;code&gt;cat /var/db/dnsmasq.leases&lt;/code&gt;&lt;/p&gt;</content><category term="linux"></category><category term="linux"></category><category term="network"></category></entry><entry><title>Linux性能优化</title><link href="/posts/2020/01/05/linux-improving-performance.html" rel="alternate"></link><published>2020-01-05T22:05:19+08:00</published><updated>2020-01-05T22:05:19+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-01-05:/posts/2020/01/05/linux-improving-performance.html</id><content type="html">&lt;ol&gt;
 &lt;li&gt;挂载选项添加noatime&lt;/li&gt;
 &lt;li&gt;mitigations=off&lt;/li&gt;
 &lt;li&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><category term="linux"></category><category term="linux"></category></entry><entry><title>openSUSE Tumbleweed server 安装cinnamon桌面</title><link href="/posts/2019/12/19/openSUSE-server-install-cinnamon.html" rel="alternate"></link><published>2019-12-19T11:11:01+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2019-12-19:/posts/2019/12/19/openSUSE-server-install-cinnamon.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;zypper refresh
+&lt;/ol&gt;</content><category term="linux"></category><category term="linux"></category></entry><entry><title>openSUSE Tumbleweed server 安装cinnamon桌面</title><link href="/posts/2019/12/19/openSUSE-server-install-cinnamon.html" rel="alternate"></link><published>2019-12-19T11:11:01+08:00</published><updated>2019-12-19T11:11:01+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2019-12-19:/posts/2019/12/19/openSUSE-server-install-cinnamon.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;zypper refresh
 zypper install cinnamon
 zypper install lightdm
 zypper install xorg-x11-server
@@ -492,7 +489,7 @@ zypper install wqy-microhei-fonts
 zypper install fcitx-libpinyin fcitx-config-gtk3
 
 reboot
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="openSUSE"></category><category term="linux"></category></entry><entry><title>openSUSE Leap &amp; Tumbleweed 添加软件源</title><link href="/posts/2019/12/16/openSUSE-addrepo.html" rel="alternate"></link><published>2019-12-16T14:55:38+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2019-12-16:/posts/2019/12/16/openSUSE-addrepo.html</id><summary type="html">&lt;p&gt;经测试, aliyun的软件源并不稳定, 更新慢. 经常只更新一部分, 不和官方完全同步.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="openSUSE"></category><category term="linux"></category></entry><entry><title>openSUSE Leap &amp; Tumbleweed 添加软件源</title><link href="/posts/2019/12/16/openSUSE-addrepo.html" rel="alternate"></link><published>2019-12-16T14:55:38+08:00</published><updated>2019-12-16T14:55:38+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2019-12-16:/posts/2019/12/16/openSUSE-addrepo.html</id><summary type="html">&lt;p&gt;经测试, aliyun的软件源并不稳定, 更新慢. 经常只更新一部分, 不和官方完全同步.
 tsinghuau源, 稳定, 好用.&lt;/p&gt;
 &lt;p&gt;首先禁用全部仓库：
 &lt;code&gt;sudo zypper mr -da&lt;/code&gt;&lt;/p&gt;
@@ -520,7 +517,7 @@ sudo zypper ar -fc &lt;span class="s1"&gt;&amp;#39;https://mirrors.tuna.tsinghua
 sudo zypper ar -fc &lt;span class="s1"&gt;&amp;#39;https://mirrors.tuna.tsinghua.edu.cn/packman/suse/openSUSE_Leap_$releasever&amp;#39;&lt;/span&gt;                repo-packman-tuna
 &lt;span class="c1"&gt;# 更新执行&lt;/span&gt;
 sudo zypper update
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="openSUSE"></category><category term="linux"></category></entry><entry><title>ext4断电丢失数据(零长文件)</title><link href="/posts/2019/11/29/ext4-data-lost.html" rel="alternate"></link><published>2019-11-29T21:10:42+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2019-11-29:/posts/2019/11/29/ext4-data-lost.html</id><summary type="html">&lt;p&gt;ext4断电丢失数据(零长文件).&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="openSUSE"></category><category term="linux"></category></entry><entry><title>ext4断电丢失数据(零长文件)</title><link href="/posts/2019/11/29/ext4-data-lost.html" rel="alternate"></link><published>2019-11-29T21:10:42+08:00</published><updated>2019-11-29T21:10:42+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2019-11-29:/posts/2019/11/29/ext4-data-lost.html</id><summary type="html">&lt;p&gt;ext4断电丢失数据(零长文件).&lt;/p&gt;
 &lt;p&gt;嵌入式设备, 经常拔掉电源, 以前/data分区有挂载选项 sync.&lt;/p&gt;
 &lt;p&gt;后来发现sync方式挂载写入数据速度太慢了(100KB/S), 正常为10MB/S.&lt;/p&gt;
 &lt;p&gt;去掉sync断电又会丢数据.&lt;/p&gt;
@@ -531,7 +528,7 @@ sudo zypper update
 &lt;p&gt;去掉sync断电又会丢数据.&lt;/p&gt;
 &lt;p&gt;ext4 man-pages 上说 &lt;code&gt;fd = open("foo", O_TRUNC)/write(fd,...)/close(fd)&lt;/code&gt; 或者好一点的 &lt;code&gt;fd = open("foo.new")/write(fd,...)/close(fd)/ rename("foo.new", "foo")&lt;/code&gt; 这种用法突然断电容易产生零长文件, 在close之前调用fsync好一点. 实际上 auto_da_alloc 挂载选项就是为了解决上面的一些情况的, man-pages上说auto_da_alloc 相对及时把数据写进硬盘. 但是自己测试断电依然会丢数据, 产生零长文件(&lt;code&gt;zero-length&lt;/code&gt;) .&lt;/p&gt;
 &lt;p&gt;尝试新的挂载选项为 defaults,noatime,nodelalloc,auto_da_alloc,commit=1,data=journal, 不带sync. 不知道管用不管用.&lt;/p&gt;
-&lt;p&gt;有人推荐xfs, 据说断电不容易丢数据, 但xfs用于读写密集的环境会有一些问题, 读写密集环境用ext4.&lt;/p&gt;</content><category term="linux"></category><category term="linux"></category><category term="ext4"></category></entry><entry><title>raspberry watchdog</title><link href="/posts/2019/11/22/raspberry-watchdog.html" rel="alternate"></link><published>2019-11-22T20:06:38+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2019-11-22:/posts/2019/11/22/raspberry-watchdog.html</id><content type="html">&lt;p&gt;raspberry 4b
+&lt;p&gt;有人推荐xfs, 据说断电不容易丢数据, 但xfs用于读写密集的环境会有一些问题, 读写密集环境用ext4.&lt;/p&gt;</content><category term="linux"></category><category term="linux"></category><category term="ext4"></category></entry><entry><title>raspberry watchdog</title><link href="/posts/2019/11/22/raspberry-watchdog.html" rel="alternate"></link><published>2019-11-22T20:06:38+08:00</published><updated>2019-11-22T20:06:38+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2019-11-22:/posts/2019/11/22/raspberry-watchdog.html</id><content type="html">&lt;p&gt;raspberry 4b
 Raspbian GNU/Linux 10 (buster)&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code&gt;ls /dev/watchdog*&lt;/code&gt;&lt;/p&gt;
@@ -545,26 +542,26 @@ ShutdownWatchdogSec=10min&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;systemctl daemon-reexec&lt;/p&gt;
 &lt;p&gt;:(){ :|:&amp;amp; };:&lt;/p&gt;
-&lt;/blockquote&gt;</content><category term="linux"></category><category term="linux"></category><category term="raspberry"></category></entry><entry><title>linux pptpd配置</title><link href="/posts/2019/11/14/linux-pptpd.html" rel="alternate"></link><published>2019-11-14T10:44:33+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2019-11-14:/posts/2019/11/14/linux-pptpd.html</id><content type="html">&lt;p&gt;yum install pptpd&lt;/p&gt;
+&lt;/blockquote&gt;</content><category term="linux"></category><category term="linux"></category><category term="raspberry"></category></entry><entry><title>linux pptpd配置</title><link href="/posts/2019/11/14/linux-pptpd.html" rel="alternate"></link><published>2019-11-14T10:44:33+08:00</published><updated>2019-11-14T10:44:33+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2019-11-14:/posts/2019/11/14/linux-pptpd.html</id><content type="html">&lt;p&gt;yum install pptpd&lt;/p&gt;
 &lt;p&gt;echo "user01  pptpd   123456  * " &amp;gt;&amp;gt;  chap-secrets &lt;/p&gt;
 &lt;p&gt;echo "net.ipv4.ip_forward=1" &amp;gt; /etc/sysctl.d/ip_forward.conf
 sysctl -p&lt;/p&gt;
 &lt;p&gt;vim /etc/pptpd.conf&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;localip 192.168.0.1
-remoteip        192.168.0.234-238,192.168.0.245
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;localip 192.168.0.1&lt;/span&gt;
+&lt;span class="err"&gt;remoteip        192.168.0.234-238,192.168.0.245&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;systemctl start pptpd.service&lt;/p&gt;</content><category term="linux"></category><category term="linux"></category><category term="server"></category></entry><entry><title>生成函数调用关系图</title><link href="/posts/2018/10/31/gprof2dot.html" rel="alternate"></link><published>2018-10-31T13:57:01+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2018-10-31:/posts/2018/10/31/gprof2dot.html</id><summary type="html">&lt;h4&gt;用gprof生成函数调用关系图&lt;/h4&gt;
+&lt;p&gt;systemctl start pptpd.service&lt;/p&gt;</content><category term="linux"></category><category term="linux"></category><category term="server"></category></entry><entry><title>生成函数调用关系图</title><link href="/posts/2018/10/31/gprof2dot.html" rel="alternate"></link><published>2018-10-31T13:57:01+08:00</published><updated>2018-10-31T13:57:01+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2018-10-31:/posts/2018/10/31/gprof2dot.html</id><summary type="html">&lt;h4&gt;用gprof生成函数调用关系图&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;CMakeLists.txt&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;SET(CMAKE_BUILD_TYPE &amp;quot;Debug&amp;quot;)
-SET(CMAKE_C_FLAGS_DEBUG &amp;quot;$ENV{CXXFLAGS} -O0 -Wall -g2 -pg -ggdb&amp;quot;)  
-SET(CMAKE_C_FLAGS_RELEASE &amp;quot;$ENV{CXXFLAGS} -O3 -Wall&amp;quot;)
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;SET(CMAKE_BUILD_TYPE &amp;quot;Debug&amp;quot;)&lt;/span&gt;
+&lt;span class="err"&gt;SET(CMAKE_C_FLAGS_DEBUG &amp;quot;$ENV{CXXFLAGS} -O0 -Wall -g2 -pg -ggdb&amp;quot;)  &lt;/span&gt;
+&lt;span class="err"&gt;SET(CMAKE_C_FLAGS_RELEASE &amp;quot;$ENV{CXXFLAGS} -O3 -Wall&amp;quot;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;或&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;gcc -pg -g source.c -o binary
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;gcc -pg -g source.c -o binary&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ol&gt;
@@ -574,17 +571,17 @@ SET(CMAKE_C_FLAGS_RELEASE &amp;quot;$ENV{CXXFLAGS} -O3 -Wall&amp;quot;)
 &lt;/ol&gt;
 &lt;hr&gt;
 &lt;h4&gt;valgrind 生成函数调用图 (推荐)&lt;/h4&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;valgrind&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="k"&gt;tool&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;callgrind&lt;/span&gt; &lt;span class="o"&gt;./&lt;/span&gt;&lt;span class="n"&gt;a …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h4&gt;用gprof生成函数调用关系图&lt;/h4&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;valgrind --tool=callgrind ./a …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h4&gt;用gprof生成函数调用关系图&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;CMakeLists.txt&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;SET(CMAKE_BUILD_TYPE &amp;quot;Debug&amp;quot;)
-SET(CMAKE_C_FLAGS_DEBUG &amp;quot;$ENV{CXXFLAGS} -O0 -Wall -g2 -pg -ggdb&amp;quot;)  
-SET(CMAKE_C_FLAGS_RELEASE &amp;quot;$ENV{CXXFLAGS} -O3 -Wall&amp;quot;)
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;SET(CMAKE_BUILD_TYPE &amp;quot;Debug&amp;quot;)&lt;/span&gt;
+&lt;span class="err"&gt;SET(CMAKE_C_FLAGS_DEBUG &amp;quot;$ENV{CXXFLAGS} -O0 -Wall -g2 -pg -ggdb&amp;quot;)  &lt;/span&gt;
+&lt;span class="err"&gt;SET(CMAKE_C_FLAGS_RELEASE &amp;quot;$ENV{CXXFLAGS} -O3 -Wall&amp;quot;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;或&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;gcc -pg -g source.c -o binary
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;gcc -pg -g source.c -o binary&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ol&gt;
@@ -594,21 +591,21 @@ SET(CMAKE_C_FLAGS_RELEASE &amp;quot;$ENV{CXXFLAGS} -O3 -Wall&amp;quot;)
 &lt;/ol&gt;
 &lt;hr&gt;
 &lt;h4&gt;valgrind 生成函数调用图 (推荐)&lt;/h4&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;valgrind&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="k"&gt;tool&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;callgrind&lt;/span&gt; &lt;span class="o"&gt;./&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;out&lt;/span&gt;
-&lt;span class="err"&gt;执行完成后在目录下生成&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;callgrind.out.XXX&amp;quot;&lt;/span&gt;&lt;span class="err"&gt;的文件这是分析文件&lt;/span&gt;
-&lt;span class="n"&gt;gprof2dot&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt; &lt;span class="n"&gt;callgrind&lt;/span&gt; &lt;span class="n"&gt;callgrind&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;out&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;XXX&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;xxx&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dot&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category></entry><entry><title>shellinabox</title><link href="/posts/2018/05/22/shellinabox.html" rel="alternate"></link><published>2018-05-22T19:37:34+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2018-05-22:/posts/2018/05/22/shellinabox.html</id><content type="html">&lt;p&gt;shellinabox 能够通过Web浏览器模拟一个远程系统的Shell. 它和SSH没有任何关系.&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;valgrind --tool=callgrind ./a.out&lt;/span&gt;
+&lt;span class="err"&gt;执行完成后在目录下生成&amp;quot;callgrind.out.XXX&amp;quot;的文件这是分析文件&lt;/span&gt;
+&lt;span class="err"&gt;gprof2dot.py -f callgrind callgrind.out.XXX &amp;gt; xxx.dot&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category></entry><entry><title>shellinabox</title><link href="/posts/2018/05/22/shellinabox.html" rel="alternate"></link><published>2018-05-22T19:37:34+08:00</published><updated>2018-05-22T19:37:34+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2018-05-22:/posts/2018/05/22/shellinabox.html</id><content type="html">&lt;p&gt;shellinabox 能够通过Web浏览器模拟一个远程系统的Shell. 它和SSH没有任何关系.&lt;/p&gt;
 &lt;p&gt;shellinaboxd -t  (开启一个login shell)&lt;/p&gt;
-&lt;p&gt;shellinaboxd -t -s '/:root:root:/:/bin/bash' --port=8080  (不需要输入密码,直接登陆)&lt;/p&gt;</content><category term="linux"></category><category term="shell"></category><category term="terminal"></category><category term="web"></category><category term="linux"></category></entry><entry><title>linux 使用network manager 开启wifi热点</title><link href="/posts/2018/04/13/networkmanager-wifi-ap.html" rel="alternate"></link><published>2018-04-13T19:42:58+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2018-04-13:/posts/2018/04/13/networkmanager-wifi-ap.html</id><content type="html">&lt;p&gt;linux 使用network manager 开启wifi热点&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;开启热点
-&lt;span class="nv"&gt;nmcli&lt;/span&gt; &lt;span class="nv"&gt;device&lt;/span&gt; &lt;span class="nv"&gt;wifi&lt;/span&gt; &lt;span class="nv"&gt;hotspot&lt;/span&gt;  &lt;span class="nv"&gt;ssid&lt;/span&gt; &lt;span class="nv"&gt;zhiliao&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;test&lt;/span&gt;  &lt;span class="nv"&gt;password&lt;/span&gt; &lt;span class="mi"&gt;12345678&lt;/span&gt;
-或者
-&lt;span class="nv"&gt;nmcli&lt;/span&gt; &lt;span class="nv"&gt;device&lt;/span&gt; &lt;span class="nv"&gt;wifi&lt;/span&gt; &lt;span class="nv"&gt;hotspot&lt;/span&gt; &lt;span class="nv"&gt;con&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;name&lt;/span&gt; &lt;span class="nv"&gt;zhiliao&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;test&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="nv"&gt;G&lt;/span&gt; &lt;span class="nv"&gt;ssid&lt;/span&gt; &lt;span class="nv"&gt;zhiliao&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;test&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="nv"&gt;G&lt;/span&gt; &lt;span class="nv"&gt;band&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;password&lt;/span&gt; &lt;span class="mi"&gt;12345678&lt;/span&gt;
+&lt;p&gt;shellinaboxd -t -s '/:root:root:/:/bin/bash' --port=8080  (不需要输入密码,直接登陆)&lt;/p&gt;</content><category term="linux"></category><category term="shell"></category><category term="terminal"></category><category term="web"></category><category term="linux"></category></entry><entry><title>linux 使用network manager 开启wifi热点</title><link href="/posts/2018/04/13/networkmanager-wifi-ap.html" rel="alternate"></link><published>2018-04-13T19:42:58+08:00</published><updated>2018-04-13T19:42:58+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2018-04-13:/posts/2018/04/13/networkmanager-wifi-ap.html</id><content type="html">&lt;p&gt;linux 使用network manager 开启wifi热点&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;开启热点&lt;/span&gt;
+&lt;span class="n"&gt;nmcli&lt;/span&gt; &lt;span class="n"&gt;device&lt;/span&gt; &lt;span class="n"&gt;wifi&lt;/span&gt; &lt;span class="n"&gt;hotspot&lt;/span&gt;  &lt;span class="n"&gt;ssid&lt;/span&gt; &lt;span class="n"&gt;zhiliao&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;test&lt;/span&gt;  &lt;span class="n"&gt;password&lt;/span&gt; &lt;span class="mi"&gt;12345678&lt;/span&gt;
+&lt;span class="err"&gt;或者&lt;/span&gt;
+&lt;span class="n"&gt;nmcli&lt;/span&gt; &lt;span class="n"&gt;device&lt;/span&gt; &lt;span class="n"&gt;wifi&lt;/span&gt; &lt;span class="n"&gt;hotspot&lt;/span&gt; &lt;span class="n"&gt;con&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="n"&gt;zhiliao&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="k"&gt;G&lt;/span&gt; &lt;span class="n"&gt;ssid&lt;/span&gt; &lt;span class="n"&gt;zhiliao&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="k"&gt;G&lt;/span&gt; &lt;span class="n"&gt;band&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;password&lt;/span&gt; &lt;span class="mi"&gt;12345678&lt;/span&gt;
 
-删除热点配置
-&lt;span class="nv"&gt;nmcli&lt;/span&gt; &lt;span class="nv"&gt;connection&lt;/span&gt; &lt;span class="k"&gt;show&lt;/span&gt;
-&lt;span class="nv"&gt;nmcli&lt;/span&gt;  &lt;span class="nv"&gt;connection&lt;/span&gt; &lt;span class="nv"&gt;delete&lt;/span&gt; &lt;span class="nv"&gt;zhiliao&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;test&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="nv"&gt;G&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="wireless"></category><category term="linux"></category></entry><entry><title>在浏览器中显示gtk+应用</title><link href="/posts/2017/12/29/gtk-broadway.html" rel="alternate"></link><published>2017-12-29T18:14:49+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-12-29:/posts/2017/12/29/gtk-broadway.html</id><summary type="html">&lt;h3&gt;在浏览器中显示gtk+应用&lt;/h3&gt;
+&lt;span class="err"&gt;删除热点配置&lt;/span&gt;
+&lt;span class="n"&gt;nmcli&lt;/span&gt; &lt;span class="k"&gt;connection&lt;/span&gt; &lt;span class="k"&gt;show&lt;/span&gt;
+&lt;span class="n"&gt;nmcli&lt;/span&gt;  &lt;span class="k"&gt;connection&lt;/span&gt; &lt;span class="k"&gt;delete&lt;/span&gt; &lt;span class="n"&gt;zhiliao&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="k"&gt;G&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="wireless"></category><category term="linux"></category></entry><entry><title>在浏览器中显示gtk+应用</title><link href="/posts/2017/12/29/gtk-broadway.html" rel="alternate"></link><published>2017-12-29T18:14:49+08:00</published><updated>2017-12-29T18:14:49+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-12-29:/posts/2017/12/29/gtk-broadway.html</id><summary type="html">&lt;h3&gt;在浏览器中显示gtk+应用&lt;/h3&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;GDK_BACKEND&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;broadway &lt;span class="nv"&gt;BROADWAY_DISPLAY&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;:5 gtk3-demo
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -634,7 +631,7 @@ SET(CMAKE_C_FLAGS_RELEASE &amp;quot;$ENV{CXXFLAGS} -O3 -Wall&amp;quot;)
 &lt;li&gt;&lt;a href="https://blogs.gnome.org/alexl/2011/04/18/broadway-update-3/"&gt;https://blogs.gnome.org/alexl/2011/04/18/broadway-update-3&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/symbiose/symbiose/wiki/Broadway"&gt;https://github.com/symbiose/symbiose/wiki/Broadway&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.tarnyko.net/en/?q=node/8"&gt;Tutorial : using GTK+3 "Broadway" on Windows&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="linux"></category><category term="linux"></category><category term="gtk+"></category><category term="gnome"></category></entry><entry><title>SysRq</title><link href="/posts/2017/12/29/linux-sysrq.html" rel="alternate"></link><published>2017-12-29T14:20:16+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-12-29:/posts/2017/12/29/linux-sysrq.html</id><summary type="html">&lt;h2&gt;SysRq HELP&lt;/h2&gt;
+&lt;/ul&gt;</content><category term="linux"></category><category term="linux"></category><category term="gtk+"></category><category term="gnome"></category></entry><entry><title>SysRq</title><link href="/posts/2017/12/29/linux-sysrq.html" rel="alternate"></link><published>2017-12-29T14:20:16+08:00</published><updated>2017-12-29T14:20:16+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-12-29:/posts/2017/12/29/linux-sysrq.html</id><summary type="html">&lt;h2&gt;SysRq HELP&lt;/h2&gt;
 &lt;h5&gt;开启这个功能&lt;/h5&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt; &amp;gt; /proc/sys/kernel/sysrq  &lt;span class="c1"&gt;# 或者在 /etc/sysctl.conf 中设置 kernel.sysrq=1&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -648,12 +645,15 @@ SET(CMAKE_C_FLAGS_RELEASE &amp;quot;$ENV{CXXFLAGS} -O3 -Wall&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h5&gt;命令介绍&lt;/h5&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;loglevel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mh"&gt;0&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mh"&gt;9&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;reboot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;crash&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;terminate&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;all&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;tasks&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;memory&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;full&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;oom&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;kill&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;kill&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;all …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;SysRq HELP&lt;/h2&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;loglevel(0-9)&lt;/span&gt;
+&lt;span class="err"&gt;reboot(b)&lt;/span&gt;
+&lt;span class="err"&gt;crash(c)&lt;/span&gt;
+&lt;span class="err"&gt;terminate-all-tasks(e)&lt;/span&gt;
+&lt;span class="err"&gt;memory-full-oom-kill(f)&lt;/span&gt;
+&lt;span class="err"&gt;kill-all-tasks(i)&lt;/span&gt;
+&lt;span class="err"&gt;thaw-filesystems(j)&lt;/span&gt;
+&lt;span class="err"&gt;sak(k)&lt;/span&gt;
+&lt;span class="err"&gt;show-backtrace-all-active-cpus(l …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;SysRq HELP&lt;/h2&gt;
 &lt;h5&gt;开启这个功能&lt;/h5&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt; &amp;gt; /proc/sys/kernel/sysrq  &lt;span class="c1"&gt;# 或者在 /etc/sysctl.conf 中设置 kernel.sysrq=1&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -667,51 +667,51 @@ SET(CMAKE_C_FLAGS_RELEASE &amp;quot;$ENV{CXXFLAGS} -O3 -Wall&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h5&gt;命令介绍&lt;/h5&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;loglevel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mh"&gt;0&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mh"&gt;9&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;reboot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;crash&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;terminate&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;all&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;tasks&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;memory&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;full&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;oom&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;kill&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;kill&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;all&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;tasks&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;thaw&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;filesystems&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;sak&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;backtrace&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;all&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;active&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;cpus&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;memory&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;usage&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;nice&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;all&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;RT&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;tasks&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;poweroff&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;o&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;registers&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;all&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;timers&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;q&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;unraw&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;sync&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;task&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;states&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;unmount&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;u&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="k"&gt;force&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;fb&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;V&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;blocked&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;tasks&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;dump&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ftrace&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;buffer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;z&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category></entry><entry><title>daemonize</title><link href="/posts/2017/12/11/daemonize.html" rel="alternate"></link><published>2017-12-11T16:43:49+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-12-11:/posts/2017/12/11/daemonize.html</id><content type="html">&lt;p&gt;daemonize 能够把命令作为守护进程 (daemon) 运行.
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;loglevel(0-9)&lt;/span&gt;
+&lt;span class="err"&gt;reboot(b)&lt;/span&gt;
+&lt;span class="err"&gt;crash(c)&lt;/span&gt;
+&lt;span class="err"&gt;terminate-all-tasks(e)&lt;/span&gt;
+&lt;span class="err"&gt;memory-full-oom-kill(f)&lt;/span&gt;
+&lt;span class="err"&gt;kill-all-tasks(i)&lt;/span&gt;
+&lt;span class="err"&gt;thaw-filesystems(j)&lt;/span&gt;
+&lt;span class="err"&gt;sak(k)&lt;/span&gt;
+&lt;span class="err"&gt;show-backtrace-all-active-cpus(l)&lt;/span&gt;
+&lt;span class="err"&gt;show-memory-usage(m)&lt;/span&gt;
+&lt;span class="err"&gt;nice-all-RT-tasks(n)&lt;/span&gt;
+&lt;span class="err"&gt;poweroff(o)&lt;/span&gt;
+&lt;span class="err"&gt;show-registers(p)&lt;/span&gt;
+&lt;span class="err"&gt;show-all-timers(q)&lt;/span&gt;
+&lt;span class="err"&gt;unraw(r)&lt;/span&gt;
+&lt;span class="err"&gt;sync(s)&lt;/span&gt;
+&lt;span class="err"&gt;show-task-states(t)&lt;/span&gt;
+&lt;span class="err"&gt;unmount(u)&lt;/span&gt;
+&lt;span class="err"&gt;force-fb(V)&lt;/span&gt;
+&lt;span class="err"&gt;show-blocked-tasks(w)&lt;/span&gt;
+&lt;span class="err"&gt;dump-ftrace-buffer(z)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category></entry><entry><title>daemonize</title><link href="/posts/2017/12/11/daemonize.html" rel="alternate"></link><published>2017-12-11T16:43:49+08:00</published><updated>2017-12-11T16:43:49+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-12-11:/posts/2017/12/11/daemonize.html</id><content type="html">&lt;p&gt;daemonize 能够把命令作为守护进程 (daemon) 运行.
 并且支持自动创建pid文件, 自动创建/检查文件锁.&lt;/p&gt;
 &lt;p&gt;顺便记录一下几个相关命令, &lt;code&gt;daemonize, nohup, setsid, &amp;amp;, disown&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;如何用bash实现daemon
-http://blog.n01se.net/blog-n01se-net-p-145.html&lt;/p&gt;</content><category term="linux"></category><category term="linux"></category><category term="bash"></category></entry><entry><title>cpio</title><link href="/posts/2017/08/20/linux-cpio.html" rel="alternate"></link><published>2017-08-20T12:31:36+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-08-20:/posts/2017/08/20/linux-cpio.html</id><content type="html">&lt;ul&gt;
+http://blog.n01se.net/blog-n01se-net-p-145.html&lt;/p&gt;</content><category term="linux"></category><category term="linux"></category><category term="bash"></category></entry><entry><title>cpio</title><link href="/posts/2017/08/20/linux-cpio.html" rel="alternate"></link><published>2017-08-20T12:31:36+08:00</published><updated>2017-08-20T12:31:36+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-08-20:/posts/2017/08/20/linux-cpio.html</id><content type="html">&lt;ul&gt;
 &lt;li&gt;建立 cpio文件 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;find ./files | cpio -o -H newc &amp;gt; filename.cpio
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;find ./files | cpio -o -H newc &amp;gt; filename.cpio&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
 &lt;li&gt;解开cpio文件&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;cd  dir1
-cpio -ivd  &amp;lt; filename.cpio  
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;cd  dir1&lt;/span&gt;
+&lt;span class="err"&gt;cpio -ivd  &amp;lt; filename.cpio  &lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
 &lt;li&gt;查看cpio文件中的内容&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;cpio -ivt &amp;lt; filename.cpio
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;cpio -ivt &amp;lt; filename.cpio&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;code&gt;* 如果find显示文件路径是绝对的， 那么解压后可能会覆盖已有文件。 最好使用相对路径压缩。&lt;/code&gt;&lt;/p&gt;</content><category term="linux"></category><category term="linux"></category><category term="command"></category></entry><entry><title>dd / 复制 文件显示进度</title><link href="/posts/2017/08/13/dd-status.html" rel="alternate"></link><published>2017-08-13T22:00:20+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-08-13:/posts/2017/08/13/dd-status.html</id><content type="html">&lt;h4&gt;dd&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;* 如果find显示文件路径是绝对的， 那么解压后可能会覆盖已有文件。 最好使用相对路径压缩。&lt;/code&gt;&lt;/p&gt;</content><category term="linux"></category><category term="linux"></category><category term="command"></category></entry><entry><title>dd / 复制 文件显示进度</title><link href="/posts/2017/08/13/dd-status.html" rel="alternate"></link><published>2017-08-13T22:00:20+08:00</published><updated>2017-08-13T22:00:20+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-08-13:/posts/2017/08/13/dd-status.html</id><content type="html">&lt;h4&gt;dd&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;dd 使用参数 &lt;code&gt;status=progress&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;killall / pkill -USR1 dd&lt;/code&gt;&lt;/li&gt;
@@ -721,227 +721,237 @@ cpio -ivd  &amp;lt; filename.cpio
 &lt;ol&gt;
 &lt;li&gt;rsync -a --progress src dest&lt;/li&gt;
 &lt;li&gt;scp -v #在不同机器上拷贝显示进度条&lt;/li&gt;
-&lt;/ol&gt;</content><category term="linux"></category><category term="linux"></category><category term="command"></category></entry><entry><title>linux开启键盘灯的方法</title><link href="/posts/2017/06/24/linux-keyboard-led.html" rel="alternate"></link><published>2017-06-24T00:13:44+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-24:/posts/2017/06/24/linux-keyboard-led.html</id><content type="html">&lt;p&gt;现在许多背光键盘的背光灯是通过 Scroll 这个键控制的. 
+&lt;/ol&gt;</content><category term="linux"></category><category term="linux"></category><category term="command"></category></entry><entry><title>linux开启键盘灯的方法</title><link href="/posts/2017/06/24/linux-keyboard-led.html" rel="alternate"></link><published>2017-06-24T00:13:44+08:00</published><updated>2017-06-24T00:13:44+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-24:/posts/2017/06/24/linux-keyboard-led.html</id><content type="html">&lt;p&gt;现在许多背光键盘的背光灯是通过 Scroll 这个键控制的. 
 在windows下这没啥问题, 一按 scroll 这个键 ,背光灯就亮了,再按,就灭了.
 但是, 在Linux下, 按这个键 scroll 没反应.
 所以记录一下linux开启键盘灯的方法&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;# X 中开启键盘灯
-xset led on
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="err"&gt;中开启键盘灯&lt;/span&gt;
+&lt;span class="n"&gt;xset&lt;/span&gt; &lt;span class="n"&gt;led&lt;/span&gt; &lt;span class="k"&gt;on&lt;/span&gt;
 
-# X 中关闭键盘灯
-xset led off
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="keyboard"></category><category term="command"></category></entry><entry><title>记录一下我常装的 Arch Linux package</title><link href="/posts/2017/06/16/archlinux-package.html" rel="alternate"></link><published>2017-06-16T16:52:14+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-16:/posts/2017/06/16/archlinux-package.html</id><summary type="html">&lt;p&gt;Gnome主题 
+&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="err"&gt;中关闭键盘灯&lt;/span&gt;
+&lt;span class="n"&gt;xset&lt;/span&gt; &lt;span class="n"&gt;led&lt;/span&gt; &lt;span class="k"&gt;off&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="keyboard"></category><category term="command"></category></entry><entry><title>记录一下我常装的 Arch Linux package</title><link href="/posts/2017/06/16/archlinux-package.html" rel="alternate"></link><published>2017-06-16T16:52:14+08:00</published><updated>2017-06-16T16:52:14+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-16:/posts/2017/06/16/archlinux-package.html</id><summary type="html">&lt;p&gt;Gnome主题 
 1. numix (gnome)
 2. discreet flat (cinnamon)
 3. Orchis-dark-compact (gnome)
 4. ePapirus 图标&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# dmidecode&lt;/span&gt;
-&lt;span class="c1"&gt;# onboard  # 屏幕键盘 &lt;/span&gt;
-&lt;span class="c1"&gt;# yay&lt;/span&gt;
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;xfce4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;xfce4&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;plugin&lt;/span&gt;
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;xfce4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;xfce4&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;notes&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;plugin&lt;/span&gt;
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;xfce4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;xfce4&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pulseaudio&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;plugin&lt;/span&gt;
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;xfce4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;xfce4&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;screenshooter&lt;/span&gt;
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;xfce4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;xfce4&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;sensors&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;plugin&lt;/span&gt;
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;xfce4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;xfce4&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;terminal&lt;/span&gt;
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;xfce4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;xfce4&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;weather&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;plugin&lt;/span&gt;
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;xfce4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;xfce4&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;whiskermenu&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;plugin&lt;/span&gt;
-&lt;span class="n"&gt;alsa&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;utils …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Gnome主题 
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;# dmidecode&lt;/span&gt;
+&lt;span class="err"&gt;# onboard  # 屏幕键盘 &lt;/span&gt;
+&lt;span class="err"&gt;# yay&lt;/span&gt;
+&lt;span class="err"&gt;(xfce4) xfce4-datetime-plugin&lt;/span&gt;
+&lt;span class="err"&gt;(xfce4) xfce4-notes-plugin&lt;/span&gt;
+&lt;span class="err"&gt;(xfce4) xfce4-pulseaudio-plugin&lt;/span&gt;
+&lt;span class="err"&gt;(xfce4) xfce4-screenshooter&lt;/span&gt;
+&lt;span class="err"&gt;(xfce4) xfce4-sensors-plugin&lt;/span&gt;
+&lt;span class="err"&gt;(xfce4) xfce4-terminal&lt;/span&gt;
+&lt;span class="err"&gt;(xfce4) xfce4-weather-plugin&lt;/span&gt;
+&lt;span class="err"&gt;(xfce4) xfce4-whiskermenu-plugin&lt;/span&gt;
+&lt;span class="err"&gt;alsa-utils&lt;/span&gt;
+&lt;span class="err"&gt;avahi&lt;/span&gt;
+&lt;span class="err"&gt;base&lt;/span&gt;
+&lt;span class="err"&gt;base-devel&lt;/span&gt;
+&lt;span class="err"&gt;bash-completion&lt;/span&gt;
+&lt;span class="err"&gt;calibre&lt;/span&gt;
+&lt;span class="err"&gt;cinnamon or xfce4&lt;/span&gt;
+&lt;span class="err"&gt;code  # (vscode)&lt;/span&gt;
+&lt;span class="err"&gt;dconf-editor&lt;/span&gt;
+&lt;span class="err"&gt;deepin-screenshot&lt;/span&gt;
+&lt;span class="err"&gt;deepin.com.qq …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Gnome主题 
 1. numix (gnome)
 2. discreet flat (cinnamon)
 3. Orchis-dark-compact (gnome)
 4. ePapirus 图标&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# dmidecode&lt;/span&gt;
-&lt;span class="c1"&gt;# onboard  # 屏幕键盘 &lt;/span&gt;
-&lt;span class="c1"&gt;# yay&lt;/span&gt;
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;xfce4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;xfce4&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;plugin&lt;/span&gt;
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;xfce4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;xfce4&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;notes&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;plugin&lt;/span&gt;
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;xfce4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;xfce4&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pulseaudio&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;plugin&lt;/span&gt;
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;xfce4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;xfce4&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;screenshooter&lt;/span&gt;
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;xfce4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;xfce4&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;sensors&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;plugin&lt;/span&gt;
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;xfce4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;xfce4&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;terminal&lt;/span&gt;
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;xfce4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;xfce4&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;weather&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;plugin&lt;/span&gt;
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;xfce4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;xfce4&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;whiskermenu&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;plugin&lt;/span&gt;
-&lt;span class="n"&gt;alsa&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;utils&lt;/span&gt;
-&lt;span class="n"&gt;avahi&lt;/span&gt;
-&lt;span class="n"&gt;base&lt;/span&gt;
-&lt;span class="n"&gt;base&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;devel&lt;/span&gt;
-&lt;span class="n"&gt;bash&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;completion&lt;/span&gt;
-&lt;span class="n"&gt;calibre&lt;/span&gt;
-&lt;span class="n"&gt;cinnamon&lt;/span&gt; &lt;span class="ow"&gt;or&lt;/span&gt; &lt;span class="n"&gt;xfce4&lt;/span&gt;
-&lt;span class="n"&gt;code&lt;/span&gt;  &lt;span class="c1"&gt;# (vscode)&lt;/span&gt;
-&lt;span class="n"&gt;dconf&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;editor&lt;/span&gt;
-&lt;span class="n"&gt;deepin&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;screenshot&lt;/span&gt;
-&lt;span class="n"&gt;deepin&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;qq&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;im&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;aur&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;devhelp&lt;/span&gt;
-&lt;span class="n"&gt;dnsmasq&lt;/span&gt;
-&lt;span class="n"&gt;dosfstools&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;mtools&lt;/span&gt; &lt;span class="c1"&gt;# for fat32&lt;/span&gt;
-&lt;span class="n"&gt;electron&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;netease&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;cloud&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;music&lt;/span&gt;  &lt;span class="c1"&gt;# (archlinuxcn)&lt;/span&gt;
-&lt;span class="n"&gt;electronic&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;wechat&lt;/span&gt;
-&lt;span class="n"&gt;eog&lt;/span&gt; &lt;span class="ow"&gt;or&lt;/span&gt; &lt;span class="n"&gt;gthumb&lt;/span&gt; 
-&lt;span class="n"&gt;evince&lt;/span&gt;
-&lt;span class="n"&gt;fcitx&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;configtool&lt;/span&gt;
-&lt;span class="n"&gt;fcitx&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;im&lt;/span&gt;
-&lt;span class="n"&gt;fcitx&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;libpinyin&lt;/span&gt;
-&lt;span class="n"&gt;feedreader&lt;/span&gt;
-&lt;span class="n"&gt;file&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;roller&lt;/span&gt;
-&lt;span class="n"&gt;filezilla&lt;/span&gt;
-&lt;span class="n"&gt;firefox&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;firefox&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;i18n&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;zh&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;cn&lt;/span&gt;
-&lt;span class="n"&gt;firejail&lt;/span&gt;
-&lt;span class="n"&gt;fish&lt;/span&gt;
-&lt;span class="n"&gt;flameshot&lt;/span&gt;  &lt;span class="c1"&gt;# 赞&lt;/span&gt;
-&lt;span class="n"&gt;flashplugin&lt;/span&gt;
-&lt;span class="n"&gt;fontconfig&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;infinality&lt;/span&gt;  &lt;span class="c1"&gt;# (aur) 美化字体 &lt;/span&gt;
-&lt;span class="n"&gt;gedit&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt;
-&lt;span class="n"&gt;gnome&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;terminal&lt;/span&gt;
-&lt;span class="n"&gt;gnome&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;user&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;share&lt;/span&gt;  &lt;span class="c1"&gt;# (共享文件, 支持局域网的windows与linux)&lt;/span&gt;
-&lt;span class="n"&gt;gnote&lt;/span&gt;
-&lt;span class="n"&gt;google&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;chrome&lt;/span&gt;
-&lt;span class="n"&gt;gparted&lt;/span&gt;
-&lt;span class="n"&gt;guake&lt;/span&gt;  &lt;span class="c1"&gt;# 下拉式终端 &lt;/span&gt;
-&lt;span class="n"&gt;gvfs&lt;/span&gt;
-&lt;span class="n"&gt;gvfs&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;mtp&lt;/span&gt;
-&lt;span class="n"&gt;gvfs&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;smb&lt;/span&gt;
-&lt;span class="n"&gt;htop&lt;/span&gt;
-&lt;span class="n"&gt;kde&lt;/span&gt; &lt;span class="n"&gt;connect&lt;/span&gt;
-&lt;span class="n"&gt;lftp&lt;/span&gt;
-&lt;span class="n"&gt;libreoffice&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;still&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;zh&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;CN&lt;/span&gt;
-&lt;span class="n"&gt;lightdm&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;lightdm&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;gtk&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;greeter&lt;/span&gt;  &lt;span class="c1"&gt;# or lxdm&lt;/span&gt;
-&lt;span class="n"&gt;linux&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;lts&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;linux&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;zen&lt;/span&gt;
-&lt;span class="n"&gt;mdadm&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;lvm2&lt;/span&gt;
-&lt;span class="n"&gt;minicom&lt;/span&gt;
-&lt;span class="n"&gt;moc&lt;/span&gt;
-&lt;span class="n"&gt;mosh&lt;/span&gt;
-&lt;span class="n"&gt;mpv&lt;/span&gt;
-&lt;span class="n"&gt;nautilus&lt;/span&gt;
-&lt;span class="n"&gt;nautilus&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;open&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;terminal&lt;/span&gt;
-&lt;span class="n"&gt;nautilus&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;share&lt;/span&gt;
-&lt;span class="n"&gt;neofetch&lt;/span&gt;
-&lt;span class="n"&gt;network&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;manager&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;applet&lt;/span&gt;
-&lt;span class="n"&gt;networkmanager&lt;/span&gt;
-&lt;span class="n"&gt;ntfs&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt;
-&lt;span class="n"&gt;numix&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;circle&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;icon&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;theme&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;git&lt;/span&gt;
-&lt;span class="n"&gt;numix&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;gtk&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;theme&lt;/span&gt;
-&lt;span class="n"&gt;openssh&lt;/span&gt;
-&lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;prober&lt;/span&gt;
-&lt;span class="n"&gt;p7zip&lt;/span&gt;
-&lt;span class="n"&gt;papirus&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;icon&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;theme&lt;/span&gt;  &lt;span class="c1"&gt;# 赞&lt;/span&gt;
-&lt;span class="n"&gt;pelican&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;lftp&lt;/span&gt;
-&lt;span class="n"&gt;pepper&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;flash&lt;/span&gt;
-&lt;span class="n"&gt;pkgfile&lt;/span&gt;
-&lt;span class="n"&gt;poppler&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;
-&lt;span class="n"&gt;pulseaudio&lt;/span&gt;
-&lt;span class="n"&gt;pycharm&lt;/span&gt;
-&lt;span class="n"&gt;qbittorrent&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;nox&lt;/span&gt;  &lt;span class="c1"&gt;# 远程下载&lt;/span&gt;
-&lt;span class="n"&gt;qt5&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;doc&lt;/span&gt;
-&lt;span class="n"&gt;qtcreator&lt;/span&gt;
-&lt;span class="n"&gt;remmina&lt;/span&gt; &lt;span class="ow"&gt;or&lt;/span&gt; &lt;span class="n"&gt;vinagre&lt;/span&gt; &lt;span class="c1"&gt;#  remote desktop client written in GTK+  # vnc  &lt;/span&gt;
-&lt;span class="n"&gt;rhythmbox&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;osdlyrics&lt;/span&gt;  &lt;span class="c1"&gt;# music player &lt;/span&gt;
-&lt;span class="n"&gt;scrcpy&lt;/span&gt;
-&lt;span class="n"&gt;sdcv&lt;/span&gt;
-&lt;span class="n"&gt;shadowsocks&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;libev&lt;/span&gt;
-&lt;span class="n"&gt;slock&lt;/span&gt;
-&lt;span class="n"&gt;smplayer&lt;/span&gt;
-&lt;span class="n"&gt;sshpass&lt;/span&gt;
-&lt;span class="n"&gt;strace&lt;/span&gt;
-&lt;span class="n"&gt;sushi&lt;/span&gt;
-&lt;span class="n"&gt;sushi&lt;/span&gt;  &lt;span class="c1"&gt;# A quick previewer for Nautilus&lt;/span&gt;
-&lt;span class="n"&gt;thunderbird&lt;/span&gt;
-&lt;span class="n"&gt;tmux&lt;/span&gt;
-&lt;span class="n"&gt;transmission&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;gtk&lt;/span&gt;
-&lt;span class="n"&gt;tsocks&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;proxychains替代工具&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;ttf&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;wps&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;fonts&lt;/span&gt;
-&lt;span class="n"&gt;uget2&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;aria2&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;axel&lt;/span&gt;
-&lt;span class="n"&gt;unrar&lt;/span&gt;
-&lt;span class="n"&gt;v2raya&lt;/span&gt;
-&lt;span class="n"&gt;vim&lt;/span&gt;
-&lt;span class="n"&gt;virtualbox&lt;/span&gt;
-&lt;span class="n"&gt;visual&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;studio&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;code&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;
-&lt;span class="n"&gt;wine&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;wechat&lt;/span&gt;
-&lt;span class="n"&gt;wireshark&lt;/span&gt;
-&lt;span class="n"&gt;wqy&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;microhei&lt;/span&gt;
-&lt;span class="n"&gt;xfsprogs&lt;/span&gt;
-&lt;span class="n"&gt;xorg&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;drivers&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;xf86&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;input&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;synaptics&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;xf86&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;video&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;intel&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;xf86&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;video&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;vesa&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;xorg&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt;
-&lt;span class="n"&gt;xorg&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;xinit&lt;/span&gt;
-&lt;span class="n"&gt;xorg&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;xkill&lt;/span&gt; 
-&lt;span class="n"&gt;yay&lt;/span&gt;  &lt;span class="c1"&gt;# (yaourt 代替品)&lt;/span&gt;
-&lt;span class="n"&gt;ydcv&lt;/span&gt; &lt;span class="c1"&gt;# or sdcv&lt;/span&gt;
-&lt;span class="n"&gt;zip&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;unzip&lt;/span&gt;
-&lt;span class="n"&gt;zsh&lt;/span&gt; &lt;span class="c1"&gt;# +oh-my-zsh&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;# dmidecode&lt;/span&gt;
+&lt;span class="err"&gt;# onboard  # 屏幕键盘 &lt;/span&gt;
+&lt;span class="err"&gt;# yay&lt;/span&gt;
+&lt;span class="err"&gt;(xfce4) xfce4-datetime-plugin&lt;/span&gt;
+&lt;span class="err"&gt;(xfce4) xfce4-notes-plugin&lt;/span&gt;
+&lt;span class="err"&gt;(xfce4) xfce4-pulseaudio-plugin&lt;/span&gt;
+&lt;span class="err"&gt;(xfce4) xfce4-screenshooter&lt;/span&gt;
+&lt;span class="err"&gt;(xfce4) xfce4-sensors-plugin&lt;/span&gt;
+&lt;span class="err"&gt;(xfce4) xfce4-terminal&lt;/span&gt;
+&lt;span class="err"&gt;(xfce4) xfce4-weather-plugin&lt;/span&gt;
+&lt;span class="err"&gt;(xfce4) xfce4-whiskermenu-plugin&lt;/span&gt;
+&lt;span class="err"&gt;alsa-utils&lt;/span&gt;
+&lt;span class="err"&gt;avahi&lt;/span&gt;
+&lt;span class="err"&gt;base&lt;/span&gt;
+&lt;span class="err"&gt;base-devel&lt;/span&gt;
+&lt;span class="err"&gt;bash-completion&lt;/span&gt;
+&lt;span class="err"&gt;calibre&lt;/span&gt;
+&lt;span class="err"&gt;cinnamon or xfce4&lt;/span&gt;
+&lt;span class="err"&gt;code  # (vscode)&lt;/span&gt;
+&lt;span class="err"&gt;dconf-editor&lt;/span&gt;
+&lt;span class="err"&gt;deepin-screenshot&lt;/span&gt;
+&lt;span class="err"&gt;deepin.com.qq.im (aur)&lt;/span&gt;
+&lt;span class="err"&gt;devhelp&lt;/span&gt;
+&lt;span class="err"&gt;dnsmasq&lt;/span&gt;
+&lt;span class="err"&gt;dosfstools &amp;amp; mtools # for fat32&lt;/span&gt;
+&lt;span class="err"&gt;electron-netease-cloud-music  # (archlinuxcn)&lt;/span&gt;
+&lt;span class="err"&gt;electronic-wechat&lt;/span&gt;
+&lt;span class="err"&gt;eog or gthumb &lt;/span&gt;
+&lt;span class="err"&gt;evince&lt;/span&gt;
+&lt;span class="err"&gt;fcitx-configtool&lt;/span&gt;
+&lt;span class="err"&gt;fcitx-im&lt;/span&gt;
+&lt;span class="err"&gt;fcitx-libpinyin&lt;/span&gt;
+&lt;span class="err"&gt;feedreader&lt;/span&gt;
+&lt;span class="err"&gt;file-roller&lt;/span&gt;
+&lt;span class="err"&gt;filezilla&lt;/span&gt;
+&lt;span class="err"&gt;firefox &amp;amp; firefox-i18n-zh-cn&lt;/span&gt;
+&lt;span class="err"&gt;firejail&lt;/span&gt;
+&lt;span class="err"&gt;fish&lt;/span&gt;
+&lt;span class="err"&gt;flameshot  # 赞&lt;/span&gt;
+&lt;span class="err"&gt;flashplugin&lt;/span&gt;
+&lt;span class="err"&gt;fontconfig-infinality  # (aur) 美化字体 &lt;/span&gt;
+&lt;span class="err"&gt;gedit&lt;/span&gt;
+&lt;span class="err"&gt;git&lt;/span&gt;
+&lt;span class="err"&gt;gnome-terminal&lt;/span&gt;
+&lt;span class="err"&gt;gnome-user-share  # (共享文件, 支持局域网的windows与linux)&lt;/span&gt;
+&lt;span class="err"&gt;gnote&lt;/span&gt;
+&lt;span class="err"&gt;google-chrome&lt;/span&gt;
+&lt;span class="err"&gt;gparted&lt;/span&gt;
+&lt;span class="err"&gt;guake  # 下拉式终端 &lt;/span&gt;
+&lt;span class="err"&gt;gvfs&lt;/span&gt;
+&lt;span class="err"&gt;gvfs-mtp&lt;/span&gt;
+&lt;span class="err"&gt;gvfs-smb&lt;/span&gt;
+&lt;span class="err"&gt;htop&lt;/span&gt;
+&lt;span class="err"&gt;kde connect&lt;/span&gt;
+&lt;span class="err"&gt;lftp&lt;/span&gt;
+&lt;span class="err"&gt;libreoffice-still-zh-CN&lt;/span&gt;
+&lt;span class="err"&gt;lightdm &amp;amp; lightdm-gtk-greeter  # or lxdm&lt;/span&gt;
+&lt;span class="err"&gt;linux-lts &amp;amp; linux-zen&lt;/span&gt;
+&lt;span class="err"&gt;mdadm &amp;amp; lvm2&lt;/span&gt;
+&lt;span class="err"&gt;minicom&lt;/span&gt;
+&lt;span class="err"&gt;moc&lt;/span&gt;
+&lt;span class="err"&gt;mosh&lt;/span&gt;
+&lt;span class="err"&gt;mpv&lt;/span&gt;
+&lt;span class="err"&gt;nautilus&lt;/span&gt;
+&lt;span class="err"&gt;nautilus-open-terminal&lt;/span&gt;
+&lt;span class="err"&gt;nautilus-share&lt;/span&gt;
+&lt;span class="err"&gt;neofetch&lt;/span&gt;
+&lt;span class="err"&gt;network-manager-applet&lt;/span&gt;
+&lt;span class="err"&gt;networkmanager&lt;/span&gt;
+&lt;span class="err"&gt;ntfs-3g&lt;/span&gt;
+&lt;span class="err"&gt;numix-circle-icon-theme-git&lt;/span&gt;
+&lt;span class="err"&gt;numix-gtk-theme&lt;/span&gt;
+&lt;span class="err"&gt;openssh&lt;/span&gt;
+&lt;span class="err"&gt;os-prober&lt;/span&gt;
+&lt;span class="err"&gt;p7zip&lt;/span&gt;
+&lt;span class="err"&gt;papirus-icon-theme  # 赞&lt;/span&gt;
+&lt;span class="err"&gt;pelican &amp;amp; lftp&lt;/span&gt;
+&lt;span class="err"&gt;pepper-flash&lt;/span&gt;
+&lt;span class="err"&gt;pkgfile&lt;/span&gt;
+&lt;span class="err"&gt;poppler-data&lt;/span&gt;
+&lt;span class="err"&gt;pulseaudio&lt;/span&gt;
+&lt;span class="err"&gt;pycharm&lt;/span&gt;
+&lt;span class="err"&gt;qbittorrent-nox  # 远程下载&lt;/span&gt;
+&lt;span class="err"&gt;qt5-doc&lt;/span&gt;
+&lt;span class="err"&gt;qtcreator&lt;/span&gt;
+&lt;span class="err"&gt;remmina or vinagre #  remote desktop client written in GTK+  # vnc  &lt;/span&gt;
+&lt;span class="err"&gt;rhythmbox &amp;amp; osdlyrics  # music player &lt;/span&gt;
+&lt;span class="err"&gt;scrcpy&lt;/span&gt;
+&lt;span class="err"&gt;sdcv&lt;/span&gt;
+&lt;span class="err"&gt;shadowsocks-libev&lt;/span&gt;
+&lt;span class="err"&gt;slock&lt;/span&gt;
+&lt;span class="err"&gt;smplayer&lt;/span&gt;
+&lt;span class="err"&gt;sshpass&lt;/span&gt;
+&lt;span class="err"&gt;strace&lt;/span&gt;
+&lt;span class="err"&gt;sushi&lt;/span&gt;
+&lt;span class="err"&gt;sushi  # A quick previewer for Nautilus&lt;/span&gt;
+&lt;span class="err"&gt;thunderbird&lt;/span&gt;
+&lt;span class="err"&gt;tmux&lt;/span&gt;
+&lt;span class="err"&gt;transmission-gtk&lt;/span&gt;
+&lt;span class="err"&gt;tsocks (proxychains替代工具)&lt;/span&gt;
+&lt;span class="err"&gt;ttf-wps-fonts&lt;/span&gt;
+&lt;span class="err"&gt;uget2 &amp;amp; aria2 &amp;amp; axel&lt;/span&gt;
+&lt;span class="err"&gt;unrar&lt;/span&gt;
+&lt;span class="err"&gt;v2raya&lt;/span&gt;
+&lt;span class="err"&gt;vim&lt;/span&gt;
+&lt;span class="err"&gt;virtualbox&lt;/span&gt;
+&lt;span class="err"&gt;visual-studio-code-bin&lt;/span&gt;
+&lt;span class="err"&gt;wine-wechat&lt;/span&gt;
+&lt;span class="err"&gt;wireshark&lt;/span&gt;
+&lt;span class="err"&gt;wqy-microhei&lt;/span&gt;
+&lt;span class="err"&gt;xfsprogs&lt;/span&gt;
+&lt;span class="err"&gt;xorg-drivers(xf86-input-synaptics, xf86-video-intel, xf86-video-vesa)&lt;/span&gt;
+&lt;span class="err"&gt;xorg-server&lt;/span&gt;
+&lt;span class="err"&gt;xorg-xinit&lt;/span&gt;
+&lt;span class="err"&gt;xorg-xkill &lt;/span&gt;
+&lt;span class="err"&gt;yay  # (yaourt 代替品)&lt;/span&gt;
+&lt;span class="err"&gt;ydcv # or sdcv&lt;/span&gt;
+&lt;span class="err"&gt;zip &amp;amp; unzip&lt;/span&gt;
+&lt;span class="err"&gt;zsh # +oh-my-zsh&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ffmpeg
-gimp
-gnome-subtitles  # 字幕编辑
-inkscape  # svg 编辑
-shotcut  # 视频剪辑
-simplescreenrecorder  # 录屏
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;ffmpeg&lt;/span&gt;
+&lt;span class="err"&gt;gimp&lt;/span&gt;
+&lt;span class="err"&gt;gnome-subtitles  # 字幕编辑&lt;/span&gt;
+&lt;span class="err"&gt;inkscape  # svg 编辑&lt;/span&gt;
+&lt;span class="err"&gt;shotcut  # 视频剪辑&lt;/span&gt;
+&lt;span class="err"&gt;simplescreenrecorder  # 录屏&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;hr&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;# flatpak 软件
-com.anydesk.Anydesk
-com.belmoussaoui.ReadItLater
-com.calibre_ebook.calibre
-com.github.alainm23.planner
-com.github.artemanufrij.playmyvideos
-com.github.babluboy.bookworm
-com.github.calo001.fondo
-com.github.iwalton3.jellyfin-media-player
-com.github.iwalton3.jellyfin-mpv-shim
-com.github.johnfactotum.Foliate
-com.github.marktext.marktext
-com.giuspen.cherrytree
-com.jetbrains.PyCharm-Community
-com.jgraph.drawio.desktop
-com.netease.CloudMusic
-com.qq.QQmusic
-com.sublimetext.three
-com.todoist.Todoist
-com.valvesoftware.Steam
-com.visualstudio.code
-com.wps.Office
-com.xnview.XnViewMP
-com.xunlei.Thunder
-io.mpv.Mpv
-io.typora.Typora
-md.obsidian.Obsidian
-media.emby.EmbyServer
-net.cozic.joplin_desktop
-nl.hjdskes.gcolor3
-org.gnome.Builder
-org.inkscape.Inkscape
-org.jamovi.jamovi
-org.kde.krita
-org.telegram.desktop
-org.videolan.VLC
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;# flatpak 软件&lt;/span&gt;
+&lt;span class="err"&gt;com.anydesk.Anydesk&lt;/span&gt;
+&lt;span class="err"&gt;com.belmoussaoui.ReadItLater&lt;/span&gt;
+&lt;span class="err"&gt;com.calibre_ebook.calibre&lt;/span&gt;
+&lt;span class="err"&gt;com.github.alainm23.planner&lt;/span&gt;
+&lt;span class="err"&gt;com.github.artemanufrij.playmyvideos&lt;/span&gt;
+&lt;span class="err"&gt;com.github.babluboy.bookworm&lt;/span&gt;
+&lt;span class="err"&gt;com.github.calo001.fondo&lt;/span&gt;
+&lt;span class="err"&gt;com.github.iwalton3.jellyfin-media-player&lt;/span&gt;
+&lt;span class="err"&gt;com.github.iwalton3.jellyfin-mpv-shim&lt;/span&gt;
+&lt;span class="err"&gt;com.github.johnfactotum.Foliate&lt;/span&gt;
+&lt;span class="err"&gt;com.github.marktext.marktext&lt;/span&gt;
+&lt;span class="err"&gt;com.giuspen.cherrytree&lt;/span&gt;
+&lt;span class="err"&gt;com.jetbrains.PyCharm-Community&lt;/span&gt;
+&lt;span class="err"&gt;com.jgraph.drawio.desktop&lt;/span&gt;
+&lt;span class="err"&gt;com.netease.CloudMusic&lt;/span&gt;
+&lt;span class="err"&gt;com.qq.QQmusic&lt;/span&gt;
+&lt;span class="err"&gt;com.sublimetext.three&lt;/span&gt;
+&lt;span class="err"&gt;com.todoist.Todoist&lt;/span&gt;
+&lt;span class="err"&gt;com.valvesoftware.Steam&lt;/span&gt;
+&lt;span class="err"&gt;com.visualstudio.code&lt;/span&gt;
+&lt;span class="err"&gt;com.wps.Office&lt;/span&gt;
+&lt;span class="err"&gt;com.xnview.XnViewMP&lt;/span&gt;
+&lt;span class="err"&gt;com.xunlei.Thunder&lt;/span&gt;
+&lt;span class="err"&gt;io.mpv.Mpv&lt;/span&gt;
+&lt;span class="err"&gt;io.typora.Typora&lt;/span&gt;
+&lt;span class="err"&gt;md.obsidian.Obsidian&lt;/span&gt;
+&lt;span class="err"&gt;media.emby.EmbyServer&lt;/span&gt;
+&lt;span class="err"&gt;net.cozic.joplin_desktop&lt;/span&gt;
+&lt;span class="err"&gt;nl.hjdskes.gcolor3&lt;/span&gt;
+&lt;span class="err"&gt;org.gnome.Builder&lt;/span&gt;
+&lt;span class="err"&gt;org.inkscape.Inkscape&lt;/span&gt;
+&lt;span class="err"&gt;org.jamovi.jamovi&lt;/span&gt;
+&lt;span class="err"&gt;org.kde.krita&lt;/span&gt;
+&lt;span class="err"&gt;org.telegram.desktop&lt;/span&gt;
+&lt;span class="err"&gt;org.videolan.VLC&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Gnome 扩展
-Applications menu
-Gsconnect
-Gtk title bar
-Launch new instance
-Netspeed
-Openweather
-Places status indicator
-Refresh wifi connections
-Topicons plus
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;Gnome 扩展&lt;/span&gt;
+&lt;span class="err"&gt;Applications menu&lt;/span&gt;
+&lt;span class="err"&gt;Gsconnect&lt;/span&gt;
+&lt;span class="err"&gt;Gtk title bar&lt;/span&gt;
+&lt;span class="err"&gt;Launch new instance&lt;/span&gt;
+&lt;span class="err"&gt;Netspeed&lt;/span&gt;
+&lt;span class="err"&gt;Openweather&lt;/span&gt;
+&lt;span class="err"&gt;Places status indicator&lt;/span&gt;
+&lt;span class="err"&gt;Refresh wifi connections&lt;/span&gt;
+&lt;span class="err"&gt;Topicons plus&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;# 其他
-linux QQ
-Pidgin
-Orchis gtk theme (https://www.gnome-look.org/p/1357889, https://github.com/vinceliuice/Orchis-theme)
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;# 其他&lt;/span&gt;
+&lt;span class="err"&gt;linux QQ&lt;/span&gt;
+&lt;span class="err"&gt;Pidgin&lt;/span&gt;
+&lt;span class="err"&gt;Orchis gtk theme (https://www.gnome-look.org/p/1357889, https://github.com/vinceliuice/Orchis-theme)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;未完待续...&lt;/p&gt;
-&lt;p&gt;本文不定期更新&lt;/p&gt;</content><category term="linux"></category><category term="linux"></category><category term="software"></category><category term="arch"></category></entry><entry><title>linux设置文件只读, 直到关机</title><link href="/posts/2017/06/14/set-file-readonly-until-reboot.html" rel="alternate"></link><published>2017-06-14T09:58:28+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-14:/posts/2017/06/14/set-file-readonly-until-reboot.html</id><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;:::bash
-mount -o bind $file $file
-mount -o remount,bind,ro $file
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="bash"></category><category term="command"></category></entry><entry><title>bash的字符串模板</title><link href="/posts/2017/06/07/bash-string-template.html" rel="alternate"></link><published>2017-06-07T00:00:00+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-07:/posts/2017/06/07/bash-string-template.html</id><content type="html">&lt;p&gt;在一个项目中，我想用一个配置模板文件自动生成配置文件，即为从&lt;code&gt;nginx.conf.template&lt;/code&gt; 自动生成一个特定的&lt;code&gt;nginx.conf&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;本文不定期更新&lt;/p&gt;</content><category term="linux"></category><category term="linux"></category><category term="software"></category><category term="arch"></category></entry><entry><title>linux设置文件只读, 直到关机</title><link href="/posts/2017/06/14/set-file-readonly-until-reboot.html" rel="alternate"></link><published>2017-06-14T09:58:28+08:00</published><updated>2017-06-14T09:58:28+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-14:/posts/2017/06/14/set-file-readonly-until-reboot.html</id><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;:::bash&lt;/span&gt;
+&lt;span class="err"&gt;mount -o bind $file $file&lt;/span&gt;
+&lt;span class="err"&gt;mount -o remount,bind,ro $file&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="bash"></category><category term="command"></category></entry><entry><title>bash的字符串模板</title><link href="/posts/2017/06/07/bash-string-template.html" rel="alternate"></link><published>2017-06-07T00:00:00+08:00</published><updated>2017-06-07T00:00:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-07:/posts/2017/06/07/bash-string-template.html</id><content type="html">&lt;p&gt;在一个项目中，我想用一个配置模板文件自动生成配置文件，即为从&lt;code&gt;nginx.conf.template&lt;/code&gt; 自动生成一个特定的&lt;code&gt;nginx.conf&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;如果使用bash来填充展开模板，则需要eval，或者source之类的操作，因为bash不支持对字符串（真正意义上的字符串，而不是双引号引起来的）的变量替换。&lt;/p&gt;
 &lt;p&gt;解决方案是用 &lt;code&gt;envsubst&lt;/code&gt;。 这个命令支持使用环境变量展开字符串模板。&lt;/p&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;#一般用法&lt;/span&gt;
@@ -949,10 +959,10 @@ envsubst &amp;lt; nginx.conf.template &amp;gt; nanjing.conf
 
 &lt;span class="c1"&gt;#指定特定待替换的环境变量&lt;/span&gt;
 envsubst &lt;span class="s1"&gt;&amp;#39;${VAR_NAME}&amp;#39;&lt;/span&gt; &amp;lt; nginx.conf.template &amp;gt; nanjing.conf
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="bash"></category></entry><entry><title>apt install 一直 size mismatch</title><link href="/posts/2017/06/03/apt-size-mismatch.html" rel="alternate"></link><published>2017-06-03T08:32:00+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-03:/posts/2017/06/03/apt-size-mismatch.html</id><content type="html">&lt;p&gt;raspberry pi 的 debian， apt安装软件是一直提示 size mismatch。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="bash"></category></entry><entry><title>apt install 一直 size mismatch</title><link href="/posts/2017/06/03/apt-size-mismatch.html" rel="alternate"></link><published>2017-06-03T08:32:00+08:00</published><updated>2017-06-03T08:32:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-03:/posts/2017/06/03/apt-size-mismatch.html</id><content type="html">&lt;p&gt;raspberry pi 的 debian， apt安装软件是一直提示 size mismatch。
 后来发现这是运营商(ISP)缓存的问题， 运营商有些时候是通过文件名作为缓存的， 导致服务器文件更新后，用户依然下载到旧的版本。
 解决方法是， apt source 使用https协议就好了。&lt;/p&gt;
-&lt;p&gt;后来发现有人和我遇到同样的问题：https://bbs.deepin.org/forum.php?mod=viewthread&amp;amp;tid=138536&lt;/p&gt;</content><category term="linux"></category><category term="debian"></category><category term="linux"></category></entry><entry><title>将man page输出到pdf和HTML</title><link href="/posts/2015/01/20/man-pages-to-pdf.html" rel="alternate"></link><published>2015-01-20T16:37:00+08:00</published><updated>2022-07-26T18:17:52+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2015-01-20:/posts/2015/01/20/man-pages-to-pdf.html</id><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 方法1：直接浏览器查看html&lt;/span&gt;
+&lt;p&gt;后来发现有人和我遇到同样的问题：https://bbs.deepin.org/forum.php?mod=viewthread&amp;amp;tid=138536&lt;/p&gt;</content><category term="linux"></category><category term="debian"></category><category term="linux"></category></entry><entry><title>将man page输出到pdf和HTML</title><link href="/posts/2015/01/20/man-pages-to-pdf.html" rel="alternate"></link><published>2015-01-20T16:37:00+08:00</published><updated>2015-01-20T16:37:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2015-01-20:/posts/2015/01/20/man-pages-to-pdf.html</id><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 方法1：直接浏览器查看html&lt;/span&gt;
 man -Hfirefox memfd_create
 
 
@@ -964,67 +974,67 @@ zcat /usr/share/man/man2/timerfd_create.2.gz &lt;span class="p"&gt;|&lt;/span&gt
 
 &lt;span class="c1"&gt;# 方法3：转换为pdf&lt;/span&gt;
 man -t eventfd &lt;span class="p"&gt;|&lt;/span&gt; ps2pdf - &amp;gt; eventfd.pdf
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category></entry><entry><title>linux-man-pages</title><link href="/posts/2015/01/20/linux-man-pages.html" rel="alternate"></link><published>2015-01-20T11:41:06+08:00</published><updated>2022-07-26T18:17:52+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2015-01-20:/posts/2015/01/20/linux-man-pages.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="err"&gt;关键字&lt;/span&gt;  &lt;span class="err"&gt;从&lt;/span&gt;&lt;span class="n"&gt;man手册页描述内容中搜索&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category></entry><entry><title>linux-man-pages</title><link href="/posts/2015/01/20/linux-man-pages.html" rel="alternate"></link><published>2015-01-20T11:41:06+08:00</published><updated>2015-01-20T11:41:06+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2015-01-20:/posts/2015/01/20/linux-man-pages.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="err"&gt;关键字&lt;/span&gt;  &lt;span class="err"&gt;从&lt;/span&gt;&lt;span class="n"&gt;man手册页描述内容中搜索&lt;/span&gt;
 &lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;K&lt;/span&gt; &lt;span class="err"&gt;全文暴力搜索，&lt;/span&gt; &lt;span class="err"&gt;速度比较慢&lt;/span&gt;
 &lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="err"&gt;显示手册中包含的所有可用的手册页&lt;/span&gt;
 &lt;span class="n"&gt;whatis&lt;/span&gt;
 &lt;span class="n"&gt;which&lt;/span&gt;
 
 &lt;span class="n"&gt;manpages里面还有一些有趣而且实用的资料&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;
-&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mh"&gt;1&lt;/span&gt; &lt;span class="n"&gt;intro&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;一篇对从未接触过&lt;/span&gt;&lt;span class="n"&gt;Linux的用户的简明教程&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
-&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mh"&gt;2&lt;/span&gt; &lt;span class="n"&gt;syscalls&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;内核系统请求的列表，按内核版本注释分类，系统编程必备。&lt;/span&gt;
-&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mh"&gt;2&lt;/span&gt; &lt;span class="n"&gt;select_tut&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;关于&lt;/span&gt;&lt;span class="n"&gt;select&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="err"&gt;系统请求的教程。&lt;/span&gt;
-&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mh"&gt;3&lt;/span&gt; &lt;span class="k"&gt;string&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;在头文件内的所有函数。&lt;/span&gt;
-&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mh"&gt;3&lt;/span&gt; &lt;span class="n"&gt;stdio&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;关于头文件的使用，标准输入&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="err"&gt;输出库的说明。&lt;/span&gt;
-&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mh"&gt;3&lt;/span&gt; &lt;span class="n"&gt;errno&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;所有&lt;/span&gt;&lt;span class="n"&gt;errorno的取值及说明&lt;/span&gt;&lt;span class="err"&gt;。（&lt;/span&gt;&lt;span class="n"&gt;C语言内类似其他语言的异常告知机制&lt;/span&gt;&lt;span class="err"&gt;）&lt;/span&gt;
-&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mh"&gt;4 …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="err"&gt;关键字&lt;/span&gt;  &lt;span class="err"&gt;从&lt;/span&gt;&lt;span class="n"&gt;man手册页描述内容中搜索&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="n"&gt;intro&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;一篇对从未接触过&lt;/span&gt;&lt;span class="n"&gt;Linux的用户的简明教程&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="n"&gt;syscalls&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;内核系统请求的列表，按内核版本注释分类，系统编程必备。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="n"&gt;select_tut&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;关于&lt;/span&gt;&lt;span class="k"&gt;select&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="err"&gt;系统请求的教程。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="n"&gt;string&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;在头文件内的所有函数。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="n"&gt;stdio&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;关于头文件的使用，标准输入&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="err"&gt;输出库的说明。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="n"&gt;errno&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;所有&lt;/span&gt;&lt;span class="n"&gt;errorno的取值及说明&lt;/span&gt;&lt;span class="err"&gt;。（&lt;/span&gt;&lt;span class="n"&gt;C语言内类似其他语言的异常告知机制&lt;/span&gt;&lt;span class="err"&gt;）&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;4 …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="err"&gt;关键字&lt;/span&gt;  &lt;span class="err"&gt;从&lt;/span&gt;&lt;span class="n"&gt;man手册页描述内容中搜索&lt;/span&gt;
 &lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;K&lt;/span&gt; &lt;span class="err"&gt;全文暴力搜索，&lt;/span&gt; &lt;span class="err"&gt;速度比较慢&lt;/span&gt;
 &lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="err"&gt;显示手册中包含的所有可用的手册页&lt;/span&gt;
 &lt;span class="n"&gt;whatis&lt;/span&gt;
 &lt;span class="n"&gt;which&lt;/span&gt;
 
 &lt;span class="n"&gt;manpages里面还有一些有趣而且实用的资料&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;
-&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mh"&gt;1&lt;/span&gt; &lt;span class="n"&gt;intro&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;一篇对从未接触过&lt;/span&gt;&lt;span class="n"&gt;Linux的用户的简明教程&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
-&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mh"&gt;2&lt;/span&gt; &lt;span class="n"&gt;syscalls&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;内核系统请求的列表，按内核版本注释分类，系统编程必备。&lt;/span&gt;
-&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mh"&gt;2&lt;/span&gt; &lt;span class="n"&gt;select_tut&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;关于&lt;/span&gt;&lt;span class="n"&gt;select&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="err"&gt;系统请求的教程。&lt;/span&gt;
-&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mh"&gt;3&lt;/span&gt; &lt;span class="k"&gt;string&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;在头文件内的所有函数。&lt;/span&gt;
-&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mh"&gt;3&lt;/span&gt; &lt;span class="n"&gt;stdio&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;关于头文件的使用，标准输入&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="err"&gt;输出库的说明。&lt;/span&gt;
-&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mh"&gt;3&lt;/span&gt; &lt;span class="n"&gt;errno&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;所有&lt;/span&gt;&lt;span class="n"&gt;errorno的取值及说明&lt;/span&gt;&lt;span class="err"&gt;。（&lt;/span&gt;&lt;span class="n"&gt;C语言内类似其他语言的异常告知机制&lt;/span&gt;&lt;span class="err"&gt;）&lt;/span&gt;
-&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mh"&gt;4&lt;/span&gt; &lt;span class="n"&gt;console_codes&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="n"&gt;Linux的终端控制码及其使用解释&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
-&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mh"&gt;4&lt;/span&gt; &lt;span class="n"&gt;full&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;介绍&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;full这个总是处于&lt;/span&gt;&lt;span class="err"&gt;“满”状态的磁盘。（对应&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;null这个总是空的设备&lt;/span&gt;&lt;span class="err"&gt;）&lt;/span&gt;
-&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mh"&gt;5&lt;/span&gt; &lt;span class="n"&gt;proc&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;介绍&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;proc下的文件系统&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
-&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mh"&gt;5&lt;/span&gt; &lt;span class="n"&gt;filesystems&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;各种&lt;/span&gt;&lt;span class="n"&gt;Linux文件系统&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="n"&gt;intro&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;一篇对从未接触过&lt;/span&gt;&lt;span class="n"&gt;Linux的用户的简明教程&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="n"&gt;syscalls&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;内核系统请求的列表，按内核版本注释分类，系统编程必备。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="n"&gt;select_tut&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;关于&lt;/span&gt;&lt;span class="k"&gt;select&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="err"&gt;系统请求的教程。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="n"&gt;string&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;在头文件内的所有函数。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="n"&gt;stdio&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;关于头文件的使用，标准输入&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="err"&gt;输出库的说明。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="n"&gt;errno&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;所有&lt;/span&gt;&lt;span class="n"&gt;errorno的取值及说明&lt;/span&gt;&lt;span class="err"&gt;。（&lt;/span&gt;&lt;span class="n"&gt;C语言内类似其他语言的异常告知机制&lt;/span&gt;&lt;span class="err"&gt;）&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt; &lt;span class="n"&gt;console_codes&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="n"&gt;Linux的终端控制码及其使用解释&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt; &lt;span class="k"&gt;full&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;介绍&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;full这个总是处于&lt;/span&gt;&lt;span class="err"&gt;“满”状态的磁盘。（对应&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;null这个总是空的设备&lt;/span&gt;&lt;span class="err"&gt;）&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="n"&gt;proc&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;介绍&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;proc下的文件系统&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="n"&gt;filesystems&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;各种&lt;/span&gt;&lt;span class="n"&gt;Linux文件系统&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
 
-&lt;span class="err"&gt;第&lt;/span&gt;&lt;span class="mh"&gt;7&lt;/span&gt;&lt;span class="err"&gt;区里面的资料通常最酷：&lt;/span&gt;
-&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mh"&gt;7&lt;/span&gt; &lt;span class="n"&gt;bootparam&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;详细解释内核启动参数。&lt;/span&gt;
-&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mh"&gt;7&lt;/span&gt; &lt;span class="n"&gt;charsets&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;解释各种语言的编码集。（&lt;/span&gt;&lt;span class="n"&gt;gbk&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;gb2312等&lt;/span&gt;&lt;span class="err"&gt;）&lt;/span&gt;
-&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mh"&gt;7&lt;/span&gt; &lt;span class="n"&gt;glob&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;解释&lt;/span&gt;&lt;span class="n"&gt;glob文件名管理机制的工作过程&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
-&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mh"&gt;7&lt;/span&gt; &lt;span class="n"&gt;hier&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;解释&lt;/span&gt;&lt;span class="n"&gt;Linux文件系统结构各个部分的作用&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
-&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mh"&gt;7&lt;/span&gt; &lt;span class="n"&gt;operator&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="n"&gt;C语言的运算符的列表&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
-&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mh"&gt;7&lt;/span&gt; &lt;span class="n"&gt;regex&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;介绍正则表达式。&lt;/span&gt;
-&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mh"&gt;7&lt;/span&gt; &lt;span class="n"&gt;suffixes&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;常见文件后缀名的列表跟解释。&lt;/span&gt;
-&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mh"&gt;7&lt;/span&gt; &lt;span class="kt"&gt;time&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="n"&gt;Linux的时钟机制解释&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
-&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mh"&gt;7&lt;/span&gt; &lt;span class="n"&gt;units&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;数值单位及其数值的解释。&lt;/span&gt;
-&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mh"&gt;7&lt;/span&gt; &lt;span class="n"&gt;utf8&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;描述&lt;/span&gt;&lt;span class="n"&gt;UTF&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mh"&gt;8&lt;/span&gt;&lt;span class="err"&gt;编码。&lt;/span&gt;
-&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mh"&gt;7&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;解释&lt;/span&gt;&lt;span class="n"&gt;URL&lt;/span&gt;&lt;span class="err"&gt;、&lt;/span&gt;&lt;span class="n"&gt;URI&lt;/span&gt;&lt;span class="err"&gt;、&lt;/span&gt;&lt;span class="n"&gt;URN等的标准&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
-&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mh"&gt;7&lt;/span&gt; &lt;span class="n"&gt;ascii&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category></entry><entry><title>linux错误执行chmod 777 / 的处理方法</title><link href="/posts/2014/06/11/chmod777.html" rel="alternate"></link><published>2014-06-11T20:50:00+08:00</published><updated>2022-07-26T18:17:52+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2014-06-11:/posts/2014/06/11/chmod777.html</id><content type="html">&lt;h4&gt;setfacl&lt;/h4&gt;
+&lt;span class="err"&gt;第&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="err"&gt;区里面的资料通常最酷：&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="n"&gt;bootparam&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;详细解释内核启动参数。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="n"&gt;charsets&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;解释各种语言的编码集。（&lt;/span&gt;&lt;span class="n"&gt;gbk&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;gb2312等&lt;/span&gt;&lt;span class="err"&gt;）&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="n"&gt;glob&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;解释&lt;/span&gt;&lt;span class="n"&gt;glob文件名管理机制的工作过程&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="n"&gt;hier&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;解释&lt;/span&gt;&lt;span class="n"&gt;Linux文件系统结构各个部分的作用&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="k"&gt;operator&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="n"&gt;C语言的运算符的列表&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="n"&gt;regex&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;介绍正则表达式。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="n"&gt;suffixes&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;常见文件后缀名的列表跟解释。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="k"&gt;time&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="n"&gt;Linux的时钟机制解释&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="n"&gt;units&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;数值单位及其数值的解释。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="n"&gt;utf8&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;描述&lt;/span&gt;&lt;span class="n"&gt;UTF&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="err"&gt;编码。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;解释&lt;/span&gt;&lt;span class="n"&gt;URL&lt;/span&gt;&lt;span class="err"&gt;、&lt;/span&gt;&lt;span class="n"&gt;URI&lt;/span&gt;&lt;span class="err"&gt;、&lt;/span&gt;&lt;span class="n"&gt;URN等的标准&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="n"&gt;ascii&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category></entry><entry><title>linux错误执行chmod 777 / 的处理方法</title><link href="/posts/2014/06/11/chmod777.html" rel="alternate"></link><published>2014-06-11T20:50:00+08:00</published><updated>2014-06-11T20:50:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2014-06-11:/posts/2014/06/11/chmod777.html</id><content type="html">&lt;h4&gt;setfacl&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;getfacl -R / &amp;gt;systemP.bak&lt;/code&gt;  将这个系统中的 / ，以及 / 底下所有的文件及目录权限导出到一个文件中&lt;/li&gt;
 &lt;li&gt;将systemP.bak文件想办法拷贝到被破坏的机器上   并执行
 &lt;code&gt;setfacl --restore=systemP.bak&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4&gt;进行手动恢复命令权限&lt;/h4&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;chmod u+s `which passwd`
-chmod u+s `which su`
-chmod u+s `which sudo`
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="command"></category></entry><entry><title>linux 查看info文档</title><link href="/posts/2013/09/27/linux-info.html" rel="alternate"></link><published>2013-09-27T17:59:00+08:00</published><updated>2022-07-26T18:17:52+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2013-09-27:/posts/2013/09/27/linux-info.html</id><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;info &amp;lt;command&amp;gt;
-info 比man 更详细
-info 中 按tab 跳到下一个 连接 （有*的，可以连接到其他info）
-按enter跳转
-n按键跳到下一个小节
-p跳到上一个小节
-u跳到上一层
-s查找关键字
-q离开
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;chmod u+s `which passwd`&lt;/span&gt;
+&lt;span class="err"&gt;chmod u+s `which su`&lt;/span&gt;
+&lt;span class="err"&gt;chmod u+s `which sudo`&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="command"></category></entry><entry><title>linux 查看info文档</title><link href="/posts/2013/09/27/linux-info.html" rel="alternate"></link><published>2013-09-27T17:59:00+08:00</published><updated>2013-09-27T17:59:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2013-09-27:/posts/2013/09/27/linux-info.html</id><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;info &amp;lt;command&amp;gt;&lt;/span&gt;
+&lt;span class="err"&gt;info 比man 更详细&lt;/span&gt;
+&lt;span class="err"&gt;info 中 按tab 跳到下一个 连接 （有*的，可以连接到其他info）&lt;/span&gt;
+&lt;span class="err"&gt;按enter跳转&lt;/span&gt;
+&lt;span class="err"&gt;n按键跳到下一个小节&lt;/span&gt;
+&lt;span class="err"&gt;p跳到上一个小节&lt;/span&gt;
+&lt;span class="err"&gt;u跳到上一层&lt;/span&gt;
+&lt;span class="err"&gt;s查找关键字&lt;/span&gt;
+&lt;span class="err"&gt;q离开&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category></entry></feed>

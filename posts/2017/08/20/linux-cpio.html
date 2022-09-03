@@ -67,20 +67,20 @@
     <div class="entry-content"><ul>
 <li>建立 cpio文件 </li>
 </ul>
-<div class="highlight-custom"><pre><span></span><code>find ./files | cpio -o -H newc &gt; filename.cpio
+<div class="highlight-custom"><pre><span></span><code><span class="err">find ./files | cpio -o -H newc &gt; filename.cpio</span>
 </code></pre></div>
 
 <ul>
 <li>解开cpio文件</li>
 </ul>
-<div class="highlight-custom"><pre><span></span><code>cd  dir1
-cpio -ivd  &lt; filename.cpio  
+<div class="highlight-custom"><pre><span></span><code><span class="err">cd  dir1</span>
+<span class="err">cpio -ivd  &lt; filename.cpio  </span>
 </code></pre></div>
 
 <ul>
 <li>查看cpio文件中的内容</li>
 </ul>
-<div class="highlight-custom"><pre><span></span><code>cpio -ivt &lt; filename.cpio
+<div class="highlight-custom"><pre><span></span><code><span class="err">cpio -ivt &lt; filename.cpio</span>
 </code></pre></div>
 
 <p><code>* 如果find显示文件路径是绝对的， 那么解压后可能会覆盖已有文件。 最好使用相对路径压缩。</code></p></div>

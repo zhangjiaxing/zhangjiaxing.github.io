@@ -69,8 +69,8 @@
 <p>echo "net.ipv4.ip_forward=1" &gt; /etc/sysctl.d/ip_forward.conf
 sysctl -p</p>
 <p>vim /etc/pptpd.conf</p>
-<div class="highlight-custom"><pre><span></span><code>localip 192.168.0.1
-remoteip        192.168.0.234-238,192.168.0.245
+<div class="highlight-custom"><pre><span></span><code><span class="err">localip 192.168.0.1</span>
+<span class="err">remoteip        192.168.0.234-238,192.168.0.245</span>
 </code></pre></div>
 
 <p>systemctl start pptpd.service</p></div>

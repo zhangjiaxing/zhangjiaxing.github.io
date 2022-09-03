@@ -70,25 +70,25 @@ qtcreator: error <span class="k">while</span> loading shared libraries: libExten
 </code></pre></div>
 
 <p>最终还是在系统里找到了这个文件</p>
-<div class="highlight-custom"><pre><span></span><code>~&gt; zypper search -f libExtensionSystem.so.6
-显示文件在qt5-creator（已安装）包中。
+<div class="highlight-custom"><pre><span></span><code><span class="o">~&gt;</span> <span class="n">zypper</span> <span class="k">search</span> <span class="o">-</span><span class="n">f</span> <span class="n">libExtensionSystem</span><span class="p">.</span><span class="n">so</span><span class="p">.</span><span class="mi">6</span>
+<span class="err">显示文件在</span><span class="n">qt5</span><span class="o">-</span><span class="n">creator</span><span class="err">（已安装）包中。</span>
 
-~&gt; rpm -ql qt5-creator | grep libExtensionSystem.so.6
-/usr/lib64/qtcreator/libExtensionSystem.so.6
+<span class="o">~&gt;</span> <span class="n">rpm</span> <span class="o">-</span><span class="n">ql</span> <span class="n">qt5</span><span class="o">-</span><span class="n">creator</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">libExtensionSystem</span><span class="p">.</span><span class="n">so</span><span class="p">.</span><span class="mi">6</span>
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib64</span><span class="o">/</span><span class="n">qtcreator</span><span class="o">/</span><span class="n">libExtensionSystem</span><span class="p">.</span><span class="n">so</span><span class="p">.</span><span class="mi">6</span>
 </code></pre></div>
 
 <p>手动帮助加载动态库（临时方案）</p>
-<div class="highlight-custom"><pre><span></span><code><span class="o">~&gt;</span> <span class="k">export</span> <span class="n">LD_LIBRARY_PATH</span><span class="o">=$</span><span class="n">LD_LIBRARY_PATH</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib64</span><span class="o">/</span><span class="n">qtcreator</span>
-<span class="o">~&gt;</span> <span class="n">qtcreator</span>
-<span class="n">qtcreator启动成功</span>
+<div class="highlight-custom"><pre><span></span><code><span class="err">~&gt; export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib64/qtcreator</span>
+<span class="err">~&gt; qtcreator</span>
+<span class="err">qtcreator启动成功</span>
 </code></pre></div>
 
 <p>我在另外一台系统上也出现了 qt creator 挂了的问题， 重启无效。
 彻底解决方案是：</p>
 <p>root 用户下执行：</p>
-<div class="highlight-custom"><pre><span></span><code>echo &quot;/usr/lib64/qtcreator&quot; &gt; /etc/ld.so.conf.d/qtcreator.conf 
+<div class="highlight-custom"><pre><span></span><code><span class="n">echo</span> <span class="ss">&quot;/usr/lib64/qtcreator&quot;</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ld</span><span class="p">.</span><span class="n">so</span><span class="p">.</span><span class="n">conf</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">qtcreator</span><span class="p">.</span><span class="n">conf</span> 
 
-ldconfig -v
+<span class="n">ldconfig</span> <span class="o">-</span><span class="n">v</span>
 </code></pre></div></div>
     <footer>
 <p class="meta">

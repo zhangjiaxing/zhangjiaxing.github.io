@@ -163,14 +163,11 @@ qtcreator: error <span class="k">while</span> loading shared libraries: libExten
 </code></pre></div>
 
 <p>最终还是在系统里找到了这个文件</p>
-<div class="highlight-custom"><pre><span></span><code>~&gt; zypper search -f libExtensionSystem.so.6
-显示文件在qt5-creator（已安装）包中。
+<div class="highlight-custom"><pre><span></span><code><span class="o">~&gt;</span> <span class="n">zypper</span> <span class="k">search</span> <span class="o">-</span><span class="n">f</span> <span class="n">libExtensionSystem</span><span class="p">.</span><span class="n">so</span><span class="p">.</span><span class="mi">6</span>
+<span class="err">显示文件在</span><span class="n">qt5</span><span class="o">-</span><span class="n">creator</span><span class="err">（已安装）包中。</span>
 
-~&gt; rpm -ql qt5-creator | grep libExtensionSystem.so.6
-/usr/lib64/qtcreator/libExtensionSystem.so.6
-</code></pre></div>
-
-<p>手动帮助加载动态库 …</p></div>
+<span class="o">~&gt;</span> <span class="n">rpm</span> <span class="o">-</span><span class="n">ql</span> <span class="n">qt5</span><span class="o">-</span><span class="n">creator</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">libExtensionSystem</span><span class="p">.</span><span class="n">so</span><span class="p">.</span><span class="mi">6</span>
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib64</span><span class="o">/</span><span class="n">qtcreator</span><span class="o">/</span><span class="n">libExtensionSystem …</span></code></pre></div></div>
             <footer>
                 <a rel="full-article" href="/posts/2022/07/02/cannot-open-shared-libraries.html">Read On &crarr;</a>
             </footer>
@@ -269,8 +266,8 @@ The xprop utility is for displaying window and font properties in an X server. <
 </header>
 
         <div class="entry-content"><p>QString转char*的正确方法</p>
-<div class="highlight-custom"><pre><span></span><code><span class="n">QString</span><span class="p">()</span><span class="o">.</span><span class="n">toLocal8Bit</span><span class="p">()</span><span class="o">.</span><span class="n">constData</span><span class="p">()</span>
-<span class="n">QString</span><span class="p">()</span><span class="o">.</span><span class="n">toUtf8</span><span class="p">()</span><span class="o">.</span><span class="n">constData</span><span class="p">()</span>
+<div class="highlight-custom"><pre><span></span><code><span class="err">QString().toLocal8Bit().constData()</span>
+<span class="err">QString().toUtf8().constData()</span>
 </code></pre></div></div>
   		</article>
   		<article>
@@ -311,9 +308,9 @@ The xprop utility is for displaying window and font properties in an X server. <
     </p>
 </header>
 
-        <div class="entry-content"><div class="highlight-custom"><pre><span></span><code># 中文语言环境下，xdg-user-dirs使用英文名称
-LANG=C xdg-user-dirs-gtk-update # 同意更新
-xdg-user-dirs-gtk-update # 保留且不再询问
+        <div class="entry-content"><div class="highlight-custom"><pre><span></span><code><span class="err"># 中文语言环境下，xdg-user-dirs使用英文名称</span>
+<span class="err">LANG=C xdg-user-dirs-gtk-update # 同意更新</span>
+<span class="err">xdg-user-dirs-gtk-update # 保留且不再询问</span>
 </code></pre></div></div>
   		</article>
   		<article>

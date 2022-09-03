@@ -72,15 +72,15 @@
 </code></pre></div>
 
 <h5>1.3 搜索文本</h5>
-<div class="highlight-custom"><pre><span></span><code>text1.concordance(&quot;monstrous&quot;)  # 搜索文本
+<div class="highlight-custom"><pre><span></span><code><span class="n">text1</span><span class="p">.</span><span class="n">concordance</span><span class="p">(</span><span class="ss">&quot;monstrous&quot;</span><span class="p">)</span>  <span class="o">#</span> <span class="err">搜索文本</span>
 
-text1.similar(&quot;monstrous&quot;)  # 查看相识上下文出现的单词
+<span class="n">text1</span><span class="p">.</span><span class="k">similar</span><span class="p">(</span><span class="ss">&quot;monstrous&quot;</span><span class="p">)</span>  <span class="o">#</span> <span class="err">查看相识上下文出现的单词</span>
 
-text2.common_contexts([&quot;monstrous&quot;, &quot;very&quot;])  # 查找两个词的共同上下文
+<span class="n">text2</span><span class="p">.</span><span class="n">common_contexts</span><span class="p">([</span><span class="ss">&quot;monstrous&quot;</span><span class="p">,</span> <span class="ss">&quot;very&quot;</span><span class="p">])</span>  <span class="o">#</span> <span class="err">查找两个词的共同上下文</span>
 
-text4.dispersion_plot([&quot;citizens&quot;, &quot;democracy&quot;, &quot;freedom&quot;, &quot;duties&quot;, &quot;America&quot;])  # 词汇分布图
+<span class="n">text4</span><span class="p">.</span><span class="n">dispersion_plot</span><span class="p">([</span><span class="ss">&quot;citizens&quot;</span><span class="p">,</span> <span class="ss">&quot;democracy&quot;</span><span class="p">,</span> <span class="ss">&quot;freedom&quot;</span><span class="p">,</span> <span class="ss">&quot;duties&quot;</span><span class="p">,</span> <span class="ss">&quot;America&quot;</span><span class="p">])</span>  <span class="o">#</span> <span class="err">词汇分布图</span>
 
-len(set(text3)) / len(text3)  # 文本词汇丰富度
+<span class="n">len</span><span class="p">(</span><span class="k">set</span><span class="p">(</span><span class="n">text3</span><span class="p">))</span> <span class="o">/</span> <span class="n">len</span><span class="p">(</span><span class="n">text3</span><span class="p">)</span>  <span class="o">#</span> <span class="err">文本词汇丰富度</span>
 </code></pre></div>
 
 <h5>1.3 布朗语料库</h5>
@@ -160,10 +160,10 @@ http://nltk.org/howto</p>
 <span class="n">cfd</span>  <span class="c1"># &lt;ConditionalFreqDist with 2 conditions&gt;</span>
 <span class="n">cfd</span><span class="o">.</span><span class="n">conditions</span><span class="p">()</span>  <span class="c1"># [&#39;news&#39;, &#39;romance&#39;]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">cfd</span><span class="p">[</span><span class="s1">&#39;news&#39;</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">cfd</span><span class="p">[</span><span class="s1">&#39;news&#39;</span><span class="p">])</span>
 <span class="c1"># &lt;FreqDist with 14394 samples and 100554 outcomes&gt;</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">cfd</span><span class="p">[</span><span class="s1">&#39;romance&#39;</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">cfd</span><span class="p">[</span><span class="s1">&#39;romance&#39;</span><span class="p">])</span>
 <span class="o">&lt;</span><span class="n">FreqDist</span> <span class="k">with</span> <span class="mi">8452</span> <span class="n">samples</span> <span class="ow">and</span> <span class="mi">70022</span> <span class="n">outcomes</span><span class="o">&gt;</span>
 
 <span class="n">cfd</span><span class="p">[</span><span class="s1">&#39;romance&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
@@ -173,11 +173,11 @@ http://nltk.org/howto</p>
 </code></pre></div>
 
 <h5>2.3 绘制分布图和分布表</h5>
-<div class="highlight-custom"><pre><span></span><code>cfd.tabulate(conditions=[&#39;English&#39;, &#39;German_Deutsch&#39;],
-             samples=range(10), cumulative=True)
+<div class="highlight-custom"><pre><span></span><code><span class="n">cfd</span><span class="p">.</span><span class="n">tabulate</span><span class="p">(</span><span class="n">conditions</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;English&#39;</span><span class="p">,</span> <span class="s1">&#39;German_Deutsch&#39;</span><span class="p">],</span>
+             <span class="n">samples</span><span class="o">=</span><span class="n">range</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">cumulative</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
 
-cfd.plot(conditions=[&#39;English&#39;, &#39;German_Deutsch&#39;],
-         samples=range(10), cumulative=True)
+<span class="n">cfd</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">conditions</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;English&#39;</span><span class="p">,</span> <span class="s1">&#39;German_Deutsch&#39;</span><span class="p">],</span>
+         <span class="n">samples</span><span class="o">=</span><span class="n">range</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">cumulative</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
 </code></pre></div>
 
 <h5>2.4 使用双连词生成随机文本</h5>

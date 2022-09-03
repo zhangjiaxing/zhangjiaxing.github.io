@@ -83,9 +83,9 @@
 <span class="err">这种模式下，同一主接口下的子接口之间彼此隔离，不能通信。即使从外部的物理交换机导流，也会被无情地丢掉。</span>
 
 <span class="n">vepa</span>
-<span class="err">这种模式下，子接口之间的通信流量需要导到外部支持</span> <span class="mf">802.1</span><span class="n">Qbg</span><span class="o">/</span><span class="n">VPEA</span> <span class="err">功能的交换机上（可以是物理的或者虚拟的），经由外部交换机转发，再绕回来。</span>
+<span class="err">这种模式下，子接口之间的通信流量需要导到外部支持</span> <span class="mi">802</span><span class="p">.</span><span class="mi">1</span><span class="n">Qbg</span><span class="o">/</span><span class="n">VPEA</span> <span class="err">功能的交换机上（可以是物理的或者虚拟的），经由外部交换机转发，再绕回来。</span>
 
-<span class="err">注：</span><span class="mf">802.1</span><span class="n">Qbg</span><span class="o">/</span><span class="n">VPEA</span> <span class="err">功能简单说就是交换机要支持</span> <span class="err">发夹（</span><span class="n">hairpin</span><span class="err">）</span> <span class="err">功能，也就是数据包从一个接口上收上来之后还能再扔回去。</span>
+<span class="err">注：</span><span class="mi">802</span><span class="p">.</span><span class="mi">1</span><span class="n">Qbg</span><span class="o">/</span><span class="n">VPEA</span> <span class="err">功能简单说就是交换机要支持</span> <span class="err">发夹（</span><span class="n">hairpin</span><span class="err">）</span> <span class="err">功能，也就是数据包从一个接口上收上来之后还能再扔回去。</span>
 
 <span class="n">bridge</span>
 <span class="err">这种模式下，模拟的是</span> <span class="n">Linux</span> <span class="n">bridge</span> <span class="err">的功能，但比</span> <span class="n">bridge</span> <span class="err">要好的一点是每个接口的</span> <span class="n">MAC</span> <span class="err">地址是已知的，不用学习。所以，这种模式下，子接口之间就是直接可以通信的。</span>

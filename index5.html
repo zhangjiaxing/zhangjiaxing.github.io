@@ -191,13 +191,13 @@ man -t eventfd <span class="p">|</span> ps2pdf - &gt; eventfd.pdf
 <span class="n">which</span>
 
 <span class="n">manpages里面还有一些有趣而且实用的资料</span><span class="err">：</span>
-<span class="n">man</span> <span class="mh">1</span> <span class="n">intro</span> <span class="err">–</span> <span class="err">一篇对从未接触过</span><span class="n">Linux的用户的简明教程</span><span class="err">。</span>
-<span class="n">man</span> <span class="mh">2</span> <span class="n">syscalls</span> <span class="err">–</span> <span class="err">内核系统请求的列表，按内核版本注释分类，系统编程必备。</span>
-<span class="n">man</span> <span class="mh">2</span> <span class="n">select_tut</span> <span class="err">–</span> <span class="err">关于</span><span class="n">select</span><span class="p">()</span><span class="err">系统请求的教程。</span>
-<span class="n">man</span> <span class="mh">3</span> <span class="k">string</span> <span class="err">–</span> <span class="err">在头文件内的所有函数。</span>
-<span class="n">man</span> <span class="mh">3</span> <span class="n">stdio</span> <span class="err">–</span> <span class="err">关于头文件的使用，标准输入</span><span class="o">/</span><span class="err">输出库的说明。</span>
-<span class="n">man</span> <span class="mh">3</span> <span class="n">errno</span> <span class="err">–</span> <span class="err">所有</span><span class="n">errorno的取值及说明</span><span class="err">。（</span><span class="n">C语言内类似其他语言的异常告知机制</span><span class="err">）</span>
-<span class="n">man</span> <span class="mh">4 …</span></code></pre></div></div>
+<span class="n">man</span> <span class="mi">1</span> <span class="n">intro</span> <span class="err">–</span> <span class="err">一篇对从未接触过</span><span class="n">Linux的用户的简明教程</span><span class="err">。</span>
+<span class="n">man</span> <span class="mi">2</span> <span class="n">syscalls</span> <span class="err">–</span> <span class="err">内核系统请求的列表，按内核版本注释分类，系统编程必备。</span>
+<span class="n">man</span> <span class="mi">2</span> <span class="n">select_tut</span> <span class="err">–</span> <span class="err">关于</span><span class="k">select</span><span class="p">()</span><span class="err">系统请求的教程。</span>
+<span class="n">man</span> <span class="mi">3</span> <span class="n">string</span> <span class="err">–</span> <span class="err">在头文件内的所有函数。</span>
+<span class="n">man</span> <span class="mi">3</span> <span class="n">stdio</span> <span class="err">–</span> <span class="err">关于头文件的使用，标准输入</span><span class="o">/</span><span class="err">输出库的说明。</span>
+<span class="n">man</span> <span class="mi">3</span> <span class="n">errno</span> <span class="err">–</span> <span class="err">所有</span><span class="n">errorno的取值及说明</span><span class="err">。（</span><span class="n">C语言内类似其他语言的异常告知机制</span><span class="err">）</span>
+<span class="n">man</span> <span class="mi">4 …</span></code></pre></div></div>
             <footer>
                 <a rel="full-article" href="/posts/2015/01/20/linux-man-pages.html">Read On &crarr;</a>
             </footer>
@@ -219,9 +219,9 @@ man -t eventfd <span class="p">|</span> ps2pdf - &gt; eventfd.pdf
 <code>setfacl --restore=systemP.bak</code></li>
 </ol>
 <h4>进行手动恢复命令权限</h4>
-<div class="highlight-custom"><pre><span></span><code>chmod u+s `which passwd`
-chmod u+s `which su`
-chmod u+s `which sudo`
+<div class="highlight-custom"><pre><span></span><code><span class="err">chmod u+s `which passwd`</span>
+<span class="err">chmod u+s `which su`</span>
+<span class="err">chmod u+s `which sudo`</span>
 </code></pre></div></div>
   		</article>
   		<article>
@@ -234,15 +234,15 @@ chmod u+s `which sudo`
     </p>
 </header>
 
-        <div class="entry-content"><div class="highlight-custom"><pre><span></span><code>info &lt;command&gt;
-info 比man 更详细
-info 中 按tab 跳到下一个 连接 （有*的，可以连接到其他info）
-按enter跳转
-n按键跳到下一个小节
-p跳到上一个小节
-u跳到上一层
-s查找关键字
-q离开
+        <div class="entry-content"><div class="highlight-custom"><pre><span></span><code><span class="err">info &lt;command&gt;</span>
+<span class="err">info 比man 更详细</span>
+<span class="err">info 中 按tab 跳到下一个 连接 （有*的，可以连接到其他info）</span>
+<span class="err">按enter跳转</span>
+<span class="err">n按键跳到下一个小节</span>
+<span class="err">p跳到上一个小节</span>
+<span class="err">u跳到上一层</span>
+<span class="err">s查找关键字</span>
+<span class="err">q离开</span>
 </code></pre></div></div>
   		</article>
 <div class="pagination">

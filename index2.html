@@ -123,11 +123,11 @@ ifconfig eth0 txqueuelen <span class="m">10000 …</span></code></pre></div></di
 
         <div class="entry-content"><div class="highlight-custom"><pre><span></span><code><span class="err">据说在虚拟机中使用这个</span><span class="p">,</span> <span class="err">流畅度比安装的版本快很多</span>
 <span class="err">可以免费使用</span>
-<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">developer</span><span class="o">.</span><span class="n">microsoft</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">en</span><span class="o">-</span><span class="n">us</span><span class="o">/</span><span class="n">microsoft</span><span class="o">-</span><span class="n">edge</span><span class="o">/</span><span class="n">tools</span><span class="o">/</span><span class="n">vms</span><span class="o">/</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">developer</span><span class="p">.</span><span class="n">microsoft</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">en</span><span class="o">-</span><span class="n">us</span><span class="o">/</span><span class="n">microsoft</span><span class="o">-</span><span class="n">edge</span><span class="o">/</span><span class="n">tools</span><span class="o">/</span><span class="n">vms</span><span class="o">/</span>
 
 
-<span class="err">下面这个是有</span><span class="n">win10开发环境的虚拟机</span><span class="p">,</span> <span class="err">比较大</span><span class="mi">20</span><span class="n">G</span>
-<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">developer</span><span class="o">.</span><span class="n">microsoft</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">en</span><span class="o">-</span><span class="n">us</span><span class="o">/</span><span class="n">windows</span><span class="o">/</span><span class="n">downloads</span><span class="o">/</span><span class="n">virtual</span><span class="o">-</span><span class="n">machines</span><span class="o">/</span>
+<span class="err">下面这个是有</span><span class="n">win10开发环境的虚拟机</span><span class="p">,</span> <span class="err">比较大</span><span class="mi">20</span><span class="k">G</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">developer</span><span class="p">.</span><span class="n">microsoft</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">en</span><span class="o">-</span><span class="n">us</span><span class="o">/</span><span class="n">windows</span><span class="o">/</span><span class="n">downloads</span><span class="o">/</span><span class="n">virtual</span><span class="o">-</span><span class="n">machines</span><span class="o">/</span>
 </code></pre></div></div>
   		</article>
   		<article>
@@ -169,8 +169,8 @@ ifconfig eth0 txqueuelen <span class="m">10000 …</span></code></pre></div></di
 <p>首先测试 <code>yes | dpkg -i *</code> 对话框还是会出现. (<code>yes | dpkg -i</code> 印象里面看别人这么写过.  <code>yes | tty</code> 显示 <code>not a tty</code>)</p>
 <p>于是测试 ssh -T 链接本机, 安装果然没有对话框. 能够成功安装,但是有一行报错 <code>debconf: unable to initialize frontend: Dialog</code></p>
 <p>顺着这个报错, 终于搜到了 如何dpkg安装软件不出现dialog对话框.</p>
-<div class="highlight-custom"><pre><span></span><code><span class="err">设置环境变量</span><span class="p">,</span> <span class="err">然后在</span> <span class="n">dpkg安装就可以</span>
-<span class="n">DEBIAN_FRONTEND</span><span class="o">=</span><span class="n">noninteractive</span> <span class="n">dpkg</span> <span class="o">-</span><span class="n">i</span> <span class="o">*</span>
+<div class="highlight-custom"><pre><span></span><code><span class="err">设置环境变量, 然后在 dpkg安装就可以</span>
+<span class="err">DEBIAN_FRONTEND=noninteractive dpkg -i *</span>
 </code></pre></div></div>
   		</article>
   		<article>
@@ -186,11 +186,11 @@ ifconfig eth0 txqueuelen <span class="m">10000 …</span></code></pre></div></di
         <div class="entry-content"><ol>
 <li>zypper 安装软件时候版本选择</li>
 </ol>
-<div class="highlight-custom"><pre><span></span><code>查看仓库中有firefox的哪些版本
-sudo zypper se -s firefox
+<div class="highlight-custom"><pre><span></span><code><span class="err">查看仓库中有</span><span class="n">firefox的哪些版本</span>
+<span class="n">sudo</span> <span class="n">zypper</span> <span class="n">se</span> <span class="o">-</span><span class="n">s</span> <span class="n">firefox</span>
 
-安装指定版本
-sudo zypper in --oldpackage MozillaFirefox=78.0.1-lp152.2.5.1
+<span class="err">安装指定版本</span>
+<span class="n">sudo</span> <span class="n">zypper</span> <span class="k">in</span> <span class="c1">--oldpackage MozillaFirefox=78.0.1-lp152.2.5.1</span>
 </code></pre></div>
 
 <ol>
@@ -365,11 +365,11 @@ zypper dup --from packman-essentials --allow-vendor-change
 </header>
 
         <div class="entry-content"><p>tcp</p>
-<div class="highlight-custom"><pre><span></span><code>服务器
-nc bind地址 监听端口
+<div class="highlight-custom"><pre><span></span><code><span class="err">服务器</span>
+<span class="n">nc</span> <span class="n">bind地址</span> <span class="err">监听端口</span>
 
-客户端
-nc 服务器地址 服务器端口
+<span class="err">客户端</span>
+<span class="n">nc</span> <span class="err">服务器地址</span> <span class="err">服务器端口</span>
 </code></pre></div>
 
 <p>udp <code>nc</code> 加上 <code>-u</code> 参数即可</p></div>

@@ -65,14 +65,14 @@
 </header>
 
     <div class="entry-content"><p>linux 使用network manager 开启wifi热点</p>
-<div class="highlight-custom"><pre><span></span><code>开启热点
-<span class="nv">nmcli</span> <span class="nv">device</span> <span class="nv">wifi</span> <span class="nv">hotspot</span>  <span class="nv">ssid</span> <span class="nv">zhiliao</span><span class="o">-</span><span class="nv">test</span>  <span class="nv">password</span> <span class="mi">12345678</span>
-或者
-<span class="nv">nmcli</span> <span class="nv">device</span> <span class="nv">wifi</span> <span class="nv">hotspot</span> <span class="nv">con</span><span class="o">-</span><span class="nv">name</span> <span class="nv">zhiliao</span><span class="o">-</span><span class="nv">test</span><span class="o">-</span><span class="mi">5</span><span class="nv">G</span> <span class="nv">ssid</span> <span class="nv">zhiliao</span><span class="o">-</span><span class="nv">test</span><span class="o">-</span><span class="mi">5</span><span class="nv">G</span> <span class="nv">band</span> <span class="nv">a</span> <span class="nv">password</span> <span class="mi">12345678</span>
+<div class="highlight-custom"><pre><span></span><code><span class="err">开启热点</span>
+<span class="n">nmcli</span> <span class="n">device</span> <span class="n">wifi</span> <span class="n">hotspot</span>  <span class="n">ssid</span> <span class="n">zhiliao</span><span class="o">-</span><span class="n">test</span>  <span class="n">password</span> <span class="mi">12345678</span>
+<span class="err">或者</span>
+<span class="n">nmcli</span> <span class="n">device</span> <span class="n">wifi</span> <span class="n">hotspot</span> <span class="n">con</span><span class="o">-</span><span class="n">name</span> <span class="n">zhiliao</span><span class="o">-</span><span class="n">test</span><span class="o">-</span><span class="mi">5</span><span class="k">G</span> <span class="n">ssid</span> <span class="n">zhiliao</span><span class="o">-</span><span class="n">test</span><span class="o">-</span><span class="mi">5</span><span class="k">G</span> <span class="n">band</span> <span class="n">a</span> <span class="n">password</span> <span class="mi">12345678</span>
 
-删除热点配置
-<span class="nv">nmcli</span> <span class="nv">connection</span> <span class="k">show</span>
-<span class="nv">nmcli</span>  <span class="nv">connection</span> <span class="nv">delete</span> <span class="nv">zhiliao</span><span class="o">-</span><span class="nv">test</span><span class="o">-</span><span class="mi">5</span><span class="nv">G</span>
+<span class="err">删除热点配置</span>
+<span class="n">nmcli</span> <span class="k">connection</span> <span class="k">show</span>
+<span class="n">nmcli</span>  <span class="k">connection</span> <span class="k">delete</span> <span class="n">zhiliao</span><span class="o">-</span><span class="n">test</span><span class="o">-</span><span class="mi">5</span><span class="k">G</span>
 </code></pre></div></div>
     <footer>
 <p class="meta">

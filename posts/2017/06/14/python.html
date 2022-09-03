@@ -64,29 +64,29 @@
     </p>
 </header>
 
-    <div class="entry-content"><div class="highlight-custom"><pre><span></span><code>:::python
-def fun(arg=[]):
-    arg.append(&#39;A&#39;)
-    print(arg)
+    <div class="entry-content"><div class="highlight-custom"><pre><span></span><code><span class="p">:::</span><span class="n">python</span>
+<span class="n">def</span> <span class="n">fun</span><span class="p">(</span><span class="n">arg</span><span class="o">=</span><span class="p">[]):</span>
+    <span class="n">arg</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+    <span class="n">print</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
 
 
-fun()
-# [&#39;A&#39;]
+<span class="n">fun</span><span class="p">()</span>
+<span class="o">#</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span>
 
-fun()
-# [&#39;A&#39;, &#39;A&#39;]
+<span class="n">fun</span><span class="p">()</span>
+<span class="o">#</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">]</span>
 </code></pre></div>
 
 <p>第二个</p>
-<div class="highlight-custom"><pre><span></span><code>:::python
-a = [1, 3, 4]
+<div class="highlight-custom"><pre><span></span><code><span class="p">:::</span><span class="n">python</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 
-b = {&quot;a&quot;: 7}
+<span class="n">b</span> <span class="o">=</span> <span class="err">{</span><span class="ss">&quot;a&quot;</span><span class="p">:</span> <span class="mi">7</span><span class="err">}</span>
 
-a += b
+<span class="n">a</span> <span class="o">+=</span> <span class="n">b</span>
 
-a
-&gt;&gt;&gt; [1, 3, 4, &#39;a&#39;]
+<span class="n">a</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">]</span>
 </code></pre></div></div>
     <footer>
 <p class="meta">

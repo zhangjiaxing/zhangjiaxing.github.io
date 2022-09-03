@@ -164,10 +164,10 @@ http://nltk.org/howto</p>
 <span class="n">cfd</span>  <span class="c1"># &lt;ConditionalFreqDist with 2 conditions&gt;</span>
 <span class="n">cfd</span><span class="o">.</span><span class="n">conditions</span><span class="p">()</span>  <span class="c1"># [&#39;news&#39;, &#39;romance&#39;]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">cfd</span><span class="p">[</span><span class="s1">&#39;news&#39;</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">cfd</span><span class="p">[</span><span class="s1">&#39;news&#39;</span><span class="p">])</span>
 <span class="c1"># &lt;FreqDist with 14394 samples and 100554 outcomes&gt;</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">cfd</span><span class="p">[</span><span class="s1">&#39;romance&#39;</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">cfd</span><span class="p">[</span><span class="s1">&#39;romance&#39;</span><span class="p">])</span>
 <span class="o">&lt;</span><span class="n">FreqDist</span> <span class="k">with</span> <span class="mi">8452</span> <span class="n">samples</span> <span class="ow">and</span> <span class="mi">70022</span> <span class="n">outcomes</span><span class="o">&gt;</span>
 
 <span class="n">cfd</span><span class="p">[</span><span class="s1">&#39;romance&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
@@ -177,11 +177,11 @@ http://nltk.org/howto</p>
 </code></pre></div>
 
 <h5>2.3 绘制分布图和分布表</h5>
-<div class="highlight-custom"><pre><span></span><code>cfd.tabulate(conditions=[&#39;English&#39;, &#39;German_Deutsch&#39;],
-             samples=range(10), cumulative=True)
+<div class="highlight-custom"><pre><span></span><code><span class="n">cfd</span><span class="p">.</span><span class="n">tabulate</span><span class="p">(</span><span class="n">conditions</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;English&#39;</span><span class="p">,</span> <span class="s1">&#39;German_Deutsch&#39;</span><span class="p">],</span>
+             <span class="n">samples</span><span class="o">=</span><span class="n">range</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">cumulative</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
 
-cfd.plot(conditions=[&#39;English&#39;, &#39;German_Deutsch&#39;],
-         samples=range(10), cumulative=True)
+<span class="n">cfd</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">conditions</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;English&#39;</span><span class="p">,</span> <span class="s1">&#39;German_Deutsch&#39;</span><span class="p">],</span>
+         <span class="n">samples</span><span class="o">=</span><span class="n">range</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">cumulative</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
 </code></pre></div>
 
 <h5>2.4 使用双连词生成随机文本</h5>
