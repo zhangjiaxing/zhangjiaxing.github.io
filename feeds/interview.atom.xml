@@ -15,6 +15,7 @@
 &lt;li&gt;QWidget 和Qt Quick （qml）区别，底层是否一样？&lt;/li&gt;
 &lt;li&gt;Qt moc的作用？&lt;/li&gt;
 &lt;li&gt;Qt 是否支持反射，是如何实现的？&lt;/li&gt;
+&lt;li&gt;Qt 中一般不用阻塞IO模型， 因为长时间阻塞会导致界面失去响应。例如，使用阻塞模型不能兼顾网络操作和UI界面响应。你知道在Qt里面是如何解决多路IO需要同时处理问题的吗？&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3&gt;数据结构&lt;/h3&gt;
 &lt;ol&gt;
@@ -26,14 +27,7 @@
 &lt;/ol&gt;
 &lt;h3&gt;操作系统编程接口&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;进程间通信方式有哪几种&lt;/li&gt;
-&lt;li&gt;说说线程同步的方式&lt;/li&gt;
-&lt;li&gt;信号和信号量有什么区别&lt;/li&gt;
-&lt;li&gt;条件变量是干什么用的&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3&gt;linux&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;文件权限有哪些？除了读写可执行 …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;h3&gt;C++&lt;/h3&gt;
+&lt;li&gt;进程间通信方式有哪几种 …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;h3&gt;C++&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;说说C++的类型转换和使用场景。&lt;/li&gt;
 &lt;li&gt;什么是抽象类。怎么定义。&lt;/li&gt;
@@ -49,6 +43,7 @@
 &lt;li&gt;QWidget 和Qt Quick （qml）区别，底层是否一样？&lt;/li&gt;
 &lt;li&gt;Qt moc的作用？&lt;/li&gt;
 &lt;li&gt;Qt 是否支持反射，是如何实现的？&lt;/li&gt;
+&lt;li&gt;Qt 中一般不用阻塞IO模型， 因为长时间阻塞会导致界面失去响应。例如，使用阻塞模型不能兼顾网络操作和UI界面响应。你知道在Qt里面是如何解决多路IO需要同时处理问题的吗？&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3&gt;数据结构&lt;/h3&gt;
 &lt;ol&gt;
@@ -89,6 +84,7 @@
 &lt;li&gt;给一个字符串，统计单词个数。&lt;/li&gt;
 &lt;li&gt;求斐波那契数列第N项。&lt;/li&gt;
 &lt;li&gt;单链表逆序。&lt;/li&gt;
+&lt;li&gt;格式化json&lt;/li&gt;
 &lt;li&gt;给定一个正整数n作为边长，请按照下图画出正方形，正方形的边按照&lt;code&gt;A-Za-z0-9&lt;/code&gt;排列。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;

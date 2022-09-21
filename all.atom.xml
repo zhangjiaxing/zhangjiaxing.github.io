@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>无聊就该多读书。</description><lastBuildDate>Sat, 03 Sep 2022 12:59:46 +0800</lastBuildDate><item><title>Flatpak vs Snap</title><link>/posts/2022/09/03/Flatpak-vs-Snap.html</link><description>&lt;h2&gt;Flatpak vs. Snap&lt;/h2&gt;
+<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>无聊就该多读书。</description><lastBuildDate>Sat, 03 Sep 2022 16:57:51 +0800</lastBuildDate><item><title>代替品查询网站</title><link>/posts/2022/09/03/alternativeto.html</link><description>&lt;p&gt;&lt;a href="https://alternativeto.net/"&gt;alternativeto&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Sat, 03 Sep 2022 16:57:51 +0800</pubDate><guid isPermaLink="false">tag:None,2022-09-03:/posts/2022/09/03/alternativeto.html</guid><category>web</category><category>web</category></item><item><title>Flatpak vs Snap</title><link>/posts/2022/09/03/Flatpak-vs-Snap.html</link><description>&lt;h2&gt;Flatpak vs. Snap&lt;/h2&gt;
 &lt;p&gt;Flatpak may have been in works since 2007 as glick, it’s not the only player in the Linux world. Canonical is the one that created waves with the announcement of Click, that later evolved into Snap.&lt;/p&gt;
 &lt;p&gt;There is a healthy competition between the two projects and …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Sat, 03 Sep 2022 12:59:46 +0800</pubDate><guid isPermaLink="false">tag:None,2022-09-03:/posts/2022/09/03/Flatpak-vs-Snap.html</guid><category>container</category><category>linux</category><category>docker</category><category>flatpak</category></item><item><title>面试中我经常问的问题</title><link>/posts/2022/07/09/interview-questions.html</link><description>&lt;h3&gt;C++&lt;/h3&gt;
 &lt;ol&gt;
@@ -17,6 +17,7 @@
 &lt;li&gt;QWidget 和Qt Quick （qml）区别，底层是否一样？&lt;/li&gt;
 &lt;li&gt;Qt moc的作用？&lt;/li&gt;
 &lt;li&gt;Qt 是否支持反射，是如何实现的？&lt;/li&gt;
+&lt;li&gt;Qt 中一般不用阻塞IO模型， 因为长时间阻塞会导致界面失去响应。例如，使用阻塞模型不能兼顾网络操作和UI界面响应。你知道在Qt里面是如何解决多路IO需要同时处理问题的吗？&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3&gt;数据结构&lt;/h3&gt;
 &lt;ol&gt;
@@ -28,14 +29,7 @@
 &lt;/ol&gt;
 &lt;h3&gt;操作系统编程接口&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;进程间通信方式有哪几种&lt;/li&gt;
-&lt;li&gt;说说线程同步的方式&lt;/li&gt;
-&lt;li&gt;信号和信号量有什么区别&lt;/li&gt;
-&lt;li&gt;条件变量是干什么用的&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3&gt;linux&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;文件权限有哪些？除了读写可执行 …&lt;/li&gt;&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Sat, 09 Jul 2022 01:12:10 +0800</pubDate><guid isPermaLink="false">tag:None,2022-07-09:/posts/2022/07/09/interview-questions.html</guid><category>interview</category><category>interview</category><category>programming</category></item><item><title>pkexec</title><link>/posts/2022/07/05/pkexec.html</link><description>&lt;p&gt;可以使用pkexec代替gksu 和 sudo&lt;/p&gt;
+&lt;li&gt;进程间通信方式有哪几种 …&lt;/li&gt;&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Sat, 09 Jul 2022 01:12:10 +0800</pubDate><guid isPermaLink="false">tag:None,2022-07-09:/posts/2022/07/09/interview-questions.html</guid><category>interview</category><category>interview</category><category>programming</category></item><item><title>pkexec</title><link>/posts/2022/07/05/pkexec.html</link><description>&lt;p&gt;可以使用pkexec代替gksu 和 sudo&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;pkexec bash&lt;/p&gt;
 &lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Tue, 05 Jul 2022 13:26:03 +0800</pubDate><guid isPermaLink="false">tag:None,2022-07-05:/posts/2022/07/05/pkexec.html</guid><category>linux</category><category>linux</category></item><item><title>解决linux下Qt creator不显示qDebug输出</title><link>/posts/2022/07/04/qt-creator-qDebug.html</link><description>&lt;p&gt;linux下Qt creator 不显示qDebug输出， 可以在qtcreator的.desktop文件添加环境变量。
@@ -544,8 +538,8 @@ dnsmasq …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elem
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://developer.gnome.org/gtk3/stable/gtk-broadway.html"&gt;https://developer.gnome.org/gtk3/stable/gtk-broadway.html&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://developer.gnome.org/gtk3/unstable/gtk-building.html"&gt;https://developer.gnome.org/gtk3/unstable/gtk-building.html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://blogs.gnome.org/alexl/2011/04/18/broadway-update-3/"&gt;https://blogs.gnome.org/alexl/2011/04/18/broadway-update-3&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/symbiose/symbiose/wiki/Broadway"&gt;https://github.com/symbiose/symbiose …&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Fri, 29 Dec 2017 18:14:49 +0800</pubDate><guid isPermaLink="false">tag:None,2017-12-29:/posts/2017/12/29/gtk-broadway.html</guid><category>linux</category><category>linux</category><category>gtk+</category><category>gnome</category></item><item><title>SysRq</title><link>/posts/2017/12/29/linux-sysrq.html</link><description>&lt;h2&gt;SysRq HELP&lt;/h2&gt;
+&lt;li&gt;&lt;a href="https://blogs.gnome.org/alexl/2011/03/15/gtk-html-backend-update"&gt;https://blogs.gnome.org/alexl/2011/03/15/gtk-html-backend-update&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://blogs.gnome.org/alexl/2011/04/18/broadway-update-3/"&gt;https://blogs.gnome.org/alexl …&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Fri, 29 Dec 2017 18:14:49 +0800</pubDate><guid isPermaLink="false">tag:None,2017-12-29:/posts/2017/12/29/gtk-broadway.html</guid><category>linux</category><category>linux</category><category>gtk+</category><category>gnome</category></item><item><title>SysRq</title><link>/posts/2017/12/29/linux-sysrq.html</link><description>&lt;h2&gt;SysRq HELP&lt;/h2&gt;
 &lt;h5&gt;开启这个功能&lt;/h5&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt; &amp;gt; /proc/sys/kernel/sysrq  &lt;span class="c1"&gt;# 或者在 /etc/sysctl.conf 中设置 kernel.sysrq=1&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;

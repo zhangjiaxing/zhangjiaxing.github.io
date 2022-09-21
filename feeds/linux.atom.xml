@@ -528,7 +528,10 @@ sudo zypper update
 &lt;p&gt;去掉sync断电又会丢数据.&lt;/p&gt;
 &lt;p&gt;ext4 man-pages 上说 &lt;code&gt;fd = open("foo", O_TRUNC)/write(fd,...)/close(fd)&lt;/code&gt; 或者好一点的 &lt;code&gt;fd = open("foo.new")/write(fd,...)/close(fd)/ rename("foo.new", "foo")&lt;/code&gt; 这种用法突然断电容易产生零长文件, 在close之前调用fsync好一点. 实际上 auto_da_alloc 挂载选项就是为了解决上面的一些情况的, man-pages上说auto_da_alloc 相对及时把数据写进硬盘. 但是自己测试断电依然会丢数据, 产生零长文件(&lt;code&gt;zero-length&lt;/code&gt;) .&lt;/p&gt;
 &lt;p&gt;尝试新的挂载选项为 defaults,noatime,nodelalloc,auto_da_alloc,commit=1,data=journal, 不带sync. 不知道管用不管用.&lt;/p&gt;
-&lt;p&gt;有人推荐xfs, 据说断电不容易丢数据, 但xfs用于读写密集的环境会有一些问题, 读写密集环境用ext4.&lt;/p&gt;</content><category term="linux"></category><category term="linux"></category><category term="ext4"></category></entry><entry><title>raspberry watchdog</title><link href="/posts/2019/11/22/raspberry-watchdog.html" rel="alternate"></link><published>2019-11-22T20:06:38+08:00</published><updated>2019-11-22T20:06:38+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2019-11-22:/posts/2019/11/22/raspberry-watchdog.html</id><content type="html">&lt;p&gt;raspberry 4b
+&lt;p&gt;有人推荐xfs, 据说断电不容易丢数据, 但xfs用于读写密集的环境会有一些问题, 读写密集环境用ext4.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;https://blogs.gnome.org/alexl/2009/03/16/ext4-vs-fsync-my-take/&lt;/p&gt;
+&lt;/blockquote&gt;</content><category term="linux"></category><category term="linux"></category><category term="ext4"></category></entry><entry><title>raspberry watchdog</title><link href="/posts/2019/11/22/raspberry-watchdog.html" rel="alternate"></link><published>2019-11-22T20:06:38+08:00</published><updated>2019-11-22T20:06:38+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2019-11-22:/posts/2019/11/22/raspberry-watchdog.html</id><content type="html">&lt;p&gt;raspberry 4b
 Raspbian GNU/Linux 10 (buster)&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code&gt;ls /dev/watchdog*&lt;/code&gt;&lt;/p&gt;
@@ -616,8 +619,8 @@ sysctl -p&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://developer.gnome.org/gtk3/stable/gtk-broadway.html"&gt;https://developer.gnome.org/gtk3/stable/gtk-broadway.html&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://developer.gnome.org/gtk3/unstable/gtk-building.html"&gt;https://developer.gnome.org/gtk3/unstable/gtk-building.html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://blogs.gnome.org/alexl/2011/04/18/broadway-update-3/"&gt;https://blogs.gnome.org/alexl/2011/04/18/broadway-update-3&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/symbiose/symbiose/wiki/Broadway"&gt;https://github.com/symbiose/symbiose …&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h3&gt;在浏览器中显示gtk+应用&lt;/h3&gt;
+&lt;li&gt;&lt;a href="https://blogs.gnome.org/alexl/2011/03/15/gtk-html-backend-update"&gt;https://blogs.gnome.org/alexl/2011/03/15/gtk-html-backend-update&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://blogs.gnome.org/alexl/2011/04/18/broadway-update-3/"&gt;https://blogs.gnome.org/alexl …&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h3&gt;在浏览器中显示gtk+应用&lt;/h3&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;GDK_BACKEND&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;broadway &lt;span class="nv"&gt;BROADWAY_DISPLAY&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;:5 gtk3-demo
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -628,6 +631,7 @@ sysctl -p&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://developer.gnome.org/gtk3/stable/gtk-broadway.html"&gt;https://developer.gnome.org/gtk3/stable/gtk-broadway.html&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://developer.gnome.org/gtk3/unstable/gtk-building.html"&gt;https://developer.gnome.org/gtk3/unstable/gtk-building.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://blogs.gnome.org/alexl/2011/03/15/gtk-html-backend-update"&gt;https://blogs.gnome.org/alexl/2011/03/15/gtk-html-backend-update&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://blogs.gnome.org/alexl/2011/04/18/broadway-update-3/"&gt;https://blogs.gnome.org/alexl/2011/04/18/broadway-update-3&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/symbiose/symbiose/wiki/Broadway"&gt;https://github.com/symbiose/symbiose/wiki/Broadway&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.tarnyko.net/en/?q=node/8"&gt;Tutorial : using GTK+3 "Broadway" on Windows&lt;/a&gt;&lt;/li&gt;
