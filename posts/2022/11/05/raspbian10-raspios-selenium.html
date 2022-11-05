@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>SysRq &mdash; cat ~/.zhiliao.history</title>
+  <title>raspberry-debian10-selenium测试 &mdash; cat ~/.zhiliao.history</title>
   <meta name="author" content="zhiliao">
 
   <link href="/feeds/all.atom.xml" type="application/rss+xml" rel="alternate"
@@ -58,47 +58,51 @@
 <div>
   <article class="hentry" role="article">
 <header>
-      <h1 class="entry-title">SysRq</h1>
+      <h1 class="entry-title">raspberry-debian10-selenium测试</h1>
     <p class="meta">
-<time datetime="2017-12-29T14:20:16+08:00" pubdate>2017-12-29 14:20:16</time>      
+<time datetime="2022-11-05T18:40:04+08:00" pubdate>2022-11-05 18:40:04</time>      
     </p>
 </header>
 
-    <div class="entry-content"><h2>SysRq HELP</h2>
-<h5>开启这个功能</h5>
-<div class="highlight-custom"><pre><span></span><code><span class="nb">echo</span> <span class="m">1</span> &gt; /proc/sys/kernel/sysrq  <span class="c1"># 或者在 /etc/sysctl.conf 中设置 kernel.sysrq=1</span>
+    <div class="entry-content"><p>测试环境 <code>Raspbian GNU/Linux 10 (buster)</code></p>
+<p>经过搜索发现firefox的geckodriver官方不支持arm. 所以只能选择chromium浏览器.</p>
+<h4>安装依赖</h4>
+<div class="highlight-custom"><pre><span></span><code>sudo apt install python3-selenium
+sudo apt install python3-pyvirtualdisplay <span class="c1"># 由于raspberry没有启动图形界面, 这个用来虚拟显示器</span>
+sudo apt install python3-xvfbwrapper
+sudo apt install xvfb
+sudo apt install chromium-browser chromium-chromedriver
+sudo apt install bluealsa <span class="c1"># chromium-browser 启动时会报告缺少这个包</span>
 </code></pre></div>
 
-<h5>用法1:</h5>
-<div class="highlight-custom"><pre><span></span><code><span class="nb">echo</span> b &gt; /proc/sysrq-trigger
+<h4>命令行启动chromium-browser测试</h4>
+<div class="highlight-custom"><pre><span></span><code>Xvfb -ac :7 -screen <span class="m">0</span> 1280x1024x8 -extension RANDR -nolisten inet6 <span class="p">&amp;</span>
+
+<span class="nb">export</span>  <span class="nv">DISPLAY</span><span class="o">=</span>:7
+
+chromium-browser
+
+<span class="c1"># 发现启动失败, 报告缺少`bluealsa`, 另外想在root用户下运行, 还需要加上`--no-sandbox`参数</span>
+<span class="c1"># 安装上软件, 加上参数后测试, root用户ssh命令行启动chromium-browser已经不报错</span>
 </code></pre></div>
 
-<h5>用法2:</h5>
-<div class="highlight-custom"><pre><span></span><code>Alt + SysRq + b  <span class="c1"># SysRq 键在x86上一般为 [print screen] 键</span>
-</code></pre></div>
+<h4>然后执行测试代码, 成功</h4>
+<p>python3 test.py</p>
+<div class="highlight-custom"><pre><span></span><code><span class="kn">from</span> <span class="nn">pyvirtualdisplay</span> <span class="kn">import</span> <span class="n">Display</span>
+<span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
 
-<h5>命令介绍</h5>
-<div class="highlight-custom"><pre><span></span><code><span class="err">loglevel(0-9)</span>
-<span class="err">reboot(b)</span>
-<span class="err">crash(c)</span>
-<span class="err">terminate-all-tasks(e)</span>
-<span class="err">memory-full-oom-kill(f)</span>
-<span class="err">kill-all-tasks(i)</span>
-<span class="err">thaw-filesystems(j)</span>
-<span class="err">sak(k)</span>
-<span class="err">show-backtrace-all-active-cpus(l)</span>
-<span class="err">show-memory-usage(m)</span>
-<span class="err">nice-all-RT-tasks(n)</span>
-<span class="err">poweroff(o)</span>
-<span class="err">show-registers(p)</span>
-<span class="err">show-all-timers(q)</span>
-<span class="err">unraw(r)</span>
-<span class="err">sync(s)</span>
-<span class="err">show-task-states(t)</span>
-<span class="err">unmount(u)</span>
-<span class="err">force-fb(V)</span>
-<span class="err">show-blocked-tasks(w)</span>
-<span class="err">dump-ftrace-buffer(z)</span>
+<span class="n">display</span> <span class="o">=</span> <span class="n">Display</span><span class="p">(</span><span class="n">visible</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">768</span><span class="p">))</span>
+<span class="n">display</span><span class="o">.</span><span class="n">start</span><span class="p">()</span> <span class="c1"># 开启虚拟GUI</span>
+
+<span class="n">options</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">ChromeOptions</span><span class="p">()</span>
+<span class="n">options</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--remote-debugging-port=9222&quot;</span><span class="p">)</span>
+<span class="n">options</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--no-sandbox&quot;</span><span class="p">)</span>
+
+<span class="n">chrome</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">executable_path</span><span class="o">=</span><span class="s2">&quot;/usr/bin/chromedriver&quot;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">options</span><span class="p">)</span>
+<span class="n">chrome</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://www.jd.com/&#39;</span><span class="p">)</span>
+<span class="n">chrome</span><span class="o">.</span><span class="n">save_screenshot</span><span class="p">(</span><span class="s2">&quot;chrome_jd.png&quot;</span><span class="p">)</span>
+
+<span class="n">chrome</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
 </code></pre></div></div>
     <footer>
 <p class="meta">
@@ -107,11 +111,11 @@
         zhiliao
     </span>
   </span>
-<time datetime="2017-12-29T14:20:16+08:00" pubdate>2017-12-29 14:20:16</time>  <span class="categories">
-    <a class='category' href='/category/linux.html'>linux</a>
+<time datetime="2022-11-05T18:40:04+08:00" pubdate>2022-11-05 18:40:04</time>  <span class="categories">
+    <a class='category' href='/category/web.html'>web</a>
   </span>
   <span class="categories">
-    <a class="category" href="/tag/linux.html">linux</a>  </span>
+    <a class="category" href="/tag/linux.html">linux</a>,    <a class="category" href="/tag/selenium.html">selenium</a>  </span>
 </p><div class="sharing">
 </div>    </footer>
   </article>

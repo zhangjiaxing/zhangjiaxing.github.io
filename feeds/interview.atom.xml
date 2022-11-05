@@ -16,18 +16,14 @@
 &lt;li&gt;Qt moc的作用？&lt;/li&gt;
 &lt;li&gt;Qt 是否支持反射，是如何实现的？&lt;/li&gt;
 &lt;li&gt;Qt 中一般不用阻塞IO模型， 因为长时间阻塞会导致界面失去响应。例如，使用阻塞模型不能兼顾网络操作和UI界面响应。你知道在Qt里面是如何解决多路IO需要同时处理问题的吗？&lt;/li&gt;
+&lt;li&gt;Qt 框架本身如何实现跨平台. (qpa&lt;/li&gt;
+&lt;li&gt;正在运行的QThread中如何发送数据给Qt主线程. 如果使用信号和槽如何保证槽函数在主线程中执行? (postEvent&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3&gt;数据结构&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;你知道哪些数据结构？什么数据结构适合什么场景？你用过哪些？&lt;/li&gt;
 &lt;li&gt;单链表和双链表有什么区别，头节点是什么作用？如果想要快速从结尾添加删除元素，使用什么链表？&lt;/li&gt;
-&lt;li&gt;排序大量数据，可以选择什么排序算法？&lt;/li&gt;
-&lt;li&gt;外排序是怎样做的？&lt;/li&gt;
-&lt;li&gt;有大量数据，求最大的10%如何实现？&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3&gt;操作系统编程接口&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;进程间通信方式有哪几种 …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;h3&gt;C++&lt;/h3&gt;
+&lt;li&gt;排序大量数据，可以选择什么排序算法 …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;h3&gt;C++&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;说说C++的类型转换和使用场景。&lt;/li&gt;
 &lt;li&gt;什么是抽象类。怎么定义。&lt;/li&gt;
@@ -44,6 +40,8 @@
 &lt;li&gt;Qt moc的作用？&lt;/li&gt;
 &lt;li&gt;Qt 是否支持反射，是如何实现的？&lt;/li&gt;
 &lt;li&gt;Qt 中一般不用阻塞IO模型， 因为长时间阻塞会导致界面失去响应。例如，使用阻塞模型不能兼顾网络操作和UI界面响应。你知道在Qt里面是如何解决多路IO需要同时处理问题的吗？&lt;/li&gt;
+&lt;li&gt;Qt 框架本身如何实现跨平台. (qpa&lt;/li&gt;
+&lt;li&gt;正在运行的QThread中如何发送数据给Qt主线程. 如果使用信号和槽如何保证槽函数在主线程中执行? (postEvent&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3&gt;数据结构&lt;/h3&gt;
 &lt;ol&gt;
@@ -52,6 +50,7 @@
 &lt;li&gt;排序大量数据，可以选择什么排序算法？&lt;/li&gt;
 &lt;li&gt;外排序是怎样做的？&lt;/li&gt;
 &lt;li&gt;有大量数据，求最大的10%如何实现？&lt;/li&gt;
+&lt;li&gt;如果要实现一个矢量画图程序, 能够画很多形状和线段绘制文字, 设置边框颜色填充颜色等. 支持选中画布上的图形修改属性比如颜色等, 同时要有层级, 每个图形可以放在其他图形上面, 支持向上移动一层, 向下移动一层. 从软件架构和数据结构上考虑如何实现? 如果你带一个团队, 考虑怎么分配工作?  如何实现撤销功能? 如何实现序列号和反序列化?&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3&gt;操作系统编程接口&lt;/h3&gt;
 &lt;ol&gt;
@@ -59,6 +58,9 @@
 &lt;li&gt;说说线程同步的方式&lt;/li&gt;
 &lt;li&gt;信号和信号量有什么区别&lt;/li&gt;
 &lt;li&gt;条件变量是干什么用的&lt;/li&gt;
+&lt;li&gt;介绍下常见的io模型&lt;/li&gt;
+&lt;li&gt;当接触比较大的项目, 比如有几十万行, 你打算如何读懂项目代码? &lt;/li&gt;
+&lt;li&gt;gdb如何调试多线程, 你用什么调试工具?&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3&gt;linux&lt;/h3&gt;
 &lt;ol&gt;
@@ -66,9 +68,10 @@
 &lt;li&gt;读写执行权限对于目录的意义是什么？&lt;/li&gt;
 &lt;li&gt;你知道哪些文件系统？每个文件系统特点是什么？&lt;/li&gt;
 &lt;li&gt;统计目录大小， 统计磁盘使用/剩余空间？&lt;/li&gt;
+&lt;li&gt;如何查询系统开了哪些端口? 查询指定端口被哪个进程占用?&lt;/li&gt;
 &lt;li&gt;说说系统启动过程，从机器上电开始。&lt;/li&gt;
 &lt;li&gt;你最常用的是什么系统，如果安装三方软件之后报错缺少动态库 xxx.so, 你是怎么解决的。&lt;/li&gt;
-&lt;li&gt;服务器上的某个服务异常，考虑怎么排查？&lt;/li&gt;
+&lt;li&gt;服务器上的某个服务异常，考虑怎么排查？(网络,系统资源占用,查看进程,日志,gdb&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3&gt;网络&lt;/h3&gt;
 &lt;ol&gt;
@@ -85,6 +88,7 @@
 &lt;li&gt;求斐波那契数列第N项。&lt;/li&gt;
 &lt;li&gt;单链表逆序。&lt;/li&gt;
 &lt;li&gt;格式化json&lt;/li&gt;
+&lt;li&gt;求1千万的阶乘能被18整除多少次 (简单一点的题目是, 1千万的阶乘能被9整除多少次, 或者能被7整除多少次)&lt;/li&gt;
 &lt;li&gt;给定一个正整数n作为边长，请按照下图画出正方形，正方形的边按照&lt;code&gt;A-Za-z0-9&lt;/code&gt;排列。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
