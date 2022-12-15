@@ -99,6 +99,7 @@ chromium-browser
 <span class="n">options</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--no-sandbox&quot;</span><span class="p">)</span>
 
 <span class="n">chrome</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">executable_path</span><span class="o">=</span><span class="s2">&quot;/usr/bin/chromedriver&quot;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">options</span><span class="p">)</span>
+<span class="n">chrome</span><span class="o">.</span><span class="n">fullscreen_window</span><span class="p">()</span>
 <span class="n">chrome</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://www.jd.com/&#39;</span><span class="p">)</span>
 <span class="n">chrome</span><span class="o">.</span><span class="n">save_screenshot</span><span class="p">(</span><span class="s2">&quot;chrome_jd.png&quot;</span><span class="p">)</span>
 
