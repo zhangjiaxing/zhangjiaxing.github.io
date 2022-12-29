@@ -4,11 +4,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Tag: openSUSE &mdash; cat ~/.zhiliao.history</title>
+  <title>debian11-bullseye install cgit &mdash; cat ~/.zhiliao.history</title>
   <meta name="author" content="zhiliao">
 
   <link href="/feeds/all.atom.xml" type="application/rss+xml" rel="alternate"
         title="cat ~/.zhiliao.history RSS Feed" />
+
+
 
 
 
@@ -54,108 +56,142 @@
   <div id="main">
     <div id="content">
 <div>
-	<article role="article">
-    	<header>
-    		<h1 class="entry-title">Tag: openSUSE</h1>
-    	</header>
+  <article class="hentry" role="article">
+<header>
+      <h1 class="entry-title">debian11-bullseye install cgit</h1>
+    <p class="meta">
+<time datetime="2022-12-29T22:50:18+08:00" pubdate>2022-12-29 22:50:18</time>      
+    </p>
+</header>
 
-    	<div id="blog-archives">
-            <h2>2022</h2>
-                    <article>
-                        <h1><a href="/posts/2022/07/02/cannot-open-shared-libraries.html">openSUSE系统报告无法打开动态库</a></h1>
-                        <time datetime="2022-07-02 18:29:06+08:00" pubdate>
-                            <span class="month">七月</span>
-                            <span class="day">02</span>
-                            <span class="year">2022</span>
-                        </time>
-                        <footer>
-                            <span class="categories">posted in
-                                <a class='category' href='/category/linux.html'>linux</a>
-                            </span>
-                        </footer>
-                    </article>
-            <h2>2020</h2>
-                    <article>
-                        <h1><a href="/posts/2020/08/24/openSUSE-coredump.html">openSUSE coredump文件</a></h1>
-                        <time datetime="2020-08-24 12:40:41+08:00" pubdate>
-                            <span class="month">八月</span>
-                            <span class="day">24</span>
-                            <span class="year">2020</span>
-                        </time>
-                        <footer>
-                            <span class="categories">posted in
-                                <a class='category' href='/category/linux.html'>linux</a>
-                            </span>
-                        </footer>
-                    </article>
-                    <article>
-                        <h1><a href="/posts/2020/08/05/openSUSE-zypper.html">openSUSE zypper</a></h1>
-                        <time datetime="2020-08-05 13:24:13+08:00" pubdate>
-                            <span class="month">八月</span>
-                            <span class="day">05</span>
-                            <span class="year">2020</span>
-                        </time>
-                        <footer>
-                            <span class="categories">posted in
-                                <a class='category' href='/category/linux.html'>linux</a>
-                            </span>
-                        </footer>
-                    </article>
-                    <article>
-                        <h1><a href="/posts/2020/07/20/openSUSE-upgrade.html">openSUSE Leap 系统升级</a></h1>
-                        <time datetime="2020-07-20 23:38:50+08:00" pubdate>
-                            <span class="month">七月</span>
-                            <span class="day">20</span>
-                            <span class="year">2020</span>
-                        </time>
-                        <footer>
-                            <span class="categories">posted in
-                                <a class='category' href='/category/linux.html'>linux</a>
-                            </span>
-                        </footer>
-                    </article>
-                    <article>
-                        <h1><a href="/posts/2020/07/20/openSUSE-multimedia.html">openSUSE Leap & Tumbleweed 安装解码器</a></h1>
-                        <time datetime="2020-07-20 23:15:46+08:00" pubdate>
-                            <span class="month">七月</span>
-                            <span class="day">20</span>
-                            <span class="year">2020</span>
-                        </time>
-                        <footer>
-                            <span class="categories">posted in
-                                <a class='category' href='/category/linux.html'>linux</a>
-                            </span>
-                        </footer>
-                    </article>
-            <h2>2019</h2>
-                    <article>
-                        <h1><a href="/posts/2019/12/19/openSUSE-server-install-cinnamon.html">openSUSE Tumbleweed server 安装cinnamon桌面</a></h1>
-                        <time datetime="2019-12-19 11:11:01+08:00" pubdate>
-                            <span class="month">十二月</span>
-                            <span class="day">19</span>
-                            <span class="year">2019</span>
-                        </time>
-                        <footer>
-                            <span class="categories">posted in
-                                <a class='category' href='/category/linux.html'>linux</a>
-                            </span>
-                        </footer>
-                    </article>
-                    <article>
-                        <h1><a href="/posts/2019/12/16/openSUSE-addrepo.html">openSUSE Leap & Tumbleweed 添加软件源</a></h1>
-                        <time datetime="2019-12-16 14:55:38+08:00" pubdate>
-                            <span class="month">十二月</span>
-                            <span class="day">16</span>
-                            <span class="year">2019</span>
-                        </time>
-                        <footer>
-                            <span class="categories">posted in
-                                <a class='category' href='/category/linux.html'>linux</a>
-                            </span>
-                        </footer>
-                    </article>
-	    </div>
-    </article>
+    <div class="entry-content"><div class="highlight-custom"><pre><span></span><code>apt update
+apt install cgit
+dpkg --status cgit
+<span class="c1"># install Recommends</span>
+apt install apache2 python3-docutils python3-markdown python3-pygments
+
+<span class="nb">cd</span> /etc/apache2/conf-enabled
+ln -s ../conf-available/cgit.conf git.conf
+
+<span class="nb">cd</span> /etc/apache2/mods-enabled
+ln -s ../mods-available/cgi.load cgi.load
+
+systemctl restart apache2
+
+
+<span class="c1"># cp -r /usr/share/git-core/templates ~/git-template</span>
+<span class="c1"># cd ~/git-template</span>
+<span class="c1"># git config --local gitweb.owner &#39;Test User&#39;</span>
+<span class="c1"># git config --local gitweb.url &#39;https://example.com/&#39;</span>
+<span class="c1"># echo &quot;default description&quot; &gt; description</span>
+<span class="c1"># git config --global init.templateDir /home/remoteuser/git-template</span>
+
+mkdir /srv/git-repos/
+<span class="nb">cd</span> /srv/git-repos/
+git init --bare hello.git
+<span class="nb">cd</span> hello.git
+<span class="nb">echo</span> <span class="s2">&quot;Example repository&quot;</span> &gt; description
+git config --local gitweb.owner <span class="s1">&#39;Test User&#39;</span>
+git config --local gitweb.url <span class="s1">&#39;https://example.com/&#39;</span>
+
+
+
+cat &gt;/etc/cgitrc <span class="s">&lt;&lt;EOF</span>
+<span class="s">#</span>
+<span class="s"># cgit config</span>
+<span class="s"># see cgitrc(5) for details</span>
+
+<span class="s">css=/cgit-css/cgit.css</span>
+<span class="s">logo=/cgit-css/cgit.png</span>
+
+<span class="s">virtual-root=/cgit/</span>
+<span class="s">root-title=example.com git repositories</span>
+<span class="s">root-desc=tracking the foobar development</span>
+<span class="s">root-readme=/var/www/htdocs/about.html</span>
+
+<span class="s">clone-url=http://$HTTP_HOST$SCRIPT_NAME/$CGIT_REPO_URL ssh://root@$HTTP_HOST:/srv/git-repos/$CGIT_REPO_URL</span>
+<span class="s">#clone-prefix=http://foo.org/</span>
+
+<span class="s">enable-index-owner=1</span>
+<span class="s">enable-http-clone=1</span>
+<span class="s">enable-index-links=1</span>
+<span class="s">enable-git-config=1</span>
+<span class="s">enable-blame=1</span>
+<span class="s">enable-commit-graph=1</span>
+
+<span class="s">enable-log-filecount=1</span>
+<span class="s">enable-log-linecount=1</span>
+
+<span class="s">branch-sort=age</span>
+<span class="s">max-stats=quarter</span>
+
+<span class="s">snapshots=tar.gz tar.bz2 zip</span>
+
+<span class="s">mimetype.gif=image/gif</span>
+<span class="s">mimetype.html=text/html</span>
+<span class="s">mimetype.jpg=image/jpeg</span>
+<span class="s">mimetype.jpeg=image/jpeg</span>
+<span class="s">mimetype.pdf=application/pdf</span>
+<span class="s">mimetype.png=image/png</span>
+<span class="s">mimetype.svg=image/svg+xml</span>
+
+<span class="s"># source-filter 要放在scan-path之前才会生效</span>
+<span class="s">source-filter=/usr/lib/cgit/filters/syntax-highlighting.py</span>
+<span class="s">about-filter=/usr/lib/cgit/filters/about-formatting.sh</span>
+
+<span class="s">readme=:README.md</span>
+<span class="s">readme=:readme.md</span>
+<span class="s">readme=:README.mkd</span>
+<span class="s">readme=:readme.mkd</span>
+<span class="s">readme=:README.rst</span>
+<span class="s">readme=:readme.rst</span>
+<span class="s">readme=:README.html</span>
+<span class="s">readme=:readme.html</span>
+<span class="s">readme=:README.htm</span>
+<span class="s">readme=:readme.htm</span>
+<span class="s">readme=:README.txt</span>
+<span class="s">readme=:readme.txt</span>
+<span class="s">readme=:README</span>
+<span class="s">readme=:readme</span>
+<span class="s">readme=:INSTALL.md</span>
+<span class="s">readme=:install.md</span>
+<span class="s">readme=:INSTALL.mkd</span>
+<span class="s">readme=:install.mkd</span>
+<span class="s">readme=:INSTALL.rst</span>
+<span class="s">readme=:install.rst</span>
+<span class="s">readme=:INSTALL.html</span>
+<span class="s">readme=:install.html</span>
+<span class="s">readme=:INSTALL.htm</span>
+<span class="s">readme=:install.htm</span>
+<span class="s">readme=:INSTALL.txt</span>
+<span class="s">readme=:install.txt</span>
+<span class="s">readme=:INSTALL</span>
+<span class="s">readme=:install</span>
+
+<span class="s"># scan-path 和 仓库要放在最后</span>
+<span class="s">scan-path=/srv/git-repos/</span>
+
+<span class="s">EOF</span>
+
+
+<span class="c1"># web访问http://ip/cgit</span>
+</code></pre></div></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">
+        zhiliao
+    </span>
+  </span>
+<time datetime="2022-12-29T22:50:18+08:00" pubdate>2022-12-29 22:50:18</time>  <span class="categories">
+    <a class='category' href='/category/git.html'>git</a>
+  </span>
+  <span class="categories">
+    <a class="category" href="/tag/git.html">git</a>,    <a class="category" href="/tag/linux.html">linux</a>  </span>
+</p><div class="sharing">
+</div>    </footer>
+  </article>
+
 </div>
 
 <aside class="sidebar">
@@ -163,19 +199,19 @@
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     <li class="post">
-        <a href="/posts/2022/07/02/cannot-open-shared-libraries.html">openSUSE系统报告无法打开动态库</a>
+        <a href="/posts/2022/12/29/install-cgit.html">debian11-bullseye install cgit</a>
     </li>
     <li class="post">
-        <a href="/posts/2020/08/24/openSUSE-coredump.html">openSUSE coredump文件</a>
+        <a href="/posts/2022/11/05/raspbian10-raspios-selenium.html">raspberry-debian10-selenium测试</a>
     </li>
     <li class="post">
-        <a href="/posts/2020/08/05/openSUSE-zypper.html">openSUSE zypper</a>
+        <a href="/posts/2022/09/03/alternativeto.html">代替品查询网站</a>
     </li>
     <li class="post">
-        <a href="/posts/2020/07/20/openSUSE-upgrade.html">openSUSE Leap 系统升级</a>
+        <a href="/posts/2022/09/03/Flatpak-vs-Snap.html">Flatpak vs Snap</a>
     </li>
     <li class="post">
-        <a href="/posts/2020/07/20/openSUSE-multimedia.html">openSUSE Leap & Tumbleweed 安装解码器</a>
+        <a href="/posts/2022/07/09/interview-questions.html">面试中我经常问的问题</a>
     </li>
   </ul>
 </section><section>
@@ -228,7 +264,7 @@
   </div>
   <footer role="contentinfo">
 <p>
-    Copyright &copy;  2019&ndash;2022  zhiliao &mdash;
+    Copyright &copy;  2013&ndash;2022  zhiliao &mdash;
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
 </p>  </footer>
 </body>

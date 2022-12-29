@@ -1,4 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - git</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/git.atom.xml" rel="self"></link><id>/</id><updated>2018-08-03T17:01:42+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>git如何永久删除文件</title><link href="/posts/2018/08/03/git-delete-file.html" rel="alternate"></link><published>2018-08-03T17:01:42+08:00</published><updated>2018-08-03T17:01:42+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2018-08-03:/posts/2018/08/03/git-delete-file.html</id><content type="html">&lt;p&gt;&lt;a href="/git/pdfs/git-delete-file.pdf"&gt;git如何永久删除文件.pdf&lt;/a&gt;&lt;/p&gt;</content><category term="git"></category><category term="git"></category></entry><entry><title>git hooks post-receive 中 git pull 失败</title><link href="/posts/2017/12/11/git-hooks-post-receive.html" rel="alternate"></link><published>2017-12-11T15:35:51+08:00</published><updated>2017-12-11T15:35:51+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-12-11:/posts/2017/12/11/git-hooks-post-receive.html</id><content type="html">&lt;p&gt;git 在运行时会用 $GIT_DIR 这个环境变量&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - git</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/git.atom.xml" rel="self"></link><id>/</id><updated>2022-12-29T22:50:18+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>debian11-bullseye install cgit</title><link href="/posts/2022/12/29/install-cgit.html" rel="alternate"></link><published>2022-12-29T22:50:18+08:00</published><updated>2022-12-29T22:50:18+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-12-29:/posts/2022/12/29/install-cgit.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt update
+apt install cgit
+dpkg --status cgit
+&lt;span class="c1"&gt;# install Recommends&lt;/span&gt;
+apt install apache2 python3-docutils python3-markdown python3-pygments
+
+&lt;span class="nb"&gt;cd&lt;/span&gt; /etc/apache2/conf-enabled
+ln -s ../conf-available/cgit.conf git.conf
+
+&lt;span class="nb"&gt;cd&lt;/span&gt; /etc/apache2/mods-enabled
+ln -s ../mods-available/cgi.load cgi.load
+
+systemctl restart apache2
+
+
+&lt;span class="c1"&gt;# cp -r /usr/share/git-core/templates ~/git-template&lt;/span&gt;
+&lt;span class="c1"&gt;# cd ~/git-template …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt update
+apt install cgit
+dpkg --status cgit
+&lt;span class="c1"&gt;# install Recommends&lt;/span&gt;
+apt install apache2 python3-docutils python3-markdown python3-pygments
+
+&lt;span class="nb"&gt;cd&lt;/span&gt; /etc/apache2/conf-enabled
+ln -s ../conf-available/cgit.conf git.conf
+
+&lt;span class="nb"&gt;cd&lt;/span&gt; /etc/apache2/mods-enabled
+ln -s ../mods-available/cgi.load cgi.load
+
+systemctl restart apache2
+
+
+&lt;span class="c1"&gt;# cp -r /usr/share/git-core/templates ~/git-template&lt;/span&gt;
+&lt;span class="c1"&gt;# cd ~/git-template&lt;/span&gt;
+&lt;span class="c1"&gt;# git config --local gitweb.owner &amp;#39;Test User&amp;#39;&lt;/span&gt;
+&lt;span class="c1"&gt;# git config --local gitweb.url &amp;#39;https://example.com/&amp;#39;&lt;/span&gt;
+&lt;span class="c1"&gt;# echo &amp;quot;default description&amp;quot; &amp;gt; description&lt;/span&gt;
+&lt;span class="c1"&gt;# git config --global init.templateDir /home/remoteuser/git-template&lt;/span&gt;
+
+mkdir /srv/git-repos/
+&lt;span class="nb"&gt;cd&lt;/span&gt; /srv/git-repos/
+git init --bare hello.git
+&lt;span class="nb"&gt;cd&lt;/span&gt; hello.git
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Example repository&amp;quot;&lt;/span&gt; &amp;gt; description
+git config --local gitweb.owner &lt;span class="s1"&gt;&amp;#39;Test User&amp;#39;&lt;/span&gt;
+git config --local gitweb.url &lt;span class="s1"&gt;&amp;#39;https://example.com/&amp;#39;&lt;/span&gt;
+
+
+
+cat &amp;gt;/etc/cgitrc &lt;span class="s"&gt;&amp;lt;&amp;lt;EOF&lt;/span&gt;
+&lt;span class="s"&gt;#&lt;/span&gt;
+&lt;span class="s"&gt;# cgit config&lt;/span&gt;
+&lt;span class="s"&gt;# see cgitrc(5) for details&lt;/span&gt;
+
+&lt;span class="s"&gt;css=/cgit-css/cgit.css&lt;/span&gt;
+&lt;span class="s"&gt;logo=/cgit-css/cgit.png&lt;/span&gt;
+
+&lt;span class="s"&gt;virtual-root=/cgit/&lt;/span&gt;
+&lt;span class="s"&gt;root-title=example.com git repositories&lt;/span&gt;
+&lt;span class="s"&gt;root-desc=tracking the foobar development&lt;/span&gt;
+&lt;span class="s"&gt;root-readme=/var/www/htdocs/about.html&lt;/span&gt;
+
+&lt;span class="s"&gt;clone-url=http://$HTTP_HOST$SCRIPT_NAME/$CGIT_REPO_URL ssh://root@$HTTP_HOST:/srv/git-repos/$CGIT_REPO_URL&lt;/span&gt;
+&lt;span class="s"&gt;#clone-prefix=http://foo.org/&lt;/span&gt;
+
+&lt;span class="s"&gt;enable-index-owner=1&lt;/span&gt;
+&lt;span class="s"&gt;enable-http-clone=1&lt;/span&gt;
+&lt;span class="s"&gt;enable-index-links=1&lt;/span&gt;
+&lt;span class="s"&gt;enable-git-config=1&lt;/span&gt;
+&lt;span class="s"&gt;enable-blame=1&lt;/span&gt;
+&lt;span class="s"&gt;enable-commit-graph=1&lt;/span&gt;
+
+&lt;span class="s"&gt;enable-log-filecount=1&lt;/span&gt;
+&lt;span class="s"&gt;enable-log-linecount=1&lt;/span&gt;
+
+&lt;span class="s"&gt;branch-sort=age&lt;/span&gt;
+&lt;span class="s"&gt;max-stats=quarter&lt;/span&gt;
+
+&lt;span class="s"&gt;snapshots=tar.gz tar.bz2 zip&lt;/span&gt;
+
+&lt;span class="s"&gt;mimetype.gif=image/gif&lt;/span&gt;
+&lt;span class="s"&gt;mimetype.html=text/html&lt;/span&gt;
+&lt;span class="s"&gt;mimetype.jpg=image/jpeg&lt;/span&gt;
+&lt;span class="s"&gt;mimetype.jpeg=image/jpeg&lt;/span&gt;
+&lt;span class="s"&gt;mimetype.pdf=application/pdf&lt;/span&gt;
+&lt;span class="s"&gt;mimetype.png=image/png&lt;/span&gt;
+&lt;span class="s"&gt;mimetype.svg=image/svg+xml&lt;/span&gt;
+
+&lt;span class="s"&gt;# source-filter 要放在scan-path之前才会生效&lt;/span&gt;
+&lt;span class="s"&gt;source-filter=/usr/lib/cgit/filters/syntax-highlighting.py&lt;/span&gt;
+&lt;span class="s"&gt;about-filter=/usr/lib/cgit/filters/about-formatting.sh&lt;/span&gt;
+
+&lt;span class="s"&gt;readme=:README.md&lt;/span&gt;
+&lt;span class="s"&gt;readme=:readme.md&lt;/span&gt;
+&lt;span class="s"&gt;readme=:README.mkd&lt;/span&gt;
+&lt;span class="s"&gt;readme=:readme.mkd&lt;/span&gt;
+&lt;span class="s"&gt;readme=:README.rst&lt;/span&gt;
+&lt;span class="s"&gt;readme=:readme.rst&lt;/span&gt;
+&lt;span class="s"&gt;readme=:README.html&lt;/span&gt;
+&lt;span class="s"&gt;readme=:readme.html&lt;/span&gt;
+&lt;span class="s"&gt;readme=:README.htm&lt;/span&gt;
+&lt;span class="s"&gt;readme=:readme.htm&lt;/span&gt;
+&lt;span class="s"&gt;readme=:README.txt&lt;/span&gt;
+&lt;span class="s"&gt;readme=:readme.txt&lt;/span&gt;
+&lt;span class="s"&gt;readme=:README&lt;/span&gt;
+&lt;span class="s"&gt;readme=:readme&lt;/span&gt;
+&lt;span class="s"&gt;readme=:INSTALL.md&lt;/span&gt;
+&lt;span class="s"&gt;readme=:install.md&lt;/span&gt;
+&lt;span class="s"&gt;readme=:INSTALL.mkd&lt;/span&gt;
+&lt;span class="s"&gt;readme=:install.mkd&lt;/span&gt;
+&lt;span class="s"&gt;readme=:INSTALL.rst&lt;/span&gt;
+&lt;span class="s"&gt;readme=:install.rst&lt;/span&gt;
+&lt;span class="s"&gt;readme=:INSTALL.html&lt;/span&gt;
+&lt;span class="s"&gt;readme=:install.html&lt;/span&gt;
+&lt;span class="s"&gt;readme=:INSTALL.htm&lt;/span&gt;
+&lt;span class="s"&gt;readme=:install.htm&lt;/span&gt;
+&lt;span class="s"&gt;readme=:INSTALL.txt&lt;/span&gt;
+&lt;span class="s"&gt;readme=:install.txt&lt;/span&gt;
+&lt;span class="s"&gt;readme=:INSTALL&lt;/span&gt;
+&lt;span class="s"&gt;readme=:install&lt;/span&gt;
+
+&lt;span class="s"&gt;# scan-path 和 仓库要放在最后&lt;/span&gt;
+&lt;span class="s"&gt;scan-path=/srv/git-repos/&lt;/span&gt;
+
+&lt;span class="s"&gt;EOF&lt;/span&gt;
+
+
+&lt;span class="c1"&gt;# web访问http://ip/cgit&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="git"></category><category term="git"></category><category term="linux"></category></entry><entry><title>git如何永久删除文件</title><link href="/posts/2018/08/03/git-delete-file.html" rel="alternate"></link><published>2018-08-03T17:01:42+08:00</published><updated>2018-08-03T17:01:42+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2018-08-03:/posts/2018/08/03/git-delete-file.html</id><content type="html">&lt;p&gt;&lt;a href="/git/pdfs/git-delete-file.pdf"&gt;git如何永久删除文件.pdf&lt;/a&gt;&lt;/p&gt;</content><category term="git"></category><category term="git"></category></entry><entry><title>git hooks post-receive 中 git pull 失败</title><link href="/posts/2017/12/11/git-hooks-post-receive.html" rel="alternate"></link><published>2017-12-11T15:35:51+08:00</published><updated>2017-12-11T15:35:51+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-12-11:/posts/2017/12/11/git-hooks-post-receive.html</id><content type="html">&lt;p&gt;git 在运行时会用 $GIT_DIR 这个环境变量&lt;/p&gt;
 &lt;p&gt;解决方法是在hooks脚本里面加上 &lt;code&gt;unset $(git rev-parse --local-env-vars)&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;或者使用 env -i git pull&lt;/p&gt;</content><category term="git"></category><category term="git"></category></entry></feed>

@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>无聊就该多读书。</description><lastBuildDate>Sat, 05 Nov 2022 18:40:04 +0800</lastBuildDate><item><title>raspberry-debian10-selenium测试</title><link>/posts/2022/11/05/raspbian10-raspios-selenium.html</link><description>&lt;p&gt;测试环境 &lt;code&gt;Raspbian GNU/Linux 10 (buster)&lt;/code&gt;&lt;/p&gt;
+<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>无聊就该多读书。</description><lastBuildDate>Thu, 29 Dec 2022 22:50:18 +0800</lastBuildDate><item><title>debian11-bullseye install cgit</title><link>/posts/2022/12/29/install-cgit.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt update
+apt install cgit
+dpkg --status cgit
+&lt;span class="c1"&gt;# install Recommends&lt;/span&gt;
+apt install apache2 python3-docutils python3-markdown python3-pygments
+
+&lt;span class="nb"&gt;cd&lt;/span&gt; /etc/apache2/conf-enabled
+ln -s ../conf-available/cgit.conf git.conf
+
+&lt;span class="nb"&gt;cd&lt;/span&gt; /etc/apache2/mods-enabled
+ln -s ../mods-available/cgi.load cgi.load
+
+systemctl restart apache2
+
+
+&lt;span class="c1"&gt;# cp -r /usr/share/git-core/templates ~/git-template&lt;/span&gt;
+&lt;span class="c1"&gt;# cd ~/git-template …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Thu, 29 Dec 2022 22:50:18 +0800</pubDate><guid isPermaLink="false">tag:None,2022-12-29:/posts/2022/12/29/install-cgit.html</guid><category>git</category><category>git</category><category>linux</category></item><item><title>raspberry-debian10-selenium测试</title><link>/posts/2022/11/05/raspbian10-raspios-selenium.html</link><description>&lt;p&gt;测试环境 &lt;code&gt;Raspbian GNU/Linux 10 (buster)&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;经过搜索发现firefox的geckodriver官方不支持arm. 所以只能选择chromium浏览器.&lt;/p&gt;
 &lt;h4&gt;安装依赖&lt;/h4&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo apt install python3-selenium
