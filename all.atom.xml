@@ -747,7 +747,23 @@ envsubst &amp;lt; nginx.conf.template &amp;gt; nanjing.conf
 
 &lt;span class="c1"&gt;#指定特定待替换的环境变量&lt;/span&gt;
 envsubst &lt;span class="s1"&gt;&amp;#39;${VAR_NAME}&amp;#39;&lt;/span&gt; &amp;lt; nginx.conf.template &amp;gt; nanjing.conf
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Wed, 07 Jun 2017 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-06-07:/posts/2017/06/07/bash-string-template.html</guid><category>linux</category><category>linux</category><category>bash</category></item><item><title>iperf3测试带宽</title><link>/posts/2017/06/07/iperf3.html</link><description>&lt;h1&gt;TCP&lt;/h1&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Wed, 07 Jun 2017 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-06-07:/posts/2017/06/07/bash-string-template.html</guid><category>linux</category><category>linux</category><category>bash</category></item><item><title>example title</title><link>/posts/2017/06/07/example.html</link><description>&lt;p&gt;整理了以下四种在MySQL中修改root密码的方法,可能对大家有所帮助!&lt;/p&gt;
+&lt;h4&gt;方法1： 用SET PASSWORD命令&lt;/h4&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;　　mysql -u root&lt;/span&gt;
+&lt;span class="err"&gt;　　mysql&amp;gt; SET PASSWORD FOR &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; = PASSWORD(&amp;#39;newpass&amp;#39;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4&gt;方法2：用mysqladmin&lt;/h4&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;　　mysqladmin -u root password &amp;quot;newpass&amp;quot;&lt;/span&gt;
+&lt;span class="err"&gt;　　# 如果root已经设置过密码，采用如下方法&lt;/span&gt;
+&lt;span class="err"&gt;　　mysqladmin -u root password oldpass &amp;quot;newpass&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4&gt;方法3： 用UPDATE直接编辑user表&lt;/h4&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;　　mysql -u root&lt;/span&gt;
+&lt;span class="err"&gt;　　mysql&amp;gt; use mysql;&lt;/span&gt;
+&lt;span class="err"&gt;　　mysql&amp;gt; UPDATE user SET Password = PASSWORD(&amp;#39;newpass&amp;#39;) WHERE user = &amp;#39;root&amp;#39;;&lt;/span&gt;
+&lt;span class="err"&gt;　　mysql …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Wed, 07 Jun 2017 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-06-07:/posts/2017/06/07/example.html</guid><category>python</category><category>pelican</category><category>python</category></item><item><title>iperf3测试带宽</title><link>/posts/2017/06/07/iperf3.html</link><description>&lt;h1&gt;TCP&lt;/h1&gt;
 &lt;p&gt;服务端&lt;code&gt;iperf3 -s -p 12345&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;客户端测试上传到服务器&lt;code&gt;iperf3 -c server_host -p 12345&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;客户端测试从服务器下载&lt;code&gt;iperf3 -c server_host -p 12345 -R&lt;/code&gt;&lt;/p&gt;
@@ -845,7 +861,33 @@ man -t eventfd &lt;span class="p"&gt;|&lt;/span&gt; ps2pdf - &amp;gt; eventfd.pd
 &lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="n"&gt;string&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;在头文件内的所有函数。&lt;/span&gt;
 &lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="n"&gt;stdio&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;关于头文件的使用，标准输入&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="err"&gt;输出库的说明。&lt;/span&gt;
 &lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="n"&gt;errno&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;所有&lt;/span&gt;&lt;span class="n"&gt;errorno的取值及说明&lt;/span&gt;&lt;span class="err"&gt;。（&lt;/span&gt;&lt;span class="n"&gt;C语言内类似其他语言的异常告知机制&lt;/span&gt;&lt;span class="err"&gt;）&lt;/span&gt;
-&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;4 …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Tue, 20 Jan 2015 11:41:06 +0800</pubDate><guid isPermaLink="false">tag:None,2015-01-20:/posts/2015/01/20/linux-man-pages.html</guid><category>linux</category><category>linux</category></item><item><title>bash</title><link>/posts/2014/09/26/bash.html</link><description>&lt;h4&gt;Linux 下shell基本上默认是 bash, 下面是我总结的一些技巧。&lt;/h4&gt;
+&lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;4 …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Tue, 20 Jan 2015 11:41:06 +0800</pubDate><guid isPermaLink="false">tag:None,2015-01-20:/posts/2015/01/20/linux-man-pages.html</guid><category>linux</category><category>linux</category></item><item><title>ArchLinux 安装笔记</title><link>/posts/2015/01/01/install-archlinux.html</link><description>&lt;h3&gt;ArchLinux 安装笔记&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;制作usb启动盘&lt;/li&gt;
+&lt;li&gt;为要安装系统的磁盘分区， 一般需要 / /boot /home swap， 服务器的/srv /var 是可选的。也可以考虑使用lvm或者btrfs。 推荐使用btrfs。&lt;/li&gt;
+&lt;li&gt;格式化分区， 启用交换分区。&lt;/li&gt;
+&lt;li&gt;分区挂到/mnt, mkdir /mnt/{boot,home} ,  挂载boot home 等分区。&lt;/li&gt;
+&lt;li&gt;nano /etc/pacman.d/mirrorlist 修改软件源地址&lt;/li&gt;
+&lt;li&gt;pacstrap /mnt base base-devel 安装系统&lt;/li&gt;
+&lt;li&gt;genfatab -U -p /mnt &amp;gt;&amp;gt; /mnt/etc/fstab  生成fstab&lt;/li&gt;
+&lt;li&gt;arch-chroot /mnt  切换到新系统&lt;/li&gt;
+&lt;li&gt;nano /etc/locale …&lt;/li&gt;&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Thu, 01 Jan 2015 20:31:00 +0800</pubDate><guid isPermaLink="false">tag:None,2015-01-01:/posts/2015/01/01/install-archlinux.html</guid><category>linux</category><category>linux</category></item><item><title>C++书籍推荐</title><link>/posts/2015/01/01/cpp-books.html</link><description>&lt;p&gt;下面是转载的在博客上看到的一个C++书籍阅读清单，可以参考下：&lt;/p&gt;
+&lt;h2&gt;阶段 1&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;《Essential C++》&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这是一本内容不多但很实用的C++入门书籍，强调快速上手与理解C++编程。本书主要围绕一系列逐渐复杂的程序问题，以及用以解决这些问题的语言特性展开讲解。你不只学到C++的函数和结构，也会学习到它们的设计目的和基本原理。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;《C++ Primer》（不是 plus）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;本书对C++基本概念、技术、以及现代C++编程风格进行了全面而且权威的阐述，是C++初学者的最佳指南；本书可以帮助你编写实用的程序，而无需首先精通每个语言细节。对于中高级程序员，本书也是不可或缺的参考书。&lt;/p&gt;
+&lt;h2&gt;阶段 2&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;《Effective C++》和《More effective C++》&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;作者是Scott Meyers。你应该熟读它们，并清楚地理解每个项目。该书围绕55条准则，每一条都介绍了一个可让你写出更好的C++程序代码的方法，并以特别设计过的例子详加讨论。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;《Exceptional C++（C …&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Thu, 01 Jan 2015 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:None,2015-01-01:/posts/2015/01/01/cpp-books.html</guid><category>programming</category><category>programming</category><category>C++</category><category>book</category></item><item><title>bash</title><link>/posts/2014/09/26/bash.html</link><description>&lt;h4&gt;Linux 下shell基本上默认是 bash, 下面是我总结的一些技巧。&lt;/h4&gt;
 &lt;h4&gt;trap 可以捕获信号&lt;/h4&gt;
 &lt;h4&gt;目录跳转&lt;/h4&gt;
 &lt;p&gt;pushd, popd, dirs 实现多目录跳转
@@ -902,4 +944,23 @@ bash&amp;gt; export …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl
 &lt;span class="err"&gt;u跳到上一层&lt;/span&gt;
 &lt;span class="err"&gt;s查找关键字&lt;/span&gt;
 &lt;span class="err"&gt;q离开&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Fri, 27 Sep 2013 17:59:00 +0800</pubDate><guid isPermaLink="false">tag:None,2013-09-27:/posts/2013/09/27/linux-info.html</guid><category>linux</category><category>linux</category></item></channel></rss>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Fri, 27 Sep 2013 17:59:00 +0800</pubDate><guid isPermaLink="false">tag:None,2013-09-27:/posts/2013/09/27/linux-info.html</guid><category>linux</category><category>linux</category></item><item><title>linux书籍推荐</title><link>/posts/2013/09/10/linux-books.html</link><description>&lt;h1&gt;书籍推荐&lt;/h1&gt;
+&lt;h2&gt;在线学习&lt;/h2&gt;
+&lt;h3&gt;在线基础学习&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;《鸟哥的Linux私房菜 基础篇（第三版）》在线阅读（推荐）&lt;/li&gt;
+&lt;li&gt;《鸟哥的Linux私房菜 服务器篇（第三版）》在线阅读（推荐）&lt;/li&gt;
+&lt;li&gt;IterCast：免费的专业Linux视频、教学、问答及交流平台（推荐）&lt;/li&gt;
+&lt;li&gt;Linux From Scratch：从源代码编译Linux系统中文版&lt;/li&gt;
+&lt;li&gt;Linux中文man在线手册 已经完全汉化&lt;/li&gt;
+&lt;li&gt;Linux 常用命令速查 可按分类查询&lt;/li&gt;
+&lt;li&gt;开源世界旅行手册（较缓慢更新中）&lt;/li&gt;
+&lt;li&gt;51CTO:大量Linux书籍在线阅读&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;在线编程学习&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Linux C编程一站式学习:本书定位在入门级，虽然内容很多，但不是一本百科全书，除了C语言基本要讲透之外其它内容都不深入，书中列出了很多参考资料，是读者进一步学习的起点。&lt;/li&gt;
+&lt;li&gt;简明 Python 教程:无论您刚接触电脑还是一个有经验的程序员，本书都将有助您学习使用Python语言。&lt;/li&gt;
+&lt;li&gt;w3school 在线教程:在w3school，你可以找到你所需要的所有的网站建设教程。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;书籍推荐 …&lt;/h2&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Tue, 10 Sep 2013 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:None,2013-09-10:/posts/2013/09/10/linux-books.html</guid><category>linux</category><category>linux</category><category>book</category></item></channel></rss>
