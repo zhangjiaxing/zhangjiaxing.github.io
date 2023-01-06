@@ -944,7 +944,33 @@ bash&amp;gt; export …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl
 &lt;span class="err"&gt;u跳到上一层&lt;/span&gt;
 &lt;span class="err"&gt;s查找关键字&lt;/span&gt;
 &lt;span class="err"&gt;q离开&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Fri, 27 Sep 2013 17:59:00 +0800</pubDate><guid isPermaLink="false">tag:None,2013-09-27:/posts/2013/09/27/linux-info.html</guid><category>linux</category><category>linux</category></item><item><title>linux书籍推荐</title><link>/posts/2013/09/10/linux-books.html</link><description>&lt;h1&gt;书籍推荐&lt;/h1&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Fri, 27 Sep 2013 17:59:00 +0800</pubDate><guid isPermaLink="false">tag:None,2013-09-27:/posts/2013/09/27/linux-info.html</guid><category>linux</category><category>linux</category></item><item><title>learn-grub2</title><link>/posts/2013/09/26/grub2.html</link><description>&lt;h2&gt;设备的命名&lt;/h2&gt;
+&lt;p&gt;grub2同样以fd表示软盘，hd表示硬盘（包含IDE和SCSI硬盘）。设备是从0开始编号，分区则是从1开始，主分区从1-4，逻辑分区从5开始，而grub分区编号是从0开始的。下面给出几个例子 ：&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;(fd0)：表示整个软盘&lt;/span&gt;
+&lt;span class="err"&gt;(hd0,1)：表示BIOS中的第一个硬盘的第1个分区&lt;/span&gt;
+&lt;span class="err"&gt;(hd0,5)/boot/vmlinuz：表示BIOS中的第一个硬盘的第一个逻辑分区下的boot目录下的vmlinuz文件&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;按c进入命令行状态，按Tab键可查看所有可用的命令&lt;/p&gt;
+&lt;p&gt;按e进入己选择菜单的编辑状态，在编辑状态下，由上下左右箭号来移动光标，enter键换行，ctrl+x以编辑的内容启动，ctrl+c进命令行状态，按Esc退出，回到菜单项。&lt;/p&gt;
+&lt;p&gt;在需要使用额外的内核参数启动时，比如要加上acpi=off时，把光标移动到linux这一行最后，在splash后加上一空格再输入acpi=off，然后按ctrl+x启动。&lt;/p&gt;
+&lt;p&gt;grub2中一些常用的命令
+```
+1)help
+    查看命令用法，如
+help search：查看search命令详细用法
+2)set …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Thu, 26 Sep 2013 00:47:00 +0800</pubDate><guid isPermaLink="false">tag:None,2013-09-26:/posts/2013/09/26/grub2.html</guid><category>bootloader</category><category>linux</category><category>bootloader</category></item><item><title>example title</title><link>/posts/2013/09/10/grub4dos-menu-lst.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;color&lt;/span&gt; &lt;span class="n"&gt;black&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;cyan&lt;/span&gt; &lt;span class="n"&gt;yellow&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;cyan&lt;/span&gt;
+&lt;span class="n"&gt;timeout&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
+&lt;span class="k"&gt;default&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+
+&lt;span class="n"&gt;title&lt;/span&gt; &lt;span class="n"&gt;ubuntu&lt;/span&gt;
+&lt;span class="n"&gt;find&lt;/span&gt; &lt;span class="c1"&gt;--set-root /ubuntu/vmlinuz&lt;/span&gt;
+&lt;span class="n"&gt;kernel&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ubuntu&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;vmlinuz&lt;/span&gt; &lt;span class="n"&gt;boot&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;casper&lt;/span&gt; &lt;span class="n"&gt;iso&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;scan&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="o"&gt;=/&lt;/span&gt;&lt;span class="n"&gt;ubuntu&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;iso&lt;/span&gt; &lt;span class="n"&gt;ro&lt;/span&gt; &lt;span class="n"&gt;quiet&lt;/span&gt; &lt;span class="n"&gt;splash&lt;/span&gt; &lt;span class="n"&gt;locale&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;zh_CN&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;UTF&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;
+&lt;span class="n"&gt;initrd&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ubuntu&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;initrd&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;lz&lt;/span&gt;
+
+&lt;span class="n"&gt;title&lt;/span&gt; &lt;span class="err"&gt;启动&lt;/span&gt;&lt;span class="n"&gt;winpe迷你系统&lt;/span&gt;
+&lt;span class="n"&gt;find&lt;/span&gt; &lt;span class="c1"&gt;--set-root /boot/iso/pe.iso&lt;/span&gt;
+&lt;span class="k"&gt;map&lt;/span&gt; &lt;span class="c1"&gt;--mem /boot/iso/pe …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Tue, 10 Sep 2013 17:37:00 +0800</pubDate><guid isPermaLink="false">tag:None,2013-09-10:/posts/2013/09/10/grub4dos-menu-lst.html</guid><category>bootloader</category><category>bootloader</category><category>linux</category></item><item><title>linux书籍推荐</title><link>/posts/2013/09/10/linux-books.html</link><description>&lt;h1&gt;书籍推荐&lt;/h1&gt;
 &lt;h2&gt;在线学习&lt;/h2&gt;
 &lt;h3&gt;在线基础学习&lt;/h3&gt;
 &lt;ul&gt;

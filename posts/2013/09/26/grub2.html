@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>learn-grub2 &mdash; cat ~/.zhiliao.history</title>
+  <meta name="author" content="zhiliao">
+
+  <link href="/feeds/all.atom.xml" type="application/rss+xml" rel="alternate"
+        title="cat ~/.zhiliao.history RSS Feed" />
+
+
+
+
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="/favicon.png" rel="icon">
+
+  <link href="/theme/css/main.css" media="screen, projection"
+        rel="stylesheet" type="text/css">
+  <link href="/theme/css/pygment.css" rel="stylesheet" type="text/css">
+
+  <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+
+  <script src="/theme/js/modernizr-2.0.js"></script>
+  <script src="/theme/js/ender.js"></script>
+  <script src="/theme/js/octopress.js" type="text/javascript"></script>
+</head>
+
+<body >
+  <header role="banner"
+  >
+<hgroup>
+  <h1><a href="/">cat ~/.zhiliao.history</a></h1>
+    <h2>无聊就该多读书。</h2>
+</hgroup></header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/feeds/all.atom.xml" rel="subscribe-rss">RSS</a></li>
+</ul>
+
+
+<ul class="main-navigation">
+    <li><a href="/">Home</a></li>
+    <li><a href="/archives.html">Archive</a></li>
+    <li><a href="/pages/about.html">About</a></li>
+</ul></nav>
+  <div id="main">
+    <div id="content">
+<div>
+  <article class="hentry" role="article">
+<header>
+      <h1 class="entry-title">learn-grub2</h1>
+    <p class="meta">
+<time datetime="2013-09-26T00:47:00+08:00" pubdate>2013-09-26 00:47:00</time>      
+    </p>
+</header>
+
+    <div class="entry-content"><h2>设备的命名</h2>
+<p>grub2同样以fd表示软盘，hd表示硬盘（包含IDE和SCSI硬盘）。设备是从0开始编号，分区则是从1开始，主分区从1-4，逻辑分区从5开始，而grub分区编号是从0开始的。下面给出几个例子 ：</p>
+<div class="highlight-custom"><pre><span></span><code><span class="err">(fd0)：表示整个软盘</span>
+<span class="err">(hd0,1)：表示BIOS中的第一个硬盘的第1个分区</span>
+<span class="err">(hd0,5)/boot/vmlinuz：表示BIOS中的第一个硬盘的第一个逻辑分区下的boot目录下的vmlinuz文件</span>
+</code></pre></div>
+
+<p>按c进入命令行状态，按Tab键可查看所有可用的命令</p>
+<p>按e进入己选择菜单的编辑状态，在编辑状态下，由上下左右箭号来移动光标，enter键换行，ctrl+x以编辑的内容启动，ctrl+c进命令行状态，按Esc退出，回到菜单项。</p>
+<p>在需要使用额外的内核参数启动时，比如要加上acpi=off时，把光标移动到linux这一行最后，在splash后加上一空格再输入acpi=off，然后按ctrl+x启动。</p>
+<p>grub2中一些常用的命令
+```
+1)help
+    查看命令用法，如
+help search：查看search命令详细用法
+2)set
+    设置变量值，如
+set default=0
+set timeout=5
+set root=(hd0,3)等等
+    需要调用变量AA的值时，使用${AA}，如set root=(hd1,1)，则${root}=(hd1,1)
+3)default
+    定义默认引导的操作系统。0 表示第一个操作系统，1表示第2个，依此类推
+4)timeout
+    定义在时间内用户没有按下键盘上的某个按键，自动引导default指定的操作系统。
+5)root
+    指定用于启动系统的分区。
+6)insmod和rmmod
+    加载或移除某模块，如
+insmod jpeg
+insmod png
+insmod ntfs
+rmmod png
+等</p>
+<p>7)drivemap
+drivemap兼容grub的map，主要用于只能从第一硬盘(hd0)引导启动的系统如 win2000 xp 2003，比如要添加第二硬盘第一分区上的xp系统：
+menuentry "Windows XP" {
+set root=(hd1,1)
+drivemap -s (hd0) ${root}
+chainloader +1
+}</p>
+<p>8)ls
+    列出当前的所有设备。如(hd0)，(hd0,1)，(hd0,5)，(hd1)，(hd1,1)，(hd1,2)等
+ls -l
+    详细列出当前的所有设备。对于分区，会显示其label及uuid。
+ls /
+    列出当前设为root的分区下的文件
+ls (hd1,1)/
+    列出(hd1,1)分区根目录的文件</p>
+<p>9)search
+search -f /ntldr
+    列出根目录里包含ntldr文件的分区，返回为分区号
+search -l LINUX
+    搜索label是LINUX的分区。
+search --set -f /ntldr
+    搜索根目录包含ntldr文件的分区并设为root，注意如果多个分区含有ntldr文件，
+set失去作用。</p>
+<p>10)loopback
+loopback命令可用于建立回放设备，如
+loopback lo0 (hd1,1)/abc.iso
+    可以使用lo0设备来访问abc.iso里的内容，比如说，可以从abc.iso里的软盘映像中启动
+loopback lo0 (hd1,1)/aa.iso
+linux (lo0)/memdisk
+initrd (lo0)/abc.img
+    要删除某一回放设备，可以使用-d参数：
+loopback -d lo0</p>
+<p>11)pager
+    分页显示。
+set pager=1
+    显示满一页时暂停，按space继续
+set pager=0
+    取消分页显示</p>
+<p>12)linux
+    用linux命令取代grub中的kernel命令</p>
+<p>13)chainloader
+    调用另一个启动器，如
+chainloader (hd0,1)+1
+    调用第一硬盘第一分区引导扇区内的启动器，可以是windows或linux的启动器</p></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">
+        zhiliao
+    </span>
+  </span>
+<time datetime="2013-09-26T00:47:00+08:00" pubdate>2013-09-26 00:47:00</time>  <span class="categories">
+    <a class='category' href='/category/bootloader.html'>bootloader</a>
+  </span>
+  <span class="categories">
+    <a class="category" href="/tag/linux.html">linux</a>,    <a class="category" href="/tag/bootloader.html">bootloader</a>  </span>
+</p><div class="sharing">
+</div>    </footer>
+  </article>
+
+</div>
+
+<aside class="sidebar">
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    <li class="post">
+        <a href="/posts/2022/12/29/install-cgit.html">debian11-bullseye install cgit</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2022/11/05/raspbian10-raspios-selenium.html">raspberry-debian10-selenium测试</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2022/09/03/alternativeto.html">代替品查询网站</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2022/09/03/Flatpak-vs-Snap.html">Flatpak vs Snap</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2022/07/09/interview-questions.html">面试中我经常问的问题</a>
+    </li>
+  </ul>
+</section><section>
+  <h1>Categories</h1>
+    <ul id="recent_posts">
+      <li><a href="/category/android.html">android (2)</a></li>
+      <li><a href="/category/blog.html">blog (1)</a></li>
+      <li><a href="/category/bootloader.html">bootloader (2)</a></li>
+      <li><a href="/category/container.html">container (1)</a></li>
+      <li><a href="/category/editor.html">editor (4)</a></li>
+      <li><a href="/category/firefox.html">firefox (1)</a></li>
+      <li><a href="/category/git.html">git (3)</a></li>
+      <li><a href="/category/golang.html">golang (1)</a></li>
+      <li><a href="/category/gu-piao.html">股票 (1)</a></li>
+      <li><a href="/category/ide.html">IDE (1)</a></li>
+      <li><a href="/category/interview.html">interview (1)</a></li>
+      <li><a href="/category/linux.html">linux (42)</a></li>
+      <li><a href="/category/network.html">network (7)</a></li>
+      <li><a href="/category/nltk.html">nltk (2)</a></li>
+      <li><a href="/category/other.html">other (1)</a></li>
+      <li><a href="/category/programming.html">programming (4)</a></li>
+      <li><a href="/category/python.html">python (2)</a></li>
+      <li><a href="/category/stock.html">stock (1)</a></li>
+      <li><a href="/category/vm.html">vm (1)</a></li>
+      <li><a href="/category/web.html">web (3)</a></li>
+      <li><a href="/category/windows.html">windows (1)</a></li>
+      <li><a href="/category/xwindow.html">xwindow (1)</a></li>
+  </ul>
+</section>
+<section>
+  <h1>Tags</h1>
+    <a href="/tag/git.html">git</a>,    <a href="/tag/linux.html">linux</a>,    <a href="/tag/selenium.html">selenium</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/docker.html">docker</a>,    <a href="/tag/flatpak.html">flatpak</a>,    <a href="/tag/interview.html">interview</a>,    <a href="/tag/programming.html">programming</a>,    <a href="/tag/qt.html">Qt</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/filesystem.html">filesystem</a>,    <a href="/tag/xwindow.html">xwindow</a>,    <a href="/tag/ide.html">IDE</a>,    <a href="/tag/glang.html">glang</a>,    <a href="/tag/xdg.html">xdg</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/blog.html">blog</a>,    <a href="/tag/c.html">C++</a>,    <a href="/tag/book.html">book</a>,    <a href="/tag/bootloader.html">bootloader</a></section>
+    <section>
+        <h1>Social</h1>
+        <ul>
+            <li><a href="https://github.com/zhangjiaxing" target="_blank">github</a></li>
+            <li><a href="http://wpa.qq.com/msgrd?v=3&uin=347820393&site=qq&menu=yes" target="_blank">qq</a></li>
+            <li><a href="http://www.writebug.cn" target="_blank">blog</a></li>
+            <li><a href="http://gallery.writebug.cn" target="_blank">gallery</a></li>
+        </ul>
+    </section>
+    <section>
+        <h1>Blogroll</h1>
+        <ul>
+            <li><a href="http://getpelican.com/" target="_blank">Pelican</a></li>
+        </ul>
+    </section>
+
+</aside>
+    </div>
+  </div>
+  <footer role="contentinfo">
+<p>
+    Copyright &copy;  2013&ndash;2022  zhiliao &mdash;
+  <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
+</p>  </footer>
+</body>
+</html>

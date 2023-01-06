@@ -2768,7 +2768,134 @@ bash&amp;gt; export CDPATH
 &lt;span class="err"&gt;u跳到上一层&lt;/span&gt;
 &lt;span class="err"&gt;s查找关键字&lt;/span&gt;
 &lt;span class="err"&gt;q离开&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category></entry><entry><title>linux书籍推荐</title><link href="/posts/2013/09/10/linux-books.html" rel="alternate"></link><published>2013-09-10T00:00:00+08:00</published><updated>2013-09-10T00:00:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2013-09-10:/posts/2013/09/10/linux-books.html</id><summary type="html">&lt;h1&gt;书籍推荐&lt;/h1&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category></entry><entry><title>learn-grub2</title><link href="/posts/2013/09/26/grub2.html" rel="alternate"></link><published>2013-09-26T00:47:00+08:00</published><updated>2013-09-26T00:47:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2013-09-26:/posts/2013/09/26/grub2.html</id><summary type="html">&lt;h2&gt;设备的命名&lt;/h2&gt;
+&lt;p&gt;grub2同样以fd表示软盘，hd表示硬盘（包含IDE和SCSI硬盘）。设备是从0开始编号，分区则是从1开始，主分区从1-4，逻辑分区从5开始，而grub分区编号是从0开始的。下面给出几个例子 ：&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;(fd0)：表示整个软盘&lt;/span&gt;
+&lt;span class="err"&gt;(hd0,1)：表示BIOS中的第一个硬盘的第1个分区&lt;/span&gt;
+&lt;span class="err"&gt;(hd0,5)/boot/vmlinuz：表示BIOS中的第一个硬盘的第一个逻辑分区下的boot目录下的vmlinuz文件&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;按c进入命令行状态，按Tab键可查看所有可用的命令&lt;/p&gt;
+&lt;p&gt;按e进入己选择菜单的编辑状态，在编辑状态下，由上下左右箭号来移动光标，enter键换行，ctrl+x以编辑的内容启动，ctrl+c进命令行状态，按Esc退出，回到菜单项。&lt;/p&gt;
+&lt;p&gt;在需要使用额外的内核参数启动时，比如要加上acpi=off时，把光标移动到linux这一行最后，在splash后加上一空格再输入acpi=off，然后按ctrl+x启动。&lt;/p&gt;
+&lt;p&gt;grub2中一些常用的命令
+```
+1)help
+    查看命令用法，如
+help search：查看search命令详细用法
+2)set …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;设备的命名&lt;/h2&gt;
+&lt;p&gt;grub2同样以fd表示软盘，hd表示硬盘（包含IDE和SCSI硬盘）。设备是从0开始编号，分区则是从1开始，主分区从1-4，逻辑分区从5开始，而grub分区编号是从0开始的。下面给出几个例子 ：&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;(fd0)：表示整个软盘&lt;/span&gt;
+&lt;span class="err"&gt;(hd0,1)：表示BIOS中的第一个硬盘的第1个分区&lt;/span&gt;
+&lt;span class="err"&gt;(hd0,5)/boot/vmlinuz：表示BIOS中的第一个硬盘的第一个逻辑分区下的boot目录下的vmlinuz文件&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;按c进入命令行状态，按Tab键可查看所有可用的命令&lt;/p&gt;
+&lt;p&gt;按e进入己选择菜单的编辑状态，在编辑状态下，由上下左右箭号来移动光标，enter键换行，ctrl+x以编辑的内容启动，ctrl+c进命令行状态，按Esc退出，回到菜单项。&lt;/p&gt;
+&lt;p&gt;在需要使用额外的内核参数启动时，比如要加上acpi=off时，把光标移动到linux这一行最后，在splash后加上一空格再输入acpi=off，然后按ctrl+x启动。&lt;/p&gt;
+&lt;p&gt;grub2中一些常用的命令
+```
+1)help
+    查看命令用法，如
+help search：查看search命令详细用法
+2)set
+    设置变量值，如
+set default=0
+set timeout=5
+set root=(hd0,3)等等
+    需要调用变量AA的值时，使用${AA}，如set root=(hd1,1)，则${root}=(hd1,1)
+3)default
+    定义默认引导的操作系统。0 表示第一个操作系统，1表示第2个，依此类推
+4)timeout
+    定义在时间内用户没有按下键盘上的某个按键，自动引导default指定的操作系统。
+5)root
+    指定用于启动系统的分区。
+6)insmod和rmmod
+    加载或移除某模块，如
+insmod jpeg
+insmod png
+insmod ntfs
+rmmod png
+等&lt;/p&gt;
+&lt;p&gt;7)drivemap
+drivemap兼容grub的map，主要用于只能从第一硬盘(hd0)引导启动的系统如 win2000 xp 2003，比如要添加第二硬盘第一分区上的xp系统：
+menuentry "Windows XP" {
+set root=(hd1,1)
+drivemap -s (hd0) ${root}
+chainloader +1
+}&lt;/p&gt;
+&lt;p&gt;8)ls
+    列出当前的所有设备。如(hd0)，(hd0,1)，(hd0,5)，(hd1)，(hd1,1)，(hd1,2)等
+ls -l
+    详细列出当前的所有设备。对于分区，会显示其label及uuid。
+ls /
+    列出当前设为root的分区下的文件
+ls (hd1,1)/
+    列出(hd1,1)分区根目录的文件&lt;/p&gt;
+&lt;p&gt;9)search
+search -f /ntldr
+    列出根目录里包含ntldr文件的分区，返回为分区号
+search -l LINUX
+    搜索label是LINUX的分区。
+search --set -f /ntldr
+    搜索根目录包含ntldr文件的分区并设为root，注意如果多个分区含有ntldr文件，
+set失去作用。&lt;/p&gt;
+&lt;p&gt;10)loopback
+loopback命令可用于建立回放设备，如
+loopback lo0 (hd1,1)/abc.iso
+    可以使用lo0设备来访问abc.iso里的内容，比如说，可以从abc.iso里的软盘映像中启动
+loopback lo0 (hd1,1)/aa.iso
+linux (lo0)/memdisk
+initrd (lo0)/abc.img
+    要删除某一回放设备，可以使用-d参数：
+loopback -d lo0&lt;/p&gt;
+&lt;p&gt;11)pager
+    分页显示。
+set pager=1
+    显示满一页时暂停，按space继续
+set pager=0
+    取消分页显示&lt;/p&gt;
+&lt;p&gt;12)linux
+    用linux命令取代grub中的kernel命令&lt;/p&gt;
+&lt;p&gt;13)chainloader
+    调用另一个启动器，如
+chainloader (hd0,1)+1
+    调用第一硬盘第一分区引导扇区内的启动器，可以是windows或linux的启动器&lt;/p&gt;</content><category term="bootloader"></category><category term="linux"></category><category term="bootloader"></category></entry><entry><title>example title</title><link href="/posts/2013/09/10/grub4dos-menu-lst.html" rel="alternate"></link><published>2013-09-10T17:37:00+08:00</published><updated>2013-09-10T17:37:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2013-09-10:/posts/2013/09/10/grub4dos-menu-lst.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;color&lt;/span&gt; &lt;span class="n"&gt;black&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;cyan&lt;/span&gt; &lt;span class="n"&gt;yellow&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;cyan&lt;/span&gt;
+&lt;span class="n"&gt;timeout&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
+&lt;span class="k"&gt;default&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+
+&lt;span class="n"&gt;title&lt;/span&gt; &lt;span class="n"&gt;ubuntu&lt;/span&gt;
+&lt;span class="n"&gt;find&lt;/span&gt; &lt;span class="c1"&gt;--set-root /ubuntu/vmlinuz&lt;/span&gt;
+&lt;span class="n"&gt;kernel&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ubuntu&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;vmlinuz&lt;/span&gt; &lt;span class="n"&gt;boot&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;casper&lt;/span&gt; &lt;span class="n"&gt;iso&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;scan&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="o"&gt;=/&lt;/span&gt;&lt;span class="n"&gt;ubuntu&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;iso&lt;/span&gt; &lt;span class="n"&gt;ro&lt;/span&gt; &lt;span class="n"&gt;quiet&lt;/span&gt; &lt;span class="n"&gt;splash&lt;/span&gt; &lt;span class="n"&gt;locale&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;zh_CN&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;UTF&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;
+&lt;span class="n"&gt;initrd&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ubuntu&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;initrd&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;lz&lt;/span&gt;
+
+&lt;span class="n"&gt;title&lt;/span&gt; &lt;span class="err"&gt;启动&lt;/span&gt;&lt;span class="n"&gt;winpe迷你系统&lt;/span&gt;
+&lt;span class="n"&gt;find&lt;/span&gt; &lt;span class="c1"&gt;--set-root /boot/iso/pe.iso&lt;/span&gt;
+&lt;span class="k"&gt;map&lt;/span&gt; &lt;span class="c1"&gt;--mem /boot/iso/pe …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;color&lt;/span&gt; &lt;span class="n"&gt;black&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;cyan&lt;/span&gt; &lt;span class="n"&gt;yellow&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;cyan&lt;/span&gt;
+&lt;span class="n"&gt;timeout&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
+&lt;span class="k"&gt;default&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+
+&lt;span class="n"&gt;title&lt;/span&gt; &lt;span class="n"&gt;ubuntu&lt;/span&gt;
+&lt;span class="n"&gt;find&lt;/span&gt; &lt;span class="c1"&gt;--set-root /ubuntu/vmlinuz&lt;/span&gt;
+&lt;span class="n"&gt;kernel&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ubuntu&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;vmlinuz&lt;/span&gt; &lt;span class="n"&gt;boot&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;casper&lt;/span&gt; &lt;span class="n"&gt;iso&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;scan&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="o"&gt;=/&lt;/span&gt;&lt;span class="n"&gt;ubuntu&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;iso&lt;/span&gt; &lt;span class="n"&gt;ro&lt;/span&gt; &lt;span class="n"&gt;quiet&lt;/span&gt; &lt;span class="n"&gt;splash&lt;/span&gt; &lt;span class="n"&gt;locale&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;zh_CN&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;UTF&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;
+&lt;span class="n"&gt;initrd&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ubuntu&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;initrd&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;lz&lt;/span&gt;
+
+&lt;span class="n"&gt;title&lt;/span&gt; &lt;span class="err"&gt;启动&lt;/span&gt;&lt;span class="n"&gt;winpe迷你系统&lt;/span&gt;
+&lt;span class="n"&gt;find&lt;/span&gt; &lt;span class="c1"&gt;--set-root /boot/iso/pe.iso&lt;/span&gt;
+&lt;span class="k"&gt;map&lt;/span&gt; &lt;span class="c1"&gt;--mem /boot/iso/pe.iso (0xff)&lt;/span&gt;
+&lt;span class="k"&gt;map&lt;/span&gt; &lt;span class="c1"&gt;--hook&lt;/span&gt;
+&lt;span class="n"&gt;chainloader&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="n"&gt;xff&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;title&lt;/span&gt; &lt;span class="err"&gt;启动&lt;/span&gt;&lt;span class="n"&gt;MAXDOS工具箱&lt;/span&gt;
+&lt;span class="n"&gt;find&lt;/span&gt; &lt;span class="c1"&gt;--set-root /boot/imgs/maxdos.img&lt;/span&gt;
+&lt;span class="k"&gt;map&lt;/span&gt; &lt;span class="c1"&gt;--mem /boot/imgs/maxdos.img (fd0)&lt;/span&gt;
+&lt;span class="k"&gt;map&lt;/span&gt; &lt;span class="c1"&gt;--hook&lt;/span&gt;
+&lt;span class="n"&gt;chainloader&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fd0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="n"&gt;rootnoverify&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fd0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;title&lt;/span&gt; &lt;span class="err"&gt;关闭计算机&lt;/span&gt;
+&lt;span class="n"&gt;halt&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="bootloader"></category><category term="bootloader"></category><category term="linux"></category></entry><entry><title>linux书籍推荐</title><link href="/posts/2013/09/10/linux-books.html" rel="alternate"></link><published>2013-09-10T00:00:00+08:00</published><updated>2013-09-10T00:00:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2013-09-10:/posts/2013/09/10/linux-books.html</id><summary type="html">&lt;h1&gt;书籍推荐&lt;/h1&gt;
 &lt;h2&gt;在线学习&lt;/h2&gt;
 &lt;h3&gt;在线基础学习&lt;/h3&gt;
 &lt;ul&gt;
