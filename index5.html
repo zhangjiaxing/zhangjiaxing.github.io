@@ -227,6 +227,44 @@ envsubst <span class="s1">&#39;${VAR_NAME}&#39;</span> &lt; nginx.conf.template 
   		<article>
 <header>
       <h1 class="entry-title">
+        <a href="/posts/2017/06/07/vim-fold.html">vim折叠设置</a>
+      </h1>
+    <p class="meta">
+<time datetime="2017-06-07T00:00:00+08:00" pubdate>2017-06-07 00:00:00</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><div class="highlight-custom"><pre><span></span><code><span class="x">vim折叠设置</span>
+<span class="x">set foldmethod=indent &quot;set default foldmethod</span>
+<span class="x">&quot;zi 打开关闭折叠</span>
+<span class="x">&quot;zv 查看此行</span>
+<span class="x">zm 关闭折叠</span>
+<span class="x">zM 关闭所有</span>
+<span class="x">zr 打开</span>
+<span class="x">zR 打开所有</span>
+<span class="x">zc 折叠当前行</span>
+<span class="x">zo 打开当前折叠</span>
+<span class="x">zd 删除折叠</span>
+<span class="x">zD 删除所有折叠</span>
+
+
+<span class="x">1. 折叠方式</span>
+<span class="x">可用选项 &#39;foldmethod&#39; 来设定折叠方式：set fdm=*****。</span>
+<span class="x">有 6 种方法来选定折叠：</span>
+<span class="x">manual           手工定义折叠</span>
+<span class="x">indent             更多的缩进表示更高级别的折叠</span>
+<span class="x">expr                用表达式来定义折叠</span>
+<span class="x">syntax             用语法高亮来定义折叠</span>
+<span class="x">diff                  对没有更改的文本进行折叠</span>
+<span class="x">marker            对文中的标志折叠</span>
+<span class="x">注意 …</span></code></pre></div></div>
+            <footer>
+                <a rel="full-article" href="/posts/2017/06/07/vim-fold.html">Read On &crarr;</a>
+            </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
         <a href="/posts/2017/06/07/vim-sort.html">vim 排序文字</a>
       </h1>
     <p class="meta">
@@ -284,6 +322,46 @@ envsubst <span class="s1">&#39;${VAR_NAME}&#39;</span> &lt; nginx.conf.template 
   		<article>
 <header>
       <h1 class="entry-title">
+        <a href="/posts/2015/06/18/gtags.html">gtags使用</a>
+      </h1>
+    <p class="meta">
+<time datetime="2015-06-18T13:50:00+08:00" pubdate>2015-06-18 13:50:00</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><h5>gtags global</h5>
+<p>安装好以后，有global、gtags、gtags-cscope三个命令。global是查询，gtags是生成索引文件，gtags-cscope是与cscope一样的界面</p>
+<h5>example：</h5>
+<p>代码:</p>
+<div class="highlight-custom"><pre><span></span><code>$ <span class="nb">cd</span> project/
+$ gtags
+</code></pre></div>
+
+<p>这样就生成了整个目录的索引文件，包括GTAGS、GRTAGS、GPATH三个文件。</p>
+<p>你也可以先用find命令生成一个文件列表，叫gtags.files，然后再执行gtags，就会只索引gtags.files里的文件。</p>
+<h5>example：</h5>
+<div class="highlight-custom"><pre><span></span><code><span class="nl">代码</span><span class="p">:</span><span class="w"></span>
+<span class="err">$</span><span class="w"> </span><span class="n">cd</span><span class="w"> </span><span class="n">project</span><span class="o">/</span><span class="w"></span>
+<span class="err">$</span><span class="w"> </span><span class="n">find</span><span class="w"> </span><span class="p">.</span><span class="w"> </span><span class="o">-</span><span class="n">name</span><span class="w"> </span><span class="ss">&quot;*.[ch]&quot;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">gtags</span><span class="p">.</span><span class="n">files</span><span class="w"></span>
+<span class="err">$</span><span class="w"> </span><span class="n">gtags</span><span class="w"></span>
+</code></pre></div>
+
+<p>查询使用的命令是global和gtags-cscope。前者是命令行界面，后者是与cscope兼容的ncurses界面。这里就不多介绍了，重点是如何在vim里查询：</p>
+<p>首先进入vim，然后:</p>
+<h5>example</h5>
+<div class="highlight-custom"><pre><span></span><code><span class="c">代码:</span>
+<span class="err">:set cscopeprg=gtags-cscope</span>
+<span class="err">:cs add GTAGS</span>
+</code></pre></div>
+
+<p>然后就可以像cscope一样 …</p></div>
+            <footer>
+                <a rel="full-article" href="/posts/2015/06/18/gtags.html">Read On &crarr;</a>
+            </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
         <a href="/posts/2015/01/20/man-pages-to-pdf.html">将man page输出到pdf和HTML</a>
       </h1>
     <p class="meta">
@@ -336,6 +414,31 @@ man -t eventfd <span class="p">|</span> ps2pdf - &gt; eventfd.pdf
   		<article>
 <header>
       <h1 class="entry-title">
+        <a href="/posts/2014/09/26/bash.html">bash</a>
+      </h1>
+    <p class="meta">
+<time datetime="2014-09-26T21:55:00+08:00" pubdate>2014-09-26 21:55:00</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><h4>Linux 下shell基本上默认是 bash, 下面是我总结的一些技巧。</h4>
+<h4>trap 可以捕获信号</h4>
+<h4>目录跳转</h4>
+<p>pushd, popd, dirs 实现多目录跳转
+pushd 命令用来更改您的当前目录并将其存储在堆栈中。 popd 命令用来从堆栈的顶部移除目录并使您返回该位置。 dirs 命令来显示当前目录堆栈。（dir –v –p)
+pushd +n; popd +n 可以操作虚拟目录堆栈
+ </p>
+<h4>快速跳至常用目录</h4>
+<p>你可能已经知道$PATH变量可以列出 bash的“搜索路径”——当在当前目录不能找到请求的文件时，bash会自动搜索的目录。不过，bash也支持$CDPATH变量，当试图改变目录时该变量列出cd命令转向的目录。为了使用这个特性，我们要对$CDPATH变量赋值一个目录列表，如下面的例子所示：
+bash&gt; CDPATH='.:~:/usr/local/apache/htdocs:/disk1/backups'
+bash&gt; export …</p></div>
+            <footer>
+                <a rel="full-article" href="/posts/2014/09/26/bash.html">Read On &crarr;</a>
+            </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
         <a href="/posts/2014/06/11/chmod777.html">linux错误执行chmod 777 / 的处理方法</a>
       </h1>
     <p class="meta">
@@ -355,28 +458,8 @@ man -t eventfd <span class="p">|</span> ps2pdf - &gt; eventfd.pdf
 <span class="err">chmod u+s `which sudo`</span>
 </code></pre></div></div>
   		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="/posts/2013/09/27/linux-info.html">linux 查看info文档</a>
-      </h1>
-    <p class="meta">
-<time datetime="2013-09-27T17:59:00+08:00" pubdate>2013-09-27 17:59:00</time>      
-    </p>
-</header>
-
-        <div class="entry-content"><div class="highlight-custom"><pre><span></span><code><span class="err">info &lt;command&gt;</span>
-<span class="err">info 比man 更详细</span>
-<span class="err">info 中 按tab 跳到下一个 连接 （有*的，可以连接到其他info）</span>
-<span class="err">按enter跳转</span>
-<span class="err">n按键跳到下一个小节</span>
-<span class="err">p跳到上一个小节</span>
-<span class="err">u跳到上一层</span>
-<span class="err">s查找关键字</span>
-<span class="err">q离开</span>
-</code></pre></div></div>
-  		</article>
 <div class="pagination">
+    <a class="prev" href="/index6.html">&larr; Older</a>
 
     <a class="next" href="/index4.html">Newer &rarr;</a>
   <br />
@@ -408,14 +491,14 @@ man -t eventfd <span class="p">|</span> ps2pdf - &gt; eventfd.pdf
       <li><a href="/category/android.html">android (2)</a></li>
       <li><a href="/category/blog.html">blog (1)</a></li>
       <li><a href="/category/container.html">container (1)</a></li>
-      <li><a href="/category/editor.html">editor (1)</a></li>
+      <li><a href="/category/editor.html">editor (4)</a></li>
       <li><a href="/category/firefox.html">firefox (1)</a></li>
       <li><a href="/category/git.html">git (3)</a></li>
       <li><a href="/category/golang.html">golang (1)</a></li>
       <li><a href="/category/gu-piao.html">股票 (1)</a></li>
       <li><a href="/category/ide.html">IDE (1)</a></li>
       <li><a href="/category/interview.html">interview (1)</a></li>
-      <li><a href="/category/linux.html">linux (39)</a></li>
+      <li><a href="/category/linux.html">linux (40)</a></li>
       <li><a href="/category/network.html">network (7)</a></li>
       <li><a href="/category/nltk.html">nltk (2)</a></li>
       <li><a href="/category/other.html">other (1)</a></li>
@@ -430,7 +513,7 @@ man -t eventfd <span class="p">|</span> ps2pdf - &gt; eventfd.pdf
 </section>
 <section>
   <h1>Tags</h1>
-    <a href="/tag/git.html">git</a>,    <a href="/tag/linux.html">linux</a>,    <a href="/tag/selenium.html">selenium</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/docker.html">docker</a>,    <a href="/tag/flatpak.html">flatpak</a>,    <a href="/tag/interview.html">interview</a>,    <a href="/tag/programming.html">programming</a>,    <a href="/tag/qt.html">Qt</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/filesystem.html">filesystem</a>,    <a href="/tag/xwindow.html">xwindow</a>,    <a href="/tag/ide.html">IDE</a>,    <a href="/tag/glang.html">glang</a>,    <a href="/tag/xdg.html">xdg</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a></section>
+    <a href="/tag/git.html">git</a>,    <a href="/tag/linux.html">linux</a>,    <a href="/tag/selenium.html">selenium</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/docker.html">docker</a>,    <a href="/tag/flatpak.html">flatpak</a>,    <a href="/tag/interview.html">interview</a>,    <a href="/tag/programming.html">programming</a>,    <a href="/tag/qt.html">Qt</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/filesystem.html">filesystem</a>,    <a href="/tag/xwindow.html">xwindow</a>,    <a href="/tag/ide.html">IDE</a>,    <a href="/tag/glang.html">glang</a>,    <a href="/tag/xdg.html">xdg</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a></section>
     <section>
         <h1>Social</h1>
         <ul>

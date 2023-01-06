@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>vim折叠设置 &mdash; cat ~/.zhiliao.history</title>
+  <meta name="author" content="zhiliao">
+
+  <link href="/feeds/all.atom.xml" type="application/rss+xml" rel="alternate"
+        title="cat ~/.zhiliao.history RSS Feed" />
+
+
+
+
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="/favicon.png" rel="icon">
+
+  <link href="/theme/css/main.css" media="screen, projection"
+        rel="stylesheet" type="text/css">
+  <link href="/theme/css/pygment.css" rel="stylesheet" type="text/css">
+
+  <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+
+  <script src="/theme/js/modernizr-2.0.js"></script>
+  <script src="/theme/js/ender.js"></script>
+  <script src="/theme/js/octopress.js" type="text/javascript"></script>
+</head>
+
+<body >
+  <header role="banner"
+  >
+<hgroup>
+  <h1><a href="/">cat ~/.zhiliao.history</a></h1>
+    <h2>无聊就该多读书。</h2>
+</hgroup></header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/feeds/all.atom.xml" rel="subscribe-rss">RSS</a></li>
+</ul>
+
+
+<ul class="main-navigation">
+    <li><a href="/">Home</a></li>
+    <li><a href="/archives.html">Archive</a></li>
+    <li><a href="/pages/about.html">About</a></li>
+</ul></nav>
+  <div id="main">
+    <div id="content">
+<div>
+  <article class="hentry" role="article">
+<header>
+      <h1 class="entry-title">vim折叠设置</h1>
+    <p class="meta">
+<time datetime="2017-06-07T00:00:00+08:00" pubdate>2017-06-07 00:00:00</time>      
+    </p>
+</header>
+
+    <div class="entry-content"><div class="highlight-custom"><pre><span></span><code><span class="x">vim折叠设置</span>
+<span class="x">set foldmethod=indent &quot;set default foldmethod</span>
+<span class="x">&quot;zi 打开关闭折叠</span>
+<span class="x">&quot;zv 查看此行</span>
+<span class="x">zm 关闭折叠</span>
+<span class="x">zM 关闭所有</span>
+<span class="x">zr 打开</span>
+<span class="x">zR 打开所有</span>
+<span class="x">zc 折叠当前行</span>
+<span class="x">zo 打开当前折叠</span>
+<span class="x">zd 删除折叠</span>
+<span class="x">zD 删除所有折叠</span>
+
+
+<span class="x">1. 折叠方式</span>
+<span class="x">可用选项 &#39;foldmethod&#39; 来设定折叠方式：set fdm=*****。</span>
+<span class="x">有 6 种方法来选定折叠：</span>
+<span class="x">manual           手工定义折叠</span>
+<span class="x">indent             更多的缩进表示更高级别的折叠</span>
+<span class="x">expr                用表达式来定义折叠</span>
+<span class="x">syntax             用语法高亮来定义折叠</span>
+<span class="x">diff                  对没有更改的文本进行折叠</span>
+<span class="x">marker            对文中的标志折叠</span>
+<span class="x">注意，每一种折叠方式不兼容，如不能即用expr又用marker方式，我主要轮流使用indent和marker方式进行折叠。</span>
+
+<span class="x">使用时，用：set fdm=marker 命令来设置成marker折叠方式（fdm是foldmethod的缩写）。</span>
+<span class="x">要使每次打开vim时折叠都生效，则在.vimrc文件中添加设置，如添加：set fdm=syntax，就像添加其它的初始化设置一样。</span>
+
+<span class="x">2. 折叠命令</span>
+<span class="x">选取了折叠方式后，我们就可以对某些代码实施我们需要的折叠了，由于我使用indent和marker稍微多一些，故以它们的使用为例：</span>
+<span class="x">如果使用了indent方式，vim会自动的对大括号的中间部分进行折叠，我们可以直接使用这些现成的折叠成果。</span>
+<span class="x">在可折叠处（大括号中间）：</span>
+<span class="x">zc      折叠</span>
+<span class="x">zC     对所在范围内所有嵌套的折叠点进行折叠</span>
+<span class="x">zo      展开折叠</span>
+<span class="x">zO     对所在范围内所有嵌套的折叠点展开</span>
+<span class="x">[z       到当前打开的折叠的开始处。</span>
+<span class="x">]z       到当前打开的折叠的末尾处。</span>
+<span class="x">zj       向下移动。到达下一个折叠的开始处。关闭的折叠也被计入。</span>
+<span class="x">zk      向上移动到前一折叠的结束处。关闭的折叠也被计入。</span>
+
+<span class="x">当使用marker方式时，需要用标计来标识代码的折叠，系统默认是</span><span class="cp">{{</span><span class="o">{</span><span class="err">和</span><span class="cp">}}</span><span class="x">}，最好不要改动之：）</span>
+<span class="x">我们可以使用下面的命令来创建和删除折叠：</span>
+<span class="x">zf      创建折叠，比如在marker方式下：</span>
+<span class="x">zf56G，创建从当前行起到56行的代码折叠；</span>
+<span class="x">10zf或10zf+或zf10↓，创建从当前行起到后10行的代码折叠。</span>
+<span class="x">10zf-或zf10↑，创建从当前行起到之前10行的代码折叠。</span>
+<span class="x">在括号处zf%，创建从当前行起到对应的匹配的括号上去（（），{}，[]，&lt;&gt;等）。</span>
+<span class="x">zd      删除 (delete) 在光标下的折叠。仅当 &#39;foldmethod&#39; 设为 &quot;manual&quot; 或 &quot;marker&quot; 时有效。</span>
+<span class="x">zD     循环删除 (Delete) 光标下的折叠，即嵌套删除折叠。</span>
+<span class="x">仅当 &#39;foldmethod&#39; 设为 &quot;manual&quot; 或 &quot;marker&quot; 时有效。</span>
+<span class="x">zE     除去 (Eliminate) 窗口里“所有”的折叠。</span>
+<span class="x">仅当 &#39;foldmethod&#39; 设为 &quot;manual&quot; 或 &quot;marker&quot; 时有效。</span>
+
+<span class="x">关于vim的代码折叠，小弟也是初学，仅做参考。</span>
+
+
+
+
+<span class="x">使用Vim的折叠功能书写程序代码</span>
+
+<span class="x">折行的用处：</span>
+<span class="x">2 创建折行进行大纲预览</span>
+<span class="x">2 移动到某处进行编辑</span>
+<span class="x">2 使用jzij打开文本进行编辑</span>
+<span class="x">2 编辑完毕后再用jzij打开折行进行移动</span>
+
+<span class="x">打开vim的折叠功能，请在~/.vimrc 中加入:set foldmethod=marker ，使用vim默认的折叠标签进行处理。使用方法如下：</span>
+<span class="x">1、加折叠标签</span>
+<span class="x">在normal模式下，从键盘输入zf并回车，您就会看到折叠在一起的两行标签如下：</span>
+<span class="x">/*</span><span class="cp">{{</span><span class="o">{*/</span>
+<span class="err">....</span><span class="nv">.这里输入您</span> <span class="err">的程序代码</span>
+<span class="o">/*</span><span class="cp">}}</span><span class="x">}*/</span>
+
+<span class="x">2、输入程序代码后，将代码折叠起来使用如下命令(normal模式)：</span>
+<span class="x">zc 回车</span>
+
+<span class="x">3、打开折叠的程序有以下几种方法</span>
+<span class="x">a、在折叠的行上移动光标</span>
+<span class="x">b、在normal模式下输入zo并回车</span>
+
+<span class="x">4、给一段文字加折行（normal 模式）</span>
+<span class="x">zfap</span>
+
+<span class="x">5、zr命令可以打开折叠几层的内容 zm使用内容折叠的更多一些（多层折叠操作时可反复使用）。</span>
+
+<span class="x">6、嵌套了多层的折行, 也可以用zR命令一次打开所有折行</span>
+
+<span class="x">7、关闭所有的嵌套折行使用zM</span>
+
+<span class="x">8、可以用jznj命令来禁用一个折行. 然后用jzNj还可以恢复它. jzij命令则可以在两者之间切换.</span>
+
+<span class="x">其它的，请参考vim的使用手册。</span>
+</code></pre></div></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">
+        zhiliao
+    </span>
+  </span>
+<time datetime="2017-06-07T00:00:00+08:00" pubdate>2017-06-07 00:00:00</time>  <span class="categories">
+    <a class='category' href='/category/editor.html'>editor</a>
+  </span>
+  <span class="categories">
+    <a class="category" href="/tag/vim.html">vim</a>,    <a class="category" href="/tag/editor.html">editor</a>  </span>
+</p><div class="sharing">
+</div>    </footer>
+  </article>
+
+</div>
+
+<aside class="sidebar">
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    <li class="post">
+        <a href="/posts/2022/12/29/install-cgit.html">debian11-bullseye install cgit</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2022/11/05/raspbian10-raspios-selenium.html">raspberry-debian10-selenium测试</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2022/09/03/alternativeto.html">代替品查询网站</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2022/09/03/Flatpak-vs-Snap.html">Flatpak vs Snap</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2022/07/09/interview-questions.html">面试中我经常问的问题</a>
+    </li>
+  </ul>
+</section><section>
+  <h1>Categories</h1>
+    <ul id="recent_posts">
+      <li><a href="/category/android.html">android (2)</a></li>
+      <li><a href="/category/blog.html">blog (1)</a></li>
+      <li><a href="/category/container.html">container (1)</a></li>
+      <li><a href="/category/editor.html">editor (4)</a></li>
+      <li><a href="/category/firefox.html">firefox (1)</a></li>
+      <li><a href="/category/git.html">git (3)</a></li>
+      <li><a href="/category/golang.html">golang (1)</a></li>
+      <li><a href="/category/gu-piao.html">股票 (1)</a></li>
+      <li><a href="/category/ide.html">IDE (1)</a></li>
+      <li><a href="/category/interview.html">interview (1)</a></li>
+      <li><a href="/category/linux.html">linux (40)</a></li>
+      <li><a href="/category/network.html">network (7)</a></li>
+      <li><a href="/category/nltk.html">nltk (2)</a></li>
+      <li><a href="/category/other.html">other (1)</a></li>
+      <li><a href="/category/programming.html">programming (3)</a></li>
+      <li><a href="/category/python.html">python (1)</a></li>
+      <li><a href="/category/stock.html">stock (1)</a></li>
+      <li><a href="/category/vm.html">vm (1)</a></li>
+      <li><a href="/category/web.html">web (3)</a></li>
+      <li><a href="/category/windows.html">windows (1)</a></li>
+      <li><a href="/category/xwindow.html">xwindow (1)</a></li>
+  </ul>
+</section>
+<section>
+  <h1>Tags</h1>
+    <a href="/tag/git.html">git</a>,    <a href="/tag/linux.html">linux</a>,    <a href="/tag/selenium.html">selenium</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/docker.html">docker</a>,    <a href="/tag/flatpak.html">flatpak</a>,    <a href="/tag/interview.html">interview</a>,    <a href="/tag/programming.html">programming</a>,    <a href="/tag/qt.html">Qt</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/filesystem.html">filesystem</a>,    <a href="/tag/xwindow.html">xwindow</a>,    <a href="/tag/ide.html">IDE</a>,    <a href="/tag/glang.html">glang</a>,    <a href="/tag/xdg.html">xdg</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a></section>
+    <section>
+        <h1>Social</h1>
+        <ul>
+            <li><a href="https://github.com/zhangjiaxing" target="_blank">github</a></li>
+            <li><a href="http://wpa.qq.com/msgrd?v=3&uin=347820393&site=qq&menu=yes" target="_blank">qq</a></li>
+            <li><a href="http://www.writebug.cn" target="_blank">blog</a></li>
+            <li><a href="http://gallery.writebug.cn" target="_blank">gallery</a></li>
+        </ul>
+    </section>
+    <section>
+        <h1>Blogroll</h1>
+        <ul>
+            <li><a href="http://getpelican.com/" target="_blank">Pelican</a></li>
+        </ul>
+    </section>
+
+</aside>
+    </div>
+  </div>
+  <footer role="contentinfo">
+<p>
+    Copyright &copy;  2013&ndash;2022  zhiliao &mdash;
+  <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
+</p>  </footer>
+</body>
+</html>

@@ -1022,7 +1022,121 @@ man -t eventfd &lt;span class="p"&gt;|&lt;/span&gt; ps2pdf - &amp;gt; eventfd.pd
 &lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="n"&gt;utf8&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;描述&lt;/span&gt;&lt;span class="n"&gt;UTF&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="err"&gt;编码。&lt;/span&gt;
 &lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;解释&lt;/span&gt;&lt;span class="n"&gt;URL&lt;/span&gt;&lt;span class="err"&gt;、&lt;/span&gt;&lt;span class="n"&gt;URI&lt;/span&gt;&lt;span class="err"&gt;、&lt;/span&gt;&lt;span class="n"&gt;URN等的标准&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
 &lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="n"&gt;ascii&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category></entry><entry><title>linux错误执行chmod 777 / 的处理方法</title><link href="/posts/2014/06/11/chmod777.html" rel="alternate"></link><published>2014-06-11T20:50:00+08:00</published><updated>2014-06-11T20:50:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2014-06-11:/posts/2014/06/11/chmod777.html</id><content type="html">&lt;h4&gt;setfacl&lt;/h4&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category></entry><entry><title>bash</title><link href="/posts/2014/09/26/bash.html" rel="alternate"></link><published>2014-09-26T21:55:00+08:00</published><updated>2014-09-26T21:55:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2014-09-26:/posts/2014/09/26/bash.html</id><summary type="html">&lt;h4&gt;Linux 下shell基本上默认是 bash, 下面是我总结的一些技巧。&lt;/h4&gt;
+&lt;h4&gt;trap 可以捕获信号&lt;/h4&gt;
+&lt;h4&gt;目录跳转&lt;/h4&gt;
+&lt;p&gt;pushd, popd, dirs 实现多目录跳转
+pushd 命令用来更改您的当前目录并将其存储在堆栈中。 popd 命令用来从堆栈的顶部移除目录并使您返回该位置。 dirs 命令来显示当前目录堆栈。（dir –v –p)
+pushd +n; popd +n 可以操作虚拟目录堆栈
+ &lt;/p&gt;
+&lt;h4&gt;快速跳至常用目录&lt;/h4&gt;
+&lt;p&gt;你可能已经知道$PATH变量可以列出 bash的“搜索路径”——当在当前目录不能找到请求的文件时，bash会自动搜索的目录。不过，bash也支持$CDPATH变量，当试图改变目录时该变量列出cd命令转向的目录。为了使用这个特性，我们要对$CDPATH变量赋值一个目录列表，如下面的例子所示：
+bash&amp;gt; CDPATH='.:~:/usr/local/apache/htdocs:/disk1/backups'
+bash&amp;gt; export …&lt;/p&gt;</summary><content type="html">&lt;h4&gt;Linux 下shell基本上默认是 bash, 下面是我总结的一些技巧。&lt;/h4&gt;
+&lt;h4&gt;trap 可以捕获信号&lt;/h4&gt;
+&lt;h4&gt;目录跳转&lt;/h4&gt;
+&lt;p&gt;pushd, popd, dirs 实现多目录跳转
+pushd 命令用来更改您的当前目录并将其存储在堆栈中。 popd 命令用来从堆栈的顶部移除目录并使您返回该位置。 dirs 命令来显示当前目录堆栈。（dir –v –p)
+pushd +n; popd +n 可以操作虚拟目录堆栈
+ &lt;/p&gt;
+&lt;h4&gt;快速跳至常用目录&lt;/h4&gt;
+&lt;p&gt;你可能已经知道$PATH变量可以列出 bash的“搜索路径”——当在当前目录不能找到请求的文件时，bash会自动搜索的目录。不过，bash也支持$CDPATH变量，当试图改变目录时该变量列出cd命令转向的目录。为了使用这个特性，我们要对$CDPATH变量赋值一个目录列表，如下面的例子所示：
+bash&amp;gt; CDPATH='.:~:/usr/local/apache/htdocs:/disk1/backups'
+bash&amp;gt; export CDPATH
+现在，无论何时使用cd命令，bash将会检查$CDPATH列表中的所有目录来查找要转向的目录名。
+ &lt;/p&gt;
+&lt;h4&gt;特殊参数&lt;/h4&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;1. $*: 代表所有参数，其间隔为IFS内定参数的第一个字元 &lt;/span&gt;
+&lt;span class="err"&gt;2. $@: 与*星号类同。不同之处在於不参照IFS &lt;/span&gt;
+&lt;span class="err"&gt;3. $#: 代表参数数量 &lt;/span&gt;
+&lt;span class="err"&gt;4. $?: 执行上一个指令的返回值 &lt;/span&gt;
+&lt;span class="err"&gt;5. $-: 最近执行的foreground pipeline的选项参数 &lt;/span&gt;
+&lt;span class="err"&gt;6. $$: 本身的Process ID &lt;/span&gt;
+&lt;span class="err"&gt;7. $!: 执行上一个背景指令的PID &lt;/span&gt;
+&lt;span class="err"&gt;8. $_: 显示出最後一个执行的命令&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4&gt;bash快捷键&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Emacs风格&lt;/li&gt;
+&lt;li&gt;ctrl+p: 方向键 上 ↑ &lt;/li&gt;
+&lt;li&gt;ctrl+n: 方向键下 ↓ &lt;/li&gt;
+&lt;li&gt;ctrl+b: 方向键 ← &lt;/li&gt;
+&lt;li&gt;alt+f: 光标右移一个单词 &lt;/li&gt;
+&lt;li&gt;ctrl+f :方向键 → &lt;/li&gt;
+&lt;li&gt;alt+b: 光标左移一个单词 &lt;/li&gt;
+&lt;li&gt;ctrl+a:光标移到行首 &lt;/li&gt;
+&lt;li&gt;ctrl+e:光标移到行尾 &lt;/li&gt;
+&lt;li&gt;ctrl+k:清除光标后至行尾的内容。 &lt;/li&gt;
+&lt;li&gt;ctrl+d: 删除光标所在字母;注意和backspace以及ctrl+h的区别，这2个是删除光标前的字符 &lt;/li&gt;
+&lt;li&gt;ctrl+r:搜索之前打过的命令。会有一个提示，根据你输入的关键字进行搜索bash的history &lt;/li&gt;
+&lt;li&gt;ctrl+m : 输入回车 &lt;/li&gt;
+&lt;li&gt;ctrl+i : 输入tab &lt;/li&gt;
+&lt;li&gt;ctrl+[ : 输入esc&lt;/li&gt;
+&lt;li&gt;其它 &lt;/li&gt;
+&lt;li&gt;ctrl+h:删除光标前一个字符，同 backspace 键相同。 &lt;/li&gt;
+&lt;li&gt;alt + p 非增量方式反向搜索历史 &lt;/li&gt;
+&lt;li&gt;alt + &amp;gt; 历史命令列表中的最后一行命令开始向前 &lt;/li&gt;
+&lt;li&gt;ctrl+u: 清除光标前至行首间的所有内容。 &lt;/li&gt;
+&lt;li&gt;ctrl+w: 移除光标前的一个单词 &lt;/li&gt;
+&lt;li&gt;ctrl+t: 交换光标位置前的两个字符 &lt;/li&gt;
+&lt;li&gt;ctrl+y: 粘贴或者恢复上次的删除 &lt;/li&gt;
+&lt;li&gt;ctrl+l:清屏，相当于clear。 &lt;/li&gt;
+&lt;li&gt;ctrl + xx 光标在行头与行尾进行跳转 &lt;/li&gt;
+&lt;li&gt;alt+r 撤销当前行的所有内容 &lt;/li&gt;
+&lt;li&gt;ctrl+z : 把当前进程转到后台运行 &lt;/li&gt;
+&lt;li&gt;ctrl+s : 锁住屏幕 &lt;/li&gt;
+&lt;li&gt;ctrl+q : 恢复屏幕 &lt;/li&gt;
+&lt;li&gt;ctrl+v key: 输入特殊字符 &lt;/li&gt;
+&lt;li&gt;alt + l 将当前光标处之后的字母转化成小写字母 &lt;/li&gt;
+&lt;li&gt;alt + u 将当前光标处之后的字母转化成大写字母 &lt;/li&gt;
+&lt;li&gt;ctrl + Alt + e 扩展命令行的内容（例如：ls  =&amp;gt;  ls  -l  --color=tty） &lt;/li&gt;
+&lt;li&gt;ctrl+c:杀死当前进程, 输入模式下，中断输入的命令。 &lt;/li&gt;
+&lt;li&gt;ctrl+d:退出当前 Shell &lt;/li&gt;
+&lt;li&gt;esc + . 快捷键可以轮询历史命令的参数或选项。 &lt;/li&gt;
+&lt;li&gt;esc + t 快捷键可以 置换前两个单词。 &lt;/li&gt;
+&lt;li&gt;输入重复字母 Esc {100} e 可以输入100个e字符&lt;/li&gt;
+&lt;li&gt;按多次{esc}可以补全 &lt;/li&gt;
+&lt;li&gt;{esc}{~}可以补全本机上的用户名 &lt;/li&gt;
+&lt;li&gt;{esc}{/}可以补全文件名 &lt;/li&gt;
+&lt;li&gt;{esc}{@}可以补全主机名,localhost可以方便地用 lo补全.
+ &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Bang Bang 历史命令&lt;/h4&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="sx"&gt;!!    重新执行上一条命令 &lt;/span&gt;
+&lt;span class="sx"&gt;!N  重新执行第N条命令。比如 !3 &lt;/span&gt;
+&lt;span class="sx"&gt;!-N 重新执行倒数第N条命令。!-3 &lt;/span&gt;
+&lt;span class="sx"&gt;!string  重新执行以字符串打头的命令。 比如 !vim &lt;/span&gt;
+&lt;span class="sx"&gt;!?string?  重新执行包含字符串的命令。 比如 !?test.cpp? &lt;/span&gt;
+&lt;span class="sx"&gt;!?string?%  替换为： 最近包含这个字符串的命令的参数。比如：   vim !?test.cpp?% &lt;/span&gt;
+&lt;span class="sx"&gt;!$   替换为：上一条命令的最后一个参数。比如 vim !$ &lt;/span&gt;
+&lt;span class="sx"&gt;!!string  在上一条命令的后面追加 string ，并执行。 &lt;/span&gt;
+&lt;span class="sx"&gt;!Nstring  在第N条指令后面追加string，并执行。 &lt;/span&gt;
+^&lt;span class="n"&gt;old&lt;/span&gt;^&lt;span class="n"&gt;new&lt;/span&gt;^  对上一条指令进行替换 
+&lt;span class="n"&gt;修饰&lt;/span&gt;
+&lt;span class="s"&gt;:s/old/new/&lt;/span&gt;  对第&lt;span class="n"&gt;N条指令中第一次出现的new替换为old&lt;/span&gt;。 比如 &lt;span class="n"&gt;vim&lt;/span&gt; !?&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cpp&lt;/span&gt;?&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;cpp&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt; 
+&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;gs&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;old&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;new&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;  全部替换 
+&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;wn&lt;/span&gt;  &lt;span class="n"&gt;w为数字&lt;/span&gt;， 取指令的第&lt;span class="n"&gt;w个参数&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; 
+&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; 回显命令而不是执行&lt;span class="p"&gt;,&lt;/span&gt; 比如 !&lt;span class="n"&gt;ls&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;  。 这个很有用， 你可以先查看你选的命令对不对，要执行时再使用!!
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4&gt;Bash相关文件&lt;/h4&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;     /etc/profile 设置环境变量(所有用户) &lt;/span&gt;
+&lt;span class="err"&gt;     ~/.bash_profile 设置环境变量(当前用户) &lt;/span&gt;
+&lt;span class="err"&gt;     ~/.bashrc &lt;/span&gt;
+&lt;span class="err"&gt;     ~/.bash_history &lt;/span&gt;
+&lt;span class="err"&gt;     ~/.bash_logout&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4&gt;login shell 和 no-login shell&lt;/h4&gt;
+&lt;p&gt;“login shell” 代表用户登入, 比如使用 “su -“ 命令, 或者用 ssh 连接到某一个服务器上, 都会使用该用户默认 shell 启动 login shell 模式.&lt;/p&gt;
+&lt;p&gt;该模式下的 shell 会去自动执行 /etc/profile 和 ~/.profile 文件, 但不会执行任何的 bashrc 文件, 所以一般再 /etc/profile 或者 ~/.profile 里我们会手动去 source bashrc 文件.&lt;/p&gt;
+&lt;p&gt;而 no-login shell 的情况是我们在终端下直接输入 bash 或者 bash -c “CMD” 来启动的 shell. 该模式下是不会自动去运行任何的 profile 文件.&lt;/p&gt;
+&lt;h4&gt;bashrc 和 profile 的区别&lt;/h4&gt;
+&lt;h5&gt;profile&lt;/h5&gt;
+&lt;p&gt;其实看名字就能了解大概了, profile 是某个用户唯一的用来设置环境变量的地方, 因为用户可以有多个 shell 比如 bash, sh, zsh 之类的, 但像环境变量这种其实只需要在统一的一个地方初始化就可以了, 而这就是 profile.&lt;/p&gt;
+&lt;h5&gt;bashrc&lt;/h5&gt;
+&lt;p&gt;bashrc 也是看名字就知道, 是专门用来给 bash 做初始化的比如用来初始化 bash 的设置, bash 的代码补全, bash 的别名, bash 的颜色. 以此类推也就还会有 shrc, zshrc 这样的文件存在了, 只是 bash 太常用了而已.&lt;/p&gt;</content><category term="linux"></category><category term="linux"></category><category term="bash"></category></entry><entry><title>linux错误执行chmod 777 / 的处理方法</title><link href="/posts/2014/06/11/chmod777.html" rel="alternate"></link><published>2014-06-11T20:50:00+08:00</published><updated>2014-06-11T20:50:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2014-06-11:/posts/2014/06/11/chmod777.html</id><content type="html">&lt;h4&gt;setfacl&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;getfacl -R / &amp;gt;systemP.bak&lt;/code&gt;  将这个系统中的 / ，以及 / 底下所有的文件及目录权限导出到一个文件中&lt;/li&gt;
 &lt;li&gt;将systemP.bak文件想办法拷贝到被破坏的机器上   并执行

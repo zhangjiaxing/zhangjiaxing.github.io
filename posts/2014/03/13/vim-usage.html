@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>vim使用 &mdash; cat ~/.zhiliao.history</title>
+  <meta name="author" content="zhiliao">
+
+  <link href="/feeds/all.atom.xml" type="application/rss+xml" rel="alternate"
+        title="cat ~/.zhiliao.history RSS Feed" />
+
+
+
+
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="/favicon.png" rel="icon">
+
+  <link href="/theme/css/main.css" media="screen, projection"
+        rel="stylesheet" type="text/css">
+  <link href="/theme/css/pygment.css" rel="stylesheet" type="text/css">
+
+  <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+
+  <script src="/theme/js/modernizr-2.0.js"></script>
+  <script src="/theme/js/ender.js"></script>
+  <script src="/theme/js/octopress.js" type="text/javascript"></script>
+</head>
+
+<body >
+  <header role="banner"
+  >
+<hgroup>
+  <h1><a href="/">cat ~/.zhiliao.history</a></h1>
+    <h2>无聊就该多读书。</h2>
+</hgroup></header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/feeds/all.atom.xml" rel="subscribe-rss">RSS</a></li>
+</ul>
+
+
+<ul class="main-navigation">
+    <li><a href="/">Home</a></li>
+    <li><a href="/archives.html">Archive</a></li>
+    <li><a href="/pages/about.html">About</a></li>
+</ul></nav>
+  <div id="main">
+    <div id="content">
+<div>
+  <article class="hentry" role="article">
+<header>
+      <h1 class="entry-title">vim使用</h1>
+    <p class="meta">
+<time datetime="2014-03-13T00:00:00+08:00" pubdate>2014-03-13 00:00:00</time>      
+    </p>
+</header>
+
+    <div class="entry-content"><p>VIM使用</p>
+<div class="highlight-custom"><pre><span></span><code><span class="n">CTRL</span><span class="o">+</span><span class="n">f</span><span class="err">：</span><span class="n">向下翻一页</span><span class="w"> </span><span class="n">CTRL</span><span class="o">+</span><span class="n">b</span><span class="err">：</span><span class="n">向上翻一页</span><span class="w"> </span><span class="n">CTRL</span><span class="o">+</span><span class="n">d</span><span class="err">：</span><span class="n">向下翻半页</span><span class="w"> </span><span class="n">CTRL</span><span class="o">+</span><span class="n">u</span><span class="err">：</span><span class="n">向上翻半页</span><span class="w"></span>
+
+<span class="n">w</span><span class="err">：</span><span class="n">移动到下一个单词的起始处</span><span class="err">（</span><span class="n">既然是w</span><span class="err">，</span><span class="n">代表的意思就是word</span><span class="err">，</span><span class="n">好记吧</span><span class="err">）</span><span class="w"></span>
+<span class="n">W</span><span class="err">：</span><span class="n">移动到下一个单词的起始处</span><span class="w"></span>
+
+<span class="o">=====================</span><span class="w"></span>
+<span class="mi">0</span><span class="w">     </span><span class="n">跳至行首</span><span class="err">，</span><span class="n">不管有无缩进</span><span class="err">，</span><span class="n">就是跳到第0个字符</span><span class="w"></span>
+<span class="o">^</span><span class="w">     </span><span class="n">跳至行首的第一个字符</span><span class="w"></span>
+<span class="err">$</span><span class="w">     </span><span class="n">跳至行尾</span><span class="w"></span>
+<span class="o">=============================</span><span class="w"></span>
+<span class="n">对标记进行动作</span><span class="w"></span>
+<span class="o">&gt;</span><span class="w">     </span><span class="n">块右移</span><span class="w"></span>
+<span class="o">&lt;</span><span class="w">     </span><span class="n">块左移</span><span class="w"></span>
+<span class="n">y</span><span class="w">     </span><span class="n">复制块</span><span class="w"></span>
+<span class="n">d</span><span class="w">     </span><span class="n">删除块</span><span class="w"></span>
+<span class="o">~</span><span class="w">     </span><span class="n">切换块中内容的大小写</span><span class="w"></span>
+<span class="o">=============================</span><span class="w"></span>
+<span class="nl">括号匹配</span><span class="p">:</span><span class="w"></span>
+<span class="o">%</span><span class="w"> </span><span class="n">可以让光标从它当前所在的括号跳转到与它相匹配的括号上去</span><span class="p">,</span><span class="w"> </span><span class="n">对花括号和</span><span class="w"></span>
+<span class="n">圆括号</span><span class="p">,</span><span class="w"> </span><span class="n">方括号都有效</span><span class="p">,</span><span class="w"> </span><span class="n">常用于手工检查括号是否匹对</span><span class="p">.</span><span class="w"></span>
+
+<span class="n">标示位置</span><span class="w"></span>
+<span class="c1">--------</span>
+
+<span class="n">你可以在档案</span><span class="err">□</span><span class="n">做些标记再随时返回被标记的位置</span><span class="p">.</span><span class="w"></span>
+
+<span class="n">m</span><span class="w"> </span><span class="nc">char</span><span class="w">  </span><span class="n">把这个地方标示成</span><span class="w"> </span><span class="nc">char</span><span class="w"></span>
+<span class="s1">&#39; char  跳到被标为 char的那一行</span>
+<span class="s1">&#39;&#39; (按两次&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">回到刚才的位置</span><span class="w"></span>
+
+<span class="nc">char</span><span class="w"> </span><span class="n">可以是小写的</span><span class="w"> </span><span class="n">a</span><span class="o">-</span><span class="n">z中的任一个</span><span class="w"> </span><span class="p">.</span><span class="w"> </span><span class="n">一个标记在除了下面的这两种情况</span><span class="w"></span>
+<span class="n">外会一直存在</span><span class="w"></span>
+
+<span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">重覆使用相同的标示</span><span class="w"> </span><span class="nc">char</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="n">或</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="n">删掉了被标示的那一行</span><span class="p">.</span><span class="w"></span>
+
+
+<span class="n">文字段落</span><span class="w"></span>
+<span class="c1">--------------</span>
+
+<span class="n">有时候一段一段的移动游标会比较方便</span><span class="p">.</span><span class="n">我们可以用</span><span class="w"> </span><span class="err">{</span><span class="p">,</span><span class="err">}</span><span class="p">,(,)</span><span class="w"> </span><span class="n">来达到这些功能</span><span class="w"></span>
+
+<span class="err">{</span><span class="w"> </span><span class="p">(</span><span class="n">左大括号</span><span class="p">)</span><span class="w"> </span><span class="n">跳到上一段的开头</span><span class="w"></span>
+<span class="err">}</span><span class="w"> </span><span class="p">(</span><span class="n">右大括号</span><span class="p">)</span><span class="w"> </span><span class="n">跳到下一段的的开头</span><span class="p">.</span><span class="w"></span>
+
+<span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="n">左小括号</span><span class="p">)</span><span class="w"> </span><span class="n">移到这个句子的开头</span><span class="w"></span>
+<span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">右小括号</span><span class="p">)</span><span class="w"> </span><span class="n">移到下一个句子的开头</span><span class="w"></span>
+
+<span class="o">[</span><span class="n">[ 跳往上一个函式</span>
+<span class="o">]</span><span class="err">]</span><span class="w"> </span><span class="n">跳往下一个函式</span><span class="w"></span>
+<span class="o">=================================================</span><span class="w"></span>
+
+<span class="n">Vim作为最主要的编辑器</span><span class="err">，</span><span class="n">无论是代码</span><span class="err">、</span><span class="n">脚本</span><span class="err">、</span><span class="n">文本还是二进制文件</span><span class="err">，</span><span class="n">都会用到它</span><span class="err">。</span><span class="n">一般通过编辑</span><span class="w"> </span><span class="o">~/</span><span class="p">.</span><span class="n">vimrc来设置自己的Vim配置</span><span class="err">，</span><span class="n">保存后重启Vim就能生效</span><span class="err">。</span><span class="n">如果提示按Enter键才能使用Vim</span><span class="err">，</span><span class="n">说明配置文件有错了</span><span class="err">。</span><span class="w"></span>
+<span class="n">如果去到一个陌生的环境</span><span class="err">，</span><span class="n">没有自己的Vim配置在身边</span><span class="err">，</span><span class="n">则只需要记住下面这一行</span><span class="err">，</span><span class="n">再加上syntax</span><span class="w"> </span><span class="n">on打开语法高亮</span><span class="err">，</span><span class="n">足够进行大部分的开发工作</span><span class="err">。</span><span class="w"></span>
+<span class="k">set</span><span class="w"> </span><span class="n">nu</span><span class="w"> </span><span class="n">sts</span><span class="o">=</span><span class="mi">4</span><span class="w"> </span><span class="n">ts</span><span class="o">=</span><span class="mi">4</span><span class="w"> </span><span class="n">sw</span><span class="o">=</span><span class="mi">4</span><span class="w"> </span><span class="n">et</span><span class="w"> </span><span class="n">si</span><span class="w"> </span><span class="n">ai</span><span class="w"></span>
+<span class="n">nu是显示行号</span><span class="err">，</span><span class="n">ts是tabstop</span><span class="err">，</span><span class="n">sts是softtabstop</span><span class="err">，</span><span class="n">sw是shiftwidth</span><span class="err">，</span><span class="n">这三个参数是指代啥我都忘了</span><span class="err">，</span><span class="n">就知道是和tab制表符相关的</span><span class="err">。</span><span class="w"></span>
+<span class="n">et是expandtab</span><span class="err">，</span><span class="n">即把自动把一个tab扩展为空格</span><span class="err">。</span><span class="n">si是smart</span><span class="w"> </span><span class="n">indent</span><span class="err">，</span><span class="n">ai是auto</span><span class="w"> </span><span class="n">indent</span><span class="err">，</span><span class="n">有何区别呢</span><span class="err">？</span><span class="w"></span>
+<span class="n">完整的Vim配置</span><span class="err">，</span><span class="n">如下</span><span class="err">：</span><span class="w"></span>
+<span class="k">set</span><span class="w"> </span><span class="n">nu</span><span class="w"> </span><span class="n">sts</span><span class="o">=</span><span class="mi">4</span><span class="w"> </span><span class="n">ts</span><span class="o">=</span><span class="mi">4</span><span class="w"> </span><span class="n">sw</span><span class="o">=</span><span class="mi">4</span><span class="w"> </span><span class="n">et</span><span class="w"> </span><span class="n">si</span><span class="w"> </span><span class="n">ai</span><span class="w"></span>
+<span class="k">set</span><span class="w"> </span><span class="n">ruler</span><span class="w"></span>
+<span class="k">set</span><span class="w"> </span><span class="n">hlsearch</span><span class="w"></span>
+<span class="n">syntax</span><span class="w"> </span><span class="k">on</span><span class="w"></span>
+<span class="n">filetype</span><span class="w"> </span><span class="n">plugin</span><span class="w"> </span><span class="k">on</span><span class="w"></span>
+<span class="n">ruler是在右下角显示光标当前位置</span><span class="err">，</span><span class="n">hlsearch是高亮搜索关键字</span><span class="err">，</span><span class="n">最后把根据文件类型作相关调整的插件也打开</span><span class="err">。</span><span class="n">例如Makefile里是必须要用到tab制表符的</span><span class="err">，</span><span class="n">即使你之前设置了expandtab</span><span class="err">，</span><span class="n">设置了filetype</span><span class="w"> </span><span class="n">plugin</span><span class="w"> </span><span class="n">on之后</span><span class="err">，</span><span class="n">按tab也不会用空格代替制表符</span><span class="err">。</span><span class="w"></span>
+<span class="n">Vim作为最主要的编辑器</span><span class="err">，</span><span class="n">无论是代码</span><span class="err">、</span><span class="n">脚本</span><span class="err">、</span><span class="n">文本还是二进制文件</span><span class="err">，</span><span class="n">都会用到它</span><span class="err">。</span><span class="n">一般通过编辑</span><span class="w"> </span><span class="o">~/</span><span class="p">.</span><span class="n">vimrc来设置自己的Vim配置</span><span class="err">，</span><span class="n">保存后重启Vim就能生效</span><span class="err">。</span><span class="n">如果提示按Enter键才能使用Vim</span><span class="err">，</span><span class="n">说明配置文件有错了</span><span class="err">。</span><span class="w"></span>
+<span class="n">如果去到一个陌生的环境</span><span class="err">，</span><span class="n">没有自己的Vim配置在身边</span><span class="err">，</span><span class="n">则只需要记住下面这一行</span><span class="err">，</span><span class="n">再加上syntax</span><span class="w"> </span><span class="n">on打开语法高亮</span><span class="err">，</span><span class="n">足够进行大部分的开发工作</span><span class="err">。</span><span class="w"></span>
+<span class="k">set</span><span class="w"> </span><span class="n">nu</span><span class="w"> </span><span class="n">sts</span><span class="o">=</span><span class="mi">4</span><span class="w"> </span><span class="n">ts</span><span class="o">=</span><span class="mi">4</span><span class="w"> </span><span class="n">sw</span><span class="o">=</span><span class="mi">4</span><span class="w"> </span><span class="n">et</span><span class="w"> </span><span class="n">si</span><span class="w"> </span><span class="n">ai</span><span class="w"></span>
+<span class="n">nu是显示行号</span><span class="err">，</span><span class="n">ts是tabstop</span><span class="err">，</span><span class="n">sts是softtabstop</span><span class="err">，</span><span class="n">sw是shiftwidth</span><span class="err">，</span><span class="n">这三个参数是指代啥我都忘了</span><span class="err">，</span><span class="n">就知道是和tab制表符相关的</span><span class="err">。</span><span class="w"></span>
+<span class="n">et是expandtab</span><span class="err">，</span><span class="n">即把自动把一个tab扩展为空格</span><span class="err">。</span><span class="n">si是smart</span><span class="w"> </span><span class="n">indent</span><span class="err">，</span><span class="n">ai是auto</span><span class="w"> </span><span class="n">indent</span><span class="err">，</span><span class="n">有何区别呢</span><span class="err">？</span><span class="w"></span>
+<span class="n">完整的Vim配置</span><span class="err">，</span><span class="n">如下</span><span class="err">：</span><span class="w"></span>
+<span class="k">set</span><span class="w"> </span><span class="n">nu</span><span class="w"> </span><span class="n">sts</span><span class="o">=</span><span class="mi">4</span><span class="w"> </span><span class="n">ts</span><span class="o">=</span><span class="mi">4</span><span class="w"> </span><span class="n">sw</span><span class="o">=</span><span class="mi">4</span><span class="w"> </span><span class="n">et</span><span class="w"> </span><span class="n">si</span><span class="w"> </span><span class="n">ai</span><span class="w"></span>
+<span class="k">set</span><span class="w"> </span><span class="n">ruler</span><span class="w"></span>
+<span class="k">set</span><span class="w"> </span><span class="n">hlsearch</span><span class="w"></span>
+<span class="n">syntax</span><span class="w"> </span><span class="k">on</span><span class="w"></span>
+<span class="n">filetype</span><span class="w"> </span><span class="n">plugin</span><span class="w"> </span><span class="k">on</span><span class="w"></span>
+<span class="n">ruler是在右下角显示光标当前位置</span><span class="err">，</span><span class="n">hlsearch是高亮搜索关键字</span><span class="err">，</span><span class="n">最后把根据文件类型作相关调整的插件也打开</span><span class="err">。</span><span class="n">例如Makefile里是必须要用到tab制表符的</span><span class="err">，</span><span class="n">即使你之前设置了expandtab</span><span class="err">，</span><span class="n">设置了filetype</span><span class="w"> </span><span class="n">plugin</span><span class="w"> </span><span class="n">on之后</span><span class="err">，</span><span class="n">按tab也不会用空格代替制表符</span><span class="err">。</span><span class="w"></span>
+
+
+<span class="o">===============================</span><span class="w"></span>
+<span class="n">linux下vim命令详解</span><span class="w"></span>
+<span class="n">高级一些的编辑器</span><span class="err">，</span><span class="n">都会包含宏功能</span><span class="err">，</span><span class="n">vim当然不能缺少了</span><span class="err">，</span><span class="n">在vim中使用宏是非常方便的</span><span class="err">：</span><span class="w"></span>
+
+<span class="err">:</span><span class="n">qx</span><span class="w">     </span><span class="n">开始记录宏</span><span class="err">，</span><span class="n">并将结果存入寄存器x</span><span class="w"></span>
+<span class="n">q</span><span class="w">     </span><span class="n">退出记录模式</span><span class="w"></span>
+<span class="nv">@x</span><span class="w">     </span><span class="n">播放记录在x寄存器中的宏命令</span><span class="w"></span>
+<span class="n">稍微解释一下</span><span class="err">，</span><span class="nl">当在normal模式下输入</span><span class="p">:</span><span class="n">qx后</span><span class="err">，</span><span class="n">你对文本的所有编辑动作将会被记录下来</span><span class="err">，</span><span class="n">再次输入q即退出了记录模</span><span class="w"></span>
+<span class="n">式</span><span class="err">，</span><span class="n">然后输入</span><span class="nv">@x对刚才记录下来的命令进行重复</span><span class="err">，</span><span class="n">此命令后可跟数字</span><span class="err">，</span><span class="n">表示要重复多少次</span><span class="err">，</span><span class="n">比如</span><span class="nv">@x20</span><span class="err">，</span><span class="n">可以重复20次</span><span class="err">。</span><span class="n">这个在文本的批处理中是非常有用的</span><span class="err">。</span><span class="w"></span>
+<span class="n">同时编辑多个文件</span><span class="w"></span>
+<span class="n">在vim众多的插件中</span><span class="err">，</span><span class="n">有一个叫minibuffer的插件</span><span class="err">，</span><span class="n">就是下面所说的标签页功能了</span><span class="err">，</span><span class="n">可以支持同时编辑多个文件</span><span class="err">。</span><span class="w"></span>
+<span class="n">标签命令</span><span class="w"></span>
+
+<span class="err">:</span><span class="n">tabe</span><span class="w"> </span><span class="n">fn</span><span class="w">     </span><span class="n">在一个新的标签页中编辑文件fn</span><span class="w"></span>
+<span class="n">gt</span><span class="w">     </span><span class="n">切换到下一个标签页</span><span class="w"></span>
+<span class="n">gT</span><span class="w">     </span><span class="n">切换到上一个标签页</span><span class="w"></span>
+<span class="err">:</span><span class="n">tabr</span><span class="w">     </span><span class="n">切换到第一个标签页</span><span class="w"></span>
+<span class="err">:</span><span class="n">tabl</span><span class="w">     </span><span class="n">切换到最后一个标签页</span><span class="w"></span>
+<span class="err">:</span><span class="n">tabm</span><span class="w"> </span><span class="o">[</span><span class="n">N</span><span class="o">]</span><span class="w">     </span><span class="n">把当前tab移动到第N个tab之后</span><span class="w"></span>
+<span class="n">对</span><span class="err">，</span><span class="n">正如你所想象的那样</span><span class="err">，</span><span class="n">跟eclipse</span><span class="p">,</span><span class="w"> </span><span class="n">ue等的标签页是一个意思</span><span class="err">！</span><span class="w"></span>
+<span class="n">窗口命令</span><span class="w"></span>
+<span class="n">ctrl</span><span class="o">+</span><span class="n">w</span><span class="w"> </span><span class="n">s</span><span class="w">     </span><span class="n">水平分割窗口</span><span class="w"></span>
+<span class="n">ctrl</span><span class="o">+</span><span class="n">w</span><span class="w"> </span><span class="n">w</span><span class="w">     </span><span class="n">切换窗口</span><span class="w"></span>
+<span class="n">ctrl</span><span class="o">+</span><span class="n">w</span><span class="w"> </span><span class="n">q</span><span class="w">     </span><span class="n">退出当前窗口</span><span class="p">(</span><span class="n">由于同时有多个文件</span><span class="err">，</span><span class="n">此命令不会影响其他窗口</span><span class="p">)</span><span class="w"></span>
+<span class="n">ctrl</span><span class="o">+</span><span class="n">w</span><span class="w"> </span><span class="n">v</span><span class="w">     </span><span class="n">垂直分割窗口</span><span class="w"></span>
+<span class="n">其他</span><span class="w"></span>
+<span class="n">vim在保存之前不会对文件做实际的修改</span><span class="err">，</span><span class="n">只是加载到缓冲区中</span><span class="err">，</span><span class="n">对文件的编辑其实是对缓冲区的编辑</span><span class="err">，</span><span class="nl">直到</span><span class="p">:</span><span class="n">w时才会存入物理文件</span><span class="err">。</span><span class="w"></span>
+
+<span class="err">:</span><span class="n">e</span><span class="w"> </span><span class="k">file</span><span class="w">     </span><span class="n">把file加载到新的缓冲区中</span><span class="w"></span>
+<span class="err">:</span><span class="n">bn</span><span class="w">     </span><span class="n">跳转到下一个缓冲区</span><span class="w"></span>
+<span class="err">:</span><span class="n">bd</span><span class="w">     </span><span class="n">删除缓冲区</span><span class="p">(</span><span class="n">关闭文件</span><span class="p">)</span><span class="w"></span>
+<span class="err">:</span><span class="n">sp</span><span class="w"> </span><span class="n">fn</span><span class="w">     </span><span class="n">分割窗口</span><span class="err">，</span><span class="n">并将fn加载到新的窗口中</span><span class="w"></span>
+<span class="n">退出编辑器</span><span class="w"></span>
+
+<span class="err">:</span><span class="n">w</span><span class="w">     </span><span class="n">将缓冲区写入文件</span><span class="err">，</span><span class="n">即保存修改</span><span class="w"></span>
+<span class="err">:</span><span class="n">wq</span><span class="w">     </span><span class="n">保存修改并退出</span><span class="w"></span>
+<span class="err">:</span><span class="n">x</span><span class="w">     </span><span class="n">保存修改并退出</span><span class="w"></span>
+<span class="err">:</span><span class="n">q</span><span class="w">     </span><span class="n">退出</span><span class="err">，</span><span class="n">如果对缓冲区进行过修改</span><span class="err">，</span><span class="n">则会提示</span><span class="w"></span>
+<span class="err">:</span><span class="n">q</span><span class="err">!</span><span class="w">     </span><span class="n">强制退出</span><span class="err">，</span><span class="n">放弃修改</span><span class="w"></span>
+<span class="n">查找替换</span><span class="w"></span>
+<span class="o">/</span><span class="n">pattern</span><span class="w">     </span><span class="n">向后搜索字符串pattern</span><span class="w"></span>
+<span class="vm">?</span><span class="n">pattern</span><span class="w">     </span><span class="n">向前搜索字符串pattern</span><span class="w"></span>
+<span class="n">n</span><span class="w">     </span><span class="n">下一个匹配</span><span class="p">(</span><span class="n">如果是</span><span class="o">/</span><span class="n">搜索</span><span class="err">，</span><span class="n">则是向下的下一个</span><span class="err">，</span><span class="vm">?</span><span class="n">搜索则是向上的下一个</span><span class="p">)</span><span class="w"></span>
+<span class="n">N</span><span class="w">     </span><span class="n">上一个匹配</span><span class="p">(</span><span class="n">同上</span><span class="p">)</span><span class="w"></span>
+<span class="err">:</span><span class="o">%</span><span class="n">s</span><span class="o">/</span><span class="k">old</span><span class="o">/</span><span class="k">new</span><span class="o">/</span><span class="n">g</span><span class="w">     </span><span class="n">搜索整个文件</span><span class="err">，</span><span class="n">将所有的old替换为new</span><span class="w"></span>
+<span class="err">:</span><span class="o">%</span><span class="n">s</span><span class="o">/</span><span class="k">old</span><span class="o">/</span><span class="k">new</span><span class="o">/</span><span class="n">gc</span><span class="w">     </span><span class="n">搜索整个文件</span><span class="err">，</span><span class="n">将所有的old替换为new</span><span class="err">，</span><span class="n">每次都要你确认是否替换</span><span class="w"></span>
+<span class="n">复制粘贴</span><span class="w"></span>
+<span class="n">dd</span><span class="w">     </span><span class="n">删除光标所在行</span><span class="w"></span>
+<span class="n">dw</span><span class="w">     </span><span class="n">删除一个字</span><span class="p">(</span><span class="n">word</span><span class="p">)</span><span class="w"></span>
+<span class="n">x</span><span class="w">     </span><span class="n">删除当前字符</span><span class="w"></span>
+<span class="n">X</span><span class="w">     </span><span class="n">删除前一个字符</span><span class="w"></span>
+<span class="n">D</span><span class="w">     </span><span class="n">删除到行末</span><span class="w"></span>
+<span class="n">yy</span><span class="w">     </span><span class="n">复制一行</span><span class="err">，</span><span class="n">此命令前可跟数字</span><span class="err">，</span><span class="n">标识复制多行</span><span class="err">，</span><span class="n">如6yy</span><span class="err">，</span><span class="n">表示从当前行开始复制6行</span><span class="w"></span>
+<span class="n">yw</span><span class="w">     </span><span class="n">复制一个字</span><span class="w"></span>
+<span class="n">y</span><span class="err">$</span><span class="w">     </span><span class="n">复制到行末</span><span class="w"></span>
+<span class="n">p</span><span class="w">     </span><span class="n">粘贴粘贴板的内容到当前行的下面</span><span class="w"></span>
+<span class="n">P</span><span class="w">     </span><span class="n">粘贴粘贴板的内容到当前行的上面</span><span class="w"></span>
+<span class="err">]</span><span class="n">p</span><span class="w">     </span><span class="n">有缩进的粘贴</span><span class="err">，</span><span class="n">vim会自动调节代码的缩进</span><span class="w"></span>
+<span class="ss">&quot;a     将内容放入/存入a寄存器，可以支持多粘贴板</span>
+<span class="ss">附：比如常用的一个寄存器就是系统寄存器，名称为+，所以从系统粘贴板粘贴到vim中的命令为&quot;</span><span class="o">+</span><span class="n">p</span><span class="p">,</span><span class="n">注意此处的</span><span class="o">+</span><span class="n">不表示操作符</span><span class="err">，</span><span class="n">二十一个寄存器</span><span class="err">。</span><span class="w"></span>
+<span class="n">移动光标</span><span class="w"></span>
+<span class="n">在vim中移动光标跟其他的编辑器中有很大的区别</span><span class="err">，</span><span class="n">不过一旦学会了</span><span class="err">，</span><span class="n">就会飞速的在文本中移动了</span><span class="err">。</span><span class="w"></span>
+
+<span class="n">h</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="w">     </span><span class="n">上</span><span class="err">，</span><span class="n">下</span><span class="err">，</span><span class="n">左</span><span class="err">，</span><span class="n">右</span><span class="w"></span>
+<span class="n">ctrl</span><span class="o">-</span><span class="n">f</span><span class="w">     </span><span class="n">上翻一页</span><span class="w"></span>
+<span class="n">ctrl</span><span class="o">-</span><span class="n">b</span><span class="w">     </span><span class="n">下翻一页</span><span class="w"></span>
+<span class="o">%</span><span class="w">     </span><span class="n">跳到与当前括号匹配的括号处</span><span class="err">，</span><span class="n">如当前在</span><span class="err">{，</span><span class="n">则跳转到与之匹配的</span><span class="err">}</span><span class="n">处</span><span class="w"></span>
+<span class="n">w</span><span class="w">     </span><span class="n">跳到下一个字首</span><span class="err">，</span><span class="n">按标点或单词分割</span><span class="w"></span>
+<span class="n">W</span><span class="w">     </span><span class="n">跳到下一个字首</span><span class="err">，</span><span class="n">长跳</span><span class="err">，</span><span class="n">如end</span><span class="o">-</span><span class="k">of</span><span class="o">-</span><span class="n">line被认为是一个字</span><span class="w"></span>
+<span class="n">e</span><span class="w">     </span><span class="n">跳到下一个字尾</span><span class="w"></span>
+<span class="n">E</span><span class="w">     </span><span class="n">跳到下一个字尾</span><span class="err">，</span><span class="n">长跳</span><span class="w"></span>
+<span class="n">b</span><span class="w">     </span><span class="n">跳到上一个字</span><span class="w"></span>
+<span class="n">B</span><span class="w">     </span><span class="n">跳到上一个字</span><span class="err">，</span><span class="n">长跳</span><span class="w"></span>
+<span class="mi">0</span><span class="w">     </span><span class="n">跳至行首</span><span class="err">，</span><span class="n">不管有无缩进</span><span class="err">，</span><span class="n">就是跳到第0个字符</span><span class="w"></span>
+<span class="o">^</span><span class="w">     </span><span class="n">跳至行首的第一个字符</span><span class="w"></span>
+<span class="err">$</span><span class="w">     </span><span class="n">跳至行尾</span><span class="w"></span>
+<span class="n">gg</span><span class="w">     </span><span class="n">跳至文件的第一行</span><span class="w"></span>
+<span class="n">gd</span><span class="w">     </span><span class="n">跳至当前光标所在的变量的声明处</span><span class="w"></span>
+<span class="o">[</span><span class="n">N</span><span class="o">]</span><span class="n">G</span><span class="w">     </span><span class="n">跳到第N行</span><span class="err">，</span><span class="n">如0G</span><span class="err">，</span><span class="n">就等价于gg</span><span class="err">，</span><span class="mi">100</span><span class="n">G就是第100行</span><span class="w"></span>
+<span class="n">fx</span><span class="w">     </span><span class="n">在当前行中找x字符</span><span class="err">，</span><span class="n">找到了就跳转至</span><span class="w"></span>
+<span class="p">;</span><span class="w">     </span><span class="n">重复上一个f命令</span><span class="err">，</span><span class="n">而不用重复的输入fx</span><span class="w"></span>
+<span class="n">tx</span><span class="w">     </span><span class="n">与fx类似</span><span class="err">，</span><span class="n">但是只是跳转到x的前一个字符处</span><span class="w"></span>
+<span class="n">Fx</span><span class="w">     </span><span class="n">跟fx的方向相反</span><span class="w"></span>
+<span class="p">),(</span><span class="w">     </span><span class="n">跳转到上</span><span class="o">/</span><span class="n">下一个语句</span><span class="w"></span>
+<span class="o">*</span><span class="w">     </span><span class="n">查找光标所在处的单词</span><span class="err">，</span><span class="n">向下查找</span><span class="w"></span>
+<span class="err">#</span><span class="w">     </span><span class="n">查找光标所在处的单词</span><span class="err">，</span><span class="n">向上查找</span><span class="w"></span>
+<span class="err">`</span><span class="p">.</span><span class="w">     </span><span class="n">跳转至上次编辑位置</span><span class="w"></span>
+<span class="n">在屏幕上移动</span><span class="w"></span>
+
+<span class="n">H</span><span class="w">     </span><span class="n">移动光标到当前屏幕上最上边的一行</span><span class="w"></span>
+<span class="n">M</span><span class="w">     </span><span class="n">移动光标到当前屏幕上中间的一行</span><span class="w"></span>
+<span class="n">L</span><span class="w">     </span><span class="n">移动光标到当前屏幕上最下边的一行</span><span class="w"></span>
+<span class="n">书签</span><span class="w"></span>
+<span class="n">ma</span><span class="w">     </span><span class="n">把当前位置存成标签a</span><span class="w"></span>
+<span class="err">`</span><span class="n">a</span><span class="w">     </span><span class="n">跳转到标签a处</span><span class="w"></span>
+<span class="n">编辑</span><span class="w"></span>
+<span class="n">r</span><span class="w">     </span><span class="n">替换一个字符</span><span class="w"></span>
+<span class="n">J</span><span class="w">     </span><span class="n">将下一行和当前行连接为一行</span><span class="w"></span>
+<span class="n">cc</span><span class="w">     </span><span class="n">删除当前行并进入编辑模式</span><span class="w"></span>
+<span class="n">cw</span><span class="w">     </span><span class="n">删除当前字</span><span class="err">，</span><span class="n">并进入编辑模式</span><span class="w"></span>
+<span class="n">c</span><span class="err">$</span><span class="w">     </span><span class="n">擦除从当前位置至行末的内容</span><span class="err">，</span><span class="n">并进入编辑模式</span><span class="w"></span>
+<span class="n">s</span><span class="w">     </span><span class="n">删除当前字符并进入编辑模式</span><span class="w"></span>
+<span class="n">S</span><span class="w">     </span><span class="n">删除光标所在行并进入编辑模式</span><span class="w"></span>
+<span class="n">xp</span><span class="w">     </span><span class="n">交换当前字符和下一个字符</span><span class="w"></span>
+<span class="n">u</span><span class="w">     </span><span class="n">撤销</span><span class="w"></span>
+<span class="n">ctrl</span><span class="o">+</span><span class="n">r</span><span class="w">     </span><span class="n">重做</span><span class="w"></span>
+<span class="p">.</span><span class="w">     </span><span class="n">重复上一个编辑命令</span><span class="w"></span>
+<span class="o">~</span><span class="w">     </span><span class="n">切换大小写</span><span class="err">，</span><span class="n">当前字符</span><span class="w"></span>
+<span class="n">g</span><span class="o">~</span><span class="n">iw</span><span class="w">     </span><span class="n">切换当前字的大小写</span><span class="w"></span>
+<span class="n">gUiw</span><span class="w">     </span><span class="n">将当前字变成大写</span><span class="w"></span>
+<span class="n">guiw</span><span class="w">     </span><span class="n">将当前字变成小写</span><span class="w"></span>
+<span class="o">&gt;&gt;</span><span class="w">     </span><span class="n">将当前行右移一个单位</span><span class="w"></span>
+<span class="o">&lt;&lt;</span><span class="w">     </span><span class="n">将当前行左移一个单位</span><span class="p">(</span><span class="n">一个tab符</span><span class="p">)</span><span class="w"></span>
+<span class="o">==</span><span class="w">     </span><span class="n">自动缩进当前行</span><span class="w"></span>
+
+<span class="n">插入模式</span><span class="w"></span>
+<span class="n">i</span><span class="w">     </span><span class="n">从当前光标处进入插入模式</span><span class="w"></span>
+<span class="n">I</span><span class="w">     </span><span class="n">进入插入模式</span><span class="err">，</span><span class="n">并置光标于行首</span><span class="w"></span>
+<span class="n">a</span><span class="w">     </span><span class="n">追加模式</span><span class="err">，</span><span class="n">置光标于当前光标之后</span><span class="w"></span>
+<span class="n">A</span><span class="w">     </span><span class="n">追加模式</span><span class="err">，</span><span class="n">置光标于行末</span><span class="w"></span>
+<span class="n">o</span><span class="w">     </span><span class="n">在当前行之下新加一行</span><span class="err">，</span><span class="n">并进入插入模式</span><span class="w"></span>
+<span class="n">O</span><span class="w">     </span><span class="n">在当前行之上新加一行</span><span class="err">，</span><span class="n">并进入插入模式</span><span class="w"></span>
+<span class="n">Esc</span><span class="w">     </span><span class="n">退出插入模式</span><span class="w"></span>
+<span class="n">可视模式</span><span class="w"></span>
+<span class="n">标记文本</span><span class="w"></span>
+<span class="n">v</span><span class="w">     </span><span class="n">进入可视模式</span><span class="err">，</span><span class="n">单字符模式</span><span class="w"></span>
+<span class="n">V</span><span class="w">     </span><span class="n">进入可视模式</span><span class="err">，</span><span class="n">行模式</span><span class="w"></span>
+<span class="n">ctrl</span><span class="o">+</span><span class="n">v</span><span class="w">     </span><span class="n">进入可视模式</span><span class="err">，</span><span class="n">列模式</span><span class="err">，</span><span class="n">类似于UE的列模式</span><span class="w"></span>
+<span class="n">o</span><span class="w">     </span><span class="n">跳转光标到选中块的另一个端点</span><span class="w"></span>
+<span class="n">U</span><span class="w">     </span><span class="n">将选中块中的内容转成大写</span><span class="w"></span>
+<span class="n">O</span><span class="w">     </span><span class="n">跳转光标到块的另一个端点</span><span class="w"></span>
+<span class="n">aw</span><span class="w">     </span><span class="n">选中一个字</span><span class="w"></span>
+<span class="n">ab</span><span class="w">     </span><span class="n">选中括号中的所有内容</span><span class="err">，</span><span class="n">包括括号本身</span><span class="w"></span>
+<span class="n">aB</span><span class="w">     </span><span class="n">选中</span><span class="err">{}</span><span class="n">括号中的所有内容</span><span class="w"></span>
+<span class="n">ib</span><span class="w">     </span><span class="n">选中括号中的内容</span><span class="err">，</span><span class="n">不含括号</span><span class="w"></span>
+<span class="n">iB</span><span class="w">     </span><span class="n">选中</span><span class="err">{}</span><span class="n">中的内容</span><span class="err">，</span><span class="n">不含</span><span class="err">{}</span><span class="w"></span>
+
+<span class="n">对标记进行动作</span><span class="w"></span>
+<span class="o">&gt;</span><span class="w">     </span><span class="n">块右移</span><span class="w"></span>
+<span class="o">&lt;</span><span class="w">     </span><span class="n">块左移</span><span class="w"></span>
+<span class="n">y</span><span class="w">     </span><span class="n">复制块</span><span class="w"></span>
+<span class="n">d</span><span class="w">     </span><span class="n">删除块</span><span class="w"></span>
+<span class="o">~</span><span class="w">     </span><span class="n">切换块中内容的大小写</span><span class="w"></span>
+</code></pre></div></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">
+        zhiliao
+    </span>
+  </span>
+<time datetime="2014-03-13T00:00:00+08:00" pubdate>2014-03-13 00:00:00</time>  <span class="categories">
+    <a class='category' href='/category/editor.html'>editor</a>
+  </span>
+  <span class="categories">
+    <a class="category" href="/tag/editor.html">editor</a>,    <a class="category" href="/tag/vim.html">vim</a>  </span>
+</p><div class="sharing">
+</div>    </footer>
+  </article>
+
+</div>
+
+<aside class="sidebar">
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    <li class="post">
+        <a href="/posts/2022/12/29/install-cgit.html">debian11-bullseye install cgit</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2022/11/05/raspbian10-raspios-selenium.html">raspberry-debian10-selenium测试</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2022/09/03/alternativeto.html">代替品查询网站</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2022/09/03/Flatpak-vs-Snap.html">Flatpak vs Snap</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2022/07/09/interview-questions.html">面试中我经常问的问题</a>
+    </li>
+  </ul>
+</section><section>
+  <h1>Categories</h1>
+    <ul id="recent_posts">
+      <li><a href="/category/android.html">android (2)</a></li>
+      <li><a href="/category/blog.html">blog (1)</a></li>
+      <li><a href="/category/container.html">container (1)</a></li>
+      <li><a href="/category/editor.html">editor (4)</a></li>
+      <li><a href="/category/firefox.html">firefox (1)</a></li>
+      <li><a href="/category/git.html">git (3)</a></li>
+      <li><a href="/category/golang.html">golang (1)</a></li>
+      <li><a href="/category/gu-piao.html">股票 (1)</a></li>
+      <li><a href="/category/ide.html">IDE (1)</a></li>
+      <li><a href="/category/interview.html">interview (1)</a></li>
+      <li><a href="/category/linux.html">linux (40)</a></li>
+      <li><a href="/category/network.html">network (7)</a></li>
+      <li><a href="/category/nltk.html">nltk (2)</a></li>
+      <li><a href="/category/other.html">other (1)</a></li>
+      <li><a href="/category/programming.html">programming (3)</a></li>
+      <li><a href="/category/python.html">python (1)</a></li>
+      <li><a href="/category/stock.html">stock (1)</a></li>
+      <li><a href="/category/vm.html">vm (1)</a></li>
+      <li><a href="/category/web.html">web (3)</a></li>
+      <li><a href="/category/windows.html">windows (1)</a></li>
+      <li><a href="/category/xwindow.html">xwindow (1)</a></li>
+  </ul>
+</section>
+<section>
+  <h1>Tags</h1>
+    <a href="/tag/git.html">git</a>,    <a href="/tag/linux.html">linux</a>,    <a href="/tag/selenium.html">selenium</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/docker.html">docker</a>,    <a href="/tag/flatpak.html">flatpak</a>,    <a href="/tag/interview.html">interview</a>,    <a href="/tag/programming.html">programming</a>,    <a href="/tag/qt.html">Qt</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/filesystem.html">filesystem</a>,    <a href="/tag/xwindow.html">xwindow</a>,    <a href="/tag/ide.html">IDE</a>,    <a href="/tag/glang.html">glang</a>,    <a href="/tag/xdg.html">xdg</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a></section>
+    <section>
+        <h1>Social</h1>
+        <ul>
+            <li><a href="https://github.com/zhangjiaxing" target="_blank">github</a></li>
+            <li><a href="http://wpa.qq.com/msgrd?v=3&uin=347820393&site=qq&menu=yes" target="_blank">qq</a></li>
+            <li><a href="http://www.writebug.cn" target="_blank">blog</a></li>
+            <li><a href="http://gallery.writebug.cn" target="_blank">gallery</a></li>
+        </ul>
+    </section>
+    <section>
+        <h1>Blogroll</h1>
+        <ul>
+            <li><a href="http://getpelican.com/" target="_blank">Pelican</a></li>
+        </ul>
+    </section>
+
+</aside>
+    </div>
+  </div>
+  <footer role="contentinfo">
+<p>
+    Copyright &copy;  2013&ndash;2022  zhiliao &mdash;
+  <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
+</p>  </footer>
+</body>
+</html>

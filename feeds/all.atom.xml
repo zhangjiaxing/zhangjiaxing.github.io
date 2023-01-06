@@ -1971,7 +1971,123 @@ envsubst &lt;span class="s1"&gt;&amp;#39;${VAR_NAME}&amp;#39;&lt;/span&gt; &amp;
 &lt;h1&gt;UDP&lt;/h1&gt;
 &lt;p&gt;客户端添加 -u 参数即可&lt;/p&gt;
 &lt;h1&gt;传输多个流测试(必加参数)&lt;/h1&gt;
-&lt;p&gt;加上参数 -P 10 (10个流同步测试)&lt;/p&gt;</content><category term="network"></category><category term="linux"></category><category term="network"></category></entry><entry><title>vim 排序文字</title><link href="/posts/2017/06/07/vim-sort.html" rel="alternate"></link><published>2017-06-07T00:00:00+08:00</published><updated>2017-06-07T00:00:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-07:/posts/2017/06/07/vim-sort.html</id><content type="html">&lt;p&gt;可以用 &lt;code&gt;ctrl-V&lt;/code&gt; 选中后输入 &lt;code&gt;:sort&lt;/code&gt; 排序&lt;/p&gt;</content><category term="editor"></category><category term="editor"></category><category term="vim"></category></entry><entry><title>apt install 一直 size mismatch</title><link href="/posts/2017/06/03/apt-size-mismatch.html" rel="alternate"></link><published>2017-06-03T08:32:00+08:00</published><updated>2017-06-03T08:32:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-03:/posts/2017/06/03/apt-size-mismatch.html</id><content type="html">&lt;p&gt;raspberry pi 的 debian， apt安装软件是一直提示 size mismatch。
+&lt;p&gt;加上参数 -P 10 (10个流同步测试)&lt;/p&gt;</content><category term="network"></category><category term="linux"></category><category term="network"></category></entry><entry><title>vim折叠设置</title><link href="/posts/2017/06/07/vim-fold.html" rel="alternate"></link><published>2017-06-07T00:00:00+08:00</published><updated>2017-06-07T00:00:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-07:/posts/2017/06/07/vim-fold.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="x"&gt;vim折叠设置&lt;/span&gt;
+&lt;span class="x"&gt;set foldmethod=indent &amp;quot;set default foldmethod&lt;/span&gt;
+&lt;span class="x"&gt;&amp;quot;zi 打开关闭折叠&lt;/span&gt;
+&lt;span class="x"&gt;&amp;quot;zv 查看此行&lt;/span&gt;
+&lt;span class="x"&gt;zm 关闭折叠&lt;/span&gt;
+&lt;span class="x"&gt;zM 关闭所有&lt;/span&gt;
+&lt;span class="x"&gt;zr 打开&lt;/span&gt;
+&lt;span class="x"&gt;zR 打开所有&lt;/span&gt;
+&lt;span class="x"&gt;zc 折叠当前行&lt;/span&gt;
+&lt;span class="x"&gt;zo 打开当前折叠&lt;/span&gt;
+&lt;span class="x"&gt;zd 删除折叠&lt;/span&gt;
+&lt;span class="x"&gt;zD 删除所有折叠&lt;/span&gt;
+
+
+&lt;span class="x"&gt;1. 折叠方式&lt;/span&gt;
+&lt;span class="x"&gt;可用选项 &amp;#39;foldmethod&amp;#39; 来设定折叠方式：set fdm=*****。&lt;/span&gt;
+&lt;span class="x"&gt;有 6 种方法来选定折叠：&lt;/span&gt;
+&lt;span class="x"&gt;manual           手工定义折叠&lt;/span&gt;
+&lt;span class="x"&gt;indent             更多的缩进表示更高级别的折叠&lt;/span&gt;
+&lt;span class="x"&gt;expr                用表达式来定义折叠&lt;/span&gt;
+&lt;span class="x"&gt;syntax             用语法高亮来定义折叠&lt;/span&gt;
+&lt;span class="x"&gt;diff                  对没有更改的文本进行折叠&lt;/span&gt;
+&lt;span class="x"&gt;marker            对文中的标志折叠&lt;/span&gt;
+&lt;span class="x"&gt;注意 …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="x"&gt;vim折叠设置&lt;/span&gt;
+&lt;span class="x"&gt;set foldmethod=indent &amp;quot;set default foldmethod&lt;/span&gt;
+&lt;span class="x"&gt;&amp;quot;zi 打开关闭折叠&lt;/span&gt;
+&lt;span class="x"&gt;&amp;quot;zv 查看此行&lt;/span&gt;
+&lt;span class="x"&gt;zm 关闭折叠&lt;/span&gt;
+&lt;span class="x"&gt;zM 关闭所有&lt;/span&gt;
+&lt;span class="x"&gt;zr 打开&lt;/span&gt;
+&lt;span class="x"&gt;zR 打开所有&lt;/span&gt;
+&lt;span class="x"&gt;zc 折叠当前行&lt;/span&gt;
+&lt;span class="x"&gt;zo 打开当前折叠&lt;/span&gt;
+&lt;span class="x"&gt;zd 删除折叠&lt;/span&gt;
+&lt;span class="x"&gt;zD 删除所有折叠&lt;/span&gt;
+
+
+&lt;span class="x"&gt;1. 折叠方式&lt;/span&gt;
+&lt;span class="x"&gt;可用选项 &amp;#39;foldmethod&amp;#39; 来设定折叠方式：set fdm=*****。&lt;/span&gt;
+&lt;span class="x"&gt;有 6 种方法来选定折叠：&lt;/span&gt;
+&lt;span class="x"&gt;manual           手工定义折叠&lt;/span&gt;
+&lt;span class="x"&gt;indent             更多的缩进表示更高级别的折叠&lt;/span&gt;
+&lt;span class="x"&gt;expr                用表达式来定义折叠&lt;/span&gt;
+&lt;span class="x"&gt;syntax             用语法高亮来定义折叠&lt;/span&gt;
+&lt;span class="x"&gt;diff                  对没有更改的文本进行折叠&lt;/span&gt;
+&lt;span class="x"&gt;marker            对文中的标志折叠&lt;/span&gt;
+&lt;span class="x"&gt;注意，每一种折叠方式不兼容，如不能即用expr又用marker方式，我主要轮流使用indent和marker方式进行折叠。&lt;/span&gt;
+
+&lt;span class="x"&gt;使用时，用：set fdm=marker 命令来设置成marker折叠方式（fdm是foldmethod的缩写）。&lt;/span&gt;
+&lt;span class="x"&gt;要使每次打开vim时折叠都生效，则在.vimrc文件中添加设置，如添加：set fdm=syntax，就像添加其它的初始化设置一样。&lt;/span&gt;
+
+&lt;span class="x"&gt;2. 折叠命令&lt;/span&gt;
+&lt;span class="x"&gt;选取了折叠方式后，我们就可以对某些代码实施我们需要的折叠了，由于我使用indent和marker稍微多一些，故以它们的使用为例：&lt;/span&gt;
+&lt;span class="x"&gt;如果使用了indent方式，vim会自动的对大括号的中间部分进行折叠，我们可以直接使用这些现成的折叠成果。&lt;/span&gt;
+&lt;span class="x"&gt;在可折叠处（大括号中间）：&lt;/span&gt;
+&lt;span class="x"&gt;zc      折叠&lt;/span&gt;
+&lt;span class="x"&gt;zC     对所在范围内所有嵌套的折叠点进行折叠&lt;/span&gt;
+&lt;span class="x"&gt;zo      展开折叠&lt;/span&gt;
+&lt;span class="x"&gt;zO     对所在范围内所有嵌套的折叠点展开&lt;/span&gt;
+&lt;span class="x"&gt;[z       到当前打开的折叠的开始处。&lt;/span&gt;
+&lt;span class="x"&gt;]z       到当前打开的折叠的末尾处。&lt;/span&gt;
+&lt;span class="x"&gt;zj       向下移动。到达下一个折叠的开始处。关闭的折叠也被计入。&lt;/span&gt;
+&lt;span class="x"&gt;zk      向上移动到前一折叠的结束处。关闭的折叠也被计入。&lt;/span&gt;
+
+&lt;span class="x"&gt;当使用marker方式时，需要用标计来标识代码的折叠，系统默认是&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt;&lt;span class="o"&gt;{&lt;/span&gt;&lt;span class="err"&gt;和&lt;/span&gt;&lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt;}，最好不要改动之：）&lt;/span&gt;
+&lt;span class="x"&gt;我们可以使用下面的命令来创建和删除折叠：&lt;/span&gt;
+&lt;span class="x"&gt;zf      创建折叠，比如在marker方式下：&lt;/span&gt;
+&lt;span class="x"&gt;zf56G，创建从当前行起到56行的代码折叠；&lt;/span&gt;
+&lt;span class="x"&gt;10zf或10zf+或zf10↓，创建从当前行起到后10行的代码折叠。&lt;/span&gt;
+&lt;span class="x"&gt;10zf-或zf10↑，创建从当前行起到之前10行的代码折叠。&lt;/span&gt;
+&lt;span class="x"&gt;在括号处zf%，创建从当前行起到对应的匹配的括号上去（（），{}，[]，&amp;lt;&amp;gt;等）。&lt;/span&gt;
+&lt;span class="x"&gt;zd      删除 (delete) 在光标下的折叠。仅当 &amp;#39;foldmethod&amp;#39; 设为 &amp;quot;manual&amp;quot; 或 &amp;quot;marker&amp;quot; 时有效。&lt;/span&gt;
+&lt;span class="x"&gt;zD     循环删除 (Delete) 光标下的折叠，即嵌套删除折叠。&lt;/span&gt;
+&lt;span class="x"&gt;仅当 &amp;#39;foldmethod&amp;#39; 设为 &amp;quot;manual&amp;quot; 或 &amp;quot;marker&amp;quot; 时有效。&lt;/span&gt;
+&lt;span class="x"&gt;zE     除去 (Eliminate) 窗口里“所有”的折叠。&lt;/span&gt;
+&lt;span class="x"&gt;仅当 &amp;#39;foldmethod&amp;#39; 设为 &amp;quot;manual&amp;quot; 或 &amp;quot;marker&amp;quot; 时有效。&lt;/span&gt;
+
+&lt;span class="x"&gt;关于vim的代码折叠，小弟也是初学，仅做参考。&lt;/span&gt;
+
+
+
+
+&lt;span class="x"&gt;使用Vim的折叠功能书写程序代码&lt;/span&gt;
+
+&lt;span class="x"&gt;折行的用处：&lt;/span&gt;
+&lt;span class="x"&gt;2 创建折行进行大纲预览&lt;/span&gt;
+&lt;span class="x"&gt;2 移动到某处进行编辑&lt;/span&gt;
+&lt;span class="x"&gt;2 使用jzij打开文本进行编辑&lt;/span&gt;
+&lt;span class="x"&gt;2 编辑完毕后再用jzij打开折行进行移动&lt;/span&gt;
+
+&lt;span class="x"&gt;打开vim的折叠功能，请在~/.vimrc 中加入:set foldmethod=marker ，使用vim默认的折叠标签进行处理。使用方法如下：&lt;/span&gt;
+&lt;span class="x"&gt;1、加折叠标签&lt;/span&gt;
+&lt;span class="x"&gt;在normal模式下，从键盘输入zf并回车，您就会看到折叠在一起的两行标签如下：&lt;/span&gt;
+&lt;span class="x"&gt;/*&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt;&lt;span class="o"&gt;{*/&lt;/span&gt;
+&lt;span class="err"&gt;....&lt;/span&gt;&lt;span class="nv"&gt;.这里输入您&lt;/span&gt; &lt;span class="err"&gt;的程序代码&lt;/span&gt;
+&lt;span class="o"&gt;/*&lt;/span&gt;&lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt;}*/&lt;/span&gt;
+
+&lt;span class="x"&gt;2、输入程序代码后，将代码折叠起来使用如下命令(normal模式)：&lt;/span&gt;
+&lt;span class="x"&gt;zc 回车&lt;/span&gt;
+
+&lt;span class="x"&gt;3、打开折叠的程序有以下几种方法&lt;/span&gt;
+&lt;span class="x"&gt;a、在折叠的行上移动光标&lt;/span&gt;
+&lt;span class="x"&gt;b、在normal模式下输入zo并回车&lt;/span&gt;
+
+&lt;span class="x"&gt;4、给一段文字加折行（normal 模式）&lt;/span&gt;
+&lt;span class="x"&gt;zfap&lt;/span&gt;
+
+&lt;span class="x"&gt;5、zr命令可以打开折叠几层的内容 zm使用内容折叠的更多一些（多层折叠操作时可反复使用）。&lt;/span&gt;
+
+&lt;span class="x"&gt;6、嵌套了多层的折行, 也可以用zR命令一次打开所有折行&lt;/span&gt;
+
+&lt;span class="x"&gt;7、关闭所有的嵌套折行使用zM&lt;/span&gt;
+
+&lt;span class="x"&gt;8、可以用jznj命令来禁用一个折行. 然后用jzNj还可以恢复它. jzij命令则可以在两者之间切换.&lt;/span&gt;
+
+&lt;span class="x"&gt;其它的，请参考vim的使用手册。&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="editor"></category><category term="vim"></category><category term="editor"></category></entry><entry><title>vim 排序文字</title><link href="/posts/2017/06/07/vim-sort.html" rel="alternate"></link><published>2017-06-07T00:00:00+08:00</published><updated>2017-06-07T00:00:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-07:/posts/2017/06/07/vim-sort.html</id><content type="html">&lt;p&gt;可以用 &lt;code&gt;ctrl-V&lt;/code&gt; 选中后输入 &lt;code&gt;:sort&lt;/code&gt; 排序&lt;/p&gt;</content><category term="editor"></category><category term="editor"></category><category term="vim"></category></entry><entry><title>apt install 一直 size mismatch</title><link href="/posts/2017/06/03/apt-size-mismatch.html" rel="alternate"></link><published>2017-06-03T08:32:00+08:00</published><updated>2017-06-03T08:32:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-03:/posts/2017/06/03/apt-size-mismatch.html</id><content type="html">&lt;p&gt;raspberry pi 的 debian， apt安装软件是一直提示 size mismatch。
 后来发现这是运营商(ISP)缓存的问题， 运营商有些时候是通过文件名作为缓存的， 导致服务器文件更新后，用户依然下载到旧的版本。
 解决方法是， apt source 使用https协议就好了。&lt;/p&gt;
 &lt;p&gt;后来发现有人和我遇到同样的问题：https://bbs.deepin.org/forum.php?mod=viewthread&amp;amp;tid=138536&lt;/p&gt;</content><category term="linux"></category><category term="debian"></category><category term="linux"></category></entry><entry><title>pelican博客搭建总结</title><link href="/posts/2017/06/03/pelican.html" rel="alternate"></link><published>2017-06-03T06:56:00+08:00</published><updated>2017-06-03T06:56:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-03:/posts/2017/06/03/pelican.html</id><summary type="html">&lt;h4&gt;pelican介绍&lt;/h4&gt;
@@ -2014,7 +2130,64 @@ envsubst &lt;span class="s1"&gt;&amp;#39;${VAR_NAME}&amp;#39;&lt;/span&gt; &amp;
 &lt;li&gt;&lt;a href="http://docs.getpelican.com/en/stable/" title="pelican文档"&gt;pelican文档&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://stackoverflow.com/questions/34434190/value-error-embedded-null-byte-when-using-pelican-content-command-to-generate-m" title="stackoverflow"&gt;stackoverflow: How to fix Pelican error&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://xingjian.me/how-to-fix-value-error-embedded-null-byte-error.html" title="How to fix Python error: ValueError: embedded null byte"&gt;Chinese version: How to fix Pelican error&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="blog"></category><category term="pelican"></category><category term="python"></category><category term="blog"></category></entry><entry><title>将man page输出到pdf和HTML</title><link href="/posts/2015/01/20/man-pages-to-pdf.html" rel="alternate"></link><published>2015-01-20T16:37:00+08:00</published><updated>2015-01-20T16:37:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2015-01-20:/posts/2015/01/20/man-pages-to-pdf.html</id><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 方法1：直接浏览器查看html&lt;/span&gt;
+&lt;/ul&gt;</content><category term="blog"></category><category term="pelican"></category><category term="python"></category><category term="blog"></category></entry><entry><title>gtags使用</title><link href="/posts/2015/06/18/gtags.html" rel="alternate"></link><published>2015-06-18T13:50:00+08:00</published><updated>2015-06-18T13:50:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2015-06-18:/posts/2015/06/18/gtags.html</id><summary type="html">&lt;h5&gt;gtags global&lt;/h5&gt;
+&lt;p&gt;安装好以后，有global、gtags、gtags-cscope三个命令。global是查询，gtags是生成索引文件，gtags-cscope是与cscope一样的界面&lt;/p&gt;
+&lt;h5&gt;example：&lt;/h5&gt;
+&lt;p&gt;代码:&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; project/
+$ gtags
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;这样就生成了整个目录的索引文件，包括GTAGS、GRTAGS、GPATH三个文件。&lt;/p&gt;
+&lt;p&gt;你也可以先用find命令生成一个文件列表，叫gtags.files，然后再执行gtags，就会只索引gtags.files里的文件。&lt;/p&gt;
+&lt;h5&gt;example：&lt;/h5&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nl"&gt;代码&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;project&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;find&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;*.[ch]&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;gtags&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;files&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;gtags&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;查询使用的命令是global和gtags-cscope。前者是命令行界面，后者是与cscope兼容的ncurses界面。这里就不多介绍了，重点是如何在vim里查询：&lt;/p&gt;
+&lt;p&gt;首先进入vim，然后:&lt;/p&gt;
+&lt;h5&gt;example&lt;/h5&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c"&gt;代码:&lt;/span&gt;
+&lt;span class="err"&gt;:set cscopeprg=gtags-cscope&lt;/span&gt;
+&lt;span class="err"&gt;:cs add GTAGS&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;然后就可以像cscope一样 …&lt;/p&gt;</summary><content type="html">&lt;h5&gt;gtags global&lt;/h5&gt;
+&lt;p&gt;安装好以后，有global、gtags、gtags-cscope三个命令。global是查询，gtags是生成索引文件，gtags-cscope是与cscope一样的界面&lt;/p&gt;
+&lt;h5&gt;example：&lt;/h5&gt;
+&lt;p&gt;代码:&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; project/
+$ gtags
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;这样就生成了整个目录的索引文件，包括GTAGS、GRTAGS、GPATH三个文件。&lt;/p&gt;
+&lt;p&gt;你也可以先用find命令生成一个文件列表，叫gtags.files，然后再执行gtags，就会只索引gtags.files里的文件。&lt;/p&gt;
+&lt;h5&gt;example：&lt;/h5&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nl"&gt;代码&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;project&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;find&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;*.[ch]&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;gtags&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;files&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;gtags&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;查询使用的命令是global和gtags-cscope。前者是命令行界面，后者是与cscope兼容的ncurses界面。这里就不多介绍了，重点是如何在vim里查询：&lt;/p&gt;
+&lt;p&gt;首先进入vim，然后:&lt;/p&gt;
+&lt;h5&gt;example&lt;/h5&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c"&gt;代码:&lt;/span&gt;
+&lt;span class="err"&gt;:set cscopeprg=gtags-cscope&lt;/span&gt;
+&lt;span class="err"&gt;:cs add GTAGS&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;然后就可以像cscope一样，用cs find g等命令进行查询了。&lt;/p&gt;
+&lt;p&gt;当我们更改了某个文件以后，比如project/subdir1/subdir2/file1.c，想更新索引文件(索引文件是project/GTAGS)，只消这样：&lt;/p&gt;
+&lt;h5&gt;example:&lt;/h5&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c"&gt;代码:&lt;/span&gt;
+&lt;span class="err"&gt;$ cd project/subdir1/subdir2/&lt;/span&gt;
+&lt;span class="err"&gt;$ vim file1.c&lt;/span&gt;
+&lt;span class="err"&gt;$ global -u&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="editor"></category><category term="editor"></category><category term="vim"></category></entry><entry><title>将man page输出到pdf和HTML</title><link href="/posts/2015/01/20/man-pages-to-pdf.html" rel="alternate"></link><published>2015-01-20T16:37:00+08:00</published><updated>2015-01-20T16:37:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2015-01-20:/posts/2015/01/20/man-pages-to-pdf.html</id><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 方法1：直接浏览器查看html&lt;/span&gt;
 man -Hfirefox memfd_create
 
 
@@ -2070,7 +2243,121 @@ man -t eventfd &lt;span class="p"&gt;|&lt;/span&gt; ps2pdf - &amp;gt; eventfd.pd
 &lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="n"&gt;utf8&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;描述&lt;/span&gt;&lt;span class="n"&gt;UTF&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="err"&gt;编码。&lt;/span&gt;
 &lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;解释&lt;/span&gt;&lt;span class="n"&gt;URL&lt;/span&gt;&lt;span class="err"&gt;、&lt;/span&gt;&lt;span class="n"&gt;URI&lt;/span&gt;&lt;span class="err"&gt;、&lt;/span&gt;&lt;span class="n"&gt;URN等的标准&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
 &lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="n"&gt;ascii&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category></entry><entry><title>linux错误执行chmod 777 / 的处理方法</title><link href="/posts/2014/06/11/chmod777.html" rel="alternate"></link><published>2014-06-11T20:50:00+08:00</published><updated>2014-06-11T20:50:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2014-06-11:/posts/2014/06/11/chmod777.html</id><content type="html">&lt;h4&gt;setfacl&lt;/h4&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category></entry><entry><title>bash</title><link href="/posts/2014/09/26/bash.html" rel="alternate"></link><published>2014-09-26T21:55:00+08:00</published><updated>2014-09-26T21:55:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2014-09-26:/posts/2014/09/26/bash.html</id><summary type="html">&lt;h4&gt;Linux 下shell基本上默认是 bash, 下面是我总结的一些技巧。&lt;/h4&gt;
+&lt;h4&gt;trap 可以捕获信号&lt;/h4&gt;
+&lt;h4&gt;目录跳转&lt;/h4&gt;
+&lt;p&gt;pushd, popd, dirs 实现多目录跳转
+pushd 命令用来更改您的当前目录并将其存储在堆栈中。 popd 命令用来从堆栈的顶部移除目录并使您返回该位置。 dirs 命令来显示当前目录堆栈。（dir –v –p)
+pushd +n; popd +n 可以操作虚拟目录堆栈
+ &lt;/p&gt;
+&lt;h4&gt;快速跳至常用目录&lt;/h4&gt;
+&lt;p&gt;你可能已经知道$PATH变量可以列出 bash的“搜索路径”——当在当前目录不能找到请求的文件时，bash会自动搜索的目录。不过，bash也支持$CDPATH变量，当试图改变目录时该变量列出cd命令转向的目录。为了使用这个特性，我们要对$CDPATH变量赋值一个目录列表，如下面的例子所示：
+bash&amp;gt; CDPATH='.:~:/usr/local/apache/htdocs:/disk1/backups'
+bash&amp;gt; export …&lt;/p&gt;</summary><content type="html">&lt;h4&gt;Linux 下shell基本上默认是 bash, 下面是我总结的一些技巧。&lt;/h4&gt;
+&lt;h4&gt;trap 可以捕获信号&lt;/h4&gt;
+&lt;h4&gt;目录跳转&lt;/h4&gt;
+&lt;p&gt;pushd, popd, dirs 实现多目录跳转
+pushd 命令用来更改您的当前目录并将其存储在堆栈中。 popd 命令用来从堆栈的顶部移除目录并使您返回该位置。 dirs 命令来显示当前目录堆栈。（dir –v –p)
+pushd +n; popd +n 可以操作虚拟目录堆栈
+ &lt;/p&gt;
+&lt;h4&gt;快速跳至常用目录&lt;/h4&gt;
+&lt;p&gt;你可能已经知道$PATH变量可以列出 bash的“搜索路径”——当在当前目录不能找到请求的文件时，bash会自动搜索的目录。不过，bash也支持$CDPATH变量，当试图改变目录时该变量列出cd命令转向的目录。为了使用这个特性，我们要对$CDPATH变量赋值一个目录列表，如下面的例子所示：
+bash&amp;gt; CDPATH='.:~:/usr/local/apache/htdocs:/disk1/backups'
+bash&amp;gt; export CDPATH
+现在，无论何时使用cd命令，bash将会检查$CDPATH列表中的所有目录来查找要转向的目录名。
+ &lt;/p&gt;
+&lt;h4&gt;特殊参数&lt;/h4&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;1. $*: 代表所有参数，其间隔为IFS内定参数的第一个字元 &lt;/span&gt;
+&lt;span class="err"&gt;2. $@: 与*星号类同。不同之处在於不参照IFS &lt;/span&gt;
+&lt;span class="err"&gt;3. $#: 代表参数数量 &lt;/span&gt;
+&lt;span class="err"&gt;4. $?: 执行上一个指令的返回值 &lt;/span&gt;
+&lt;span class="err"&gt;5. $-: 最近执行的foreground pipeline的选项参数 &lt;/span&gt;
+&lt;span class="err"&gt;6. $$: 本身的Process ID &lt;/span&gt;
+&lt;span class="err"&gt;7. $!: 执行上一个背景指令的PID &lt;/span&gt;
+&lt;span class="err"&gt;8. $_: 显示出最後一个执行的命令&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4&gt;bash快捷键&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Emacs风格&lt;/li&gt;
+&lt;li&gt;ctrl+p: 方向键 上 ↑ &lt;/li&gt;
+&lt;li&gt;ctrl+n: 方向键下 ↓ &lt;/li&gt;
+&lt;li&gt;ctrl+b: 方向键 ← &lt;/li&gt;
+&lt;li&gt;alt+f: 光标右移一个单词 &lt;/li&gt;
+&lt;li&gt;ctrl+f :方向键 → &lt;/li&gt;
+&lt;li&gt;alt+b: 光标左移一个单词 &lt;/li&gt;
+&lt;li&gt;ctrl+a:光标移到行首 &lt;/li&gt;
+&lt;li&gt;ctrl+e:光标移到行尾 &lt;/li&gt;
+&lt;li&gt;ctrl+k:清除光标后至行尾的内容。 &lt;/li&gt;
+&lt;li&gt;ctrl+d: 删除光标所在字母;注意和backspace以及ctrl+h的区别，这2个是删除光标前的字符 &lt;/li&gt;
+&lt;li&gt;ctrl+r:搜索之前打过的命令。会有一个提示，根据你输入的关键字进行搜索bash的history &lt;/li&gt;
+&lt;li&gt;ctrl+m : 输入回车 &lt;/li&gt;
+&lt;li&gt;ctrl+i : 输入tab &lt;/li&gt;
+&lt;li&gt;ctrl+[ : 输入esc&lt;/li&gt;
+&lt;li&gt;其它 &lt;/li&gt;
+&lt;li&gt;ctrl+h:删除光标前一个字符，同 backspace 键相同。 &lt;/li&gt;
+&lt;li&gt;alt + p 非增量方式反向搜索历史 &lt;/li&gt;
+&lt;li&gt;alt + &amp;gt; 历史命令列表中的最后一行命令开始向前 &lt;/li&gt;
+&lt;li&gt;ctrl+u: 清除光标前至行首间的所有内容。 &lt;/li&gt;
+&lt;li&gt;ctrl+w: 移除光标前的一个单词 &lt;/li&gt;
+&lt;li&gt;ctrl+t: 交换光标位置前的两个字符 &lt;/li&gt;
+&lt;li&gt;ctrl+y: 粘贴或者恢复上次的删除 &lt;/li&gt;
+&lt;li&gt;ctrl+l:清屏，相当于clear。 &lt;/li&gt;
+&lt;li&gt;ctrl + xx 光标在行头与行尾进行跳转 &lt;/li&gt;
+&lt;li&gt;alt+r 撤销当前行的所有内容 &lt;/li&gt;
+&lt;li&gt;ctrl+z : 把当前进程转到后台运行 &lt;/li&gt;
+&lt;li&gt;ctrl+s : 锁住屏幕 &lt;/li&gt;
+&lt;li&gt;ctrl+q : 恢复屏幕 &lt;/li&gt;
+&lt;li&gt;ctrl+v key: 输入特殊字符 &lt;/li&gt;
+&lt;li&gt;alt + l 将当前光标处之后的字母转化成小写字母 &lt;/li&gt;
+&lt;li&gt;alt + u 将当前光标处之后的字母转化成大写字母 &lt;/li&gt;
+&lt;li&gt;ctrl + Alt + e 扩展命令行的内容（例如：ls  =&amp;gt;  ls  -l  --color=tty） &lt;/li&gt;
+&lt;li&gt;ctrl+c:杀死当前进程, 输入模式下，中断输入的命令。 &lt;/li&gt;
+&lt;li&gt;ctrl+d:退出当前 Shell &lt;/li&gt;
+&lt;li&gt;esc + . 快捷键可以轮询历史命令的参数或选项。 &lt;/li&gt;
+&lt;li&gt;esc + t 快捷键可以 置换前两个单词。 &lt;/li&gt;
+&lt;li&gt;输入重复字母 Esc {100} e 可以输入100个e字符&lt;/li&gt;
+&lt;li&gt;按多次{esc}可以补全 &lt;/li&gt;
+&lt;li&gt;{esc}{~}可以补全本机上的用户名 &lt;/li&gt;
+&lt;li&gt;{esc}{/}可以补全文件名 &lt;/li&gt;
+&lt;li&gt;{esc}{@}可以补全主机名,localhost可以方便地用 lo补全.
+ &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Bang Bang 历史命令&lt;/h4&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="sx"&gt;!!    重新执行上一条命令 &lt;/span&gt;
+&lt;span class="sx"&gt;!N  重新执行第N条命令。比如 !3 &lt;/span&gt;
+&lt;span class="sx"&gt;!-N 重新执行倒数第N条命令。!-3 &lt;/span&gt;
+&lt;span class="sx"&gt;!string  重新执行以字符串打头的命令。 比如 !vim &lt;/span&gt;
+&lt;span class="sx"&gt;!?string?  重新执行包含字符串的命令。 比如 !?test.cpp? &lt;/span&gt;
+&lt;span class="sx"&gt;!?string?%  替换为： 最近包含这个字符串的命令的参数。比如：   vim !?test.cpp?% &lt;/span&gt;
+&lt;span class="sx"&gt;!$   替换为：上一条命令的最后一个参数。比如 vim !$ &lt;/span&gt;
+&lt;span class="sx"&gt;!!string  在上一条命令的后面追加 string ，并执行。 &lt;/span&gt;
+&lt;span class="sx"&gt;!Nstring  在第N条指令后面追加string，并执行。 &lt;/span&gt;
+^&lt;span class="n"&gt;old&lt;/span&gt;^&lt;span class="n"&gt;new&lt;/span&gt;^  对上一条指令进行替换 
+&lt;span class="n"&gt;修饰&lt;/span&gt;
+&lt;span class="s"&gt;:s/old/new/&lt;/span&gt;  对第&lt;span class="n"&gt;N条指令中第一次出现的new替换为old&lt;/span&gt;。 比如 &lt;span class="n"&gt;vim&lt;/span&gt; !?&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cpp&lt;/span&gt;?&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;cpp&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt; 
+&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;gs&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;old&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;new&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;  全部替换 
+&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;wn&lt;/span&gt;  &lt;span class="n"&gt;w为数字&lt;/span&gt;， 取指令的第&lt;span class="n"&gt;w个参数&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; 
+&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; 回显命令而不是执行&lt;span class="p"&gt;,&lt;/span&gt; 比如 !&lt;span class="n"&gt;ls&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;  。 这个很有用， 你可以先查看你选的命令对不对，要执行时再使用!!
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4&gt;Bash相关文件&lt;/h4&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;     /etc/profile 设置环境变量(所有用户) &lt;/span&gt;
+&lt;span class="err"&gt;     ~/.bash_profile 设置环境变量(当前用户) &lt;/span&gt;
+&lt;span class="err"&gt;     ~/.bashrc &lt;/span&gt;
+&lt;span class="err"&gt;     ~/.bash_history &lt;/span&gt;
+&lt;span class="err"&gt;     ~/.bash_logout&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4&gt;login shell 和 no-login shell&lt;/h4&gt;
+&lt;p&gt;“login shell” 代表用户登入, 比如使用 “su -“ 命令, 或者用 ssh 连接到某一个服务器上, 都会使用该用户默认 shell 启动 login shell 模式.&lt;/p&gt;
+&lt;p&gt;该模式下的 shell 会去自动执行 /etc/profile 和 ~/.profile 文件, 但不会执行任何的 bashrc 文件, 所以一般再 /etc/profile 或者 ~/.profile 里我们会手动去 source bashrc 文件.&lt;/p&gt;
+&lt;p&gt;而 no-login shell 的情况是我们在终端下直接输入 bash 或者 bash -c “CMD” 来启动的 shell. 该模式下是不会自动去运行任何的 profile 文件.&lt;/p&gt;
+&lt;h4&gt;bashrc 和 profile 的区别&lt;/h4&gt;
+&lt;h5&gt;profile&lt;/h5&gt;
+&lt;p&gt;其实看名字就能了解大概了, profile 是某个用户唯一的用来设置环境变量的地方, 因为用户可以有多个 shell 比如 bash, sh, zsh 之类的, 但像环境变量这种其实只需要在统一的一个地方初始化就可以了, 而这就是 profile.&lt;/p&gt;
+&lt;h5&gt;bashrc&lt;/h5&gt;
+&lt;p&gt;bashrc 也是看名字就知道, 是专门用来给 bash 做初始化的比如用来初始化 bash 的设置, bash 的代码补全, bash 的别名, bash 的颜色. 以此类推也就还会有 shrc, zshrc 这样的文件存在了, 只是 bash 太常用了而已.&lt;/p&gt;</content><category term="linux"></category><category term="linux"></category><category term="bash"></category></entry><entry><title>linux错误执行chmod 777 / 的处理方法</title><link href="/posts/2014/06/11/chmod777.html" rel="alternate"></link><published>2014-06-11T20:50:00+08:00</published><updated>2014-06-11T20:50:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2014-06-11:/posts/2014/06/11/chmod777.html</id><content type="html">&lt;h4&gt;setfacl&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;getfacl -R / &amp;gt;systemP.bak&lt;/code&gt;  将这个系统中的 / ，以及 / 底下所有的文件及目录权限导出到一个文件中&lt;/li&gt;
 &lt;li&gt;将systemP.bak文件想办法拷贝到被破坏的机器上   并执行
@@ -2080,7 +2367,257 @@ man -t eventfd &lt;span class="p"&gt;|&lt;/span&gt; ps2pdf - &amp;gt; eventfd.pd
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;chmod u+s `which passwd`&lt;/span&gt;
 &lt;span class="err"&gt;chmod u+s `which su`&lt;/span&gt;
 &lt;span class="err"&gt;chmod u+s `which sudo`&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="command"></category></entry><entry><title>linux 查看info文档</title><link href="/posts/2013/09/27/linux-info.html" rel="alternate"></link><published>2013-09-27T17:59:00+08:00</published><updated>2013-09-27T17:59:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2013-09-27:/posts/2013/09/27/linux-info.html</id><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;info &amp;lt;command&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="command"></category></entry><entry><title>vim使用</title><link href="/posts/2014/03/13/vim-usage.html" rel="alternate"></link><published>2014-03-13T00:00:00+08:00</published><updated>2014-03-13T00:00:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2014-03-13:/posts/2014/03/13/vim-usage.html</id><summary type="html">&lt;p&gt;VIM使用&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;CTRL&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="n"&gt;向下翻一页&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;CTRL&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="n"&gt;向上翻一页&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;CTRL&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="n"&gt;向下翻半页&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;CTRL&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;u&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="n"&gt;向上翻半页&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="n"&gt;移动到下一个单词的起始处&lt;/span&gt;&lt;span class="err"&gt;（&lt;/span&gt;&lt;span class="n"&gt;既然是w&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;代表的意思就是word&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;好记吧&lt;/span&gt;&lt;span class="err"&gt;）&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;W&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="n"&gt;移动到下一个单词的起始处&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="o"&gt;=====================&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;跳至行首&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;不管有无缩进&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;就是跳到第0个字符&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="o"&gt;^&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;跳至行首的第一个字符&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;跳至行尾&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="o"&gt;=============================&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;对标记进行动作&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;块右移&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;块左移&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;复制块&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;删除块&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="o"&gt;~&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;切换块中内容的大小写&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="o"&gt;=============================&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nl"&gt;括号匹配&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;可以让光标从它当前所在的括号跳转到与它相匹配的括号上去&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;对花括号和&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;圆括号&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;方括号都有效&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;常用于手工检查括号是否匹对&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="n"&gt;标示位置&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="c1"&gt;--------&lt;/span&gt;
+
+&lt;span class="n"&gt;你可以在档案&lt;/span&gt;&lt;span class="err"&gt;□&lt;/span&gt;&lt;span class="n"&gt;做些标记再随时返回被标记的位置&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;char&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;把这个地方标示成&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;char&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="s1"&gt;&amp;#39; char  跳到被标为 char的那一行 …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;VIM使用&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;CTRL&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="n"&gt;向下翻一页&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;CTRL&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="n"&gt;向上翻一页&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;CTRL&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="n"&gt;向下翻半页&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;CTRL&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;u&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="n"&gt;向上翻半页&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="n"&gt;移动到下一个单词的起始处&lt;/span&gt;&lt;span class="err"&gt;（&lt;/span&gt;&lt;span class="n"&gt;既然是w&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;代表的意思就是word&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;好记吧&lt;/span&gt;&lt;span class="err"&gt;）&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;W&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="n"&gt;移动到下一个单词的起始处&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="o"&gt;=====================&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;跳至行首&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;不管有无缩进&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;就是跳到第0个字符&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="o"&gt;^&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;跳至行首的第一个字符&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;跳至行尾&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="o"&gt;=============================&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;对标记进行动作&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;块右移&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;块左移&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;复制块&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;删除块&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="o"&gt;~&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;切换块中内容的大小写&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="o"&gt;=============================&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nl"&gt;括号匹配&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;可以让光标从它当前所在的括号跳转到与它相匹配的括号上去&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;对花括号和&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;圆括号&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;方括号都有效&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;常用于手工检查括号是否匹对&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="n"&gt;标示位置&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="c1"&gt;--------&lt;/span&gt;
+
+&lt;span class="n"&gt;你可以在档案&lt;/span&gt;&lt;span class="err"&gt;□&lt;/span&gt;&lt;span class="n"&gt;做些标记再随时返回被标记的位置&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;char&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;把这个地方标示成&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;char&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="s1"&gt;&amp;#39; char  跳到被标为 char的那一行&lt;/span&gt;
+&lt;span class="s1"&gt;&amp;#39;&amp;#39; (按两次&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;回到刚才的位置&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="nc"&gt;char&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;可以是小写的&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;z中的任一个&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;一个标记在除了下面的这两种情况&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;外会一直存在&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;重覆使用相同的标示&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;char&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;或&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;删掉了被标示的那一行&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+
+&lt;span class="n"&gt;文字段落&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="c1"&gt;--------------&lt;/span&gt;
+
+&lt;span class="n"&gt;有时候一段一段的移动游标会比较方便&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;我们可以用&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;{&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="err"&gt;}&lt;/span&gt;&lt;span class="p"&gt;,(,)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;来达到这些功能&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="err"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;左大括号&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;跳到上一段的开头&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;}&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;右大括号&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;跳到下一段的的开头&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;左小括号&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;移到这个句子的开头&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;右小括号&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;移到下一个句子的开头&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;[ 跳往上一个函式&lt;/span&gt;
+&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="err"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;跳往下一个函式&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="o"&gt;=================================================&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="n"&gt;Vim作为最主要的编辑器&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;无论是代码&lt;/span&gt;&lt;span class="err"&gt;、&lt;/span&gt;&lt;span class="n"&gt;脚本&lt;/span&gt;&lt;span class="err"&gt;、&lt;/span&gt;&lt;span class="n"&gt;文本还是二进制文件&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;都会用到它&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;&lt;span class="n"&gt;一般通过编辑&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;vimrc来设置自己的Vim配置&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;保存后重启Vim就能生效&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;&lt;span class="n"&gt;如果提示按Enter键才能使用Vim&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;说明配置文件有错了&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;如果去到一个陌生的环境&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;没有自己的Vim配置在身边&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;则只需要记住下面这一行&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;再加上syntax&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;on打开语法高亮&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;足够进行大部分的开发工作&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;nu&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sts&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ts&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sw&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;et&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;si&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ai&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;nu是显示行号&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;ts是tabstop&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;sts是softtabstop&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;sw是shiftwidth&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;这三个参数是指代啥我都忘了&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;就知道是和tab制表符相关的&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;et是expandtab&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;即把自动把一个tab扩展为空格&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;&lt;span class="n"&gt;si是smart&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;indent&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;ai是auto&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;indent&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;有何区别呢&lt;/span&gt;&lt;span class="err"&gt;？&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;完整的Vim配置&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;如下&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;nu&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sts&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ts&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sw&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;et&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;si&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ai&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ruler&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;hlsearch&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;syntax&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;on&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;filetype&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;plugin&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;on&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;ruler是在右下角显示光标当前位置&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;hlsearch是高亮搜索关键字&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;最后把根据文件类型作相关调整的插件也打开&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;&lt;span class="n"&gt;例如Makefile里是必须要用到tab制表符的&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;即使你之前设置了expandtab&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;设置了filetype&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;plugin&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;on之后&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;按tab也不会用空格代替制表符&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;Vim作为最主要的编辑器&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;无论是代码&lt;/span&gt;&lt;span class="err"&gt;、&lt;/span&gt;&lt;span class="n"&gt;脚本&lt;/span&gt;&lt;span class="err"&gt;、&lt;/span&gt;&lt;span class="n"&gt;文本还是二进制文件&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;都会用到它&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;&lt;span class="n"&gt;一般通过编辑&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;vimrc来设置自己的Vim配置&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;保存后重启Vim就能生效&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;&lt;span class="n"&gt;如果提示按Enter键才能使用Vim&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;说明配置文件有错了&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;如果去到一个陌生的环境&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;没有自己的Vim配置在身边&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;则只需要记住下面这一行&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;再加上syntax&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;on打开语法高亮&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;足够进行大部分的开发工作&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;nu&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sts&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ts&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sw&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;et&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;si&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ai&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;nu是显示行号&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;ts是tabstop&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;sts是softtabstop&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;sw是shiftwidth&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;这三个参数是指代啥我都忘了&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;就知道是和tab制表符相关的&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;et是expandtab&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;即把自动把一个tab扩展为空格&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;&lt;span class="n"&gt;si是smart&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;indent&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;ai是auto&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;indent&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;有何区别呢&lt;/span&gt;&lt;span class="err"&gt;？&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;完整的Vim配置&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;如下&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;nu&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sts&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ts&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sw&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;et&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;si&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ai&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ruler&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;hlsearch&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;syntax&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;on&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;filetype&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;plugin&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;on&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;ruler是在右下角显示光标当前位置&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;hlsearch是高亮搜索关键字&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;最后把根据文件类型作相关调整的插件也打开&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;&lt;span class="n"&gt;例如Makefile里是必须要用到tab制表符的&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;即使你之前设置了expandtab&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;设置了filetype&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;plugin&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;on之后&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;按tab也不会用空格代替制表符&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+
+&lt;span class="o"&gt;===============================&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;linux下vim命令详解&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;高级一些的编辑器&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;都会包含宏功能&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;vim当然不能缺少了&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;在vim中使用宏是非常方便的&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="n"&gt;qx&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;开始记录宏&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;并将结果存入寄存器x&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;q&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;退出记录模式&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nv"&gt;@x&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;播放记录在x寄存器中的宏命令&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;稍微解释一下&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="nl"&gt;当在normal模式下输入&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;qx后&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;你对文本的所有编辑动作将会被记录下来&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;再次输入q即退出了记录模&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;式&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;然后输入&lt;/span&gt;&lt;span class="nv"&gt;@x对刚才记录下来的命令进行重复&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;此命令后可跟数字&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;表示要重复多少次&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;比如&lt;/span&gt;&lt;span class="nv"&gt;@x20&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;可以重复20次&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;&lt;span class="n"&gt;这个在文本的批处理中是非常有用的&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;同时编辑多个文件&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;在vim众多的插件中&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;有一个叫minibuffer的插件&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;就是下面所说的标签页功能了&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;可以支持同时编辑多个文件&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;标签命令&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="n"&gt;tabe&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;fn&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;在一个新的标签页中编辑文件fn&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;gt&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;切换到下一个标签页&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;gT&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;切换到上一个标签页&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="n"&gt;tabr&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;切换到第一个标签页&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="n"&gt;tabl&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;切换到最后一个标签页&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="n"&gt;tabm&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;把当前tab移动到第N个tab之后&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;对&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;正如你所想象的那样&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;跟eclipse&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ue等的标签页是一个意思&lt;/span&gt;&lt;span class="err"&gt;！&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;窗口命令&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;ctrl&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;水平分割窗口&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;ctrl&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;切换窗口&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;ctrl&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;q&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;退出当前窗口&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;由于同时有多个文件&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;此命令不会影响其他窗口&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;ctrl&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;垂直分割窗口&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;其他&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;vim在保存之前不会对文件做实际的修改&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;只是加载到缓冲区中&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;对文件的编辑其实是对缓冲区的编辑&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="nl"&gt;直到&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;w时才会存入物理文件&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;file&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;把file加载到新的缓冲区中&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="n"&gt;bn&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;跳转到下一个缓冲区&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="n"&gt;bd&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;删除缓冲区&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;关闭文件&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="n"&gt;sp&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;fn&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;分割窗口&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;并将fn加载到新的窗口中&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;退出编辑器&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;将缓冲区写入文件&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;即保存修改&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="n"&gt;wq&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;保存修改并退出&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;保存修改并退出&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="n"&gt;q&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;退出&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;如果对缓冲区进行过修改&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;则会提示&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="n"&gt;q&lt;/span&gt;&lt;span class="err"&gt;!&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;强制退出&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;放弃修改&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;查找替换&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;pattern&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;向后搜索字符串pattern&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="vm"&gt;?&lt;/span&gt;&lt;span class="n"&gt;pattern&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;向前搜索字符串pattern&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;下一个匹配&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;如果是&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;搜索&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;则是向下的下一个&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="vm"&gt;?&lt;/span&gt;&lt;span class="n"&gt;搜索则是向上的下一个&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;上一个匹配&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;同上&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;old&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;搜索整个文件&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;将所有的old替换为new&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;old&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;gc&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;搜索整个文件&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;将所有的old替换为new&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;每次都要你确认是否替换&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;复制粘贴&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;dd&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;删除光标所在行&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;dw&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;删除一个字&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;word&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;删除当前字符&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;删除前一个字符&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;D&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;删除到行末&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;yy&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;复制一行&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;此命令前可跟数字&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;标识复制多行&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;如6yy&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;表示从当前行开始复制6行&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;yw&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;复制一个字&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;复制到行末&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;粘贴粘贴板的内容到当前行的下面&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;P&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;粘贴粘贴板的内容到当前行的上面&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;]&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;有缩进的粘贴&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;vim会自动调节代码的缩进&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="ss"&gt;&amp;quot;a     将内容放入/存入a寄存器，可以支持多粘贴板&lt;/span&gt;
+&lt;span class="ss"&gt;附：比如常用的一个寄存器就是系统寄存器，名称为+，所以从系统粘贴板粘贴到vim中的命令为&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;注意此处的&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;不表示操作符&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;二十一个寄存器&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;移动光标&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;在vim中移动光标跟其他的编辑器中有很大的区别&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;不过一旦学会了&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;就会飞速的在文本中移动了&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;上&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;下&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;左&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;右&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;ctrl&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;上翻一页&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;ctrl&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;下翻一页&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;跳到与当前括号匹配的括号处&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;如当前在&lt;/span&gt;&lt;span class="err"&gt;{，&lt;/span&gt;&lt;span class="n"&gt;则跳转到与之匹配的&lt;/span&gt;&lt;span class="err"&gt;}&lt;/span&gt;&lt;span class="n"&gt;处&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;跳到下一个字首&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;按标点或单词分割&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;W&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;跳到下一个字首&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;长跳&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;如end&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;of&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;line被认为是一个字&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;跳到下一个字尾&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;E&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;跳到下一个字尾&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;长跳&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;跳到上一个字&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;B&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;跳到上一个字&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;长跳&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;跳至行首&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;不管有无缩进&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;就是跳到第0个字符&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="o"&gt;^&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;跳至行首的第一个字符&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;跳至行尾&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;gg&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;跳至文件的第一行&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;gd&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;跳至当前光标所在的变量的声明处&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="n"&gt;G&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;跳到第N行&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;如0G&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;就等价于gg&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="n"&gt;G就是第100行&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;fx&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;在当前行中找x字符&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;找到了就跳转至&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;重复上一个f命令&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;而不用重复的输入fx&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;tx&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;与fx类似&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;但是只是跳转到x的前一个字符处&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;Fx&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;跟fx的方向相反&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="p"&gt;),(&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;跳转到上&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;下一个语句&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;查找光标所在处的单词&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;向下查找&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;查找光标所在处的单词&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;向上查找&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;跳转至上次编辑位置&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;在屏幕上移动&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="n"&gt;H&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;移动光标到当前屏幕上最上边的一行&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;M&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;移动光标到当前屏幕上中间的一行&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;L&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;移动光标到当前屏幕上最下边的一行&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;书签&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;ma&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;把当前位置存成标签a&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;跳转到标签a处&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;编辑&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;替换一个字符&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;J&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;将下一行和当前行连接为一行&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;cc&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;删除当前行并进入编辑模式&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;cw&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;删除当前字&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;并进入编辑模式&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;擦除从当前位置至行末的内容&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;并进入编辑模式&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;删除当前字符并进入编辑模式&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;S&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;删除光标所在行并进入编辑模式&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;xp&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;交换当前字符和下一个字符&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;u&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;撤销&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;ctrl&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;重做&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;重复上一个编辑命令&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="o"&gt;~&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;切换大小写&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;当前字符&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="o"&gt;~&lt;/span&gt;&lt;span class="n"&gt;iw&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;切换当前字的大小写&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;gUiw&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;将当前字变成大写&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;guiw&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;将当前字变成小写&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;将当前行右移一个单位&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;将当前行左移一个单位&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;一个tab符&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;自动缩进当前行&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="n"&gt;插入模式&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;从当前光标处进入插入模式&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;I&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;进入插入模式&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;并置光标于行首&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;追加模式&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;置光标于当前光标之后&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;追加模式&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;置光标于行末&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;o&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;在当前行之下新加一行&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;并进入插入模式&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;O&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;在当前行之上新加一行&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;并进入插入模式&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;Esc&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;退出插入模式&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;可视模式&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;标记文本&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;进入可视模式&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;单字符模式&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;V&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;进入可视模式&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;行模式&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;ctrl&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;进入可视模式&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;列模式&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;类似于UE的列模式&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;o&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;跳转光标到选中块的另一个端点&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;U&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;将选中块中的内容转成大写&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;O&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;跳转光标到块的另一个端点&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;aw&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;选中一个字&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;ab&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;选中括号中的所有内容&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;包括括号本身&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;aB&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;选中&lt;/span&gt;&lt;span class="err"&gt;{}&lt;/span&gt;&lt;span class="n"&gt;括号中的所有内容&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;ib&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;选中括号中的内容&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;不含括号&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;iB&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;选中&lt;/span&gt;&lt;span class="err"&gt;{}&lt;/span&gt;&lt;span class="n"&gt;中的内容&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;不含&lt;/span&gt;&lt;span class="err"&gt;{}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="n"&gt;对标记进行动作&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;块右移&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;块左移&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;复制块&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;删除块&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="o"&gt;~&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;切换块中内容的大小写&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="editor"></category><category term="editor"></category><category term="vim"></category></entry><entry><title>linux 查看info文档</title><link href="/posts/2013/09/27/linux-info.html" rel="alternate"></link><published>2013-09-27T17:59:00+08:00</published><updated>2013-09-27T17:59:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2013-09-27:/posts/2013/09/27/linux-info.html</id><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;info &amp;lt;command&amp;gt;&lt;/span&gt;
 &lt;span class="err"&gt;info 比man 更详细&lt;/span&gt;
 &lt;span class="err"&gt;info 中 按tab 跳到下一个 连接 （有*的，可以连接到其他info）&lt;/span&gt;
 &lt;span class="err"&gt;按enter跳转&lt;/span&gt;
