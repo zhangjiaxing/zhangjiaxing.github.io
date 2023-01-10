@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Linux环境下文件关联的设置xdg-mime &mdash; cat ~/.zhiliao.history</title>
+  <meta name="author" content="zhiliao">
+
+  <link href="/feeds/all.atom.xml" type="application/rss+xml" rel="alternate"
+        title="cat ~/.zhiliao.history RSS Feed" />
+
+
+
+
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="/favicon.png" rel="icon">
+
+  <link href="/theme/css/main.css" media="screen, projection"
+        rel="stylesheet" type="text/css">
+  <link href="/theme/css/pygment.css" rel="stylesheet" type="text/css">
+
+  <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+
+  <script src="/theme/js/modernizr-2.0.js"></script>
+  <script src="/theme/js/ender.js"></script>
+  <script src="/theme/js/octopress.js" type="text/javascript"></script>
+</head>
+
+<body >
+  <header role="banner"
+  >
+<hgroup>
+  <h1><a href="/">cat ~/.zhiliao.history</a></h1>
+    <h2>无聊就该多读书。</h2>
+</hgroup></header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/feeds/all.atom.xml" rel="subscribe-rss">RSS</a></li>
+</ul>
+
+
+<ul class="main-navigation">
+    <li><a href="/">Home</a></li>
+    <li><a href="/archives.html">Archive</a></li>
+    <li><a href="/pages/about.html">About</a></li>
+</ul></nav>
+  <div id="main">
+    <div id="content">
+<div>
+  <article class="hentry" role="article">
+<header>
+      <h1 class="entry-title">Linux环境下文件关联的设置xdg-mime</h1>
+    <p class="meta">
+<time datetime="2017-06-07T00:00:00+08:00" pubdate>2017-06-07 00:00:00</time>      
+    </p>
+</header>
+
+    <div class="entry-content"><div class="highlight-custom"><pre><span></span><code><span class="err">xdg-utils</span>
+<span class="err">从网上下载了几本中文pdf文档，用系统自带的Evince——文档查看器打开后出现乱码。想到FoxitReader有个linux版本，于是从其官方网站下载下来，打开该文档未出现乱码。</span>
+<span class="err">但是因为默认pdf与Envince关联，所以想要用FoxitReader来看pdf文档，只能先打开FoxitReader，然后点文件-》打开菜单，选择pdf文档，才能阅读，稍有麻烦。怎么才能设置默认的pdf关联方式呢？</span>
+<span class="err">文件关联的原理主要是设置文件类型与应用程序之间的联系。</span>
+<span class="err">文件的类型由mimetype(.xml) 描述，存放在</span>
+<span class="err">/usr/share/mime</span>
+<span class="err">~/.local/share/mime</span>
+<span class="err">应用程序由desktop entry(.desktop)描述，存放在</span>
+<span class="err">/usr/share/applications</span>
+<span class="err">~/.local/share/applications</span>
+<span class="err">xdg-open程序负责根据关联的程序打开文件。</span>
+<span class="err">xdg-open先判断文件类型，然后到</span>
+<span class="err">/usr/share/applications/defaults.list</span>
+<span class="err">~/.local/share/applications/defaults.list</span>
+<span class="err">找到指定的.desktop，并根据其中的命令打开应用程序。</span>
+<span class="err">xdg-mime可以修改默认文件关联。</span>
+<span class="err">查看文件的mime类型：</span>
+<span class="err">xdg-mime query filetype a.pdf</span>
+<span class="err">查看mime类型的应用程序关联：</span>
+<span class="err">xdg-mime query default application/pdf</span>
+<span class="err">修改mime类型的应用程序关联：</span>
+<span class="err">xdg-mime default evince.desktop application/pdf</span>
+<span class="err">还可以直接改defaults.list。该文件存放于：</span>
+<span class="err">/usr/share/application</span>
+<span class="err">/etc/gnome</span>
+<span class="err">~/.local/share/applictions</span>
+<span class="err">按照全局性依次降低。</span>
+<span class="err">快捷的方式是在Nautilus中选择用其他方式打开，选择想要打开的程序，将“记住打开pdf文档类型文件使用的程序“打勾，会自动创建文件关联，可在~/.local/share/applicaions中看到新加的条目。</span>
+<span class="err">++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span>
+<span class="err">grep &quot;pdf&quot; applicaions &gt;&gt; ~/.local/share/applicaions</span>
+<span class="err">&quot;在application文件中查找出pdf文件关联的那一行并追加到~/.local/share/applicaions中</span>
+</code></pre></div></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">
+        zhiliao
+    </span>
+  </span>
+<time datetime="2017-06-07T00:00:00+08:00" pubdate>2017-06-07 00:00:00</time>  <span class="categories">
+    <a class='category' href='/category/linux.html'>linux</a>
+  </span>
+  <span class="categories">
+    <a class="category" href="/tag/linux.html">linux</a>,    <a class="category" href="/tag/xdg.html">xdg</a>  </span>
+</p><div class="sharing">
+</div>    </footer>
+  </article>
+
+</div>
+
+<aside class="sidebar">
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    <li class="post">
+        <a href="/posts/2022/12/29/install-cgit.html">debian11-bullseye install cgit</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2022/11/05/raspbian10-raspios-selenium.html">raspberry-debian10-selenium测试</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2022/11/05/raspbian10-raspios-selenium-har.html">raspberry-debian10-selenium-har测试</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2022/09/03/alternativeto.html">代替品查询网站</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2022/09/03/Flatpak-vs-Snap.html">Flatpak vs Snap</a>
+    </li>
+  </ul>
+</section><section>
+  <h1>Categories</h1>
+    <ul id="recent_posts">
+      <li><a href="/category/android.html">android (2)</a></li>
+      <li><a href="/category/blog.html">blog (1)</a></li>
+      <li><a href="/category/bootloader.html">bootloader (2)</a></li>
+      <li><a href="/category/container.html">container (1)</a></li>
+      <li><a href="/category/database.html">database (1)</a></li>
+      <li><a href="/category/editor.html">editor (4)</a></li>
+      <li><a href="/category/filesystem.html">filesystem (1)</a></li>
+      <li><a href="/category/firefox.html">firefox (1)</a></li>
+      <li><a href="/category/git.html">git (3)</a></li>
+      <li><a href="/category/golang.html">golang (1)</a></li>
+      <li><a href="/category/gu-piao.html">股票 (1)</a></li>
+      <li><a href="/category/ide.html">IDE (1)</a></li>
+      <li><a href="/category/interview.html">interview (1)</a></li>
+      <li><a href="/category/linux.html">linux (49)</a></li>
+      <li><a href="/category/network.html">network (7)</a></li>
+      <li><a href="/category/nltk.html">nltk (2)</a></li>
+      <li><a href="/category/other.html">other (1)</a></li>
+      <li><a href="/category/programming.html">programming (4)</a></li>
+      <li><a href="/category/python.html">python (1)</a></li>
+      <li><a href="/category/stock.html">stock (1)</a></li>
+      <li><a href="/category/vm.html">vm (1)</a></li>
+      <li><a href="/category/web.html">web (4)</a></li>
+      <li><a href="/category/windows.html">windows (1)</a></li>
+      <li><a href="/category/xwindow.html">xwindow (1)</a></li>
+  </ul>
+</section>
+<section>
+  <h1>Tags</h1>
+    <a href="/tag/git.html">git</a>,    <a href="/tag/linux.html">linux</a>,    <a href="/tag/selenium.html">selenium</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/docker.html">docker</a>,    <a href="/tag/flatpak.html">flatpak</a>,    <a href="/tag/interview.html">interview</a>,    <a href="/tag/programming.html">programming</a>,    <a href="/tag/qt.html">Qt</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/filesystem.html">filesystem</a>,    <a href="/tag/xwindow.html">xwindow</a>,    <a href="/tag/ide.html">IDE</a>,    <a href="/tag/glang.html">glang</a>,    <a href="/tag/xdg.html">xdg</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/database.html">database</a>,    <a href="/tag/mysql.html">mysql</a>,    <a href="/tag/sysctl.html">sysctl</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a>,    <a href="/tag/book.html">book</a>,    <a href="/tag/c.html">C++</a>,    <a href="/tag/bootloader.html">bootloader</a></section>
+    <section>
+        <h1>Social</h1>
+        <ul>
+            <li><a href="https://github.com/zhangjiaxing" target="_blank">github</a></li>
+            <li><a href="http://wpa.qq.com/msgrd?v=3&uin=347820393&site=qq&menu=yes" target="_blank">qq</a></li>
+            <li><a href="http://www.writebug.cn" target="_blank">blog</a></li>
+            <li><a href="http://gallery.writebug.cn" target="_blank">gallery</a></li>
+        </ul>
+    </section>
+    <section>
+        <h1>Blogroll</h1>
+        <ul>
+            <li><a href="http://getpelican.com/" target="_blank">Pelican</a></li>
+        </ul>
+    </section>
+
+</aside>
+    </div>
+  </div>
+  <footer role="contentinfo">
+<p>
+    Copyright &copy;  2013&ndash;2022  zhiliao &mdash;
+  <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
+</p>  </footer>
+</body>
+</html>

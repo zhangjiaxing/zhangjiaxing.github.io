@@ -65,10 +65,26 @@
 </header>
 
     <div class="entry-content"><p>VIM使用</p>
-<div class="highlight-custom"><pre><span></span><code><span class="n">CTRL</span><span class="o">+</span><span class="n">f</span><span class="err">：</span><span class="n">向下翻一页</span><span class="w"> </span><span class="n">CTRL</span><span class="o">+</span><span class="n">b</span><span class="err">：</span><span class="n">向上翻一页</span><span class="w"> </span><span class="n">CTRL</span><span class="o">+</span><span class="n">d</span><span class="err">：</span><span class="n">向下翻半页</span><span class="w"> </span><span class="n">CTRL</span><span class="o">+</span><span class="n">u</span><span class="err">：</span><span class="n">向上翻半页</span><span class="w"></span>
+<div class="highlight-custom"><pre><span></span><code><span class="n">p</span><span class="err">、</span><span class="n">P粘贴</span><span class="w"></span>
+<span class="n">p贴在下</span><span class="err">（</span><span class="n">后</span><span class="err">）</span><span class="n">面</span><span class="w"></span>
+<span class="n">P贴在前面</span><span class="w"></span>
+
+<span class="n">u</span><span class="w">  </span><span class="n">撤销</span><span class="err">（</span><span class="n">undo</span><span class="err">）</span><span class="w"></span>
+<span class="n">ctrl</span><span class="o">+</span><span class="n">r</span><span class="w">    </span><span class="n">反撤销</span><span class="w"></span>
+<span class="n">x</span><span class="w">   </span><span class="n">删除一个字符</span><span class="w"></span>
+<span class="n">R</span><span class="w">   </span><span class="n">进入覆盖模式</span><span class="w"></span>
+<span class="n">退格键</span><span class="w"> </span><span class="n">取消覆盖</span><span class="w"></span>
+
+
+<span class="n">CTRL</span><span class="o">+</span><span class="n">f</span><span class="err">：</span><span class="n">向下翻一页</span><span class="w"> </span><span class="n">CTRL</span><span class="o">+</span><span class="n">b</span><span class="err">：</span><span class="n">向上翻一页</span><span class="w"> </span><span class="n">CTRL</span><span class="o">+</span><span class="n">d</span><span class="err">：</span><span class="n">向下翻半页</span><span class="w"> </span><span class="n">CTRL</span><span class="o">+</span><span class="n">u</span><span class="err">：</span><span class="n">向上翻半页</span><span class="w"></span>
 
 <span class="n">w</span><span class="err">：</span><span class="n">移动到下一个单词的起始处</span><span class="err">（</span><span class="n">既然是w</span><span class="err">，</span><span class="n">代表的意思就是word</span><span class="err">，</span><span class="n">好记吧</span><span class="err">）</span><span class="w"></span>
 <span class="n">W</span><span class="err">：</span><span class="n">移动到下一个单词的起始处</span><span class="w"></span>
+<span class="n">b</span><span class="w"> </span><span class="n">跳到上一个单词</span><span class="w"></span>
+<span class="p">(</span><span class="w">  </span><span class="n">跳到上一个句子</span><span class="w"></span>
+<span class="p">)</span><span class="w">  </span><span class="n">跳到下一个句子</span><span class="w"></span>
+<span class="err">{</span><span class="w">  </span><span class="n">跳到上一个段落</span><span class="w"></span>
+<span class="err">}</span><span class="w">  </span><span class="n">跳到下一个段落</span><span class="w"></span>
 
 <span class="o">=====================</span><span class="w"></span>
 <span class="mi">0</span><span class="w">     </span><span class="n">跳至行首</span><span class="err">，</span><span class="n">不管有无缩进</span><span class="err">，</span><span class="n">就是跳到第0个字符</span><span class="w"></span>
@@ -189,6 +205,9 @@
 <span class="n">N</span><span class="w">     </span><span class="n">上一个匹配</span><span class="p">(</span><span class="n">同上</span><span class="p">)</span><span class="w"></span>
 <span class="err">:</span><span class="o">%</span><span class="n">s</span><span class="o">/</span><span class="k">old</span><span class="o">/</span><span class="k">new</span><span class="o">/</span><span class="n">g</span><span class="w">     </span><span class="n">搜索整个文件</span><span class="err">，</span><span class="n">将所有的old替换为new</span><span class="w"></span>
 <span class="err">:</span><span class="o">%</span><span class="n">s</span><span class="o">/</span><span class="k">old</span><span class="o">/</span><span class="k">new</span><span class="o">/</span><span class="n">gc</span><span class="w">     </span><span class="n">搜索整个文件</span><span class="err">，</span><span class="n">将所有的old替换为new</span><span class="err">，</span><span class="n">每次都要你确认是否替换</span><span class="w"></span>
+<span class="n">要替换两行之间出现的每个匹配串</span><span class="w"></span>
+<span class="n">输入</span><span class="w">   </span><span class="err">:#</span><span class="p">,</span><span class="n">#s</span><span class="o">/</span><span class="k">old</span><span class="o">/</span><span class="k">new</span><span class="o">/</span><span class="n">g</span><span class="w">   </span><span class="n">其中</span><span class="w"> </span><span class="err">#</span><span class="p">,</span><span class="err">#</span><span class="w"> </span><span class="n">代表的是替换操作的若干行中首尾两行的行号</span><span class="err">。</span><span class="w"></span>
+
 <span class="n">复制粘贴</span><span class="w"></span>
 <span class="n">dd</span><span class="w">     </span><span class="n">删除光标所在行</span><span class="w"></span>
 <span class="n">dw</span><span class="w">     </span><span class="n">删除一个字</span><span class="p">(</span><span class="n">word</span><span class="p">)</span><span class="w"></span>
@@ -242,7 +261,7 @@
 <span class="n">r</span><span class="w">     </span><span class="n">替换一个字符</span><span class="w"></span>
 <span class="n">J</span><span class="w">     </span><span class="n">将下一行和当前行连接为一行</span><span class="w"></span>
 <span class="n">cc</span><span class="w">     </span><span class="n">删除当前行并进入编辑模式</span><span class="w"></span>
-<span class="n">cw</span><span class="w">     </span><span class="n">删除当前字</span><span class="err">，</span><span class="n">并进入编辑模式</span><span class="w"></span>
+<span class="n">cw</span><span class="w">     </span><span class="n">删除当前单词</span><span class="err">，</span><span class="n">并进入编辑模式</span><span class="w"></span>
 <span class="n">c</span><span class="err">$</span><span class="w">     </span><span class="n">擦除从当前位置至行末的内容</span><span class="err">，</span><span class="n">并进入编辑模式</span><span class="w"></span>
 <span class="n">s</span><span class="w">     </span><span class="n">删除当前字符并进入编辑模式</span><span class="w"></span>
 <span class="n">S</span><span class="w">     </span><span class="n">删除光标所在行并进入编辑模式</span><span class="w"></span>
@@ -286,6 +305,19 @@
 <span class="n">y</span><span class="w">     </span><span class="n">复制块</span><span class="w"></span>
 <span class="n">d</span><span class="w">     </span><span class="n">删除块</span><span class="w"></span>
 <span class="o">~</span><span class="w">     </span><span class="n">切换块中内容的大小写</span><span class="w"></span>
+
+
+
+<span class="n">要向当前文件中插入另外的文件的内容</span><span class="err">，</span><span class="n">请输入</span><span class="w"> </span><span class="err">:</span><span class="n">r</span><span class="w"> </span><span class="n">FILENAME</span><span class="w"></span>
+<span class="err">：</span><span class="n">您还可以读取外部命令的输出</span><span class="err">。</span><span class="n">例如</span><span class="err">，</span><span class="w"> </span><span class="err">:</span><span class="n">r</span><span class="w"> </span><span class="err">!</span><span class="n">ls</span><span class="w"> </span><span class="n">可以读取</span><span class="w"> </span><span class="n">ls</span><span class="w"> </span><span class="n">命令的输出</span><span class="err">，</span><span class="n">并把它放置在光标下面</span><span class="w"></span>
+
+<span class="n">仅在一次查找时忽略字母大小写</span><span class="err">，</span><span class="n">您可以使用</span><span class="w"> </span><span class="err">\</span><span class="n">c</span><span class="err">：</span><span class="w"></span>
+<span class="w">       </span><span class="o">/</span><span class="k">ignore</span><span class="err">\</span><span class="n">c</span><span class="w"> </span><span class="o">&lt;</span><span class="n">回车</span><span class="o">&gt;</span><span class="w"></span>
+
+<span class="n">vim要回到您之前的位置按</span><span class="w"> </span><span class="n">CTRL</span><span class="o">-</span><span class="n">O</span><span class="w"> </span><span class="p">(</span><span class="n">按住</span><span class="w"> </span><span class="n">Ctrl</span><span class="w"> </span><span class="n">键不放同时按下字母</span><span class="w"> </span><span class="n">o</span><span class="p">)</span><span class="err">。</span><span class="n">重复按可以</span><span class="w"></span>
+<span class="n">回退更多步</span><span class="err">。</span><span class="n">CTRL</span><span class="o">-</span><span class="n">I</span><span class="w"> </span><span class="n">会跳转到较新的位置</span><span class="err">。</span><span class="w"></span>
+
+<span class="n">输入</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">可以查找配对的括号</span><span class="w"> </span><span class="p">)</span><span class="err">、]、}。</span><span class="w"></span>
 </code></pre></div></div>
     <footer>
 <p class="meta">
@@ -316,13 +348,13 @@
         <a href="/posts/2022/11/05/raspbian10-raspios-selenium.html">raspberry-debian10-selenium测试</a>
     </li>
     <li class="post">
+        <a href="/posts/2022/11/05/raspbian10-raspios-selenium-har.html">raspberry-debian10-selenium-har测试</a>
+    </li>
+    <li class="post">
         <a href="/posts/2022/09/03/alternativeto.html">代替品查询网站</a>
     </li>
     <li class="post">
         <a href="/posts/2022/09/03/Flatpak-vs-Snap.html">Flatpak vs Snap</a>
-    </li>
-    <li class="post">
-        <a href="/posts/2022/07/09/interview-questions.html">面试中我经常问的问题</a>
     </li>
   </ul>
 </section><section>
@@ -332,29 +364,31 @@
       <li><a href="/category/blog.html">blog (1)</a></li>
       <li><a href="/category/bootloader.html">bootloader (2)</a></li>
       <li><a href="/category/container.html">container (1)</a></li>
+      <li><a href="/category/database.html">database (1)</a></li>
       <li><a href="/category/editor.html">editor (4)</a></li>
+      <li><a href="/category/filesystem.html">filesystem (1)</a></li>
       <li><a href="/category/firefox.html">firefox (1)</a></li>
       <li><a href="/category/git.html">git (3)</a></li>
       <li><a href="/category/golang.html">golang (1)</a></li>
       <li><a href="/category/gu-piao.html">股票 (1)</a></li>
       <li><a href="/category/ide.html">IDE (1)</a></li>
       <li><a href="/category/interview.html">interview (1)</a></li>
-      <li><a href="/category/linux.html">linux (42)</a></li>
+      <li><a href="/category/linux.html">linux (49)</a></li>
       <li><a href="/category/network.html">network (7)</a></li>
       <li><a href="/category/nltk.html">nltk (2)</a></li>
       <li><a href="/category/other.html">other (1)</a></li>
       <li><a href="/category/programming.html">programming (4)</a></li>
-      <li><a href="/category/python.html">python (2)</a></li>
+      <li><a href="/category/python.html">python (1)</a></li>
       <li><a href="/category/stock.html">stock (1)</a></li>
       <li><a href="/category/vm.html">vm (1)</a></li>
-      <li><a href="/category/web.html">web (3)</a></li>
+      <li><a href="/category/web.html">web (4)</a></li>
       <li><a href="/category/windows.html">windows (1)</a></li>
       <li><a href="/category/xwindow.html">xwindow (1)</a></li>
   </ul>
 </section>
 <section>
   <h1>Tags</h1>
-    <a href="/tag/git.html">git</a>,    <a href="/tag/linux.html">linux</a>,    <a href="/tag/selenium.html">selenium</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/docker.html">docker</a>,    <a href="/tag/flatpak.html">flatpak</a>,    <a href="/tag/interview.html">interview</a>,    <a href="/tag/programming.html">programming</a>,    <a href="/tag/qt.html">Qt</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/filesystem.html">filesystem</a>,    <a href="/tag/xwindow.html">xwindow</a>,    <a href="/tag/ide.html">IDE</a>,    <a href="/tag/glang.html">glang</a>,    <a href="/tag/xdg.html">xdg</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/blog.html">blog</a>,    <a href="/tag/c.html">C++</a>,    <a href="/tag/book.html">book</a>,    <a href="/tag/bootloader.html">bootloader</a></section>
+    <a href="/tag/git.html">git</a>,    <a href="/tag/linux.html">linux</a>,    <a href="/tag/selenium.html">selenium</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/docker.html">docker</a>,    <a href="/tag/flatpak.html">flatpak</a>,    <a href="/tag/interview.html">interview</a>,    <a href="/tag/programming.html">programming</a>,    <a href="/tag/qt.html">Qt</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/filesystem.html">filesystem</a>,    <a href="/tag/xwindow.html">xwindow</a>,    <a href="/tag/ide.html">IDE</a>,    <a href="/tag/glang.html">glang</a>,    <a href="/tag/xdg.html">xdg</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/database.html">database</a>,    <a href="/tag/mysql.html">mysql</a>,    <a href="/tag/sysctl.html">sysctl</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a>,    <a href="/tag/book.html">book</a>,    <a href="/tag/c.html">C++</a>,    <a href="/tag/bootloader.html">bootloader</a></section>
     <section>
         <h1>Social</h1>
         <ul>

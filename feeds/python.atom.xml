@@ -22,44 +22,4 @@
 
 &lt;span class="n"&gt;a&lt;/span&gt;
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;a&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="python"></category><category term="python"></category></entry><entry><title>example title</title><link href="/posts/2017/06/07/example.html" rel="alternate"></link><published>2017-06-07T00:00:00+08:00</published><updated>2017-06-07T00:00:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-07:/posts/2017/06/07/example.html</id><summary type="html">&lt;p&gt;整理了以下四种在MySQL中修改root密码的方法,可能对大家有所帮助!&lt;/p&gt;
-&lt;h4&gt;方法1： 用SET PASSWORD命令&lt;/h4&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;　　mysql -u root&lt;/span&gt;
-&lt;span class="err"&gt;　　mysql&amp;gt; SET PASSWORD FOR &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; = PASSWORD(&amp;#39;newpass&amp;#39;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h4&gt;方法2：用mysqladmin&lt;/h4&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;　　mysqladmin -u root password &amp;quot;newpass&amp;quot;&lt;/span&gt;
-&lt;span class="err"&gt;　　# 如果root已经设置过密码，采用如下方法&lt;/span&gt;
-&lt;span class="err"&gt;　　mysqladmin -u root password oldpass &amp;quot;newpass&amp;quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h4&gt;方法3： 用UPDATE直接编辑user表&lt;/h4&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;　　mysql -u root&lt;/span&gt;
-&lt;span class="err"&gt;　　mysql&amp;gt; use mysql;&lt;/span&gt;
-&lt;span class="err"&gt;　　mysql&amp;gt; UPDATE user SET Password = PASSWORD(&amp;#39;newpass&amp;#39;) WHERE user = &amp;#39;root&amp;#39;;&lt;/span&gt;
-&lt;span class="err"&gt;　　mysql …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;整理了以下四种在MySQL中修改root密码的方法,可能对大家有所帮助!&lt;/p&gt;
-&lt;h4&gt;方法1： 用SET PASSWORD命令&lt;/h4&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;　　mysql -u root&lt;/span&gt;
-&lt;span class="err"&gt;　　mysql&amp;gt; SET PASSWORD FOR &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; = PASSWORD(&amp;#39;newpass&amp;#39;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h4&gt;方法2：用mysqladmin&lt;/h4&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;　　mysqladmin -u root password &amp;quot;newpass&amp;quot;&lt;/span&gt;
-&lt;span class="err"&gt;　　# 如果root已经设置过密码，采用如下方法&lt;/span&gt;
-&lt;span class="err"&gt;　　mysqladmin -u root password oldpass &amp;quot;newpass&amp;quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h4&gt;方法3： 用UPDATE直接编辑user表&lt;/h4&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;　　mysql -u root&lt;/span&gt;
-&lt;span class="err"&gt;　　mysql&amp;gt; use mysql;&lt;/span&gt;
-&lt;span class="err"&gt;　　mysql&amp;gt; UPDATE user SET Password = PASSWORD(&amp;#39;newpass&amp;#39;) WHERE user = &amp;#39;root&amp;#39;;&lt;/span&gt;
-&lt;span class="err"&gt;　　mysql&amp;gt; FLUSH PRIVILEGES;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h4&gt;在丢失root密码的时候，可以这样&lt;/h4&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;　　mysqld_safe --skip-grant-tables&amp;amp;&lt;/span&gt;
-&lt;span class="err"&gt;　　mysql -u root mysql&lt;/span&gt;
-&lt;span class="err"&gt;　　mysql&amp;gt; UPDATE user SET password=PASSWORD(&amp;quot;new password&amp;quot;) WHERE user=&amp;#39;root&amp;#39;;&lt;/span&gt;
-&lt;span class="err"&gt;　　mysql&amp;gt; FLUSH PRIVILEGES;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="python"></category><category term="pelican"></category><category term="python"></category></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="python"></category><category term="python"></category></entry></feed>

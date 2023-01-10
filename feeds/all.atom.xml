@@ -180,6 +180,83 @@ chromium-browser
 &lt;span class="n"&gt;chrome&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;save_screenshot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;chrome_jd.png&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 &lt;span class="n"&gt;chrome&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;quit&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="web"></category><category term="linux"></category><category term="selenium"></category></entry><entry><title>raspberry-debian10-selenium-har测试</title><link href="/posts/2022/11/05/raspbian10-raspios-selenium-har.html" rel="alternate"></link><published>2022-11-05T18:40:04+08:00</published><updated>2022-11-05T18:40:04+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-11-05:/posts/2022/11/05/raspbian10-raspios-selenium-har.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;nohup&lt;/span&gt; &lt;span class="o"&gt;./&lt;/span&gt;&lt;span class="n"&gt;browsermob&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;proxy&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;port&lt;/span&gt; &lt;span class="mi"&gt;9090&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;
+
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;browsermobproxy&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Server&lt;/span&gt;
+
+&lt;span class="n"&gt;server&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Server&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;/data/.workspace/selenium/browsermob-proxy-2.1.4/bin/browsermob-proxy&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;options&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;port&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;9090&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
+&lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;proxy&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;create_proxy&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;pyvirtualdisplay&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Display&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;selenium&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;webdriver&lt;/span&gt;
+
+&lt;span class="n"&gt;display&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Display&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;visible&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1024&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;768&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="n"&gt;display&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="c1"&gt;# 开启虚拟GUI&lt;/span&gt;
+
+&lt;span class="n"&gt;options&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;webdriver&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ChromeOptions&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="n"&gt;options&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_argument …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;nohup&lt;/span&gt; &lt;span class="o"&gt;./&lt;/span&gt;&lt;span class="n"&gt;browsermob&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;proxy&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;port&lt;/span&gt; &lt;span class="mi"&gt;9090&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;
+
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;browsermobproxy&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Server&lt;/span&gt;
+
+&lt;span class="n"&gt;server&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Server&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;/data/.workspace/selenium/browsermob-proxy-2.1.4/bin/browsermob-proxy&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;options&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;port&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;9090&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
+&lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;proxy&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;create_proxy&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;pyvirtualdisplay&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Display&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;selenium&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;webdriver&lt;/span&gt;
+
+&lt;span class="n"&gt;display&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Display&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;visible&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1024&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;768&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="n"&gt;display&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="c1"&gt;# 开启虚拟GUI&lt;/span&gt;
+
+&lt;span class="n"&gt;options&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;webdriver&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ChromeOptions&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="n"&gt;options&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_argument&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;--remote-debugging-port=9222&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;options&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_argument&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;--no-sandbox&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;options&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_argument&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;--allow-insecure-localhost&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;options&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_argument&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;--ignore-ssl-errors=yes&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;options&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_argument&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;--ignore-certificates-errors&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;options&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_argument&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;--ignore-urlfetcher-cert-requests&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;options&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_argument&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;--proxy-server={proxy_config}&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;proxy_config&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;proxy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;proxy&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+
+&lt;span class="c1"&gt;#options.add_argument(&amp;quot;--headless&amp;quot;)&lt;/span&gt;
+&lt;span class="n"&gt;options&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_argument&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;start-maximized&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="c1"&gt;#options.add_argument(&amp;quot;--incognito&amp;quot;)&lt;/span&gt;
+&lt;span class="n"&gt;options&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_experimental_option&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;excludeSwitches&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;ignore-certificate-errors&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;enable-automation&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;enable-logging&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="n"&gt;prefs&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+&lt;span class="n"&gt;prefs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;credentials_enable_service&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
+&lt;span class="n"&gt;prefs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;profile.password_manager_enabled&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
+&lt;span class="n"&gt;options&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_experimental_option&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;prefs&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;prefs&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;##关掉密码弹窗&lt;/span&gt;
+
+
+&lt;span class="n"&gt;capabilities&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;webdriver&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DesiredCapabilities&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;CHROME&lt;/span&gt;
+&lt;span class="n"&gt;capabilities&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;acceptSslCerts&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+
+&lt;span class="n"&gt;chrome&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;webdriver&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Chrome&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;executable_path&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;/usr/bin/chromedriver&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;options&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;options&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;desired_capabilities&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;capabilities&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;chrome&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fullscreen_window&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;proxy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;new_har&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;jd&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;options&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;captureHeaders&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;captureContent&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;captureBinaryContent&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
+
+
+&lt;span class="n"&gt;chrome&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;https://www.jd.com/&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt;
+&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;json&lt;/span&gt;
+&lt;span class="n"&gt;fp&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;jdcom.har&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;w&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="c1"&gt;# proxy.har # returns a HAR JSON blob&lt;/span&gt;
+&lt;span class="n"&gt;json&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dump&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;proxy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;har&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fp&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;fp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="n"&gt;proxy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stop&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="n"&gt;chrome&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;save_screenshot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;chrome_jdcom.png&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;chrome&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;quit&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="web"></category><category term="linux"></category><category term="selenium"></category></entry><entry><title>代替品查询网站</title><link href="/posts/2022/09/03/alternativeto.html" rel="alternate"></link><published>2022-09-03T16:57:51+08:00</published><updated>2022-09-03T16:57:51+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-09-03:/posts/2022/09/03/alternativeto.html</id><content type="html">&lt;p&gt;&lt;a href="https://alternativeto.net/"&gt;alternativeto&lt;/a&gt;&lt;/p&gt;</content><category term="web"></category><category term="web"></category></entry><entry><title>Flatpak vs Snap</title><link href="/posts/2022/09/03/Flatpak-vs-Snap.html" rel="alternate"></link><published>2022-09-03T12:59:46+08:00</published><updated>2022-09-03T12:59:46+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-09-03:/posts/2022/09/03/Flatpak-vs-Snap.html</id><summary type="html">&lt;h2&gt;Flatpak vs. Snap&lt;/h2&gt;
 &lt;p&gt;Flatpak may have been in works since 2007 as glick, it’s not the only player in the Linux world. Canonical is the one that created waves with the announcement of Click, that later evolved into Snap.&lt;/p&gt;
 &lt;p&gt;There is a healthy competition between the two projects and …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Flatpak vs. Snap&lt;/h2&gt;
@@ -1964,7 +2041,16 @@ envsubst &amp;lt; nginx.conf.template &amp;gt; nanjing.conf
 
 &lt;span class="c1"&gt;#指定特定待替换的环境变量&lt;/span&gt;
 envsubst &lt;span class="s1"&gt;&amp;#39;${VAR_NAME}&amp;#39;&lt;/span&gt; &amp;lt; nginx.conf.template &amp;gt; nanjing.conf
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="bash"></category></entry><entry><title>example title</title><link href="/posts/2017/06/07/example.html" rel="alternate"></link><published>2017-06-07T00:00:00+08:00</published><updated>2017-06-07T00:00:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-07:/posts/2017/06/07/example.html</id><summary type="html">&lt;p&gt;整理了以下四种在MySQL中修改root密码的方法,可能对大家有所帮助!&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="bash"></category></entry><entry><title>磁盘分区，文件系统有关的命令</title><link href="/posts/2017/06/07/filesystem.html" rel="alternate"></link><published>2017-06-07T00:00:00+08:00</published><updated>2017-06-07T00:00:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-07:/posts/2017/06/07/filesystem.html</id><content type="html">&lt;p&gt;partx -a # 通知内核重新读取硬盘分区表&lt;/p&gt;
+&lt;p&gt;partprobe # 同上，告诉内核分区表改变了&lt;/p&gt;
+&lt;p&gt;mkfs.btrfs -m dup /dev/sda1&lt;/p&gt;</content><category term="filesystem"></category><category term="filesystem"></category></entry><entry><title>iperf3测试带宽</title><link href="/posts/2017/06/07/iperf3.html" rel="alternate"></link><published>2017-06-07T00:00:00+08:00</published><updated>2017-06-07T00:00:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-07:/posts/2017/06/07/iperf3.html</id><content type="html">&lt;h1&gt;TCP&lt;/h1&gt;
+&lt;p&gt;服务端&lt;code&gt;iperf3 -s -p 12345&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;客户端测试上传到服务器&lt;code&gt;iperf3 -c server_host -p 12345&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;客户端测试从服务器下载&lt;code&gt;iperf3 -c server_host -p 12345 -R&lt;/code&gt;&lt;/p&gt;
+&lt;h1&gt;UDP&lt;/h1&gt;
+&lt;p&gt;客户端添加 -u 参数即可&lt;/p&gt;
+&lt;h1&gt;传输多个流测试(必加参数)&lt;/h1&gt;
+&lt;p&gt;加上参数 -P 10 (10个流同步测试)&lt;/p&gt;</content><category term="network"></category><category term="linux"></category><category term="network"></category></entry><entry><title>mysql 中修改root密码</title><link href="/posts/2017/06/07/mysql-password.html" rel="alternate"></link><published>2017-06-07T00:00:00+08:00</published><updated>2017-06-07T00:00:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-07:/posts/2017/06/07/mysql-password.html</id><summary type="html">&lt;p&gt;整理了以下四种在MySQL中修改root密码的方法,可能对大家有所帮助!&lt;/p&gt;
 &lt;h4&gt;方法1： 用SET PASSWORD命令&lt;/h4&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;　　mysql -u root&lt;/span&gt;
 &lt;span class="err"&gt;　　mysql&amp;gt; SET PASSWORD FOR &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; = PASSWORD(&amp;#39;newpass&amp;#39;);&lt;/span&gt;
@@ -2004,14 +2090,19 @@ envsubst &lt;span class="s1"&gt;&amp;#39;${VAR_NAME}&amp;#39;&lt;/span&gt; &amp;
 &lt;span class="err"&gt;　　mysql -u root mysql&lt;/span&gt;
 &lt;span class="err"&gt;　　mysql&amp;gt; UPDATE user SET password=PASSWORD(&amp;quot;new password&amp;quot;) WHERE user=&amp;#39;root&amp;#39;;&lt;/span&gt;
 &lt;span class="err"&gt;　　mysql&amp;gt; FLUSH PRIVILEGES;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="python"></category><category term="pelican"></category><category term="python"></category></entry><entry><title>iperf3测试带宽</title><link href="/posts/2017/06/07/iperf3.html" rel="alternate"></link><published>2017-06-07T00:00:00+08:00</published><updated>2017-06-07T00:00:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-07:/posts/2017/06/07/iperf3.html</id><content type="html">&lt;h1&gt;TCP&lt;/h1&gt;
-&lt;p&gt;服务端&lt;code&gt;iperf3 -s -p 12345&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;客户端测试上传到服务器&lt;code&gt;iperf3 -c server_host -p 12345&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;客户端测试从服务器下载&lt;code&gt;iperf3 -c server_host -p 12345 -R&lt;/code&gt;&lt;/p&gt;
-&lt;h1&gt;UDP&lt;/h1&gt;
-&lt;p&gt;客户端添加 -u 参数即可&lt;/p&gt;
-&lt;h1&gt;传输多个流测试(必加参数)&lt;/h1&gt;
-&lt;p&gt;加上参数 -P 10 (10个流同步测试)&lt;/p&gt;</content><category term="network"></category><category term="linux"></category><category term="network"></category></entry><entry><title>vim折叠设置</title><link href="/posts/2017/06/07/vim-fold.html" rel="alternate"></link><published>2017-06-07T00:00:00+08:00</published><updated>2017-06-07T00:00:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-07:/posts/2017/06/07/vim-fold.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="x"&gt;vim折叠设置&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="database"></category><category term="database"></category><category term="mysql"></category></entry><entry><title>swappiness交换分区配置</title><link href="/posts/2017/06/07/swappiness.html" rel="alternate"></link><published>2017-06-07T00:00:00+08:00</published><updated>2017-06-07T00:00:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-07:/posts/2017/06/07/swappiness.html</id><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;swappiness&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="err"&gt;的时候表示最大限度使用物理内存，然后才是&lt;/span&gt; &lt;span class="n"&gt;swap空间&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;swappiness&lt;/span&gt;&lt;span class="err"&gt;＝&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="err"&gt;的时候表示积极的使用&lt;/span&gt;&lt;span class="n"&gt;swap分区&lt;/span&gt;&lt;span class="err"&gt;，并且把内存上的数据及时的搬运到&lt;/span&gt;&lt;span class="n"&gt;swap空间里面&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
+
+&lt;span class="n"&gt;Ubuntu系统swappiness默认值为60&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="err"&gt;表示的含义可以这样来理解&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="err"&gt;当剩余物理内存低于&lt;/span&gt;&lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;60&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="err"&gt;时&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="err"&gt;开始使用&lt;/span&gt;&lt;span class="n"&gt;swap分区&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
+
+&lt;span class="err"&gt;手工修改&lt;/span&gt;
+ &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;vim&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;etc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;sysctl&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;conf&lt;/span&gt; 
+
+&lt;span class="err"&gt;你应该可以看到这样一行：&lt;/span&gt;
+ &lt;span class="n"&gt;vm&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;swappiness&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;60&lt;/span&gt;
+
+&lt;span class="err"&gt;如果内存大于&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="n"&gt;GB&lt;/span&gt;&lt;span class="err"&gt;，则可以将这个数值改为&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="err"&gt;或&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
+&lt;span class="err"&gt;提示：如果没有找到这一行，也可以自己添加。&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="sysctl"></category></entry><entry><title>vim折叠设置</title><link href="/posts/2017/06/07/vim-fold.html" rel="alternate"></link><published>2017-06-07T00:00:00+08:00</published><updated>2017-06-07T00:00:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-07:/posts/2017/06/07/vim-fold.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="x"&gt;vim折叠设置&lt;/span&gt;
 &lt;span class="x"&gt;set foldmethod=indent &amp;quot;set default foldmethod&lt;/span&gt;
 &lt;span class="x"&gt;&amp;quot;zi 打开关闭折叠&lt;/span&gt;
 &lt;span class="x"&gt;&amp;quot;zv 查看此行&lt;/span&gt;
@@ -2127,7 +2218,51 @@ envsubst &lt;span class="s1"&gt;&amp;#39;${VAR_NAME}&amp;#39;&lt;/span&gt; &amp;
 &lt;span class="x"&gt;8、可以用jznj命令来禁用一个折行. 然后用jzNj还可以恢复它. jzij命令则可以在两者之间切换.&lt;/span&gt;
 
 &lt;span class="x"&gt;其它的，请参考vim的使用手册。&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="editor"></category><category term="vim"></category><category term="editor"></category></entry><entry><title>vim 排序文字</title><link href="/posts/2017/06/07/vim-sort.html" rel="alternate"></link><published>2017-06-07T00:00:00+08:00</published><updated>2017-06-07T00:00:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-07:/posts/2017/06/07/vim-sort.html</id><content type="html">&lt;p&gt;可以用 &lt;code&gt;ctrl-V&lt;/code&gt; 选中后输入 &lt;code&gt;:sort&lt;/code&gt; 排序&lt;/p&gt;</content><category term="editor"></category><category term="editor"></category><category term="vim"></category></entry><entry><title>apt install 一直 size mismatch</title><link href="/posts/2017/06/03/apt-size-mismatch.html" rel="alternate"></link><published>2017-06-03T08:32:00+08:00</published><updated>2017-06-03T08:32:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-03:/posts/2017/06/03/apt-size-mismatch.html</id><content type="html">&lt;p&gt;raspberry pi 的 debian， apt安装软件是一直提示 size mismatch。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="editor"></category><category term="vim"></category><category term="editor"></category></entry><entry><title>vim 排序文字</title><link href="/posts/2017/06/07/vim-sort.html" rel="alternate"></link><published>2017-06-07T00:00:00+08:00</published><updated>2017-06-07T00:00:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-07:/posts/2017/06/07/vim-sort.html</id><content type="html">&lt;p&gt;可以用 &lt;code&gt;ctrl-V&lt;/code&gt; 选中后输入 &lt;code&gt;:sort&lt;/code&gt; 排序&lt;/p&gt;</content><category term="editor"></category><category term="editor"></category><category term="vim"></category></entry><entry><title>Linux环境下文件关联的设置xdg-mime</title><link href="/posts/2017/06/07/xdg-mime.html" rel="alternate"></link><published>2017-06-07T00:00:00+08:00</published><updated>2017-06-07T00:00:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-07:/posts/2017/06/07/xdg-mime.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;xdg-utils&lt;/span&gt;
+&lt;span class="err"&gt;从网上下载了几本中文pdf文档，用系统自带的Evince——文档查看器打开后出现乱码。想到FoxitReader有个linux版本，于是从其官方网站下载下来，打开该文档未出现乱码。&lt;/span&gt;
+&lt;span class="err"&gt;但是因为默认pdf与Envince关联，所以想要用FoxitReader来看pdf文档，只能先打开FoxitReader，然后点文件-》打开菜单，选择pdf文档，才能阅读，稍有麻烦。怎么才能设置默认的pdf关联方式呢？&lt;/span&gt;
+&lt;span class="err"&gt;文件关联的原理主要是设置文件类型与应用程序之间的联系。&lt;/span&gt;
+&lt;span class="err"&gt;文件的类型由mimetype(.xml) 描述，存放在&lt;/span&gt;
+&lt;span class="err"&gt;/usr/share/mime&lt;/span&gt;
+&lt;span class="err"&gt;~/.local/share/mime&lt;/span&gt;
+&lt;span class="err"&gt;应用程序由desktop entry(.desktop)描述，存放在&lt;/span&gt;
+&lt;span class="err"&gt;/usr/share/applications&lt;/span&gt;
+&lt;span class="err"&gt;~/.local/share/applications&lt;/span&gt;
+&lt;span class="err"&gt;xdg-open程序负责根据关联的程序打开文件。&lt;/span&gt;
+&lt;span class="err"&gt;xdg-open先判断文件类型，然后到&lt;/span&gt;
+&lt;span class="err"&gt;/usr/share/applications/defaults.list&lt;/span&gt;
+&lt;span class="err"&gt;~/.local/share/applications/defaults …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;xdg-utils&lt;/span&gt;
+&lt;span class="err"&gt;从网上下载了几本中文pdf文档，用系统自带的Evince——文档查看器打开后出现乱码。想到FoxitReader有个linux版本，于是从其官方网站下载下来，打开该文档未出现乱码。&lt;/span&gt;
+&lt;span class="err"&gt;但是因为默认pdf与Envince关联，所以想要用FoxitReader来看pdf文档，只能先打开FoxitReader，然后点文件-》打开菜单，选择pdf文档，才能阅读，稍有麻烦。怎么才能设置默认的pdf关联方式呢？&lt;/span&gt;
+&lt;span class="err"&gt;文件关联的原理主要是设置文件类型与应用程序之间的联系。&lt;/span&gt;
+&lt;span class="err"&gt;文件的类型由mimetype(.xml) 描述，存放在&lt;/span&gt;
+&lt;span class="err"&gt;/usr/share/mime&lt;/span&gt;
+&lt;span class="err"&gt;~/.local/share/mime&lt;/span&gt;
+&lt;span class="err"&gt;应用程序由desktop entry(.desktop)描述，存放在&lt;/span&gt;
+&lt;span class="err"&gt;/usr/share/applications&lt;/span&gt;
+&lt;span class="err"&gt;~/.local/share/applications&lt;/span&gt;
+&lt;span class="err"&gt;xdg-open程序负责根据关联的程序打开文件。&lt;/span&gt;
+&lt;span class="err"&gt;xdg-open先判断文件类型，然后到&lt;/span&gt;
+&lt;span class="err"&gt;/usr/share/applications/defaults.list&lt;/span&gt;
+&lt;span class="err"&gt;~/.local/share/applications/defaults.list&lt;/span&gt;
+&lt;span class="err"&gt;找到指定的.desktop，并根据其中的命令打开应用程序。&lt;/span&gt;
+&lt;span class="err"&gt;xdg-mime可以修改默认文件关联。&lt;/span&gt;
+&lt;span class="err"&gt;查看文件的mime类型：&lt;/span&gt;
+&lt;span class="err"&gt;xdg-mime query filetype a.pdf&lt;/span&gt;
+&lt;span class="err"&gt;查看mime类型的应用程序关联：&lt;/span&gt;
+&lt;span class="err"&gt;xdg-mime query default application/pdf&lt;/span&gt;
+&lt;span class="err"&gt;修改mime类型的应用程序关联：&lt;/span&gt;
+&lt;span class="err"&gt;xdg-mime default evince.desktop application/pdf&lt;/span&gt;
+&lt;span class="err"&gt;还可以直接改defaults.list。该文件存放于：&lt;/span&gt;
+&lt;span class="err"&gt;/usr/share/application&lt;/span&gt;
+&lt;span class="err"&gt;/etc/gnome&lt;/span&gt;
+&lt;span class="err"&gt;~/.local/share/applictions&lt;/span&gt;
+&lt;span class="err"&gt;按照全局性依次降低。&lt;/span&gt;
+&lt;span class="err"&gt;快捷的方式是在Nautilus中选择用其他方式打开，选择想要打开的程序，将“记住打开pdf文档类型文件使用的程序“打勾，会自动创建文件关联，可在~/.local/share/applicaions中看到新加的条目。&lt;/span&gt;
+&lt;span class="err"&gt;++++++++++++++++++++++++++++++++++++++++++++++++++++++++++&lt;/span&gt;
+&lt;span class="err"&gt;grep &amp;quot;pdf&amp;quot; applicaions &amp;gt;&amp;gt; ~/.local/share/applicaions&lt;/span&gt;
+&lt;span class="err"&gt;&amp;quot;在application文件中查找出pdf文件关联的那一行并追加到~/.local/share/applicaions中&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="xdg"></category></entry><entry><title>apt install 一直 size mismatch</title><link href="/posts/2017/06/03/apt-size-mismatch.html" rel="alternate"></link><published>2017-06-03T08:32:00+08:00</published><updated>2017-06-03T08:32:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-03:/posts/2017/06/03/apt-size-mismatch.html</id><content type="html">&lt;p&gt;raspberry pi 的 debian， apt安装软件是一直提示 size mismatch。
 后来发现这是运营商(ISP)缓存的问题， 运营商有些时候是通过文件名作为缓存的， 导致服务器文件更新后，用户依然下载到旧的版本。
 解决方法是， apt source 使用https协议就好了。&lt;/p&gt;
 &lt;p&gt;后来发现有人和我遇到同样的问题：https://bbs.deepin.org/forum.php?mod=viewthread&amp;amp;tid=138536&lt;/p&gt;</content><category term="linux"></category><category term="debian"></category><category term="linux"></category></entry><entry><title>pelican博客搭建总结</title><link href="/posts/2017/06/03/pelican.html" rel="alternate"></link><published>2017-06-03T06:56:00+08:00</published><updated>2017-06-03T06:56:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-03:/posts/2017/06/03/pelican.html</id><summary type="html">&lt;h4&gt;pelican介绍&lt;/h4&gt;
@@ -2283,7 +2418,70 @@ man -t eventfd &lt;span class="p"&gt;|&lt;/span&gt; ps2pdf - &amp;gt; eventfd.pd
 &lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="n"&gt;utf8&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;描述&lt;/span&gt;&lt;span class="n"&gt;UTF&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="err"&gt;编码。&lt;/span&gt;
 &lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="err"&gt;解释&lt;/span&gt;&lt;span class="n"&gt;URL&lt;/span&gt;&lt;span class="err"&gt;、&lt;/span&gt;&lt;span class="n"&gt;URI&lt;/span&gt;&lt;span class="err"&gt;、&lt;/span&gt;&lt;span class="n"&gt;URN等的标准&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
 &lt;span class="n"&gt;man&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="n"&gt;ascii&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category></entry><entry><title>ArchLinux 安装笔记</title><link href="/posts/2015/01/01/install-archlinux.html" rel="alternate"></link><published>2015-01-01T20:31:00+08:00</published><updated>2015-01-01T20:31:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2015-01-01:/posts/2015/01/01/install-archlinux.html</id><summary type="html">&lt;h3&gt;ArchLinux 安装笔记&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category></entry><entry><title>coreutils</title><link href="/posts/2015/01/10/coreutils.html" rel="alternate"></link><published>2015-01-10T10:31:00+08:00</published><updated>2015-01-10T10:31:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2015-01-10:/posts/2015/01/10/coreutils.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;arch&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;显示机器的架构&lt;/span&gt;
+&lt;span class="n"&gt;basenc&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;编码解码数据（&lt;/span&gt;&lt;span class="n"&gt;base32等&lt;/span&gt;&lt;span class="err"&gt;）&lt;/span&gt;
+&lt;span class="n"&gt;cksum&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;校验文件&lt;/span&gt;&lt;span class="n"&gt;CRC&lt;/span&gt;
+&lt;span class="n"&gt;expand&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;将制表符转化为空格&lt;/span&gt;
+&lt;span class="n"&gt;factor&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;分解质因数&lt;/span&gt;
+&lt;span class="n"&gt;fmt&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;简单的格式化文本，&lt;/span&gt; &lt;span class="err"&gt;折行等&lt;/span&gt;
+&lt;span class="n"&gt;fold&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;对文件折行以适应宽度&lt;/span&gt;
+&lt;span class="k"&gt;join&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;按字段合并文件&lt;/span&gt;
+&lt;span class="n"&gt;paste&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;合并文件&lt;/span&gt;
+&lt;span class="n"&gt;logname&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;用户登录文件名&lt;/span&gt;
+&lt;span class="n"&gt;nproc&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;显示处理器单元个数&lt;/span&gt;
+&lt;span class="n"&gt;numfmt&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;转换数字单位&lt;/span&gt;
+&lt;span class="n"&gt;printf&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;按照格式打印参数&lt;/span&gt;
+&lt;span class="n"&gt;readlink&lt;/span&gt;
+&lt;span class="n"&gt;realpath&lt;/span&gt;
+&lt;span class="n"&gt;seq&lt;/span&gt; &lt;span class="err"&gt;首数&lt;/span&gt; &lt;span class="err"&gt;增量&lt;/span&gt; &lt;span class="err"&gt;尾数&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;打印数列&lt;/span&gt;
+&lt;span class="n"&gt;shuf&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;把输入行按随机顺序输出&lt;/span&gt;
+&lt;span class="n"&gt;sort&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;对文本文件中的行排序&lt;/span&gt;
+&lt;span class="n"&gt;split&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;分割文件&lt;/span&gt;
+&lt;span class="n"&gt;stdbuf&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;设置命令的标准输入输出流的缓冲区配置&lt;/span&gt;
+&lt;span class="n"&gt;tac&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;逆序版&lt;/span&gt;&lt;span class="n"&gt;cat&lt;/span&gt;
+&lt;span class="n"&gt;tee&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt;&lt;span class="err"&gt;复制标准输入到文件&lt;/span&gt;
+&lt;span class="k"&gt;truncate …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;arch&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;显示机器的架构&lt;/span&gt;
+&lt;span class="n"&gt;basenc&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;编码解码数据（&lt;/span&gt;&lt;span class="n"&gt;base32等&lt;/span&gt;&lt;span class="err"&gt;）&lt;/span&gt;
+&lt;span class="n"&gt;cksum&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;校验文件&lt;/span&gt;&lt;span class="n"&gt;CRC&lt;/span&gt;
+&lt;span class="n"&gt;expand&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;将制表符转化为空格&lt;/span&gt;
+&lt;span class="n"&gt;factor&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;分解质因数&lt;/span&gt;
+&lt;span class="n"&gt;fmt&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;简单的格式化文本，&lt;/span&gt; &lt;span class="err"&gt;折行等&lt;/span&gt;
+&lt;span class="n"&gt;fold&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;对文件折行以适应宽度&lt;/span&gt;
+&lt;span class="k"&gt;join&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;按字段合并文件&lt;/span&gt;
+&lt;span class="n"&gt;paste&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;合并文件&lt;/span&gt;
+&lt;span class="n"&gt;logname&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;用户登录文件名&lt;/span&gt;
+&lt;span class="n"&gt;nproc&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;显示处理器单元个数&lt;/span&gt;
+&lt;span class="n"&gt;numfmt&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;转换数字单位&lt;/span&gt;
+&lt;span class="n"&gt;printf&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;按照格式打印参数&lt;/span&gt;
+&lt;span class="n"&gt;readlink&lt;/span&gt;
+&lt;span class="n"&gt;realpath&lt;/span&gt;
+&lt;span class="n"&gt;seq&lt;/span&gt; &lt;span class="err"&gt;首数&lt;/span&gt; &lt;span class="err"&gt;增量&lt;/span&gt; &lt;span class="err"&gt;尾数&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;打印数列&lt;/span&gt;
+&lt;span class="n"&gt;shuf&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;把输入行按随机顺序输出&lt;/span&gt;
+&lt;span class="n"&gt;sort&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;对文本文件中的行排序&lt;/span&gt;
+&lt;span class="n"&gt;split&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;分割文件&lt;/span&gt;
+&lt;span class="n"&gt;stdbuf&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;设置命令的标准输入输出流的缓冲区配置&lt;/span&gt;
+&lt;span class="n"&gt;tac&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;逆序版&lt;/span&gt;&lt;span class="n"&gt;cat&lt;/span&gt;
+&lt;span class="n"&gt;tee&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt;&lt;span class="err"&gt;复制标准输入到文件&lt;/span&gt;
+&lt;span class="k"&gt;truncate&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;缩减或扩展文件到指定大小&lt;/span&gt;
+&lt;span class="n"&gt;tsort&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;拓扑排序&lt;/span&gt; &lt;span class="err"&gt;（&lt;/span&gt;&lt;span class="n"&gt;tsort输入数据的规则&lt;/span&gt;&lt;span class="err"&gt;，把每两个数据作为一组，这两个数据就表明了一种部分顺序，每个数据之间以空白分隔，&lt;/span&gt;&lt;span class="n"&gt;tsort处理结果就是根据这些部分顺序来推导出整体顺序来&lt;/span&gt;&lt;span class="err"&gt;）&lt;/span&gt;
+&lt;span class="n"&gt;unexpand&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;把空格转换成制表符&lt;/span&gt;
+&lt;span class="n"&gt;uniq&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;报告或省略重复行&lt;/span&gt;
+&lt;span class="n"&gt;unlink&lt;/span&gt;
+&lt;span class="n"&gt;users&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;显示当前登录在系统上的用户名称&lt;/span&gt;
+&lt;span class="n"&gt;who&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;显示已登录用户&lt;/span&gt;
+&lt;span class="n"&gt;whoami&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;显示有效用户&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;
+&lt;span class="n"&gt;yes&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;不断的输出一个字符串，直到被杀死&lt;/span&gt;
+
+&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt; &lt;span class="err"&gt;命令&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;终端录屏&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;script&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;time&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt;
+&lt;span class="n"&gt;scriptreplay&lt;/span&gt; &lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;time&lt;/span&gt; &lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt;
+
+&lt;span class="n"&gt;env&lt;/span&gt;
+&lt;span class="n"&gt;printevn&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="command"></category></entry><entry><title>linux入门</title><link href="/posts/2015/01/07/linux-primer.html" rel="alternate"></link><published>2015-01-07T00:00:00+08:00</published><updated>2015-01-07T00:00:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2015-01-07:/posts/2015/01/07/linux-primer.html</id><content type="html">&lt;p&gt;man intro # 用户命令介绍
+man hier # 文件系统描述
+man file-hierarchy # # 文件系统描述
+vimtutor # vim教程&lt;/p&gt;</content><category term="linux"></category><category term="linux"></category><category term="book"></category></entry><entry><title>ArchLinux 安装笔记</title><link href="/posts/2015/01/01/install-archlinux.html" rel="alternate"></link><published>2015-01-01T20:31:00+08:00</published><updated>2015-01-01T20:31:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2015-01-01:/posts/2015/01/01/install-archlinux.html</id><summary type="html">&lt;h3&gt;ArchLinux 安装笔记&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;制作usb启动盘&lt;/li&gt;
 &lt;li&gt;为要安装系统的磁盘分区， 一般需要 / /boot /home swap， 服务器的/srv /var 是可选的。也可以考虑使用lvm或者btrfs。 推荐使用btrfs。&lt;/li&gt;
@@ -2386,16 +2584,31 @@ man -t eventfd &lt;span class="p"&gt;|&lt;/span&gt; ps2pdf - &amp;gt; eventfd.pd
 &lt;li&gt;《Thinking in C++（C++编程思想）》&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;C++ 领域权威著作，介绍了C++实用的编程技术和最佳的实践方法。&lt;/p&gt;</content><category term="programming"></category><category term="programming"></category><category term="C++"></category><category term="book"></category></entry><entry><title>bash</title><link href="/posts/2014/09/26/bash.html" rel="alternate"></link><published>2014-09-26T21:55:00+08:00</published><updated>2014-09-26T21:55:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2014-09-26:/posts/2014/09/26/bash.html</id><summary type="html">&lt;h4&gt;Linux 下shell基本上默认是 bash, 下面是我总结的一些技巧。&lt;/h4&gt;
-&lt;h4&gt;trap 可以捕获信号&lt;/h4&gt;
-&lt;h4&gt;目录跳转&lt;/h4&gt;
-&lt;p&gt;pushd, popd, dirs 实现多目录跳转
-pushd 命令用来更改您的当前目录并将其存储在堆栈中。 popd 命令用来从堆栈的顶部移除目录并使您返回该位置。 dirs 命令来显示当前目录堆栈。（dir –v –p)
-pushd +n; popd +n 可以操作虚拟目录堆栈
- &lt;/p&gt;
-&lt;h4&gt;快速跳至常用目录&lt;/h4&gt;
-&lt;p&gt;你可能已经知道$PATH变量可以列出 bash的“搜索路径”——当在当前目录不能找到请求的文件时，bash会自动搜索的目录。不过，bash也支持$CDPATH变量，当试图改变目录时该变量列出cd命令转向的目录。为了使用这个特性，我们要对$CDPATH变量赋值一个目录列表，如下面的例子所示：
-bash&amp;gt; CDPATH='.:~:/usr/local/apache/htdocs:/disk1/backups'
-bash&amp;gt; export …&lt;/p&gt;</summary><content type="html">&lt;h4&gt;Linux 下shell基本上默认是 bash, 下面是我总结的一些技巧。&lt;/h4&gt;
+&lt;h4&gt;bash 重定向&lt;/h4&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;find /etc -name passwd  &lt;span class="m"&gt;1&lt;/span&gt;&amp;gt; &lt;span class="m"&gt;1&lt;/span&gt;.txt &lt;span class="c1"&gt;# 把标准输出重定向到 1.txt，屏幕上只显示错误输出&lt;/span&gt;
+find /etc -name passwd  &lt;span class="m"&gt;2&lt;/span&gt;&amp;gt; &lt;span class="m"&gt;1&lt;/span&gt;.txt &lt;span class="c1"&gt;# 略&lt;/span&gt;
+find /etc -name passwd  &lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;  &amp;gt; &lt;span class="m"&gt;1&lt;/span&gt;.txt &lt;span class="c1"&gt;# 标准错误标准输出，同时导出到一个文件&lt;/span&gt;
+find /etc -name passwd  &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&amp;gt;  &lt;span class="m"&gt;1&lt;/span&gt;.txt &lt;span class="c1"&gt;# 标准错误标准输出，同时导出到一个文件  &amp;amp;代表all(0,1,2,3....)，不建议使用&lt;/span&gt;
+
+tr …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h4&gt;Linux 下shell基本上默认是 bash, 下面是我总结的一些技巧。&lt;/h4&gt;
+&lt;h4&gt;bash 重定向&lt;/h4&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;find /etc -name passwd  &lt;span class="m"&gt;1&lt;/span&gt;&amp;gt; &lt;span class="m"&gt;1&lt;/span&gt;.txt &lt;span class="c1"&gt;# 把标准输出重定向到 1.txt，屏幕上只显示错误输出&lt;/span&gt;
+find /etc -name passwd  &lt;span class="m"&gt;2&lt;/span&gt;&amp;gt; &lt;span class="m"&gt;1&lt;/span&gt;.txt &lt;span class="c1"&gt;# 略&lt;/span&gt;
+find /etc -name passwd  &lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;  &amp;gt; &lt;span class="m"&gt;1&lt;/span&gt;.txt &lt;span class="c1"&gt;# 标准错误标准输出，同时导出到一个文件&lt;/span&gt;
+find /etc -name passwd  &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&amp;gt;  &lt;span class="m"&gt;1&lt;/span&gt;.txt &lt;span class="c1"&gt;# 标准错误标准输出，同时导出到一个文件  &amp;amp;代表all(0,1,2,3....)，不建议使用&lt;/span&gt;
+
+tr &lt;span class="s1"&gt;&amp;#39;a-z&amp;#39;&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;A-Z&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;hello&amp;quot;&lt;/span&gt;
+
+tr &lt;span class="s1"&gt;&amp;#39;a-z&amp;#39;&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;A-Z&amp;#39;&lt;/span&gt; &lt;span class="s"&gt;&amp;lt;&amp;lt;EOF&lt;/span&gt;
+&lt;span class="s"&gt;hello world&lt;/span&gt;
+&lt;span class="s"&gt;EOF&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4&gt;历史命令搜索&lt;/h4&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;ctrl+r  &lt;/span&gt;
+&lt;span class="err"&gt;ctrl+r 搜索下一条&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;h4&gt;trap 可以捕获信号&lt;/h4&gt;
 &lt;h4&gt;目录跳转&lt;/h4&gt;
 &lt;p&gt;pushd, popd, dirs 实现多目录跳转
@@ -2499,7 +2712,121 @@ bash&amp;gt; export CDPATH
 &lt;h5&gt;profile&lt;/h5&gt;
 &lt;p&gt;其实看名字就能了解大概了, profile 是某个用户唯一的用来设置环境变量的地方, 因为用户可以有多个 shell 比如 bash, sh, zsh 之类的, 但像环境变量这种其实只需要在统一的一个地方初始化就可以了, 而这就是 profile.&lt;/p&gt;
 &lt;h5&gt;bashrc&lt;/h5&gt;
-&lt;p&gt;bashrc 也是看名字就知道, 是专门用来给 bash 做初始化的比如用来初始化 bash 的设置, bash 的代码补全, bash 的别名, bash 的颜色. 以此类推也就还会有 shrc, zshrc 这样的文件存在了, 只是 bash 太常用了而已.&lt;/p&gt;</content><category term="linux"></category><category term="linux"></category><category term="bash"></category></entry><entry><title>linux错误执行chmod 777 / 的处理方法</title><link href="/posts/2014/06/11/chmod777.html" rel="alternate"></link><published>2014-06-11T20:50:00+08:00</published><updated>2014-06-11T20:50:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2014-06-11:/posts/2014/06/11/chmod777.html</id><content type="html">&lt;h4&gt;setfacl&lt;/h4&gt;
+&lt;p&gt;bashrc 也是看名字就知道, 是专门用来给 bash 做初始化的比如用来初始化 bash 的设置, bash 的代码补全, bash 的别名, bash 的颜色. 以此类推也就还会有 shrc, zshrc 这样的文件存在了, 只是 bash 太常用了而已.&lt;/p&gt;
+&lt;hr&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;！&lt;/span&gt;&lt;span class="mi"&gt;76&lt;/span&gt;                 &lt;span class="err"&gt;没有空格，运行&lt;/span&gt;&lt;span class="n"&gt;history中76号指令&lt;/span&gt;
+&lt;span class="o"&gt;^&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;^&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;  &lt;span class="err"&gt;把上个指令中的&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="err"&gt;改为&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="err"&gt;，并执行&lt;/span&gt;
+&lt;span class="n"&gt;eg&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;     &lt;span class="o"&gt;^&lt;/span&gt;&lt;span class="mi"&gt;196&lt;/span&gt;&lt;span class="o"&gt;^&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
+
+&lt;span class="o"&gt;~&lt;/span&gt;   &lt;span class="err"&gt;家目录&lt;/span&gt;
+&lt;span class="o"&gt;~&lt;/span&gt;&lt;span class="n"&gt;user1&lt;/span&gt;     &lt;span class="n"&gt;user1的家目录&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt;   &lt;span class="err"&gt;上一个目录&lt;/span&gt;
+
+&lt;span class="n"&gt;touch&lt;/span&gt; &lt;span class="err"&gt;{&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="err"&gt;}&lt;/span&gt;   &lt;span class="err"&gt;建立&lt;/span&gt;  &lt;span class="n"&gt;a&lt;/span&gt;  &lt;span class="n"&gt;b两个文件&lt;/span&gt;
+&lt;span class="n"&gt;touch&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="err"&gt;{&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="err"&gt;}&lt;/span&gt;
+&lt;span class="err"&gt;将建立&lt;/span&gt; &lt;span class="n"&gt;aa&lt;/span&gt; &lt;span class="n"&gt;ab两个文件&lt;/span&gt;
+&lt;span class="n"&gt;touch&lt;/span&gt;  &lt;span class="err"&gt;{&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="err"&gt;}&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="err"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="err"&gt;}&lt;/span&gt;     &lt;span class="err"&gt;{}作用：排列组合&lt;/span&gt;
+&lt;span class="err"&gt;将建立四个文件&lt;/span&gt;
+
+&lt;span class="err"&gt;使用指令运行结果作为输入&lt;/span&gt; &lt;span class="err"&gt;用&lt;/span&gt; &lt;span class="ss"&gt;``&lt;/span&gt;
+&lt;span class="err"&gt;可以用在&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="err"&gt;中，优先级比&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="err"&gt;高&lt;/span&gt;
+&lt;span class="ss"&gt;`command`&lt;/span&gt;&lt;span class="err"&gt;和$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;command&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="err"&gt;一样&lt;/span&gt;
+
+&lt;span class="err"&gt;设置环境变量&lt;/span&gt;   
+&lt;span class="n"&gt;export&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;
+&lt;span class="n"&gt;echo&lt;/span&gt;  &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;
+
+&lt;span class="err"&gt;用指令做数学运算&lt;/span&gt;
+&lt;span class="n"&gt;echo&lt;/span&gt;  &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+&lt;span class="err"&gt;用法：&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="err"&gt;表达式&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;   &lt;span class="err"&gt;（表达式中的空格不影响结果）&lt;/span&gt;
+&lt;span class="err"&gt;建议表达式中变量和运算符用空格隔开，并前后各保留一个空格（标准语法）&lt;/span&gt;
+&lt;span class="n"&gt;eg&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;   &lt;span class="n"&gt;echo&lt;/span&gt;   &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="err"&gt;除法结果只保留整数&lt;/span&gt;
+&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="err"&gt;表示次方&lt;/span&gt; &lt;span class="err"&gt;（幂运算）&lt;/span&gt;
+
+&lt;span class="err"&gt;\反斜线&lt;/span&gt;   &lt;span class="err"&gt;叫跳脱字元（符）&lt;/span&gt;
+&lt;span class="err"&gt;可以把后面的字符按原本的样子呈现出来&lt;/span&gt;
+&lt;span class="n"&gt;eg&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="n"&gt;echo&lt;/span&gt;  &lt;span class="n"&gt;your&lt;/span&gt; &lt;span class="n"&gt;cost&lt;/span&gt; &lt;span class="k"&gt;is&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;00&lt;/span&gt;
+&lt;span class="err"&gt;结果显示&lt;/span&gt;
+&lt;span class="n"&gt;your&lt;/span&gt; &lt;span class="n"&gt;cost&lt;/span&gt; &lt;span class="k"&gt;is&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;00&lt;/span&gt;
+&lt;span class="n"&gt;echo&lt;/span&gt;  &lt;span class="n"&gt;your&lt;/span&gt; &lt;span class="n"&gt;cost&lt;/span&gt; &lt;span class="k"&gt;is&lt;/span&gt; &lt;span class="err"&gt;\$&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;00&lt;/span&gt;
+&lt;span class="err"&gt;显示正常&lt;/span&gt;
+&lt;span class="err"&gt;如果指令最后一行是\，表示下一行继续输入这个指令，（直接去掉换行符）&lt;/span&gt;
+
+&lt;span class="err"&gt;单双引号的使用&lt;/span&gt;
+&lt;span class="n"&gt;echo&lt;/span&gt;  &lt;span class="o"&gt;*&lt;/span&gt;        &lt;span class="err"&gt;显示目录里有那些文件&lt;/span&gt;
+&lt;span class="n"&gt;echo&lt;/span&gt;  &lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;      &lt;span class="err"&gt;显示&lt;/span&gt;  &lt;span class="o"&gt;*&lt;/span&gt;
+&lt;span class="n"&gt;echo&lt;/span&gt;  &lt;span class="s2"&gt;&amp;quot;*&amp;quot;&lt;/span&gt;     &lt;span class="err"&gt;显示&lt;/span&gt;  &lt;span class="o"&gt;*&lt;/span&gt;
+&lt;span class="n"&gt;echo&lt;/span&gt;  &lt;span class="s1"&gt;&amp;#39;*&amp;#39;&lt;/span&gt;     &lt;span class="err"&gt;显示&lt;/span&gt;  &lt;span class="o"&gt;*&lt;/span&gt;
+
+&lt;span class="err"&gt;单引号可以禁止所有特殊字符的功能&lt;/span&gt;
+&lt;span class="err"&gt;双引号可以禁止大多数特殊字符的功能，除了以下四个&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="err"&gt;\&lt;/span&gt;  &lt;span class="o"&gt;`&lt;/span&gt; &lt;span class="o"&gt;!&lt;/span&gt; 
+ 
+&lt;span class="n"&gt;echo&lt;/span&gt;  &lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;
+&lt;span class="err"&gt;显示&lt;/span&gt; &lt;span class="n"&gt;ls&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt;
+&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="err"&gt;被解释为历史输入中的第&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="err"&gt;个&lt;/span&gt;
+
+&lt;span class="n"&gt;ctrl&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;   &lt;span class="err"&gt;搜索历史输入的指令&lt;/span&gt;
+
+&lt;span class="err"&gt;将上个指令的最后一个参数补进来&lt;/span&gt;
+&lt;span class="err"&gt;用&lt;/span&gt;  &lt;span class="err"&gt;按&lt;/span&gt;&lt;span class="n"&gt;esc&lt;/span&gt;&lt;span class="err"&gt;，松开，再按&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dot&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="err"&gt;或&lt;/span&gt; &lt;span class="err"&gt;按&lt;/span&gt;&lt;span class="n"&gt;alt&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;   
+
+&lt;span class="n"&gt;bash的指令编辑模式&lt;/span&gt;
+&lt;span class="err"&gt;预设是&lt;/span&gt;&lt;span class="n"&gt;emacs&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;style模式&lt;/span&gt;
+&lt;span class="err"&gt;切换到&lt;/span&gt;&lt;span class="n"&gt;vi&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;style模式&lt;/span&gt; 
+&lt;span class="kt"&gt;set&lt;/span&gt;  &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;o&lt;/span&gt;  &lt;span class="n"&gt;vi&lt;/span&gt;
+&lt;span class="kt"&gt;set&lt;/span&gt;  &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;o&lt;/span&gt;  &lt;span class="err"&gt;查看目前设定&lt;/span&gt;
+ &lt;span class="err"&gt;这里的&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;  &lt;span class="err"&gt;是&lt;/span&gt;&lt;span class="n"&gt;disable的意思&lt;/span&gt;
+&lt;span class="n"&gt;o是off的意思&lt;/span&gt;
+&lt;span class="err"&gt;停用&lt;/span&gt;&lt;span class="n"&gt;vi编辑模式&lt;/span&gt;   &lt;span class="kt"&gt;set&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;o&lt;/span&gt; &lt;span class="n"&gt;vi&lt;/span&gt;
+&lt;span class="err"&gt;切换到&lt;/span&gt;&lt;span class="n"&gt;emacs模式&lt;/span&gt;  &lt;span class="kt"&gt;set&lt;/span&gt;  &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;o&lt;/span&gt;  &lt;span class="n"&gt;emacs&lt;/span&gt;
+
+&lt;span class="n"&gt;gnome&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="err"&gt;终端&lt;/span&gt; &lt;span class="err"&gt;快捷键&lt;/span&gt;
+&lt;span class="n"&gt;ctrl&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;shift&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="err"&gt;打开新标签&lt;/span&gt;
+&lt;span class="n"&gt;ctrl&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;pg&lt;/span&gt; &lt;span class="n"&gt;up切换到写一个标签&lt;/span&gt;
+&lt;span class="n"&gt;ctrl&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;pg&lt;/span&gt; &lt;span class="n"&gt;dn切换到上一个标签&lt;/span&gt;
+&lt;span class="n"&gt;alt&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;         &lt;span class="n"&gt;N是数字&lt;/span&gt;&lt;span class="err"&gt;，指定要切换到哪个标签&lt;/span&gt;
+&lt;span class="n"&gt;ctrl&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;shift&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;w&lt;/span&gt;  &lt;span class="err"&gt;关闭当前标签&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="bash"></category></entry><entry><title>关于Linux内核学习</title><link href="/posts/2014/08/15/linux-kernel.html" rel="alternate"></link><published>2014-08-15T00:00:00+08:00</published><updated>2014-08-15T00:00:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2014-08-15:/posts/2014/08/15/linux-kernel.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="err"&gt;请推荐一些好的&lt;/span&gt;&lt;span class="n"&gt;Linux内核参考书&lt;/span&gt;&lt;span class="err"&gt;？&lt;/span&gt; 
+&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="err"&gt;《&lt;/span&gt;&lt;span class="n"&gt;Linux&lt;/span&gt; &lt;span class="n"&gt;Device&lt;/span&gt; &lt;span class="n"&gt;Drivers&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;Second&lt;/span&gt; &lt;span class="n"&gt;Edition&lt;/span&gt;&lt;span class="err"&gt;》，有中文译本&lt;/span&gt; 
+&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="err"&gt;《&lt;/span&gt;&lt;span class="n"&gt;Understanding&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;Linux&lt;/span&gt; &lt;span class="n"&gt;Kernel&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="n"&gt;nd&lt;/span&gt; &lt;span class="n"&gt;Edition&lt;/span&gt;&lt;span class="err"&gt;》&lt;/span&gt; 
+&lt;span class="k"&gt;c&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="err"&gt;《&lt;/span&gt;&lt;span class="n"&gt;Linux内核源代码情景分析&lt;/span&gt;&lt;span class="err"&gt;》，分上下两册&lt;/span&gt; 
+&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="err"&gt;《边干边学－&lt;/span&gt;&lt;span class="n"&gt;Linux内核指导&lt;/span&gt;&lt;span class="err"&gt;》&lt;/span&gt; 
+
+&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="err"&gt;请推荐一些源代码查看工具？&lt;/span&gt; 
+&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="n"&gt;Windows系统可以用Source&lt;/span&gt; &lt;span class="n"&gt;Insight&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;Linux系统可以用Source&lt;/span&gt; &lt;span class="n"&gt;Navigator&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt; 
+&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="n"&gt;vim或emacs编辑器&lt;/span&gt;&lt;span class="err"&gt;，配合&lt;/span&gt;&lt;span class="n"&gt;cscope&lt;/span&gt;&lt;span class="err"&gt;、&lt;/span&gt;&lt;span class="n"&gt;ctags&lt;/span&gt;&lt;span class="err"&gt;、&lt;/span&gt;&lt;span class="n"&gt;etags等交叉索引工具&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt; 
+&lt;span class="k"&gt;c&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="n"&gt;vim或emacs编辑器&lt;/span&gt;&lt;span class="err"&gt;，配合&lt;/span&gt;&lt;span class="n"&gt;grep&lt;/span&gt;&lt;span class="err"&gt;、&lt;/span&gt;&lt;span class="n"&gt;egrep等文本搜索工具&lt;/span&gt;&lt;span class="err"&gt;，不过最好要对源代码目录结构有所熟悉&lt;/span&gt; 
+&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="n"&gt;LXR&lt;/span&gt;&lt;span class="err"&gt;，以网页的形式通过浏览器浏览，安装复杂，可从&lt;/span&gt;&lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;lxr …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="err"&gt;请推荐一些好的&lt;/span&gt;&lt;span class="n"&gt;Linux内核参考书&lt;/span&gt;&lt;span class="err"&gt;？&lt;/span&gt; 
+&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="err"&gt;《&lt;/span&gt;&lt;span class="n"&gt;Linux&lt;/span&gt; &lt;span class="n"&gt;Device&lt;/span&gt; &lt;span class="n"&gt;Drivers&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;Second&lt;/span&gt; &lt;span class="n"&gt;Edition&lt;/span&gt;&lt;span class="err"&gt;》，有中文译本&lt;/span&gt; 
+&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="err"&gt;《&lt;/span&gt;&lt;span class="n"&gt;Understanding&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;Linux&lt;/span&gt; &lt;span class="n"&gt;Kernel&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="n"&gt;nd&lt;/span&gt; &lt;span class="n"&gt;Edition&lt;/span&gt;&lt;span class="err"&gt;》&lt;/span&gt; 
+&lt;span class="k"&gt;c&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="err"&gt;《&lt;/span&gt;&lt;span class="n"&gt;Linux内核源代码情景分析&lt;/span&gt;&lt;span class="err"&gt;》，分上下两册&lt;/span&gt; 
+&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="err"&gt;《边干边学－&lt;/span&gt;&lt;span class="n"&gt;Linux内核指导&lt;/span&gt;&lt;span class="err"&gt;》&lt;/span&gt; 
+
+&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="err"&gt;请推荐一些源代码查看工具？&lt;/span&gt; 
+&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="n"&gt;Windows系统可以用Source&lt;/span&gt; &lt;span class="n"&gt;Insight&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;Linux系统可以用Source&lt;/span&gt; &lt;span class="n"&gt;Navigator&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt; 
+&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="n"&gt;vim或emacs编辑器&lt;/span&gt;&lt;span class="err"&gt;，配合&lt;/span&gt;&lt;span class="n"&gt;cscope&lt;/span&gt;&lt;span class="err"&gt;、&lt;/span&gt;&lt;span class="n"&gt;ctags&lt;/span&gt;&lt;span class="err"&gt;、&lt;/span&gt;&lt;span class="n"&gt;etags等交叉索引工具&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt; 
+&lt;span class="k"&gt;c&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="n"&gt;vim或emacs编辑器&lt;/span&gt;&lt;span class="err"&gt;，配合&lt;/span&gt;&lt;span class="n"&gt;grep&lt;/span&gt;&lt;span class="err"&gt;、&lt;/span&gt;&lt;span class="n"&gt;egrep等文本搜索工具&lt;/span&gt;&lt;span class="err"&gt;，不过最好要对源代码目录结构有所熟悉&lt;/span&gt; 
+&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="n"&gt;LXR&lt;/span&gt;&lt;span class="err"&gt;，以网页的形式通过浏览器浏览，安装复杂，可从&lt;/span&gt;&lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;lxr&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;linux&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;no&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="err"&gt;下&lt;/span&gt;
+&lt;span class="err"&gt;载该工具也可以直接访问&lt;/span&gt;&lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;lxr&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;linux&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;no&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;source&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="err"&gt;在线阅读&lt;/span&gt;&lt;span class="n"&gt;Linux内核源代码&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt; 
+
+&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="err"&gt;为什么看不到用&lt;/span&gt;&lt;span class="n"&gt;printk打印的信息&lt;/span&gt;&lt;span class="err"&gt;？&lt;/span&gt; 
+&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="err"&gt;打印消息受级别的限制&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="err"&gt;消息级别可以通过&lt;/span&gt;&lt;span class="n"&gt;printk设置&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="err"&gt;如&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; 
+&lt;span class="n"&gt;printk&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;something&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt; &lt;span class="cm"&gt;/* 其中0&amp;lt;=n&amp;lt;=7 */&lt;/span&gt; 
+&lt;span class="err"&gt;假设控制台的消息级别为&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;当&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;
+&lt;span class="err"&gt;这样一方面可以提高要打印消息本身的级别（数字越小级别越高），&lt;/span&gt; 
+&lt;span class="err"&gt;另一方面可以改变控制台的消息级别&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;可从&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="err"&gt;到&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="err"&gt;如改为&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="err"&gt;可用以下命令&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; 
+&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;8&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;proc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;kernel&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;printk&lt;/span&gt; 
+&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="err"&gt;用&lt;/span&gt;&lt;span class="n"&gt;dmesg命令看&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt; 
+&lt;span class="k"&gt;c&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="err"&gt;当系统运行&lt;/span&gt;&lt;span class="n"&gt;klogd和syslogd时&lt;/span&gt;&lt;span class="err"&gt;，内核消息就会由&lt;/span&gt;&lt;span class="n"&gt;klogd分发到syslogd&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt; 
+&lt;span class="n"&gt;syslogd会根据配置文件&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;etc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;syslog&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;conf作相应处理&lt;/span&gt;&lt;span class="err"&gt;，具体可以查看&lt;/span&gt;&lt;span class="n"&gt;syslogd&lt;/span&gt; 
+&lt;span class="err"&gt;和&lt;/span&gt;&lt;span class="n"&gt;syslog&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;conf的man页&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="kernel"></category></entry><entry><title>linux错误执行chmod 777 / 的处理方法</title><link href="/posts/2014/06/11/chmod777.html" rel="alternate"></link><published>2014-06-11T20:50:00+08:00</published><updated>2014-06-11T20:50:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2014-06-11:/posts/2014/06/11/chmod777.html</id><content type="html">&lt;h4&gt;setfacl&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;getfacl -R / &amp;gt;systemP.bak&lt;/code&gt;  将这个系统中的 / ，以及 / 底下所有的文件及目录权限导出到一个文件中&lt;/li&gt;
 &lt;li&gt;将systemP.bak文件想办法拷贝到被破坏的机器上   并执行
@@ -2510,38 +2837,51 @@ bash&amp;gt; export CDPATH
 &lt;span class="err"&gt;chmod u+s `which su`&lt;/span&gt;
 &lt;span class="err"&gt;chmod u+s `which sudo`&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="command"></category></entry><entry><title>vim使用</title><link href="/posts/2014/03/13/vim-usage.html" rel="alternate"></link><published>2014-03-13T00:00:00+08:00</published><updated>2014-03-13T00:00:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2014-03-13:/posts/2014/03/13/vim-usage.html</id><summary type="html">&lt;p&gt;VIM使用&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;CTRL&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="n"&gt;向下翻一页&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;CTRL&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="n"&gt;向上翻一页&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;CTRL&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="n"&gt;向下翻半页&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;CTRL&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;u&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="n"&gt;向上翻半页&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="err"&gt;、&lt;/span&gt;&lt;span class="n"&gt;P粘贴&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;p贴在下&lt;/span&gt;&lt;span class="err"&gt;（&lt;/span&gt;&lt;span class="n"&gt;后&lt;/span&gt;&lt;span class="err"&gt;）&lt;/span&gt;&lt;span class="n"&gt;面&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;P贴在前面&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="n"&gt;u&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;撤销&lt;/span&gt;&lt;span class="err"&gt;（&lt;/span&gt;&lt;span class="n"&gt;undo&lt;/span&gt;&lt;span class="err"&gt;）&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;ctrl&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;反撤销&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="n"&gt;删除一个字符&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;R&lt;/span&gt;&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="n"&gt;进入覆盖模式&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;退格键&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;取消覆盖&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+
+&lt;span class="n"&gt;CTRL&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="n"&gt;向下翻一页&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;CTRL&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="n"&gt;向上翻一页&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;CTRL&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="n"&gt;向下翻半页&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;CTRL&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;u&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="n"&gt;向上翻半页&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 
 &lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="n"&gt;移动到下一个单词的起始处&lt;/span&gt;&lt;span class="err"&gt;（&lt;/span&gt;&lt;span class="n"&gt;既然是w&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;代表的意思就是word&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;好记吧&lt;/span&gt;&lt;span class="err"&gt;）&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="n"&gt;W&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="n"&gt;移动到下一个单词的起始处&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;跳到上一个单词&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;跳到上一个句子&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;跳到下一个句子&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;{&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;跳到上一个段落&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;}&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;跳到下一个段落&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 
 &lt;span class="o"&gt;=====================&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;跳至行首&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;不管有无缩进&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;就是跳到第0个字符&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="o"&gt;^&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;跳至行首的第一个字符&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;跳至行尾&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="o"&gt;=============================&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="n"&gt;对标记进行动作&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;块右移&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;块左移&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;复制块&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;删除块&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="o"&gt;~&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;切换块中内容的大小写&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="o"&gt;=============================&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="nl"&gt;括号匹配&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;可以让光标从它当前所在的括号跳转到与它相匹配的括号上去&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;对花括号和&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="n"&gt;圆括号&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;方括号都有效&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;常用于手工检查括号是否匹对&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;跳至行尾 …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;VIM使用&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="err"&gt;、&lt;/span&gt;&lt;span class="n"&gt;P粘贴&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;p贴在下&lt;/span&gt;&lt;span class="err"&gt;（&lt;/span&gt;&lt;span class="n"&gt;后&lt;/span&gt;&lt;span class="err"&gt;）&lt;/span&gt;&lt;span class="n"&gt;面&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;P贴在前面&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 
-&lt;span class="n"&gt;标示位置&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="c1"&gt;--------&lt;/span&gt;
+&lt;span class="n"&gt;u&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;撤销&lt;/span&gt;&lt;span class="err"&gt;（&lt;/span&gt;&lt;span class="n"&gt;undo&lt;/span&gt;&lt;span class="err"&gt;）&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;ctrl&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;反撤销&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="n"&gt;删除一个字符&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;R&lt;/span&gt;&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="n"&gt;进入覆盖模式&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;退格键&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;取消覆盖&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 
-&lt;span class="n"&gt;你可以在档案&lt;/span&gt;&lt;span class="err"&gt;□&lt;/span&gt;&lt;span class="n"&gt;做些标记再随时返回被标记的位置&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 
-&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;char&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;把这个地方标示成&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;char&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="s1"&gt;&amp;#39; char  跳到被标为 char的那一行 …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;VIM使用&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;CTRL&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="n"&gt;向下翻一页&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;CTRL&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="n"&gt;向上翻一页&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;CTRL&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="n"&gt;向下翻半页&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;CTRL&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;u&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="n"&gt;向上翻半页&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;CTRL&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="n"&gt;向下翻一页&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;CTRL&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="n"&gt;向上翻一页&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;CTRL&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="n"&gt;向下翻半页&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;CTRL&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;u&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="n"&gt;向上翻半页&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 
 &lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="n"&gt;移动到下一个单词的起始处&lt;/span&gt;&lt;span class="err"&gt;（&lt;/span&gt;&lt;span class="n"&gt;既然是w&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;代表的意思就是word&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;好记吧&lt;/span&gt;&lt;span class="err"&gt;）&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="n"&gt;W&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="n"&gt;移动到下一个单词的起始处&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;跳到上一个单词&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;跳到上一个句子&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;跳到下一个句子&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;{&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;跳到上一个段落&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;}&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;跳到下一个段落&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 
 &lt;span class="o"&gt;=====================&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;跳至行首&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;不管有无缩进&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;就是跳到第0个字符&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
@@ -2662,6 +3002,9 @@ bash&amp;gt; export CDPATH
 &lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;上一个匹配&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;同上&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;old&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;搜索整个文件&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;将所有的old替换为new&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;old&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;gc&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;搜索整个文件&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;将所有的old替换为new&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;每次都要你确认是否替换&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;要替换两行之间出现的每个匹配串&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;输入&lt;/span&gt;&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="err"&gt;:#&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;#s&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;old&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="n"&gt;其中&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;代表的是替换操作的若干行中首尾两行的行号&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
 &lt;span class="n"&gt;复制粘贴&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="n"&gt;dd&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;删除光标所在行&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="n"&gt;dw&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;删除一个字&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;word&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
@@ -2715,7 +3058,7 @@ bash&amp;gt; export CDPATH
 &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;替换一个字符&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="n"&gt;J&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;将下一行和当前行连接为一行&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="n"&gt;cc&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;删除当前行并进入编辑模式&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="n"&gt;cw&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;删除当前字&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;并进入编辑模式&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;cw&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;删除当前单词&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;并进入编辑模式&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;擦除从当前位置至行末的内容&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;并进入编辑模式&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;删除当前字符并进入编辑模式&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="n"&gt;S&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;删除光标所在行并进入编辑模式&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
@@ -2759,7 +3102,67 @@ bash&amp;gt; export CDPATH
 &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;复制块&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;删除块&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="o"&gt;~&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;切换块中内容的大小写&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="editor"></category><category term="editor"></category><category term="vim"></category></entry><entry><title>linux 查看info文档</title><link href="/posts/2013/09/27/linux-info.html" rel="alternate"></link><published>2013-09-27T17:59:00+08:00</published><updated>2013-09-27T17:59:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2013-09-27:/posts/2013/09/27/linux-info.html</id><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;info &amp;lt;command&amp;gt;&lt;/span&gt;
+
+
+
+&lt;span class="n"&gt;要向当前文件中插入另外的文件的内容&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;请输入&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;FILENAME&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="n"&gt;您还可以读取外部命令的输出&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;&lt;span class="n"&gt;例如&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;!&lt;/span&gt;&lt;span class="n"&gt;ls&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;可以读取&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ls&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;命令的输出&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;并把它放置在光标下面&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="n"&gt;仅在一次查找时忽略字母大小写&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;您可以使用&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;       &lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;ignore&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;回车&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="n"&gt;vim要回到您之前的位置按&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;CTRL&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;O&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;按住&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Ctrl&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;键不放同时按下字母&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;o&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;&lt;span class="n"&gt;重复按可以&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;回退更多步&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;&lt;span class="n"&gt;CTRL&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;I&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;会跳转到较新的位置&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="n"&gt;输入&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;可以查找配对的括号&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="err"&gt;、]、}。&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="editor"></category><category term="editor"></category><category term="vim"></category></entry><entry><title>mail命令，收发邮件</title><link href="/posts/2013/09/29/linux-command-mail.html" rel="alternate"></link><published>2013-09-29T00:00:00+08:00</published><updated>2013-09-29T00:00:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2013-09-29:/posts/2013/09/29/linux-command-mail.html</id><summary type="html">&lt;h3&gt;发邮件&lt;/h3&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;mail&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;主题&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;收件人&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;代表发邮件&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;收件人可以用本机的用户名&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;如帐号&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;user1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="n"&gt;或者一般的邮件地址&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;如&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;writebug&lt;/span&gt;&lt;span class="nv"&gt;@qq&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;测试了QQ邮箱&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;真的收到了&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+
+&lt;span class="n"&gt;mail&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;“&lt;/span&gt;&lt;span class="n"&gt;abcdef&lt;/span&gt;&lt;span class="err"&gt;”&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;user1&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;然后输入正文&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;结束输入要在新的一行&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;按&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dot&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;再按回车&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;或ctrl&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;这时会出现&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nl"&gt;Cc&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;意思是邮件副本&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;可以寄给另外一个人&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="n"&gt;但邮件正文来自文件时&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;用mail&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;“&lt;/span&gt;&lt;span class="n"&gt;abcdef&lt;/span&gt;&lt;span class="err"&gt;”&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;user1&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mail&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;阅读邮件&lt;/h3&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;mail&lt;/span&gt;
+&lt;span class="err"&gt;z 显示下一个窗口里面所有消息 （邮件列表）&lt;/span&gt;
+&lt;span class="err"&gt;z- 显示上一个窗口里面所有消息&lt;/span&gt;
+&lt;span class="err"&gt;r 阅读邮件，后面跟上id&lt;/span&gt;
+&lt;span class="err"&gt;d …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h3&gt;发邮件&lt;/h3&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;mail&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;主题&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;收件人&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;代表发邮件&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;收件人可以用本机的用户名&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;如帐号&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;user1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="n"&gt;或者一般的邮件地址&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;如&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;writebug&lt;/span&gt;&lt;span class="nv"&gt;@qq&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;测试了QQ邮箱&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;真的收到了&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+
+&lt;span class="n"&gt;mail&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;“&lt;/span&gt;&lt;span class="n"&gt;abcdef&lt;/span&gt;&lt;span class="err"&gt;”&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;user1&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;然后输入正文&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;结束输入要在新的一行&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;按&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dot&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;再按回车&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;或ctrl&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;这时会出现&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nl"&gt;Cc&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;意思是邮件副本&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;可以寄给另外一个人&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="n"&gt;但邮件正文来自文件时&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;用mail&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;“&lt;/span&gt;&lt;span class="n"&gt;abcdef&lt;/span&gt;&lt;span class="err"&gt;”&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;user1&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mail&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;阅读邮件&lt;/h3&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;mail&lt;/span&gt;
+&lt;span class="err"&gt;z 显示下一个窗口里面所有消息 （邮件列表）&lt;/span&gt;
+&lt;span class="err"&gt;z- 显示上一个窗口里面所有消息&lt;/span&gt;
+&lt;span class="err"&gt;r 阅读邮件，后面跟上id&lt;/span&gt;
+&lt;span class="err"&gt;d 删除邮件&lt;/span&gt;
+&lt;span class="err"&gt;u 撤销删除&lt;/span&gt;
+&lt;span class="err"&gt;q 退出&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="command"></category></entry><entry><title>linux 查看info文档</title><link href="/posts/2013/09/27/linux-info.html" rel="alternate"></link><published>2013-09-27T17:59:00+08:00</published><updated>2013-09-27T17:59:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2013-09-27:/posts/2013/09/27/linux-info.html</id><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;info &amp;lt;command&amp;gt;&lt;/span&gt;
 &lt;span class="err"&gt;info 比man 更详细&lt;/span&gt;
 &lt;span class="err"&gt;info 中 按tab 跳到下一个 连接 （有*的，可以连接到其他info）&lt;/span&gt;
 &lt;span class="err"&gt;按enter跳转&lt;/span&gt;
@@ -2768,7 +3171,28 @@ bash&amp;gt; export CDPATH
 &lt;span class="err"&gt;u跳到上一层&lt;/span&gt;
 &lt;span class="err"&gt;s查找关键字&lt;/span&gt;
 &lt;span class="err"&gt;q离开&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category></entry><entry><title>learn-grub2</title><link href="/posts/2013/09/26/grub2.html" rel="alternate"></link><published>2013-09-26T00:47:00+08:00</published><updated>2013-09-26T00:47:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2013-09-26:/posts/2013/09/26/grub2.html</id><summary type="html">&lt;h2&gt;设备的命名&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category></entry><entry><title>命令参数</title><link href="/posts/2013/09/27/linux-command.html" rel="alternate"></link><published>2013-09-27T00:00:00+08:00</published><updated>2013-09-27T00:00:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2013-09-27:/posts/2013/09/27/linux-command.html</id><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;less&lt;/span&gt;
+&lt;span class="err"&gt; 按v进入编辑模式 （实际上是调用了vi）&lt;/span&gt;
+&lt;span class="err"&gt;/text 查找text&lt;/span&gt;
+&lt;span class="err"&gt;n 查找下一个&lt;/span&gt;
+&lt;span class="err"&gt;空格或enter，下一页&lt;/span&gt;
+&lt;span class="err"&gt;b上一页&lt;/span&gt;
+&lt;span class="err"&gt;ctrl+d下半页&lt;/span&gt;
+&lt;span class="err"&gt;ctrl+u上半页&lt;/span&gt;
+&lt;span class="err"&gt;g回到最顶端&lt;/span&gt;
+&lt;span class="err"&gt;G最末端&lt;/span&gt;
+&lt;span class="err"&gt;===============================&lt;/span&gt;
+&lt;span class="err"&gt;cat -A 显示换行符&lt;/span&gt;
+&lt;span class="err"&gt;-s 压缩多个空白行，变成一行&lt;/span&gt;
+&lt;span class="err"&gt;-b 显示行号&lt;/span&gt;
+&lt;span class="err"&gt;===============================&lt;/span&gt;
+&lt;span class="err"&gt;ldd 命令  查看程序运行时要加载的库&lt;/span&gt;
+&lt;span class="err"&gt;ssh -YC&lt;/span&gt;
+&lt;span class="err"&gt;dconf&lt;/span&gt;
+&lt;span class="err"&gt;hostapd&lt;/span&gt;
+&lt;span class="err"&gt;Doxygen 文档系统&lt;/span&gt;
+&lt;span class="err"&gt;ping命令有个audible ping参数，-a，当它终于ping通你的服务器时会让小喇叭叫起来。&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="command"></category></entry><entry><title>learn-grub2</title><link href="/posts/2013/09/26/grub2.html" rel="alternate"></link><published>2013-09-26T00:47:00+08:00</published><updated>2013-09-26T00:47:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2013-09-26:/posts/2013/09/26/grub2.html</id><summary type="html">&lt;h2&gt;设备的命名&lt;/h2&gt;
 &lt;p&gt;grub2同样以fd表示软盘，hd表示硬盘（包含IDE和SCSI硬盘）。设备是从0开始编号，分区则是从1开始，主分区从1-4，逻辑分区从5开始，而grub分区编号是从0开始的。下面给出几个例子 ：&lt;/p&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;(fd0)：表示整个软盘&lt;/span&gt;
 &lt;span class="err"&gt;(hd0,1)：表示BIOS中的第一个硬盘的第1个分区&lt;/span&gt;
@@ -2860,7 +3284,7 @@ set pager=0
 &lt;p&gt;13)chainloader
     调用另一个启动器，如
 chainloader (hd0,1)+1
-    调用第一硬盘第一分区引导扇区内的启动器，可以是windows或linux的启动器&lt;/p&gt;</content><category term="bootloader"></category><category term="linux"></category><category term="bootloader"></category></entry><entry><title>example title</title><link href="/posts/2013/09/10/grub4dos-menu-lst.html" rel="alternate"></link><published>2013-09-10T17:37:00+08:00</published><updated>2013-09-10T17:37:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2013-09-10:/posts/2013/09/10/grub4dos-menu-lst.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;color&lt;/span&gt; &lt;span class="n"&gt;black&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;cyan&lt;/span&gt; &lt;span class="n"&gt;yellow&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;cyan&lt;/span&gt;
+    调用第一硬盘第一分区引导扇区内的启动器，可以是windows或linux的启动器&lt;/p&gt;</content><category term="bootloader"></category><category term="linux"></category><category term="bootloader"></category></entry><entry><title>grub4dos-menu</title><link href="/posts/2013/09/10/grub4dos-menu-lst.html" rel="alternate"></link><published>2013-09-10T17:37:00+08:00</published><updated>2013-09-10T17:37:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2013-09-10:/posts/2013/09/10/grub4dos-menu-lst.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;color&lt;/span&gt; &lt;span class="n"&gt;black&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;cyan&lt;/span&gt; &lt;span class="n"&gt;yellow&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;cyan&lt;/span&gt;
 &lt;span class="n"&gt;timeout&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
 &lt;span class="k"&gt;default&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
 

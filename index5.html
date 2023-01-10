@@ -57,6 +57,49 @@
   		<article>
 <header>
       <h1 class="entry-title">
+        <a href="/posts/2017/06/23/firefox-addons.html">记录一些 firefox 附加组件</a>
+      </h1>
+    <p class="meta">
+<time datetime="2017-06-23T18:22:59+08:00" pubdate>2017-06-23 18:22:59</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><h3>记录一些 firefox 附加组件</h3>
+<div class="highlight-custom"><pre><span></span><code><span class="err"># Adblock plus</span>
+<span class="err"># Stylish</span>
+<span class="err"># iMacros for Firefox</span>
+<span class="err">Awesome Screenshot</span>
+<span class="err">DownThemAll</span>
+<span class="err">EPUBReader</span>
+<span class="err">FoxyProxy Standard</span>
+<span class="err">Ghostery</span>
+<span class="err">Greasemonkey</span>
+<span class="err">LastPass</span>
+<span class="err">MarkDown Here</span>
+<span class="err">PDF Mage</span>
+<span class="err">QR Code Generator</span>
+<span class="err">SimilarWeb</span>
+<span class="err">Tree Style Tab</span>
+<span class="err">User-Agent Switcher</span>
+<span class="err">uBlock Origin</span>
+<span class="err">新同文堂</span>
+<span class="err">百度广告屏蔽</span>
+</code></pre></div>
+
+<h3>下面是一些 userscripts</h3>
+<div class="highlight-custom"><pre><span></span><code><span class="err">Crack Url Wait Code Login</span>
+<span class="err">My163MusicHelper</span>
+</code></pre></div>
+
+<h3>下面是一些 Stylish userstyles (https://userstyles.org)</h3>
+<div class="highlight-custom"><pre><span></span><code><span class="n">Baidu …</span></code></pre></div></div>
+            <footer>
+                <a rel="full-article" href="/posts/2017/06/23/firefox-addons.html">Read On &crarr;</a>
+            </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
         <a href="/posts/2017/06/16/archlinux-package.html">记录一下我常装的 Arch Linux package</a>
       </h1>
     <p class="meta">
@@ -208,7 +251,40 @@ envsubst <span class="s1">&#39;${VAR_NAME}&#39;</span> &lt; nginx.conf.template 
   		<article>
 <header>
       <h1 class="entry-title">
-        <a href="/posts/2017/06/07/example.html">example title</a>
+        <a href="/posts/2017/06/07/filesystem.html">磁盘分区，文件系统有关的命令</a>
+      </h1>
+    <p class="meta">
+<time datetime="2017-06-07T00:00:00+08:00" pubdate>2017-06-07 00:00:00</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><p>partx -a # 通知内核重新读取硬盘分区表</p>
+<p>partprobe # 同上，告诉内核分区表改变了</p>
+<p>mkfs.btrfs -m dup /dev/sda1</p></div>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="/posts/2017/06/07/iperf3.html">iperf3测试带宽</a>
+      </h1>
+    <p class="meta">
+<time datetime="2017-06-07T00:00:00+08:00" pubdate>2017-06-07 00:00:00</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><h1>TCP</h1>
+<p>服务端<code>iperf3 -s -p 12345</code></p>
+<p>客户端测试上传到服务器<code>iperf3 -c server_host -p 12345</code></p>
+<p>客户端测试从服务器下载<code>iperf3 -c server_host -p 12345 -R</code></p>
+<h1>UDP</h1>
+<p>客户端添加 -u 参数即可</p>
+<h1>传输多个流测试(必加参数)</h1>
+<p>加上参数 -P 10 (10个流同步测试)</p></div>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="/posts/2017/06/07/mysql-password.html">mysql 中修改root密码</a>
       </h1>
     <p class="meta">
 <time datetime="2017-06-07T00:00:00+08:00" pubdate>2017-06-07 00:00:00</time>      
@@ -233,27 +309,32 @@ envsubst <span class="s1">&#39;${VAR_NAME}&#39;</span> &lt; nginx.conf.template 
 <span class="err">　　mysql&gt; UPDATE user SET Password = PASSWORD(&#39;newpass&#39;) WHERE user = &#39;root&#39;;</span>
 <span class="err">　　mysql …</span></code></pre></div></div>
             <footer>
-                <a rel="full-article" href="/posts/2017/06/07/example.html">Read On &crarr;</a>
+                <a rel="full-article" href="/posts/2017/06/07/mysql-password.html">Read On &crarr;</a>
             </footer>
   		</article>
   		<article>
 <header>
       <h1 class="entry-title">
-        <a href="/posts/2017/06/07/iperf3.html">iperf3测试带宽</a>
+        <a href="/posts/2017/06/07/swappiness.html">swappiness交换分区配置</a>
       </h1>
     <p class="meta">
 <time datetime="2017-06-07T00:00:00+08:00" pubdate>2017-06-07 00:00:00</time>      
     </p>
 </header>
 
-        <div class="entry-content"><h1>TCP</h1>
-<p>服务端<code>iperf3 -s -p 12345</code></p>
-<p>客户端测试上传到服务器<code>iperf3 -c server_host -p 12345</code></p>
-<p>客户端测试从服务器下载<code>iperf3 -c server_host -p 12345 -R</code></p>
-<h1>UDP</h1>
-<p>客户端添加 -u 参数即可</p>
-<h1>传输多个流测试(必加参数)</h1>
-<p>加上参数 -P 10 (10个流同步测试)</p></div>
+        <div class="entry-content"><div class="highlight-custom"><pre><span></span><code><span class="n">swappiness</span><span class="o">=</span><span class="mi">0</span><span class="err">的时候表示最大限度使用物理内存，然后才是</span> <span class="n">swap空间</span><span class="err">，</span><span class="n">swappiness</span><span class="err">＝</span><span class="mi">100</span><span class="err">的时候表示积极的使用</span><span class="n">swap分区</span><span class="err">，并且把内存上的数据及时的搬运到</span><span class="n">swap空间里面</span><span class="err">。</span>
+
+<span class="n">Ubuntu系统swappiness默认值为60</span><span class="p">,</span><span class="err">表示的含义可以这样来理解</span><span class="p">,</span><span class="err">当剩余物理内存低于</span><span class="mi">40</span><span class="o">%</span><span class="p">(</span><span class="mi">40</span><span class="o">=</span><span class="mi">100</span><span class="o">-</span><span class="mi">60</span><span class="p">)</span><span class="err">时</span><span class="p">,</span><span class="err">开始使用</span><span class="n">swap分区</span><span class="err">。</span>
+
+<span class="err">手工修改</span>
+ <span class="n">sudo</span> <span class="n">vim</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">sysctl</span><span class="p">.</span><span class="n">conf</span> 
+
+<span class="err">你应该可以看到这样一行：</span>
+ <span class="n">vm</span><span class="p">.</span><span class="n">swappiness</span> <span class="o">=</span> <span class="mi">60</span>
+
+<span class="err">如果内存大于</span><span class="mi">1</span><span class="n">GB</span><span class="err">，则可以将这个数值改为</span><span class="mi">10</span><span class="err">或</span><span class="mi">5</span><span class="err">。</span>
+<span class="err">提示：如果没有找到这一行，也可以自己添加。</span>
+</code></pre></div></div>
   		</article>
   		<article>
 <header>
@@ -308,6 +389,34 @@ envsubst <span class="s1">&#39;${VAR_NAME}&#39;</span> &lt; nginx.conf.template 
   		<article>
 <header>
       <h1 class="entry-title">
+        <a href="/posts/2017/06/07/xdg-mime.html">Linux环境下文件关联的设置xdg-mime</a>
+      </h1>
+    <p class="meta">
+<time datetime="2017-06-07T00:00:00+08:00" pubdate>2017-06-07 00:00:00</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><div class="highlight-custom"><pre><span></span><code><span class="err">xdg-utils</span>
+<span class="err">从网上下载了几本中文pdf文档，用系统自带的Evince——文档查看器打开后出现乱码。想到FoxitReader有个linux版本，于是从其官方网站下载下来，打开该文档未出现乱码。</span>
+<span class="err">但是因为默认pdf与Envince关联，所以想要用FoxitReader来看pdf文档，只能先打开FoxitReader，然后点文件-》打开菜单，选择pdf文档，才能阅读，稍有麻烦。怎么才能设置默认的pdf关联方式呢？</span>
+<span class="err">文件关联的原理主要是设置文件类型与应用程序之间的联系。</span>
+<span class="err">文件的类型由mimetype(.xml) 描述，存放在</span>
+<span class="err">/usr/share/mime</span>
+<span class="err">~/.local/share/mime</span>
+<span class="err">应用程序由desktop entry(.desktop)描述，存放在</span>
+<span class="err">/usr/share/applications</span>
+<span class="err">~/.local/share/applications</span>
+<span class="err">xdg-open程序负责根据关联的程序打开文件。</span>
+<span class="err">xdg-open先判断文件类型，然后到</span>
+<span class="err">/usr/share/applications/defaults.list</span>
+<span class="err">~/.local/share/applications/defaults …</span></code></pre></div></div>
+            <footer>
+                <a rel="full-article" href="/posts/2017/06/07/xdg-mime.html">Read On &crarr;</a>
+            </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
         <a href="/posts/2017/06/03/apt-size-mismatch.html">apt install 一直 size mismatch</a>
       </h1>
     <p class="meta">
@@ -350,123 +459,6 @@ envsubst <span class="s1">&#39;${VAR_NAME}&#39;</span> &lt; nginx.conf.template 
                 <a rel="full-article" href="/posts/2017/06/03/pelican.html">Read On &crarr;</a>
             </footer>
   		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="/posts/2015/06/18/gtags.html">gtags使用</a>
-      </h1>
-    <p class="meta">
-<time datetime="2015-06-18T13:50:00+08:00" pubdate>2015-06-18 13:50:00</time>      
-    </p>
-</header>
-
-        <div class="entry-content"><h5>gtags global</h5>
-<p>安装好以后，有global、gtags、gtags-cscope三个命令。global是查询，gtags是生成索引文件，gtags-cscope是与cscope一样的界面</p>
-<h5>example：</h5>
-<p>代码:</p>
-<div class="highlight-custom"><pre><span></span><code>$ <span class="nb">cd</span> project/
-$ gtags
-</code></pre></div>
-
-<p>这样就生成了整个目录的索引文件，包括GTAGS、GRTAGS、GPATH三个文件。</p>
-<p>你也可以先用find命令生成一个文件列表，叫gtags.files，然后再执行gtags，就会只索引gtags.files里的文件。</p>
-<h5>example：</h5>
-<div class="highlight-custom"><pre><span></span><code><span class="nl">代码</span><span class="p">:</span><span class="w"></span>
-<span class="err">$</span><span class="w"> </span><span class="n">cd</span><span class="w"> </span><span class="n">project</span><span class="o">/</span><span class="w"></span>
-<span class="err">$</span><span class="w"> </span><span class="n">find</span><span class="w"> </span><span class="p">.</span><span class="w"> </span><span class="o">-</span><span class="n">name</span><span class="w"> </span><span class="ss">&quot;*.[ch]&quot;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">gtags</span><span class="p">.</span><span class="n">files</span><span class="w"></span>
-<span class="err">$</span><span class="w"> </span><span class="n">gtags</span><span class="w"></span>
-</code></pre></div>
-
-<p>查询使用的命令是global和gtags-cscope。前者是命令行界面，后者是与cscope兼容的ncurses界面。这里就不多介绍了，重点是如何在vim里查询：</p>
-<p>首先进入vim，然后:</p>
-<h5>example</h5>
-<div class="highlight-custom"><pre><span></span><code><span class="c">代码:</span>
-<span class="err">:set cscopeprg=gtags-cscope</span>
-<span class="err">:cs add GTAGS</span>
-</code></pre></div>
-
-<p>然后就可以像cscope一样 …</p></div>
-            <footer>
-                <a rel="full-article" href="/posts/2015/06/18/gtags.html">Read On &crarr;</a>
-            </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="/posts/2015/01/20/man-pages-to-pdf.html">将man page输出到pdf和HTML</a>
-      </h1>
-    <p class="meta">
-<time datetime="2015-01-20T16:37:00+08:00" pubdate>2015-01-20 16:37:00</time>      
-    </p>
-</header>
-
-        <div class="entry-content"><div class="highlight-custom"><pre><span></span><code><span class="c1"># 方法1：直接浏览器查看html</span>
-man -Hfirefox memfd_create
-
-
-<span class="c1"># 方法2：查询手册页文件位置</span>
-man -w timerfd_create  <span class="c1"># 或 man -w 2 timerfd_create</span>
-<span class="c1"># 然后转换为html</span>
-zcat /usr/share/man/man2/timerfd_create.2.gz <span class="p">|</span> roff2html &gt; timerfd_create.html
-
-
-<span class="c1"># 方法3：转换为pdf</span>
-man -t eventfd <span class="p">|</span> ps2pdf - &gt; eventfd.pdf
-</code></pre></div></div>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="/posts/2015/01/20/linux-man-pages.html">linux-man-pages</a>
-      </h1>
-    <p class="meta">
-<time datetime="2015-01-20T11:41:06+08:00" pubdate>2015-01-20 11:41:06</time>      
-    </p>
-</header>
-
-        <div class="entry-content"><div class="highlight-custom"><pre><span></span><code><span class="n">man</span> <span class="o">-</span><span class="n">k</span> <span class="err">关键字</span>  <span class="err">从</span><span class="n">man手册页描述内容中搜索</span>
-<span class="n">man</span> <span class="o">-</span><span class="n">K</span> <span class="err">全文暴力搜索，</span> <span class="err">速度比较慢</span>
-<span class="n">man</span> <span class="o">-</span><span class="n">a</span> <span class="err">显示手册中包含的所有可用的手册页</span>
-<span class="n">whatis</span>
-<span class="n">which</span>
-
-<span class="n">manpages里面还有一些有趣而且实用的资料</span><span class="err">：</span>
-<span class="n">man</span> <span class="mi">1</span> <span class="n">intro</span> <span class="err">–</span> <span class="err">一篇对从未接触过</span><span class="n">Linux的用户的简明教程</span><span class="err">。</span>
-<span class="n">man</span> <span class="mi">2</span> <span class="n">syscalls</span> <span class="err">–</span> <span class="err">内核系统请求的列表，按内核版本注释分类，系统编程必备。</span>
-<span class="n">man</span> <span class="mi">2</span> <span class="n">select_tut</span> <span class="err">–</span> <span class="err">关于</span><span class="k">select</span><span class="p">()</span><span class="err">系统请求的教程。</span>
-<span class="n">man</span> <span class="mi">3</span> <span class="n">string</span> <span class="err">–</span> <span class="err">在头文件内的所有函数。</span>
-<span class="n">man</span> <span class="mi">3</span> <span class="n">stdio</span> <span class="err">–</span> <span class="err">关于头文件的使用，标准输入</span><span class="o">/</span><span class="err">输出库的说明。</span>
-<span class="n">man</span> <span class="mi">3</span> <span class="n">errno</span> <span class="err">–</span> <span class="err">所有</span><span class="n">errorno的取值及说明</span><span class="err">。（</span><span class="n">C语言内类似其他语言的异常告知机制</span><span class="err">）</span>
-<span class="n">man</span> <span class="mi">4 …</span></code></pre></div></div>
-            <footer>
-                <a rel="full-article" href="/posts/2015/01/20/linux-man-pages.html">Read On &crarr;</a>
-            </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="/posts/2015/01/01/install-archlinux.html">ArchLinux 安装笔记</a>
-      </h1>
-    <p class="meta">
-<time datetime="2015-01-01T20:31:00+08:00" pubdate>2015-01-01 20:31:00</time>      
-    </p>
-</header>
-
-        <div class="entry-content"><h3>ArchLinux 安装笔记</h3>
-<ol>
-<li>制作usb启动盘</li>
-<li>为要安装系统的磁盘分区， 一般需要 / /boot /home swap， 服务器的/srv /var 是可选的。也可以考虑使用lvm或者btrfs。 推荐使用btrfs。</li>
-<li>格式化分区， 启用交换分区。</li>
-<li>分区挂到/mnt, mkdir /mnt/{boot,home} ,  挂载boot home 等分区。</li>
-<li>nano /etc/pacman.d/mirrorlist 修改软件源地址</li>
-<li>pacstrap /mnt base base-devel 安装系统</li>
-<li>genfatab -U -p /mnt &gt;&gt; /mnt/etc/fstab  生成fstab</li>
-<li>arch-chroot /mnt  切换到新系统</li>
-<li>nano /etc/locale …</li></ol></div>
-            <footer>
-                <a rel="full-article" href="/posts/2015/01/01/install-archlinux.html">Read On &crarr;</a>
-            </footer>
-  		</article>
 <div class="pagination">
     <a class="prev" href="/index6.html">&larr; Older</a>
 
@@ -485,13 +477,13 @@ man -t eventfd <span class="p">|</span> ps2pdf - &gt; eventfd.pdf
         <a href="/posts/2022/11/05/raspbian10-raspios-selenium.html">raspberry-debian10-selenium测试</a>
     </li>
     <li class="post">
+        <a href="/posts/2022/11/05/raspbian10-raspios-selenium-har.html">raspberry-debian10-selenium-har测试</a>
+    </li>
+    <li class="post">
         <a href="/posts/2022/09/03/alternativeto.html">代替品查询网站</a>
     </li>
     <li class="post">
         <a href="/posts/2022/09/03/Flatpak-vs-Snap.html">Flatpak vs Snap</a>
-    </li>
-    <li class="post">
-        <a href="/posts/2022/07/09/interview-questions.html">面试中我经常问的问题</a>
     </li>
   </ul>
 </section><section>
@@ -501,29 +493,31 @@ man -t eventfd <span class="p">|</span> ps2pdf - &gt; eventfd.pdf
       <li><a href="/category/blog.html">blog (1)</a></li>
       <li><a href="/category/bootloader.html">bootloader (2)</a></li>
       <li><a href="/category/container.html">container (1)</a></li>
+      <li><a href="/category/database.html">database (1)</a></li>
       <li><a href="/category/editor.html">editor (4)</a></li>
+      <li><a href="/category/filesystem.html">filesystem (1)</a></li>
       <li><a href="/category/firefox.html">firefox (1)</a></li>
       <li><a href="/category/git.html">git (3)</a></li>
       <li><a href="/category/golang.html">golang (1)</a></li>
       <li><a href="/category/gu-piao.html">股票 (1)</a></li>
       <li><a href="/category/ide.html">IDE (1)</a></li>
       <li><a href="/category/interview.html">interview (1)</a></li>
-      <li><a href="/category/linux.html">linux (42)</a></li>
+      <li><a href="/category/linux.html">linux (49)</a></li>
       <li><a href="/category/network.html">network (7)</a></li>
       <li><a href="/category/nltk.html">nltk (2)</a></li>
       <li><a href="/category/other.html">other (1)</a></li>
       <li><a href="/category/programming.html">programming (4)</a></li>
-      <li><a href="/category/python.html">python (2)</a></li>
+      <li><a href="/category/python.html">python (1)</a></li>
       <li><a href="/category/stock.html">stock (1)</a></li>
       <li><a href="/category/vm.html">vm (1)</a></li>
-      <li><a href="/category/web.html">web (3)</a></li>
+      <li><a href="/category/web.html">web (4)</a></li>
       <li><a href="/category/windows.html">windows (1)</a></li>
       <li><a href="/category/xwindow.html">xwindow (1)</a></li>
   </ul>
 </section>
 <section>
   <h1>Tags</h1>
-    <a href="/tag/git.html">git</a>,    <a href="/tag/linux.html">linux</a>,    <a href="/tag/selenium.html">selenium</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/docker.html">docker</a>,    <a href="/tag/flatpak.html">flatpak</a>,    <a href="/tag/interview.html">interview</a>,    <a href="/tag/programming.html">programming</a>,    <a href="/tag/qt.html">Qt</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/filesystem.html">filesystem</a>,    <a href="/tag/xwindow.html">xwindow</a>,    <a href="/tag/ide.html">IDE</a>,    <a href="/tag/glang.html">glang</a>,    <a href="/tag/xdg.html">xdg</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/blog.html">blog</a>,    <a href="/tag/c.html">C++</a>,    <a href="/tag/book.html">book</a>,    <a href="/tag/bootloader.html">bootloader</a></section>
+    <a href="/tag/git.html">git</a>,    <a href="/tag/linux.html">linux</a>,    <a href="/tag/selenium.html">selenium</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/docker.html">docker</a>,    <a href="/tag/flatpak.html">flatpak</a>,    <a href="/tag/interview.html">interview</a>,    <a href="/tag/programming.html">programming</a>,    <a href="/tag/qt.html">Qt</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/filesystem.html">filesystem</a>,    <a href="/tag/xwindow.html">xwindow</a>,    <a href="/tag/ide.html">IDE</a>,    <a href="/tag/glang.html">glang</a>,    <a href="/tag/xdg.html">xdg</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/database.html">database</a>,    <a href="/tag/mysql.html">mysql</a>,    <a href="/tag/sysctl.html">sysctl</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a>,    <a href="/tag/book.html">book</a>,    <a href="/tag/c.html">C++</a>,    <a href="/tag/bootloader.html">bootloader</a></section>
     <section>
         <h1>Social</h1>
         <ul>
