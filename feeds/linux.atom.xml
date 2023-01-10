@@ -1423,7 +1423,8 @@ bash&amp;gt; export CDPATH
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;chmod u+s `which passwd`&lt;/span&gt;
 &lt;span class="err"&gt;chmod u+s `which su`&lt;/span&gt;
 &lt;span class="err"&gt;chmod u+s `which sudo`&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="command"></category></entry><entry><title>mail命令，收发邮件</title><link href="/posts/2013/09/29/linux-command-mail.html" rel="alternate"></link><published>2013-09-29T00:00:00+08:00</published><updated>2013-09-29T00:00:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2013-09-29:/posts/2013/09/29/linux-command-mail.html</id><summary type="html">&lt;h3&gt;发邮件&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="command"></category></entry><entry><title>mail命令，收发邮件</title><link href="/posts/2013/09/29/linux-command-mail.html" rel="alternate"></link><published>2013-09-29T00:00:00+08:00</published><updated>2013-09-29T00:00:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2013-09-29:/posts/2013/09/29/linux-command-mail.html</id><summary type="html">&lt;p&gt;常用命令行邮件客户端有mail（mailx）和mutt&lt;/p&gt;
+&lt;h3&gt;发邮件&lt;/h3&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;mail&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;主题&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;收件人&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;代表发邮件&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="n"&gt;收件人可以用本机的用户名&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;如帐号&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;user1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="n"&gt;或者一般的邮件地址&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
@@ -1444,8 +1445,8 @@ bash&amp;gt; export CDPATH
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;mail&lt;/span&gt;
 &lt;span class="err"&gt;z 显示下一个窗口里面所有消息 （邮件列表）&lt;/span&gt;
 &lt;span class="err"&gt;z- 显示上一个窗口里面所有消息&lt;/span&gt;
-&lt;span class="err"&gt;r 阅读邮件，后面跟上id&lt;/span&gt;
-&lt;span class="err"&gt;d …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h3&gt;发邮件&lt;/h3&gt;
+&lt;span class="err"&gt;r …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;常用命令行邮件客户端有mail（mailx）和mutt&lt;/p&gt;
+&lt;h3&gt;发邮件&lt;/h3&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;mail&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;主题&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;收件人&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;代表发邮件&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="n"&gt;收件人可以用本机的用户名&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;如帐号&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;user1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="n"&gt;或者一般的邮件地址&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
