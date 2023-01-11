@@ -789,7 +789,11 @@ envsubst &lt;span class="s1"&gt;&amp;#39;${VAR_NAME}&amp;#39;&lt;/span&gt; &amp;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;　　mysql -u root&lt;/span&gt;
 &lt;span class="err"&gt;　　mysql&amp;gt; use mysql;&lt;/span&gt;
 &lt;span class="err"&gt;　　mysql&amp;gt; UPDATE user SET Password = PASSWORD(&amp;#39;newpass&amp;#39;) WHERE user = &amp;#39;root&amp;#39;;&lt;/span&gt;
-&lt;span class="err"&gt;　　mysql …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Wed, 07 Jun 2017 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-06-07:/posts/2017/06/07/mysql-password.html</guid><category>database</category><category>database</category><category>mysql</category></item><item><title>swappiness交换分区配置</title><link>/posts/2017/06/07/swappiness.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;swappiness&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="err"&gt;的时候表示最大限度使用物理内存，然后才是&lt;/span&gt; &lt;span class="n"&gt;swap空间&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;swappiness&lt;/span&gt;&lt;span class="err"&gt;＝&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="err"&gt;的时候表示积极的使用&lt;/span&gt;&lt;span class="n"&gt;swap分区&lt;/span&gt;&lt;span class="err"&gt;，并且把内存上的数据及时的搬运到&lt;/span&gt;&lt;span class="n"&gt;swap空间里面&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
+&lt;span class="err"&gt;　　mysql …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Wed, 07 Jun 2017 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-06-07:/posts/2017/06/07/mysql-password.html</guid><category>database</category><category>database</category><category>mysql</category></item><item><title>记录一些网址</title><link>/posts/2017/06/07/programming-notes.html</link><description>&lt;p&gt;dht爬虫&lt;/p&gt;
+&lt;p&gt;http://codemacro.com/2013/05/19/crawl-dht/&lt;/p&gt;
+&lt;p&gt;http://developer.51cto.com/art/201402/430007.htm&lt;/p&gt;
+&lt;p&gt;Gtk相关&lt;/p&gt;
+&lt;p&gt;http://gtk.awaysoft.com/forum.php&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Wed, 07 Jun 2017 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-06-07:/posts/2017/06/07/programming-notes.html</guid><category>notes</category><category>notes</category><category>programming</category></item><item><title>swappiness交换分区配置</title><link>/posts/2017/06/07/swappiness.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;swappiness&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="err"&gt;的时候表示最大限度使用物理内存，然后才是&lt;/span&gt; &lt;span class="n"&gt;swap空间&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;swappiness&lt;/span&gt;&lt;span class="err"&gt;＝&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="err"&gt;的时候表示积极的使用&lt;/span&gt;&lt;span class="n"&gt;swap分区&lt;/span&gt;&lt;span class="err"&gt;，并且把内存上的数据及时的搬运到&lt;/span&gt;&lt;span class="n"&gt;swap空间里面&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
 
 &lt;span class="n"&gt;Ubuntu系统swappiness默认值为60&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="err"&gt;表示的含义可以这样来理解&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="err"&gt;当剩余物理内存低于&lt;/span&gt;&lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;60&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="err"&gt;时&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="err"&gt;开始使用&lt;/span&gt;&lt;span class="n"&gt;swap分区&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
 
@@ -940,7 +944,14 @@ vimtutor # vim教程&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.or
 &lt;li&gt;pacstrap /mnt base base-devel 安装系统&lt;/li&gt;
 &lt;li&gt;genfatab -U -p /mnt &amp;gt;&amp;gt; /mnt/etc/fstab  生成fstab&lt;/li&gt;
 &lt;li&gt;arch-chroot /mnt  切换到新系统&lt;/li&gt;
-&lt;li&gt;nano /etc/locale …&lt;/li&gt;&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Thu, 01 Jan 2015 20:31:00 +0800</pubDate><guid isPermaLink="false">tag:None,2015-01-01:/posts/2015/01/01/install-archlinux.html</guid><category>linux</category><category>linux</category></item><item><title>C++书籍推荐</title><link>/posts/2015/01/01/cpp-books.html</link><description>&lt;p&gt;下面是转载的在博客上看到的一个C++书籍阅读清单，可以参考下：&lt;/p&gt;
+&lt;li&gt;nano /etc/locale …&lt;/li&gt;&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Thu, 01 Jan 2015 20:31:00 +0800</pubDate><guid isPermaLink="false">tag:None,2015-01-01:/posts/2015/01/01/install-archlinux.html</guid><category>linux</category><category>linux</category></item><item><title>C++书籍推荐</title><link>/posts/2015/01/01/cpp-books.html</link><description>&lt;ul&gt;
+&lt;li&gt;C++Primer 5th 中文版 (no Plus)&lt;/li&gt;
+&lt;li&gt;Inside C++ Object Model&lt;/li&gt;
+&lt;li&gt;The Design and Evolution of C++&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这三本就够用了，可以应付绝大多数的工作&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;下面是转载的在博客上看到的一个C++书籍阅读清单，可以参考下：&lt;/p&gt;
 &lt;h2&gt;阶段 1&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;《Essential C++》&lt;/li&gt;
@@ -950,13 +961,7 @@ vimtutor # vim教程&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.or
 &lt;li&gt;《C++ Primer》（不是 plus）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;本书对C++基本概念、技术、以及现代C++编程风格进行了全面而且权威的阐述，是C++初学者的最佳指南；本书可以帮助你编写实用的程序，而无需首先精通每个语言细节。对于中高级程序员，本书也是不可或缺的参考书。&lt;/p&gt;
-&lt;h2&gt;阶段 2&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;《Effective C++》和《More effective C++》&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;作者是Scott Meyers。你应该熟读它们，并清楚地理解每个项目。该书围绕55条准则，每一条都介绍了一个可让你写出更好的C++程序代码的方法，并以特别设计过的例子详加讨论。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;《Exceptional C++（C …&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Thu, 01 Jan 2015 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:None,2015-01-01:/posts/2015/01/01/cpp-books.html</guid><category>programming</category><category>programming</category><category>C++</category><category>book</category></item><item><title>bash</title><link>/posts/2014/09/26/bash.html</link><description>&lt;h4&gt;Linux 下shell基本上默认是 bash, 下面是我总结的一些技巧。&lt;/h4&gt;
+&lt;h2&gt;阶段 …&lt;/h2&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Thu, 01 Jan 2015 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:None,2015-01-01:/posts/2015/01/01/cpp-books.html</guid><category>programming</category><category>programming</category><category>C++</category><category>book</category></item><item><title>bash</title><link>/posts/2014/09/26/bash.html</link><description>&lt;h4&gt;Linux 下shell基本上默认是 bash, 下面是我总结的一些技巧。&lt;/h4&gt;
 &lt;h4&gt;bash 重定向&lt;/h4&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;find /etc -name passwd  &lt;span class="m"&gt;1&lt;/span&gt;&amp;gt; &lt;span class="m"&gt;1&lt;/span&gt;.txt &lt;span class="c1"&gt;# 把标准输出重定向到 1.txt，屏幕上只显示错误输出&lt;/span&gt;
 find /etc -name passwd  &lt;span class="m"&gt;2&lt;/span&gt;&amp;gt; &lt;span class="m"&gt;1&lt;/span&gt;.txt &lt;span class="c1"&gt;# 略&lt;/span&gt;
@@ -973,7 +978,25 @@ tr …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="h
 &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="n"&gt;Windows系统可以用Source&lt;/span&gt; &lt;span class="n"&gt;Insight&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;Linux系统可以用Source&lt;/span&gt; &lt;span class="n"&gt;Navigator&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt; 
 &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="n"&gt;vim或emacs编辑器&lt;/span&gt;&lt;span class="err"&gt;，配合&lt;/span&gt;&lt;span class="n"&gt;cscope&lt;/span&gt;&lt;span class="err"&gt;、&lt;/span&gt;&lt;span class="n"&gt;ctags&lt;/span&gt;&lt;span class="err"&gt;、&lt;/span&gt;&lt;span class="n"&gt;etags等交叉索引工具&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt; 
 &lt;span class="k"&gt;c&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="n"&gt;vim或emacs编辑器&lt;/span&gt;&lt;span class="err"&gt;，配合&lt;/span&gt;&lt;span class="n"&gt;grep&lt;/span&gt;&lt;span class="err"&gt;、&lt;/span&gt;&lt;span class="n"&gt;egrep等文本搜索工具&lt;/span&gt;&lt;span class="err"&gt;，不过最好要对源代码目录结构有所熟悉&lt;/span&gt; 
-&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="n"&gt;LXR&lt;/span&gt;&lt;span class="err"&gt;，以网页的形式通过浏览器浏览，安装复杂，可从&lt;/span&gt;&lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;lxr …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Fri, 15 Aug 2014 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:None,2014-08-15:/posts/2014/08/15/linux-kernel.html</guid><category>linux</category><category>linux</category><category>kernel</category></item><item><title>linux错误执行chmod 777 / 的处理方法</title><link>/posts/2014/06/11/chmod777.html</link><description>&lt;h4&gt;setfacl&lt;/h4&gt;
+&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="n"&gt;LXR&lt;/span&gt;&lt;span class="err"&gt;，以网页的形式通过浏览器浏览，安装复杂，可从&lt;/span&gt;&lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;lxr …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Fri, 15 Aug 2014 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:None,2014-08-15:/posts/2014/08/15/linux-kernel.html</guid><category>linux</category><category>linux</category><category>kernel</category></item><item><title>C语言深度解剖</title><link>/posts/2014/08/06/programming-C.html</link><description>&lt;p&gt;register 变量必须是一个单个的值，并且其长度应小于或等于整型的长度。 而且 register 变量可能不存放在内存中，所以不能用取址运算符“&amp;amp;”来获取 register 变量的地址。
+ 
+static 静态全局变量，作用域仅限于变量被定义的文件中，其他文件即使用 extern 声明也没法
+使用他。准确地说作用域是从定义之处开始，到文件结尾处结束，在定义之处前面的那些
+代码行也不能使用它。想要使用就得在前面再加 extern ***。恶心吧？要想不恶心，很简单，
+直接在文件顶端定义不就得了。&lt;/p&gt;
+&lt;p&gt;静态局部变量，在函数体里面定义的，就只能在这个函数里用了，同一个文档中的其他
+函数也用不了。由于被 static 修饰的变量总是存在内存的静态区，所以即使这个函数运行结
+束，这个静态变量的值还是不会被销毁，函数下次使用时仍然能用到这个值。&lt;/p&gt;
+&lt;p&gt;函数前加 static 使得函数成为静态函数。但此处“static”的含义不是指存储方式，而是指对函数的作用域仅局限于本文件(所以又称内部函数)。使用内部函数的好处是：不同的人编写不同的函数时，不用担心自己定义的函数 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Wed, 06 Aug 2014 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:None,2014-08-06:/posts/2014/08/06/programming-C.html</guid><category>programming</category><category>programming</category><category>C</category></item><item><title>apue读书笔记</title><link>/posts/2014/06/23/apue-note.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;打印出错信息：&lt;/span&gt;
+&lt;span class="n"&gt;Strerror&lt;/span&gt;  &lt;span class="n"&gt;perror&lt;/span&gt;
+&lt;span class="err"&gt;一个&lt;/span&gt;&lt;span class="n"&gt;unix惯例是把argv&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="err"&gt;作为参数传递给&lt;/span&gt;&lt;span class="n"&gt;perror&lt;/span&gt;
+&lt;span class="err"&gt;好处是当用管道连接多个程序时，能分清错误是哪一个产生的。&lt;/span&gt;
+
+&lt;span class="err"&gt;可以&lt;/span&gt;&lt;span class="k"&gt;free&lt;/span&gt;&lt;span class="err"&gt;（&lt;/span&gt;&lt;span class="k"&gt;NULL&lt;/span&gt;&lt;span class="err"&gt;）&lt;/span&gt;
+
+ &lt;span class="n"&gt;fork&lt;/span&gt;  &lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;pthread&lt;/span&gt; &lt;span class="k"&gt;create&lt;/span&gt; &lt;span class="err"&gt;之前要&lt;/span&gt;&lt;span class="n"&gt;fflsh&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;null&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="err"&gt;刷新缓存区&lt;/span&gt;
+&lt;span class="err"&gt;否则可能会输出两次&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Mon, 23 Jun 2014 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:None,2014-06-23:/posts/2014/06/23/apue-note.html</guid><category>programming</category><category>programming</category><category>python</category></item><item><title>linux错误执行chmod 777 / 的处理方法</title><link>/posts/2014/06/11/chmod777.html</link><description>&lt;h4&gt;setfacl&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;getfacl -R / &amp;gt;systemP.bak&lt;/code&gt;  将这个系统中的 / ，以及 / 底下所有的文件及目录权限导出到一个文件中&lt;/li&gt;
 &lt;li&gt;将systemP.bak文件想办法拷贝到被破坏的机器上   并执行
@@ -983,7 +1006,28 @@ tr …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="h
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;chmod u+s `which passwd`&lt;/span&gt;
 &lt;span class="err"&gt;chmod u+s `which su`&lt;/span&gt;
 &lt;span class="err"&gt;chmod u+s `which sudo`&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Wed, 11 Jun 2014 20:50:00 +0800</pubDate><guid isPermaLink="false">tag:None,2014-06-11:/posts/2014/06/11/chmod777.html</guid><category>linux</category><category>linux</category><category>command</category></item><item><title>vim使用</title><link>/posts/2014/03/13/vim-usage.html</link><description>&lt;p&gt;VIM使用&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Wed, 11 Jun 2014 20:50:00 +0800</pubDate><guid isPermaLink="false">tag:None,2014-06-11:/posts/2014/06/11/chmod777.html</guid><category>linux</category><category>linux</category><category>command</category></item><item><title>C语言零长数组</title><link>/posts/2014/03/23/zero-length-array.html</link><description>&lt;p&gt;前言：计算机语言是编译器和程序员交流的依据和规范，GNU C是GCC特有的功能，在Linux内核中被广泛应用。&lt;/p&gt;
+&lt;p&gt;帮助文档：http://gcc.gnu.org/onlinedocs/gcc-4.6.2/gcc/C-Extensions.html#C-Extensions&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;int *p;&lt;/span&gt;
+&lt;span class="err"&gt;p=(int[]){99};&lt;/span&gt;
+&lt;span class="err"&gt;GCC 临时变量&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;1、零长数组&lt;/h2&gt;
+&lt;p&gt;GNU C允许声明长度为零的数组，但它只能被用于结构体的最后一个成员。&lt;/p&gt;
+&lt;p&gt;举例，如清单1： &lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; 
+&lt;span class="cpf"&gt;#include &lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+&lt;span class="k"&gt;struct&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;  
+    &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;length&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;  
+    &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="n"&gt;contents&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;  
+&lt;span class="p"&gt;};&lt;/span&gt;  
+
+&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;void&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  
+&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;count&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; 
+    &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="n"&gt;letter …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Sun, 23 Mar 2014 18:28:00 +0800</pubDate><guid isPermaLink="false">tag:None,2014-03-23:/posts/2014/03/23/zero-length-array.html</guid><category>programming</category><category>programming</category><category>C</category></item><item><title>vim使用</title><link>/posts/2014/03/13/vim-usage.html</link><description>&lt;p&gt;&lt;img alt="vim" src="/posts/2014/03/13/vi-vim-cheat-sheet-sch1.gif"&gt;&lt;/p&gt;
+&lt;p&gt;VIM使用&lt;/p&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="err"&gt;、&lt;/span&gt;&lt;span class="n"&gt;P粘贴&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="n"&gt;p贴在下&lt;/span&gt;&lt;span class="err"&gt;（&lt;/span&gt;&lt;span class="n"&gt;后&lt;/span&gt;&lt;span class="err"&gt;）&lt;/span&gt;&lt;span class="n"&gt;面&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="n"&gt;P贴在前面&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;

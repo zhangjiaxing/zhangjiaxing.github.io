@@ -57,6 +57,36 @@
   		<article>
 <header>
       <h1 class="entry-title">
+        <a href="/posts/2017/06/03/pelican.html">pelican博客搭建总结</a>
+      </h1>
+    <p class="meta">
+<time datetime="2017-06-03T06:56:00+08:00" pubdate>2017-06-03 06:56:00</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><h4>pelican介绍</h4>
+<p><a href="https://getpelican.com/" title="pelican">Pelican</a> 是用Python实现的一个静态网站生成器. 支持以下功能：</p>
+<ul>
+<li>使用 Markdown 或 reStructuredText 或 AsciiDoc 来编写内容</li>
+<li>生成静态网页</li>
+<li>支持许多主题与插件</li>
+<li>语法高亮</li>
+<li>支持从很多地方导入</li>
+</ul>
+<h4>使用方法</h4>
+<p>参考 https://getpelican.com/ 和 http://docs.getpelican.com/en/stable/</p>
+<h4>windows遇到的一些坑</h4>
+<ul>
+<li>windows 平台下 <code>ValueError: embedded null byte</code> 的报错
+解决方法：
+在 <code>.\lib\site-packages\pelican\utils.py</code> 文件中， 找到函数 <code>strftime</code> ，在第一行添加 <code>locale.setlocale(locale.LC_ALL …</code></li></ul></div>
+            <footer>
+                <a rel="full-article" href="/posts/2017/06/03/pelican.html">Read On &crarr;</a>
+            </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
         <a href="/posts/2015/06/18/gtags.html">gtags使用</a>
       </h1>
     <p class="meta">
@@ -233,7 +263,14 @@ vimtutor # vim教程</p></div>
     </p>
 </header>
 
-        <div class="entry-content"><p>下面是转载的在博客上看到的一个C++书籍阅读清单，可以参考下：</p>
+        <div class="entry-content"><ul>
+<li>C++Primer 5th 中文版 (no Plus)</li>
+<li>Inside C++ Object Model</li>
+<li>The Design and Evolution of C++</li>
+</ul>
+<p>这三本就够用了，可以应付绝大多数的工作</p>
+<hr>
+<p>下面是转载的在博客上看到的一个C++书籍阅读清单，可以参考下：</p>
 <h2>阶段 1</h2>
 <ul>
 <li>《Essential C++》</li>
@@ -243,13 +280,7 @@ vimtutor # vim教程</p></div>
 <li>《C++ Primer》（不是 plus）</li>
 </ul>
 <p>本书对C++基本概念、技术、以及现代C++编程风格进行了全面而且权威的阐述，是C++初学者的最佳指南；本书可以帮助你编写实用的程序，而无需首先精通每个语言细节。对于中高级程序员，本书也是不可或缺的参考书。</p>
-<h2>阶段 2</h2>
-<ul>
-<li>《Effective C++》和《More effective C++》</li>
-</ul>
-<p>作者是Scott Meyers。你应该熟读它们，并清楚地理解每个项目。该书围绕55条准则，每一条都介绍了一个可让你写出更好的C++程序代码的方法，并以特别设计过的例子详加讨论。</p>
-<ul>
-<li>《Exceptional C++（C …</li></ul></div>
+<h2>阶段 …</h2></div>
             <footer>
                 <a rel="full-article" href="/posts/2015/01/01/cpp-books.html">Read On &crarr;</a>
             </footer>
@@ -304,6 +335,51 @@ tr …</code></pre></div></div>
   		<article>
 <header>
       <h1 class="entry-title">
+        <a href="/posts/2014/08/06/programming-C.html">C语言深度解剖</a>
+      </h1>
+    <p class="meta">
+<time datetime="2014-08-06T00:00:00+08:00" pubdate>2014-08-06 00:00:00</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><p>register 变量必须是一个单个的值，并且其长度应小于或等于整型的长度。 而且 register 变量可能不存放在内存中，所以不能用取址运算符“&amp;”来获取 register 变量的地址。
+ 
+static 静态全局变量，作用域仅限于变量被定义的文件中，其他文件即使用 extern 声明也没法
+使用他。准确地说作用域是从定义之处开始，到文件结尾处结束，在定义之处前面的那些
+代码行也不能使用它。想要使用就得在前面再加 extern ***。恶心吧？要想不恶心，很简单，
+直接在文件顶端定义不就得了。</p>
+<p>静态局部变量，在函数体里面定义的，就只能在这个函数里用了，同一个文档中的其他
+函数也用不了。由于被 static 修饰的变量总是存在内存的静态区，所以即使这个函数运行结
+束，这个静态变量的值还是不会被销毁，函数下次使用时仍然能用到这个值。</p>
+<p>函数前加 static 使得函数成为静态函数。但此处“static”的含义不是指存储方式，而是指对函数的作用域仅局限于本文件(所以又称内部函数)。使用内部函数的好处是：不同的人编写不同的函数时，不用担心自己定义的函数 …</p></div>
+            <footer>
+                <a rel="full-article" href="/posts/2014/08/06/programming-C.html">Read On &crarr;</a>
+            </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="/posts/2014/06/23/apue-note.html">apue读书笔记</a>
+      </h1>
+    <p class="meta">
+<time datetime="2014-06-23T00:00:00+08:00" pubdate>2014-06-23 00:00:00</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><div class="highlight-custom"><pre><span></span><code><span class="err">打印出错信息：</span>
+<span class="n">Strerror</span>  <span class="n">perror</span>
+<span class="err">一个</span><span class="n">unix惯例是把argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="err">作为参数传递给</span><span class="n">perror</span>
+<span class="err">好处是当用管道连接多个程序时，能分清错误是哪一个产生的。</span>
+
+<span class="err">可以</span><span class="k">free</span><span class="err">（</span><span class="k">NULL</span><span class="err">）</span>
+
+ <span class="n">fork</span>  <span class="err">，</span><span class="n">pthread</span> <span class="k">create</span> <span class="err">之前要</span><span class="n">fflsh</span><span class="p">(</span><span class="k">null</span><span class="p">)</span> <span class="err">刷新缓存区</span>
+<span class="err">否则可能会输出两次</span>
+</code></pre></div></div>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
         <a href="/posts/2014/06/11/chmod777.html">linux错误执行chmod 777 / 的处理方法</a>
       </h1>
     <p class="meta">
@@ -326,6 +402,41 @@ tr …</code></pre></div></div>
   		<article>
 <header>
       <h1 class="entry-title">
+        <a href="/posts/2014/03/23/zero-length-array.html">C语言零长数组</a>
+      </h1>
+    <p class="meta">
+<time datetime="2014-03-23T18:28:00+08:00" pubdate>2014-03-23 18:28:00</time>      
+    </p>
+</header>
+
+        <div class="entry-content"><p>前言：计算机语言是编译器和程序员交流的依据和规范，GNU C是GCC特有的功能，在Linux内核中被广泛应用。</p>
+<p>帮助文档：http://gcc.gnu.org/onlinedocs/gcc-4.6.2/gcc/C-Extensions.html#C-Extensions</p>
+<div class="highlight-custom"><pre><span></span><code><span class="err">int *p;</span>
+<span class="err">p=(int[]){99};</span>
+<span class="err">GCC 临时变量</span>
+</code></pre></div>
+
+<h2>1、零长数组</h2>
+<p>GNU C允许声明长度为零的数组，但它只能被用于结构体的最后一个成员。</p>
+<p>举例，如清单1： </p>
+<div class="highlight-custom"><pre><span></span><code><span class="cp">#include</span> 
+<span class="cpf">#include </span><span class="cp"></span>
+<span class="k">struct</span> <span class="n">line</span> <span class="p">{</span>  
+    <span class="kt">int</span> <span class="n">length</span><span class="p">;</span>  
+    <span class="kt">char</span> <span class="n">contents</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>  
+<span class="p">};</span>  
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>  
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span> 
+    <span class="kt">char</span> <span class="n">letter …</span></code></pre></div></div>
+            <footer>
+                <a rel="full-article" href="/posts/2014/03/23/zero-length-array.html">Read On &crarr;</a>
+            </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
         <a href="/posts/2014/03/13/vim-usage.html">vim使用</a>
       </h1>
     <p class="meta">
@@ -333,7 +444,8 @@ tr …</code></pre></div></div>
     </p>
 </header>
 
-        <div class="entry-content"><p>VIM使用</p>
+        <div class="entry-content"><p><img alt="vim" src="/posts/2014/03/13/vi-vim-cheat-sheet-sch1.gif"></p>
+<p>VIM使用</p>
 <div class="highlight-custom"><pre><span></span><code><span class="n">p</span><span class="err">、</span><span class="n">P粘贴</span><span class="w"></span>
 <span class="n">p贴在下</span><span class="err">（</span><span class="n">后</span><span class="err">）</span><span class="n">面</span><span class="w"></span>
 <span class="n">P贴在前面</span><span class="w"></span>
@@ -361,127 +473,6 @@ tr …</code></pre></div></div>
 <span class="err">$</span><span class="w">     </span><span class="n">跳至行尾 …</span></code></pre></div></div>
             <footer>
                 <a rel="full-article" href="/posts/2014/03/13/vim-usage.html">Read On &crarr;</a>
-            </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="/posts/2013/09/29/linux-command-mail.html">mail命令，收发邮件</a>
-      </h1>
-    <p class="meta">
-<time datetime="2013-09-29T00:00:00+08:00" pubdate>2013-09-29 00:00:00</time>      
-    </p>
-</header>
-
-        <div class="entry-content"><p>常用命令行邮件客户端有mail（mailx）和mutt</p>
-<h3>发邮件</h3>
-<div class="highlight-custom"><pre><span></span><code><span class="n">mail</span><span class="w"> </span><span class="o">-</span><span class="n">s</span><span class="w">  </span><span class="ss">&quot;主题&quot;</span><span class="w"> </span><span class="n">收件人</span><span class="w"></span>
-<span class="o">-</span><span class="n">s</span><span class="w"> </span><span class="n">代表发邮件</span><span class="w"></span>
-<span class="n">收件人可以用本机的用户名</span><span class="p">(</span><span class="n">如帐号</span><span class="w"> </span><span class="n">user1</span><span class="p">)</span><span class="n">或者一般的邮件地址</span><span class="w"></span>
-<span class="n">如</span><span class="w">  </span><span class="n">writebug</span><span class="nv">@qq</span><span class="p">.</span><span class="n">com</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="n">测试了QQ邮箱</span><span class="err">，</span><span class="w"> </span><span class="n">真的收到了</span><span class="w"></span>
-
-
-<span class="n">mail</span><span class="w"> </span><span class="o">-</span><span class="n">s</span><span class="w"> </span><span class="err">“</span><span class="n">abcdef</span><span class="err">”</span><span class="w"> </span><span class="n">user1</span><span class="w"></span>
-<span class="n">然后输入正文</span><span class="w"></span>
-<span class="n">结束输入要在新的一行</span><span class="w"> </span><span class="n">按</span><span class="w"> </span><span class="p">.</span><span class="w"> </span><span class="p">(</span><span class="n">dot</span><span class="p">)</span><span class="w">  </span><span class="n">再按回车</span><span class="w"></span>
-<span class="n">或ctrl</span><span class="o">+</span><span class="n">d</span><span class="w"></span>
-<span class="n">这时会出现</span><span class="w"> </span><span class="nl">Cc</span><span class="p">:</span><span class="w"></span>
-<span class="n">意思是邮件副本</span><span class="err">，</span><span class="n">可以寄给另外一个人</span><span class="w"></span>
-
-<span class="n">但邮件正文来自文件时</span><span class="err">，</span><span class="n">用mail</span><span class="w"> </span><span class="o">-</span><span class="n">s</span><span class="w"> </span><span class="err">“</span><span class="n">abcdef</span><span class="err">”</span><span class="w"> </span><span class="n">user1</span><span class="w">  </span><span class="o">&lt;</span><span class="w"> </span><span class="n">test</span><span class="p">.</span><span class="n">mail</span><span class="w"></span>
-</code></pre></div>
-
-<h3>阅读邮件</h3>
-<div class="highlight-custom"><pre><span></span><code><span class="err">mail</span>
-<span class="err">z 显示下一个窗口里面所有消息 （邮件列表）</span>
-<span class="err">z- 显示上一个窗口里面所有消息</span>
-<span class="err">r …</span></code></pre></div></div>
-            <footer>
-                <a rel="full-article" href="/posts/2013/09/29/linux-command-mail.html">Read On &crarr;</a>
-            </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="/posts/2013/09/27/linux-info.html">linux 查看info文档</a>
-      </h1>
-    <p class="meta">
-<time datetime="2013-09-27T17:59:00+08:00" pubdate>2013-09-27 17:59:00</time>      
-    </p>
-</header>
-
-        <div class="entry-content"><div class="highlight-custom"><pre><span></span><code><span class="err">info &lt;command&gt;</span>
-<span class="err">info 比man 更详细</span>
-<span class="err">info 中 按tab 跳到下一个 连接 （有*的，可以连接到其他info）</span>
-<span class="err">按enter跳转</span>
-<span class="err">n按键跳到下一个小节</span>
-<span class="err">p跳到上一个小节</span>
-<span class="err">u跳到上一层</span>
-<span class="err">s查找关键字</span>
-<span class="err">q离开</span>
-</code></pre></div></div>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="/posts/2013/09/27/linux-command.html">命令参数</a>
-      </h1>
-    <p class="meta">
-<time datetime="2013-09-27T00:00:00+08:00" pubdate>2013-09-27 00:00:00</time>      
-    </p>
-</header>
-
-        <div class="entry-content"><div class="highlight-custom"><pre><span></span><code><span class="err">less</span>
-<span class="err"> 按v进入编辑模式 （实际上是调用了vi）</span>
-<span class="err">/text 查找text</span>
-<span class="err">n 查找下一个</span>
-<span class="err">空格或enter，下一页</span>
-<span class="err">b上一页</span>
-<span class="err">ctrl+d下半页</span>
-<span class="err">ctrl+u上半页</span>
-<span class="err">g回到最顶端</span>
-<span class="err">G最末端</span>
-<span class="err">===============================</span>
-<span class="err">cat -A 显示换行符</span>
-<span class="err">-s 压缩多个空白行，变成一行</span>
-<span class="err">-b 显示行号</span>
-<span class="err">===============================</span>
-<span class="err">ldd 命令  查看程序运行时要加载的库</span>
-<span class="err">ssh -YC</span>
-<span class="err">dconf</span>
-<span class="err">hostapd</span>
-<span class="err">Doxygen 文档系统</span>
-<span class="err">ping命令有个audible ping参数，-a，当它终于ping通你的服务器时会让小喇叭叫起来。</span>
-</code></pre></div></div>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="/posts/2013/09/26/grub2.html">learn-grub2</a>
-      </h1>
-    <p class="meta">
-<time datetime="2013-09-26T00:47:00+08:00" pubdate>2013-09-26 00:47:00</time>      
-    </p>
-</header>
-
-        <div class="entry-content"><h2>设备的命名</h2>
-<p>grub2同样以fd表示软盘，hd表示硬盘（包含IDE和SCSI硬盘）。设备是从0开始编号，分区则是从1开始，主分区从1-4，逻辑分区从5开始，而grub分区编号是从0开始的。下面给出几个例子 ：</p>
-<div class="highlight-custom"><pre><span></span><code><span class="err">(fd0)：表示整个软盘</span>
-<span class="err">(hd0,1)：表示BIOS中的第一个硬盘的第1个分区</span>
-<span class="err">(hd0,5)/boot/vmlinuz：表示BIOS中的第一个硬盘的第一个逻辑分区下的boot目录下的vmlinuz文件</span>
-</code></pre></div>
-
-<p>按c进入命令行状态，按Tab键可查看所有可用的命令</p>
-<p>按e进入己选择菜单的编辑状态，在编辑状态下，由上下左右箭号来移动光标，enter键换行，ctrl+x以编辑的内容启动，ctrl+c进命令行状态，按Esc退出，回到菜单项。</p>
-<p>在需要使用额外的内核参数启动时，比如要加上acpi=off时，把光标移动到linux这一行最后，在splash后加上一空格再输入acpi=off，然后按ctrl+x启动。</p>
-<p>grub2中一些常用的命令
-```
-1)help
-    查看命令用法，如
-help search：查看search命令详细用法
-2)set …</p></div>
-            <footer>
-                <a rel="full-article" href="/posts/2013/09/26/grub2.html">Read On &crarr;</a>
             </footer>
   		</article>
 <div class="pagination">
@@ -530,8 +521,9 @@ help search：查看search命令详细用法
       <li><a href="/category/linux.html">linux (49)</a></li>
       <li><a href="/category/network.html">network (7)</a></li>
       <li><a href="/category/nltk.html">nltk (2)</a></li>
+      <li><a href="/category/notes.html">notes (1)</a></li>
       <li><a href="/category/other.html">other (1)</a></li>
-      <li><a href="/category/programming.html">programming (4)</a></li>
+      <li><a href="/category/programming.html">programming (7)</a></li>
       <li><a href="/category/python.html">python (1)</a></li>
       <li><a href="/category/stock.html">stock (1)</a></li>
       <li><a href="/category/vm.html">vm (1)</a></li>
@@ -542,7 +534,7 @@ help search：查看search命令详细用法
 </section>
 <section>
   <h1>Tags</h1>
-    <a href="/tag/git.html">git</a>,    <a href="/tag/linux.html">linux</a>,    <a href="/tag/selenium.html">selenium</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/docker.html">docker</a>,    <a href="/tag/flatpak.html">flatpak</a>,    <a href="/tag/interview.html">interview</a>,    <a href="/tag/programming.html">programming</a>,    <a href="/tag/qt.html">Qt</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/filesystem.html">filesystem</a>,    <a href="/tag/xwindow.html">xwindow</a>,    <a href="/tag/ide.html">IDE</a>,    <a href="/tag/glang.html">glang</a>,    <a href="/tag/xdg.html">xdg</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/database.html">database</a>,    <a href="/tag/mysql.html">mysql</a>,    <a href="/tag/sysctl.html">sysctl</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a>,    <a href="/tag/book.html">book</a>,    <a href="/tag/c.html">C++</a>,    <a href="/tag/bootloader.html">bootloader</a></section>
+    <a href="/tag/git.html">git</a>,    <a href="/tag/linux.html">linux</a>,    <a href="/tag/selenium.html">selenium</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/docker.html">docker</a>,    <a href="/tag/flatpak.html">flatpak</a>,    <a href="/tag/interview.html">interview</a>,    <a href="/tag/programming.html">programming</a>,    <a href="/tag/qt.html">Qt</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/filesystem.html">filesystem</a>,    <a href="/tag/xwindow.html">xwindow</a>,    <a href="/tag/ide.html">IDE</a>,    <a href="/tag/glang.html">glang</a>,    <a href="/tag/xdg.html">xdg</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/database.html">database</a>,    <a href="/tag/mysql.html">mysql</a>,    <a href="/tag/notes.html">notes</a>,    <a href="/tag/sysctl.html">sysctl</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a>,    <a href="/tag/book.html">book</a>,    <a href="/tag/c.html">C++</a>,    <a href="/tag/bootloader.html">bootloader</a></section>
     <section>
         <h1>Social</h1>
         <ul>
