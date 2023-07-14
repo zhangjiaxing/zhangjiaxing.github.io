@@ -1,52 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - android</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/android.atom.xml" rel="self"></link><id>/</id><updated>2018-01-03T10:39:56+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>通过浏览器下载 google play app 的方法</title><link href="/posts/2018/01/03/google-play-app.html" rel="alternate"></link><published>2018-01-03T10:39:56+08:00</published><updated>2018-01-03T10:39:56+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2018-01-03:/posts/2018/01/03/google-play-app.html</id><content type="html">&lt;h4&gt;通过网站&lt;/h4&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c"&gt;https://apkpure.com/cn&lt;/span&gt;
-&lt;span class="c"&gt;https://www.apkmirror.com&lt;/span&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - android</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/android.atom.xml" rel="self"></link><id>/</id><updated>2022-04-25T15:01:47+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>通过浏览器下载 google play app 的方法</title><link href="/posts/2018/01/03/google-play-app.html" rel="alternate"></link><published>2018-01-03T10:39:56+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2018-01-03:/posts/2018/01/03/google-play-app.html</id><content type="html">&lt;h4&gt;通过网站&lt;/h4&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;https://apkpure.com/cn
+https://www.apkmirror.com
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h4&gt;通过firefox扩展&lt;/h4&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;APK Downloader&lt;/span&gt;
-&lt;span class="err"&gt;Toolbox for Google Play Store&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="android"></category><category term="android"></category></entry><entry><title>记录一下我在Android上常用的APP</title><link href="/posts/2018/01/03/android-app.html" rel="alternate"></link><published>2018-01-03T10:20:33+08:00</published><updated>2018-01-03T10:20:33+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2018-01-03:/posts/2018/01/03/android-app.html</id><content type="html">&lt;p&gt;一个常用软件列表&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;Adobe Acrobat&lt;/span&gt;
-&lt;span class="err"&gt;AirDroid&lt;/span&gt;
-&lt;span class="err"&gt;Chrome&lt;/span&gt;
-&lt;span class="err"&gt;JuiceSSH&lt;/span&gt;
-&lt;span class="err"&gt;Pocket&lt;/span&gt;
-&lt;span class="err"&gt;QQ&lt;/span&gt;
-&lt;span class="err"&gt;Shadowsocks&lt;/span&gt;
-&lt;span class="err"&gt;Solid Explorer&lt;/span&gt;
-&lt;span class="err"&gt;Trello&lt;/span&gt;
-&lt;span class="err"&gt;Yandex Browser&lt;/span&gt;
-&lt;span class="err"&gt;mpv&lt;/span&gt;
-&lt;span class="err"&gt;京东&lt;/span&gt;
-&lt;span class="err"&gt;京东金融&lt;/span&gt;
-&lt;span class="err"&gt;哔哩哔哩&lt;/span&gt;
-&lt;span class="err"&gt;微信x2&lt;/span&gt;
-&lt;span class="err"&gt;支付宝&lt;/span&gt;
-&lt;span class="err"&gt;滴答清单&lt;/span&gt;
-&lt;span class="err"&gt;网易云音乐&lt;/span&gt;
-&lt;span class="err"&gt;网易有道词典&lt;/span&gt;
-&lt;span class="err"&gt;高德地图&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;APK&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Downloader&lt;/span&gt;
+&lt;span class="n"&gt;Toolbox&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Google&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Play&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Store&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="android"></category><category term="android"></category></entry><entry><title>记录一下我在Android上常用的APP</title><link href="/posts/2018/01/03/android-app.html" rel="alternate"></link><published>2018-01-03T10:20:33+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2018-01-03:/posts/2018/01/03/android-app.html</id><summary type="html">&lt;p&gt;一个常用软件列表&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Adobe Acrobat
+AirDroid
+Chrome
+JuiceSSH
+Pocket
+QQ
+Shadowsocks
+Solid Explorer
+Trello
+Yandex Browser
+mpv
+京东
+京东金融
+哔哩哔哩
+微信x2
+支付宝
+滴答清单
+网易云音乐
+网易有 …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;一个常用软件列表&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Adobe Acrobat
+AirDroid
+Chrome
+JuiceSSH
+Pocket
+QQ
+Shadowsocks
+Solid Explorer
+Trello
+Yandex Browser
+mpv
+京东
+京东金融
+哔哩哔哩
+微信x2
+支付宝
+滴答清单
+网易云音乐
+网易有道词典
+高德地图
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;一个不太常用软件列表&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;Cortana&lt;/span&gt;
-&lt;span class="err"&gt;ES文件浏览器&lt;/span&gt;
-&lt;span class="err"&gt;Microsoft Remote Desktop&lt;/span&gt;
-&lt;span class="err"&gt;QQ邮箱&lt;/span&gt;
-&lt;span class="err"&gt;TeamViewer&lt;/span&gt;
-&lt;span class="err"&gt;WPS Office&lt;/span&gt;
-&lt;span class="err"&gt;X浏览器&lt;/span&gt;
-&lt;span class="err"&gt;双开助手多开分身&lt;/span&gt;
-&lt;span class="err"&gt;密罐&lt;/span&gt;
-&lt;span class="err"&gt;悟空遥控器&lt;/span&gt;
-&lt;span class="err"&gt;扫描全能王&lt;/span&gt;
-&lt;span class="err"&gt;招商银行&lt;/span&gt;
-&lt;span class="err"&gt;掌阅&lt;/span&gt;
-&lt;span class="err"&gt;有道云笔记&lt;/span&gt;
-&lt;span class="err"&gt;百词斩&lt;/span&gt;
-&lt;span class="err"&gt;简书&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Cortana
+ES文件浏览器
+Microsoft Remote Desktop
+QQ邮箱
+TeamViewer
+WPS Office
+X浏览器
+双开助手多开分身
+密罐
+悟空遥控器
+扫描全能王
+招商银行
+掌阅
+有道云笔记
+百词斩
+简书
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h4&gt;未完待续...&lt;/h4&gt;</content><category term="android"></category><category term="software"></category></entry></feed>

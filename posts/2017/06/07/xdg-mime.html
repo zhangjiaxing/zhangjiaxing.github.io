@@ -64,37 +64,45 @@
     </p>
 </header>
 
-    <div class="entry-content"><div class="highlight-custom"><pre><span></span><code><span class="err">xdg-utils</span>
-<span class="err">从网上下载了几本中文pdf文档，用系统自带的Evince——文档查看器打开后出现乱码。想到FoxitReader有个linux版本，于是从其官方网站下载下来，打开该文档未出现乱码。</span>
-<span class="err">但是因为默认pdf与Envince关联，所以想要用FoxitReader来看pdf文档，只能先打开FoxitReader，然后点文件-》打开菜单，选择pdf文档，才能阅读，稍有麻烦。怎么才能设置默认的pdf关联方式呢？</span>
-<span class="err">文件关联的原理主要是设置文件类型与应用程序之间的联系。</span>
-<span class="err">文件的类型由mimetype(.xml) 描述，存放在</span>
-<span class="err">/usr/share/mime</span>
-<span class="err">~/.local/share/mime</span>
-<span class="err">应用程序由desktop entry(.desktop)描述，存放在</span>
-<span class="err">/usr/share/applications</span>
-<span class="err">~/.local/share/applications</span>
-<span class="err">xdg-open程序负责根据关联的程序打开文件。</span>
-<span class="err">xdg-open先判断文件类型，然后到</span>
-<span class="err">/usr/share/applications/defaults.list</span>
-<span class="err">~/.local/share/applications/defaults.list</span>
-<span class="err">找到指定的.desktop，并根据其中的命令打开应用程序。</span>
-<span class="err">xdg-mime可以修改默认文件关联。</span>
-<span class="err">查看文件的mime类型：</span>
-<span class="err">xdg-mime query filetype a.pdf</span>
-<span class="err">查看mime类型的应用程序关联：</span>
-<span class="err">xdg-mime query default application/pdf</span>
-<span class="err">修改mime类型的应用程序关联：</span>
-<span class="err">xdg-mime default evince.desktop application/pdf</span>
-<span class="err">还可以直接改defaults.list。该文件存放于：</span>
-<span class="err">/usr/share/application</span>
-<span class="err">/etc/gnome</span>
-<span class="err">~/.local/share/applictions</span>
-<span class="err">按照全局性依次降低。</span>
-<span class="err">快捷的方式是在Nautilus中选择用其他方式打开，选择想要打开的程序，将“记住打开pdf文档类型文件使用的程序“打勾，会自动创建文件关联，可在~/.local/share/applicaions中看到新加的条目。</span>
-<span class="err">++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span>
-<span class="err">grep &quot;pdf&quot; applicaions &gt;&gt; ~/.local/share/applicaions</span>
-<span class="err">&quot;在application文件中查找出pdf文件关联的那一行并追加到~/.local/share/applicaions中</span>
+    <div class="entry-content"><div class="highlight-custom"><pre><span></span><code><span class="n">xdg-utils</span>
+<span class="n">从网上下载了几本中文pdf文档，用系统自带的Evince——文档查看器打开后出现乱码。想到FoxitReader有个linux版本，于是从其官方网站下载下来，打开该文档未出现乱码。</span>
+<span class="n">但是因为默认pdf与Envince关联，所以想要用FoxitReader来看pdf文档，只能先打开FoxitReader，然后点文件-》打开菜单，选择pdf文档，才能阅读，稍有麻烦。怎么才能设置默认的pdf关联方式呢？</span>
+<span class="n">文件关联的原理主要是设置文件类型与应用程序之间的联系。</span>
+
+<span class="n">文件的类型由mimetype(.xml) 描述，存放在</span>
+<span class="n">/usr/share/mime</span>
+<span class="n">~/.local/share/mime</span>
+
+<span class="n">应用程序由desktop entry(.desktop)描述，存放在</span>
+<span class="n">/usr/share/applications</span>
+<span class="n">~/.local/share/applications</span>
+
+<span class="n">xdg-open程序负责根据关联的程序打开文件。</span>
+<span class="n">xdg-open先判断文件类型，然后到</span>
+<span class="n">/usr/share/applications/defaults.list</span>
+<span class="n">~/.local/share/applications/defaults.list</span>
+<span class="n">找到指定的.desktop，并根据其中的命令打开应用程序。</span>
+
+<span class="n">xdg-mime可以修改默认文件关联。</span>
+
+<span class="n">查看文件的mime类型：</span>
+<span class="n">xdg-mime query filetype a.pdf</span>
+
+<span class="n">查看mime类型的应用程序关联：</span>
+<span class="n">xdg-mime query default application/pdf</span>
+
+<span class="n">修改mime类型的应用程序关联：</span>
+<span class="n">xdg-mime default evince.desktop application/pdf</span>
+
+<span class="n">还可以直接改defaults.list。该文件存放于：</span>
+<span class="n">/usr/share/application</span>
+<span class="n">/etc/gnome</span>
+<span class="n">~/.local/share/applictions</span>
+<span class="n">按照全局性依次降低。</span>
+<span class="n">快捷的方式是在Nautilus中选择用其他方式打开，选择想要打开的程序，将“记住打开pdf文档类型文件使用的程序“打勾，会自动创建文件关联，可在~/.local/share/applicaions中看到新加的条目。</span>
+<span class="n">++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span>
+<span class="n">grep &quot;pdf&quot; applicaions &gt;&gt; ~/.local/share/applicaions</span>
+<span class="n">&quot;在application文件中查找出pdf文件关联的那一行并追加到~/.local/share/applicaions中</span>
 </code></pre></div></div>
     <footer>
 <p class="meta">
@@ -119,6 +127,9 @@
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     <li class="post">
+        <a href="/posts/2023/07/15/diff-patch.html">diff和patch命令以及git patch相关操作</a>
+    </li>
+    <li class="post">
         <a href="/posts/2022/12/29/install-cgit.html">debian11-bullseye install cgit</a>
     </li>
     <li class="post">
@@ -129,9 +140,6 @@
     </li>
     <li class="post">
         <a href="/posts/2022/09/03/alternativeto.html">代替品查询网站</a>
-    </li>
-    <li class="post">
-        <a href="/posts/2022/09/03/Flatpak-vs-Snap.html">Flatpak vs Snap</a>
     </li>
   </ul>
 </section><section>
@@ -145,7 +153,7 @@
       <li><a href="/category/editor.html">editor (4)</a></li>
       <li><a href="/category/filesystem.html">filesystem (1)</a></li>
       <li><a href="/category/firefox.html">firefox (1)</a></li>
-      <li><a href="/category/git.html">git (3)</a></li>
+      <li><a href="/category/git.html">git (4)</a></li>
       <li><a href="/category/golang.html">golang (1)</a></li>
       <li><a href="/category/gu-piao.html">股票 (1)</a></li>
       <li><a href="/category/ide.html">IDE (1)</a></li>
@@ -166,7 +174,7 @@
 </section>
 <section>
   <h1>Tags</h1>
-    <a href="/tag/git.html">git</a>,    <a href="/tag/linux.html">linux</a>,    <a href="/tag/selenium.html">selenium</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/docker.html">docker</a>,    <a href="/tag/flatpak.html">flatpak</a>,    <a href="/tag/interview.html">interview</a>,    <a href="/tag/programming.html">programming</a>,    <a href="/tag/qt.html">Qt</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/filesystem.html">filesystem</a>,    <a href="/tag/xwindow.html">xwindow</a>,    <a href="/tag/ide.html">IDE</a>,    <a href="/tag/glang.html">glang</a>,    <a href="/tag/xdg.html">xdg</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/database.html">database</a>,    <a href="/tag/mysql.html">mysql</a>,    <a href="/tag/notes.html">notes</a>,    <a href="/tag/sysctl.html">sysctl</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a>,    <a href="/tag/book.html">book</a>,    <a href="/tag/c.html">C++</a>,    <a href="/tag/bootloader.html">bootloader</a></section>
+    <a href="/tag/git.html">git</a>,    <a href="/tag/patch.html">patch</a>,    <a href="/tag/text.html">text</a>,    <a href="/tag/linux.html">linux</a>,    <a href="/tag/selenium.html">selenium</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/docker.html">docker</a>,    <a href="/tag/flatpak.html">flatpak</a>,    <a href="/tag/interview.html">interview</a>,    <a href="/tag/programming.html">programming</a>,    <a href="/tag/qt.html">Qt</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/filesystem.html">filesystem</a>,    <a href="/tag/xwindow.html">xwindow</a>,    <a href="/tag/ide.html">IDE</a>,    <a href="/tag/glang.html">glang</a>,    <a href="/tag/xdg.html">xdg</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/database.html">database</a>,    <a href="/tag/mysql.html">mysql</a>,    <a href="/tag/notes.html">notes</a>,    <a href="/tag/sysctl.html">sysctl</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a>,    <a href="/tag/book.html">book</a>,    <a href="/tag/c.html">C++</a>,    <a href="/tag/bootloader.html">bootloader</a></section>
     <section>
         <h1>Social</h1>
         <ul>
@@ -188,7 +196,7 @@
   </div>
   <footer role="contentinfo">
 <p>
-    Copyright &copy;  2013&ndash;2022  zhiliao &mdash;
+    Copyright &copy;  2013&ndash;2023  zhiliao &mdash;
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
 </p>  </footer>
 </body>

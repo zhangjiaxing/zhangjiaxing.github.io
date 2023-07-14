@@ -1,33 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - git</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/git.atom.xml" rel="self"></link><id>/</id><updated>2022-12-29T22:50:18+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>debian11-bullseye install cgit</title><link href="/posts/2022/12/29/install-cgit.html" rel="alternate"></link><published>2022-12-29T22:50:18+08:00</published><updated>2022-12-29T22:50:18+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-12-29:/posts/2022/12/29/install-cgit.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt update
-apt install cgit
-dpkg --status cgit
+<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - git</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/git.atom.xml" rel="self"></link><id>/</id><updated>2023-07-15T02:52:47+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>diff和patch命令以及git patch相关操作</title><link href="/posts/2023/07/15/diff-patch.html" rel="alternate"></link><published>2023-07-15T01:29:18+08:00</published><updated>2023-07-15T02:52:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2023-07-15:/posts/2023/07/15/diff-patch.html</id><summary type="html">&lt;h3&gt;diff命令&lt;/h3&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;-行数  指定要显示多少行的文本。此参数必须与-c或-u参数一并使用。
+-a 所有的文件都视为文本文件来逐行比较, 包 …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h3&gt;diff命令&lt;/h3&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;-行数  指定要显示多少行的文本。此参数必须与-c或-u参数一并使用。
+-a 所有的文件都视为文本文件来逐行比较, 包括二进制文件。
+-b或--ignore-space-change 　不检查空格字符的不同。
+-B或--ignore-blank-lines 　不检查空白行。
+-N或--new-file 将缺失的文件当作空白文件处理
+-p 　若比较的文件为C语言的程序码文件时，显示差异所在的函数名称。
+-q或--brief 　仅显示有无差异，不显示详细的信息。
+-r或--recursive 递归处理目录
+-s或--report-identical-files 　若没有发现任何差异，仍然显示信息。
+-u,-U或--unified=  unified模式输出。
+-w或--ignore-all-space 　忽略全部的空格字符。
+
+创建patch 使用diff -Naur old new &amp;gt; patchfile.patch
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;patch命令&lt;/h3&gt;
+&lt;p&gt;patch 是一个可以将 diff 生成的补丁应用到源文件，生成一个打过补丁版本的文件。&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;常用参数：
+
+-i 指定补丁文件
+-pNum 剥离文件名中的前num个目录成分.总的来说，从路径最开始删除路径分隔符（/）及其之前的所有字符，每次加1，直到剩下的部分存在于当前工作目录中，最后得到的就是p级别。
+-E 删除应用补丁后为空文件的文件
+-o 输出到一个文件而不是直接覆盖文件
+
+patch &amp;lt; patchfile 应用补丁
+patch -R &amp;lt; test.patch 撤销补丁
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;git diff -p &amp;gt; file.patch # git生成patch&lt;/h3&gt;
+&lt;h3&gt;git应用patch&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;git apply --stat file.patch 检查patch文件&lt;/li&gt;
+&lt;li&gt;git apply --check file.patch 检查是否能应用成功&lt;/li&gt;
+&lt;li&gt;git apply xxx.patch 打补丁&lt;/li&gt;
+&lt;/ol&gt;</content><category term="git"></category><category term="git"></category><category term="patch"></category><category term="text"></category></entry><entry><title>debian11-bullseye install cgit</title><link href="/posts/2022/12/29/install-cgit.html" rel="alternate"></link><published>2022-12-29T22:50:18+08:00</published><updated>2023-02-21T09:52:21+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-12-29:/posts/2022/12/29/install-cgit.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt&lt;span class="w"&gt; &lt;/span&gt;update
+apt&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;cgit
+dpkg&lt;span class="w"&gt; &lt;/span&gt;--status&lt;span class="w"&gt; &lt;/span&gt;cgit
 &lt;span class="c1"&gt;# install Recommends&lt;/span&gt;
-apt install apache2 python3-docutils python3-markdown python3-pygments
+apt&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;apache2&lt;span class="w"&gt; &lt;/span&gt;python3-docutils&lt;span class="w"&gt; &lt;/span&gt;python3-markdown&lt;span class="w"&gt; &lt;/span&gt;python3-pygments
 
-&lt;span class="nb"&gt;cd&lt;/span&gt; /etc/apache2/conf-enabled
-ln -s ../conf-available/cgit.conf git.conf
+&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;/etc/apache2/conf-enabled
+ln&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;../conf-available/cgit.conf&lt;span class="w"&gt; &lt;/span&gt;git.conf
 
-&lt;span class="nb"&gt;cd&lt;/span&gt; /etc/apache2/mods-enabled
-ln -s ../mods-available/cgi.load cgi.load
+&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;/etc/apache2/mods-enabled
+ln&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;../mods-available/cgi.load&lt;span class="w"&gt; &lt;/span&gt;cgi.load
 
-systemctl restart apache2
+systemctl&lt;span class="w"&gt; &lt;/span&gt;restart&lt;span class="w"&gt; &lt;/span&gt;apache2
 
 
 &lt;span class="c1"&gt;# cp -r /usr/share/git-core/templates ~/git-template&lt;/span&gt;
-&lt;span class="c1"&gt;# cd ~/git-template …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt update
-apt install cgit
-dpkg --status cgit
+&lt;span class="c1"&gt;# cd ~/git-template …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt&lt;span class="w"&gt; &lt;/span&gt;update
+apt&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;cgit
+dpkg&lt;span class="w"&gt; &lt;/span&gt;--status&lt;span class="w"&gt; &lt;/span&gt;cgit
 &lt;span class="c1"&gt;# install Recommends&lt;/span&gt;
-apt install apache2 python3-docutils python3-markdown python3-pygments
+apt&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;apache2&lt;span class="w"&gt; &lt;/span&gt;python3-docutils&lt;span class="w"&gt; &lt;/span&gt;python3-markdown&lt;span class="w"&gt; &lt;/span&gt;python3-pygments
 
-&lt;span class="nb"&gt;cd&lt;/span&gt; /etc/apache2/conf-enabled
-ln -s ../conf-available/cgit.conf git.conf
+&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;/etc/apache2/conf-enabled
+ln&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;../conf-available/cgit.conf&lt;span class="w"&gt; &lt;/span&gt;git.conf
 
-&lt;span class="nb"&gt;cd&lt;/span&gt; /etc/apache2/mods-enabled
-ln -s ../mods-available/cgi.load cgi.load
+&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;/etc/apache2/mods-enabled
+ln&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;../mods-available/cgi.load&lt;span class="w"&gt; &lt;/span&gt;cgi.load
 
-systemctl restart apache2
+systemctl&lt;span class="w"&gt; &lt;/span&gt;restart&lt;span class="w"&gt; &lt;/span&gt;apache2
 
 
 &lt;span class="c1"&gt;# cp -r /usr/share/git-core/templates ~/git-template&lt;/span&gt;
@@ -37,17 +74,17 @@ systemctl restart apache2
 &lt;span class="c1"&gt;# echo &amp;quot;default description&amp;quot; &amp;gt; description&lt;/span&gt;
 &lt;span class="c1"&gt;# git config --global init.templateDir /home/remoteuser/git-template&lt;/span&gt;
 
-mkdir /srv/git-repos/
-&lt;span class="nb"&gt;cd&lt;/span&gt; /srv/git-repos/
-git init --bare hello.git
-&lt;span class="nb"&gt;cd&lt;/span&gt; hello.git
-&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Example repository&amp;quot;&lt;/span&gt; &amp;gt; description
-git config --local gitweb.owner &lt;span class="s1"&gt;&amp;#39;Test User&amp;#39;&lt;/span&gt;
-git config --local gitweb.url &lt;span class="s1"&gt;&amp;#39;https://example.com/&amp;#39;&lt;/span&gt;
+mkdir&lt;span class="w"&gt; &lt;/span&gt;/srv/git-repos/
+&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;/srv/git-repos/
+git&lt;span class="w"&gt; &lt;/span&gt;init&lt;span class="w"&gt; &lt;/span&gt;--bare&lt;span class="w"&gt; &lt;/span&gt;hello.git
+&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;hello.git
+&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Example repository&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;description
+git&lt;span class="w"&gt; &lt;/span&gt;config&lt;span class="w"&gt; &lt;/span&gt;--local&lt;span class="w"&gt; &lt;/span&gt;gitweb.owner&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Test User&amp;#39;&lt;/span&gt;
+git&lt;span class="w"&gt; &lt;/span&gt;config&lt;span class="w"&gt; &lt;/span&gt;--local&lt;span class="w"&gt; &lt;/span&gt;gitweb.url&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;https://example.com/&amp;#39;&lt;/span&gt;
 
 
 
-cat &amp;gt;/etc/cgitrc &lt;span class="s"&gt;&amp;lt;&amp;lt;EOF&lt;/span&gt;
+cat&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;/etc/cgitrc&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;lt;&amp;lt;EOF&lt;/span&gt;
 &lt;span class="s"&gt;#&lt;/span&gt;
 &lt;span class="s"&gt;# cgit config&lt;/span&gt;
 &lt;span class="s"&gt;# see cgitrc(5) for details&lt;/span&gt;
@@ -126,6 +163,6 @@ cat &amp;gt;/etc/cgitrc &lt;span class="s"&gt;&amp;lt;&amp;lt;EOF&lt;/span&gt;
 
 
 &lt;span class="c1"&gt;# web访问http://ip/cgit&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="git"></category><category term="git"></category><category term="linux"></category></entry><entry><title>git如何永久删除文件</title><link href="/posts/2018/08/03/git-delete-file.html" rel="alternate"></link><published>2018-08-03T17:01:42+08:00</published><updated>2018-08-03T17:01:42+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2018-08-03:/posts/2018/08/03/git-delete-file.html</id><content type="html">&lt;p&gt;&lt;a href="/git/pdfs/git-delete-file.pdf"&gt;git如何永久删除文件.pdf&lt;/a&gt;&lt;/p&gt;</content><category term="git"></category><category term="git"></category></entry><entry><title>git hooks post-receive 中 git pull 失败</title><link href="/posts/2017/12/11/git-hooks-post-receive.html" rel="alternate"></link><published>2017-12-11T15:35:51+08:00</published><updated>2017-12-11T15:35:51+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-12-11:/posts/2017/12/11/git-hooks-post-receive.html</id><content type="html">&lt;p&gt;git 在运行时会用 $GIT_DIR 这个环境变量&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="git"></category><category term="git"></category><category term="linux"></category></entry><entry><title>git如何永久删除文件</title><link href="/posts/2018/08/03/git-delete-file.html" rel="alternate"></link><published>2018-08-03T17:01:42+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2018-08-03:/posts/2018/08/03/git-delete-file.html</id><content type="html">&lt;p&gt;&lt;a href="/git/pdfs/git-delete-file.pdf"&gt;git如何永久删除文件.pdf&lt;/a&gt;&lt;/p&gt;</content><category term="git"></category><category term="git"></category></entry><entry><title>git hooks post-receive 中 git pull 失败</title><link href="/posts/2017/12/11/git-hooks-post-receive.html" rel="alternate"></link><published>2017-12-11T15:35:51+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-12-11:/posts/2017/12/11/git-hooks-post-receive.html</id><content type="html">&lt;p&gt;git 在运行时会用 $GIT_DIR 这个环境变量&lt;/p&gt;
 &lt;p&gt;解决方法是在hooks脚本里面加上 &lt;code&gt;unset $(git rev-parse --local-env-vars)&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;或者使用 env -i git pull&lt;/p&gt;</content><category term="git"></category><category term="git"></category></entry></feed>

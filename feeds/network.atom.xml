@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - network</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/network.atom.xml" rel="self"></link><id>/</id><updated>2022-01-04T00:34:54+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>Linux DNS缓存</title><link href="/posts/2022/01/04/linux-dns.html" rel="alternate"></link><published>2022-01-04T00:34:54+08:00</published><updated>2022-01-04T00:34:54+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-01-04:/posts/2022/01/04/linux-dns.html</id><content type="html">&lt;ol&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - network</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/network.atom.xml" rel="self"></link><id>/</id><updated>2022-04-25T15:01:47+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>Linux DNS缓存</title><link href="/posts/2022/01/04/linux-dns.html" rel="alternate"></link><published>2022-01-04T00:34:54+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-01-04:/posts/2022/01/04/linux-dns.html</id><summary type="html">&lt;ol&gt;
+&lt;li&gt;nscd (为glibc提供缓存, 支持glibc 的 getaddrinfo(3), gethostbyname(3) 等相关API)&lt;/li&gt;
+&lt;li&gt;systemd-resolved (1. 通过D-Bus服务提供dns缓存 2. 为glibc提供缓存 3. 在本地回环网口 127.0.0.53 …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;ol&gt;
 &lt;li&gt;nscd (为glibc提供缓存, 支持glibc 的 getaddrinfo(3), gethostbyname(3) 等相关API)&lt;/li&gt;
 &lt;li&gt;systemd-resolved (1. 通过D-Bus服务提供dns缓存 2. 为glibc提供缓存 3. 在本地回环网口 127.0.0.53 上提供的本地DNS服务器[不推荐])&lt;/li&gt;
 &lt;li&gt;dnsmasq (localhost:53)&lt;/li&gt;
 &lt;li&gt;bind服务 named (localhost:53, 通过查看/etc/resolv.conf nameserver是不是本机地址确认)&lt;/li&gt;
-&lt;/ol&gt;</content><category term="network"></category><category term="linux"></category><category term="network"></category></entry><entry><title>iproute2</title><link href="/posts/2021/08/16/iproute2.html" rel="alternate"></link><published>2021-08-16T00:00:00+08:00</published><updated>2021-08-16T00:00:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2021-08-16:/posts/2021/08/16/iproute2.html</id><summary type="html">&lt;h2&gt;macvlan&lt;/h2&gt;
+&lt;/ol&gt;</content><category term="network"></category><category term="linux"></category><category term="network"></category></entry><entry><title>iproute2</title><link href="/posts/2021/08/16/iproute2.html" rel="alternate"></link><published>2021-08-16T00:00:00+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2021-08-16:/posts/2021/08/16/iproute2.html</id><summary type="html">&lt;h2&gt;macvlan&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;ip link add link eth0 name macvlan0 type macvlan mode bridge&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ip link delete macvlan0&lt;/code&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;实测必须在eth0 up的情况下， macvlan才工作&lt;/li&gt;
+&lt;li&gt;实测debian 10 (buster)，macvlan下 dhcpcd 8.1.2不能正常工作， isc-dhclient-4.4 …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;h2&gt;macvlan&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;ip link add link eth0 name macvlan0 type macvlan mode bridge&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;ip link delete macvlan0&lt;/code&gt;&lt;/p&gt;
 &lt;ol&gt;
@@ -12,97 +19,78 @@
 &lt;li&gt;实测debian 10 (buster)，macvlan下 dhcpcd 8.1.2不能正常工作， isc-dhclient-4.4.1 可以正常工作。 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;4种mode&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;根据&lt;/span&gt; &lt;span class="n"&gt;macvlan&lt;/span&gt; &lt;span class="err"&gt;子接口之间的通信模式，&lt;/span&gt;&lt;span class="n"&gt;macvlan&lt;/span&gt; &lt;span class="err"&gt;有四种网络模式：&lt;/span&gt;
-    &lt;span class="n"&gt;private&lt;/span&gt; &lt;span class="err"&gt;模式&lt;/span&gt;
-    &lt;span class="n"&gt;vepa&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;virtual&lt;/span&gt; &lt;span class="n"&gt;ethernet&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt; &lt;span class="n"&gt;aggregator&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="err"&gt;模式&lt;/span&gt;
-    &lt;span class="n"&gt;bridge&lt;/span&gt; &lt;span class="err"&gt;模式&lt;/span&gt;
-    &lt;span class="n"&gt;passthru&lt;/span&gt; &lt;span class="err"&gt;模式&lt;/span&gt;
-&lt;span class="err"&gt;默认使用的是 …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;macvlan&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;ip link add link eth0 name macvlan0 type macvlan mode bridge&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;ip link delete macvlan0&lt;/code&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;实测必须在eth0 up的情况下， macvlan才工作&lt;/li&gt;
-&lt;li&gt;实测debian 10 (buster)，macvlan下 dhcpcd 8.1.2不能正常工作， isc-dhclient-4.4.1 可以正常工作。 &lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;4种mode&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;根据&lt;/span&gt; &lt;span class="n"&gt;macvlan&lt;/span&gt; &lt;span class="err"&gt;子接口之间的通信模式，&lt;/span&gt;&lt;span class="n"&gt;macvlan&lt;/span&gt; &lt;span class="err"&gt;有四种网络模式：&lt;/span&gt;
-    &lt;span class="n"&gt;private&lt;/span&gt; &lt;span class="err"&gt;模式&lt;/span&gt;
-    &lt;span class="n"&gt;vepa&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;virtual&lt;/span&gt; &lt;span class="n"&gt;ethernet&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt; &lt;span class="n"&gt;aggregator&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="err"&gt;模式&lt;/span&gt;
-    &lt;span class="n"&gt;bridge&lt;/span&gt; &lt;span class="err"&gt;模式&lt;/span&gt;
-    &lt;span class="n"&gt;passthru&lt;/span&gt; &lt;span class="err"&gt;模式&lt;/span&gt;
-&lt;span class="err"&gt;默认使用的是&lt;/span&gt; &lt;span class="n"&gt;vepa&lt;/span&gt; &lt;span class="err"&gt;模式。&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;根据&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;macvlan&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;子接口之间的通信模式，&lt;/span&gt;&lt;span class="n"&gt;macvlan&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;有四种网络模式：&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;private&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;模式&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;vepa&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;virtual&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ethernet&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;port&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;aggregator&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;模式&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;bridge&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;模式&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;passthru&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;模式&lt;/span&gt;
+&lt;span class="err"&gt;默认使用的是&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;vepa&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;模式。&lt;/span&gt;
 
 &lt;span class="n"&gt;private&lt;/span&gt;
 &lt;span class="err"&gt;这种模式下，同一主接口下的子接口之间彼此隔离，不能通信。即使从外部的物理交换机导流，也会被无情地丢掉。&lt;/span&gt;
 
 &lt;span class="n"&gt;vepa&lt;/span&gt;
-&lt;span class="err"&gt;这种模式下，子接口之间的通信流量需要导到外部支持&lt;/span&gt; &lt;span class="mi"&gt;802&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="n"&gt;Qbg&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;VPEA&lt;/span&gt; &lt;span class="err"&gt;功能的交换机上（可以是物理的或者虚拟的），经由外部交换机转发，再绕回来。&lt;/span&gt;
+&lt;span class="err"&gt;这种模式下，子接口之间的通信流量需要导到外部支持&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;802.1&lt;/span&gt;&lt;span class="n"&gt;Qbg&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;VPEA&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;功能的交换机上（可以是物理的或者虚拟的），经由外部交换机转发，再绕回来。&lt;/span&gt;
 
-&lt;span class="err"&gt;注：&lt;/span&gt;&lt;span class="mi"&gt;802&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="n"&gt;Qbg&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;VPEA&lt;/span&gt; &lt;span class="err"&gt;功能简单说就是交换机要支持&lt;/span&gt; &lt;span class="err"&gt;发夹（&lt;/span&gt;&lt;span class="n"&gt;hairpin&lt;/span&gt;&lt;span class="err"&gt;）&lt;/span&gt; &lt;span class="err"&gt;功能，也就是数据包从一个接口上收上来之后还能再扔回去。&lt;/span&gt;
+&lt;span class="err"&gt;注：&lt;/span&gt;&lt;span class="mf"&gt;802.1&lt;/span&gt;&lt;span class="n"&gt;Qbg&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;VPEA&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;功能简单说就是交换机要支持&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;发夹（&lt;/span&gt;&lt;span class="n"&gt;hairpin&lt;/span&gt;&lt;span class="err"&gt;）&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;功能，也就是数据包从一个接口上收上来之后还能再扔回去。&lt;/span&gt;
 
 &lt;span class="n"&gt;bridge&lt;/span&gt;
-&lt;span class="err"&gt;这种模式下，模拟的是&lt;/span&gt; &lt;span class="n"&gt;Linux&lt;/span&gt; &lt;span class="n"&gt;bridge&lt;/span&gt; &lt;span class="err"&gt;的功能，但比&lt;/span&gt; &lt;span class="n"&gt;bridge&lt;/span&gt; &lt;span class="err"&gt;要好的一点是每个接口的&lt;/span&gt; &lt;span class="n"&gt;MAC&lt;/span&gt; &lt;span class="err"&gt;地址是已知的，不用学习。所以，这种模式下，子接口之间就是直接可以通信的。&lt;/span&gt;
+&lt;span class="err"&gt;这种模式下，模拟的是&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Linux&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bridge&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;的功能，但比&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bridge&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;要好的一点是每个接口的&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;MAC&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;地址是已知的，不用学习。所以，这种模式下，子接口之间就是直接可以通信的。&lt;/span&gt;
 
 &lt;span class="n"&gt;passthru&lt;/span&gt;
-&lt;span class="err"&gt;这种模式，只允许单个子接口连接主接口，且必须设置成混杂模式，一般用于子接口桥接和创建&lt;/span&gt; &lt;span class="n"&gt;VLAN&lt;/span&gt; &lt;span class="err"&gt;子接口的场景。&lt;/span&gt;
+&lt;span class="err"&gt;这种模式，只允许单个子接口连接主接口，且必须设置成混杂模式，一般用于子接口桥接和创建&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;VLAN&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;子接口的场景。&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h2&gt;network namespace&lt;/h2&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ip netns list  &lt;span class="c1"&gt;#  显示所有network ns&lt;/span&gt;
-ip netns add NAME  &lt;span class="c1"&gt;# 添加network ns&lt;/span&gt;
-ip netns delete NAME  &lt;span class="c1"&gt;# 删除network ns&lt;/span&gt;
-ip link &lt;span class="nb"&gt;set&lt;/span&gt; eth0 netns &lt;span class="o"&gt;{&lt;/span&gt; PID &lt;span class="p"&gt;|&lt;/span&gt; NAME &lt;span class="o"&gt;}&lt;/span&gt;  &lt;span class="c1"&gt;# 将eth0添加进制定的ns&lt;/span&gt;
-ip netns &lt;span class="nb"&gt;exec&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;NAME&lt;span class="o"&gt;]&lt;/span&gt; cmd ...  &lt;span class="c1"&gt;#在ns中执行命令&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ip&lt;span class="w"&gt; &lt;/span&gt;netns&lt;span class="w"&gt; &lt;/span&gt;list&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;#  显示所有network ns&lt;/span&gt;
+ip&lt;span class="w"&gt; &lt;/span&gt;netns&lt;span class="w"&gt; &lt;/span&gt;add&lt;span class="w"&gt; &lt;/span&gt;NAME&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;# 添加network ns&lt;/span&gt;
+ip&lt;span class="w"&gt; &lt;/span&gt;netns&lt;span class="w"&gt; &lt;/span&gt;delete&lt;span class="w"&gt; &lt;/span&gt;NAME&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;# 删除network ns&lt;/span&gt;
+ip&lt;span class="w"&gt; &lt;/span&gt;link&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;eth0&lt;span class="w"&gt; &lt;/span&gt;netns&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;PID&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;NAME&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;}&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;# 将eth0添加进制定的ns&lt;/span&gt;
+ip&lt;span class="w"&gt; &lt;/span&gt;netns&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;exec&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;NAME&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;cmd&lt;span class="w"&gt; &lt;/span&gt;...&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;#在ns中执行命令&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 例, 将macvlan0 添加进userns0, 并且查看ip：&lt;/span&gt;
-ip ns add userns0
-ip link &lt;span class="nb"&gt;set&lt;/span&gt; macvlan0 netns userns0
-ip netns &lt;span class="nb"&gt;exec&lt;/span&gt; ip addr show macvlan0
-ip link &lt;span class="nb"&gt;set&lt;/span&gt; macvlan0 netns &lt;span class="m"&gt;1&lt;/span&gt;  &lt;span class="c1"&gt;# 移回根命名空间&lt;/span&gt;
+ip&lt;span class="w"&gt; &lt;/span&gt;ns&lt;span class="w"&gt; &lt;/span&gt;add&lt;span class="w"&gt; &lt;/span&gt;userns0
+ip&lt;span class="w"&gt; &lt;/span&gt;link&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;macvlan0&lt;span class="w"&gt; &lt;/span&gt;netns&lt;span class="w"&gt; &lt;/span&gt;userns0
+ip&lt;span class="w"&gt; &lt;/span&gt;netns&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;exec&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;ip&lt;span class="w"&gt; &lt;/span&gt;addr&lt;span class="w"&gt; &lt;/span&gt;show&lt;span class="w"&gt; &lt;/span&gt;macvlan0
+ip&lt;span class="w"&gt; &lt;/span&gt;link&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;macvlan0&lt;span class="w"&gt; &lt;/span&gt;netns&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;# 移回根命名空间&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h2&gt;bridge&lt;/h2&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ip link add name br0 &lt;span class="nb"&gt;type&lt;/span&gt; bridge  &lt;span class="c1"&gt;# 新建网桥&lt;/span&gt;
-ip link &lt;span class="nb"&gt;set&lt;/span&gt; dev br0 up
-ip link &lt;span class="nb"&gt;set&lt;/span&gt; dev eth0 master br0
-ip link &lt;span class="nb"&gt;set&lt;/span&gt; dev eth1 master br0  &lt;span class="c1"&gt;# 添加至网桥&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ip&lt;span class="w"&gt; &lt;/span&gt;link&lt;span class="w"&gt; &lt;/span&gt;add&lt;span class="w"&gt; &lt;/span&gt;name&lt;span class="w"&gt; &lt;/span&gt;br0&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;bridge&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;# 新建网桥&lt;/span&gt;
+ip&lt;span class="w"&gt; &lt;/span&gt;link&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;dev&lt;span class="w"&gt; &lt;/span&gt;br0&lt;span class="w"&gt; &lt;/span&gt;up
+ip&lt;span class="w"&gt; &lt;/span&gt;link&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;dev&lt;span class="w"&gt; &lt;/span&gt;eth0&lt;span class="w"&gt; &lt;/span&gt;master&lt;span class="w"&gt; &lt;/span&gt;br0
+ip&lt;span class="w"&gt; &lt;/span&gt;link&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;dev&lt;span class="w"&gt; &lt;/span&gt;eth1&lt;span class="w"&gt; &lt;/span&gt;master&lt;span class="w"&gt; &lt;/span&gt;br0&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;# 添加至网桥&lt;/span&gt;
 
-bridge link  &lt;span class="c1"&gt;# 查看网桥中设备&lt;/span&gt;
+bridge&lt;span class="w"&gt; &lt;/span&gt;link&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;# 查看网桥中设备&lt;/span&gt;
 
-ip link &lt;span class="nb"&gt;set&lt;/span&gt; dev eth0 nomaster  &lt;span class="c1"&gt;# 从网桥中删除&lt;/span&gt;
-ip link del br0  &lt;span class="c1"&gt;# 删除网桥&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="network"></category><category term="linux"></category><category term="network"></category></entry><entry><title>linux平台下的抓包方案</title><link href="/posts/2021/08/01/capture.html" rel="alternate"></link><published>2021-08-01T14:47:08+08:00</published><updated>2021-08-01T14:47:08+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2021-08-01:/posts/2021/08/01/capture.html</id><content type="html">&lt;h4&gt;linux平台下的抓包方案&lt;/h4&gt;
+ip&lt;span class="w"&gt; &lt;/span&gt;link&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;dev&lt;span class="w"&gt; &lt;/span&gt;eth0&lt;span class="w"&gt; &lt;/span&gt;nomaster&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;# 从网桥中删除&lt;/span&gt;
+ip&lt;span class="w"&gt; &lt;/span&gt;link&lt;span class="w"&gt; &lt;/span&gt;del&lt;span class="w"&gt; &lt;/span&gt;br0&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;# 删除网桥&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="network"></category><category term="linux"></category><category term="network"></category></entry><entry><title>linux平台下的抓包方案</title><link href="/posts/2021/08/01/capture.html" rel="alternate"></link><published>2021-08-01T14:47:08+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2021-08-01:/posts/2021/08/01/capture.html</id><content type="html">&lt;h4&gt;linux平台下的抓包方案&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;libpcap &lt;code&gt;wireshark tcpdump均基于此。&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;PF_RING &lt;code&gt;性能更好。 支持PF_RING ZC模式。&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;DPDK    &lt;code&gt;性能最好，对硬件有要求。&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="network"></category><category term="linux"></category><category term="network"></category></entry><entry><title>linux 设置网络接口发送队列长度</title><link href="/posts/2021/07/31/txqueuelen.html" rel="alternate"></link><published>2021-07-31T01:54:28+08:00</published><updated>2021-07-31T01:54:28+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2021-07-31:/posts/2021/07/31/txqueuelen.html</id><summary type="html">&lt;h4&gt;发送队列长度&lt;/h4&gt;
+&lt;/ul&gt;</content><category term="network"></category><category term="linux"></category><category term="network"></category></entry><entry><title>linux 设置网络接口发送队列长度</title><link href="/posts/2021/07/31/txqueuelen.html" rel="alternate"></link><published>2021-07-31T01:54:28+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2021-07-31:/posts/2021/07/31/txqueuelen.html</id><summary type="html">&lt;h4&gt;发送队列长度&lt;/h4&gt;
+&lt;p&gt;UDP发送频率过高可能会导致丢包，设置发送队列长度可以解决这类问题。
+&lt;code&gt;https://www.cnblogs.com/liaokang/p/6003334.html&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;查询发送队列 …&lt;/p&gt;</summary><content type="html">&lt;h4&gt;发送队列长度&lt;/h4&gt;
 &lt;p&gt;UDP发送频率过高可能会导致丢包，设置发送队列长度可以解决这类问题。
 &lt;code&gt;https://www.cnblogs.com/liaokang/p/6003334.html&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;查询发送队列长度
 &lt;code&gt;ip link show eth0 查看qlen后面的数字&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;设置发送队列长度&lt;/p&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 修改udev配置文件 &amp;quot;/etc/udev/rules.d/70-persistent-net.rules&amp;quot;:&lt;/span&gt;
-&lt;span class="nv"&gt;SUBSYSTEM&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;net&amp;quot;&lt;/span&gt;, &lt;span class="nv"&gt;ACTION&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;add&amp;quot;&lt;/span&gt;, &lt;span class="nv"&gt;DRIVERS&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;?*&amp;quot;&lt;/span&gt;, ATTR&lt;span class="o"&gt;{&lt;/span&gt;address&lt;span class="o"&gt;}==&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;00:0C:29:35:79:97&amp;quot;&lt;/span&gt;, &lt;span class="nv"&gt;KERNEL&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;eth*&amp;quot;&lt;/span&gt;, &lt;span class="nv"&gt;NAME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;eth0&amp;quot;&lt;/span&gt;, ATTR&lt;span class="o"&gt;{&lt;/span&gt;tx_queue_len&lt;span class="o"&gt;}=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;10000&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;SUBSYSTEM&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;net&amp;quot;&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ACTION&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;add&amp;quot;&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;DRIVERS&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;?*&amp;quot;&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;ATTR&lt;span class="o"&gt;{&lt;/span&gt;address&lt;span class="o"&gt;}==&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;00:0C:29:35:79:97&amp;quot;&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;KERNEL&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;eth*&amp;quot;&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;NAME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;eth0&amp;quot;&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;ATTR&lt;span class="o"&gt;{&lt;/span&gt;tx_queue_len&lt;span class="o"&gt;}=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;10000&amp;quot;&lt;/span&gt;
 &lt;span class="c1"&gt;# 或者&lt;/span&gt;
-ifconfig eth0 txqueuelen &lt;span class="m"&gt;10000 …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h4&gt;发送队列长度&lt;/h4&gt;
-&lt;p&gt;UDP发送频率过高可能会导致丢包，设置发送队列长度可以解决这类问题。
-&lt;code&gt;https://www.cnblogs.com/liaokang/p/6003334.html&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;查询发送队列长度
-&lt;code&gt;ip link show eth0 查看qlen后面的数字&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;设置发送队列长度&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 修改udev配置文件 &amp;quot;/etc/udev/rules.d/70-persistent-net.rules&amp;quot;:&lt;/span&gt;
-&lt;span class="nv"&gt;SUBSYSTEM&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;net&amp;quot;&lt;/span&gt;, &lt;span class="nv"&gt;ACTION&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;add&amp;quot;&lt;/span&gt;, &lt;span class="nv"&gt;DRIVERS&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;?*&amp;quot;&lt;/span&gt;, ATTR&lt;span class="o"&gt;{&lt;/span&gt;address&lt;span class="o"&gt;}==&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;00:0C:29:35:79:97&amp;quot;&lt;/span&gt;, &lt;span class="nv"&gt;KERNEL&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;eth*&amp;quot;&lt;/span&gt;, &lt;span class="nv"&gt;NAME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;eth0&amp;quot;&lt;/span&gt;, ATTR&lt;span class="o"&gt;{&lt;/span&gt;tx_queue_len&lt;span class="o"&gt;}=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;10000&amp;quot;&lt;/span&gt;
-&lt;span class="c1"&gt;# 或者&lt;/span&gt;
-ifconfig eth0 txqueuelen &lt;span class="m"&gt;10000&lt;/span&gt;
-ip link &lt;span class="nb"&gt;set&lt;/span&gt; dev eth0 txqueuelen &lt;span class="m"&gt;10000&lt;/span&gt;
+ifconfig&lt;span class="w"&gt; &lt;/span&gt;eth0&lt;span class="w"&gt; &lt;/span&gt;txqueuelen&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;10000&lt;/span&gt;
+ip&lt;span class="w"&gt; &lt;/span&gt;link&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;dev&lt;span class="w"&gt; &lt;/span&gt;eth0&lt;span class="w"&gt; &lt;/span&gt;txqueuelen&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;10000&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;相关API&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;man 7 netdevice&lt;/span&gt;
-&lt;span class="err"&gt;IOCTLS&lt;/span&gt;
-&lt;span class="err"&gt;SIOCGIFTXQLEN SIOCSIFTXQLEN&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;man 7 netdevice
+IOCTLS
+SIOCGIFTXQLEN SIOCSIFTXQLEN
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;hr&gt;
@@ -111,23 +99,26 @@ ip link &lt;span class="nb"&gt;set&lt;/span&gt; dev eth0 txqueuelen &lt;span cla
 &lt;p&gt;查询网卡多队列支持情况
 &lt;code&gt;ethtool -l eth0 | grep combined&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;设置网卡队列数
-&lt;code&gt;ethtool -L eth0 combined 2&lt;/code&gt;&lt;/p&gt;</content><category term="network"></category><category term="linux"></category><category term="network"></category></entry><entry><title>通过nc命令查看服务器端口和客户端能不能正常连接</title><link href="/posts/2020/01/08/linux-nc.html" rel="alternate"></link><published>2020-01-08T09:57:04+08:00</published><updated>2020-01-08T09:57:04+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-01-08:/posts/2020/01/08/linux-nc.html</id><content type="html">&lt;p&gt;tcp&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;服务器&lt;/span&gt;
-&lt;span class="n"&gt;nc&lt;/span&gt; &lt;span class="n"&gt;bind地址&lt;/span&gt; &lt;span class="err"&gt;监听端口&lt;/span&gt;
+&lt;code&gt;ethtool -L eth0 combined 2&lt;/code&gt;&lt;/p&gt;</content><category term="network"></category><category term="linux"></category><category term="network"></category></entry><entry><title>通过nc命令查看服务器端口和客户端能不能正常连接</title><link href="/posts/2020/01/08/linux-nc.html" rel="alternate"></link><published>2020-01-08T09:57:04+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2020-01-08:/posts/2020/01/08/linux-nc.html</id><content type="html">&lt;p&gt;tcp&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;服务器
+nc bind地址 监听端口
 
-&lt;span class="err"&gt;客户端&lt;/span&gt;
-&lt;span class="n"&gt;nc&lt;/span&gt; &lt;span class="err"&gt;服务器地址&lt;/span&gt; &lt;span class="err"&gt;服务器端口&lt;/span&gt;
+客户端
+nc 服务器地址 服务器端口
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;udp &lt;code&gt;nc&lt;/code&gt; 加上 &lt;code&gt;-u&lt;/code&gt; 参数即可&lt;/p&gt;</content><category term="network"></category><category term="linux"></category><category term="network"></category></entry><entry><title>dnsmasq DHCP功能和DNS缓存</title><link href="/posts/2019/07/12/dnsmasq.html" rel="alternate"></link><published>2019-07-12T13:59:41+08:00</published><updated>2019-07-12T13:59:41+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2019-07-12:/posts/2019/07/12/dnsmasq.html</id><summary type="html">&lt;p&gt;NetworkManager 热点默认配置:
-dnsmasq --conf-file=/dev/null --no-hosts --keep-in-foreground --bind-interfaces --except-interface=lo --clear-on-reload --strict-order --listen-address=10.42.0.1 --dhcp-range=10.42.0.10,10.42.0.254,60m --dhcp-lease-max=50 --dhcp-leasefile=/var/lib/NetworkManager/dnsmasq-wlp8s0.leases --pid-file=/var/run/nm-dnsmasq-wlp8s0.pid --conf-dir=/etc/NetworkManager/dnsmasq-shared.d&lt;/p&gt;
-&lt;p&gt;dnsmasq HDCP+DNS缓存:
-dnsmasq …&lt;/p&gt;</summary><content type="html">&lt;p&gt;NetworkManager 热点默认配置:
+&lt;p&gt;udp &lt;code&gt;nc&lt;/code&gt; 加上 &lt;code&gt;-u&lt;/code&gt; 参数即可&lt;/p&gt;</content><category term="network"></category><category term="linux"></category><category term="network"></category></entry><entry><title>dnsmasq DHCP功能和DNS缓存</title><link href="/posts/2019/07/12/dnsmasq.html" rel="alternate"></link><published>2019-07-12T13:59:41+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2019-07-12:/posts/2019/07/12/dnsmasq.html</id><summary type="html">&lt;p&gt;NetworkManager 热点默认配置:
+dnsmasq --conf-file=/dev/null --no-hosts --keep-in-foreground --bind-interfaces --except-interface=lo --clear-on-reload --strict-order --listen-address=10.42.0.1 --dhcp-range=10.42.0.10,10.42.0.254,60m --dhcp-lease-max=50 --dhcp-leasefile=/var/lib/NetworkManager/dnsmasq-wlp8s0.leases --pid-file=/var/run/nm-dnsmasq-wlp8s0.pid --conf-dir=/etc/NetworkManager/dnsmasq-shared …&lt;/p&gt;</summary><content type="html">&lt;p&gt;NetworkManager 热点默认配置:
 dnsmasq --conf-file=/dev/null --no-hosts --keep-in-foreground --bind-interfaces --except-interface=lo --clear-on-reload --strict-order --listen-address=10.42.0.1 --dhcp-range=10.42.0.10,10.42.0.254,60m --dhcp-lease-max=50 --dhcp-leasefile=/var/lib/NetworkManager/dnsmasq-wlp8s0.leases --pid-file=/var/run/nm-dnsmasq-wlp8s0.pid --conf-dir=/etc/NetworkManager/dnsmasq-shared.d&lt;/p&gt;
 &lt;p&gt;dnsmasq HDCP+DNS缓存:
 dnsmasq --conf-file=/dev/null --keep-in-foreground --bind-interfaces --except-interface=lo --clear-on-reload --strict-order --listen-address=127.0.0.1 --dhcp-range=10.42.0.10,10.42.0.254,60m&lt;/p&gt;
 &lt;p&gt;只做DNS缓存:
-dnsmasq --conf-file=/dev/null --keep-in-foreground --bind-interfaces --except-interface=lo --clear-on-reload  --listen-address=127.0.0.1 --cache-size=1000&lt;/p&gt;</content><category term="network"></category><category term="linux"></category><category term="network"></category></entry><entry><title>iperf3测试带宽</title><link href="/posts/2017/06/07/iperf3.html" rel="alternate"></link><published>2017-06-07T00:00:00+08:00</published><updated>2017-06-07T00:00:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-07:/posts/2017/06/07/iperf3.html</id><content type="html">&lt;h1&gt;TCP&lt;/h1&gt;
+dnsmasq --conf-file=/dev/null --keep-in-foreground --bind-interfaces --except-interface=lo --clear-on-reload  --listen-address=127.0.0.1 --cache-size=1000&lt;/p&gt;</content><category term="network"></category><category term="linux"></category><category term="network"></category></entry><entry><title>iperf3测试带宽</title><link href="/posts/2017/06/07/iperf3.html" rel="alternate"></link><published>2017-06-07T00:00:00+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-07:/posts/2017/06/07/iperf3.html</id><summary type="html">&lt;h1&gt;TCP&lt;/h1&gt;
+&lt;p&gt;服务端&lt;code&gt;iperf3 -s -p 12345&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;客户端测试上传到服务器&lt;code&gt;iperf3 -c server_host -p 12345&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;客户端测试从服务器下载&lt;code&gt;iperf3 -c server_host -p 12345 -R&lt;/code&gt;&lt;/p&gt;
+&lt;h1&gt;UDP&lt;/h1&gt;
+&lt;p&gt;客户端添加 -u …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;TCP&lt;/h1&gt;
 &lt;p&gt;服务端&lt;code&gt;iperf3 -s -p 12345&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;客户端测试上传到服务器&lt;code&gt;iperf3 -c server_host -p 12345&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;客户端测试从服务器下载&lt;code&gt;iperf3 -c server_host -p 12345 -R&lt;/code&gt;&lt;/p&gt;

@@ -66,39 +66,39 @@
 
     <div class="entry-content"><h2>SysRq HELP</h2>
 <h5>开启这个功能</h5>
-<div class="highlight-custom"><pre><span></span><code><span class="nb">echo</span> <span class="m">1</span> &gt; /proc/sys/kernel/sysrq  <span class="c1"># 或者在 /etc/sysctl.conf 中设置 kernel.sysrq=1</span>
+<div class="highlight-custom"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>&gt;<span class="w"> </span>/proc/sys/kernel/sysrq<span class="w">  </span><span class="c1"># 或者在 /etc/sysctl.conf 中设置 kernel.sysrq=1</span>
 </code></pre></div>
 
 <h5>用法1:</h5>
-<div class="highlight-custom"><pre><span></span><code><span class="nb">echo</span> b &gt; /proc/sysrq-trigger
+<div class="highlight-custom"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span>b<span class="w"> </span>&gt;<span class="w"> </span>/proc/sysrq-trigger
 </code></pre></div>
 
 <h5>用法2:</h5>
-<div class="highlight-custom"><pre><span></span><code>Alt + SysRq + b  <span class="c1"># SysRq 键在x86上一般为 [print screen] 键</span>
+<div class="highlight-custom"><pre><span></span><code>Alt<span class="w"> </span>+<span class="w"> </span>SysRq<span class="w"> </span>+<span class="w"> </span>b<span class="w">  </span><span class="c1"># SysRq 键在x86上一般为 [print screen] 键</span>
 </code></pre></div>
 
 <h5>命令介绍</h5>
-<div class="highlight-custom"><pre><span></span><code><span class="err">loglevel(0-9)</span>
-<span class="err">reboot(b)</span>
-<span class="err">crash(c)</span>
-<span class="err">terminate-all-tasks(e)</span>
-<span class="err">memory-full-oom-kill(f)</span>
-<span class="err">kill-all-tasks(i)</span>
-<span class="err">thaw-filesystems(j)</span>
-<span class="err">sak(k)</span>
-<span class="err">show-backtrace-all-active-cpus(l)</span>
-<span class="err">show-memory-usage(m)</span>
-<span class="err">nice-all-RT-tasks(n)</span>
-<span class="err">poweroff(o)</span>
-<span class="err">show-registers(p)</span>
-<span class="err">show-all-timers(q)</span>
-<span class="err">unraw(r)</span>
-<span class="err">sync(s)</span>
-<span class="err">show-task-states(t)</span>
-<span class="err">unmount(u)</span>
-<span class="err">force-fb(V)</span>
-<span class="err">show-blocked-tasks(w)</span>
-<span class="err">dump-ftrace-buffer(z)</span>
+<div class="highlight-custom"><pre><span></span><code><span class="n">loglevel</span><span class="p">(</span><span class="mh">0</span><span class="o">-</span><span class="mh">9</span><span class="p">)</span>
+<span class="n">reboot</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="n">crash</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="n">terminate</span><span class="o">-</span><span class="n">all</span><span class="o">-</span><span class="n">tasks</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<span class="n">memory</span><span class="o">-</span><span class="n">full</span><span class="o">-</span><span class="n">oom</span><span class="o">-</span><span class="n">kill</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">kill</span><span class="o">-</span><span class="n">all</span><span class="o">-</span><span class="n">tasks</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="n">thaw</span><span class="o">-</span><span class="n">filesystems</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+<span class="n">sak</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="n">show</span><span class="o">-</span><span class="n">backtrace</span><span class="o">-</span><span class="n">all</span><span class="o">-</span><span class="n">active</span><span class="o">-</span><span class="n">cpus</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="n">show</span><span class="o">-</span><span class="n">memory</span><span class="o">-</span><span class="n">usage</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="n">nice</span><span class="o">-</span><span class="n">all</span><span class="o">-</span><span class="n">RT</span><span class="o">-</span><span class="n">tasks</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">poweroff</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+<span class="n">show</span><span class="o">-</span><span class="n">registers</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="n">show</span><span class="o">-</span><span class="n">all</span><span class="o">-</span><span class="n">timers</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+<span class="n">unraw</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="n">sync</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="n">show</span><span class="o">-</span><span class="k">task</span><span class="o">-</span><span class="n">states</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">unmount</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+<span class="k">force</span><span class="o">-</span><span class="n">fb</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
+<span class="n">show</span><span class="o">-</span><span class="n">blocked</span><span class="o">-</span><span class="n">tasks</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+<span class="n">dump</span><span class="o">-</span><span class="n">ftrace</span><span class="o">-</span><span class="n">buffer</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 </code></pre></div></div>
     <footer>
 <p class="meta">
@@ -123,6 +123,9 @@
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     <li class="post">
+        <a href="/posts/2023/07/15/diff-patch.html">diff和patch命令以及git patch相关操作</a>
+    </li>
+    <li class="post">
         <a href="/posts/2022/12/29/install-cgit.html">debian11-bullseye install cgit</a>
     </li>
     <li class="post">
@@ -133,9 +136,6 @@
     </li>
     <li class="post">
         <a href="/posts/2022/09/03/alternativeto.html">代替品查询网站</a>
-    </li>
-    <li class="post">
-        <a href="/posts/2022/09/03/Flatpak-vs-Snap.html">Flatpak vs Snap</a>
     </li>
   </ul>
 </section><section>
@@ -149,7 +149,7 @@
       <li><a href="/category/editor.html">editor (4)</a></li>
       <li><a href="/category/filesystem.html">filesystem (1)</a></li>
       <li><a href="/category/firefox.html">firefox (1)</a></li>
-      <li><a href="/category/git.html">git (3)</a></li>
+      <li><a href="/category/git.html">git (4)</a></li>
       <li><a href="/category/golang.html">golang (1)</a></li>
       <li><a href="/category/gu-piao.html">股票 (1)</a></li>
       <li><a href="/category/ide.html">IDE (1)</a></li>
@@ -170,7 +170,7 @@
 </section>
 <section>
   <h1>Tags</h1>
-    <a href="/tag/git.html">git</a>,    <a href="/tag/linux.html">linux</a>,    <a href="/tag/selenium.html">selenium</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/docker.html">docker</a>,    <a href="/tag/flatpak.html">flatpak</a>,    <a href="/tag/interview.html">interview</a>,    <a href="/tag/programming.html">programming</a>,    <a href="/tag/qt.html">Qt</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/filesystem.html">filesystem</a>,    <a href="/tag/xwindow.html">xwindow</a>,    <a href="/tag/ide.html">IDE</a>,    <a href="/tag/glang.html">glang</a>,    <a href="/tag/xdg.html">xdg</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/database.html">database</a>,    <a href="/tag/mysql.html">mysql</a>,    <a href="/tag/notes.html">notes</a>,    <a href="/tag/sysctl.html">sysctl</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a>,    <a href="/tag/book.html">book</a>,    <a href="/tag/c.html">C++</a>,    <a href="/tag/bootloader.html">bootloader</a></section>
+    <a href="/tag/git.html">git</a>,    <a href="/tag/patch.html">patch</a>,    <a href="/tag/text.html">text</a>,    <a href="/tag/linux.html">linux</a>,    <a href="/tag/selenium.html">selenium</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/docker.html">docker</a>,    <a href="/tag/flatpak.html">flatpak</a>,    <a href="/tag/interview.html">interview</a>,    <a href="/tag/programming.html">programming</a>,    <a href="/tag/qt.html">Qt</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/filesystem.html">filesystem</a>,    <a href="/tag/xwindow.html">xwindow</a>,    <a href="/tag/ide.html">IDE</a>,    <a href="/tag/glang.html">glang</a>,    <a href="/tag/xdg.html">xdg</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/database.html">database</a>,    <a href="/tag/mysql.html">mysql</a>,    <a href="/tag/notes.html">notes</a>,    <a href="/tag/sysctl.html">sysctl</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a>,    <a href="/tag/book.html">book</a>,    <a href="/tag/c.html">C++</a>,    <a href="/tag/bootloader.html">bootloader</a></section>
     <section>
         <h1>Social</h1>
         <ul>
@@ -192,7 +192,7 @@
   </div>
   <footer role="contentinfo">
 <p>
-    Copyright &copy;  2013&ndash;2022  zhiliao &mdash;
+    Copyright &copy;  2013&ndash;2023  zhiliao &mdash;
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
 </p>  </footer>
 </body>

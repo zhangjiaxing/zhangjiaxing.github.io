@@ -1,20 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - blog</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/blog.atom.xml" rel="self"></link><id>/</id><updated>2017-06-03T06:56:00+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>pelican博客搭建总结</title><link href="/posts/2017/06/03/pelican.html" rel="alternate"></link><published>2017-06-03T06:56:00+08:00</published><updated>2017-06-03T06:56:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-03:/posts/2017/06/03/pelican.html</id><summary type="html">&lt;h4&gt;pelican介绍&lt;/h4&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - blog</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/blog.atom.xml" rel="self"></link><id>/</id><updated>2023-02-21T09:52:21+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>pelican博客搭建总结</title><link href="/posts/2017/06/03/pelican.html" rel="alternate"></link><published>2017-06-03T06:56:00+08:00</published><updated>2023-02-21T09:52:21+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-03:/posts/2017/06/03/pelican.html</id><summary type="html">&lt;h4&gt;pelican介绍&lt;/h4&gt;
 &lt;p&gt;&lt;a href="https://getpelican.com/" title="pelican"&gt;Pelican&lt;/a&gt; 是用Python实现的一个静态网站生成器. 支持以下功能：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;使用 Markdown 或 reStructuredText 或 AsciiDoc 来编写内容&lt;/li&gt;
 &lt;li&gt;生成静态网页&lt;/li&gt;
-&lt;li&gt;支持许多主题与插件&lt;/li&gt;
-&lt;li&gt;语法高亮&lt;/li&gt;
-&lt;li&gt;支持从很多地方导入&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4&gt;使用方法&lt;/h4&gt;
-&lt;p&gt;参考 https://getpelican.com/ 和 http://docs.getpelican.com/en/stable/&lt;/p&gt;
-&lt;h4&gt;windows遇到的一些坑&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;windows 平台下 &lt;code&gt;ValueError: embedded null byte&lt;/code&gt; 的报错
-解决方法：
-在 &lt;code&gt;.\lib\site-packages\pelican\utils.py&lt;/code&gt; 文件中， 找到函数 &lt;code&gt;strftime&lt;/code&gt; ，在第一行添加 &lt;code&gt;locale.setlocale(locale.LC_ALL …&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h4&gt;pelican介绍&lt;/h4&gt;
+&lt;li&gt;支持许多主题与 …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h4&gt;pelican介绍&lt;/h4&gt;
 &lt;p&gt;&lt;a href="https://getpelican.com/" title="pelican"&gt;Pelican&lt;/a&gt; 是用Python实现的一个静态网站生成器. 支持以下功能：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;使用 Markdown 或 reStructuredText 或 AsciiDoc 来编写内容&lt;/li&gt;

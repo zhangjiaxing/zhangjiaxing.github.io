@@ -65,30 +65,30 @@
 </header>
 
     <div class="entry-content"><p>更新openSUSE 15.4, 发现 qtcreator 挂了。</p>
-<div class="highlight-custom"><pre><span></span><code>~&gt; qtcreator 
-qtcreator: error <span class="k">while</span> loading shared libraries: libExtensionSystem.so.6: cannot open shared object file: No such file or directory
+<div class="highlight-custom"><pre><span></span><code>~&gt;<span class="w"> </span>qtcreator<span class="w"> </span>
+qtcreator:<span class="w"> </span>error<span class="w"> </span><span class="k">while</span><span class="w"> </span>loading<span class="w"> </span>shared<span class="w"> </span>libraries:<span class="w"> </span>libExtensionSystem.so.6:<span class="w"> </span>cannot<span class="w"> </span>open<span class="w"> </span>shared<span class="w"> </span>object<span class="w"> </span>file:<span class="w"> </span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory
 </code></pre></div>
 
 <p>最终还是在系统里找到了这个文件</p>
-<div class="highlight-custom"><pre><span></span><code><span class="o">~&gt;</span> <span class="n">zypper</span> <span class="k">search</span> <span class="o">-</span><span class="n">f</span> <span class="n">libExtensionSystem</span><span class="p">.</span><span class="n">so</span><span class="p">.</span><span class="mi">6</span>
-<span class="err">显示文件在</span><span class="n">qt5</span><span class="o">-</span><span class="n">creator</span><span class="err">（已安装）包中。</span>
+<div class="highlight-custom"><pre><span></span><code>~&gt; zypper search -f libExtensionSystem.so.6
+显示文件在qt5-creator（已安装）包中。
 
-<span class="o">~&gt;</span> <span class="n">rpm</span> <span class="o">-</span><span class="n">ql</span> <span class="n">qt5</span><span class="o">-</span><span class="n">creator</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">libExtensionSystem</span><span class="p">.</span><span class="n">so</span><span class="p">.</span><span class="mi">6</span>
-<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib64</span><span class="o">/</span><span class="n">qtcreator</span><span class="o">/</span><span class="n">libExtensionSystem</span><span class="p">.</span><span class="n">so</span><span class="p">.</span><span class="mi">6</span>
+~&gt; rpm -ql qt5-creator | grep libExtensionSystem.so.6
+/usr/lib64/qtcreator/libExtensionSystem.so.6
 </code></pre></div>
 
 <p>手动帮助加载动态库（临时方案）</p>
-<div class="highlight-custom"><pre><span></span><code><span class="err">~&gt; export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib64/qtcreator</span>
-<span class="err">~&gt; qtcreator</span>
-<span class="err">qtcreator启动成功</span>
+<div class="highlight-custom"><pre><span></span><code><span class="o">~&gt;</span><span class="w"> </span><span class="k">export</span><span class="w"> </span><span class="n">LD_LIBRARY_PATH</span><span class="o">=$</span><span class="n">LD_LIBRARY_PATH</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib64</span><span class="o">/</span><span class="n">qtcreator</span>
+<span class="o">~&gt;</span><span class="w"> </span><span class="n">qtcreator</span>
+<span class="n">qtcreator启动成功</span>
 </code></pre></div>
 
 <p>我在另外一台系统上也出现了 qt creator 挂了的问题， 重启无效。
 彻底解决方案是：</p>
 <p>root 用户下执行：</p>
-<div class="highlight-custom"><pre><span></span><code><span class="n">echo</span> <span class="ss">&quot;/usr/lib64/qtcreator&quot;</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ld</span><span class="p">.</span><span class="n">so</span><span class="p">.</span><span class="n">conf</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">qtcreator</span><span class="p">.</span><span class="n">conf</span> 
+<div class="highlight-custom"><pre><span></span><code>echo &quot;/usr/lib64/qtcreator&quot; &gt; /etc/ld.so.conf.d/qtcreator.conf 
 
-<span class="n">ldconfig</span> <span class="o">-</span><span class="n">v</span>
+ldconfig -v
 </code></pre></div></div>
     <footer>
 <p class="meta">
@@ -113,6 +113,9 @@ qtcreator: error <span class="k">while</span> loading shared libraries: libExten
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     <li class="post">
+        <a href="/posts/2023/07/15/diff-patch.html">diff和patch命令以及git patch相关操作</a>
+    </li>
+    <li class="post">
         <a href="/posts/2022/12/29/install-cgit.html">debian11-bullseye install cgit</a>
     </li>
     <li class="post">
@@ -123,9 +126,6 @@ qtcreator: error <span class="k">while</span> loading shared libraries: libExten
     </li>
     <li class="post">
         <a href="/posts/2022/09/03/alternativeto.html">代替品查询网站</a>
-    </li>
-    <li class="post">
-        <a href="/posts/2022/09/03/Flatpak-vs-Snap.html">Flatpak vs Snap</a>
     </li>
   </ul>
 </section><section>
@@ -139,7 +139,7 @@ qtcreator: error <span class="k">while</span> loading shared libraries: libExten
       <li><a href="/category/editor.html">editor (4)</a></li>
       <li><a href="/category/filesystem.html">filesystem (1)</a></li>
       <li><a href="/category/firefox.html">firefox (1)</a></li>
-      <li><a href="/category/git.html">git (3)</a></li>
+      <li><a href="/category/git.html">git (4)</a></li>
       <li><a href="/category/golang.html">golang (1)</a></li>
       <li><a href="/category/gu-piao.html">股票 (1)</a></li>
       <li><a href="/category/ide.html">IDE (1)</a></li>
@@ -160,7 +160,7 @@ qtcreator: error <span class="k">while</span> loading shared libraries: libExten
 </section>
 <section>
   <h1>Tags</h1>
-    <a href="/tag/git.html">git</a>,    <a href="/tag/linux.html">linux</a>,    <a href="/tag/selenium.html">selenium</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/docker.html">docker</a>,    <a href="/tag/flatpak.html">flatpak</a>,    <a href="/tag/interview.html">interview</a>,    <a href="/tag/programming.html">programming</a>,    <a href="/tag/qt.html">Qt</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/filesystem.html">filesystem</a>,    <a href="/tag/xwindow.html">xwindow</a>,    <a href="/tag/ide.html">IDE</a>,    <a href="/tag/glang.html">glang</a>,    <a href="/tag/xdg.html">xdg</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/database.html">database</a>,    <a href="/tag/mysql.html">mysql</a>,    <a href="/tag/notes.html">notes</a>,    <a href="/tag/sysctl.html">sysctl</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a>,    <a href="/tag/book.html">book</a>,    <a href="/tag/c.html">C++</a>,    <a href="/tag/bootloader.html">bootloader</a></section>
+    <a href="/tag/git.html">git</a>,    <a href="/tag/patch.html">patch</a>,    <a href="/tag/text.html">text</a>,    <a href="/tag/linux.html">linux</a>,    <a href="/tag/selenium.html">selenium</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/docker.html">docker</a>,    <a href="/tag/flatpak.html">flatpak</a>,    <a href="/tag/interview.html">interview</a>,    <a href="/tag/programming.html">programming</a>,    <a href="/tag/qt.html">Qt</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/filesystem.html">filesystem</a>,    <a href="/tag/xwindow.html">xwindow</a>,    <a href="/tag/ide.html">IDE</a>,    <a href="/tag/glang.html">glang</a>,    <a href="/tag/xdg.html">xdg</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/database.html">database</a>,    <a href="/tag/mysql.html">mysql</a>,    <a href="/tag/notes.html">notes</a>,    <a href="/tag/sysctl.html">sysctl</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a>,    <a href="/tag/book.html">book</a>,    <a href="/tag/c.html">C++</a>,    <a href="/tag/bootloader.html">bootloader</a></section>
     <section>
         <h1>Social</h1>
         <ul>
@@ -182,7 +182,7 @@ qtcreator: error <span class="k">while</span> loading shared libraries: libExten
   </div>
   <footer role="contentinfo">
 <p>
-    Copyright &copy;  2013&ndash;2022  zhiliao &mdash;
+    Copyright &copy;  2013&ndash;2023  zhiliao &mdash;
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
 </p>  </footer>
 </body>

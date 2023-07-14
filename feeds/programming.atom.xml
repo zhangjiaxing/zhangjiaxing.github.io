@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - programming</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/programming.atom.xml" rel="self"></link><id>/</id><updated>2022-07-04T18:50:55+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>解决linux下Qt creator不显示qDebug输出</title><link href="/posts/2022/07/04/qt-creator-qDebug.html" rel="alternate"></link><published>2022-07-04T18:50:55+08:00</published><updated>2022-07-04T18:50:55+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-07-04:/posts/2022/07/04/qt-creator-qDebug.html</id><content type="html">&lt;p&gt;linux下Qt creator 不显示qDebug输出， 可以在qtcreator的.desktop文件添加环境变量。
+<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - programming</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/programming.atom.xml" rel="self"></link><id>/</id><updated>2023-02-21T09:52:21+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>解决linux下Qt creator不显示qDebug输出</title><link href="/posts/2022/07/04/qt-creator-qDebug.html" rel="alternate"></link><published>2022-07-04T18:50:55+08:00</published><updated>2023-02-21T09:52:21+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-07-04:/posts/2022/07/04/qt-creator-qDebug.html</id><summary type="html">&lt;p&gt;linux下Qt creator 不显示qDebug输出， 可以在qtcreator的.desktop文件添加环境变量。
+&lt;code&gt;env QT_ASSUME_STDERR_HAS_CONSOLE=1 qtcreator&lt;/code&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;源代码原编写于Windows系统中，迁移到Linux上后使 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;linux下Qt creator 不显示qDebug输出， 可以在qtcreator的.desktop文件添加环境变量。
 &lt;code&gt;env QT_ASSUME_STDERR_HAS_CONSOLE=1 qtcreator&lt;/code&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;源代码原编写于Windows系统中，迁移到Linux上后使用同一个qt工程文件进行编译，程序可以运行，但是无法输出QDebug信息。可能是Linux默认禁用了Qt的调试信息处理程序。&lt;/p&gt;
@@ -16,37 +19,27 @@
 &lt;blockquote&gt;
 &lt;p&gt;export QT_LOGGING_RULES="*.debug=true"&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;那么会有大量诸如鼠标事件、界面状态等不属于QDebug输出信息之外的内容打印在终端上。&lt;/p&gt;</content><category term="programming"></category><category term="programming"></category><category term="Qt"></category></entry><entry><title>统计代码行数cloc (count lines of code)</title><link href="/posts/2022/06/29/cloc.html" rel="alternate"></link><published>2022-06-29T17:17:17+08:00</published><updated>2022-06-29T17:17:17+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-06-29:/posts/2022/06/29/cloc.html</id><content type="html">&lt;p&gt;统计代码行数可以使用cloc，gocloc&lt;/p&gt;
+&lt;p&gt;那么会有大量诸如鼠标事件、界面状态等不属于QDebug输出信息之外的内容打印在终端上。&lt;/p&gt;</content><category term="programming"></category><category term="programming"></category><category term="Qt"></category></entry><entry><title>统计代码行数cloc (count lines of code)</title><link href="/posts/2022/06/29/cloc.html" rel="alternate"></link><published>2022-06-29T17:17:17+08:00</published><updated>2022-07-26T18:17:52+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-06-29:/posts/2022/06/29/cloc.html</id><content type="html">&lt;p&gt;统计代码行数可以使用cloc，gocloc&lt;/p&gt;
 &lt;h4&gt;使用cloc&lt;/h4&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt install cloc
-cloc .
-cloc xxx-source.tar.gz
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;cloc
+cloc&lt;span class="w"&gt; &lt;/span&gt;.
+cloc&lt;span class="w"&gt; &lt;/span&gt;xxx-source.tar.gz
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h4&gt;使用gocloc&lt;/h4&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# https://github.com/hhatto/gocloc&lt;/span&gt;
-gocloc .
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="programming"></category><category term="programming"></category></entry><entry><title>关于Qt</title><link href="/posts/2022/04/11/about-qt.html" rel="alternate"></link><published>2022-04-11T14:48:07+08:00</published><updated>2022-04-11T14:48:07+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-04-11:/posts/2022/04/11/about-qt.html</id><content type="html">&lt;p&gt;QString转char*的正确方法&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;QString().toLocal8Bit().constData()&lt;/span&gt;
-&lt;span class="err"&gt;QString().toUtf8().constData()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="programming"></category><category term="programming"></category></entry><entry><title>C++书籍推荐</title><link href="/posts/2015/01/01/cpp-books.html" rel="alternate"></link><published>2015-01-01T00:00:00+08:00</published><updated>2015-01-01T00:00:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2015-01-01:/posts/2015/01/01/cpp-books.html</id><summary type="html">&lt;ul&gt;
+gocloc&lt;span class="w"&gt; &lt;/span&gt;.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="programming"></category><category term="programming"></category></entry><entry><title>关于Qt</title><link href="/posts/2022/04/11/about-qt.html" rel="alternate"></link><published>2022-04-11T14:48:07+08:00</published><updated>2023-02-21T09:52:21+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-04-11:/posts/2022/04/11/about-qt.html</id><content type="html">&lt;p&gt;QString转char*的正确方法&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;QString&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;toLocal8Bit&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;constData&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;QString&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;toUtf8&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;constData&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="programming"></category><category term="programming"></category></entry><entry><title>C++书籍推荐</title><link href="/posts/2015/01/01/cpp-books.html" rel="alternate"></link><published>2015-01-01T00:00:00+08:00</published><updated>2023-02-21T09:52:21+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2015-01-01:/posts/2015/01/01/cpp-books.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;C++Primer 5th 中文版 (no Plus)&lt;/li&gt;
 &lt;li&gt;Inside C++ Object Model&lt;/li&gt;
 &lt;li&gt;The Design and Evolution of C++&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;这三本就够用了，可以应付绝大多数的工作&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;下面是转载的在博客上看到的一个C++书籍阅读清单，可以参考下：&lt;/p&gt;
-&lt;h2&gt;阶段 1&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;《Essential C++》&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;这是一本内容不多但很实用的C++入门书籍，强调快速上手与理解C++编程。本书主要围绕一系列逐渐复杂的程序问题，以及用以解决这些问题的语言特性展开讲解。你不只学到C++的函数和结构，也会学习到它们的设计目的和基本原理。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;《C++ Primer》（不是 plus）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;本书对C++基本概念、技术、以及现代C++编程风格进行了全面而且权威的阐述，是C++初学者的最佳指南；本书可以帮助你编写实用的程序，而无需首先精通每个语言细节。对于中高级程序员，本书也是不可或缺的参考书。&lt;/p&gt;
-&lt;h2&gt;阶段 …&lt;/h2&gt;</summary><content type="html">&lt;ul&gt;
+&lt;p&gt;下面是转载的在博客上看到的一 …&lt;/p&gt;</summary><content type="html">&lt;ul&gt;
 &lt;li&gt;C++Primer 5th 中文版 (no Plus)&lt;/li&gt;
 &lt;li&gt;Inside C++ Object Model&lt;/li&gt;
 &lt;li&gt;The Design and Evolution of C++&lt;/li&gt;
@@ -110,16 +103,7 @@ gocloc .
 &lt;ul&gt;
 &lt;li&gt;《Thinking in C++（C++编程思想）》&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;C++ 领域权威著作，介绍了C++实用的编程技术和最佳的实践方法。&lt;/p&gt;</content><category term="programming"></category><category term="programming"></category><category term="C++"></category><category term="book"></category></entry><entry><title>C语言深度解剖</title><link href="/posts/2014/08/06/programming-C.html" rel="alternate"></link><published>2014-08-06T00:00:00+08:00</published><updated>2014-08-06T00:00:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2014-08-06:/posts/2014/08/06/programming-C.html</id><summary type="html">&lt;p&gt;register 变量必须是一个单个的值，并且其长度应小于或等于整型的长度。 而且 register 变量可能不存放在内存中，所以不能用取址运算符“&amp;amp;”来获取 register 变量的地址。
- 
-static 静态全局变量，作用域仅限于变量被定义的文件中，其他文件即使用 extern 声明也没法
-使用他。准确地说作用域是从定义之处开始，到文件结尾处结束，在定义之处前面的那些
-代码行也不能使用它。想要使用就得在前面再加 extern ***。恶心吧？要想不恶心，很简单，
-直接在文件顶端定义不就得了。&lt;/p&gt;
-&lt;p&gt;静态局部变量，在函数体里面定义的，就只能在这个函数里用了，同一个文档中的其他
-函数也用不了。由于被 static 修饰的变量总是存在内存的静态区，所以即使这个函数运行结
-束，这个静态变量的值还是不会被销毁，函数下次使用时仍然能用到这个值。&lt;/p&gt;
-&lt;p&gt;函数前加 static 使得函数成为静态函数。但此处“static”的含义不是指存储方式，而是指对函数的作用域仅局限于本文件(所以又称内部函数)。使用内部函数的好处是：不同的人编写不同的函数时，不用担心自己定义的函数 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;register 变量必须是一个单个的值，并且其长度应小于或等于整型的长度。 而且 register 变量可能不存放在内存中，所以不能用取址运算符“&amp;amp;”来获取 register 变量的地址。
+&lt;p&gt;C++ 领域权威著作，介绍了C++实用的编程技术和最佳的实践方法。&lt;/p&gt;</content><category term="programming"></category><category term="programming"></category><category term="C++"></category><category term="book"></category></entry><entry><title>C语言深度解剖</title><link href="/posts/2014/08/06/programming-C.html" rel="alternate"></link><published>2014-08-06T00:00:00+08:00</published><updated>2023-02-21T09:52:21+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2014-08-06:/posts/2014/08/06/programming-C.html</id><summary type="html">&lt;p&gt;register 变量必须是一个单个的值，并且其长度应小于或等于整型的长度。 而且 register 变量可能不存放在内存中，所以不能用取址运 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;register 变量必须是一个单个的值，并且其长度应小于或等于整型的长度。 而且 register 变量可能不存放在内存中，所以不能用取址运算符“&amp;amp;”来获取 register 变量的地址。
  
 static 静态全局变量，作用域仅限于变量被定义的文件中，其他文件即使用 extern 声明也没法
 使用他。准确地说作用域是从定义之处开始，到文件结尾处结束，在定义之处前面的那些
@@ -168,76 +152,60 @@ static 静态全局变量，作用域仅限于变量被定义的文件中，其�
 但是在 C++编译器中编译同样的代码则会出错
 无论在 C 还是 C++中，若函数不接受任何参数，一定要指明参数为 void。
  &lt;/p&gt;
-&lt;p&gt;要求余数与被除数的正负号相同&lt;/p&gt;</content><category term="programming"></category><category term="programming"></category><category term="C"></category></entry><entry><title>apue读书笔记</title><link href="/posts/2014/06/23/apue-note.html" rel="alternate"></link><published>2014-06-23T00:00:00+08:00</published><updated>2014-06-23T00:00:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2014-06-23:/posts/2014/06/23/apue-note.html</id><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;打印出错信息：&lt;/span&gt;
-&lt;span class="n"&gt;Strerror&lt;/span&gt;  &lt;span class="n"&gt;perror&lt;/span&gt;
-&lt;span class="err"&gt;一个&lt;/span&gt;&lt;span class="n"&gt;unix惯例是把argv&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="err"&gt;作为参数传递给&lt;/span&gt;&lt;span class="n"&gt;perror&lt;/span&gt;
-&lt;span class="err"&gt;好处是当用管道连接多个程序时，能分清错误是哪一个产生的。&lt;/span&gt;
+&lt;p&gt;要求余数与被除数的正负号相同&lt;/p&gt;</content><category term="programming"></category><category term="programming"></category><category term="C"></category></entry><entry><title>apue读书笔记</title><link href="/posts/2014/06/23/apue-note.html" rel="alternate"></link><published>2014-06-23T00:00:00+08:00</published><updated>2023-02-21T09:52:21+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2014-06-23:/posts/2014/06/23/apue-note.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;打印出错信息：
+Strerror  perror
+一个unix惯例是把argv[0]作为参数传递给perror
+好处是当用管道连接多个程序时，能分清错误是哪一个产生 …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;打印出错信息：
+Strerror  perror
+一个unix惯例是把argv[0]作为参数传递给perror
+好处是当用管道连接多个程序时，能分清错误是哪一个产生的。
 
-&lt;span class="err"&gt;可以&lt;/span&gt;&lt;span class="k"&gt;free&lt;/span&gt;&lt;span class="err"&gt;（&lt;/span&gt;&lt;span class="k"&gt;NULL&lt;/span&gt;&lt;span class="err"&gt;）&lt;/span&gt;
+可以free（NULL）
 
- &lt;span class="n"&gt;fork&lt;/span&gt;  &lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;pthread&lt;/span&gt; &lt;span class="k"&gt;create&lt;/span&gt; &lt;span class="err"&gt;之前要&lt;/span&gt;&lt;span class="n"&gt;fflsh&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;null&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="err"&gt;刷新缓存区&lt;/span&gt;
-&lt;span class="err"&gt;否则可能会输出两次&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="programming"></category><category term="programming"></category><category term="python"></category></entry><entry><title>C语言零长数组</title><link href="/posts/2014/03/23/zero-length-array.html" rel="alternate"></link><published>2014-03-23T18:28:00+08:00</published><updated>2014-03-23T18:28:00+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2014-03-23:/posts/2014/03/23/zero-length-array.html</id><summary type="html">&lt;p&gt;前言：计算机语言是编译器和程序员交流的依据和规范，GNU C是GCC特有的功能，在Linux内核中被广泛应用。&lt;/p&gt;
+ fork  ，pthread create 之前要fflsh(null) 刷新缓存区
+否则可能会输出两次
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="programming"></category><category term="programming"></category><category term="python"></category></entry><entry><title>C语言零长数组</title><link href="/posts/2014/03/23/zero-length-array.html" rel="alternate"></link><published>2014-03-23T18:28:00+08:00</published><updated>2023-02-21T09:52:21+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2014-03-23:/posts/2014/03/23/zero-length-array.html</id><summary type="html">&lt;p&gt;前言：计算机语言是编译器和程序员交流的依据和规范，GNU C是GCC特有的功能，在Linux内核中被广泛应用。&lt;/p&gt;
+&lt;p&gt;帮助文档：http://gcc.gnu.org …&lt;/p&gt;</summary><content type="html">&lt;p&gt;前言：计算机语言是编译器和程序员交流的依据和规范，GNU C是GCC特有的功能，在Linux内核中被广泛应用。&lt;/p&gt;
 &lt;p&gt;帮助文档：http://gcc.gnu.org/onlinedocs/gcc-4.6.2/gcc/C-Extensions.html#C-Extensions&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;int *p;&lt;/span&gt;
-&lt;span class="err"&gt;p=(int[]){99};&lt;/span&gt;
-&lt;span class="err"&gt;GCC 临时变量&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;int *p;
+p=(int[]){99};
+GCC 临时变量
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h2&gt;1、零长数组&lt;/h2&gt;
 &lt;p&gt;GNU C允许声明长度为零的数组，但它只能被用于结构体的最后一个成员。&lt;/p&gt;
 &lt;p&gt;举例，如清单1： &lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; 
-&lt;span class="cpf"&gt;#include &lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
-&lt;span class="k"&gt;struct&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;  
-    &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;length&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;  
-    &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="n"&gt;contents&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;  
-&lt;span class="p"&gt;};&lt;/span&gt;  
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="cp"&gt;#include &lt;/span&gt;
+&lt;span class="cp"&gt;#include &lt;/span&gt;
+&lt;span class="k"&gt;struct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;line&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;length&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kt"&gt;char&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;contents&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
+&lt;span class="p"&gt;};&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
 
-&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;void&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  
+&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;void&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;count&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; 
-    &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="n"&gt;letter …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;前言：计算机语言是编译器和程序员交流的依据和规范，GNU C是GCC特有的功能，在Linux内核中被广泛应用。&lt;/p&gt;
-&lt;p&gt;帮助文档：http://gcc.gnu.org/onlinedocs/gcc-4.6.2/gcc/C-Extensions.html#C-Extensions&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;int *p;&lt;/span&gt;
-&lt;span class="err"&gt;p=(int[]){99};&lt;/span&gt;
-&lt;span class="err"&gt;GCC 临时变量&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kt"&gt;char&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;letter&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="sc"&gt;&amp;#39;A&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;struct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;line&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;thisline&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;struct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;line&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="n"&gt;malloc&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;sizeof&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;struct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;line&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;thisline&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="n"&gt;length&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
 
-&lt;h2&gt;1、零长数组&lt;/h2&gt;
-&lt;p&gt;GNU C允许声明长度为零的数组，但它只能被用于结构体的最后一个成员。&lt;/p&gt;
-&lt;p&gt;举例，如清单1： &lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; 
-&lt;span class="cpf"&gt;#include &lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
-&lt;span class="k"&gt;struct&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;  
-    &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;length&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;  
-    &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="n"&gt;contents&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;  
-&lt;span class="p"&gt;};&lt;/span&gt;  
-
-&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;void&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  
-&lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;count&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; 
-    &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="n"&gt;letter&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="sc"&gt;&amp;#39;A&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="k"&gt;struct&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;thisline&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;struct&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="n"&gt;malloc&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;sizeof&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;struct&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;  
-    
-    &lt;span class="n"&gt;thisline&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="n"&gt;length&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;  
-
-    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
-        &lt;span class="n"&gt;thisline&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="n"&gt;contents&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;letter&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="p"&gt;}&lt;/span&gt;
-    
-    &lt;span class="n"&gt;printf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;sizeof(struct line) = %d&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;sizeof&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;struct&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt; 
- 
-    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;thisline&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="n"&gt;length&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  
-        &lt;span class="n"&gt;printf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;%c &amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;thisline&lt;/span&gt;&lt;span class="o"&gt;-&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;contents&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]);&lt;/span&gt;  
-    &lt;span class="n"&gt;printf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;  
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;  
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;thisline&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="n"&gt;contents&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;letter&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;printf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;sizeof(struct line) = %d&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;sizeof&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;struct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;line&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;thisline&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="n"&gt;length&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;printf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;%c &amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;thisline&lt;/span&gt;&lt;span class="o"&gt;-&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;contents&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]);&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;printf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;例子输出结果： &lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;sizeof(struct line) = 4  &lt;/span&gt;
-&lt;span class="err"&gt;A B C D E F G H I&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sizeof(struct line) = 4  
+A B C D E F G H I
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;如例子中的第6行，contents就是一个零长数组，在sizeof看来它所占的空间为零。&lt;/p&gt;
@@ -254,7 +222,7 @@ static 静态全局变量，作用域仅限于变量被定义的文件中，其�
 &lt;span class="nc"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;printf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;sizeof(struct line) = %d\n&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sizeof&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;struct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;printf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;sizeof(thisline) = %d\n&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sizeof&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;thisline&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
-&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;thislinelengthispan&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;thislinelengthispan&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;printf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;%c &amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;thisline&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;contents&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;printf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;\n&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
@@ -262,22 +230,22 @@ static 静态全局变量，作用域仅限于变量被定义的文件中，其�
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;例子输出结果： &lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;sizeof(struct line) = 4  &lt;/span&gt;
-&lt;span class="err"&gt;sizeof(thisline) = 4  &lt;/span&gt;
-&lt;span class="err"&gt;1 2 3 4 5&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sizeof(struct line) = 4  
+sizeof(thisline) = 4  
+1 2 3 4 5
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;变长数组是不完全数据类型，不能使用sizeof获得它的大小。&lt;/p&gt;
 &lt;p&gt;注意，此结构体的变量必须在函数外定义和初始化，否则会报错： &lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;error&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;non&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="kd"&gt;static&lt;/span&gt; &lt;span class="n"&gt;initialization&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;flexible&lt;/span&gt; &lt;span class="n"&gt;array&lt;/span&gt; &lt;span class="n"&gt;member&lt;/span&gt;  
-&lt;span class="n"&gt;error&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;near&lt;/span&gt; &lt;span class="n"&gt;initialization&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;thisline&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;  
-    &lt;span class="err"&gt;不能使用这样的形式：&lt;/span&gt; 
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;error&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;non&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="kd"&gt;static&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;initialization&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;flexible&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;member&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
+&lt;span class="n"&gt;error&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;near&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;initialization&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;thisline&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="err"&gt;不能使用这样的形式：&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
 
-&lt;span class="n"&gt;struct&lt;/span&gt; &lt;span class="n"&gt;mystruct&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;  
-&lt;span class="n"&gt;int&lt;/span&gt; &lt;span class="n"&gt;arr&lt;/span&gt;&lt;span class="o"&gt;[];&lt;/span&gt;  
-&lt;span class="o"&gt;};&lt;/span&gt;  
-    &lt;span class="err"&gt;否则会报错：&lt;/span&gt; 
-&lt;span class="n"&gt;error&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;flexible&lt;/span&gt; &lt;span class="n"&gt;array&lt;/span&gt; &lt;span class="n"&gt;member&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="n"&gt;otherwise&lt;/span&gt; &lt;span class="n"&gt;empty&lt;/span&gt; &lt;span class="n"&gt;struct&lt;/span&gt;
+&lt;span class="n"&gt;struct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;mystruct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;{&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
+&lt;span class="n"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;arr&lt;/span&gt;&lt;span class="o"&gt;[];&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
+&lt;span class="o"&gt;};&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="err"&gt;否则会报错：&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="n"&gt;error&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;flexible&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;member&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;otherwise&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;empty&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;struct&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3&gt;2、变长数组&lt;/h3&gt;
@@ -290,13 +258,13 @@ static 静态全局变量，作用域仅限于变量被定义的文件中，其�
 &lt;span class="nc"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;arr&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;printf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;sizeof(arr[%d]) = %d\n&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sizeof&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;arr&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
-&lt;span class="err"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;例子输出结果： &lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;sizeof(arr[6]) = 24 //输入数字6&lt;/span&gt;
-&lt;span class="err"&gt;sizeof(arr[9]) = 36 //输入数字9&lt;/span&gt;
-&lt;span class="err"&gt;    输入不同的值，数组的大小随之改变。&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sizeof(arr[6]) = 24 //输入数字6
+sizeof(arr[9]) = 36 //输入数字9
+    输入不同的值，数组的大小随之改变。
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;变长数组作为参数进行传递的例子，如清单4： &lt;/p&gt;
@@ -304,7 +272,7 @@ static 静态全局变量，作用域仅限于变量被定义的文件中，其�
 &lt;span class="nc"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nc"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;num&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;arr&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;num&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="err"&gt;{&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="nc"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;total&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
-&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;numispan&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;numispan&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;total&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;arr&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;total&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="err"&gt;}&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
@@ -315,12 +283,12 @@ static 静态全局变量，作用域仅限于变量被定义的文件中，其�
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;printf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;a[] total value: %d\n&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sizeof&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;sizeof&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;0&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;printf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;b[] total value: %d\n&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sizeof&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;sizeof&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;0&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
-&lt;span class="err"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;例子输出结果：&lt;/p&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;a[] total value: 10  &lt;/span&gt;
-&lt;span class="err"&gt;b[] total value: 45  &lt;/span&gt;
-&lt;span class="err"&gt;    函数sum形参中的arr可以匹配任意的一维整型数组。&lt;/span&gt;
-&lt;span class="err"&gt;    注意，num一定要声明在变长数组arr之前。&lt;/span&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;a[] total value: 10  
+b[] total value: 45  
+    函数sum形参中的arr可以匹配任意的一维整型数组。
+    注意，num一定要声明在变长数组arr之前。
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="programming"></category><category term="programming"></category><category term="C"></category></entry></feed>

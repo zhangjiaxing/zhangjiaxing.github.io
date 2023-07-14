@@ -87,7 +87,7 @@
 <span class="n">options</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--ignore-ssl-errors=yes&#39;</span><span class="p">)</span>
 <span class="n">options</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--ignore-certificates-errors&quot;</span><span class="p">)</span>
 <span class="n">options</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--ignore-urlfetcher-cert-requests&#39;</span><span class="p">)</span>
-<span class="n">options</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--proxy-server={proxy_config}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">proxy_config</span><span class="o">=</span><span class="n">proxy</span><span class="o">.</span><span class="n">proxy</span><span class="p">))</span>
+<span class="n">options</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--proxy-server=</span><span class="si">{proxy_config}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">proxy_config</span><span class="o">=</span><span class="n">proxy</span><span class="o">.</span><span class="n">proxy</span><span class="p">))</span>
 
 
 <span class="c1">#options.add_argument(&quot;--headless&quot;)</span>
@@ -95,17 +95,17 @@
 <span class="c1">#options.add_argument(&quot;--incognito&quot;)</span>
 <span class="n">options</span><span class="o">.</span><span class="n">add_experimental_option</span><span class="p">(</span><span class="s2">&quot;excludeSwitches&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;ignore-certificate-errors&quot;</span><span class="p">,</span> <span class="s2">&quot;enable-automation&quot;</span><span class="p">,</span> <span class="s2">&quot;enable-logging&quot;</span><span class="p">])</span>
 <span class="n">prefs</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">prefs</span><span class="p">[</span><span class="s2">&quot;credentials_enable_service&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
-<span class="n">prefs</span><span class="p">[</span><span class="s2">&quot;profile.password_manager_enabled&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="n">prefs</span><span class="p">[</span><span class="s2">&quot;credentials_enable_service&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">prefs</span><span class="p">[</span><span class="s2">&quot;profile.password_manager_enabled&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="n">options</span><span class="o">.</span><span class="n">add_experimental_option</span><span class="p">(</span><span class="s2">&quot;prefs&quot;</span><span class="p">,</span> <span class="n">prefs</span><span class="p">)</span>  <span class="c1">##关掉密码弹窗</span>
 
 
 <span class="n">capabilities</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">DesiredCapabilities</span><span class="p">()</span><span class="o">.</span><span class="n">CHROME</span>
-<span class="n">capabilities</span><span class="p">[</span><span class="s1">&#39;acceptSslCerts&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">capabilities</span><span class="p">[</span><span class="s1">&#39;acceptSslCerts&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
 
 <span class="n">chrome</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">executable_path</span><span class="o">=</span><span class="s2">&quot;/usr/bin/chromedriver&quot;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">options</span><span class="p">,</span> <span class="n">desired_capabilities</span><span class="o">=</span><span class="n">capabilities</span><span class="p">)</span>
 <span class="n">chrome</span><span class="o">.</span><span class="n">fullscreen_window</span><span class="p">()</span>
-<span class="n">proxy</span><span class="o">.</span><span class="n">new_har</span><span class="p">(</span><span class="s2">&quot;jd&quot;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;captureHeaders&quot;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span> <span class="s2">&quot;captureContent&quot;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span> <span class="s2">&quot;captureBinaryContent&quot;</span><span class="p">:</span> <span class="bp">True</span><span class="p">})</span>
+<span class="n">proxy</span><span class="o">.</span><span class="n">new_har</span><span class="p">(</span><span class="s2">&quot;jd&quot;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;captureHeaders&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;captureContent&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;captureBinaryContent&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
 
 
 <span class="n">chrome</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://www.jd.com/&#39;</span><span class="p">)</span>
@@ -148,6 +148,9 @@
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     <li class="post">
+        <a href="/posts/2023/07/15/diff-patch.html">diff和patch命令以及git patch相关操作</a>
+    </li>
+    <li class="post">
         <a href="/posts/2022/12/29/install-cgit.html">debian11-bullseye install cgit</a>
     </li>
     <li class="post">
@@ -158,9 +161,6 @@
     </li>
     <li class="post">
         <a href="/posts/2022/09/03/alternativeto.html">代替品查询网站</a>
-    </li>
-    <li class="post">
-        <a href="/posts/2022/09/03/Flatpak-vs-Snap.html">Flatpak vs Snap</a>
     </li>
   </ul>
 </section><section>
@@ -174,7 +174,7 @@
       <li><a href="/category/editor.html">editor (4)</a></li>
       <li><a href="/category/filesystem.html">filesystem (1)</a></li>
       <li><a href="/category/firefox.html">firefox (1)</a></li>
-      <li><a href="/category/git.html">git (3)</a></li>
+      <li><a href="/category/git.html">git (4)</a></li>
       <li><a href="/category/golang.html">golang (1)</a></li>
       <li><a href="/category/gu-piao.html">股票 (1)</a></li>
       <li><a href="/category/ide.html">IDE (1)</a></li>
@@ -195,7 +195,7 @@
 </section>
 <section>
   <h1>Tags</h1>
-    <a href="/tag/git.html">git</a>,    <a href="/tag/linux.html">linux</a>,    <a href="/tag/selenium.html">selenium</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/docker.html">docker</a>,    <a href="/tag/flatpak.html">flatpak</a>,    <a href="/tag/interview.html">interview</a>,    <a href="/tag/programming.html">programming</a>,    <a href="/tag/qt.html">Qt</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/filesystem.html">filesystem</a>,    <a href="/tag/xwindow.html">xwindow</a>,    <a href="/tag/ide.html">IDE</a>,    <a href="/tag/glang.html">glang</a>,    <a href="/tag/xdg.html">xdg</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/database.html">database</a>,    <a href="/tag/mysql.html">mysql</a>,    <a href="/tag/notes.html">notes</a>,    <a href="/tag/sysctl.html">sysctl</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a>,    <a href="/tag/book.html">book</a>,    <a href="/tag/c.html">C++</a>,    <a href="/tag/bootloader.html">bootloader</a></section>
+    <a href="/tag/git.html">git</a>,    <a href="/tag/patch.html">patch</a>,    <a href="/tag/text.html">text</a>,    <a href="/tag/linux.html">linux</a>,    <a href="/tag/selenium.html">selenium</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/docker.html">docker</a>,    <a href="/tag/flatpak.html">flatpak</a>,    <a href="/tag/interview.html">interview</a>,    <a href="/tag/programming.html">programming</a>,    <a href="/tag/qt.html">Qt</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/filesystem.html">filesystem</a>,    <a href="/tag/xwindow.html">xwindow</a>,    <a href="/tag/ide.html">IDE</a>,    <a href="/tag/glang.html">glang</a>,    <a href="/tag/xdg.html">xdg</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/database.html">database</a>,    <a href="/tag/mysql.html">mysql</a>,    <a href="/tag/notes.html">notes</a>,    <a href="/tag/sysctl.html">sysctl</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a>,    <a href="/tag/book.html">book</a>,    <a href="/tag/c.html">C++</a>,    <a href="/tag/bootloader.html">bootloader</a></section>
     <section>
         <h1>Social</h1>
         <ul>
@@ -217,7 +217,7 @@
   </div>
   <footer role="contentinfo">
 <p>
-    Copyright &copy;  2013&ndash;2022  zhiliao &mdash;
+    Copyright &copy;  2013&ndash;2023  zhiliao &mdash;
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
 </p>  </footer>
 </body>

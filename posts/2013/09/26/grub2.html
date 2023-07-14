@@ -66,9 +66,9 @@
 
     <div class="entry-content"><h2>设备的命名</h2>
 <p>grub2同样以fd表示软盘，hd表示硬盘（包含IDE和SCSI硬盘）。设备是从0开始编号，分区则是从1开始，主分区从1-4，逻辑分区从5开始，而grub分区编号是从0开始的。下面给出几个例子 ：</p>
-<div class="highlight-custom"><pre><span></span><code><span class="err">(fd0)：表示整个软盘</span>
-<span class="err">(hd0,1)：表示BIOS中的第一个硬盘的第1个分区</span>
-<span class="err">(hd0,5)/boot/vmlinuz：表示BIOS中的第一个硬盘的第一个逻辑分区下的boot目录下的vmlinuz文件</span>
+<div class="highlight-custom"><pre><span></span><code>(fd0)：表示整个软盘
+(hd0,1)：表示BIOS中的第一个硬盘的第1个分区
+(hd0,5)/boot/vmlinuz：表示BIOS中的第一个硬盘的第一个逻辑分区下的boot目录下的vmlinuz文件
 </code></pre></div>
 
 <p>按c进入命令行状态，按Tab键可查看所有可用的命令</p>
@@ -165,6 +165,9 @@ chainloader (hd0,1)+1
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     <li class="post">
+        <a href="/posts/2023/07/15/diff-patch.html">diff和patch命令以及git patch相关操作</a>
+    </li>
+    <li class="post">
         <a href="/posts/2022/12/29/install-cgit.html">debian11-bullseye install cgit</a>
     </li>
     <li class="post">
@@ -175,9 +178,6 @@ chainloader (hd0,1)+1
     </li>
     <li class="post">
         <a href="/posts/2022/09/03/alternativeto.html">代替品查询网站</a>
-    </li>
-    <li class="post">
-        <a href="/posts/2022/09/03/Flatpak-vs-Snap.html">Flatpak vs Snap</a>
     </li>
   </ul>
 </section><section>
@@ -191,7 +191,7 @@ chainloader (hd0,1)+1
       <li><a href="/category/editor.html">editor (4)</a></li>
       <li><a href="/category/filesystem.html">filesystem (1)</a></li>
       <li><a href="/category/firefox.html">firefox (1)</a></li>
-      <li><a href="/category/git.html">git (3)</a></li>
+      <li><a href="/category/git.html">git (4)</a></li>
       <li><a href="/category/golang.html">golang (1)</a></li>
       <li><a href="/category/gu-piao.html">股票 (1)</a></li>
       <li><a href="/category/ide.html">IDE (1)</a></li>
@@ -212,7 +212,7 @@ chainloader (hd0,1)+1
 </section>
 <section>
   <h1>Tags</h1>
-    <a href="/tag/git.html">git</a>,    <a href="/tag/linux.html">linux</a>,    <a href="/tag/selenium.html">selenium</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/docker.html">docker</a>,    <a href="/tag/flatpak.html">flatpak</a>,    <a href="/tag/interview.html">interview</a>,    <a href="/tag/programming.html">programming</a>,    <a href="/tag/qt.html">Qt</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/filesystem.html">filesystem</a>,    <a href="/tag/xwindow.html">xwindow</a>,    <a href="/tag/ide.html">IDE</a>,    <a href="/tag/glang.html">glang</a>,    <a href="/tag/xdg.html">xdg</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/database.html">database</a>,    <a href="/tag/mysql.html">mysql</a>,    <a href="/tag/notes.html">notes</a>,    <a href="/tag/sysctl.html">sysctl</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a>,    <a href="/tag/book.html">book</a>,    <a href="/tag/c.html">C++</a>,    <a href="/tag/bootloader.html">bootloader</a></section>
+    <a href="/tag/git.html">git</a>,    <a href="/tag/patch.html">patch</a>,    <a href="/tag/text.html">text</a>,    <a href="/tag/linux.html">linux</a>,    <a href="/tag/selenium.html">selenium</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/docker.html">docker</a>,    <a href="/tag/flatpak.html">flatpak</a>,    <a href="/tag/interview.html">interview</a>,    <a href="/tag/programming.html">programming</a>,    <a href="/tag/qt.html">Qt</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/filesystem.html">filesystem</a>,    <a href="/tag/xwindow.html">xwindow</a>,    <a href="/tag/ide.html">IDE</a>,    <a href="/tag/glang.html">glang</a>,    <a href="/tag/xdg.html">xdg</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/database.html">database</a>,    <a href="/tag/mysql.html">mysql</a>,    <a href="/tag/notes.html">notes</a>,    <a href="/tag/sysctl.html">sysctl</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a>,    <a href="/tag/book.html">book</a>,    <a href="/tag/c.html">C++</a>,    <a href="/tag/bootloader.html">bootloader</a></section>
     <section>
         <h1>Social</h1>
         <ul>
@@ -234,7 +234,7 @@ chainloader (hd0,1)+1
   </div>
   <footer role="contentinfo">
 <p>
-    Copyright &copy;  2013&ndash;2022  zhiliao &mdash;
+    Copyright &copy;  2013&ndash;2023  zhiliao &mdash;
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
 </p>  </footer>
 </body>
