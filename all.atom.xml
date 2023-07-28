@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>无聊就该多读书。</description><lastBuildDate>Sat, 15 Jul 2023 02:52:47 +0800</lastBuildDate><item><title>diff和patch命令以及git patch相关操作</title><link>/posts/2023/07/15/diff-patch.html</link><description>&lt;h3&gt;diff命令&lt;/h3&gt;
+<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>无聊就该多读书。</description><lastBuildDate>Sat, 29 Jul 2023 02:13:59 +0800</lastBuildDate><item><title>gdb的基本使用方法</title><link>/posts/2023/07/29/gdb.html</link><description>&lt;h1&gt;获取进程的coredump （内核转储）&lt;/h1&gt;
+&lt;h2&gt;启用内核转储&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;功能&lt;/th&gt;
+&lt;th&gt;命令&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;查看coredump功能是否有效&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;ulimit&lt;/code&gt;和&lt;code&gt;ulimit -c&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;开启内核转储&lt;/td&gt;
+&lt;td&gt;ulimit -c unlimited&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;设置coredump大小上限&lt;/td&gt;
+&lt;td&gt;ulimit …&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Sat, 29 Jul 2023 00:26:32 +0800</pubDate><guid isPermaLink="false">tag:None,2023-07-29:/posts/2023/07/29/gdb.html</guid><category>programming</category><category>debug</category><category>programming</category><category>linux</category><category>C</category></item><item><title>diff和patch命令以及git patch相关操作</title><link>/posts/2023/07/15/diff-patch.html</link><description>&lt;h3&gt;diff命令&lt;/h3&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;-行数  指定要显示多少行的文本。此参数必须与-c或-u参数一并使用。
 -a 所有的文件都视为文本文件来逐行比较, 包 …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Sat, 15 Jul 2023 01:29:18 +0800</pubDate><guid isPermaLink="false">tag:None,2023-07-15:/posts/2023/07/15/diff-patch.html</guid><category>git</category><category>git</category><category>patch</category><category>text</category></item><item><title>debian11-bullseye install cgit</title><link>/posts/2022/12/29/install-cgit.html</link><description>&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt&lt;span class="w"&gt; &lt;/span&gt;update
 apt&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;cgit
