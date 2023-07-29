@@ -219,13 +219,474 @@
 <li>(bit 1) anonymous shared memory（匿名共享内存段）</li>
 <li>(bit 2) file-backed private memory（file-backed 私有内存段）</li>
 <li>(bit 3) file-backed shared memory（file-bakced 共享内存段）</li>
-<li>(bit 4) ELF header pages in file-backed private memory areas（ELF 文件映射，只有在bit 2 复位的时候才起作用）</li>
+<li>(bit 4) ELF header pages in file-backed private memory areas (ELF 文件映射, it is effective only if the bit 2 is cleared)</li>
 <li>(bit 5) hugetlb private memory（大页面私有内存）</li>
 <li>(bit 6) hugetlb shared memory（大页面共享内存）</li>
 </ul>
 <p>默认的coredump_filter 的值一般是0x33</p>
 <p>要跳过所有的共享内存，可以设置为 <code>echo 1 &gt; /proc//coredump_filter</code></p>
-<h1>调试器的基本使用方法</h1></div>
+<h1>调试器的基本使用方法</h1>
+<h3>调试前的准备：修改编译参数</h3>
+<ul>
+<li>通过gcc的-g选项生成调试信息。</li>
+</ul>
+<p><code>gcc -Wall -O2 -g source.c</code></p>
+<ul>
+<li>
+<p>-ggdb 选项允许使用只有GDB才能使用的额外调试信息，包括gdb扩展</p>
+</li>
+<li>
+<p>-glevel | -ggdblevel `level取值范围 0 1 2 3。-g0不生成调试信息，否定-g。-g1生成调试信息最少，没有局部变量。-g2生成默认级别的调试信息。-g3包括额外的调试信息，支持宏定义。</p>
+</li>
+<li>
+<p>如果使用Makefile构建，一般要求给CFLAGS中指定-g选项。</p>
+</li>
+</ul>
+<p><code>CFLAGS = -Wall -O2 -g</code></p>
+<ul>
+<li>如果用configure脚本生成Makefile，可以这样用。</li>
+</ul>
+<p><code>./configure CFLAGS="-Wall -O2 -g"</code></p>
+<p>构建方法通常会写在INTALL, README等文件中。</p>
+<blockquote>
+<p>-Wall -Werror 选项可以在警告发生时，当成错误来处理</p>
+<p>-Wl,-Map=output.map #-Wl,的意思是把后面的参数传递给连接器，传递给连接器的参数列表需要紧跟-Wl,用逗号分隔，不能有带空格。-Wl,-Map=output.map的作用是生成map文件。map文件包含函数地址入口等信息，如果gcc编译时候没有带调试信息，可以用map来定位调用栈中的函数，也可以通过函数地址入口信息通过gdb或者代码调用函数。</p>
+</blockquote>
+<h2>启动调试</h2>
+<ul>
+<li>
+<p>gdb 可执行文件名</p>
+</li>
+<li>
+<p>gdb --args ./a.out 可执行文件参数列表</p>
+</li>
+<li>
+<p>gdb -p PID</p>
+</li>
+<li>
+<p>gdb -c corefile 可执行文件</p>
+</li>
+</ul>
+<h2>设置断点</h2>
+<p>程序运行后，到达断点会自动暂停运行。</p>
+<p>断点命令break,简写b。</p>
+<table>
+<thead>
+<tr>
+<th>break命令格式</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>break （在下一行代码上设置断点）</td>
+<td>break</td>
+</tr>
+<tr>
+<td>break 函数名</td>
+<td>break sendto</td>
+</tr>
+<tr>
+<td>break 行号</td>
+<td>break 516</td>
+</tr>
+<tr>
+<td>break 文件名:行号</td>
+<td>break main.c:120</td>
+</tr>
+<tr>
+<td>break +相对暂停位置的偏移量（行数）</td>
+<td>break +3</td>
+</tr>
+<tr>
+<td>break -相对暂停位置的偏移量（行数）</td>
+<td>break -5</td>
+</tr>
+<tr>
+<td>break *地址</td>
+<td>break *0x08116fd3</td>
+</tr>
+</tbody>
+</table>
+<p>设置好的断点可以通过 <code>info break [n]</code>查看。</p>
+<p>使用<code>delete [breakpoints] [n]</code> 命令删除段店，breakpoints可有可无，n为断点编号，如果省略n则删除所有断点。</p>
+<h2>运行</h2>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>run</td>
+<td>开始运行</td>
+</tr>
+<tr>
+<td>start</td>
+<td>开始运行，并在main上暂停，相当于自动给main设置断点然后开始运行</td>
+</tr>
+<tr>
+<td>set args [Arguments]</td>
+<td>设置进程启动参数</td>
+</tr>
+<tr>
+<td>show args</td>
+<td>查看进程参数列表</td>
+</tr>
+</tbody>
+</table>
+<h2>显示栈帧</h2>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>backtrace</td>
+<td>显示调用栈栈帧</td>
+</tr>
+<tr>
+<td>bt</td>
+<td>breaktrace的简写（别名）</td>
+</tr>
+<tr>
+<td>backtrace N</td>
+<td>只显示开头N个栈帧</td>
+</tr>
+<tr>
+<td>bt N</td>
+<td>只显示开头N个栈帧</td>
+</tr>
+<tr>
+<td>backtrack -N</td>
+<td>只显示最后N个栈帧</td>
+</tr>
+<tr>
+<td>bt -N</td>
+<td>只显示最后N个栈帧</td>
+</tr>
+<tr>
+<td>backtrace full</td>
+<td>不仅显示backtrace,还显示局部变量</td>
+</tr>
+<tr>
+<td>bt full</td>
+<td>不仅显示backtrace,还显示局部变量</td>
+</tr>
+<tr>
+<td>backtrace full N</td>
+<td>不仅显示backtrace,还显示局部变量，N的含义同上</td>
+</tr>
+<tr>
+<td>bt full N</td>
+<td>不仅显示backtrace,还显示局部变量，N的含义同上</td>
+</tr>
+<tr>
+<td>backtrace full N</td>
+<td>不仅显示backtrace,还显示局部变量，N的含义同上</td>
+</tr>
+<tr>
+<td>bt full -N</td>
+<td>不仅显示backtrace,还显示局部变量，N的含义同上</td>
+</tr>
+<tr>
+<td>info stack</td>
+<td>backtrace的别名</td>
+</tr>
+<tr>
+<td>where</td>
+<td>backtrace的别名</td>
+</tr>
+</tbody>
+</table>
+<h2>显示变量</h2>
+<p>print命令可以显示变量，简写p。</p>
+<p>格式： print 变量。</p>
+<table>
+<thead>
+<tr>
+<th>例子</th>
+<th>显示</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p argv</td>
+<td>(char**)0xbf9cd714</td>
+</tr>
+<tr>
+<td>p *argv</td>
+<td>"./a.out"</td>
+</tr>
+<tr>
+<td>p argv[0]</td>
+<td>"./a.out"</td>
+</tr>
+<tr>
+<td>p argv[1]</td>
+<td>"hello"</td>
+</tr>
+</tbody>
+</table>
+<h2>查看寄存器</h2>
+<p>info registers可以查看寄存器，简写为info reg。</p>
+<p>在寄存器名称前加上$, 可以用p命令查看寄存器。</p>
+<p><code>p $rax</code></p>
+<p>程序指针可以写为 <code>$pc</code>, 也可以写为 <code>$eip</code>。</p>
+<p><code>p   $pc</code> 能够常看当前执行的程序地址。</p>
+<p>print 命令支持选择显示的格式。<code>print/c $rax</code> <code>p/u $rdx</code></p>
+<h4>print命令可以使用的显示格式</h4>
+<table>
+<thead>
+<tr>
+<th>格式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x</td>
+<td>显示为16进制数字</td>
+</tr>
+<tr>
+<td>d</td>
+<td>显示为十进制数字</td>
+</tr>
+<tr>
+<td>u</td>
+<td>显示为无符号十进制数</td>
+</tr>
+<tr>
+<td>o</td>
+<td>显示为8进制数字</td>
+</tr>
+<tr>
+<td>t</td>
+<td>显示为2进制数字，t的由来是two</td>
+</tr>
+<tr>
+<td>a</td>
+<td>显示地址</td>
+</tr>
+<tr>
+<td>c</td>
+<td>显示为字符（ASCII）</td>
+</tr>
+<tr>
+<td>f</td>
+<td>显示为浮点小数</td>
+</tr>
+<tr>
+<td>s</td>
+<td>显示为字符串</td>
+</tr>
+<tr>
+<td>i</td>
+<td>显示为汇编语言。</td>
+</tr>
+</tbody>
+</table>
+<h2>查看内存</h2>
+<p>x命令可以显示内存中的内容。x这个名字的由来是eXamining.</p>
+<p>格式： <code>x/格式 地址</code>  <code>x /格式 寄存器</code></p>
+<p>一般使用x命令时，格式为 <code>x/NFU ADDR</code>。addr为希望显示的地址。N为重复次数，F为上一节中的显示格式（x,d,u,o,t,a,c,f,s,i）。U下是面的单位。</p>
+<table>
+<thead>
+<tr>
+<th>U代表的单位</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>b</td>
+<td>字节</td>
+</tr>
+<tr>
+<td>h</td>
+<td>半字（2字节）</td>
+</tr>
+<tr>
+<td>w</td>
+<td>字（4字节，默认值）</td>
+</tr>
+<tr>
+<td>g</td>
+<td>双字（8字节）</td>
+</tr>
+</tbody>
+</table>
+<p>显示<code>$pc</code>所指地址开头的10条指令： <code>x /10i $pc</code></p>
+<h3>反汇编指令 disassemble</h3>
+<p>反汇编指令 disassemble,简写为disas。</p>
+<table>
+<thead>
+<tr>
+<th>格式</th>
+<th>说明</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>disas</td>
+<td>反汇编当前整个函数</td>
+<td>disas</td>
+</tr>
+<tr>
+<td>disas 程序计数器</td>
+<td>反汇编程序计数器所在的函数整个函数</td>
+<td>disas $pc</td>
+</tr>
+<tr>
+<td>disas 开始地址 结束地址</td>
+<td>反汇编从开始地址到结束地址之间的部分</td>
+<td><code>disas $pc $pc+50</code></td>
+</tr>
+</tbody>
+</table>
+<h2>单步执行</h2>
+<p>单步执行的意思是根据代码一行一行的执行。</p>
+<p>单步执行命令为next,简写n.</p>
+<p>进入函数内部的单步命令为step,简写为p.</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>简写</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>next</td>
+<td>n</td>
+<td>执行下一行。执行完毕后显示再下一行的源码。不会进入下一行中的函数内部。</td>
+</tr>
+<tr>
+<td>step</td>
+<td>s</td>
+<td>执行下一行，但会进入下一行中函数内部。</td>
+</tr>
+<tr>
+<td>nexti</td>
+<td>-</td>
+<td>逐条执行汇编指令 ，不会进入函数内部。</td>
+</tr>
+<tr>
+<td>stepi</td>
+<td>-</td>
+<td>逐条执行汇编指令 ，会进入函数内部。</td>
+</tr>
+</tbody>
+</table>
+<h2>继续运行</h2>
+<p>continue命令（简写c）可以继续运行程序。程序会在遇到断点后再次暂停运行。如果没有断点，就会一直运行到结束。</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>continue</td>
+<td>继续运行</td>
+</tr>
+<tr>
+<td>continue 次数</td>
+<td>指定次数忽略遇到的断点。例如continue 5，遇到5次断点不暂停运行。</td>
+</tr>
+</tbody>
+</table>
+<h2>监视点</h2>
+<p>watch命令可以找到变量在何时被改变或访问。</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>awatch &lt;表达式&gt;</td>
+<td>表达式被访问，改变时暂停运行。即watch和rwatch。</td>
+</tr>
+<tr>
+<td><strong>watch &lt;表达式&gt;</strong></td>
+<td><strong>表达式发生变化是暂停运行。</strong></td>
+</tr>
+<tr>
+<td>rwatch &lt;表达式&gt;</td>
+<td>表达式被访问是暂停运行。</td>
+</tr>
+</tbody>
+</table>
+<p>表达式的的意思是常量或者变量。例如<code>watch name</code>  <code>watch argv[0]</code></p>
+<h2>删除断点和监视点</h2>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>info b</td>
+<td>显示断点和监视点</td>
+</tr>
+<tr>
+<td>delete &lt;编号&gt;</td>
+<td>删除指定的断点或监视点</td>
+</tr>
+<tr>
+<td>delete</td>
+<td>删除所有断点和监视点</td>
+</tr>
+</tbody>
+</table>
+<h2>其他断点</h2>
+<ul>
+<li>
+<p>硬件断点<code>hbreak</code>，适用于ROM空间等无法修改的内存区域中的程序，在有些架构中无法使用。</p>
+</li>
+<li>
+<p>临时断点 <code>tbreak</code>和临时硬件断点<code>thbreak</code>，与断点（硬件断点）基本相同，不同之处是临时断点会在到达断点程序暂停时被删除，所以只需要暂停一次时候使用起来很方便。</p>
+</li>
+</ul>
+<h2>改变变量的值</h2>
+<p><code>set variable &lt;变量&gt;=&lt;表达式&gt;</code></p>
+<p><code>set variable num=0</code> 将num的值设置为0</p>
+<h2>生成coredump文件</h2>
+<p>gdb中 <code>generate-core-file</code>命令在当前目录下生成coredump文件，可以写为<code>gcore</code>。</p>
+<p>linux shell中 <code>gcore [-a] pid1 [pid2...pidN]</code> 命令可以根据进程PID生成coredump文件。</p>
+<p>例如<code>gcore $(pidof emacs)</code></p>
+<h1>参考资料&amp;其他学习资料</h1>
+<ul>
+<li>
+<p>《DEBUG HACKS中文版》</p>
+</li>
+<li>
+<p><a href="https://wizardforcel.gitbooks.io/100-gdb-tips/content/print-variable-info.html">100个gdb技巧</a></p>
+</li>
+<li>
+<p>https://visualgdb.com/gdbreference</p>
+</li>
+<li>
+<p>man gdb</p>
+</li>
+<li>
+<p><a href="https://sourceware.org/gdb/onlinedocs/gdb/">Debugging with GDB</a></p>
+</li>
+</ul></div>
     <footer>
 <p class="meta">
   <span class="byline author vcard">
