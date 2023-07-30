@@ -252,6 +252,8 @@
 <p>-Wall -Werror 选项可以在警告发生时，当成错误来处理</p>
 <p>-Wl,-Map=output.map #-Wl,的意思是把后面的参数传递给连接器，传递给连接器的参数列表需要紧跟-Wl,用逗号分隔，不能有带空格。-Wl,-Map=output.map的作用是生成map文件。map文件包含函数地址入口等信息，如果gcc编译时候没有带调试信息，可以用map来定位调用栈中的函数，也可以通过函数地址入口信息通过gdb或者代码调用函数。</p>
 </blockquote>
+<h2>如何知道程序带调试信息</h2>
+<p><code>readelf -S ./a.out | grep \.debug</code> 如果带.debug段说明有调试信息。</p>
 <h2>启动调试</h2>
 <ul>
 <li>
@@ -337,7 +339,15 @@
 </tr>
 </tbody>
 </table>
-<h2>显示栈帧</h2>
+<h2>显示代码</h2>
+<p><code>list</code> 命令向下查看10行代码</p>
+<p><code>list -</code> 向上查看10行代码</p>
+<p><code>list LINENUM</code> 查看行号的代码</p>
+<p><code>list FUNCTION</code> 查看指定函数代码</p>
+<p><code>list FILE:LINENUM</code></p>
+<p><code>list FILE:FUNCTION</code></p>
+<p><code>list *ADDRESS</code> 按地址查看代码</p>
+<h2>显示调用栈</h2>
 <table>
 <thead>
 <tr>
@@ -404,6 +414,14 @@
 </tr>
 </tbody>
 </table>
+<h2>显示局部变量和切换调用栈</h2>
+<p><code>info locals</code> 显示局部变量</p>
+<p><code>info args</code> 查看函数参数</p>
+<p><code>info frame</code>查看调用栈帧相关信息</p>
+<p><code>up [N]</code>  查看上一层函数调用栈，N为层数，默认是1</p>
+<p><code>down [N]</code> 查看下一层函数调用栈，N为层数，默认是1</p>
+<p><code>frame &lt;栈帧N&gt;</code>  N为bt命令显示的编号，查看第N个调用栈</p>
+<p><code>frame</code> 切换到当前线程正在执行的调用栈</p>
 <h2>显示变量</h2>
 <p>print命令可以显示变量，简写p。</p>
 <p>格式： print 变量。</p>
@@ -433,6 +451,22 @@
 </tr>
 </tbody>
 </table>
+<h2>自动显示变量的值</h2>
+<p><code>display</code> 命令用于监视变量或者内存的值，每次 gdb 中断，都会自动输出这些被监视变量或内存的值。</p>
+<ul>
+<li>
+<p>display命令的使用格式是 <code>display 变量名/内存地址/寄存器名</code>。</p>
+</li>
+<li>
+<p><code>info display</code> # 查看display设置的自动显示的信息。</p>
+</li>
+<li>
+<p>undisplay &lt;编号&gt; # 取消自动显示变量（info display时显示的编号）</p>
+</li>
+<li>
+<p>delete display range… # range为编号，或者空格分割的编号，或者 编号-编号，用来删除一个范围</p>
+</li>
+</ul>
 <h2>查看寄存器</h2>
 <p>info registers可以查看寄存器，简写为info reg。</p>
 <p>在寄存器名称前加上$, 可以用p命令查看寄存器。</p>
@@ -606,7 +640,7 @@
 </tbody>
 </table>
 <h2>监视点</h2>
-<p>watch命令可以找到变量在何时被改变或访问。</p>
+<p>watch命令可以找到<strong>变量或内存</strong>在何时被改变或访问。</p>
 <table>
 <thead>
 <tr>
@@ -661,6 +695,9 @@
 <li>
 <p>临时断点 <code>tbreak</code>和临时硬件断点<code>thbreak</code>，与断点（硬件断点）基本相同，不同之处是临时断点会在到达断点程序暂停时被删除，所以只需要暂停一次时候使用起来很方便。</p>
 </li>
+<li>
+<p>遗憾的是没有临时监视点。</p>
+</li>
 </ul>
 <h2>改变变量的值</h2>
 <p><code>set variable &lt;变量&gt;=&lt;表达式&gt;</code></p>
@@ -669,13 +706,162 @@
 <p>gdb中 <code>generate-core-file</code>命令在当前目录下生成coredump文件，可以写为<code>gcore</code>。</p>
 <p>linux shell中 <code>gcore [-a] pid1 [pid2...pidN]</code> 命令可以根据进程PID生成coredump文件。</p>
 <p>例如<code>gcore $(pidof emacs)</code></p>
+<h2>attach到进程</h2>
+<p>attachh <PID>可以attach到指定进程，和gdb -p <PID>效果类似。</p>
+<p>detach 命令可以脱离调试的进程。</p>
+<p>attach后，进程暂停运行，此时可以通过bt命令查看backtrace, 通过continue命令继续运行程序。</p>
+<p>进程信息可以用<code>info proc</code>命令查看。</p>
+<h2>条件断点</h2>
+<p>有一种断点仅在特定条件下中断。</p>
+<p>格式：<code>break 断点 if 条件</code></p>
+<p>这条命令将测试给定的条件，如果为真则暂停运行。</p>
+<p>例<code>break iseq_compile if node==0</code></p>
+<p><code>condition 断点编号</code> #这条命令可以删除指定断点的出发条件。</p>
+<p><code>condition 断点编号 条件</code> # 这条命令给指定的断点增加出发条件。</p>
+<h2>反复执行</h2>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ignore &lt;断点编号&gt; &lt;次数&gt;</td>
+<td>在指定的断点，监视点，或捕获点忽略指定的次数</td>
+</tr>
+<tr>
+<td>continue &lt;次数&gt;</td>
+<td>忽略指定次数，到达断点，监视点，捕获点不暂停运行</td>
+</tr>
+<tr>
+<td>step 次数</td>
+<td>单步运行次数（进入函数）</td>
+</tr>
+<tr>
+<td>stepi 次数</td>
+<td>单步运行汇编代码，进入函数</td>
+</tr>
+<tr>
+<td>next 次数</td>
+<td>单步运行次数（不进入函数）</td>
+</tr>
+<tr>
+<td>nexti 次数</td>
+<td>单步运行汇编代码，不进入函数</td>
+</tr>
+<tr>
+<td>finish</td>
+<td>执行完当前的函数后暂停</td>
+</tr>
+<tr>
+<td>until</td>
+<td>执行完当前的代码块，或者执行完循环后暂停，常用于跳出循环</td>
+</tr>
+<tr>
+<td>return 表达式</td>
+<td>结束当前函数调用并返回指定的值，回到上一层函数调用</td>
+</tr>
+<tr>
+<td>jump LINE</td>
+<td>跳转到指定的行执行</td>
+</tr>
+<tr>
+<td>jump *ADDR</td>
+<td>跳转到指定的地址执行</td>
+</tr>
+</tbody>
+</table>
+<h2>删除断点和禁用断点</h2>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>clear 函数名</td>
+<td>删除函数中的断点</td>
+</tr>
+<tr>
+<td>clear 行号</td>
+<td>删除源码行号上的断点</td>
+</tr>
+<tr>
+<td>clear 文件名:函数名</td>
+<td>删除指定文件函数中的断点</td>
+</tr>
+<tr>
+<td>clear 文件名:行号</td>
+<td>删除源码行号上的断点</td>
+</tr>
+<tr>
+<td>clear *程序地址</td>
+<td>删除位于地址的断点</td>
+</tr>
+<tr>
+<td>delete [breakpoints] 断点编号</td>
+<td>删除指定编号的断点， breakpoints关键字可以省略</td>
+</tr>
+<tr>
+<td>delete [breakpoints]</td>
+<td>删除所有断点</td>
+</tr>
+<tr>
+<td>disable [breakpoints]</td>
+<td>临时禁用所有断点，后面还能再启用</td>
+</tr>
+<tr>
+<td>disable [breakpoints] 断点编号</td>
+<td>临时禁用指定的断点，后面还能再启用</td>
+</tr>
+<tr>
+<td>disable diaplay 显示编号</td>
+<td>禁用display命令定义的自动显示</td>
+</tr>
+<tr>
+<td>disable mem 内存区域</td>
+<td>禁用mem命令定义的内存区域</td>
+</tr>
+<tr>
+<td>enable [breakpoints]</td>
+<td>启用被禁用的所有断点。</td>
+</tr>
+<tr>
+<td>enable [breakpoints] 断点编号</td>
+<td>启用指定断点</td>
+</tr>
+<tr>
+<td>enable [breakpoints] once 断点编号</td>
+<td>启用一次断点，随后禁用断点。</td>
+</tr>
+<tr>
+<td>enable [breakpoints] delete 断点编号</td>
+<td>启用一次断点，随后删除断点。</td>
+</tr>
+<tr>
+<td>enable diaplay 显示编号</td>
+<td>启用display命令定义的自动显示</td>
+</tr>
+<tr>
+<td>enable mem 内存区域</td>
+<td>启用mem命令定义的内存区域</td>
+</tr>
+</tbody>
+</table>
+<h2>显示变量类型和定义变量的文件</h2>
+<p><code>whatis 表达式</code> # 显示变量类型声明</p>
+<p><code>ptype 表达式</code> # 显示变量类型定义</p>
+<h1>调试多线程</h1>
+<p><code>info threads</code> 查看所有线程列表</p>
+<p><code>thread N</code> 切换到指定线程</p>
 <h1>参考资料&amp;其他学习资料</h1>
 <ul>
 <li>
 <p>《DEBUG HACKS中文版》</p>
-</li>
-<li>
-<p><a href="https://wizardforcel.gitbooks.io/100-gdb-tips/content/print-variable-info.html">100个gdb技巧</a></p>
 </li>
 <li>
 <p>https://visualgdb.com/gdbreference</p>
@@ -685,6 +871,12 @@
 </li>
 <li>
 <p><a href="https://sourceware.org/gdb/onlinedocs/gdb/">Debugging with GDB</a></p>
+</li>
+<li>
+<p><a href="https://www.kancloud.cn/wizardforcel/gdb-tips-100/146724">100个gdb小技巧 </a></p>
+</li>
+<li>
+<p><a href="http://m.biancheng.net/gdb/">GDB调试教程：1小时玩转Linux gdb命令</a></p>
 </li>
 </ul></div>
     <footer>

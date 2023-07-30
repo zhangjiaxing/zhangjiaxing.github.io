@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>无聊就该多读书。</description><lastBuildDate>Sun, 30 Jul 2023 00:45:56 +0800</lastBuildDate><item><title>gdb的基本使用方法</title><link>/posts/2023/07/29/gdb.html</link><description>&lt;h1&gt;获取进程的coredump （内核转储）&lt;/h1&gt;
+<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>无聊就该多读书。</description><lastBuildDate>Sun, 30 Jul 2023 18:05:10 +0800</lastBuildDate><item><title>gdb的基本使用方法</title><link>/posts/2023/07/29/gdb.html</link><description>&lt;h1&gt;获取进程的coredump （内核转储）&lt;/h1&gt;
 &lt;h2&gt;启用内核转储&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
