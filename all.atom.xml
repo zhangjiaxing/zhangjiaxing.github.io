@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>无聊就该多读书。</description><lastBuildDate>Tue, 01 Aug 2023 02:05:21 +0800</lastBuildDate><item><title>rsync基本使用方法</title><link>/posts/2023/07/31/rsync.html</link><description>&lt;h2&gt;rsync介绍&lt;/h2&gt;
+<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>无聊就该多读书。</description><lastBuildDate>Tue, 01 Aug 2023 20:53:44 +0800</lastBuildDate><item><title>rsync基本使用方法</title><link>/posts/2023/07/31/rsync.html</link><description>&lt;h2&gt;rsync介绍&lt;/h2&gt;
 &lt;p&gt;rsync是快速和通用的远程和本地文件同步工具。&lt;/p&gt;
 &lt;p&gt;支持通过远程shell或者rsnyc守护进程进行同步。经常用作备份和镜像的 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Mon, 31 Jul 2023 01:29:08 +0800</pubDate><guid isPermaLink="false">tag:None,2023-07-31:/posts/2023/07/31/rsync.html</guid><category>storage</category><category>storage</category><category>linux</category></item><item><title>文件同步工具对比</title><link>/posts/2023/07/30/file-sync-tools-compare.html</link><description>&lt;ol&gt;
 &lt;li&gt;
