@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - storage</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/storage.atom.xml" rel="self"></link><id>/</id><updated>2023-08-01T20:53:44+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>rsync基本使用方法</title><link href="/posts/2023/07/31/rsync.html" rel="alternate"></link><published>2023-07-31T01:29:08+08:00</published><updated>2023-08-01T20:53:44+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2023-07-31:/posts/2023/07/31/rsync.html</id><summary type="html">&lt;h2&gt;rsync介绍&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - storage</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/storage.atom.xml" rel="self"></link><id>/</id><updated>2023-08-01T21:16:22+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>rsync基本使用方法</title><link href="/posts/2023/07/31/rsync.html" rel="alternate"></link><published>2023-07-31T01:29:08+08:00</published><updated>2023-08-01T21:16:22+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2023-07-31:/posts/2023/07/31/rsync.html</id><summary type="html">&lt;h2&gt;rsync介绍&lt;/h2&gt;
 &lt;p&gt;rsync是快速和通用的远程和本地文件同步工具。&lt;/p&gt;
 &lt;p&gt;支持通过远程shell或者rsnyc守护进程进行同步。经常用作备份和镜像的 …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;rsync介绍&lt;/h2&gt;
 &lt;p&gt;rsync是快速和通用的远程和本地文件同步工具。&lt;/p&gt;
@@ -23,14 +23,21 @@
 &lt;li&gt;rsync [OPTION...] SRC... rsync://[USER@]HOST[:PORT]/DEST&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;常见用法&lt;/h2&gt;
-&lt;p&gt;rsync -av  --delete root@git.local:/root/repo/  ~/workspace/
-- &lt;strong&gt;理解SRC结尾的/， 如果不带/， 则把repo目录放到workspace下面，如果带上/则吧repo目录里面的文件同步到workspace下。&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;rsync -av  --delete root@git.local:/root/repo/  ~/workspace/&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;理解SRC结尾的/， 如果不带/， 则把repo目录放到workspace下面，如果带上/则吧repo目录里面的文件同步到workspace下。&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
 &lt;p&gt;rsync -avcz  --progress --delete root@git.local:/root/repo/  ~/workspace/&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2&gt;常用参数&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;-r表示递归，即包含子目录。注意，同步目录递归是必须的。&lt;/li&gt;
 &lt;li&gt;−t  这个命令告诉rsync将修改时间与文件一起传输。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;-a参数可以替代-r，除了可以递归同步以外，还可以同步元信息（比如修改时间、权限等），支持设备文件，能够同步符号连接。由于 rsync 默认使用文件大小和修改时间决定文件是否需要更新，所以-a比-r更有用。-a才是常见用法。&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;-a参数可以替代-r，除了可以递归同步以外，还可以同步元信息（比如修改时间、权限等），支持设备文件，能够同步符号连接。由于 rsync 默认使用文件大小和修改时间决定文件是否需要更新，所以-a比-r更有用。-a是常见用法。&lt;/strong&gt; &lt;/li&gt;
+&lt;li&gt;-a 相当于 -rlptgoD，分别代表递归，使用软连接同步软连接，同步权限，同步修改时间，同步文件群组， 同步文件属主，同步设备文件。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;-c、--checksum参数改变rsync的校验方式。默认情况下，rsync 只检查文件的大小和最后修改日期是否发生变化，如果发生变化，就重新传输；使用这个参数以后，则通过判断文件内容的校验和，决定是否重新传输。&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;--delete参数删除只存在于目标目录、不存在于源目标的文件，即保证目标目录是源目标的镜像。&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;--exclude参数指定排除不进行同步的文件，比如--exclude="*.iso"。&lt;/li&gt;
