@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - storage</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/storage.atom.xml" rel="self"></link><id>/</id><updated>2023-08-01T21:16:22+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>rsync基本使用方法</title><link href="/posts/2023/07/31/rsync.html" rel="alternate"></link><published>2023-07-31T01:29:08+08:00</published><updated>2023-08-01T21:16:22+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2023-07-31:/posts/2023/07/31/rsync.html</id><summary type="html">&lt;h2&gt;rsync介绍&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - storage</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/storage.atom.xml" rel="self"></link><id>/</id><updated>2023-08-02T00:01:56+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>rsync基本使用方法</title><link href="/posts/2023/07/31/rsync.html" rel="alternate"></link><published>2023-07-31T01:29:08+08:00</published><updated>2023-08-02T00:01:56+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2023-07-31:/posts/2023/07/31/rsync.html</id><summary type="html">&lt;h2&gt;rsync介绍&lt;/h2&gt;
 &lt;p&gt;rsync是快速和通用的远程和本地文件同步工具。&lt;/p&gt;
 &lt;p&gt;支持通过远程shell或者rsnyc守护进程进行同步。经常用作备份和镜像的 …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;rsync介绍&lt;/h2&gt;
 &lt;p&gt;rsync是快速和通用的远程和本地文件同步工具。&lt;/p&gt;
@@ -30,20 +30,25 @@
 &lt;li&gt;&lt;strong&gt;理解SRC结尾的/， 如果不带/， 则把repo目录放到workspace下面，如果带上/则吧repo目录里面的文件同步到workspace下。&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
-&lt;p&gt;rsync -avcz  --progress --delete root@git.local:/root/repo/  ~/workspace/&lt;/p&gt;
+&lt;p&gt;rsync -rtNlHv  --progress --delete --block-size=8192  rsync://cdimage.debian.org/debian-cd/   ~/debian-cd/
+同步debian-cd源，-rtNlHv  --progress --delete --block-size=8192 参数依次分别是：递归，同步（mtime），同步创建时间（birth），保留软连接，保留硬连接，输出细节，显示进度，在目标中删除源中没有的文件。 --block-size=8192是为了优化性能。&lt;/p&gt;
+&lt;p&gt;其实也可以简写为&lt;code&gt;rsync -aNHlv  --progress --delete rsync://cdimage.debian.org/debian-cd/   ~/debian-cd/&lt;/code&gt; # 这样会多同步文件属主属组等。（看手册是这样，没验证）&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2&gt;常用参数&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;-r表示递归，即包含子目录。注意，同步目录递归是必须的。&lt;/li&gt;
+&lt;li&gt;-r 表示递归，即包含子目录。注意，同步目录递归是必须的。&lt;/li&gt;
 &lt;li&gt;−t  这个命令告诉rsync将修改时间与文件一起传输。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;-a参数可以替代-r，除了可以递归同步以外，还可以同步元信息（比如修改时间、权限等），支持设备文件，能够同步符号连接。由于 rsync 默认使用文件大小和修改时间决定文件是否需要更新，所以-a比-r更有用。-a是常见用法。&lt;/strong&gt; &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;-a参数可以替代-r，除了可以递归同步以外，还可以同步元信息（比如修改时间、权限等），支持设备文件，保留符号连接。由于 rsync 默认使用文件大小和修改时间决定文件是否需要更新，所以-a比-r更有用。-a是常见用法。&lt;/strong&gt; &lt;/li&gt;
 &lt;li&gt;-a 相当于 -rlptgoD，分别代表递归，使用软连接同步软连接，同步权限，同步修改时间，同步文件群组， 同步文件属主，同步设备文件。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;-c、--checksum参数改变rsync的校验方式。默认情况下，rsync 只检查文件的大小和最后修改日期是否发生变化，如果发生变化，就重新传输；使用这个参数以后，则通过判断文件内容的校验和，决定是否重新传输。&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;--delete参数删除只存在于目标目录、不存在于源目标的文件，即保证目标目录是源目标的镜像。&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;−−crtimes, −N, 将目标文件的创建时间设置为与源文件相同的值。&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;--exclude参数指定排除不进行同步的文件，比如--exclude="*.iso"。&lt;/li&gt;
 &lt;li&gt;--exclude-from参数指定一个本地文件，里面是需要排除的文件模式，每个模式一行。&lt;/li&gt;
 &lt;li&gt;--existing、--ignore-non-existing参数表示不同步目标目录中不存在的文件和目录。&lt;/li&gt;
 &lt;li&gt;-h参数表示以人类可读的格式输出。&lt;/li&gt;
+&lt;li&gt;--hard-links, -H 保留硬连接。&lt;/li&gt;
+&lt;li&gt;--links, -l 保留符号链接&lt;/li&gt;
 &lt;li&gt;--ignore-existing参数表示只要该文件在目标目录中已经存在，就跳过去，不再同步这些文件。&lt;/li&gt;
 &lt;li&gt;--include参数指定同步时要包括的文件，一般与--exclude结合使用。&lt;/li&gt;
 &lt;li&gt;--link-dest参数指定增量备份的基准目录。&lt;/li&gt;

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>无聊就该多读书。</description><lastBuildDate>Tue, 01 Aug 2023 22:56:41 +0800</lastBuildDate><item><title>armbian-config 支持自动安装的软件</title><link>/posts/2023/08/01/armbian-config-software.html</link><description>&lt;h5&gt;发现armbian-config-software里面带的软件比较实用。有些工具值得尝试。在这里记录下armbian-config支持的软件列表。&lt;/h5&gt;
+<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>无聊就该多读书。</description><lastBuildDate>Sat, 05 Aug 2023 21:10:07 +0800</lastBuildDate><item><title>Tcl 和 expect教程</title><link>/posts/2023/08/04/tcl-expect.html</link><description>&lt;h1&gt;expect&lt;/h1&gt;
+&lt;p&gt;expect是用于命令行自动化交互的程序，相当于命令行版本的按键精灵。可以用来输入密码，操作程序。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;expect基于Tcl/Tk实现，在expect …&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Fri, 04 Aug 2023 22:08:51 +0800</pubDate><guid isPermaLink="false">tag:None,2023-08-04:/posts/2023/08/04/tcl-expect.html</guid><category>programming</category><category>programming</category></item><item><title>armbian-config 支持自动安装的软件</title><link>/posts/2023/08/01/armbian-config-software.html</link><description>&lt;h5&gt;发现armbian-config-software里面带的软件比较实用。有些工具值得尝试。在这里记录下armbian-config支持的软件列表。&lt;/h5&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://tvheadend.org/"&gt;TV headend&lt;/a&gt; &lt;em&gt;(IPTV server)&lt;/em&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://syncthing.net/"&gt;Syncthing&lt;/a&gt; &lt;em&gt;(personal cloud)&lt;/em&gt;&lt;/li&gt;

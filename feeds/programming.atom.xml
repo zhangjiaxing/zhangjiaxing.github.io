@@ -1,5 +1,197 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - programming</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/programming.atom.xml" rel="self"></link><id>/</id><updated>2023-07-30T22:41:38+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>gdb的基本使用方法</title><link href="/posts/2023/07/29/gdb.html" rel="alternate"></link><published>2023-07-29T00:26:32+08:00</published><updated>2023-07-30T22:41:38+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2023-07-29:/posts/2023/07/29/gdb.html</id><summary type="html">&lt;h1&gt;获取进程的coredump （内核转储）&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - programming</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/programming.atom.xml" rel="self"></link><id>/</id><updated>2023-08-05T21:10:07+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>Tcl 和 expect教程</title><link href="/posts/2023/08/04/tcl-expect.html" rel="alternate"></link><published>2023-08-04T22:08:51+08:00</published><updated>2023-08-05T21:10:07+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2023-08-04:/posts/2023/08/04/tcl-expect.html</id><summary type="html">&lt;h1&gt;expect&lt;/h1&gt;
+&lt;p&gt;expect是用于命令行自动化交互的程序，相当于命令行版本的按键精灵。可以用来输入密码，操作程序。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;expect基于Tcl/Tk实现，在expect …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h1&gt;expect&lt;/h1&gt;
+&lt;p&gt;expect是用于命令行自动化交互的程序，相当于命令行版本的按键精灵。可以用来输入密码，操作程序。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;expect基于Tcl/Tk实现，在expect脚本中使用Tcl语法和支持Tcl命令。&lt;/li&gt;
+&lt;li&gt;通过添加Tk,你可以把命令行程序封装在Gui中。&lt;/li&gt;
+&lt;li&gt;O'Reilly提供了一本关于Expect的书，书名为"Exploring Expect: A Tcl-Based Toolkit for Automating Interactive Applications", ISBN 1-56592-090-2.&lt;/li&gt;
+&lt;li&gt;autoexpect 这是expect安装包提供的命令，支持录制expect脚本，录制好后稍微修改就能运行。&lt;/li&gt;
+&lt;li&gt;shebang里面写&lt;code&gt;#!/usr/local/bin/expect −−&lt;/code&gt; --的作用是给脚本传递用户参数时避免被当成expect自身的参数。脚本可以从argv里面读取用户传递的参数。&lt;/li&gt;
+&lt;li&gt;脚本参数在Tcl里面是&lt;code&gt;$argc $argv0 $argv&lt;/code&gt; $argc表示参数个数，$argv0相当于C语言中的argv[0], $argv是一个Tcl list, 使用&lt;code&gt;[lindex $argv index]&lt;/code&gt;来访问。&lt;/li&gt;
+&lt;li&gt;Tcl 变量用&lt;code&gt;set 变量名 变量值&lt;/code&gt;定义。变量用&lt;code&gt;$变量名&lt;/code&gt;访问。&lt;/li&gt;
+&lt;li&gt;Tcl if语句通常写法为 if { 条件 } { 条件执行内容 } elseif {条件} {执行内容} else {执行内容}&lt;/li&gt;
+&lt;li&gt;Tcl while语句通常写法为 while { 条件} { 循环体 }&lt;/li&gt;
+&lt;li&gt;Tcl foreach语句通常写法为 &lt;code&gt;foreach 变量名 列表 { 执行内容 }&lt;/code&gt;。 while循环和foreach循环支持continue 和break。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;常用命令&lt;/span&gt;
+&lt;span class="n"&gt;spawn&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;启动要交互的应用程序&lt;/span&gt;
+&lt;span class="n"&gt;send&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;用于向进程发送字符串&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;换行符或者回车符&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;确认输入&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
+&lt;span class="n"&gt;send_user&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;用来打印输出&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;和tcl中puts差不多&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
+&lt;span class="n"&gt;interact&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;允许用户交互&lt;/span&gt;
+&lt;span class="n"&gt;exit&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;退出expect脚本&lt;/span&gt;
+&lt;span class="n"&gt;eof&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;expect执行结束&lt;/span&gt;
+&lt;span class="n"&gt;exec&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;执行程序&lt;/span&gt;
+&lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;暂停5秒&lt;/span&gt;
+
+
+&lt;span class="n"&gt;expect&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;命令作用&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="n"&gt;等待&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;直到其中一个模式与派生进程的输出匹配&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;超时&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;或者遇到文件结尾&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
+&lt;span class="n"&gt;expect支持多分支匹配&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;用法如下&lt;/span&gt;
+&lt;span class="n"&gt;expect&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;pat1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;body1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;...&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;patn&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;bodyn&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+&lt;span class="n"&gt;exp_continue&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;在expect中多模式匹配就需要用到&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;允许expect本身继续执行&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;而不是按原样返回&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
+&lt;span class="n"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;timeout&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;定义expect超时的时间&lt;/span&gt;
+
+&lt;span class="n"&gt;一个例子&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;
+&lt;span class="cp"&gt;#!/usr/bin/expect&lt;/span&gt;
+&lt;span class="n"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;timeout&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;
+
+&lt;span class="n"&gt;expect&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nl"&gt;Password&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;send_user&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;password (for $user) on $host: &amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;expect_user&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;(.*)&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;send_user&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;send&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;$expect_out(1,string)&lt;/span&gt;&lt;span class="se"&gt;\r&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;exp_continue&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;incorrect&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;send_user&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;invalid password or account&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;exit&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;timeout&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;send_user&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;connection to $host timed out&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;exit&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;eof&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="n"&gt;send_user&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;\
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;connection to host failed: $expect_out(buffer)&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;exit&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;$prompt&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h1&gt;Tcl语言学习&lt;/h1&gt;
+&lt;h2&gt;Tcl语言介绍&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;最早称为“工具命令语言” Tool Command Language&lt;/li&gt;
+&lt;li&gt;跨平台&lt;/li&gt;
+&lt;li&gt;容易学习&lt;/li&gt;
+&lt;li&gt;方便图形界面编程（Tk）&lt;/li&gt;
+&lt;li&gt;既可以交互式执行脚本，也可以内嵌到其他程序中&lt;/li&gt;
+&lt;li&gt;支持事件循环&lt;/li&gt;
+&lt;li&gt;支持package&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;语法（man Tcl）&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;分号和换行分隔命令，命令和参数之间用空格/tab分割。&lt;code&gt;#&lt;/code&gt;是单行注释，注释字符只有出现在一个命令开始时才有意义。&lt;/li&gt;
+&lt;li&gt;命令求值过程：1. 解释器把命令分解成字worlds, 完成替换。2. 第一个字是执行过程，后面的字作为执行过程的参数。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;""&lt;/code&gt;双引号内的内容表示一个“字”， 在引号之间的字符上会进行命令替换、变量替换、和反斜杠替换。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;{}&lt;/code&gt;花括号内的内容表示一个“字”，花括号可以嵌套， 花括号会按照层级进行匹配。在花括号之间的字符上不进行替换，对分号、换行、右方括号、或白空格不做特殊的解释。（除了下面描述的反斜杠-换行替换之外）。字由外侧的花括号之间的字符精确的组成，不包括花括号自身。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;[]&lt;/code&gt;方括号之间的内容Tcl进行命令替换。将递归调用Tcl解释器来把方括号中的字符作为一个Tcl脚本处理。脚本的结果将被替换到字方括号的位置。。在一个单一的字中可以有任意数目的命令替换。在由花括号包起来的字上不进行命令替换。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$&lt;/code&gt;开始的字，Tck会进行变量替换。支持&lt;code&gt;$name&lt;/code&gt; &lt;code&gt;${name}&lt;/code&gt;, 替换数组时用&lt;code&gt;$name(index)&lt;/code&gt;。index的字符将被进行命令替换、变量替换、和反斜杠替换。&lt;code&gt;${name}&lt;/code&gt;可以包含除了右括号之外的任何字符。一个单一的字中可以有任意数目的变量替换。在由花括号包起来的字上不进行命令替换。&lt;/li&gt;
+&lt;li&gt;用&lt;code&gt;\&lt;/code&gt;反斜线进行转义。支持的转义字符有&lt;code&gt;\a \b \f \n \r \t \v \{ \} \\&lt;/code&gt;。&lt;code&gt;\&amp;lt;newline&amp;gt;whiteSpace&lt;/code&gt;用来替换换行+空格的，整体会被替换为一个空格。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\&lt;/code&gt;转义符号也支持unicode。&lt;code&gt;\ooo&lt;/code&gt; o是最多三个的8进制字符。&lt;code&gt;\xhh&lt;/code&gt; h是最多2个的16进制字符。&lt;code&gt;\uhhhh&lt;/code&gt; 最多4个的16进制字符。这些会被替换成unicode字符。除了&lt;code&gt;\&amp;lt;newline&amp;gt;whiteSpace&lt;/code&gt;，其他在由花括号包起来的字上不进行反斜杠替换。&lt;/li&gt;
+&lt;li&gt;替换不影响一个命令的字边界。例如，即使变量的值包含空格，在变量替换期间变量的整个的值成为一个单一的字的一部分。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;备注&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;没有数字类型，可以认为只有Tck中的一切都是字worlds构成。&lt;/li&gt;
+&lt;li&gt;三种替换，分别是命令替换[]， 变量替换$，反斜线替换。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;常用命令&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;查看Tcl命令帮助可以&lt;code&gt;man 3Tcl 命令&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;set 变量 值&lt;/code&gt;能够设置变量的值, 无需声明变量。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;unset 变量&lt;/code&gt;移除变量&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;puts WORLDS&lt;/code&gt; 显示，支持worlds中支持变量替换&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;条件执行和循环&lt;/h3&gt;
+&lt;p&gt;if根据条件执行脚本。使用方法&lt;code&gt;if expr1 ?then? body1 elseif expr2 ?then? body2 elseif ... ?else? ?bodyN?&lt;/code&gt;。前后有问号的worlds是可以省略的。
+if命令把expr1作为一个表达式来求值(用与expr求值它的参数相同的方式)。这个表达式的值必须式一个boolean值(一个数值值，这里0是假而任何其他数值都是真；或者是一个字符串值，比如true或yes是真 而false或no是假)；如果它是真通过把body1传递给Tcl解释器来执行它。
+由于expr1 和 body1是一个表达式（worlds）, 所以一般要用{}或双引号引起来传递给if。不能乱换行，换行需要在&lt;code&gt;{或者"&lt;/code&gt;中。
+then和else是可选的“噪音词”用来使命令易读。命令的返回值是被执行的那个脚本的返回值。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;expr命令，详见&lt;code&gt;man 3tcl expr&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$name&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;zhangsan&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;then&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;puts&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;nihao
+&lt;span class="k"&gt;}&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;puts&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;hello
+&lt;span class="k"&gt;}&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;”&lt;/span&gt;&lt;span class="nv"&gt;$age&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;14&lt;/span&gt;&lt;span class="err"&gt;“&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;then&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="s2"&gt;    puts &amp;gt;=14&lt;/span&gt;
+&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="s2"&gt;    puts &amp;lt;14&lt;/span&gt;
+&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;和&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;之间要有空格&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;否则会被Tcl当作一个整体&lt;span class="err"&gt;。&lt;/span&gt;
+&lt;span class="nv"&gt;第一个if更易读&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
+&lt;span class="nv"&gt;这两个区别是用花括号时候&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="nv"&gt;$name&lt;/span&gt;&lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;是在if外面被求值&lt;span class="err"&gt;。&lt;/span&gt;用双引号则&lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="nv"&gt;$age&lt;/span&gt;&lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;在if命令里面被求值&lt;span class="err"&gt;（&lt;/span&gt;替换&lt;span class="err"&gt;）。&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;while test body&lt;/code&gt;循环。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;其他流程控制&lt;/h3&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;foreach&lt;/span&gt;
+&lt;span class="nv"&gt;switch&lt;/span&gt;
+
+&lt;span class="k"&gt;continue&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;和&lt;span class="nv"&gt;break&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;和&lt;span class="nv"&gt;C&lt;/span&gt;语言中一样。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;字符串处理&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;string命令用于字符串处理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;list （man 3tcl list）&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;list ?arg arg ...?&lt;/code&gt;这个命令返回由所有arg组成的一个列表。如果未指定arg 则返回一个空串。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;list  直接用原始参数来工作。例如，命令
+    list a b {c d e} {f {g h}}
+将返回
+    a b {c d e} {f {g h}}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;创建list变量的三种方法&lt;code&gt;set arr "1 2 3 4"&lt;/code&gt; &lt;code&gt;set arr {1 2 3 4}&lt;/code&gt; &lt;code&gt;set arr [list 1 2 3 4]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;list相关命令用l开头，可以在tclsh中输入l,查询list相关命令有哪些。&lt;code&gt;lappend lassign lindex linsert list llength lmap load lrange lrepeat lreplace lreverse lsearch lset lsort&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;llength 获取元素个数字符串&lt;/li&gt;
+&lt;li&gt;lrange 截取子list&lt;/li&gt;
+&lt;li&gt;lindex 根据index获取元素&lt;/li&gt;
+&lt;li&gt;linsert 插入&lt;/li&gt;
+&lt;li&gt;lset 修改指定位置的元素&lt;/li&gt;
+&lt;li&gt;lreplace 相当于字符串的replace，可以替换为0个到多个元素。&lt;/li&gt;
+&lt;li&gt;lconat 合并list&lt;/li&gt;
+&lt;li&gt;lappend 追加list元素&lt;/li&gt;
+&lt;li&gt;lrepeat 把value重复N次，得到一个list&lt;/li&gt;
+&lt;li&gt;join 相当于字符串的join。&lt;/li&gt;
+&lt;li&gt;split 把一个字符串分离成一个Tcl列表&lt;/li&gt;
+&lt;li&gt;lsearch 搜索list,支持严格匹配，通配符，或者正则匹配&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;array数组变量 （man 3tcl array）&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;array set arrayName list&lt;/code&gt;创建array,list由偶数个元素组成，每个奇数元素被作为在array中被作为一个index对待。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;array get arrayName ?pattern?&lt;/code&gt; 成对的返回数组元素列表。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;array size arrayName&lt;/code&gt; 返回元素个数字符串&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;glob partten&lt;/code&gt; 用于匹配文件路径，支持通配符&lt;code&gt;*?[char]&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;创建命令（函数）&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;proc name args body&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;文件操作&lt;/h3&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;常用命令介绍
+open
+close
+file
+eof
+gets
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;其他重要的命令&lt;/h3&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;format&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;按&lt;span class="nv"&gt;sprintf&lt;/span&gt;格式输出
+&lt;span class="k"&gt;exec&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;调用可执行程序
+&lt;span class="nv"&gt;source&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;执行脚本
+&lt;span class="nv"&gt;info&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;判断变量是否存在
+&lt;span class="k"&gt;exit&lt;/span&gt;
+&lt;span class="nv"&gt;expr&lt;/span&gt;
+&lt;span class="nv"&gt;eval&lt;/span&gt;
+&lt;span class="nv"&gt;incr&lt;/span&gt;
+&lt;span class="nv"&gt;socket&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;#&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;tcp&lt;/span&gt;服务端客户端
+&lt;span class="nv"&gt;encoding&lt;/span&gt;
+
+&lt;span class="nv"&gt;package&lt;/span&gt;
+&lt;span class="nv"&gt;http&lt;/span&gt;
+&lt;span class="nv"&gt;ls&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;share&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;man&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;zh_CN&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;man3&lt;/span&gt;&lt;span class="cm"&gt;/*tcl&lt;/span&gt;
+&lt;span class="cm"&gt;rpm -ql tcl&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="programming"></category><category term="programming"></category></entry><entry><title>gdb的基本使用方法</title><link href="/posts/2023/07/29/gdb.html" rel="alternate"></link><published>2023-07-29T00:26:32+08:00</published><updated>2023-07-30T22:41:38+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2023-07-29:/posts/2023/07/29/gdb.html</id><summary type="html">&lt;h1&gt;获取进程的coredump （内核转储）&lt;/h1&gt;
 &lt;h2&gt;启用内核转储&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;

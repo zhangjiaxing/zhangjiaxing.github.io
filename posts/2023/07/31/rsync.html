@@ -96,20 +96,25 @@
 <li><strong>理解SRC结尾的/， 如果不带/， 则把repo目录放到workspace下面，如果带上/则吧repo目录里面的文件同步到workspace下。</strong></li>
 </ul>
 <blockquote>
-<p>rsync -avcz  --progress --delete root@git.local:/root/repo/  ~/workspace/</p>
+<p>rsync -rtNlHv  --progress --delete --block-size=8192  rsync://cdimage.debian.org/debian-cd/   ~/debian-cd/
+同步debian-cd源，-rtNlHv  --progress --delete --block-size=8192 参数依次分别是：递归，同步（mtime），同步创建时间（birth），保留软连接，保留硬连接，输出细节，显示进度，在目标中删除源中没有的文件。 --block-size=8192是为了优化性能。</p>
+<p>其实也可以简写为<code>rsync -aNHlv  --progress --delete rsync://cdimage.debian.org/debian-cd/   ~/debian-cd/</code> # 这样会多同步文件属主属组等。（看手册是这样，没验证）</p>
 </blockquote>
 <h2>常用参数</h2>
 <ul>
-<li>-r表示递归，即包含子目录。注意，同步目录递归是必须的。</li>
+<li>-r 表示递归，即包含子目录。注意，同步目录递归是必须的。</li>
 <li>−t  这个命令告诉rsync将修改时间与文件一起传输。</li>
-<li><strong>-a参数可以替代-r，除了可以递归同步以外，还可以同步元信息（比如修改时间、权限等），支持设备文件，能够同步符号连接。由于 rsync 默认使用文件大小和修改时间决定文件是否需要更新，所以-a比-r更有用。-a是常见用法。</strong> </li>
+<li><strong>-a参数可以替代-r，除了可以递归同步以外，还可以同步元信息（比如修改时间、权限等），支持设备文件，保留符号连接。由于 rsync 默认使用文件大小和修改时间决定文件是否需要更新，所以-a比-r更有用。-a是常见用法。</strong> </li>
 <li>-a 相当于 -rlptgoD，分别代表递归，使用软连接同步软连接，同步权限，同步修改时间，同步文件群组， 同步文件属主，同步设备文件。</li>
 <li><strong>-c、--checksum参数改变rsync的校验方式。默认情况下，rsync 只检查文件的大小和最后修改日期是否发生变化，如果发生变化，就重新传输；使用这个参数以后，则通过判断文件内容的校验和，决定是否重新传输。</strong></li>
 <li><strong>--delete参数删除只存在于目标目录、不存在于源目标的文件，即保证目标目录是源目标的镜像。</strong></li>
+<li><strong>−−crtimes, −N, 将目标文件的创建时间设置为与源文件相同的值。</strong></li>
 <li>--exclude参数指定排除不进行同步的文件，比如--exclude="*.iso"。</li>
 <li>--exclude-from参数指定一个本地文件，里面是需要排除的文件模式，每个模式一行。</li>
 <li>--existing、--ignore-non-existing参数表示不同步目标目录中不存在的文件和目录。</li>
 <li>-h参数表示以人类可读的格式输出。</li>
+<li>--hard-links, -H 保留硬连接。</li>
+<li>--links, -l 保留符号链接</li>
 <li>--ignore-existing参数表示只要该文件在目标目录中已经存在，就跳过去，不再同步这些文件。</li>
 <li>--include参数指定同步时要包括的文件，一般与--exclude结合使用。</li>
 <li>--link-dest参数指定增量备份的基准目录。</li>
@@ -168,6 +173,9 @@
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     <li class="post">
+        <a href="/posts/2023/08/04/tcl-expect.html">Tcl 和 expect教程</a>
+    </li>
+    <li class="post">
         <a href="/posts/2023/08/01/armbian-config-software.html">armbian-config 支持自动安装的软件</a>
     </li>
     <li class="post">
@@ -178,9 +186,6 @@
     </li>
     <li class="post">
         <a href="/posts/2023/07/29/gdb.html">gdb的基本使用方法</a>
-    </li>
-    <li class="post">
-        <a href="/posts/2023/07/15/diff-patch.html">diff和patch命令以及git patch相关操作</a>
     </li>
   </ul>
 </section><section>
@@ -204,7 +209,7 @@
       <li><a href="/category/nltk.html">nltk (2)</a></li>
       <li><a href="/category/notes.html">notes (1)</a></li>
       <li><a href="/category/other.html">other (1)</a></li>
-      <li><a href="/category/programming.html">programming (8)</a></li>
+      <li><a href="/category/programming.html">programming (9)</a></li>
       <li><a href="/category/python.html">python (1)</a></li>
       <li><a href="/category/software.html">software (1)</a></li>
       <li><a href="/category/stock.html">stock (1)</a></li>
@@ -217,7 +222,7 @@
 </section>
 <section>
   <h1>Tags</h1>
-    <a href="/tag/linux.html">linux</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/storage.html">storage</a>,    <a href="/tag/debug.html">debug</a>,    <a href="/tag/programming.html">programming</a>,    <a href="/tag/c.html">C</a>,    <a href="/tag/git.html">git</a>,    <a href="/tag/patch.html">patch</a>,    <a href="/tag/text.html">text</a>,    <a href="/tag/selenium.html">selenium</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/docker.html">docker</a>,    <a href="/tag/flatpak.html">flatpak</a>,    <a href="/tag/interview.html">interview</a>,    <a href="/tag/qt.html">Qt</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/filesystem.html">filesystem</a>,    <a href="/tag/xwindow.html">xwindow</a>,    <a href="/tag/ide.html">IDE</a>,    <a href="/tag/glang.html">glang</a>,    <a href="/tag/xdg.html">xdg</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/database.html">database</a>,    <a href="/tag/mysql.html">mysql</a>,    <a href="/tag/notes.html">notes</a>,    <a href="/tag/sysctl.html">sysctl</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a>,    <a href="/tag/book.html">book</a>,    <a href="/tag/bootloader.html">bootloader</a></section>
+    <a href="/tag/programming.html">programming</a>,    <a href="/tag/linux.html">linux</a>,    <a href="/tag/software.html">software</a>,    <a href="/tag/storage.html">storage</a>,    <a href="/tag/debug.html">debug</a>,    <a href="/tag/c.html">C</a>,    <a href="/tag/git.html">git</a>,    <a href="/tag/patch.html">patch</a>,    <a href="/tag/text.html">text</a>,    <a href="/tag/selenium.html">selenium</a>,    <a href="/tag/web.html">web</a>,    <a href="/tag/docker.html">docker</a>,    <a href="/tag/flatpak.html">flatpak</a>,    <a href="/tag/interview.html">interview</a>,    <a href="/tag/qt.html">Qt</a>,    <a href="/tag/opensuse.html">openSUSE</a>,    <a href="/tag/filesystem.html">filesystem</a>,    <a href="/tag/xwindow.html">xwindow</a>,    <a href="/tag/ide.html">IDE</a>,    <a href="/tag/glang.html">glang</a>,    <a href="/tag/xdg.html">xdg</a>,    <a href="/tag/network.html">network</a>,    <a href="/tag/raspberry.html">raspberry</a>,    <a href="/tag/vm.html">vm</a>,    <a href="/tag/windows.html">windows</a>,    <a href="/tag/gdb.html">gdb</a>,    <a href="/tag/debian.html">debian</a>,    <a href="/tag/archlinux.html">archlinux</a>,    <a href="/tag/phicomm.html">phicomm</a>,    <a href="/tag/kernel.html">kernel</a>,    <a href="/tag/ext4.html">ext4</a>,    <a href="/tag/server.html">server</a>,    <a href="/tag/stock.html">stock</a>,    <a href="/tag/shu.html">书</a>,    <a href="/tag/gu-piao.html">股票</a>,    <a href="/tag/python.html">python</a>,    <a href="/tag/nltk.html">nltk</a>,    <a href="/tag/command.html">command</a>,    <a href="/tag/shell.html">shell</a>,    <a href="/tag/terminal.html">terminal</a>,    <a href="/tag/other.html">other</a>,    <a href="/tag/wireless.html">wireless</a>,    <a href="/tag/android.html">android</a>,    <a href="/tag/gtk.html">gtk+</a>,    <a href="/tag/gnome.html">gnome</a>,    <a href="/tag/bash.html">bash</a>,    <a href="/tag/keyboard.html">keyboard</a>,    <a href="/tag/firefox.html">firefox</a>,    <a href="/tag/arch.html">arch</a>,    <a href="/tag/database.html">database</a>,    <a href="/tag/mysql.html">mysql</a>,    <a href="/tag/notes.html">notes</a>,    <a href="/tag/sysctl.html">sysctl</a>,    <a href="/tag/vim.html">vim</a>,    <a href="/tag/editor.html">editor</a>,    <a href="/tag/pelican.html">pelican</a>,    <a href="/tag/blog.html">blog</a>,    <a href="/tag/book.html">book</a>,    <a href="/tag/bootloader.html">bootloader</a></section>
     <section>
         <h1>Social</h1>
         <ul>
