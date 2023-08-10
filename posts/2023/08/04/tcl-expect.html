@@ -148,6 +148,7 @@
 </ul>
 <h2>备注</h2>
 <ul>
+<li>有个交互式解释器tclsh, 可以作为操作系统的shell使用</li>
 <li>没有数字类型，可以认为只有Tck中的一切都是字worlds构成。</li>
 <li>三种替换，分别是命令替换[]， 变量替换$，反斜线替换。</li>
 </ul>
@@ -164,7 +165,7 @@ if命令把expr1作为一个表达式来求值(用与expr求值它的参数相�
 由于expr1 和 body1是一个表达式（worlds）, 所以一般要用{}或双引号引起来传递给if。不能乱换行，换行需要在<code>{或者"</code>中。
 then和else是可选的“噪音词”用来使命令易读。命令的返回值是被执行的那个脚本的返回值。</p>
 <ul>
-<li>expr命令，详见<code>man 3tcl expr</code></li>
+<li>expr命令会首先用空格连接所有参数，在命令提换和变量替换后，计算表达式的值，和C语言差不多。 详见<code>man 3tcl expr</code></li>
 </ul>
 <div class="highlight-custom"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="k">{</span><span class="w"> </span><span class="nv">$name</span><span class="w"> </span><span class="nv">zhangsan</span><span class="w"> </span><span class="k">}</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="k">{</span>
 <span class="w">    </span><span class="nb">puts</span><span class="w"> </span>nihao
@@ -230,7 +231,8 @@ then和else是可选的“噪音词”用来使命令易读。命令的返回值
 <li><code>glob partten</code> 用于匹配文件路径，支持通配符<code>*?[char]</code></li>
 </ul>
 <h3>创建命令（函数）</h3>
-<p><code>proc name args body</code></p>
+<p><code>proc name args body</code>
+args是一个列表，可以为空，每个元素指定一个参数。每个参数指定符也可以是有一个或两个字段个列表。如果有两个字段，则第一个是参数名而第二个是参数的默认值。</p>
 <h3>文件操作</h3>
 <div class="highlight-custom"><pre><span></span><code>常用命令介绍
 open
@@ -252,10 +254,12 @@ gets
 <span class="nv">socket</span><span class="w"> </span>#<span class="w"> </span><span class="nv">tcp</span>服务端客户端
 <span class="nv">encoding</span>
 
-<span class="nv">package</span>
-<span class="nv">http</span>
+<span class="nv">man</span><span class="w"> </span><span class="mi">3</span><span class="nv">tcl</span><span class="w"> </span><span class="nv">namespace</span>
+<span class="nv">man</span><span class="w"> </span><span class="mi">3</span><span class="nv">tcl</span><span class="w"> </span><span class="nv">package</span>
 <span class="nv">ls</span><span class="w"> </span><span class="o">/</span><span class="nv">usr</span><span class="o">/</span><span class="nv">share</span><span class="o">/</span><span class="nv">man</span><span class="o">/</span><span class="nv">zh_CN</span><span class="o">/</span><span class="nv">man3</span><span class="cm">/*tcl</span>
 <span class="cm">rpm -ql tcl</span>
+<span class="cm">rpm -ql tcllib</span>
+<span class="cm">rpm -ql tclx</span>
 </code></pre></div></div>
     <footer>
 <p class="meta">

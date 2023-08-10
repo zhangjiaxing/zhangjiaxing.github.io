@@ -76,13 +76,17 @@
 <h2>rsync用法</h2>
 <p>一个冒号的是ssh协议
 两个冒号或rsync://开头是rsync协议，两者等价</p>
-<h3>push</h3>
+<h3>本地</h3>
+<ul>
+<li>rsync [OPTION...] SRC... [DEST]</li>
+</ul>
+<h3>远程push</h3>
 <ul>
 <li>rsync [OPTION...] [USER@]HOST:SRC... [DEST]</li>
 <li>rsync [OPTION...] [USER@]HOST::SRC... [DEST]</li>
 <li>sync [OPTION...] rsync://[USER@]HOST[:PORT]/SRC... [DEST]</li>
 </ul>
-<h3>pull</h3>
+<h3>远程pull</h3>
 <ul>
 <li>rsync [OPTION...] SRC... [USER@]HOST:DEST</li>
 <li>rsync [OPTION...] SRC... [USER@]HOST::DEST</li>

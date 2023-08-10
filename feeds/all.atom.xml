@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2023-08-05T21:10:07+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>Tcl 和 expect教程</title><link href="/posts/2023/08/04/tcl-expect.html" rel="alternate"></link><published>2023-08-04T22:08:51+08:00</published><updated>2023-08-05T21:10:07+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2023-08-04:/posts/2023/08/04/tcl-expect.html</id><summary type="html">&lt;h1&gt;expect&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2023-08-10T22:17:08+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>Tcl 和 expect教程</title><link href="/posts/2023/08/04/tcl-expect.html" rel="alternate"></link><published>2023-08-04T22:08:51+08:00</published><updated>2023-08-10T22:17:08+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2023-08-04:/posts/2023/08/04/tcl-expect.html</id><summary type="html">&lt;h1&gt;expect&lt;/h1&gt;
 &lt;p&gt;expect是用于命令行自动化交互的程序，相当于命令行版本的按键精灵。可以用来输入密码，操作程序。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;expect基于Tcl/Tk实现，在expect …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h1&gt;expect&lt;/h1&gt;
@@ -83,6 +83,7 @@
 &lt;/ul&gt;
 &lt;h2&gt;备注&lt;/h2&gt;
 &lt;ul&gt;
+&lt;li&gt;有个交互式解释器tclsh, 可以作为操作系统的shell使用&lt;/li&gt;
 &lt;li&gt;没有数字类型，可以认为只有Tck中的一切都是字worlds构成。&lt;/li&gt;
 &lt;li&gt;三种替换，分别是命令替换[]， 变量替换$，反斜线替换。&lt;/li&gt;
 &lt;/ul&gt;
@@ -99,7 +100,7 @@ if命令把expr1作为一个表达式来求值(用与expr求值它的参数相�
 由于expr1 和 body1是一个表达式（worlds）, 所以一般要用{}或双引号引起来传递给if。不能乱换行，换行需要在&lt;code&gt;{或者"&lt;/code&gt;中。
 then和else是可选的“噪音词”用来使命令易读。命令的返回值是被执行的那个脚本的返回值。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;expr命令，详见&lt;code&gt;man 3tcl expr&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;expr命令会首先用空格连接所有参数，在命令提换和变量替换后，计算表达式的值，和C语言差不多。 详见&lt;code&gt;man 3tcl expr&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$name&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;zhangsan&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;then&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;{&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;puts&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;nihao
@@ -165,7 +166,8 @@ then和else是可选的“噪音词”用来使命令易读。命令的返回值
 &lt;li&gt;&lt;code&gt;glob partten&lt;/code&gt; 用于匹配文件路径，支持通配符&lt;code&gt;*?[char]&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;创建命令（函数）&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;proc name args body&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;proc name args body&lt;/code&gt;
+args是一个列表，可以为空，每个元素指定一个参数。每个参数指定符也可以是有一个或两个字段个列表。如果有两个字段，则第一个是参数名而第二个是参数的默认值。&lt;/p&gt;
 &lt;h3&gt;文件操作&lt;/h3&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;常用命令介绍
 open
@@ -187,10 +189,12 @@ gets
 &lt;span class="nv"&gt;socket&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;#&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;tcp&lt;/span&gt;服务端客户端
 &lt;span class="nv"&gt;encoding&lt;/span&gt;
 
-&lt;span class="nv"&gt;package&lt;/span&gt;
-&lt;span class="nv"&gt;http&lt;/span&gt;
+&lt;span class="nv"&gt;man&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="nv"&gt;tcl&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;namespace&lt;/span&gt;
+&lt;span class="nv"&gt;man&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="nv"&gt;tcl&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;package&lt;/span&gt;
 &lt;span class="nv"&gt;ls&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;share&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;man&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;zh_CN&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;man3&lt;/span&gt;&lt;span class="cm"&gt;/*tcl&lt;/span&gt;
 &lt;span class="cm"&gt;rpm -ql tcl&lt;/span&gt;
+&lt;span class="cm"&gt;rpm -ql tcllib&lt;/span&gt;
+&lt;span class="cm"&gt;rpm -ql tclx&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="programming"></category><category term="programming"></category></entry><entry><title>armbian-config 支持自动安装的软件</title><link href="/posts/2023/08/01/armbian-config-software.html" rel="alternate"></link><published>2023-08-01T21:18:49+08:00</published><updated>2023-08-01T22:57:06+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2023-08-01:/posts/2023/08/01/armbian-config-software.html</id><summary type="html">&lt;h5&gt;发现armbian-config-software里面带的软件比较实用。有些工具值得尝试。在这里记录下armbian-config支持的软件列表。&lt;/h5&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://tvheadend.org/"&gt;TV headend&lt;/a&gt; &lt;em&gt;(IPTV server)&lt;/em&gt;&lt;/li&gt;
@@ -234,7 +238,7 @@ gets
 &lt;li&gt;create diagnostics report&lt;/li&gt;
 &lt;li&gt;toggle kernel headers, RDP service, Thunderbird and LibreOffice (desktop builds)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;https://github.com/armbian/config&lt;/p&gt;</content><category term="software"></category><category term="linux"></category><category term="software"></category></entry><entry><title>rsync基本使用方法</title><link href="/posts/2023/07/31/rsync.html" rel="alternate"></link><published>2023-07-31T01:29:08+08:00</published><updated>2023-08-02T00:01:56+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2023-07-31:/posts/2023/07/31/rsync.html</id><summary type="html">&lt;h2&gt;rsync介绍&lt;/h2&gt;
+&lt;p&gt;https://github.com/armbian/config&lt;/p&gt;</content><category term="software"></category><category term="linux"></category><category term="software"></category></entry><entry><title>rsync基本使用方法</title><link href="/posts/2023/07/31/rsync.html" rel="alternate"></link><published>2023-07-31T01:29:08+08:00</published><updated>2023-08-08T01:07:58+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2023-07-31:/posts/2023/07/31/rsync.html</id><summary type="html">&lt;h2&gt;rsync介绍&lt;/h2&gt;
 &lt;p&gt;rsync是快速和通用的远程和本地文件同步工具。&lt;/p&gt;
 &lt;p&gt;支持通过远程shell或者rsnyc守护进程进行同步。经常用作备份和镜像的 …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;rsync介绍&lt;/h2&gt;
 &lt;p&gt;rsync是快速和通用的远程和本地文件同步工具。&lt;/p&gt;
@@ -245,13 +249,17 @@ gets
 &lt;h2&gt;rsync用法&lt;/h2&gt;
 &lt;p&gt;一个冒号的是ssh协议
 两个冒号或rsync://开头是rsync协议，两者等价&lt;/p&gt;
-&lt;h3&gt;push&lt;/h3&gt;
+&lt;h3&gt;本地&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;rsync [OPTION...] SRC... [DEST]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;远程push&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;rsync [OPTION...] [USER@]HOST:SRC... [DEST]&lt;/li&gt;
 &lt;li&gt;rsync [OPTION...] [USER@]HOST::SRC... [DEST]&lt;/li&gt;
 &lt;li&gt;sync [OPTION...] rsync://[USER@]HOST[:PORT]/SRC... [DEST]&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;pull&lt;/h3&gt;
+&lt;h3&gt;远程pull&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;rsync [OPTION...] SRC... [USER@]HOST:DEST&lt;/li&gt;
 &lt;li&gt;rsync [OPTION...] SRC... [USER@]HOST::DEST&lt;/li&gt;
@@ -4366,18 +4374,23 @@ r 阅读邮件，后面跟上id
 d 删除邮件
 u 撤销删除
 q 退出
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="command"></category></entry><entry><title>linux 查看info文档</title><link href="/posts/2013/09/27/linux-info.html" rel="alternate"></link><published>2013-09-27T17:59:00+08:00</published><updated>2023-02-21T09:52:21+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2013-09-27:/posts/2013/09/27/linux-info.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;info &amp;lt;command&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="command"></category></entry><entry><title>linux 查看info文档</title><link href="/posts/2013/09/27/linux-info.html" rel="alternate"></link><published>2013-09-27T17:59:00+08:00</published><updated>2023-08-10T21:56:02+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2013-09-27:/posts/2013/09/27/linux-info.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;info &amp;lt;command&amp;gt;
 info 比man 更详细
 info 中 按tab 跳到下一个 连接 （有*的，可以连接到其他info）
 按enter跳转
-n按键跳到下一个小节
-p跳到上一个小 …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;info &amp;lt;command&amp;gt;
+空格或者page down翻页
+
+n按键跳到下一个小 …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;info &amp;lt;command&amp;gt;
 info 比man 更详细
 info 中 按tab 跳到下一个 连接 （有*的，可以连接到其他info）
 按enter跳转
+空格或者page down翻页
+
 n按键跳到下一个小节
 p跳到上一个小节
 u跳到上一层
+&amp;lt; 跳到第一节
+&amp;gt; 跳到最后一节
 s查找关键字
 q离开
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category></entry><entry><title>命令参数</title><link href="/posts/2013/09/27/linux-command.html" rel="alternate"></link><published>2013-09-27T00:00:00+08:00</published><updated>2023-02-21T09:52:21+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2013-09-27:/posts/2013/09/27/linux-command.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;less

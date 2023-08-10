@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - storage</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/storage.atom.xml" rel="self"></link><id>/</id><updated>2023-08-02T00:01:56+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>rsync基本使用方法</title><link href="/posts/2023/07/31/rsync.html" rel="alternate"></link><published>2023-07-31T01:29:08+08:00</published><updated>2023-08-02T00:01:56+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2023-07-31:/posts/2023/07/31/rsync.html</id><summary type="html">&lt;h2&gt;rsync介绍&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - storage</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/storage.atom.xml" rel="self"></link><id>/</id><updated>2023-08-08T01:07:58+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>rsync基本使用方法</title><link href="/posts/2023/07/31/rsync.html" rel="alternate"></link><published>2023-07-31T01:29:08+08:00</published><updated>2023-08-08T01:07:58+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2023-07-31:/posts/2023/07/31/rsync.html</id><summary type="html">&lt;h2&gt;rsync介绍&lt;/h2&gt;
 &lt;p&gt;rsync是快速和通用的远程和本地文件同步工具。&lt;/p&gt;
 &lt;p&gt;支持通过远程shell或者rsnyc守护进程进行同步。经常用作备份和镜像的 …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;rsync介绍&lt;/h2&gt;
 &lt;p&gt;rsync是快速和通用的远程和本地文件同步工具。&lt;/p&gt;
@@ -10,13 +10,17 @@
 &lt;h2&gt;rsync用法&lt;/h2&gt;
 &lt;p&gt;一个冒号的是ssh协议
 两个冒号或rsync://开头是rsync协议，两者等价&lt;/p&gt;
-&lt;h3&gt;push&lt;/h3&gt;
+&lt;h3&gt;本地&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;rsync [OPTION...] SRC... [DEST]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;远程push&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;rsync [OPTION...] [USER@]HOST:SRC... [DEST]&lt;/li&gt;
 &lt;li&gt;rsync [OPTION...] [USER@]HOST::SRC... [DEST]&lt;/li&gt;
 &lt;li&gt;sync [OPTION...] rsync://[USER@]HOST[:PORT]/SRC... [DEST]&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;pull&lt;/h3&gt;
+&lt;h3&gt;远程pull&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;rsync [OPTION...] SRC... [USER@]HOST:DEST&lt;/li&gt;
 &lt;li&gt;rsync [OPTION...] SRC... [USER@]HOST::DEST&lt;/li&gt;
