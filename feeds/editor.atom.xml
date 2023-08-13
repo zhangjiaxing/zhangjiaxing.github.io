@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - editor</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/editor.atom.xml" rel="self"></link><id>/</id><updated>2023-08-14T00:06:09+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>vim折叠设置</title><link href="/posts/2017/06/07/vim-fold.html" rel="alternate"></link><published>2017-06-07T00:00:00+08:00</published><updated>2023-02-21T09:52:21+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-07:/posts/2017/06/07/vim-fold.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="x"&gt;vim折叠设置&lt;/span&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - editor</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/editor.atom.xml" rel="self"></link><id>/</id><updated>2023-08-14T02:40:57+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>vim折叠设置</title><link href="/posts/2017/06/07/vim-fold.html" rel="alternate"></link><published>2017-06-07T00:00:00+08:00</published><updated>2023-02-21T09:52:21+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-07:/posts/2017/06/07/vim-fold.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="x"&gt;vim折叠设置&lt;/span&gt;
 &lt;span class="x"&gt;set foldmethod=indent &amp;quot;set default foldmethod&lt;/span&gt;
 &lt;span class="x"&gt;&amp;quot;zi 打开关闭折叠&lt;/span&gt;
 &lt;span class="x"&gt;&amp;quot;zv 查看此行&lt;/span&gt;
@@ -141,7 +141,7 @@ $&lt;span class="w"&gt; &lt;/span&gt;gtags
 $ cd project/subdir1/subdir2/
 $ vim file1.c
 $ global -u
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="editor"></category><category term="editor"></category><category term="vim"></category></entry><entry><title>vim使用</title><link href="/posts/2014/03/13/vim-usage.html" rel="alternate"></link><published>2014-03-13T00:00:00+08:00</published><updated>2023-08-14T00:06:09+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2014-03-13:/posts/2014/03/13/vim-usage.html</id><summary type="html">&lt;p&gt;&lt;img alt="vim" src="/posts/2014/03/13/vi-vim-cheat-sheet-sch1.gif"&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="editor"></category><category term="editor"></category><category term="vim"></category></entry><entry><title>vim使用</title><link href="/posts/2014/03/13/vim-usage.html" rel="alternate"></link><published>2014-03-13T00:00:00+08:00</published><updated>2023-08-14T02:40:57+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2014-03-13:/posts/2014/03/13/vim-usage.html</id><summary type="html">&lt;p&gt;&lt;img alt="vim" src="/posts/2014/03/13/vi-vim-cheat-sheet-sch1.gif"&gt;&lt;/p&gt;
 &lt;h1&gt;VIM使用&lt;/h1&gt;
 &lt;h2&gt;插入模式&lt;/h2&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;i     从当前光标处进入插入模式
