@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - linux</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/linux.atom.xml" rel="self"></link><id>/</id><updated>2023-08-10T21:56:02+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>pkexec</title><link href="/posts/2022/07/05/pkexec.html" rel="alternate"></link><published>2022-07-05T13:26:03+08:00</published><updated>2022-07-26T18:17:52+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-07-05:/posts/2022/07/05/pkexec.html</id><content type="html">&lt;p&gt;可以使用pkexec代替gksu 和 sudo&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - linux</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/linux.atom.xml" rel="self"></link><id>/</id><updated>2023-08-12T16:59:46+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>pkexec</title><link href="/posts/2022/07/05/pkexec.html" rel="alternate"></link><published>2022-07-05T13:26:03+08:00</published><updated>2022-07-26T18:17:52+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-07-05:/posts/2022/07/05/pkexec.html</id><content type="html">&lt;p&gt;可以使用pkexec代替gksu 和 sudo&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;pkexec bash&lt;/p&gt;
 &lt;/blockquote&gt;</content><category term="linux"></category><category term="linux"></category></entry><entry><title>openSUSE系统报告无法打开动态库</title><link href="/posts/2022/07/02/cannot-open-shared-libraries.html" rel="alternate"></link><published>2022-07-02T18:29:06+08:00</published><updated>2022-07-26T18:17:52+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2022-07-02:/posts/2022/07/02/cannot-open-shared-libraries.html</id><summary type="html">&lt;p&gt;更新openSUSE 15.4, 发现 qtcreator 挂了。&lt;/p&gt;
@@ -872,9 +872,9 @@ Orchis gtk theme (https://www.gnome-look.org/p/1357889, https://github.com/vince
 &lt;p&gt;本文不定期更新&lt;/p&gt;</content><category term="linux"></category><category term="linux"></category><category term="software"></category><category term="arch"></category></entry><entry><title>linux设置文件只读, 直到关机</title><link href="/posts/2017/06/14/set-file-readonly-until-reboot.html" rel="alternate"></link><published>2017-06-14T09:58:28+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-14:/posts/2017/06/14/set-file-readonly-until-reboot.html</id><content type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;:::bash
 mount -o bind $file $file
 mount -o remount,bind,ro $file
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="bash"></category><category term="command"></category></entry><entry><title>bash的字符串模板</title><link href="/posts/2017/06/07/bash-string-template.html" rel="alternate"></link><published>2017-06-07T00:00:00+08:00</published><updated>2022-04-25T15:01:47+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-07:/posts/2017/06/07/bash-string-template.html</id><summary type="html">&lt;p&gt;在一个项目中，我想用一个配置模板文件自动生成配置文件，即为从&lt;code&gt;nginx.conf.template&lt;/code&gt; 自动生成一个特定的&lt;code&gt;nginx.conf&lt;/code&gt;。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="bash"></category><category term="command"></category></entry><entry><title>bash的字符串模板</title><link href="/posts/2017/06/07/bash-string-template.html" rel="alternate"></link><published>2017-06-07T00:00:00+08:00</published><updated>2023-08-12T16:25:06+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-07:/posts/2017/06/07/bash-string-template.html</id><summary type="html">&lt;p&gt;在一个项目中，我想用一个配置模板文件自动生成配置文件，即为从&lt;code&gt;nginx.conf.template&lt;/code&gt; 自动生成一个特定的&lt;code&gt;nginx.conf&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;如果使用bash来填充 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;在一个项目中，我想用一个配置模板文件自动生成配置文件，即为从&lt;code&gt;nginx.conf.template&lt;/code&gt; 自动生成一个特定的&lt;code&gt;nginx.conf&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;如果使用bash来填充展开模板，则需要eval，或者source之类的操作，因为bash不支持对字符串（真正意义上的字符串，而不是双引号引起来的）的变量替换。&lt;/p&gt;
+&lt;p&gt;如果使用bash来填充展开模板，则需要eval，或者source之类的操作，因为bash不支持对字符串（当作数据读取的文件中的字符串，而不是shell脚本中字符串）的变量替换。&lt;/p&gt;
 &lt;p&gt;解决方案是用 &lt;code&gt;envsubst&lt;/code&gt;。 这个命令支持使用环境变量展开字符串模板。&lt;/p&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;#一般用法&lt;/span&gt;
 envsubst&lt;span class="w"&gt; &lt;/span&gt;&amp;lt;&lt;span class="w"&gt; &lt;/span&gt;nginx.conf.template&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;nanjing.conf
@@ -1059,7 +1059,7 @@ vimtutor # vim教程&lt;/p&gt;</content><category term="linux"></category><categ
 &lt;li&gt;grub-mkconfig -o /boot/grub/grub.cfg 配置grub&lt;/li&gt;
 &lt;li&gt;exit&lt;/li&gt;
 &lt;li&gt;umount /mnt/ &amp;amp; reboot 结束安装&lt;/li&gt;
-&lt;/ol&gt;</content><category term="linux"></category><category term="linux"></category></entry><entry><title>bash</title><link href="/posts/2014/09/26/bash.html" rel="alternate"></link><published>2014-09-26T21:55:00+08:00</published><updated>2023-02-21T09:52:21+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2014-09-26:/posts/2014/09/26/bash.html</id><summary type="html">&lt;h4&gt;Linux 下shell基本上默认是 bash, 下面是我总结的一些技巧。&lt;/h4&gt;
+&lt;/ol&gt;</content><category term="linux"></category><category term="linux"></category></entry><entry><title>bash</title><link href="/posts/2014/09/26/bash.html" rel="alternate"></link><published>2014-09-26T21:55:00+08:00</published><updated>2023-08-12T16:59:46+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2014-09-26:/posts/2014/09/26/bash.html</id><summary type="html">&lt;h4&gt;Linux 下shell基本上默认是 bash, 下面是我总结的一些技巧。&lt;/h4&gt;
 &lt;h4&gt;bash 重定向&lt;/h4&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;find&lt;span class="w"&gt; &lt;/span&gt;/etc&lt;span class="w"&gt; &lt;/span&gt;-name&lt;span class="w"&gt; &lt;/span&gt;passwd&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.txt&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# 把标准输出重定向到 1.txt，屏幕上只显示错 …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h4&gt;Linux 下shell基本上默认是 bash, 下面是我总结的一些技巧。&lt;/h4&gt;
 &lt;h4&gt;bash 重定向&lt;/h4&gt;
@@ -1209,6 +1209,7 @@ bash&amp;gt; export CDPATH
 
 &lt;span class="n"&gt;用指令做数学运算&lt;/span&gt;
 &lt;span class="n"&gt;echo&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="err"&gt;[&lt;/span&gt;&lt;span class="n"&gt;$a&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="err"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;a=$b+1&amp;quot;&lt;/span&gt;
 
 &lt;span class="n"&gt;用法：&lt;/span&gt;
 &lt;span class="n"&gt;$&lt;/span&gt;&lt;span class="err"&gt;[&lt;/span&gt;&lt;span class="n"&gt;表达式&lt;/span&gt;&lt;span class="err"&gt;]&lt;/span&gt;&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="n"&gt;（表达式中的空格不影响结果）&lt;/span&gt;
@@ -1263,6 +1264,34 @@ bash&amp;gt; export CDPATH
 &lt;span class="n n-Quoted"&gt;ctrl+ pg dn切换到上一个标签&lt;/span&gt;
 &lt;span class="n n-Quoted"&gt;alt+N         N是数字，指定要切换到哪个标签&lt;/span&gt;
 &lt;span class="n n-Quoted"&gt;ctrl+shift+w  关闭当前标签&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;readline库的键绑定&lt;/h2&gt;
+&lt;p&gt;在bash里面键绑定有两种方式， 1是通过readline库的~/.inputrc文件实现。2是通过bash的内建命令bind实现。
+bind 可以绑定a. bash命令 b. readline命令 c. 宏 （意思是在当前行中插入字符串）
+bind 用法：&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;查询键绑定：
+bind -l 列出所有readline函数
+bind -p 列出所有readline函数 以及对应的键绑定
+bind -s 显示绑定的键序列和对应的宏
+bind -q function 查询那些键将执行function
+
+设置键绑定：
+bind &amp;#39;&amp;quot;keyseq&amp;quot;: command&amp;#39; 绑定一个readline功能
+bind &amp;#39;&amp;quot;keyseq&amp;quot;:&amp;quot;keystrokes&amp;quot;&amp;#39; 绑定readline宏 （自动输入按键序列）
+bind -x &amp;#39;&amp;quot;keyseq&amp;quot;: shell-command&amp;#39; 绑定shell命令 
+bind -r keyseq 取消当前任何 keyseq 的关联
+
+
+常见快捷键转义序列：
+\C-    Ctrl 前缀
+\M-    Meta 前缀
+\e     一个 Esc 字符
+keyseq是快捷键对应的转义序列， 支持多个快捷键和普通按键。可以使用 Ctrl-v 来查看快捷键对应的转义序列
+
+一个例子：
+bind &amp;#39;&amp;quot;\C-x\C-r&amp;quot;: re-read-init-file&amp;#39; # 先按ctrl+x, 在按ctrl+r
+bind bind &amp;#39;&amp;quot;^Xb&amp;quot;: backward-kill-word&amp;#39; # 先按ctrl+x,在按b
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="linux"></category><category term="bash"></category></entry><entry><title>关于Linux内核学习</title><link href="/posts/2014/08/15/linux-kernel.html" rel="alternate"></link><published>2014-08-15T00:00:00+08:00</published><updated>2023-02-21T09:52:21+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2014-08-15:/posts/2014/08/15/linux-kernel.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="mf"&gt;1.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;请推荐一些好的Linux内核参考书&lt;/span&gt;&lt;span class="err"&gt;？&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
 &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="mf"&gt;.&lt;/span&gt;&lt;span class="err"&gt;《&lt;/span&gt;&lt;span class="n"&gt;Linux&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Device&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Drivers&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Second&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Edition&lt;/span&gt;&lt;span class="err"&gt;》，&lt;/span&gt;&lt;span class="n"&gt;有中文译本&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
 &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="mf"&gt;.&lt;/span&gt;&lt;span class="err"&gt;《&lt;/span&gt;&lt;span class="n"&gt;Understanding&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Linux&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Kernel&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;2&lt;/span&gt;&lt;span class="n"&gt;nd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Edition&lt;/span&gt;&lt;span class="err"&gt;》&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;

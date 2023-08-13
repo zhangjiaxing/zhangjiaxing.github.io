@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - programming</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/programming.atom.xml" rel="self"></link><id>/</id><updated>2023-08-10T22:17:08+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>Tcl 和 expect教程</title><link href="/posts/2023/08/04/tcl-expect.html" rel="alternate"></link><published>2023-08-04T22:08:51+08:00</published><updated>2023-08-10T22:17:08+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2023-08-04:/posts/2023/08/04/tcl-expect.html</id><summary type="html">&lt;h1&gt;expect&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history - programming</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/programming.atom.xml" rel="self"></link><id>/</id><updated>2023-08-12T23:41:51+08:00</updated><subtitle>无聊就该多读书。</subtitle><entry><title>Tcl 和 expect教程</title><link href="/posts/2023/08/04/tcl-expect.html" rel="alternate"></link><published>2023-08-04T22:08:51+08:00</published><updated>2023-08-12T23:41:51+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2023-08-04:/posts/2023/08/04/tcl-expect.html</id><summary type="html">&lt;h1&gt;expect&lt;/h1&gt;
 &lt;p&gt;expect是用于命令行自动化交互的程序，相当于命令行版本的按键精灵。可以用来输入密码，操作程序。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;expect基于Tcl/Tk实现，在expect …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h1&gt;expect&lt;/h1&gt;
@@ -86,6 +86,13 @@
 &lt;li&gt;有个交互式解释器tclsh, 可以作为操作系统的shell使用&lt;/li&gt;
 &lt;li&gt;没有数字类型，可以认为只有Tck中的一切都是字worlds构成。&lt;/li&gt;
 &lt;li&gt;三种替换，分别是命令替换[]， 变量替换$，反斜线替换。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;自己瞎点评Tcl语言&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;函数传参和bash脚本一样，在进入函数前要把列表先展开，然后传递给命令，注定了效率低。&lt;/li&gt;
+&lt;li&gt;如果没有在参数中展开的变量，比如array这种不支持直接展开的，要在函数内用upvar命令获取上层函数的变量。使用起来不太方便。&lt;/li&gt;
+&lt;li&gt;不支持类型，一切都是token list，这个特点也让Tcl不能很方便的操作json等带类型的复杂数据结构。比如json里面的"100"是个字符串，转到Tcl里面类型就会丢失和100没区别。而python的json和dict互转就非常自然。&lt;/li&gt;
+&lt;li&gt;从语言定位来看, Tcl 应该是介于bash script和lua/python之间的编程语言。字符串处理和数据运算比bash方便，调用系统命令方便，也带json数据库网络图形界面支持，适合用来写不太复杂，但又要操作数据或者需要gui的脚本。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;常用命令&lt;/h2&gt;
 &lt;ul&gt;
@@ -188,6 +195,9 @@ gets
 &lt;span class="nv"&gt;incr&lt;/span&gt;
 &lt;span class="nv"&gt;socket&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;#&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;tcp&lt;/span&gt;服务端客户端
 &lt;span class="nv"&gt;encoding&lt;/span&gt;
+&lt;span class="nv"&gt;dict&lt;/span&gt;
+&lt;span class="nv"&gt;json&lt;/span&gt;
+
 
 &lt;span class="nv"&gt;man&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="nv"&gt;tcl&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;namespace&lt;/span&gt;
 &lt;span class="nv"&gt;man&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="nv"&gt;tcl&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;package&lt;/span&gt;

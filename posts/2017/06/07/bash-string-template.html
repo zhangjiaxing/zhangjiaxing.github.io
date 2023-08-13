@@ -68,7 +68,7 @@
 </header>
 
     <div class="entry-content"><p>在一个项目中，我想用一个配置模板文件自动生成配置文件，即为从<code>nginx.conf.template</code> 自动生成一个特定的<code>nginx.conf</code>。</p>
-<p>如果使用bash来填充展开模板，则需要eval，或者source之类的操作，因为bash不支持对字符串（真正意义上的字符串，而不是双引号引起来的）的变量替换。</p>
+<p>如果使用bash来填充展开模板，则需要eval，或者source之类的操作，因为bash不支持对字符串（当作数据读取的文件中的字符串，而不是shell脚本中字符串）的变量替换。</p>
 <p>解决方案是用 <code>envsubst</code>。 这个命令支持使用环境变量展开字符串模板。</p>
 <div class="highlight-custom"><pre><span></span><code><span class="c1">#一般用法</span>
 envsubst<span class="w"> </span>&lt;<span class="w"> </span>nginx.conf.template<span class="w"> </span>&gt;<span class="w"> </span>nanjing.conf

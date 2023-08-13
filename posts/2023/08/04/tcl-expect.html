@@ -152,6 +152,13 @@
 <li>没有数字类型，可以认为只有Tck中的一切都是字worlds构成。</li>
 <li>三种替换，分别是命令替换[]， 变量替换$，反斜线替换。</li>
 </ul>
+<h2>自己瞎点评Tcl语言</h2>
+<ul>
+<li>函数传参和bash脚本一样，在进入函数前要把列表先展开，然后传递给命令，注定了效率低。</li>
+<li>如果没有在参数中展开的变量，比如array这种不支持直接展开的，要在函数内用upvar命令获取上层函数的变量。使用起来不太方便。</li>
+<li>不支持类型，一切都是token list，这个特点也让Tcl不能很方便的操作json等带类型的复杂数据结构。比如json里面的"100"是个字符串，转到Tcl里面类型就会丢失和100没区别。而python的json和dict互转就非常自然。</li>
+<li>从语言定位来看, Tcl 应该是介于bash script和lua/python之间的编程语言。字符串处理和数据运算比bash方便，调用系统命令方便，也带json数据库网络图形界面支持，适合用来写不太复杂，但又要操作数据或者需要gui的脚本。</li>
+</ul>
 <h2>常用命令</h2>
 <ul>
 <li>查看Tcl命令帮助可以<code>man 3Tcl 命令</code></li>
@@ -253,6 +260,9 @@ gets
 <span class="nv">incr</span>
 <span class="nv">socket</span><span class="w"> </span>#<span class="w"> </span><span class="nv">tcp</span>服务端客户端
 <span class="nv">encoding</span>
+<span class="nv">dict</span>
+<span class="nv">json</span>
+
 
 <span class="nv">man</span><span class="w"> </span><span class="mi">3</span><span class="nv">tcl</span><span class="w"> </span><span class="nv">namespace</span>
 <span class="nv">man</span><span class="w"> </span><span class="mi">3</span><span class="nv">tcl</span><span class="w"> </span><span class="nv">package</span>
