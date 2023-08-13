@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /theme/
+Disallow: /drafts/
+Allow: /
+
+Sitemap: https://www.writebug.cn/sitemap.txt
+
