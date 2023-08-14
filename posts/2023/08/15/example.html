@@ -4,14 +4,16 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>关于 &mdash; cat ~/.zhiliao.history</title>
+  <title>java入门精粹 &mdash; cat ~/.zhiliao.history</title>
   <meta name="author" content="zhiliao">
-  <meta name="description" content="writebug博客网，一个开发者的技术博客。" />
+  <meta name="description" content="java入门精粹" />
 
   <meta name="keywords" content="开发者,程序,博客园,程序猿,程序媛,极客,码农,编程,代码,软件开发,开源,IT网站,技术社区,Developer,Programmer,Coder,Geek,Coding,Code,writebug,bug,写bug,linux,vim,编程语言,调试" />
 
   <link href="/feeds/all.atom.xml" type="application/rss+xml" rel="alternate"
         title="cat ~/.zhiliao.history RSS Feed" />
+
+
 
 
 
@@ -60,26 +62,96 @@
   <div id="main">
     <div id="content">
 <div>
-  <article role="article">
-    <header>
-      <h1 class="entry-title">关于</h1>
-      <p class="meta">
-        
-      </p>
-    </header>
-    <h3>关于我</h3>
-<p>程序猿，日常使用 <s>Arch linux</s> <s>openSUSE</s> <code>Fedora</code> 。</p>
-<h3>联系我</h3>
-<ul>
-<li>QQ 三亿四千七百八十二万零三百九十三</li>
-<li>Email writebugatqq.com</li>
-</ul>
-<h3>关于本博客</h3>
-<p>本博客使用 pelican 搭建， 主要用来做一些 技术方面的笔记 和 日常的随笔。</p>
-<h3>博客历史</h3>
-<ul>
-<li>2017-5 使用 <a href="https://getpelican.com/" title="pelican">pelican</a> 搭建博客, 主题使用 <a href="https://github.com/MrSenko/pelican-octopress-theme" title="pelican-octopress-theme">pelican-octopress-theme</a> .</li>
-</ul>
+  <article class="hentry" role="article">
+<header>
+      <h1 class="entry-title">java入门精粹</h1>
+    <p class="meta">
+<time datetime="2023-08-15T00:52:44+08:00" pubdate>2023-08-15 00:52:44</time>      
+    </p>
+</header>
+
+    <div class="entry-content"><h2>第一章 java开发入门</h2>
+<ol>
+<li>java类只支持单继承，但接口之间支持多继承。</li>
+<li>jdk包括java编译器，java运行时，java文档工具，java打包工具等。</li>
+<li>jdk安装目录内的db目录，这是java实现的开源数据库javaDB,支持jdbc。</li>
+<li>java源文件扩展名是.java, 编译后的字节码文件扩展名是.class。</li>
+<li>HelloWrold.java</li>
+</ol>
+<div class="highlight-custom"><pre><span></span><code><span class="kd">class</span> <span class="nc">HelloWorld</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">){</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;hello world&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ol>
+<li>使用javac HelloWrold.java编译。生成HelloWorld.class。javac参数是文件名。</li>
+<li>java HelloWorld运行。java参数是类名。</li>
+<li>java相关环境变量。PATH环境变量用来寻找java和javac等。CLASSPATH变量是java虚拟机用来加载字节码文件的路径。如果CLASSPATH没有设置，默认就是<code>.(当前目录)</code>。</li>
+</ol>
+<h2>第二章 java编程基础</h2>
+<ol>
+<li>java代码的基本格式<code>修饰符 class 类名 { 代码 }</code>。</li>
+<li>java中一个字符串中间不能分在两行写， 需要分成两个字符串用<code>+</code>连接起来。</li>
+<li>java中的注释包括 单行注释<code>//</code>， 多行注释<code>/*注释内容*/</code>，文档注释<code>/**注释内容*/</code>。javadoc命令用来把文档注释提取来生成帮助文档。</li>
+<li>java中的标识符可以包括大小写字母，数字，下划线_，和美元符号$，不能以数字开头，且不能是java关键字。</li>
+<li>建议的java命名规范</li>
+</ol>
+<div class="highlight-custom"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">包名所有字母小写</span><span class="err">。</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">类名和接口名每个单词首字母大写</span><span class="err">。</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">常量名所有字母大写</span><span class="err">，</span><span class="n">单词间用下划线连接</span><span class="err">。</span>
+<span class="mf">4.</span><span class="w"> </span><span class="n">变量名和方法名第一个单词首字母小写</span><span class="err">，</span><span class="n">从第二个单词开始首字母大写</span><span class="err">。</span>
+</code></pre></div>
+
+<ol>
+<li>java关键字</li>
+</ol>
+<div class="highlight-custom"><pre><span></span><code><span class="n">abstract</span> <span class="n">boolean</span> <span class="k">break</span> <span class="n">byte</span> <span class="n">case</span> 
+<span class="n">catch</span> <span class="n">char</span> <span class="n">const</span> <span class="k">class</span> <span class="nc">continue</span> 
+<span class="n">default</span> <span class="n">do</span> <span class="n">double</span> <span class="k">else</span> <span class="n">extends</span> 
+<span class="n">final</span> <span class="k">finally</span> <span class="nb">float</span> <span class="k">for</span> <span class="n">goto</span>
+<span class="k">if</span> <span class="n">implements</span> <span class="kn">import</span> <span class="nn">instanceof</span> <span class="nb">int</span>
+<span class="n">interface</span> <span class="n">long</span> <span class="n">native</span> <span class="n">new</span> <span class="n">package</span>
+<span class="n">private</span> <span class="n">protected</span> <span class="n">public</span> <span class="k">return</span> <span class="n">short</span>
+<span class="n">static</span> <span class="n">strictfp</span> <span class="nb">super</span> <span class="n">switch</span> <span class="n">this</span>
+<span class="n">throw</span> <span class="n">throws</span> <span class="n">transient</span> <span class="k">try</span> <span class="n">void</span>
+<span class="n">volatile</span> <span class="k">while</span> <span class="n">synchronized</span>
+<span class="n">所有关键字都是小写的</span>
+</code></pre></div>
+
+<ol>
+<li>java中的整形常量支持二进制八进制十进制十六进制表示，二进制八进制十六进制分别以<code>0b/0B，0, 0x/0X</code>开头。</li>
+<li>java浮点型常量，单精度后面用F/f结尾，双精度后面用D/d结尾。d可以不写，默认是双精度。</li>
+<li>java字符常量，要用英文单引号引起来，java使用unicode字符集，支持转义字符，支持 '\u0000'。</li>
+<li>java布尔常量包括true 和false。</li>
+<li>null类型常量只有一个值null,表示对象的引用是空。</li>
+<li>十进制转二进制是一个不断除以2区余数的过程。把要转换的数除以2,得到商和余数，把商继续除以2,直到商为0.</li>
+<li>二进制转十进制要从右到左用二进制位上的每个数乘以2的相应次方。</li>
+<li>java是强类型的语言。数据类型分成基本数据类型和引用数据类型。基本数据类型包括数值型（byte short int long float double）和字符型char，布尔型boolean。引用数据类型包括类class, 接口interface,数组，枚举enum,注解annotation。</li>
+<li>占用空间，（单位字节）byte类型 1，short 2, int 4, long 8. </li>
+<li>long型变量赋值时候右面的常量需要用L结尾。</li>
+<li>char类型变量占用2个字节。也可以把char赋值为0-65535之间的整数。</li>
+<li>boolean类型变量取值是true或false。</li>
+<li>强制类型转换<code>目标类型 变量 = (目标类型)值</code></li>
+<li>变量在表达式中进行运算时，可能会发生自动类型转换，比如byte自动转换为int.</li>
+</ol>
+<p>已经读完了page30/426。
+后面的内容有机会补充</p></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">
+        zhiliao
+    </span>
+  </span>
+<time datetime="2023-08-15T00:52:44+08:00" pubdate>2023-08-15 00:52:44</time>  <span class="categories">
+    <a class='category' href='/category/programming.html'>programming</a>
+  </span>
+  <span class="categories">
+    <a class="category" href="/tag/programming-language.html">programming-language</a>,    <a class="category" href="/tag/java.html">java</a>  </span>
+</p><div class="sharing">
+</div>    </footer>
   </article>
 
 </div>
