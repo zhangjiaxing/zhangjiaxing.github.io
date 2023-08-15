@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>一个开发者的技术博客。</description><lastBuildDate>Tue, 15 Aug 2023 00:52:49 +0800</lastBuildDate><item><title>java入门精粹</title><link>/posts/2023/08/15/learn-java.html</link><description>&lt;h2&gt;第一章 java开发入门&lt;/h2&gt;
+<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>一个开发者的技术博客。</description><lastBuildDate>Tue, 15 Aug 2023 22:15:02 +0800</lastBuildDate><item><title>java入门精粹</title><link>/posts/2023/08/15/learn-java.html</link><description>&lt;h2&gt;第一章 java开发入门&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;java类只支持单继承，但接口之间支持多继承。&lt;/li&gt;
 &lt;li&gt;jdk包括java编译器，java运行时，java文档工具，java打包工具等。&lt;/li&gt;

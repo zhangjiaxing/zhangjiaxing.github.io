@@ -135,8 +135,33 @@
 <li>boolean类型变量取值是true或false。</li>
 <li>强制类型转换<code>目标类型 变量 = (目标类型)值</code></li>
 <li>变量在表达式中进行运算时，可能会发生自动类型转换，比如byte自动转换为int.</li>
+<li>java中的算术运算符包括<code>+（正号） -（负号）+ - * / % ++（前） ++（后）--（前）--（后）</code>。</li>
+<li>在进行除法运算时，当除数和被除数都是整数时，得到的结果也是整数，如果除法运算有小数参与，得到的结果是小数。</li>
+<li>在进行取模运算时，运算结果的正负取决于被模数（左边的数）的负号，与模数（右边的数）的符号无关。</li>
+<li>赋值运算符包括<code>= += -= *= /= %=</code>。赋值运算符是有返回值的，可以用一条语句为多个变量赋值，比如<code>a=b=c=5;</code></li>
+<li>用=为变量赋值时，在目标类型取值范围小于源类型时，比如将int变量赋值给short类型变量，需要显示的强制类型转换。用<code>+= -= *= /= %=</code>为变量赋值时，强制类型转换会自动完成。</li>
+<li>比较运算符包括<code>== != &lt; &gt; &lt;= &gt;=</code>。</li>
+<li>逻辑运算符用于对布尔类型的数据运算，结果也是布尔类型数据。包括<code>&amp;  |  ^异或  !非  &amp;&amp;  ||</code>。</li>
+<li>&amp;&amp;是短路与，&amp;不短路。||是短路或，|不短路。</li>
+<li><code>^</code>表示异或。</li>
+<li>位运算符包括<code>&amp;按位与  |按位或  ~去反  ^按位异或  &lt;&lt;左移  &gt;&gt;右移  &gt;&gt;&gt;无符号右移</code></li>
+<li>运算符优先级，<code>. []  ()</code>优先级最高，赋值运算符优先级最低。</li>
+<li>选择结构语句支持<code>if(){}else{}</code>，和C一样。支持<code>判断条件?表达式1:表达式2</code>三元运算符。</li>
+<li>switch语句用法和C里面一样，但支持了String。</li>
+<li>while,do...while,for,break,continue用法和C中一样，但break和continue额外支持标记，多层循环时，用来跳出外层循环。用法是</li>
 </ol>
-<p>已经读完了page30/426。
+<div class="highlight-custom"><pre><span></span><code><span class="n">itcast</span><span class="o">:</span><span class="w"> </span><span class="k">for</span><span class="o">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="o">;</span><span class="w"> </span><span class="n">i</span><span class="o">++){</span>
+<span class="w">    </span><span class="k">for</span><span class="o">(</span><span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span><span class="w"> </span><span class="n">j</span><span class="o">&lt;</span><span class="mi">10</span><span class="o">;</span><span class="w"> </span><span class="n">j</span><span class="o">++){</span>
+<span class="w">        </span><span class="o">...</span>
+<span class="w">        </span><span class="k">break</span><span class="w"> </span><span class="n">itcast</span><span class="o">;</span><span class="w"> </span><span class="c1">//跳出外层循环</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+
+<ol>
+<li></li>
+</ol>
+<p>已经读完了page58/426。
 后面的内容有机会补充</p></div>
     <footer>
 <p class="meta">

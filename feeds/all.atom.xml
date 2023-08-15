@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2023-08-15T00:52:49+08:00</updated><subtitle>一个开发者的技术博客。</subtitle><entry><title>java入门精粹</title><link href="/posts/2023/08/15/learn-java.html" rel="alternate"></link><published>2023-08-15T00:52:44+08:00</published><updated>2023-08-15T00:52:49+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2023-08-15:/posts/2023/08/15/learn-java.html</id><summary type="html">&lt;h2&gt;第一章 java开发入门&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2023-08-15T22:15:02+08:00</updated><subtitle>一个开发者的技术博客。</subtitle><entry><title>java入门精粹</title><link href="/posts/2023/08/15/learn-java.html" rel="alternate"></link><published>2023-08-15T00:52:44+08:00</published><updated>2023-08-15T22:15:02+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2023-08-15:/posts/2023/08/15/learn-java.html</id><summary type="html">&lt;h2&gt;第一章 java开发入门&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;java类只支持单继承，但接口之间支持多继承。&lt;/li&gt;
 &lt;li&gt;jdk包括java编译器，java运行时，java文档工具，java打包工具等。&lt;/li&gt;
@@ -68,8 +68,33 @@
 &lt;li&gt;boolean类型变量取值是true或false。&lt;/li&gt;
 &lt;li&gt;强制类型转换&lt;code&gt;目标类型 变量 = (目标类型)值&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;变量在表达式中进行运算时，可能会发生自动类型转换，比如byte自动转换为int.&lt;/li&gt;
+&lt;li&gt;java中的算术运算符包括&lt;code&gt;+（正号） -（负号）+ - * / % ++（前） ++（后）--（前）--（后）&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;在进行除法运算时，当除数和被除数都是整数时，得到的结果也是整数，如果除法运算有小数参与，得到的结果是小数。&lt;/li&gt;
+&lt;li&gt;在进行取模运算时，运算结果的正负取决于被模数（左边的数）的负号，与模数（右边的数）的符号无关。&lt;/li&gt;
+&lt;li&gt;赋值运算符包括&lt;code&gt;= += -= *= /= %=&lt;/code&gt;。赋值运算符是有返回值的，可以用一条语句为多个变量赋值，比如&lt;code&gt;a=b=c=5;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;用=为变量赋值时，在目标类型取值范围小于源类型时，比如将int变量赋值给short类型变量，需要显示的强制类型转换。用&lt;code&gt;+= -= *= /= %=&lt;/code&gt;为变量赋值时，强制类型转换会自动完成。&lt;/li&gt;
+&lt;li&gt;比较运算符包括&lt;code&gt;== != &amp;lt; &amp;gt; &amp;lt;= &amp;gt;=&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;逻辑运算符用于对布尔类型的数据运算，结果也是布尔类型数据。包括&lt;code&gt;&amp;amp;  |  ^异或  !非  &amp;amp;&amp;amp;  ||&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&amp;amp;&amp;amp;是短路与，&amp;amp;不短路。||是短路或，|不短路。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;^&lt;/code&gt;表示异或。&lt;/li&gt;
+&lt;li&gt;位运算符包括&lt;code&gt;&amp;amp;按位与  |按位或  ~去反  ^按位异或  &amp;lt;&amp;lt;左移  &amp;gt;&amp;gt;右移  &amp;gt;&amp;gt;&amp;gt;无符号右移&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;运算符优先级，&lt;code&gt;. []  ()&lt;/code&gt;优先级最高，赋值运算符优先级最低。&lt;/li&gt;
+&lt;li&gt;选择结构语句支持&lt;code&gt;if(){}else{}&lt;/code&gt;，和C一样。支持&lt;code&gt;判断条件?表达式1:表达式2&lt;/code&gt;三元运算符。&lt;/li&gt;
+&lt;li&gt;switch语句用法和C里面一样，但支持了String。&lt;/li&gt;
+&lt;li&gt;while,do...while,for,break,continue用法和C中一样，但break和continue额外支持标记，多层循环时，用来跳出外层循环。用法是&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;已经读完了page30/426。
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;itcast&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++){&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="o"&gt;++){&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="o"&gt;...&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="k"&gt;break&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;itcast&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;//跳出外层循环&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;已经读完了page58/426。
 后面的内容有机会补充&lt;/p&gt;</content><category term="programming"></category><category term="programming-language"></category><category term="java"></category></entry><entry><title>Tcl 和 expect教程</title><link href="/posts/2023/08/04/tcl-expect.html" rel="alternate"></link><published>2023-08-04T22:08:51+08:00</published><updated>2023-08-12T23:41:51+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2023-08-04:/posts/2023/08/04/tcl-expect.html</id><summary type="html">&lt;h1&gt;expect&lt;/h1&gt;
 &lt;p&gt;expect是用于命令行自动化交互的程序，相当于命令行版本的按键精灵。可以用来输入密码，操作程序。&lt;/p&gt;
 &lt;ul&gt;
