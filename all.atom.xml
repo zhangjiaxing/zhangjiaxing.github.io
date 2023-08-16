@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>一个开发者的技术博客。</description><lastBuildDate>Tue, 15 Aug 2023 22:15:02 +0800</lastBuildDate><item><title>java入门精粹</title><link>/posts/2023/08/15/learn-java.html</link><description>&lt;h2&gt;第一章 java开发入门&lt;/h2&gt;
+<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>一个开发者的技术博客。</description><lastBuildDate>Wed, 16 Aug 2023 23:02:38 +0800</lastBuildDate><item><title>在Linux下交换Ctrl与大写锁定键</title><link>/posts/2023/08/16/caps-as-ctrl.html</link><description>&lt;p&gt;Date: 2023-08-16 22:44:54
+Modified: 2023-08-16 22:44:59
+Category: linux
+Tags: linux, Xwindow
+Slug: remap-caps-ctrl&lt;/p&gt;
+&lt;p&gt;备注： &lt;code&gt;不要在虚拟机里交换按键&lt;/code&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;GNOME3 用户可以使用Tweaks工具交换大写锁定和Ctrl键。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;启 …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Wed, 16 Aug 2023 23:02:38 +0800</pubDate><guid isPermaLink="false">tag:None,2023-08-16:/posts/2023/08/16/caps-as-ctrl.html</guid><category>linux</category></item><item><title>java入门精粹</title><link>/posts/2023/08/15/learn-java.html</link><description>&lt;h2&gt;第一章 java开发入门&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;java类只支持单继承，但接口之间支持多继承。&lt;/li&gt;
 &lt;li&gt;jdk包括java编译器，java运行时，java文档工具，java打包工具等。&lt;/li&gt;
@@ -559,12 +568,12 @@ Strerror  perror
 &lt;li&gt;&lt;code&gt;getfacl -R / &amp;gt;systemP.bak&lt;/code&gt;  将这个系统中的 / ，以及 / 底下所有的文件及目录权限导出到一个文件中&lt;/li&gt;
 &lt;li&gt;将systemP.bak文件想办法拷贝到被破坏的机 …&lt;/li&gt;&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Wed, 11 Jun 2014 20:50:00 +0800</pubDate><guid isPermaLink="false">tag:None,2014-06-11:/posts/2014/06/11/chmod777.html</guid><category>linux</category><category>linux</category><category>command</category></item><item><title>C语言零长数组</title><link>/posts/2014/03/23/zero-length-array.html</link><description>&lt;p&gt;前言：计算机语言是编译器和程序员交流的依据和规范，GNU C是GCC特有的功能，在Linux内核中被广泛应用。&lt;/p&gt;
 &lt;p&gt;帮助文档：http://gcc.gnu.org …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Sun, 23 Mar 2014 18:28:00 +0800</pubDate><guid isPermaLink="false">tag:None,2014-03-23:/posts/2014/03/23/zero-length-array.html</guid><category>programming</category><category>programming</category><category>C</category></item><item><title>vim使用</title><link>/posts/2014/03/13/vim-usage.html</link><description>&lt;p&gt;&lt;img alt="vim" src="/posts/2014/03/13/vi-vim-cheat-sheet-sch1.gif"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://app.waibc.com/manual/vimcdoc/doc/help.html"&gt;vim帮助文档（中文）&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;VIM使用&lt;/h1&gt;
 &lt;h2&gt;插入模式&lt;/h2&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;i     从当前光标处进入插入模式
 I     进入插入模式，并置光标于行首
-a     追加模式，置光标于当前光标之后
-A …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Thu, 13 Mar 2014 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:None,2014-03-13:/posts/2014/03/13/vim-usage.html</guid><category>editor</category><category>editor</category><category>vim</category></item><item><title>mail命令，收发邮件</title><link>/posts/2013/09/29/linux-command-mail.html</link><description>&lt;p&gt;常用命令行邮件客户端有mail（mailx）和mutt&lt;/p&gt;
+a     追加模式，置光标于 …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Thu, 13 Mar 2014 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:None,2014-03-13:/posts/2014/03/13/vim-usage.html</guid><category>editor</category><category>editor</category><category>vim</category></item><item><title>mail命令，收发邮件</title><link>/posts/2013/09/29/linux-command-mail.html</link><description>&lt;p&gt;常用命令行邮件客户端有mail（mailx）和mutt&lt;/p&gt;
 &lt;h3&gt;发邮件&lt;/h3&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;mail&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;主题&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;收件人&lt;/span&gt;
 &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;代表发邮件&lt;/span&gt;

@@ -4,14 +4,16 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Tag: database &mdash; cat ~/.zhiliao.history</title>
+  <title>在Linux下交换Ctrl与大写锁定键 &mdash; cat ~/.zhiliao.history</title>
   <meta name="author" content="zhiliao">
-  <meta name="description" content="writebug博客网，一个开发者的技术博客。" />
+  <meta name="description" content="在Linux下交换Ctrl与大写锁定键" />
 
   <meta name="keywords" content="开发者,程序,博客园,程序猿,程序媛,极客,码农,编程,代码,软件开发,开源,IT网站,技术社区,Developer,Programmer,Coder,Geek,Coding,Code,writebug,bug,写bug,linux,vim,编程语言,调试" />
 
   <link href="/feeds/all.atom.xml" type="application/rss+xml" rel="alternate"
         title="cat ~/.zhiliao.history RSS Feed" />
+
+
 
 
 
@@ -60,28 +62,73 @@
   <div id="main">
     <div id="content">
 <div>
-	<article role="article">
-    	<header>
-    		<h1 class="entry-title">Tag: database</h1>
-    	</header>
+  <article class="hentry" role="article">
+<header>
+      <h1 class="entry-title">在Linux下交换Ctrl与大写锁定键</h1>
+    <p class="meta">
+<time datetime="2023-08-16T23:02:38.106945+08:00" pubdate>2023-08-16 23:02:38</time>      
+    </p>
+</header>
 
-    	<div id="blog-archives">
-            <h2>2017</h2>
-                    <article>
-                        <h1><a href="/posts/2017/06/07/mysql-password.html">mysql 中修改root密码</a></h1>
-                        <time datetime="2017-06-07 00:00:00+08:00" pubdate>
-                            <span class="month">六月</span>
-                            <span class="day">07</span>
-                            <span class="year">2017</span>
-                        </time>
-                        <footer>
-                            <span class="categories">posted in
-                                <a class='category' href='/category/database.html'>database</a>
-                            </span>
-                        </footer>
-                    </article>
-	    </div>
-    </article>
+    <div class="entry-content"><p>Date: 2023-08-16 22:44:54
+Modified: 2023-08-16 22:44:59
+Category: linux
+Tags: linux, Xwindow
+Slug: remap-caps-ctrl</p>
+<p>备注： <code>不要在虚拟机里交换按键</code></p>
+<ol>
+<li>GNOME3 用户可以使用Tweaks工具交换大写锁定和Ctrl键。</li>
+</ol>
+<div class="highlight-custom"><pre><span></span><code>启动 Tweaks 程序。
+从左侧菜单中选择 “Keyboard &amp; Mouse”。
+单击 “Additional Layout Options”。
+在打开的窗口中单击 “Ctrl position”，然后选择 “Swap Ctrl and Caps Lock”。
+</code></pre></div>
+
+<ol>
+<li>Xfce桌面用户使用setxkeymap命令设置。</li>
+</ol>
+<div class="highlight-custom"><pre><span></span><code>/usr/bin/setxkbmap -option &quot;ctrl:nocaps&quot;
+# 把命令添加到 Xfce 的自启动配置（在设置管理器中查找 “Session and Startup”）里
+# 这个是基于X的，控制台（tty）或者wayland下面不起作用。
+</code></pre></div>
+
+<p>还有一种可能性是在文件 /etc/default/keyboard 或者<code>~/.keyboard</code>中使用相同的选项：</p>
+<div class="highlight-custom"><pre><span></span><code>    # KEYBOARD CONFIGURATION FILE
+    # Consult the keyboard(5) manual page.
+    XKBMODEL=&quot;pc105&quot;
+    XKBLAYOUT=&quot;us&quot;
+    XKBVARIANT=&quot;&quot;
+    XKBOPTIONS=&quot;ctrl:swapcaps&quot; #添加这行
+    BACKSPACE=&quot;guess&quot;
+# 在fedora上测试不起作用，也许在debian上能用
+</code></pre></div>
+
+<ol>
+<li>
+<p>在控制台tty上交换按键
+方法1： 设置/etc/default/keyboard ，然后setupcon
+方法2： 通过dumpkeys 和 loadkeys设置</p>
+</li>
+<li>
+<p>一些有用的man帮助
+setxkbmap、xkeyboard-config、keyboard、console-setup setupcon，loadkeys dumpkeys</p>
+</li>
+</ol></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">
+        zhiliao
+    </span>
+  </span>
+<time datetime="2023-08-16T23:02:38.106945+08:00" pubdate>2023-08-16 23:02:38</time>  <span class="categories">
+    <a class='category' href='/category/linux.html'>linux</a>
+  </span>
+</p><div class="sharing">
+</div>    </footer>
+  </article>
+
 </div>
 
 <aside class="sidebar">
@@ -89,7 +136,19 @@
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     <li class="post">
-        <a href="/posts/2017/06/07/mysql-password.html">mysql 中修改root密码</a>
+        <a href="/posts/2023/08/16/caps-as-ctrl.html">在Linux下交换Ctrl与大写锁定键</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2023/08/15/learn-java.html">java入门精粹</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2023/08/04/tcl-expect.html">Tcl 和 expect教程</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2023/08/01/armbian-config-software.html">armbian-config 支持自动安装的软件</a>
+    </li>
+    <li class="post">
+        <a href="/posts/2023/07/31/rsync.html">rsync基本使用方法</a>
     </li>
   </ul>
 </section><section>
@@ -148,7 +207,7 @@
   </div>
   <footer role="contentinfo">
 <p>
-    Copyright &copy;  2017  zhiliao &mdash;
+    Copyright &copy;  2013&ndash;2023  zhiliao &mdash;
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
 </p>  </footer>
 </body>

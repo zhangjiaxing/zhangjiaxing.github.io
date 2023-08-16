@@ -46,6 +46,7 @@ https://www.writebug.cn/index6.html
 https://www.writebug.cn/index7.html
 https://www.writebug.cn/index.html
 https://www.writebug.cn/pages/about.html
+https://www.writebug.cn/posts/2023/08/16/caps-as-ctrl.html
 https://www.writebug.cn/posts/2023/08/15/learn-java.html
 https://www.writebug.cn/posts/2023/08/04/tcl-expect.html
 https://www.writebug.cn/posts/2023/08/01/armbian-config-software.html
