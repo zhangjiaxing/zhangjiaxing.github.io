@@ -48,7 +48,7 @@ https://www.writebug.cn/index7.html
 https://www.writebug.cn/index.html
 https://www.writebug.cn/pages/about.html
 https://www.writebug.cn/pages/todolist.html
-https://www.writebug.cn/posts/2023/08/16/caps-as-ctrl.html
+https://www.writebug.cn/posts/2023/08/16/remap-caps-ctrl.html
 https://www.writebug.cn/posts/2023/08/15/learn-java.html
 https://www.writebug.cn/posts/2023/08/04/tcl-expect.html
 https://www.writebug.cn/posts/2023/08/01/armbian-config-software.html
@@ -152,14 +152,15 @@ https://www.writebug.cn/posts/2013/09/27/linux-command.html
 https://www.writebug.cn/posts/2013/09/26/grub2.html
 https://www.writebug.cn/posts/2013/09/10/grub4dos-menu-lst.html
 https://www.writebug.cn/posts/2013/09/10/linux-books.html
-https://www.writebug.cn/tag/programming-language.html
-https://www.writebug.cn/tag/java.html
-https://www.writebug.cn/tag/programming.html
 https://www.writebug.cn/tag/linux.html
 https://www.writebug.cn/tag/linux2.html
 https://www.writebug.cn/tag/linux3.html
 https://www.writebug.cn/tag/linux4.html
 https://www.writebug.cn/tag/linux5.html
+https://www.writebug.cn/tag/xwindow.html
+https://www.writebug.cn/tag/programming-language.html
+https://www.writebug.cn/tag/java.html
+https://www.writebug.cn/tag/programming.html
 https://www.writebug.cn/tag/software.html
 https://www.writebug.cn/tag/storage.html
 https://www.writebug.cn/tag/debug.html
@@ -175,7 +176,6 @@ https://www.writebug.cn/tag/interview.html
 https://www.writebug.cn/tag/qt.html
 https://www.writebug.cn/tag/opensuse.html
 https://www.writebug.cn/tag/filesystem.html
-https://www.writebug.cn/tag/xwindow.html
 https://www.writebug.cn/tag/ide.html
 https://www.writebug.cn/tag/glang.html
 https://www.writebug.cn/tag/xdg.html

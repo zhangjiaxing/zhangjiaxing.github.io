@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>一个开发者的技术博客。</description><lastBuildDate>Wed, 16 Aug 2023 23:02:38 +0800</lastBuildDate><item><title>在Linux下交换Ctrl与大写锁定键</title><link>/posts/2023/08/16/caps-as-ctrl.html</link><description>&lt;p&gt;Date: 2023-08-16 22:44:54
-Modified: 2023-08-16 22:44:59
-Category: linux
-Tags: linux, Xwindow
-Slug: remap-caps-ctrl&lt;/p&gt;
-&lt;p&gt;备注： &lt;code&gt;不要在虚拟机里交换按键&lt;/code&gt;&lt;/p&gt;
+<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>一个开发者的技术博客。</description><lastBuildDate>Wed, 16 Aug 2023 22:44:59 +0800</lastBuildDate><item><title>在Linux下交换Ctrl与大写锁定键</title><link>/posts/2023/08/16/remap-caps-ctrl.html</link><description>&lt;p&gt;备注： &lt;code&gt;不要在虚拟机里交换按键&lt;/code&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;GNOME3 用户可以使用Tweaks工具交换大写锁定和Ctrl键。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;启 …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Wed, 16 Aug 2023 23:02:38 +0800</pubDate><guid isPermaLink="false">tag:None,2023-08-16:/posts/2023/08/16/caps-as-ctrl.html</guid><category>linux</category></item><item><title>java入门精粹</title><link>/posts/2023/08/15/learn-java.html</link><description>&lt;h2&gt;第一章 java开发入门&lt;/h2&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;启动 Tweaks 程序。
+从左侧菜单中选择 “Keyboard &amp;amp; Mouse”。
+单击 “Additional …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Wed, 16 Aug 2023 22:44:54 +0800</pubDate><guid isPermaLink="false">tag:None,2023-08-16:/posts/2023/08/16/remap-caps-ctrl.html</guid><category>linux</category><category>linux</category><category>Xwindow</category></item><item><title>java入门精粹</title><link>/posts/2023/08/15/learn-java.html</link><description>&lt;h2&gt;第一章 java开发入门&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;java类只支持单继承，但接口之间支持多继承。&lt;/li&gt;
 &lt;li&gt;jdk包括java编译器，java运行时，java文档工具，java打包工具等。&lt;/li&gt;

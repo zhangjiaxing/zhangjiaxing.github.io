@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2023-08-16T23:02:38+08:00</updated><subtitle>一个开发者的技术博客。</subtitle><entry><title>在Linux下交换Ctrl与大写锁定键</title><link href="/posts/2023/08/16/caps-as-ctrl.html" rel="alternate"></link><published>2023-08-16T23:02:38+08:00</published><updated>2023-08-16T23:02:38+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2023-08-16:/posts/2023/08/16/caps-as-ctrl.html</id><summary type="html">&lt;p&gt;Date: 2023-08-16 22:44:54
-Modified: 2023-08-16 22:44:59
-Category: linux
-Tags: linux, Xwindow
-Slug: remap-caps-ctrl&lt;/p&gt;
-&lt;p&gt;备注： &lt;code&gt;不要在虚拟机里交换按键&lt;/code&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>cat ~/.zhiliao.history</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2023-08-16T22:44:59+08:00</updated><subtitle>一个开发者的技术博客。</subtitle><entry><title>在Linux下交换Ctrl与大写锁定键</title><link href="/posts/2023/08/16/remap-caps-ctrl.html" rel="alternate"></link><published>2023-08-16T22:44:54+08:00</published><updated>2023-08-16T22:44:59+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2023-08-16:/posts/2023/08/16/remap-caps-ctrl.html</id><summary type="html">&lt;p&gt;备注： &lt;code&gt;不要在虚拟机里交换按键&lt;/code&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;GNOME3 用户可以使用Tweaks工具交换大写锁定和Ctrl键。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;启 …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Date: 2023-08-16 22:44:54
-Modified: 2023-08-16 22:44:59
-Category: linux
-Tags: linux, Xwindow
-Slug: remap-caps-ctrl&lt;/p&gt;
-&lt;p&gt;备注： &lt;code&gt;不要在虚拟机里交换按键&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;启动 Tweaks 程序。
+从左侧菜单中选择 “Keyboard &amp;amp; Mouse”。
+单击 “Additional …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;备注： &lt;code&gt;不要在虚拟机里交换按键&lt;/code&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;GNOME3 用户可以使用Tweaks工具交换大写锁定和Ctrl键。&lt;/li&gt;
 &lt;/ol&gt;
@@ -52,7 +44,7 @@ Slug: remap-caps-ctrl&lt;/p&gt;
 &lt;p&gt;一些有用的man帮助
 setxkbmap、xkeyboard-config、keyboard、console-setup setupcon，loadkeys dumpkeys&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ol&gt;</content><category term="linux"></category></entry><entry><title>java入门精粹</title><link href="/posts/2023/08/15/learn-java.html" rel="alternate"></link><published>2023-08-15T00:52:44+08:00</published><updated>2023-08-15T22:15:02+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2023-08-15:/posts/2023/08/15/learn-java.html</id><summary type="html">&lt;h2&gt;第一章 java开发入门&lt;/h2&gt;
+&lt;/ol&gt;</content><category term="linux"></category><category term="linux"></category><category term="Xwindow"></category></entry><entry><title>java入门精粹</title><link href="/posts/2023/08/15/learn-java.html" rel="alternate"></link><published>2023-08-15T00:52:44+08:00</published><updated>2023-08-15T22:15:02+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2023-08-15:/posts/2023/08/15/learn-java.html</id><summary type="html">&lt;h2&gt;第一章 java开发入门&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;java类只支持单继承，但接口之间支持多继承。&lt;/li&gt;
 &lt;li&gt;jdk包括java编译器，java运行时，java文档工具，java打包工具等。&lt;/li&gt;
