@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>cat writebug.cn/history - editor</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/editor.atom.xml" rel="self"></link><id>/</id><updated>2023-08-16T22:05:49+08:00</updated><subtitle>一个开发者的技术博客。</subtitle><entry><title>vim折叠设置</title><link href="/posts/2017/06/07/vim-fold.html" rel="alternate"></link><published>2017-06-07T00:00:00+08:00</published><updated>2023-02-21T09:52:21+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-07:/posts/2017/06/07/vim-fold.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="x"&gt;vim折叠设置&lt;/span&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>cat writebug.cn/history - editor</title><link href="/" rel="alternate"></link><link href="/feeds/feeds/editor.atom.xml" rel="self"></link><id>/</id><updated>2023-08-20T15:41:53+08:00</updated><subtitle>一个开发者的技术博客。</subtitle><entry><title>vim折叠设置</title><link href="/posts/2017/06/07/vim-fold.html" rel="alternate"></link><published>2017-06-07T00:00:00+08:00</published><updated>2023-02-21T09:52:21+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2017-06-07:/posts/2017/06/07/vim-fold.html</id><summary type="html">&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="x"&gt;vim折叠设置&lt;/span&gt;
 &lt;span class="x"&gt;set foldmethod=indent &amp;quot;set default foldmethod&lt;/span&gt;
 &lt;span class="x"&gt;&amp;quot;zi 打开关闭折叠&lt;/span&gt;
 &lt;span class="x"&gt;&amp;quot;zv 查看此行&lt;/span&gt;
@@ -141,7 +141,7 @@ $&lt;span class="w"&gt; &lt;/span&gt;gtags
 $ cd project/subdir1/subdir2/
 $ vim file1.c
 $ global -u
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="editor"></category><category term="editor"></category><category term="vim"></category></entry><entry><title>vim使用</title><link href="/posts/2014/03/13/vim-usage.html" rel="alternate"></link><published>2014-03-13T00:00:00+08:00</published><updated>2023-08-16T22:05:49+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2014-03-13:/posts/2014/03/13/vim-usage.html</id><summary type="html">&lt;p&gt;&lt;img alt="vim" src="/posts/2014/03/13/vi-vim-cheat-sheet-sch1.gif"&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="editor"></category><category term="editor"></category><category term="vim"></category></entry><entry><title>vim使用</title><link href="/posts/2014/03/13/vim-usage.html" rel="alternate"></link><published>2014-03-13T00:00:00+08:00</published><updated>2023-08-20T15:41:53+08:00</updated><author><name>zhiliao</name></author><id>tag:None,2014-03-13:/posts/2014/03/13/vim-usage.html</id><summary type="html">&lt;p&gt;&lt;img alt="vim" src="/posts/2014/03/13/vi-vim-cheat-sheet-sch1.gif"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://app.waibc.com/manual/vimcdoc/doc/help.html"&gt;vim帮助文档（中文）&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;VIM使用&lt;/h1&gt;
 &lt;h2&gt;插入模式&lt;/h2&gt;
@@ -274,6 +274,12 @@ d     删除块
 ~     切换块中内容的大小写
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
+&lt;h2&gt;缩进&lt;/h2&gt;
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&amp;gt;&amp;gt;     将当前行右移一个单位
+&amp;lt;&amp;lt;     将当前行左移一个单位(一个tab符)
+==     自动缩进当前行
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;h2&gt;标示位置&lt;/h2&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;你可以先做标记再随时返回被标记的位置.
 
@@ -290,8 +296,8 @@ char 可以是小写的 a-z中的任一个。 一个标记在除了下面的这�
 &lt;h3&gt;标签页，窗口和buffer&lt;/h3&gt;
 &lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;同时编辑多个文件&lt;/span&gt;
 &lt;span class="n"&gt;在vim众多的插件中&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;有一个叫minibuffer的插件&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;就是下面所说的标签页功能了&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;可以支持同时编辑多个文件&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
-&lt;span class="n"&gt;标签命令&lt;/span&gt;
 
+&lt;span class="nl"&gt;标签命令&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
 &lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="n"&gt;tabe&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;fn&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;在一个新的标签页中编辑文件fn&lt;/span&gt;
 &lt;span class="n"&gt;gt&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;切换到下一个标签页&lt;/span&gt;
 &lt;span class="n"&gt;gT&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;切换到上一个标签页&lt;/span&gt;
@@ -299,45 +305,42 @@ char 可以是小写的 a-z中的任一个。 一个标记在除了下面的这�
 &lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="n"&gt;tabl&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;切换到最后一个标签页&lt;/span&gt;
 &lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="n"&gt;tabm&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;把当前tab移动到第N个tab之后&lt;/span&gt;
 &lt;span class="n"&gt;对&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;正如你所想象的那样&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;跟eclipse&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ue等的标签页是一个意思&lt;/span&gt;&lt;span class="err"&gt;！&lt;/span&gt;
-&lt;span class="n"&gt;窗口命令&lt;/span&gt;
-&lt;span class="n"&gt;ctrl&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;水平分割窗口&lt;/span&gt;
-&lt;span class="n"&gt;ctrl&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;切换窗口&lt;/span&gt;
-&lt;span class="n"&gt;ctrl&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;q&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;退出当前窗口&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;由于同时有多个文件&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;此命令不会影响其他窗口&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;ctrl&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;垂直分割窗口&lt;/span&gt;
-&lt;span class="n"&gt;其他&lt;/span&gt;
-&lt;span class="n"&gt;vim在保存之前不会对文件做实际的修改&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;只是加载到缓冲区中&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;对文件的编辑其实是对缓冲区的编辑&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="nl"&gt;直到&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;w时才会存入物理文件&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
 
-&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;file&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;把file加载到新的缓冲区中&lt;/span&gt;
+&lt;span class="nl"&gt;窗口命令&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="n"&gt;ctrl&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;水平分割窗口&lt;/span&gt;
+&lt;span class="n"&gt;ctrl&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;垂直分割窗口&lt;/span&gt;
+&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="n"&gt;水平分割窗口&lt;/span&gt;
+&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="n"&gt;vsplit&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;垂直分割窗口&lt;/span&gt;
+&lt;span class="n"&gt;ctrl&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;切换窗口&lt;/span&gt;
+&lt;span class="n"&gt;ctrl&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;hjkl&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;按方向切换窗口&lt;/span&gt;
+&lt;span class="n"&gt;ctrl&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;q&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;退出当前窗口&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;由于同时有多个文件&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;此命令不会影响其他窗口&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="nl"&gt;buffer操作&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="n"&gt;ls&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;显示所有buffer&lt;/span&gt;
+&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="n"&gt;badd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;{&lt;/span&gt;&lt;span class="n"&gt;fname&lt;/span&gt;&lt;span class="err"&gt;}&lt;/span&gt;&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="n"&gt;添加文件到缓冲区列表&lt;/span&gt;
+&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="n"&gt;bd&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;elete&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;删除缓冲区&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;关闭文件&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="n"&gt;edit&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;file&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;把file加载到新的缓冲区中&lt;/span&gt;
+&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="n"&gt;bf&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;irst&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;跳转到第一个缓冲区&lt;/span&gt;
+&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="n"&gt;bl&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;ast&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;跳转到最后一个缓冲区&lt;/span&gt;
+&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="n"&gt;bp&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;跳转到上一个缓冲区&lt;/span&gt;
 &lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="n"&gt;bn&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;跳转到下一个缓冲区&lt;/span&gt;
-&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="n"&gt;bd&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;删除缓冲区&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;关闭文件&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="n"&gt;sp&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;fn&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;分割窗口&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;并将fn加载到新的窗口中&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h2&gt;vim配置&lt;/h2&gt;
-&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Vim作为最主要的编辑器，无论是代码、脚本、文本还是二进制文件，都会用到它。一般通过编辑 ~/.vimrc来设置自己的Vim配置，保存后重启Vim就能生效。如果提示按Enter键才能使用Vim，说明配置文件有错了。
-如果去到一个陌生的环境，没有自己的Vim配置在身边，则只需要记住下面这一行，再加上syntax on打开语法高亮，足够进行大部分的开发工作。
-set nu sts=4 ts=4 sw=4 et si ai
+&lt;div class="highlight-custom"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;set nu sts=4 ts=4 sw=4 et si ai
 nu是显示行号，ts是tabstop，sts是softtabstop，sw是shiftwidth，这三个参数是指代啥我都忘了，就知道是和tab制表符相关的。
 et是expandtab，即把自动把一个tab扩展为空格。si是smart indent，ai是auto indent，有何区别呢？
+
 完整的Vim配置，如下：
 set nu sts=4 ts=4 sw=4 et si ai
 set ruler
 set hlsearch
 syntax on
 filetype plugin on
-ruler是在右下角显示光标当前位置，hlsearch是高亮搜索关键字，最后把根据文件类型作相关调整的插件也打开。例如Makefile里是必须要用到tab制表符的，即使你之前设置了expandtab，设置了filetype plugin on之后，按tab也不会用空格代替制表符。
-Vim作为最主要的编辑器，无论是代码、脚本、文本还是二进制文件，都会用到它。一般通过编辑 ~/.vimrc来设置自己的Vim配置，保存后重启Vim就能生效。如果提示按Enter键才能使用Vim，说明配置文件有错了。
-如果去到一个陌生的环境，没有自己的Vim配置在身边，则只需要记住下面这一行，再加上syntax on打开语法高亮，足够进行大部分的开发工作。
-set nu sts=4 ts=4 sw=4 et si ai
-nu是显示行号，ts是tabstop，sts是softtabstop，sw是shiftwidth，这三个参数是指代啥我都忘了，就知道是和tab制表符相关的。
-et是expandtab，即把自动把一个tab扩展为空格。si是smart indent，ai是auto indent，有何区别呢？
-完整的Vim配置，如下：
-set nu sts=4 ts=4 sw=4 et si ai
-set ruler
-set hlsearch
-syntax on
-filetype plugin on
-ruler是在右下角显示光标当前位置，hlsearch是高亮搜索关键字，最后把根据文件类型作相关调整的插件也打开。例如Makefile里是必须要用到tab制表符的，即使你之前设置了expandtab，设置了filetype plugin on之后，按tab也不会用空格代替制表符。
+
+ruler是在右下角显示光标当前位置
+hlsearch是高亮搜索关键字
+最后把根据文件类型作相关调整的插件也打开。例如Makefile里是必须要用到tab制表符的，即使你之前设置了expandtab，设置了filetype plugin on之后，按tab也不会用空格代替制表符。
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h2&gt;其他&lt;/h2&gt;
@@ -348,7 +351,6 @@ ruler是在右下角显示光标当前位置，hlsearch是高亮搜索关键字�
 &lt;span class="nv"&gt;@x&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;播放记录在x寄存器中的宏命令&lt;/span&gt;
 &lt;span class="n"&gt;稍微解释一下&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="nl"&gt;当在normal模式下输入&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;qx后&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;你对文本的所有编辑动作将会被记录下来&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;再次输入q即退出了记录模&lt;/span&gt;
 &lt;span class="n"&gt;式&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;然后输入&lt;/span&gt;&lt;span class="nv"&gt;@x对刚才记录下来的命令进行重复&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;此命令后可跟数字&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;表示要重复多少次&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;比如&lt;/span&gt;&lt;span class="nv"&gt;@x20&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;可以重复20次&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;&lt;span class="n"&gt;这个在文本的批处理中是非常有用的&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
-&lt;span class="n"&gt;退出编辑器&lt;/span&gt;
 
 &lt;span class="n"&gt;查找替换&lt;/span&gt;
 &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;pattern&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;向后搜索字符串pattern&lt;/span&gt;
@@ -364,12 +366,6 @@ ruler是在右下角显示光标当前位置，hlsearch是高亮搜索关键字�
 &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;查找光标所在处的单词&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;向下查找&lt;/span&gt;
 &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;查找光标所在处的单词&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;向上查找&lt;/span&gt;
 &lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;跳转至上次编辑位置&lt;/span&gt;
-&lt;span class="n"&gt;书签&lt;/span&gt;
-&lt;span class="n"&gt;ma&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;把当前位置存成标签a&lt;/span&gt;
-&lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;跳转到标签a处&lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;将当前行右移一个单位&lt;/span&gt;
-&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;将当前行左移一个单位&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;一个tab符&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;自动缩进当前行&lt;/span&gt;
 
 
 
@@ -381,4 +377,6 @@ ruler是在右下角显示光标当前位置，hlsearch是高亮搜索关键字�
 
 &lt;span class="n"&gt;vim要回到您之前的位置按&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;CTRL&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;O&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;按住&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Ctrl&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;键不放同时按下字母&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;o&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;&lt;span class="n"&gt;重复按可以&lt;/span&gt;
 &lt;span class="n"&gt;回退更多步&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;&lt;span class="n"&gt;CTRL&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;I&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;会跳转到较新的位置&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
+
+&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="n"&gt;termianl&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;打开一个终端窗口&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="editor"></category><category term="editor"></category><category term="vim"></category></entry></feed>

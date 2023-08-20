@@ -198,6 +198,12 @@ d     删除块
 ~     切换块中内容的大小写
 </code></pre></div>
 
+<h2>缩进</h2>
+<div class="highlight-custom"><pre><span></span><code>&gt;&gt;     将当前行右移一个单位
+&lt;&lt;     将当前行左移一个单位(一个tab符)
+==     自动缩进当前行
+</code></pre></div>
+
 <h2>标示位置</h2>
 <div class="highlight-custom"><pre><span></span><code>你可以先做标记再随时返回被标记的位置.
 
@@ -214,8 +220,8 @@ char 可以是小写的 a-z中的任一个。 一个标记在除了下面的这�
 <h3>标签页，窗口和buffer</h3>
 <div class="highlight-custom"><pre><span></span><code><span class="n">同时编辑多个文件</span>
 <span class="n">在vim众多的插件中</span><span class="err">，</span><span class="n">有一个叫minibuffer的插件</span><span class="err">，</span><span class="n">就是下面所说的标签页功能了</span><span class="err">，</span><span class="n">可以支持同时编辑多个文件</span><span class="err">。</span>
-<span class="n">标签命令</span>
 
+<span class="nl">标签命令</span><span class="p">:</span>
 <span class="err">:</span><span class="n">tabe</span><span class="w"> </span><span class="n">fn</span><span class="w">     </span><span class="n">在一个新的标签页中编辑文件fn</span>
 <span class="n">gt</span><span class="w">     </span><span class="n">切换到下一个标签页</span>
 <span class="n">gT</span><span class="w">     </span><span class="n">切换到上一个标签页</span>
@@ -223,45 +229,42 @@ char 可以是小写的 a-z中的任一个。 一个标记在除了下面的这�
 <span class="err">:</span><span class="n">tabl</span><span class="w">     </span><span class="n">切换到最后一个标签页</span>
 <span class="err">:</span><span class="n">tabm</span><span class="w"> </span><span class="o">[</span><span class="n">N</span><span class="o">]</span><span class="w">     </span><span class="n">把当前tab移动到第N个tab之后</span>
 <span class="n">对</span><span class="err">，</span><span class="n">正如你所想象的那样</span><span class="err">，</span><span class="n">跟eclipse</span><span class="p">,</span><span class="w"> </span><span class="n">ue等的标签页是一个意思</span><span class="err">！</span>
-<span class="n">窗口命令</span>
-<span class="n">ctrl</span><span class="o">+</span><span class="n">w</span><span class="w"> </span><span class="n">s</span><span class="w">     </span><span class="n">水平分割窗口</span>
-<span class="n">ctrl</span><span class="o">+</span><span class="n">w</span><span class="w"> </span><span class="n">w</span><span class="w">     </span><span class="n">切换窗口</span>
-<span class="n">ctrl</span><span class="o">+</span><span class="n">w</span><span class="w"> </span><span class="n">q</span><span class="w">     </span><span class="n">退出当前窗口</span><span class="p">(</span><span class="n">由于同时有多个文件</span><span class="err">，</span><span class="n">此命令不会影响其他窗口</span><span class="p">)</span>
-<span class="n">ctrl</span><span class="o">+</span><span class="n">w</span><span class="w"> </span><span class="n">v</span><span class="w">     </span><span class="n">垂直分割窗口</span>
-<span class="n">其他</span>
-<span class="n">vim在保存之前不会对文件做实际的修改</span><span class="err">，</span><span class="n">只是加载到缓冲区中</span><span class="err">，</span><span class="n">对文件的编辑其实是对缓冲区的编辑</span><span class="err">，</span><span class="nl">直到</span><span class="p">:</span><span class="n">w时才会存入物理文件</span><span class="err">。</span>
 
-<span class="err">:</span><span class="n">e</span><span class="w"> </span><span class="k">file</span><span class="w">     </span><span class="n">把file加载到新的缓冲区中</span>
+<span class="nl">窗口命令</span><span class="p">:</span>
+<span class="n">ctrl</span><span class="o">+</span><span class="n">w</span><span class="w"> </span><span class="n">s</span><span class="w">     </span><span class="n">水平分割窗口</span>
+<span class="n">ctrl</span><span class="o">+</span><span class="n">w</span><span class="w"> </span><span class="n">v</span><span class="w">     </span><span class="n">垂直分割窗口</span>
+<span class="err">:</span><span class="n">split</span><span class="w">      </span><span class="n">水平分割窗口</span>
+<span class="err">:</span><span class="n">vsplit</span><span class="w">     </span><span class="n">垂直分割窗口</span>
+<span class="n">ctrl</span><span class="o">+</span><span class="n">w</span><span class="w"> </span><span class="n">w</span><span class="w">     </span><span class="n">切换窗口</span>
+<span class="n">ctrl</span><span class="o">+</span><span class="n">w</span><span class="w"> </span><span class="n">hjkl</span><span class="w">  </span><span class="n">按方向切换窗口</span>
+<span class="n">ctrl</span><span class="o">+</span><span class="n">w</span><span class="w"> </span><span class="n">q</span><span class="w">     </span><span class="n">退出当前窗口</span><span class="p">(</span><span class="n">由于同时有多个文件</span><span class="err">，</span><span class="n">此命令不会影响其他窗口</span><span class="p">)</span>
+
+<span class="nl">buffer操作</span><span class="p">:</span>
+<span class="err">:</span><span class="n">ls</span><span class="w">     </span><span class="n">显示所有buffer</span>
+<span class="err">:</span><span class="n">badd</span><span class="w"> </span><span class="err">{</span><span class="n">fname</span><span class="err">}</span><span class="w">   </span><span class="n">添加文件到缓冲区列表</span>
+<span class="err">:</span><span class="n">bd</span><span class="o">[</span><span class="n">elete</span><span class="o">]</span><span class="w">     </span><span class="n">删除缓冲区</span><span class="p">(</span><span class="n">关闭文件</span><span class="p">)</span>
+<span class="err">:</span><span class="n">edit</span><span class="w"> </span><span class="k">file</span><span class="w">     </span><span class="n">把file加载到新的缓冲区中</span>
+<span class="err">:</span><span class="n">bf</span><span class="o">[</span><span class="n">irst</span><span class="o">]</span><span class="w">     </span><span class="n">跳转到第一个缓冲区</span>
+<span class="err">:</span><span class="n">bl</span><span class="o">[</span><span class="n">ast</span><span class="o">]</span><span class="w">     </span><span class="n">跳转到最后一个缓冲区</span>
+<span class="err">:</span><span class="n">bp</span><span class="w">     </span><span class="n">跳转到上一个缓冲区</span>
 <span class="err">:</span><span class="n">bn</span><span class="w">     </span><span class="n">跳转到下一个缓冲区</span>
-<span class="err">:</span><span class="n">bd</span><span class="w">     </span><span class="n">删除缓冲区</span><span class="p">(</span><span class="n">关闭文件</span><span class="p">)</span>
-<span class="err">:</span><span class="n">sp</span><span class="w"> </span><span class="n">fn</span><span class="w">     </span><span class="n">分割窗口</span><span class="err">，</span><span class="n">并将fn加载到新的窗口中</span>
 </code></pre></div>
 
 <h2>vim配置</h2>
-<div class="highlight-custom"><pre><span></span><code>Vim作为最主要的编辑器，无论是代码、脚本、文本还是二进制文件，都会用到它。一般通过编辑 ~/.vimrc来设置自己的Vim配置，保存后重启Vim就能生效。如果提示按Enter键才能使用Vim，说明配置文件有错了。
-如果去到一个陌生的环境，没有自己的Vim配置在身边，则只需要记住下面这一行，再加上syntax on打开语法高亮，足够进行大部分的开发工作。
-set nu sts=4 ts=4 sw=4 et si ai
+<div class="highlight-custom"><pre><span></span><code>set nu sts=4 ts=4 sw=4 et si ai
 nu是显示行号，ts是tabstop，sts是softtabstop，sw是shiftwidth，这三个参数是指代啥我都忘了，就知道是和tab制表符相关的。
 et是expandtab，即把自动把一个tab扩展为空格。si是smart indent，ai是auto indent，有何区别呢？
+
 完整的Vim配置，如下：
 set nu sts=4 ts=4 sw=4 et si ai
 set ruler
 set hlsearch
 syntax on
 filetype plugin on
-ruler是在右下角显示光标当前位置，hlsearch是高亮搜索关键字，最后把根据文件类型作相关调整的插件也打开。例如Makefile里是必须要用到tab制表符的，即使你之前设置了expandtab，设置了filetype plugin on之后，按tab也不会用空格代替制表符。
-Vim作为最主要的编辑器，无论是代码、脚本、文本还是二进制文件，都会用到它。一般通过编辑 ~/.vimrc来设置自己的Vim配置，保存后重启Vim就能生效。如果提示按Enter键才能使用Vim，说明配置文件有错了。
-如果去到一个陌生的环境，没有自己的Vim配置在身边，则只需要记住下面这一行，再加上syntax on打开语法高亮，足够进行大部分的开发工作。
-set nu sts=4 ts=4 sw=4 et si ai
-nu是显示行号，ts是tabstop，sts是softtabstop，sw是shiftwidth，这三个参数是指代啥我都忘了，就知道是和tab制表符相关的。
-et是expandtab，即把自动把一个tab扩展为空格。si是smart indent，ai是auto indent，有何区别呢？
-完整的Vim配置，如下：
-set nu sts=4 ts=4 sw=4 et si ai
-set ruler
-set hlsearch
-syntax on
-filetype plugin on
-ruler是在右下角显示光标当前位置，hlsearch是高亮搜索关键字，最后把根据文件类型作相关调整的插件也打开。例如Makefile里是必须要用到tab制表符的，即使你之前设置了expandtab，设置了filetype plugin on之后，按tab也不会用空格代替制表符。
+
+ruler是在右下角显示光标当前位置
+hlsearch是高亮搜索关键字
+最后把根据文件类型作相关调整的插件也打开。例如Makefile里是必须要用到tab制表符的，即使你之前设置了expandtab，设置了filetype plugin on之后，按tab也不会用空格代替制表符。
 </code></pre></div>
 
 <h2>其他</h2>
@@ -272,7 +275,6 @@ ruler是在右下角显示光标当前位置，hlsearch是高亮搜索关键字�
 <span class="nv">@x</span><span class="w">     </span><span class="n">播放记录在x寄存器中的宏命令</span>
 <span class="n">稍微解释一下</span><span class="err">，</span><span class="nl">当在normal模式下输入</span><span class="p">:</span><span class="n">qx后</span><span class="err">，</span><span class="n">你对文本的所有编辑动作将会被记录下来</span><span class="err">，</span><span class="n">再次输入q即退出了记录模</span>
 <span class="n">式</span><span class="err">，</span><span class="n">然后输入</span><span class="nv">@x对刚才记录下来的命令进行重复</span><span class="err">，</span><span class="n">此命令后可跟数字</span><span class="err">，</span><span class="n">表示要重复多少次</span><span class="err">，</span><span class="n">比如</span><span class="nv">@x20</span><span class="err">，</span><span class="n">可以重复20次</span><span class="err">。</span><span class="n">这个在文本的批处理中是非常有用的</span><span class="err">。</span>
-<span class="n">退出编辑器</span>
 
 <span class="n">查找替换</span>
 <span class="o">/</span><span class="n">pattern</span><span class="w">     </span><span class="n">向后搜索字符串pattern</span>
@@ -288,12 +290,6 @@ ruler是在右下角显示光标当前位置，hlsearch是高亮搜索关键字�
 <span class="o">*</span><span class="w">     </span><span class="n">查找光标所在处的单词</span><span class="err">，</span><span class="n">向下查找</span>
 <span class="err">#</span><span class="w">     </span><span class="n">查找光标所在处的单词</span><span class="err">，</span><span class="n">向上查找</span>
 <span class="err">`</span><span class="p">.</span><span class="w">     </span><span class="n">跳转至上次编辑位置</span>
-<span class="n">书签</span>
-<span class="n">ma</span><span class="w">     </span><span class="n">把当前位置存成标签a</span>
-<span class="err">`</span><span class="n">a</span><span class="w">     </span><span class="n">跳转到标签a处</span>
-<span class="o">&gt;&gt;</span><span class="w">     </span><span class="n">将当前行右移一个单位</span>
-<span class="o">&lt;&lt;</span><span class="w">     </span><span class="n">将当前行左移一个单位</span><span class="p">(</span><span class="n">一个tab符</span><span class="p">)</span>
-<span class="o">==</span><span class="w">     </span><span class="n">自动缩进当前行</span>
 
 
 
@@ -305,6 +301,8 @@ ruler是在右下角显示光标当前位置，hlsearch是高亮搜索关键字�
 
 <span class="n">vim要回到您之前的位置按</span><span class="w"> </span><span class="n">CTRL</span><span class="o">-</span><span class="n">O</span><span class="w"> </span><span class="p">(</span><span class="n">按住</span><span class="w"> </span><span class="n">Ctrl</span><span class="w"> </span><span class="n">键不放同时按下字母</span><span class="w"> </span><span class="n">o</span><span class="p">)</span><span class="err">。</span><span class="n">重复按可以</span>
 <span class="n">回退更多步</span><span class="err">。</span><span class="n">CTRL</span><span class="o">-</span><span class="n">I</span><span class="w"> </span><span class="n">会跳转到较新的位置</span><span class="err">。</span>
+
+<span class="err">:</span><span class="n">termianl</span><span class="w"> </span><span class="n">打开一个终端窗口</span>
 </code></pre></div></div>
     <footer>
 <p class="meta">
