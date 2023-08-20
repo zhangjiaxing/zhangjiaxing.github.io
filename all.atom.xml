@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>cat ~/.zhiliao.history</title><link>/</link><description>一个开发者的技术博客。</description><lastBuildDate>Wed, 16 Aug 2023 22:44:59 +0800</lastBuildDate><item><title>在Linux下交换Ctrl与大写锁定键</title><link>/posts/2023/08/16/remap-caps-ctrl.html</link><description>&lt;p&gt;备注： &lt;code&gt;不要在虚拟机里交换按键&lt;/code&gt;&lt;/p&gt;
+<rss version="2.0"><channel><title>cat writebug.cn/history</title><link>/</link><description>一个开发者的技术博客。</description><lastBuildDate>Wed, 16 Aug 2023 22:44:59 +0800</lastBuildDate><item><title>在Linux下交换Ctrl与大写锁定键</title><link>/posts/2023/08/16/remap-caps-ctrl.html</link><description>&lt;p&gt;备注： &lt;code&gt;不要在虚拟机里交换按键&lt;/code&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;GNOME3 用户可以使用Tweaks工具交换大写锁定和Ctrl键。&lt;/li&gt;
 &lt;/ol&gt;
