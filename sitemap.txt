@@ -48,6 +48,7 @@ https://www.writebug.cn/index7.html
 https://www.writebug.cn/index.html
 https://www.writebug.cn/pages/about.html
 https://www.writebug.cn/pages/todolist.html
+https://www.writebug.cn/posts/2023/08/22/bash-conversion.html
 https://www.writebug.cn/posts/2023/08/16/remap-caps-ctrl.html
 https://www.writebug.cn/posts/2023/08/15/learn-java.html
 https://www.writebug.cn/posts/2023/08/04/tcl-expect.html
@@ -157,6 +158,7 @@ https://www.writebug.cn/tag/linux2.html
 https://www.writebug.cn/tag/linux3.html
 https://www.writebug.cn/tag/linux4.html
 https://www.writebug.cn/tag/linux5.html
+https://www.writebug.cn/tag/bash.html
 https://www.writebug.cn/tag/xwindow.html
 https://www.writebug.cn/tag/programming-language.html
 https://www.writebug.cn/tag/java.html
@@ -203,7 +205,6 @@ https://www.writebug.cn/tag/wireless.html
 https://www.writebug.cn/tag/android.html
 https://www.writebug.cn/tag/gtk.html
 https://www.writebug.cn/tag/gnome.html
-https://www.writebug.cn/tag/bash.html
 https://www.writebug.cn/tag/keyboard.html
 https://www.writebug.cn/tag/firefox.html
 https://www.writebug.cn/tag/arch.html

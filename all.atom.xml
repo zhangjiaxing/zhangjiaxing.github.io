@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>cat writebug.cn/history</title><link>/</link><description>一个开发者的技术博客。</description><lastBuildDate>Sun, 20 Aug 2023 15:41:53 +0800</lastBuildDate><item><title>在Linux下交换Ctrl与大写锁定键</title><link>/posts/2023/08/16/remap-caps-ctrl.html</link><description>&lt;p&gt;备注： &lt;code&gt;不要在虚拟机里交换按键&lt;/code&gt;&lt;/p&gt;
+<rss version="2.0"><channel><title>cat writebug.cn/history</title><link>/</link><description>一个开发者的技术博客。</description><lastBuildDate>Tue, 22 Aug 2023 22:36:48 +0800</lastBuildDate><item><title>bash进制转换</title><link>/posts/2023/08/22/bash-conversion.html</link><description>&lt;ol&gt;
+&lt;li&gt;在let命令和 &lt;code&gt;$(( 表达式 ))&lt;/code&gt;中，支持 前缀为0的八进制数， 支持前缀是0x的十六进制数字， 支持2到64进制，使用&lt;code&gt;[base#]n&lt;/code&gt;表示， base是2到 …&lt;/li&gt;&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">zhiliao</dc:creator><pubDate>Tue, 22 Aug 2023 22:36:44 +0800</pubDate><guid isPermaLink="false">tag:None,2023-08-22:/posts/2023/08/22/bash-conversion.html</guid><category>linux</category><category>linux</category><category>bash</category></item><item><title>在Linux下交换Ctrl与大写锁定键</title><link>/posts/2023/08/16/remap-caps-ctrl.html</link><description>&lt;p&gt;备注： &lt;code&gt;不要在虚拟机里交换按键&lt;/code&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;GNOME3 用户可以使用Tweaks工具交换大写锁定和Ctrl键。&lt;/li&gt;
 &lt;/ol&gt;
